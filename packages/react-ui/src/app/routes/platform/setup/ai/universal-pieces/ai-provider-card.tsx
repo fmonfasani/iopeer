@@ -33,7 +33,7 @@ const AIProviderCard = ({
           <img
             src={
               showAzureOpenAI
-                ? 'https://cdn.activepieces.com/pieces/azure-openai.png'
+                ? 'https://cdn.iopeer.com/pieces/azure-openai.png'
                 : providerMetadata.logoUrl
             }
             alt="icon"

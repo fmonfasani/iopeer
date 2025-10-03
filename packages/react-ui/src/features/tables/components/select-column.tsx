@@ -74,7 +74,7 @@ export function SelectCell({
       >
         {locked ? (
           <img
-            src="https://cdn.activepieces.com/quicknew/agents/robots/robot_186.png"
+            src="https://cdn.iopeer.com/quicknew/agents/robots/robot_186.png"
             alt="Locked"
             className="w-6 h-6 rounded-full object-cover"
             style={{ display: 'inline-block' }}
