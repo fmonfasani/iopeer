@@ -139,7 +139,7 @@
   "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.": "次のステップに進む前に、トランスクリプトの状態が「完了」または「エラー」になるまで待ちます。",
   "If the transcript status is \"error\", throw an error.": "トランスクリプトの状態が \"error\" の場合は、エラーをスローします。",
   "The maximum number of characters per caption": "キャプションあたりの最大文字数",
-  "The desired file name for storing in ActivePieces. Make sure the file extension is correct.": "ActivePiecesに保存するためのファイル名です。ファイル拡張子が正しいことを確認してください。",
+  "The desired file name for storing in IOPeer. Make sure the file extension is correct.": "IOPeerに保存するためのファイル名です。ファイル拡張子が正しいことを確認してください。",
   "Keywords to search for": "検索するキーワード",
   "Maximum amount of transcripts to retrieve": "取得するトランスクリプトの最大量",
   "Filter by transcript status": "トランスクリプトの状態でフィルター",

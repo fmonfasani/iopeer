@@ -6,7 +6,7 @@ import {
 } from '@activepieces/pieces-common';
 
 // Function Section
-export const mapMauticToActivepiecesProperty = (
+export const mapMauticToIOPeerProperty = (
   type: string,
   fieldMetadata: {
     displayName: string;
@@ -94,7 +94,7 @@ export const fetchDynamicFieldsFromMetadata = async (
           required: false,
         };
         if (!type) return {};
-        const f = mapMauticToActivepiecesProperty(
+        const f = mapMauticToIOPeerProperty(
           type,
           fieldMetadata,
           properties

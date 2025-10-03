@@ -139,7 +139,7 @@
   "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.": "Aguarde até que o status de transcrição seja \"completado\" ou \"erro\" antes de passar para o próximo passo.",
   "If the transcript status is \"error\", throw an error.": "Se o status de transcrição for \"erro\", lança um erro.",
   "The maximum number of characters per caption": "O número máximo de caracteres por legenda",
-  "The desired file name for storing in ActivePieces. Make sure the file extension is correct.": "O nome do arquivo desejado para armazenar no ActivePieces. Certifique-se de que a extensão do arquivo está correta.",
+  "The desired file name for storing in IOPeer. Make sure the file extension is correct.": "O nome do arquivo desejado para armazenar no IOPeer. Certifique-se de que a extensão do arquivo está correta.",
   "Keywords to search for": "Palavras-chave para procurar",
   "Maximum amount of transcripts to retrieve": "Quantidade máxima de transcrições a recuperar",
   "Filter by transcript status": "Filtrar por status de transcrição",

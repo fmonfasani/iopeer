@@ -57,7 +57,7 @@ export const newComment = createTrigger({
     ],
     display_name: {
       type: 'integration',
-      resolved_name: 'Activepieces',
+      resolved_name: 'IOPeer',
     },
   },
   type: TriggerStrategy.POLLING,

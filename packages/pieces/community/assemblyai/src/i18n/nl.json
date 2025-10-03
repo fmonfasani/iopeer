@@ -139,7 +139,7 @@
   "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.": "Wacht tot de transcript status \"voltooid\" of \"fout\" is voordat u verder gaat met de volgende stap.",
   "If the transcript status is \"error\", throw an error.": "Als de transcript status \"fout\" is, gooi dan een fout.",
   "The maximum number of characters per caption": "Het maximum aantal tekens per onderschrift",
-  "The desired file name for storing in ActivePieces. Make sure the file extension is correct.": "De gewenste bestandsnaam voor het opslaan van ActivePieces. Zorg ervoor dat de bestandsextensie juist is.",
+  "The desired file name for storing in IOPeer. Make sure the file extension is correct.": "De gewenste bestandsnaam voor het opslaan van IOPeer. Zorg ervoor dat de bestandsextensie juist is.",
   "Keywords to search for": "Trefwoorden om naar te zoeken",
   "Maximum amount of transcripts to retrieve": "Maximale hoeveelheid van op te halen transcripten",
   "Filter by transcript status": "Filter op transcript status",

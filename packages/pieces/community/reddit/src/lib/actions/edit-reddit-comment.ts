@@ -37,7 +37,7 @@ export const editRedditComment = createAction({
       url,
       headers: {
         'Authorization': `Bearer ${context.auth.access_token}`,
-        'User-Agent': 'ActivePieces Reddit Client',
+        'User-Agent': 'IOPeer Reddit Client',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: payload.toString(),

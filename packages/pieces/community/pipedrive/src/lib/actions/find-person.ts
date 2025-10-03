@@ -35,7 +35,7 @@ export const findPersonAction = createAction({
 			method: HttpMethod.POST,
 			resourceUri: '/v1/filters',
 			body: {
-				name: 'Activepieces Find Person Filter',
+				name: 'IOPeer Find Person Filter',
 				type: 'people',
 				conditions: {
 					glue: 'and',

@@ -51,7 +51,7 @@ export const retrieveRedditPost = createAction({
       },
       headers: {
         'Authorization': `Bearer ${context.auth.access_token}`,
-        'User-Agent': 'ActivePieces Reddit Client',
+        'User-Agent': 'IOPeer Reddit Client',
         'Content-Type': 'application/json',
       },
       timeout: 5000,

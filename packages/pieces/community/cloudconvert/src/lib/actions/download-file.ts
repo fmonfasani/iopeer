@@ -25,7 +25,7 @@ const downloadFileProps = () => ({
   }),
   store_file: Property.Checkbox({
     displayName: 'Store File',
-    description: 'Download and store the output files in Activepieces',
+    description: 'Download and store the output files in IOPeer',
     required: false,
     defaultValue: true,
   }),

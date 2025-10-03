@@ -139,7 +139,7 @@
   "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.": "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.",
   "If the transcript status is \"error\", throw an error.": "If the transcript status is \"error\", throw an error.",
   "The maximum number of characters per caption": "The maximum number of characters per caption",
-  "The desired file name for storing in ActivePieces. Make sure the file extension is correct.": "The desired file name for storing in ActivePieces. Make sure the file extension is correct.",
+  "The desired file name for storing in IOPeer. Make sure the file extension is correct.": "The desired file name for storing in IOPeer. Make sure the file extension is correct.",
   "Keywords to search for": "Keywords to search for",
   "Maximum amount of transcripts to retrieve": "Maximum amount of transcripts to retrieve",
   "Filter by transcript status": "Filter by transcript status",

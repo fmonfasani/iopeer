@@ -47,7 +47,7 @@ export const fetchPostComments = createAction({
       url: `https://oauth.reddit.com/comments/${postId}`,
       headers: {
         'Authorization': `Bearer ${context.auth.access_token}`,
-        'User-Agent': 'ActivePieces Reddit Client',
+        'User-Agent': 'IOPeer Reddit Client',
         'Content-Type': 'application/json',
       },
       queryParams: {
