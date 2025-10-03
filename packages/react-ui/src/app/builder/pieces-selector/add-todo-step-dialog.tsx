@@ -2,8 +2,8 @@ import { t } from 'i18next';
 import { InfoIcon } from 'lucide-react';
 import { useState } from 'react';
 
-import ActivepiecesCreateTodoGuide from '@/assets/img/custom/ActivepiecesCreateTodoGuide.png';
-import ActivepiecesTodo from '@/assets/img/custom/ActivepiecesTodo.png';
+import IOPeerCreateTodoGuide from '@/assets/img/custom/IOPeerCreateTodoGuide.png';
+import IOPeerTodo from '@/assets/img/custom/IOPeerTodo.png';
 import ExternalChannelTodo from '@/assets/img/custom/External_Channel_Todo.png';
 import { CardListItem } from '@/components/custom/card-list';
 import { Button } from '@/components/ui/button';
@@ -152,13 +152,13 @@ export { AddTodoStepDialog as CreateTodoDialog };
 const PreviewImage = ({ todoType }: { todoType: TodoType }) => {
   const image =
     todoType === TodoType.INTERNAL
-      ? ActivepiecesCreateTodoGuide
+      ? IOPeerCreateTodoGuide
       : ExternalChannelTodo;
   const alt =
     todoType === TodoType.INTERNAL ? 'Todos flow' : 'External channel flow';
   const title =
     todoType === TodoType.INTERNAL
-      ? t('Preview (Activepieces Todos)')
+      ? t('Preview (IOPeer Todos)')
       : t('Preview (External channel)');
   const description =
     todoType === TodoType.INTERNAL
@@ -242,7 +242,7 @@ const TodoTypeOption = ({
 
                   <div className="bg-muted rounded p-1">
                     <img
-                      src={ActivepiecesTodo}
+                      src={IOPeerTodo}
                       alt="Todo UI"
                       className="w-full h-auto rounded"
                     />
