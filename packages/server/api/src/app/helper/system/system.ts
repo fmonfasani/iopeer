@@ -44,7 +44,7 @@ const systemPropDefaultValues: Partial<Record<SystemProp, string>> = {
     [AppSystemProp.PM2_ENABLED]: 'false',
     [AppSystemProp.CLIENT_REAL_IP_HEADER]: 'x-real-ip',
     [AppSystemProp.CLOUD_AUTH_ENABLED]: 'true',
-    [AppSystemProp.CONFIG_PATH]: path.join(os.homedir(), '.activepieces'),
+    [AppSystemProp.CONFIG_PATH]: path.join(os.homedir(), '.iopeer'),
     [AppSystemProp.DB_TYPE]: DatabaseType.POSTGRES,
     [AppSystemProp.EDITION]: ApEdition.COMMUNITY,
     [AppSystemProp.APP_WEBHOOK_SECRETS]: '{}',
@@ -73,7 +73,7 @@ const systemPropDefaultValues: Partial<Record<SystemProp, string>> = {
     [AppSystemProp.TELEMETRY_ENABLED]: 'true',
     [AppSystemProp.REDIS_TYPE]: RedisType.STANDALONE,
     [AppSystemProp.TEMPLATES_SOURCE_URL]:
-        'https://cloud.activepieces.com/api/v1/flow-templates',
+        'https://cloud.iopeer.com/api/v1/flow-templates',
     [AppSystemProp.TRIGGER_DEFAULT_POLL_INTERVAL]: '5',
     [AppSystemProp.MAX_CONCURRENT_JOBS_PER_PROJECT]: '100',
     [AppSystemProp.PROJECT_RATE_LIMITER_ENABLED]: 'false',

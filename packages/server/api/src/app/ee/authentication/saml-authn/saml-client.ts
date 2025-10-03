@@ -78,7 +78,7 @@ const createIdp = (metadata: string): saml.IdentityProviderInstance => {
 const createSp = async (platformId: string, privateKey: string): Promise<saml.ServiceProviderInstance> => {
     const acsUrl = await domainHelper.getPublicUrl({ path: '/api/v1/authn/saml/acs', platformId })
     return saml.ServiceProvider({
-        entityID: 'Activepieces',
+        entityID: 'IOPeer',
         authnRequestsSigned: false,
         wantMessageSigned: true,
         wantLogoutResponseSigned: true,
