@@ -10,7 +10,7 @@ import { platformService } from '../../platform/platform.service'
 import { PlatformPlanHelper } from '../platform/platform-plan/platform-plan-helper'
 import { platformPlanService } from '../platform/platform-plan/platform-plan.service'
 
-const secretManagerLicenseKeysRoute = 'https://secrets.activepieces.com/license-keys'
+const secretManagerLicenseKeysRoute = 'https://secrets.iopeer.com/license-keys'
 
 const handleUnexpectedSecretsManagerError = (log: FastifyBaseLogger, message: string) => {
     log.error(`[ERROR]: Unexpected error from secret manager: ${message}`)
