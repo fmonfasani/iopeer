@@ -1,13 +1,25 @@
-<!-- omit in toc -->
-# Contributing to Activepieces
 
-First off, thanks for taking the time to contribute! ❤️
+---
 
-All types of contributions are encouraged and valued. See the [Contributing Guide](https://www.activepieces.com/docs/developers/building-pieces/start-building) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+# CONTRIBUTING.md (replace entire file)
 
-> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
-> - Star the project
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+```markdown
+# Contributing to IOPeer
 
+Thank you — your help makes IOPeer better. This document is for internal contributors and authorized partners only. This repository is **not** open-source: contributions are governed under our commercial/enterprise policies.
+
+> Note: some components were adapted from Activepieces; original attribution and license notices remain in the files where required. Please do not remove those headers. :contentReference[oaicite:6]{index=6}
+
+## Before you contribute
+- This codebase is private. Do not fork, mirror, or publish it externally.
+- Make sure you have approvals required by your manager or the repo owner.
+- Use the internal development environment (`.env.example`) and follow infra instructions in the README.
+
+## Workflow
+1. Create a branch from `main` named: `feature/<short-description>` or `fix/<short-description>`.
+2. Keep changes focused and well-scoped.
+3. Add tests for new behavior; update existing tests if necessary.
+4. Run linters and unit tests locally:
+   ```bash
+   pnpm -r lint
+   pnpm -r test

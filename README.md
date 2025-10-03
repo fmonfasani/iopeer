@@ -12,24 +12,22 @@
 ---
 
 ## What is IOPeer?
-**IOPeer** is a private, commercial SaaS for building and running **visual workflows** (DAG) that integrate APIs, databases, queues, and **LLMs**. It’s designed for developers and technical teams that want speed **without** losing control, security, or observability.
+**IOPeer** is a private, commercial SaaS product for building and running **visual workflows** (DAG) that integrate APIs, databases, queues, and **LLMs**. It’s built for developer teams that want speed **without** losing control, security, or observability.
 
 **Highlights**
 - 🎛️ **Visual builder** (drag & drop), versioned flows.
-- 🔌 **Connectors** for HTTP, DBs, Email/SMTP, S3/MinIO, Slack, GitHub, etc.
+- 🔌 **Connectors** for HTTP, DBs, Email/SMTP, S3/MinIO, Slack, GitHub, and more.
 - 🤖 **AI-first**: LLM calls, embeddings, classification, agent patterns.
 - 📈 **Observability**: logs, metrics, and traces per step.
-- 🔐 **Security**: encrypted credentials, isolated execution, RBAC (roadmap).
+- 🔐 **Security-conscious**: encrypted credentials, isolated execution, RBAC (roadmap).
 - 🧰 **SDK (TypeScript)** to implement custom nodes for your org.
 
-> **Attribution notice**: Portions of this codebase adapt components originally available under the MIT License from the Activepieces project. Copyright © Activepieces contributors.  
-> “Based on Activepieces (https://github.com/activepieces/activepieces) — MIT.”  
-> Notices are preserved in the respective files where applicable.
+> **Attribution notice:** Portions of this codebase adapt components that were originally available under the MIT License from the Activepieces project. Those original notices are preserved in the respective files where applicable. This repository is a private, commercial IOPeer product and is not public/open-source. See the LICENSE section for details.
 
 ---
 
 ## Quickstart (internal)
-> This repository is **private**. Instructions below are for internal developers and trusted partners.
+> This repository is **private**. These instructions are for internal developers and authorized partners.
 
 ```bash
 # Requirements: Node 20+, pnpm, Docker, Docker Compose
@@ -42,11 +40,11 @@ cp .env.example .env   # fill Postgres/Redis/S3/KMS/etc.
 # 2) Infra (dev)
 docker compose up -d   # postgres, redis, minio
 
-# 3) Build workspaces
+# 3) Install & build
 pnpm i
 pnpm -r build
 
-# 4) Run apps
+# 4) Run apps (examples)
 pnpm --filter @iopeer/api dev
 pnpm --filter @iopeer/editor dev
 pnpm --filter @iopeer/worker dev
