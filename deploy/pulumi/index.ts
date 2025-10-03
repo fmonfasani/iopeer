@@ -84,7 +84,7 @@ if (config.getBoolean("deployLocalBuild")) {
 
     pulumi.log.info(`Finished pushing image to ECR`, image);
 } else {
-    imageName = process.env.IMAGE_NAME || config.get("imageName") || "activepieces/activepieces:latest";
+    imageName = process.env.IMAGE_NAME || config.get("imageName") || "ghcr.io/iopeer/iopeer:latest";
 }
 
 const containerEnvironmentVars: awsx.types.input.ecs.TaskDefinitionKeyValuePairArgs[] = [];
@@ -428,7 +428,7 @@ const environmentVariables = [
     },
     {
         name: "AP_TEMPLATES_SOURCE_URL",
-        value: "https://cloud.activepieces.com/api/v1/flow-templates"
+        value: "https://cloud.iopeer.com/api/v1/flow-templates"
     }
 ];
 
@@ -446,7 +446,7 @@ const fargateService = new awsx.ecs.FargateService(`${stack}-fg`, {
     taskDefinitionArgs: {
         family: `${stack}-fg-task-definition`,
         container: {
-            name: "activepieces",
+            name: "iopeer",
             image: imageName,
             cpu: containerCpu,
             memory: containerMemory,
@@ -461,6 +461,6 @@ const fargateService = new awsx.ecs.FargateService(`${stack}-fg`, {
 pulumi.log.info("Finished running Pulumi");
 
 export const _ = {
-    activePiecesUrl: frontendUrl,
-    activepiecesEnv: environmentVariables
+    ioPeerUrl: frontendUrl,
+    iopeerEnv: environmentVariables
 };
