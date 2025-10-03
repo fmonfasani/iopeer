@@ -9,7 +9,7 @@ import { updateProject } from './lib/actions/update-project';
 import { createCustomApiCallAction } from '@activepieces/pieces-common';
 
 const markdown = `
-Activepieces Platform API is available under the Platform Edition.
+IOPeer Platform API is available under the Platform Edition.
 (https://www.activepieces.com/docs/admin-console/overview)
 
 **Note**: The API Key is available in the Platform Dashboard.
@@ -33,7 +33,7 @@ export const activePieceAuth = PieceAuth.CustomAuth({
 });
 
 export const activepieces = createPiece({
-  displayName: 'Activepieces Platform',
+  displayName: 'IOPeer Platform',
   description: 'Open source no-code business automation',
   auth: activePieceAuth,
   minimumSupportedRelease: '0.30.0',

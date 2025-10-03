@@ -66,7 +66,7 @@ export const reddit = createPiece({
       authMapping: async (auth) => {
         return {
           Authorization: `Bearer ${(auth as OAuth2PropertyValue).access_token}`,
-          'User-Agent': 'ActivePieces/1.0.0'
+          'User-Agent': 'IOPeer/1.0.0'
         };
       },
     }),
