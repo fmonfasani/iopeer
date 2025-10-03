@@ -99,8 +99,8 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
         openapi: {
             servers: [
                 {
-                    url: 'https://cloud.activepieces.com/api',
-                    description: 'Production Server',
+                    url: 'https://cloud.iopeer.com/api',
+                    description: 'IOPeer Cloud API',
                 },
             ],
             components: {
@@ -145,12 +145,12 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
                 },
             },
             info: {
-                title: 'Activepieces Documentation',
+                title: 'IOPeer API Documentation',
                 version: '0.0.0',
             },
             externalDocs: {
-                url: 'https://www.activepieces.com/docs',
-                description: 'Find more info here',
+                url: 'https://docs.iopeer.com',
+                description: 'Explore the official IOPeer documentation',
             },
         },
     })
@@ -262,7 +262,7 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     const edition = system.getEdition()
     app.log.info({
         edition,
-    }, 'Activepieces Edition')
+    }, 'IOPeer Edition')
     switch (edition) {
         case ApEdition.CLOUD:
             await app.register(appCredentialModule)
@@ -355,14 +355,13 @@ async function getAdapter() {
 export async function appPostBoot(app: FastifyInstance): Promise<void> {
 
     app.log.info(`
-             _____   _______   _____  __      __  ______   _____    _____   ______    _____   ______    _____
-    /\\      / ____| |__   __| |_   _| \\ \\    / / |  ____| |  __ \\  |_   _| |  ____|  / ____| |  ____|  / ____|
-   /  \\    | |         | |      | |    \\ \\  / /  | |__    | |__) |   | |   | |__    | |      | |__    | (___
-  / /\\ \\   | |         | |      | |     \\ \\/ /   |  __|   |  ___/    | |   |  __|   | |      |  __|    \\___ \\
- / ____ \\  | |____     | |     _| |_     \\  /    | |____  | |       _| |_  | |____  | |____  | |____   ____) |
-/_/    \\_\\  \\_____|    |_|    |_____|     \\/     |______| |_|      |_____| |______|  \\_____| |______| |_____/
+      ___ ___   ____   _____  ______  ______
+     |_ _/ _ \\ |  _ \\ | ____||  _ \\ \\ / / ___|
+      | | | | || |_) ||  _|  | |_) |\\ V /\\___ \\
+      | | |_| ||  __/ | |___ |  _ <  | |  ___) |
+     |___\\___/ |_|    |_____||_| \\_\\ |_| |____/
 
-The application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, as specified by the AP_FRONTEND_URL variables.`)
+The IOPeer application started on ${await domainHelper.getPublicApiUrl({ path: '' })}, as specified by the AP_FRONTEND_URL variables.`)
 
     const environment = system.get(AppSystemProp.ENVIRONMENT)
     const piecesSource = system.getOrThrow(AppSystemProp.PIECES_SOURCE)

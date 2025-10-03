@@ -105,7 +105,7 @@ export async function selectIcon(model: LanguageModel, requirement: string, conv
             return null
         }
 
-        return `https://cdn.activepieces.com/pieces/ai/code/${llmResponse.object.icon}.svg`
+        return `https://cdn.iopeer.com/pieces/ai/code/${llmResponse.object.icon}.svg`
     }
     catch (error) {
         exceptionHandler.handle(error, system.globalLogger())
