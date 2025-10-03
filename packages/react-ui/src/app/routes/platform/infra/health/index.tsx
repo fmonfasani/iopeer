@@ -57,7 +57,7 @@ export default function WorkersPage() {
       },
       details: socket.connected
         ? t('No issues detected')
-        : 'Connection issues detected.<br>Visit the <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://www.activepieces.com/docs/install/configuration/troubleshooting" target="_blank">troubleshooting guide</a> for more details.',
+        : 'Connection issues detected.<br>Visit the <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://docs.iopeer.com/install/configuration/troubleshooting" target="_blank">troubleshooting guide</a> for more details.',
       faultIcon: <WifiOff size={16} />,
     },
   ];
