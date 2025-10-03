@@ -53,7 +53,7 @@ export const emailPriorityChanged = createTrigger({
     return;
   },
 
-  // onDisable is not needed as Activepieces does not manage the webhook lifecycle.
+  // onDisable is not needed as IOPeer does not manage the webhook lifecycle.
   async onDisable(context) {
     return;
   },

@@ -77,7 +77,7 @@ export const eventOnDataUpdated = createTrigger({
         url: webhookUrl,
         http_verb: 'POST',
         body_content_choice: 'json_v4',
-        third_party: 'ActivePieces ',
+        third_party: 'IOPeer',
         third_party_id: workflowId,
       },
       headers: {

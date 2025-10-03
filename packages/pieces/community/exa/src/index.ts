@@ -17,7 +17,7 @@ export const exaAuth = PieceAuth.SecretText({
     try
     {
       await makeRequest(auth,HttpMethod.POST,
-        '/search',{query:'Activepieces'}
+        '/search',{query:'IOPeer'}
       )
 
       return{

@@ -21,7 +21,7 @@ export function generateColumnIdTypeMap(
 }
 
 // creates activepiece prop type for monday column
-export const convertMondayColumnToActivepiecesProp = (column: MondayColumn) => {
+export const convertMondayColumnToIOPeerProp = (column: MondayColumn) => {
   switch (column.type) {
     case MondayColumnType.CHECKBOX:
       return Property.Checkbox({

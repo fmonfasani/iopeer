@@ -199,7 +199,7 @@ export const convertFileProps = () => ({
   }),
   stored_file_id: Property.ShortText({
     displayName: 'Stored File ID',
-    description: 'ID of a previously stored file in Activepieces to convert',
+    description: 'ID of a previously stored file in IOPeer to convert',
     required: false,
   }),
   input_format: Property.StaticDropdown({
@@ -247,7 +247,7 @@ export const convertFileProps = () => ({
   }),
   store_file: Property.Checkbox({
     displayName: 'Store File',
-    description: 'Download and store the converted file in Activepieces',
+    description: 'Download and store the converted file in IOPeer',
     required: false,
     defaultValue: true,
   }),

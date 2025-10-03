@@ -33,7 +33,7 @@ export const capsuleCrmCreateTrigger = ({
       const hook = await capsuleCrmClient.subscribeRestHook(context.auth, {
         targetUrl: context.webhookUrl,
         event: event,
-        description: `Activepieces - ${displayName}`,
+        description: `IOPeer - ${displayName}`,
       });
       await context.store.put(`capsule_crm_trigger_${name}`, {
         hookId: hook.id,

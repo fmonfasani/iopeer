@@ -17,7 +17,7 @@ export const getAssemblyAIClient = (
     apiKey: context.auth,
     userAgent: {
       integration: {
-        name: 'Activepieces',
+        name: 'IOPeer',
         version: packageJson.version,
       },
     },

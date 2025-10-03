@@ -1,4 +1,4 @@
-# Dittofeed Piece for ActivePieces
+# Dittofeed Piece for IOPeer
 
 This piece provides integration with [Dittofeed](https://dittofeed.com/), a customer data platform for user analytics and tracking.
 

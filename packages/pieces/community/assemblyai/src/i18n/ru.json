@@ -139,7 +139,7 @@
   "Wait until the transcript status is \"completed\" or \"error\" before moving on to the next step.": "Подождите, пока субтитры не будут \"завершены\" или \"ошибка\" перед переходом на следующий шаг.",
   "If the transcript status is \"error\", throw an error.": "Если транскрипт имеет статус \"ошибка\", то попробуйте продолжить.",
   "The maximum number of characters per caption": "Максимальное количество символов в подписи",
-  "The desired file name for storing in ActivePieces. Make sure the file extension is correct.": "Желаемое имя файла для хранения в ActivePieces. Убедитесь, что расширение файла правильное.",
+  "The desired file name for storing in IOPeer. Make sure the file extension is correct.": "Желаемое имя файла для хранения в IOPeer. Убедитесь, что расширение файла правильное.",
   "Keywords to search for": "Ключевые слова для поиска",
   "Maximum amount of transcripts to retrieve": "Максимальное количество субтитров для получения",
   "Filter by transcript status": "Фильтровать по статусу субтитров",

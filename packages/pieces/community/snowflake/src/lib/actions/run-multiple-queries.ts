@@ -6,7 +6,7 @@ import { configureConnection } from '../common';
 type QueryResult = unknown[] | undefined;
 type QueryResults = { query: string; result: QueryResult }[];
 
-const DEFAULT_APPLICATION_NAME = 'ActivePieces';
+const DEFAULT_APPLICATION_NAME = 'IOPeer';
 const DEFAULT_QUERY_TIMEOUT = 30000;
 
 export const runMultipleQueries = createAction({

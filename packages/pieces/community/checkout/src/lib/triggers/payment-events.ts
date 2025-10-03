@@ -117,7 +117,7 @@ export const paymentEventsTrigger = createTrigger({
           'Content-Type': 'application/json',
         },
         body: {
-          name: 'Activepieces Payment Events Workflow',
+          name: 'IOPeer Payment Events Workflow',
           active: true,
           conditions: [
             {
