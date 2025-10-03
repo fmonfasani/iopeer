@@ -67,9 +67,9 @@ const ApiKeysPage = () => {
       locked={!platform.plan.apiKeysEnabled}
       lockTitle={t('Enable API Keys')}
       lockDescription={t(
-        'Create and manage API keys to access Activepieces APIs.',
+        'Create and manage API keys to access IOPeer APIs.',
       )}
-      lockVideoUrl="https://cdn.activepieces.com/videos/showcase/api-keys.mp4"
+      lockVideoUrl="https://cdn.iopeer.com/videos/showcase/api-keys.mp4"
     >
       <div className="flex-col w-full">
         <DashboardPageHeader
@@ -93,7 +93,7 @@ const ApiKeysPage = () => {
         <DataTable
           emptyStateTextTitle={t('No API keys found')}
           emptyStateTextDescription={t(
-            'Start by creating an API key to communicate with Activepieces APIs',
+            'Start by creating an API key to communicate with IOPeer APIs',
           )}
           emptyStateIcon={<Key className="size-14" />}
           page={data}
