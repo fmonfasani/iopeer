@@ -35,7 +35,7 @@ export const HelpAndFeedback = () => {
       <DropdownMenuContent align="end" side="right" className="w-[220px]">
         <DropdownMenuItem asChild>
           <Link
-            to="https://activepieces.com/docs"
+            to="https://docs.iopeer.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-between w-full"

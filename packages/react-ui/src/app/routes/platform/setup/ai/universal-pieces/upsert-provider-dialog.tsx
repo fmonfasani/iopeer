@@ -137,7 +137,7 @@ export const UpsertAIProviderDialog = ({
                             className="flex items-center gap-2 cursor-pointer text-sm"
                           >
                             <img
-                              src="https://cdn.activepieces.com/pieces/openai.png"
+                              src="https://cdn.iopeer.com/pieces/openai.png"
                               alt="OpenAI"
                               className="w-4 h-4"
                             />
@@ -151,7 +151,7 @@ export const UpsertAIProviderDialog = ({
                             className="flex items-center gap-2 cursor-pointer text-sm"
                           >
                             <img
-                              src="https://cdn.activepieces.com/pieces/azure-openai.png"
+                              src="https://cdn.iopeer.com/pieces/azure-openai.png"
                               alt="Azure OpenAI"
                               className="w-4 h-4"
                             />

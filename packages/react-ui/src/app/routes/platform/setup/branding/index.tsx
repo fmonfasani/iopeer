@@ -13,11 +13,11 @@ export const BrandingPage = () => {
     <LockedFeatureGuard
       featureKey="BRANDING"
       locked={!platform.plan.customAppearanceEnabled}
-      lockTitle={t('Brand Activepieces')}
+      lockTitle={t('Brand IOPeer')}
       lockDescription={t(
         'Give your users an experience that looks like you by customizing the color, logo and more',
       )}
-      lockVideoUrl="https://cdn.activepieces.com/videos/showcase/appearance.mp4"
+      lockVideoUrl="https://cdn.iopeer.com/videos/showcase/appearance.mp4"
     >
       <div className="w-full flex flex-col gap-4">
         <DashboardPageHeader
