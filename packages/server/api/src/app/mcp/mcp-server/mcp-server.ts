@@ -38,7 +38,7 @@ export async function createMcpServer({
     projectId,
 }: CreateMcpServerRequest): Promise<CreateMcpServerResponse> {
     const server = new McpServer({
-        name: 'Activepieces',
+        name: 'IOPeer',
         version: '1.0.0',
     })
 
@@ -185,7 +185,7 @@ async function addPieceToServer(
             }
             catch (error) {
                 const isOpenAIProviderNotConnected = error instanceof Error && (error.name === 'AI_RetryError' || error.name === 'AI_APICallError')
-                const errorMessage = isOpenAIProviderNotConnected ? 'Please check if you have connected your OpenAI provider to Activepieces.' : JSON.stringify(error, null, 2)
+                const errorMessage = isOpenAIProviderNotConnected ? 'Please check if you have connected your OpenAI provider to IOPeer.' : JSON.stringify(error, null, 2)
                 await mcpRunService(logger).create({
                     mcpId: mcpTool.mcpId,
                     toolId: mcpTool.id,
