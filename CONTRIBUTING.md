@@ -1,9 +1,3 @@
-
----
-
-# CONTRIBUTING.md (replace entire file)
-
-```markdown
 # Contributing to IOPeer
 
 Thank you — your help makes IOPeer better. This document is for internal contributors and authorized partners only. This repository is **not** open-source: contributions are governed under our commercial/enterprise policies.
