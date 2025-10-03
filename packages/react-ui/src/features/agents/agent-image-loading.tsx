@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 function getAgentProfilePictureUrl(): string {
-  return `https://cdn.activepieces.com/quicknew/agents/robots/robot_${Math.floor(
+  return `https://cdn.iopeer.com/quicknew/agents/robots/robot_${Math.floor(
     Math.random() * 10000,
   )}.png`;
 }

@@ -107,7 +107,7 @@ async function getChangelogFeaturebaseRequest(): Promise<ListChangelogsResponse>
 }
 
 async function getChangelogActivepiecesRequest(): Promise<ListChangelogsResponse> {
-    const url = new URL('https://cloud.activepieces.com/api/v1/changelogs')
+    const url = new URL('https://cloud.iopeer.com/api/v1/changelogs')
 
     const response = await fetch(url.toString(), {
         method: 'GET',

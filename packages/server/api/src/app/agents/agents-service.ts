@@ -189,7 +189,7 @@ async function enrichAgent(agent: Omit<Agent, 'runCompleted'>, log: FastifyBaseL
 }
 
 function getAgentProfilePictureUrl(): string {
-    return `https://cdn.activepieces.com/quicknew/agents/robots/robot_${Math.floor(Math.random() * 10000)}.png`
+    return `https://cdn.iopeer.com/quicknew/agents/robots/robot_${Math.floor(Math.random() * 10000)}.png`
 }
 
 function getEnhancementPrompt(originalPrompt: string) {
