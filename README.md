@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://iopeer.com" target="_blank">
-    <img src="assets/logo_Iopeer_samile_black.png" alt="IOPeer" height="120">
+    <img src="assets/logo_Iopeer_samile_black.png" alt="IOPeer" height="240">
   </a>
 </p>
 
