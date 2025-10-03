@@ -3,20 +3,18 @@ title: 'Custom Pieces CI/CD'
 icon: 'hammer'
 ---
 
-You can use the CLI to sync custom pieces. There is no need to rebuild the Docker image as they are loaded directly from npm.
+You can use the IOPeer CLI to sync custom pieces. There is no need to rebuild the Docker image as they are loaded directly from npm.
 
 ### How It Works
-
-Use the CLI to sync items from `packages/pieces/custom/` to instances. In production, IOPeer acts as an npm registry, storing all piece versions.
 
 The CLI scans the directory for `package.json` files, checking the **name** and **version** of each piece. If a piece isn't uploaded, it packages and uploads it via the API.
 
 ### Usage
 
-To use the CLI, follow these steps:
+To use the IOPeer CLI, follow these steps:
 
 1. Generate an API Key from the Admin Interface. Go to Settings and generate the API Key.
-2. Install the CLI by cloning the repository.
+2. Install the IOPeer CLI by cloning the repository.
 3. Run the following command, replacing `API_KEY` with your generated API Key and `INSTANCE_URL` with your instance URL:
 
 
