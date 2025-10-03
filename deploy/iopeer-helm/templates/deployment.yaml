@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "activepieces.fullname" . }}
+  name: {{ include "iopeer.fullname" . }}
   labels:
-    {{- include "activepieces.labels" . | nindent 4 }}
+    {{- include "iopeer.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "activepieces.selectorLabels" . | nindent 6 }}
+      {{- include "iopeer.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "activepieces.labels" . | nindent 8 }}
+        {{- include "iopeer.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -27,7 +27,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "activepieces.serviceAccountName" . }}
+      serviceAccountName: {{ include "iopeer.serviceAccountName" . }}
       {{- with .Values.podSecurityContext }}
       securityContext:
         {{- toYaml . | nindent 8 }}
@@ -45,160 +45,160 @@ spec:
               containerPort: {{ .Values.container.port }}
               protocol: TCP
           env:
-            # Core Activepieces configuration
-            {{- if .Values.activepieces.frontendUrl }}
+            # Core IOPeer configuration
+            {{- if .Values.iopeer.frontendUrl }}
             - name: AP_FRONTEND_URL
-              value: {{ .Values.activepieces.frontendUrl | quote }}
+              value: {{ .Values.iopeer.frontendUrl | quote }}
             {{- end }}
-            {{- if .Values.activepieces.apiKey }}
+            {{- if .Values.iopeer.apiKey }}
             - name: AP_API_KEY
-              value: {{ .Values.activepieces.apiKey | quote }}
+              value: {{ .Values.iopeer.apiKey | quote }}
             {{- end }}
-            {{- if .Values.activepieces.clientRealIpHeader }}
+            {{- if .Values.iopeer.clientRealIpHeader }}
             - name: AP_CLIENT_REAL_IP_HEADER
-              value: {{ .Values.activepieces.clientRealIpHeader | quote }}
+              value: {{ .Values.iopeer.clientRealIpHeader | quote }}
             {{- end }}
-            {{- if .Values.activepieces.configPath }}
+            {{- if .Values.iopeer.configPath }}
             - name: AP_CONFIG_PATH
-              value: {{ .Values.activepieces.configPath | quote }}
+              value: {{ .Values.iopeer.configPath | quote }}
             {{- end }}
-            {{- if .Values.activepieces.devPieces }}
+            {{- if .Values.iopeer.devPieces }}
             - name: AP_DEV_PIECES
-              value: {{ .Values.activepieces.devPieces | quote }}
+              value: {{ .Values.iopeer.devPieces | quote }}
             {{- end }}
-            {{- if .Values.activepieces.internalUrl }}
+            {{- if .Values.iopeer.internalUrl }}
             - name: AP_INTERNAL_URL
-              value: {{ .Values.activepieces.internalUrl | quote }}
+              value: {{ .Values.iopeer.internalUrl | quote }}
             {{- end }}
-            {{- if .Values.activepieces.maxConcurrentJobsPerProject }}
+            {{- if .Values.iopeer.maxConcurrentJobsPerProject }}
             - name: AP_MAX_CONCURRENT_JOBS_PER_PROJECT
-              value: {{ .Values.activepieces.maxConcurrentJobsPerProject | quote }}
+              value: {{ .Values.iopeer.maxConcurrentJobsPerProject | quote }}
             {{- end }}
-            {{- if .Values.activepieces.perplexityBaseUrl }}
+            {{- if .Values.iopeer.perplexityBaseUrl }}
             - name: AP_PERPLEXITY_BASE_URL
-              value: {{ .Values.activepieces.perplexityBaseUrl | quote }}
+              value: {{ .Values.iopeer.perplexityBaseUrl | quote }}
             {{- end }}
-            {{- if .Values.activepieces.piecesSyncMode }}
+            {{- if .Values.iopeer.piecesSyncMode }}
             - name: AP_PIECES_SYNC_MODE
-              value: {{ .Values.activepieces.piecesSyncMode | quote }}
+              value: {{ .Values.iopeer.piecesSyncMode | quote }}
             {{- end }}
-            {{- if .Values.activepieces.featurebaseApiKey }}
+            {{- if .Values.iopeer.featurebaseApiKey }}
             - name: AP_FEATUREBASE_API_KEY
-              value: {{ .Values.activepieces.featurebaseApiKey | quote }}
+              value: {{ .Values.iopeer.featurebaseApiKey | quote }}
             {{- end }}
-            {{- if .Values.activepieces.showChangelog }}
+            {{- if .Values.iopeer.showChangelog }}
             - name: AP_SHOW_CHANGELOG
-              value: {{ .Values.activepieces.showChangelog | quote }}
+              value: {{ .Values.iopeer.showChangelog | quote }}
             {{- end }}
-            {{- if .Values.activepieces.enableFlowOnPublish }}
+            {{- if .Values.iopeer.enableFlowOnPublish }}
             - name: AP_ENABLE_FLOW_ON_PUBLISH
-              value: {{ .Values.activepieces.enableFlowOnPublish | quote }}
+              value: {{ .Values.iopeer.enableFlowOnPublish | quote }}
             {{- end }}
-            {{- if .Values.activepieces.issueArchiveDays }}
+            {{- if .Values.iopeer.issueArchiveDays }}
             - name: AP_ISSUE_ARCHIVE_DAYS
-              value: {{ .Values.activepieces.issueArchiveDays | quote }}
+              value: {{ .Values.iopeer.issueArchiveDays | quote }}
             {{- end }}
-            {{- if .Values.activepieces.pausedFlowTimeoutDays }}
+            {{- if .Values.iopeer.pausedFlowTimeoutDays }}
             - name: AP_PAUSED_FLOW_TIMEOUT_DAYS
-              value: {{ .Values.activepieces.pausedFlowTimeoutDays | quote }}
+              value: {{ .Values.iopeer.pausedFlowTimeoutDays | quote }}
             {{- end }}
-            {{- if .Values.activepieces.logLevel }}
+            {{- if .Values.iopeer.logLevel }}
             - name: AP_LOG_LEVEL
-              value: {{ .Values.activepieces.logLevel | quote }}
+              value: {{ .Values.iopeer.logLevel | quote }}
             {{- end }}
-            {{- if .Values.activepieces.logPretty }}
+            {{- if .Values.iopeer.logPretty }}
             - name: AP_LOG_PRETTY
-              value: {{ .Values.activepieces.logPretty | quote }}
+              value: {{ .Values.iopeer.logPretty | quote }}
             {{- end }}
-            {{- if .Values.activepieces.appWebhookSecrets }}
+            {{- if .Values.iopeer.appWebhookSecrets }}
             - name: AP_APP_WEBHOOK_SECRETS
-              value: {{ .Values.activepieces.appWebhookSecrets | quote }}
+              value: {{ .Values.iopeer.appWebhookSecrets | quote }}
             {{- end }}
-            {{- if .Values.activepieces.maxFileSizeMb }}
+            {{- if .Values.iopeer.maxFileSizeMb }}
             - name: AP_MAX_FILE_SIZE_MB
-              value: {{ .Values.activepieces.maxFileSizeMb | quote }}
+              value: {{ .Values.iopeer.maxFileSizeMb | quote }}
             {{- end }}
-            {{- if .Values.activepieces.sandboxMemoryLimit }}
+            {{- if .Values.iopeer.sandboxMemoryLimit }}
             - name: AP_SANDBOX_MEMORY_LIMIT
-              value: {{ .Values.activepieces.sandboxMemoryLimit | quote }}
+              value: {{ .Values.iopeer.sandboxMemoryLimit | quote }}
             {{- end }}
-            {{- if .Values.activepieces.sandboxPropagatedEnvVars }}
+            {{- if .Values.iopeer.sandboxPropagatedEnvVars }}
             - name: AP_SANDBOX_PROPAGATED_ENV_VARS
-              value: {{ .Values.activepieces.sandboxPropagatedEnvVars | quote }}
+              value: {{ .Values.iopeer.sandboxPropagatedEnvVars | quote }}
             {{- end }}
-            {{- if .Values.activepieces.piecesSource }}
+            {{- if .Values.iopeer.piecesSource }}
             - name: AP_PIECES_SOURCE
-              value: {{ .Values.activepieces.piecesSource | quote }}
+              value: {{ .Values.iopeer.piecesSource | quote }}
             {{- end }}
-            {{- if .Values.activepieces.apiRateLimiting.authn.enabled }}
+            {{- if .Values.iopeer.apiRateLimiting.authn.enabled }}
             - name: AP_API_RATE_LIMIT_AUTHN_ENABLED
-              value: {{ .Values.activepieces.apiRateLimiting.authn.enabled | quote }}
+              value: {{ .Values.iopeer.apiRateLimiting.authn.enabled | quote }}
             {{- end }}
-            {{- if .Values.activepieces.apiRateLimiting.authn.max }}
+            {{- if .Values.iopeer.apiRateLimiting.authn.max }}
             - name: AP_API_RATE_LIMIT_AUTHN_MAX
-              value: {{ .Values.activepieces.apiRateLimiting.authn.max | quote }}
+              value: {{ .Values.iopeer.apiRateLimiting.authn.max | quote }}
             {{- end }}
-            {{- if .Values.activepieces.apiRateLimiting.authn.window }}
+            {{- if .Values.iopeer.apiRateLimiting.authn.window }}
             - name: AP_API_RATE_LIMIT_AUTHN_WINDOW
-              value: {{ .Values.activepieces.apiRateLimiting.authn.window | quote }}
+              value: {{ .Values.iopeer.apiRateLimiting.authn.window | quote }}
             {{- end }}
-            {{- if .Values.activepieces.projectRateLimiter.enabled }}
+            {{- if .Values.iopeer.projectRateLimiter.enabled }}
             - name: AP_PROJECT_RATE_LIMITER_ENABLED
-              value: {{ .Values.activepieces.projectRateLimiter.enabled | quote }}
+              value: {{ .Values.iopeer.projectRateLimiter.enabled | quote }}
             {{- end }}
             - name: AP_ENCRYPTION_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "activepieces.fullname" . }}-secrets
+                  name: {{ include "iopeer.fullname" . }}-secrets
                   key: encryption-key
             - name: AP_JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "activepieces.fullname" . }}-jwt-secret
+                  name: {{ include "iopeer.fullname" . }}-jwt-secret
                   key: jwt-secret
-            {{- if .Values.activepieces.environment }}
+            {{- if .Values.iopeer.environment }}
             - name: AP_ENVIRONMENT
-              value: {{ .Values.activepieces.environment | quote }}
+              value: {{ .Values.iopeer.environment | quote }}
             {{- end }}
-            {{- if .Values.activepieces.executionMode }}
+            {{- if .Values.iopeer.executionMode }}
             - name: AP_EXECUTION_MODE
-              value: {{ .Values.activepieces.executionMode | quote }}
+              value: {{ .Values.iopeer.executionMode | quote }}
             {{- end }}
-            {{- if .Values.activepieces.telemetryEnabled }}
+            {{- if .Values.iopeer.telemetryEnabled }}
             - name: AP_TELEMETRY_ENABLED
-              value: {{ .Values.activepieces.telemetryEnabled | quote }}
+              value: {{ .Values.iopeer.telemetryEnabled | quote }}
             {{- end }}
-            {{- if .Values.activepieces.templatesSourceUrl }}
+            {{- if .Values.iopeer.templatesSourceUrl }}
             - name: AP_TEMPLATES_SOURCE_URL
-              value: {{ .Values.activepieces.templatesSourceUrl | quote }}
+              value: {{ .Values.iopeer.templatesSourceUrl | quote }}
             {{- end }}
-            {{- if .Values.activepieces.flowWorkerConcurrency }}
+            {{- if .Values.iopeer.flowWorkerConcurrency }}
             - name: AP_FLOW_WORKER_CONCURRENCY
-              value: {{ .Values.activepieces.flowWorkerConcurrency | quote }}
+              value: {{ .Values.iopeer.flowWorkerConcurrency | quote }}
             {{- end }}
-            {{- if .Values.activepieces.scheduledWorkerConcurrency }}
+            {{- if .Values.iopeer.scheduledWorkerConcurrency }}
             - name: AP_SCHEDULED_WORKER_CONCURRENCY
-              value: {{ .Values.activepieces.scheduledWorkerConcurrency | quote }}
+              value: {{ .Values.iopeer.scheduledWorkerConcurrency | quote }}
             {{- end }}
-            {{- if .Values.activepieces.triggerDefaultPollInterval }}
+            {{- if .Values.iopeer.triggerDefaultPollInterval }}
             - name: AP_TRIGGER_DEFAULT_POLL_INTERVAL
-              value: {{ .Values.activepieces.triggerDefaultPollInterval | quote }}
+              value: {{ .Values.iopeer.triggerDefaultPollInterval | quote }}
             {{- end }}
-            {{- if .Values.activepieces.triggerTimeoutSeconds }}
+            {{- if .Values.iopeer.triggerTimeoutSeconds }}
             - name: AP_TRIGGER_TIMEOUT_SECONDS
-              value: {{ .Values.activepieces.triggerTimeoutSeconds | quote }}
+              value: {{ .Values.iopeer.triggerTimeoutSeconds | quote }}
             {{- end }}
-            {{- if .Values.activepieces.flowTimeoutSeconds }}
+            {{- if .Values.iopeer.flowTimeoutSeconds }}
             - name: AP_FLOW_TIMEOUT_SECONDS
-              value: {{ .Values.activepieces.flowTimeoutSeconds | quote }}
+              value: {{ .Values.iopeer.flowTimeoutSeconds | quote }}
             {{- end }}
-            {{- if .Values.activepieces.webhookTimeoutSeconds }}
+            {{- if .Values.iopeer.webhookTimeoutSeconds }}
             - name: AP_WEBHOOK_TIMEOUT_SECONDS
-              value: {{ .Values.activepieces.webhookTimeoutSeconds | quote }}
+              value: {{ .Values.iopeer.webhookTimeoutSeconds | quote }}
             {{- end }}
-            {{- if .Values.activepieces.executionDataRetentionDays }}
+            {{- if .Values.iopeer.executionDataRetentionDays }}
             - name: AP_EXECUTION_DATA_RETENTION_DAYS
-              value: {{ .Values.activepieces.executionDataRetentionDays | quote }}
+              value: {{ .Values.iopeer.executionDataRetentionDays | quote }}
             {{- end }}
             {{- if .Values.postgresql.enabled }}
             # PostgreSQL configuration
@@ -208,9 +208,9 @@ spec:
             - name: AP_POSTGRES_DATABASE
               value: {{ .Values.postgresql.auth.database | quote }}
             {{- end }}
-            {{- if .Values.postgresql.host | default (printf "%s-postgresql" (include "activepieces.fullname" .)) }}
+            {{- if .Values.postgresql.host | default (printf "%s-postgresql" (include "iopeer.fullname" .)) }}
             - name: AP_POSTGRES_HOST
-              value: {{ .Values.postgresql.host | default (printf "%s-postgresql" (include "activepieces.fullname" .)) | quote }}
+              value: {{ .Values.postgresql.host | default (printf "%s-postgresql" (include "iopeer.fullname" .)) | quote }}
             {{- end }}
             {{- if .Values.postgresql.port }}
             - name: AP_POSTGRES_PORT
@@ -223,7 +223,7 @@ spec:
             - name: AP_POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "activepieces.fullname" . }}-postgresql
+                  name: {{ include "iopeer.fullname" . }}-postgresql
                   key: postgres-password
             {{- if .Values.postgresql.useSSL }}
             - name: AP_POSTGRES_USE_SSL
@@ -246,9 +246,9 @@ spec:
             # Redis configuration
             - name: AP_QUEUE_MODE
               value: "REDIS"
-            {{- if .Values.redis.host | default (printf "%s-redis-master" (include "activepieces.fullname" .)) }}
+            {{- if .Values.redis.host | default (printf "%s-redis-master" (include "iopeer.fullname" .)) }}
             - name: AP_REDIS_HOST
-              value: {{ .Values.redis.host | default (printf "%s-redis-master" (include "activepieces.fullname" .)) | quote }}
+              value: {{ .Values.redis.host | default (printf "%s-redis-master" (include "iopeer.fullname" .)) | quote }}
             {{- end }}
             {{- if .Values.redis.port }}
             - name: AP_REDIS_PORT
@@ -384,22 +384,22 @@ spec:
               value: {{ .Values.queueUi.password | quote }}
             {{- end }}
             {{- end }}
-            {{- if .Values.activepieces.engineExecutablePath }}
+            {{- if .Values.iopeer.engineExecutablePath }}
             - name: AP_ENGINE_EXECUTABLE_PATH
-              value: {{ .Values.activepieces.engineExecutablePath | quote }}
+              value: {{ .Values.iopeer.engineExecutablePath | quote }}
             {{- end }}
             # OpenTelemetry configuration
-            {{- if .Values.activepieces.otel.enabled }}
+            {{- if .Values.iopeer.otel.enabled }}
             - name: AP_OTEL_ENABLED
-              value: {{ .Values.activepieces.otel.enabled | quote }}
+              value: {{ .Values.iopeer.otel.enabled | quote }}
             {{- end }}
-            {{- if .Values.activepieces.otel.exporterOtlpEndpoint }}
+            {{- if .Values.iopeer.otel.exporterOtlpEndpoint }}
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: {{ .Values.activepieces.otel.exporterOtlpEndpoint | quote }}
+              value: {{ .Values.iopeer.otel.exporterOtlpEndpoint | quote }}
             {{- end }}
-            {{- if .Values.activepieces.otel.exporterOtlpHeaders }}
+            {{- if .Values.iopeer.otel.exporterOtlpHeaders }}
             - name: OTEL_EXPORTER_OTLP_HEADERS
-              value: {{ .Values.activepieces.otel.exporterOtlpHeaders | quote }}
+              value: {{ .Values.iopeer.otel.exporterOtlpHeaders | quote }}
             {{- end }}
           {{- with .Values.livenessProbe }}
           livenessProbe:
@@ -425,7 +425,7 @@ spec:
         {{- if .Values.persistence.enabled }}
         - name: cache
           persistentVolumeClaim:
-            claimName: {{ include "activepieces.fullname" . }}-cache
+            claimName: {{ include "iopeer.fullname" . }}-cache
         {{- end }}
         {{- with .Values.volumes }}
         {{- toYaml . | nindent 8 }}

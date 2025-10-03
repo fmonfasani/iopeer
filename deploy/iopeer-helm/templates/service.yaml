@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "activepieces.fullname" . }}
+  name: {{ include "iopeer.fullname" . }}
   labels:
-    {{- include "activepieces.labels" . | nindent 4 }}
+    {{- include "iopeer.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "activepieces.selectorLabels" . | nindent 4 }}
+    {{- include "iopeer.selectorLabels" . | nindent 4 }}
