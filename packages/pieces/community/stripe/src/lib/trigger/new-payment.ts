@@ -1,9 +1,9 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { stripeCommon } from '../common';
 import { stripeAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/shared';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { isEmpty } from '@IOpeer/shared';
 
 export const stripeNewPayment = createTrigger({
   auth: stripeAuth,
@@ -35,7 +35,7 @@ export const stripeNewPayment = createTrigger({
       name: 'Test user',
       phone: null,
     },
-    calculated_statement_descriptor: 'WWW.ACTIVEPIECES.COM',
+    calculated_statement_descriptor: 'WWW.IOpeer.COM',
     captured: true,
     created: 1675180355,
     currency: 'usd',

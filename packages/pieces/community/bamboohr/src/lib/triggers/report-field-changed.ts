@@ -1,4 +1,4 @@
-import { bambooHrAuth } from '../../index';
+﻿import { bambooHrAuth } from '../../index';
 import {
   DedupeStrategy,
   HttpMethod,
@@ -6,13 +6,13 @@ import {
   Polling,
   httpClient,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   PiecePropValueSchema,
   TriggerStrategy,
   createTrigger,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 
 const polling: Polling<

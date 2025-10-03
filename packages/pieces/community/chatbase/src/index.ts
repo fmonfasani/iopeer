@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createChatbotAction } from './lib/actions/create-chatbot';
 import { listChatbotsAction } from './lib/actions/list-all-chatbots';
 import { searchConversationsAction } from './lib/actions/search-conversations-by-query';
@@ -18,7 +18,7 @@ export const chatbase = createPiece({
 	displayName: 'Chatbase',
 	description: 'Build and manage AI chatbots with custom sources.',
 	auth: chatbaseAuth,
-	logoUrl: 'https://cdn.activepieces.com/pieces/chatbase.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/chatbase.png',
 	categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
 	authors: ['krushnarout'],
 	actions: [

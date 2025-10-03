@@ -1,11 +1,11 @@
-import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
+﻿import { PieceAuth, createPiece } from "@IOpeer/pieces-framework";
 import { createDocumentFromText } from "./lib/actions/create-document-from-text";
 import { uploadFileAction } from "./lib/actions/upload-file";
 import { sendMessageAction } from "./lib/actions/send-message";
 import { createConversationAction } from "./lib/actions/create-conversation";
 import { findBotAction } from "./lib/actions/find-bot";
 import { findConversationAction } from "./lib/actions/find-conversation";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { codyClient } from "./lib/common/client";
 
 // Define the authentication property using PieceAuth.SecretText
@@ -41,7 +41,7 @@ export const cody = createPiece({
     displayName: "Cody",
     auth: codyAuth,
     minimumSupportedRelease: '0.36.1',
-    logoUrl: "https://cdn.activepieces.com/pieces/cody.png",
+    logoUrl: "https://cdn.IOpeer.com/pieces/cody.png",
     authors: [ 'Pranith124','sanket-a11y' ],
     actions: [
         createDocumentFromText,

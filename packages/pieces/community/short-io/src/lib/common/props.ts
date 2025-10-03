@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { shortIoApiCall, ShortioAuthProps } from './client';
 
 interface ShortIoDomain {
@@ -106,7 +106,7 @@ export const linkIdDropdown = Property.Dropdown({
       return {
         disabled: false,
         options: response.links.map((link) => ({
-          label: `${link.path || '(auto)'} → ${link.originalURL}`,
+          label: `${link.path || '(auto)'} â†’ ${link.originalURL}`,
           value: link.idString,
         })),
         placeholder:

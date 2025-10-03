@@ -1,6 +1,6 @@
-import { PieceAuth } from "@activepieces/pieces-framework";
+﻿import { PieceAuth } from "@IOpeer/pieces-framework";
 import { makeRequest } from "./client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 
 export const NinoxAuth = PieceAuth.SecretText({
     displayName: 'Ninox API Key',

@@ -1,6 +1,6 @@
-import { pipedriveAuth } from '../../';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { pipedriveAuth } from '../../';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
@@ -8,7 +8,7 @@ import {
     pipedriveTransformV1CustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 interface PipedriveLeadV2 {
 	id: string;

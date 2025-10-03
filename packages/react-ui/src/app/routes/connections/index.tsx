@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
   CheckIcon,
@@ -57,7 +57,7 @@ import {
   AppConnectionWithoutSensitiveData,
   Permission,
   PlatformRole,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 function AppConnectionsPage() {
   const navigate = useNavigate();

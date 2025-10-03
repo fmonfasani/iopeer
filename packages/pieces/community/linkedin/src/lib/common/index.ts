@@ -1,9 +1,9 @@
-import { ApFile, Property } from '@activepieces/pieces-framework';
+﻿import { ApFile, Property } from '@IOpeer/pieces-framework';
 import {
   HttpMethod,
   httpClient,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 import FormData from 'form-data';
 

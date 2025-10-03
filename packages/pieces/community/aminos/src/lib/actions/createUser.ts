@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-//import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+//import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { aminosAuth } from '../..';
 export const createUser = createAction({
-  // auth: check https://www.activepieces.com/docs/developers/piece-reference/authentication,
+  // auth: check https://www.IOpeer.com/docs/developers/piece-reference/authentication,
   auth: aminosAuth,
   name: 'createUser',
   displayName: 'Create User on Aminos One',

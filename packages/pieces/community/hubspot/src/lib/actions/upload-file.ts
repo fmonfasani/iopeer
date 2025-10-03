@@ -1,10 +1,10 @@
-import { hubspotAuth } from '../../';
+﻿import { hubspotAuth } from '../../';
 import {
 	createAction,
 	DropdownOption,
 	PiecePropValueSchema,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@hubspot/api-client';
 
 export const uploadFileAction = createAction({

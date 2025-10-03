@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
 
@@ -11,7 +11,7 @@ export const stripeUpdateCustomer = createAction({
   name: 'update_customer',
   auth: stripeAuth,
   displayName: 'Update Customer',
-  description: 'Modify an existing customer’s details.',
+  description: 'Modify an existing customerâ€™s details.',
   props: {
     customer: stripeCommon.customer, 
 

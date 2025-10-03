@@ -1,13 +1,13 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 const WHATCONVERTS_API_URL = 'https://app.whatconverts.com/api/v1';
 

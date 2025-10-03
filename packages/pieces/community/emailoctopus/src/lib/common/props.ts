@@ -1,10 +1,10 @@
-import {
+﻿import {
   Property,
   DynamicPropsValue,
   DropdownState,
   InputPropertyMap,
   PropertyContext,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { EmailOctopusClient } from './client';
 
 type AuthAndProps = {

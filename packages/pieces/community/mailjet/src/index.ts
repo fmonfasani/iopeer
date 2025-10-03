@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { sendEmail } from './lib/actions/send-email';
 
 export const mailjetAuth = PieceAuth.BasicAuth({
@@ -20,7 +20,7 @@ export const mailjet = createPiece({
   description: 'Email delivery service for sending transactional and marketing emails',
   auth: mailjetAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/mailjet.svg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mailjet.svg',
   categories: [PieceCategory.COMMUNICATION],
   authors: ['christian-schab'],
   actions: [sendEmail],

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-grok-xai",
+﻿{
+  "name": "@IOpeer/piece-grok-xai",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,5 +1,5 @@
-import { ActionContext, createAction, CustomAuthProperty, Property } from "@activepieces/pieces-framework";
-import { AuthenticationType, httpClient } from "@activepieces/pieces-common";
+﻿import { ActionContext, createAction, CustomAuthProperty, Property } from "@IOpeer/pieces-framework";
+import { AuthenticationType, httpClient } from "@IOpeer/pieces-common";
 import { VEHICLE_EVENTS_OPERATIONS } from "./constant";
 import { VehicleEventsParams, VehicleEventsBodyType } from "./type";
 import { dimoAuth } from '../../../index';

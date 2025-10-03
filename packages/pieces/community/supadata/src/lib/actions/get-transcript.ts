@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, QueryParams, httpClient } from '@IOpeer/pieces-common';
 import { supadataAuth } from '../..';
 import { supadataConfig } from '../config';
 

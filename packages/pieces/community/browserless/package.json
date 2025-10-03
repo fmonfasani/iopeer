@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-browserless",
+﻿{
+  "name": "@IOpeer/piece-browserless",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./src/index.js",

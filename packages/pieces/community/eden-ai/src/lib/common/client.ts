@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 
 const BASE_URL = 'https://api.edenai.run/v2';
 const DEFAULT_TIMEOUT = 20000;

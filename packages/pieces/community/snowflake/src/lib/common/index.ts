@@ -1,8 +1,8 @@
-import {
+﻿import {
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { snowflakeAuth } from '../..';
 import snowflake from 'snowflake-sdk';
 

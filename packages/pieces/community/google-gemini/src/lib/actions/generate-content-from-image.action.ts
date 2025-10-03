@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+﻿import { promises as fs } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { GoogleGenerativeAI } from '@google/generative-ai';
@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid';
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { googleGeminiAuth } from '../../index';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
 

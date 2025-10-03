@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@IOpeer/pieces-common';
 import { excelAuth } from '../../index';
 import { excelCommon } from '../common/common';
 

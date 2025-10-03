@@ -1,10 +1,10 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 
@@ -86,67 +86,67 @@ export const xeroUploadAttachment = createAction({
             url: 'https://api.xero.com/api.xro/2.0/Invoices?summaryOnly=true&page=1',
             arrayKey: 'Invoices',
             idKey: 'InvoiceID',
-            label: (inv) => [inv.InvoiceNumber || inv.InvoiceID, inv.Contact?.Name, inv.Status].filter(Boolean).join(' • '),
+            label: (inv) => [inv.InvoiceNumber || inv.InvoiceID, inv.Contact?.Name, inv.Status].filter(Boolean).join(' â€¢ '),
           },
           CreditNotes: {
             url: 'https://api.xero.com/api.xro/2.0/CreditNotes',
             arrayKey: 'CreditNotes',
             idKey: 'CreditNoteID',
-            label: (cn) => [cn.CreditNoteNumber || cn.CreditNoteID, cn.Contact?.Name, cn.Type, cn.Status].filter(Boolean).join(' • '),
+            label: (cn) => [cn.CreditNoteNumber || cn.CreditNoteID, cn.Contact?.Name, cn.Type, cn.Status].filter(Boolean).join(' â€¢ '),
           },
           PurchaseOrders: {
             url: 'https://api.xero.com/api.xro/2.0/PurchaseOrders?page=1',
             arrayKey: 'PurchaseOrders',
             idKey: 'PurchaseOrderID',
-            label: (po) => [po.PurchaseOrderNumber || po.PurchaseOrderID, po.Contact?.Name, po.Status].filter(Boolean).join(' • '),
+            label: (po) => [po.PurchaseOrderNumber || po.PurchaseOrderID, po.Contact?.Name, po.Status].filter(Boolean).join(' â€¢ '),
           },
           Quotes: {
             url: 'https://api.xero.com/api.xro/2.0/Quotes?page=1',
             arrayKey: 'Quotes',
             idKey: 'QuoteID',
-            label: (q) => [q.QuoteNumber || q.QuoteID, q.Contact?.Name, q.Status].filter(Boolean).join(' • '),
+            label: (q) => [q.QuoteNumber || q.QuoteID, q.Contact?.Name, q.Status].filter(Boolean).join(' â€¢ '),
           },
           BankTransfers: {
             url: 'https://api.xero.com/api.xro/2.0/BankTransfers',
             arrayKey: 'BankTransfers',
             idKey: 'BankTransferID',
-            label: (bt) => [bt.BankTransferID, bt.Amount ? `Amount ${bt.Amount}` : undefined].filter(Boolean).join(' • '),
+            label: (bt) => [bt.BankTransferID, bt.Amount ? `Amount ${bt.Amount}` : undefined].filter(Boolean).join(' â€¢ '),
           },
           BankTransactions: {
             url: 'https://api.xero.com/api.xro/2.0/BankTransactions?page=1',
             arrayKey: 'BankTransactions',
             idKey: 'BankTransactionID',
-            label: (bt) => [bt.Type, bt.BankTransactionID, bt.Contact?.Name, bt.Amount].filter(Boolean).join(' • '),
+            label: (bt) => [bt.Type, bt.BankTransactionID, bt.Contact?.Name, bt.Amount].filter(Boolean).join(' â€¢ '),
           },
           Contacts: {
             url: 'https://api.xero.com/api.xro/2.0/Contacts?summaryOnly=true&page=1',
             arrayKey: 'Contacts',
             idKey: 'ContactID',
-            label: (c) => [c.Name, c.EmailAddress].filter(Boolean).join(' • '),
+            label: (c) => [c.Name, c.EmailAddress].filter(Boolean).join(' â€¢ '),
           },
           Accounts: {
             url: 'https://api.xero.com/api.xro/2.0/Accounts',
             arrayKey: 'Accounts',
             idKey: 'AccountID',
-            label: (a) => [a.Name || a.Code || a.AccountID, a.Code].filter(Boolean).join(' • '),
+            label: (a) => [a.Name || a.Code || a.AccountID, a.Code].filter(Boolean).join(' â€¢ '),
           },
           ManualJournals: {
             url: 'https://api.xero.com/api.xro/2.0/ManualJournals?page=1',
             arrayKey: 'ManualJournals',
             idKey: 'ManualJournalID',
-            label: (mj) => [mj.ManualJournalID, mj.Date].filter(Boolean).join(' • '),
+            label: (mj) => [mj.ManualJournalID, mj.Date].filter(Boolean).join(' â€¢ '),
           },
           Receipts: {
             url: 'https://api.xero.com/api.xro/2.0/Receipts?page=1',
             arrayKey: 'Receipts',
             idKey: 'ReceiptID',
-            label: (r) => [r.ReceiptID, r.Date, r.Total].filter(Boolean).join(' • '),
+            label: (r) => [r.ReceiptID, r.Date, r.Total].filter(Boolean).join(' â€¢ '),
           },
           RepeatingInvoices: {
             url: 'https://api.xero.com/api.xro/2.0/RepeatingInvoices?page=1',
             arrayKey: 'RepeatingInvoices',
             idKey: 'RepeatingInvoiceID',
-            label: (ri) => [ri.RepeatingInvoiceID, ri.Status].filter(Boolean).join(' • '),
+            label: (ri) => [ri.RepeatingInvoiceID, ri.Status].filter(Boolean).join(' â€¢ '),
           },
         };
 

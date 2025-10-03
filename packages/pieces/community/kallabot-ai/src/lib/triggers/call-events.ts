@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { MarkdownVariant } from '@IOpeer/shared';
 
 const webhookInstructions = `**Setup Instructions:**
 1. Copy the webhook URL below.

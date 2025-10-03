@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-smoove",
+﻿{
+  "name": "@IOpeer/piece-smoove",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./src/index.js",

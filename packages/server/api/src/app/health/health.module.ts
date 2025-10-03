@@ -1,4 +1,4 @@
-import { ALL_PRINCIPAL_TYPES } from '@activepieces/shared'
+﻿import { ALL_PRINCIPAL_TYPES } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 
 export const healthModule: FastifyPluginAsyncTypebox = async (app) => {

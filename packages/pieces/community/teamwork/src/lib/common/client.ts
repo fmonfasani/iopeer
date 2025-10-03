@@ -1,10 +1,10 @@
-import {
+﻿import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { teamworkAuth } from './auth';
 
 const MAX_RETRIES = 5;

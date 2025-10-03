@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Create Trigger'
 icon: 'circle-6'
 description: ''
@@ -43,12 +43,12 @@ import {
   Polling,
   httpClient,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   PiecePropValueSchema,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 
 const polling: Polling<
@@ -108,7 +108,7 @@ The way polling triggers usually work is as follows:
 To make the trigger readable by IOPeer, add it to the array of triggers in the piece definition.
 
 ```typescript
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@IOpeer/pieces-framework';
 import { getIcecreamFlavor } from './lib/actions/get-icecream-flavor';
 // Don't forget to add the following import.
 import { newFlavorCreated } from './lib/triggers/new-flavor-created';

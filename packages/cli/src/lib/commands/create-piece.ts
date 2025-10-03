@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+﻿import chalk from 'chalk';
 import { Command } from 'commander';
 import { readdir, unlink, writeFile } from 'fs/promises';
 import inquirer from 'inquirer';
@@ -18,7 +18,7 @@ const validatePieceName = async (pieceName: string) => {
   if (!pieceNamePattern.test(pieceName)) {
     console.log(
       chalk.red(
-        `🚨 Invalid piece name: ${pieceName}. Piece names can only contain lowercase letters, numbers, and hyphens.`
+        `ðŸš¨ Invalid piece name: ${pieceName}. Piece names can only contain lowercase letters, numbers, and hyphens.`
       )
     );
     process.exit(1);
@@ -31,7 +31,7 @@ const validatePackageName = async (packageName: string) => {
   if (!packageNamePattern.test(packageName)) {
     console.log(
       chalk.red(
-        `🚨 Invalid package name: ${packageName}. Package names can only contain lowercase letters, numbers, and hyphens.`
+        `ðŸš¨ Invalid package name: ${packageName}. Package names can only contain lowercase letters, numbers, and hyphens.`
       )
     );
     process.exit(1);
@@ -41,7 +41,7 @@ const validatePackageName = async (packageName: string) => {
 const checkIfPieceExists = async (pieceName: string) => {
   const pieceFolder = await findPiece(pieceName);
   if (pieceFolder) {
-    console.log(chalk.red(`🚨 Piece already exists at ${pieceFolder}`));
+    console.log(chalk.red(`ðŸš¨ Piece already exists at ${pieceFolder}`));
     process.exit(1);
   }
 };
@@ -63,7 +63,7 @@ const nxGenerateNodeLibrary = async (
     '--unitTestRunner=none',
   ].join(' ');
 
-  console.log(chalk.blue(`🛠️ Executing nx command: ${nxGenerateCommand}`));
+  console.log(chalk.blue(`ðŸ› ï¸ Executing nx command: ${nxGenerateCommand}`));
 
   await exec(nxGenerateCommand);
 };
@@ -91,7 +91,7 @@ const generateIndexTsFile = async (pieceName: string, pieceType: string) => {
     .join('');
 
   const indexTemplate = `
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+    import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 
     export const ${pieceNameCamelCase} = createPiece({
       displayName: "${capitalizeFirstLetter(pieceName)}",
@@ -199,7 +199,7 @@ export const createPiece = async (
   await checkIfPieceExists(pieceName);
   await nxGenerateNodeLibrary(pieceName, packageName, pieceType);
   await setupGeneratedLibrary(pieceName, pieceType);
-  console.log(chalk.green('✨  Done!'));
+  console.log(chalk.green('âœ¨  Done!'));
   console.log(
     chalk.yellow(
       `The piece has been generated at: packages/pieces/${pieceType}/${pieceName}`

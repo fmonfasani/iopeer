@@ -1,12 +1,12 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Trash } from 'lucide-react';
 
 import { PermissionNeededTooltip } from '@/components/custom/permission-needed-tooltip';
 import { UserAvatar } from '@/components/ui/user-avatar';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
-import { ProjectMemberWithUser } from '@activepieces/ee-shared';
-import { Permission } from '@activepieces/shared';
+import { ProjectMemberWithUser } from '@IOpeer/ee-shared';
+import { Permission } from '@IOpeer/shared';
 
 import { ConfirmationDeleteDialog } from '../../../components/delete-dialog';
 import { Button } from '../../../components/ui/button';

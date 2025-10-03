@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpError,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { mattermostAuth } from '../..';
 
 export const sendMessage = createAction({

@@ -1,4 +1,4 @@
-import { AIProvider } from '@activepieces/common-ai'
+﻿import { AIProvider } from '@IOpeer/common-ai'
 import {
     ApiKey,
     ApplicationEvent,
@@ -15,7 +15,7 @@ import {
     OtpType,
     ProjectMember,
     SigningKey,
-} from '@activepieces/ee-shared'
+} from '@IOpeer/ee-shared'
 import {
     AiOverageState,
     apId,
@@ -55,7 +55,7 @@ import {
     UserIdentityProvider,
     UserInvitation,
     UserStatus,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { faker } from '@faker-js/faker'
 import bcrypt from 'bcrypt'
 import dayjs from 'dayjs'

@@ -1,4 +1,4 @@
-import { Value } from '@sinclair/typebox/value';
+﻿import { Value } from '@sinclair/typebox/value';
 import { useRef } from 'react';
 
 import {
@@ -6,7 +6,7 @@ import {
   PieceSelectorPieceItem,
   PieceStepMetadataWithSuggestions,
 } from '@/lib/types';
-import { PiecePropertyMap, PropertyType } from '@activepieces/pieces-framework';
+import { PiecePropertyMap, PropertyType } from '@IOpeer/pieces-framework';
 import {
   FlowAction,
   FlowActionType,
@@ -26,7 +26,7 @@ import {
   FlowTriggerType,
   PropertyExecutionType,
   DEFAULT_SAMPLE_DATA_SETTINGS,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { formUtils } from './form-utils';
 const defaultCode = `export const code = async (inputs) => {
@@ -36,11 +36,11 @@ const defaultCode = `export const code = async (inputs) => {
 //can't remove this from search results, because it is used to add actions to the flow, check todo-dialog for more details
 const hiddenActions = [
   {
-    pieceName: '@activepieces/piece-todos',
+    pieceName: '@IOpeer/piece-todos',
     actionName: 'wait_for_approval',
   },
   {
-    pieceName: '@activepieces/piece-todos',
+    pieceName: '@IOpeer/piece-todos',
     actionName: 'createTodoAndWait',
   },
 ];
@@ -360,12 +360,12 @@ export const PIECE_SELECTOR_ELEMENTS_HEIGHTS = {
 };
 
 const isMcpToolTrigger = (pieceName: string, triggerName: string) => {
-  return pieceName === '@activepieces/piece-mcp' && triggerName === 'mcp_tool';
+  return pieceName === '@IOpeer/piece-mcp' && triggerName === 'mcp_tool';
 };
 
 const isChatTrigger = (pieceName: string, triggerName: string) => {
   return (
-    pieceName === '@activepieces/piece-forms' &&
+    pieceName === '@IOpeer/piece-forms' &&
     triggerName === 'chat_submission'
   );
 };

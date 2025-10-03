@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { togglTrackAuth } from '../..';
 import { togglCommon } from '../common';
 import {

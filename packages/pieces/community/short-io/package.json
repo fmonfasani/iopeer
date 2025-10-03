@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-short-io",
+﻿{
+  "name": "@IOpeer/piece-short-io",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

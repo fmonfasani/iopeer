@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { HttpMethod, getAccessTokenOrThrow } from '@activepieces/pieces-common';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
+import { HttpMethod, getAccessTokenOrThrow } from '@IOpeer/pieces-common';
 import { callClickUpApi, clickupCommon } from '../../common';
 import { clickupAuth } from '../../../';
 

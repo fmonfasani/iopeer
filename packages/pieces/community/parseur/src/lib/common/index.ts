@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { PieceAuth } from '@IOpeer/pieces-framework';
 import {
   CreateDocumentFromFileParams,
   CreateDocumentFromFileResponse,
@@ -22,7 +22,7 @@ import {
 export const parseurAuth = PieceAuth.SecretText({
   displayName: 'API Key',
   description:
-    'Create a new API key in Account → API keys in the Parseur app: https://app.parseur.com/account/api-keys',
+    'Create a new API key in Account â†’ API keys in the Parseur app: https://app.parseur.com/account/api-keys',
   required: true,
 });
 

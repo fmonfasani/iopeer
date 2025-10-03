@@ -1,6 +1,6 @@
-
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { ML_ACTIONS } from './lib/actions';
 import { API_CALLS_ACTIONS } from './lib/actions/api-calls';
 import { API_TOKENS_ACTIONS } from './lib/actions/api-tokens';
@@ -23,7 +23,7 @@ export const zooAuth = PieceAuth.SecretText({
 export const textToCad = createPiece({
   displayName: 'Zoo',
   description: 'Generate and iterate on 3D models from text descriptions using ML endpoints.',
-  logoUrl: 'https://cdn.activepieces.com/pieces/zoo.jpg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/zoo.jpg',
   auth: zooAuth,
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   minimumSupportedRelease: '0.20.0',

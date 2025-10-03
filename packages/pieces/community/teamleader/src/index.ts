@@ -1,7 +1,7 @@
-
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { teamleaderAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -24,7 +24,7 @@ import { newInvoice } from './lib/triggers/new-invoice';
 export const teamleader = createPiece({
     displayName: 'Teamleader',
     minimumSupportedRelease: '0.36.1',
-    logoUrl: 'https://cdn.activepieces.com/pieces/teamleader.png',
+    logoUrl: 'https://cdn.IOpeer.com/pieces/teamleader.png',
     categories: [PieceCategory.SALES_AND_CRM, PieceCategory.BUSINESS_INTELLIGENCE],
     authors: ['owuzo','onyedikachi-david'],
     auth: teamleaderAuth,

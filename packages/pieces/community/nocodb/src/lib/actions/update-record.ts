@@ -1,5 +1,5 @@
-import { nocodbAuth } from '../../';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { nocodbAuth } from '../../';
+import { createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { makeClient, nocodbCommon } from '../common';
 
 export const updateRecordAction = createAction({

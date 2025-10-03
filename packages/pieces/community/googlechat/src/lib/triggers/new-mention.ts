@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { googleChatApiAuth, googleChatCommon } from '../common';
 import { projectsDropdown, spacesDropdown, spacesMembersDropdown } from '../common/props';
 import { googleChatAPIService } from '../common/requests';

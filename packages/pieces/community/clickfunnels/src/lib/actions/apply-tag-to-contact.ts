@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { clickfunnelsAuth } from '../common/constants';
 import {
   contactsDropdown,
@@ -12,7 +12,7 @@ export const applyTagToContact = createAction({
   auth: clickfunnelsAuth,
   name: 'applyTagToContact',
   displayName: 'Apply Tag to Contact',
-  description: 'Apply a tag to a contact if it doesn’t already exist.',
+  description: 'Apply a tag to a contact if it doesnâ€™t already exist.',
   props: {
     teamId: teamsDropdown(['auth']),
     workspaceId: workspacesDropdown(['auth', 'teamId']),

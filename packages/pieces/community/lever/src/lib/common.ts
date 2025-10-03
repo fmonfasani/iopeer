@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 
 export type LeverFieldType = {
   id: string;
@@ -155,10 +155,10 @@ export const LeverFieldMapping: Record<
           options: {
             options: [
               { label: 'n.a.', value: 0 },
-              { label: '👎👎', value: 1 },
-              { label: '👎', value: 2 },
-              { label: '👍', value: 3 },
-              { label: '👍👍', value: 4 },
+              { label: 'ðŸ‘ŽðŸ‘Ž', value: 1 },
+              { label: 'ðŸ‘Ž', value: 2 },
+              { label: 'ðŸ‘', value: 3 },
+              { label: 'ðŸ‘ðŸ‘', value: 4 },
             ],
           },
         });

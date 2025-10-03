@@ -1,6 +1,6 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { quickbooksAuth } from '../index'; // Correct path relative to actions/find-payment.ts
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 
 interface QuickbooksPayment {

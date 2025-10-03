@@ -1,4 +1,4 @@
-import { zodResolver } from '@hookform/resolvers/zod';
+﻿import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { PencilIcon, Plus, TrashIcon } from 'lucide-react';
@@ -31,7 +31,7 @@ import {
   ProjectReleaseType,
   ProjectSyncPlan,
   TableOperationType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { OperationChange } from './operation-change';
 

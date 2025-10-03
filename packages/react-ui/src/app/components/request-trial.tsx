@@ -1,10 +1,10 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { Button } from '@/components/ui/button';
 import { useManagePlanDialogStore } from '@/features/billing/components/upgrade-dialog/store';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { userHooks } from '@/hooks/user-hooks';
-import { ApEdition, ApFlagId } from '@activepieces/shared';
+import { ApEdition, ApFlagId } from '@IOpeer/shared';
 
 export type FeatureKey =
   | 'PROJECTS'

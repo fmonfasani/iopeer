@@ -1,4 +1,4 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import { GmailRequests } from './data';
 import { GmailLabel } from './models';
 

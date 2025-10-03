@@ -1,6 +1,6 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 
 // Account actions
 import { get_me } from './lib/actions/account/get-me';
@@ -100,7 +100,7 @@ export const simplirouteAuth = PieceAuth.SecretText({
 export const simpliroute = createPiece({
   displayName: 'SimpliRoute',
   description: 'Connect with SimpliRoute, the last-mile delivery optimization platform. Manage clients, vehicles, visits, routes, and optimize your delivery operations.',
-  logoUrl: 'https://cdn.activepieces.com/pieces/simpliroute.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/simpliroute.png',
   minimumSupportedRelease: '0.30.0',
   categories: [PieceCategory.PRODUCTIVITY, PieceCategory.BUSINESS_INTELLIGENCE],
   authors: ['rfjaimes-simpli'],

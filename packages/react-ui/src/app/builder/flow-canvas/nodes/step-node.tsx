@@ -1,4 +1,4 @@
-import { useDraggable } from '@dnd-kit/core';
+﻿import { useDraggable } from '@dnd-kit/core';
 import { Handle, NodeProps, Position } from '@xyflow/react';
 import { ChevronDown } from 'lucide-react';
 import React, { useMemo } from 'react';
@@ -14,7 +14,7 @@ import {
   Step,
   FlowTriggerType,
   flowStructureUtil,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { flowUtilConsts, STEP_CONTEXT_MENU_ATTRIBUTE } from '../utils/consts';
 import { flowCanvasUtils } from '../utils/flow-canvas-utils';

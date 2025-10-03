@@ -1,6 +1,6 @@
-import { hunterAuth } from '../../index';
-import { createTrigger, TriggerStrategy, PiecePropValueSchema } from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { hunterAuth } from '../../index';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { hunterApiCall } from '../common';
 import { Lead } from '../common/types';
 

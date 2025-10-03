@@ -1,4 +1,4 @@
-import { DynamicPropsValue, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
 import { BikaAuth } from '../..';
 import { BikaClient } from './client';
 import { BikaFieldType, BikaNumericFieldTypes } from './constants';

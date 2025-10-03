@@ -1,9 +1,9 @@
-import {
+﻿import {
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
 	createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { BikaCommon, createNewFields, makeClient } from '../common';
 import { BikaAuth } from '../../index';
 

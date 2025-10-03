@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { PaperformCreateProductResponse } from '../common/types';
 import { paperformCommonProps } from '../common/props';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const updateFormProduct = createAction({
   auth: paperformAuth,
@@ -71,19 +71,19 @@ export const updateFormProduct = createAction({
     } = propsValue;
     
     if (price !== undefined && price < 0) {
-      throw new Error('Product price must be ≥ 0');
+      throw new Error('Product price must be â‰¥ 0');
     }
     
     if (quantity !== undefined && quantity < 0) {
-      throw new Error('Quantity must be ≥ 0');
+      throw new Error('Quantity must be â‰¥ 0');
     }
     
     if (minimum !== undefined && minimum < 0) {
-      throw new Error('Minimum quantity must be ≥ 0');
+      throw new Error('Minimum quantity must be â‰¥ 0');
     }
     
     if (maximum !== undefined && maximum < 0) {
-      throw new Error('Maximum quantity must be ≥ 0');
+      throw new Error('Maximum quantity must be â‰¥ 0');
     }
     
     if (minimum !== undefined && maximum !== undefined && minimum > maximum) {

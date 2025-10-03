@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { githubAuth } from '../../index';
 import { githubApiCall, githubCommon, RequestParams } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const githubFindIssueAction = createAction({
   auth: githubAuth,

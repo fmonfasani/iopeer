@@ -1,5 +1,5 @@
-import { OAuthApp } from '@activepieces/ee-shared'
-import { Platform } from '@activepieces/shared'
+﻿import { OAuthApp } from '@IOpeer/ee-shared'
+import { Platform } from '@IOpeer/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

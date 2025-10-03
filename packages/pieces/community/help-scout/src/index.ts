@@ -1,7 +1,7 @@
-import {
+﻿import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { helpScoutAuth } from './lib/common/auth';
 import { createConversation } from './lib/actions/create-conversation';
 import { sendReply } from './lib/actions/send-reply';
@@ -13,17 +13,17 @@ import { findUser } from './lib/actions/find-user';
 import { conversationCreated } from './lib/triggers/conversation-created';
 import { conversationAssigned } from './lib/triggers/conversation-assigned';
 import { newCustomer } from './lib/triggers/new-customer';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/api';
 import { updateCustomerProperties } from './lib/actions/update-customer-properties';
 import { tagsUpdated } from './lib/triggers/tags-updated';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const helpScout = createPiece({
   displayName: 'Help Scout',
   auth: helpScoutAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/help-scout.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/help-scout.png',
   categories:[PieceCategory.CUSTOMER_SUPPORT],
   authors: ['sparkybug'],
   actions: [

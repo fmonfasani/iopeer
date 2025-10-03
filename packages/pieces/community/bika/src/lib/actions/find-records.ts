@@ -1,8 +1,8 @@
-import {
+﻿import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { BikaCommon, makeClient } from '../common';
 import { BikaAuth } from '../../index';
 import { prepareQuery } from '../common/client';

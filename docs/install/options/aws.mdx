@@ -1,4 +1,4 @@
----
+﻿---
 title: "AWS (Pulumi)"
 description: "Get IOPeer up & running on AWS with Pulumi for IaC"
 ---
@@ -85,14 +85,14 @@ pulumi up
 8. Now choose `yes` when prompted. Once the deployment has finished, you should see a bunch of Pulumi output variables that look like the following:
 ```json
     _: {
-        activePiecesUrl: "http://<alb name & id>.us-east-1.elb.amazonaws.com"
+        IOpeerUrl: "http://<alb name & id>.us-east-1.elb.amazonaws.com"
         iopeerEnv: [
          . . . .
         ]
        }
 ```
 
-The config value of interest here is the `activePiecesUrl` as that is the URL for our IOPeer deployment. 
+The config value of interest here is the `IOpeerUrl` as that is the URL for our IOPeer deployment. 
 If you chose to add a fully qualified domain during your stack configuration, that will be displayed here. 
 Otherwise you'll see the URL to the application load balancer. And that's it. 
 

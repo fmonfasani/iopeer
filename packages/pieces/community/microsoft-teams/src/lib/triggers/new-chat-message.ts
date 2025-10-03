@@ -1,16 +1,16 @@
-import { microsoftTeamsAuth } from '../../index';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { microsoftTeamsAuth } from '../../index';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { microsoftTeamsCommon } from '../common';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { ChatMessage } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';
 
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 type Props = {
 	chatId: string;

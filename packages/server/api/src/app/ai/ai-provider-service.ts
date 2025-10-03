@@ -1,4 +1,4 @@
-import {
+﻿import {
     AI_USAGE_AGENT_ID_HEADER,
     AI_USAGE_FEATURE_HEADER,
     AI_USAGE_MCP_ID_HEADER,
@@ -8,17 +8,17 @@ import {
     CreateAIProviderRequest,
     SUPPORTED_AI_PROVIDERS,
     SupportedAIProvider,
-} from '@activepieces/common-ai'
-import { AppSystemProp } from '@activepieces/server-shared'
+} from '@IOpeer/common-ai'
+import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApEdition,
     apId,
     ErrorCode,
     isNil,
     PlatformId,
     SeekPage,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 import { repoFactory } from '../core/db/repo-factory'
 import { encryptUtils } from '../helper/encryption'
@@ -63,7 +63,7 @@ export const aiProviderService = {
         assertOnlyCloudPlatformCanEditOnCloud(platformId)
 
         if (request.useAzureOpenAI && system.getEdition() !== ApEdition.ENTERPRISE) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FEATURE_DISABLED,
                 params: {
                     message: 'Azure OpenAI is only available for enterprise customers',
@@ -210,7 +210,7 @@ export const aiProviderService = {
         validateAIUsageHeaders(request.headers)
 
         if (this.isStreaming(provider, request) && !this.providerSupportsStreaming(provider)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AI_REQUEST_NOT_SUPPORTED,
                 params: {
                     message: 'Streaming is not supported for this provider',
@@ -220,7 +220,7 @@ export const aiProviderService = {
 
         const model = this.extractModelId(provider, request)
         if (!this.isModelSupported(provider, model, request)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AI_MODEL_NOT_SUPPORTED,
                 params: {
                     provider,
@@ -244,7 +244,7 @@ function assertOnlyCloudPlatformCanEditOnCloud(platformId: PlatformId): void {
     if (platformId === cloudPlatformId) {
         return
     }
-    throw new ActivepiecesError({
+    throw new IOpeerError({
         code: ErrorCode.AUTHORIZATION,
         params: {
             message: 'invalid route for principal type',
@@ -268,7 +268,7 @@ function validateAIUsageHeaders(headers: Record<string, string | string[] | unde
     // Validate feature header
     const supportedFeatures = Object.values(AIUsageFeature).filter(f => f !== AIUsageFeature.UNKNOWN) as AIUsageFeature[]
     if (feature && !supportedFeatures.includes(feature)) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.VALIDATION,
             params: {
                 message: `${AI_USAGE_FEATURE_HEADER} header must be one of the following: ${supportedFeatures.join(', ')}`,
@@ -277,7 +277,7 @@ function validateAIUsageHeaders(headers: Record<string, string | string[] | unde
     }
 
     if (feature === AIUsageFeature.AGENTS && !agentId) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.VALIDATION,
             params: {
                 message: `${AI_USAGE_AGENT_ID_HEADER} header is required when feature is ${AIUsageFeature.AGENTS}`,
@@ -286,7 +286,7 @@ function validateAIUsageHeaders(headers: Record<string, string | string[] | unde
     }
 
     if (feature === AIUsageFeature.MCP && !mcpId) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.VALIDATION,
             params: {
                 message: `${AI_USAGE_MCP_ID_HEADER} header is required when feature is ${AIUsageFeature.MCP}`,

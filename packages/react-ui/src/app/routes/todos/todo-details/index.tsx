@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+﻿import { X } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 import { useSocket } from '@/components/socket-provider';
@@ -15,7 +15,7 @@ import {
   WebsocketClientEvent,
   UNRESOLVED_STATUS,
   TodoActivityCreated,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { TodoCreateComment } from './todo-create-comment';
 import { TodoDetailsStatus } from './todo-details-status';

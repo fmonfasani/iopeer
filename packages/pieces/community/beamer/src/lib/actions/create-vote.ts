@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod, HttpRequest } from '@IOpeer/pieces-common';
 import { beamerAuth } from '../../index';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { beamerCommon } from '../common';
 
 export const createVote = createAction({

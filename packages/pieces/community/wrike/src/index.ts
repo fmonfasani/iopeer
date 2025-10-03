@@ -1,7 +1,7 @@
-
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/shared';
+﻿
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { PieceCategory } from '@IOpeer/shared';
 import { wrikeAuth } from './lib/common/auth';
 import { createTask } from './lib/actions/create-task';
 import { updateTask } from './lib/actions/update-task';
@@ -19,7 +19,7 @@ export const wrike = createPiece({
   displayName: "Wrike",
   auth: wrikeAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/wrike.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/wrike.png",
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ['owuzo','sanket-a11y'],
   actions: [

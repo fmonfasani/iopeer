@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { telegramCreateInviteLinkAction } from './lib/action/create-invite-link';
 import { telegramGetChatMemberAction } from './lib/action/get-chat-member';
 import { telegramSendMediaAction } from './lib/action/send-media.action';
@@ -15,7 +15,7 @@ const markdownDescription = `
 2. Type in "/newbot"
 3. Choose a name for your bot
 4. Choose a username for your bot.
-5. Copy the token value from the Botfather and use it activepieces connection.
+5. Copy the token value from the Botfather and use it IOpeer connection.
 6. Congratulations! You can now use your new Telegram connection in your flows.
 `;
 
@@ -29,7 +29,7 @@ export const telegramBot = createPiece({
   displayName: 'Telegram Bot',
   description: 'Build chatbots for Telegram',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/telegram_bot.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/telegram_bot.png',
   categories: [PieceCategory.COMMUNICATION],
   auth: telegramBotAuth,
   actions: [

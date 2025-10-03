@@ -1,17 +1,17 @@
-import {
+﻿import {
   createCustomApiCallAction,
   HttpError,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { kimaiCreateTimesheetAction } from './lib/actions/create-timesheet';
 import { makeClient } from './lib/common';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const kimaiAuth = PieceAuth.CustomAuth({
   description: `
@@ -91,7 +91,7 @@ export const kimai = createPiece({
 
   auth: kimaiAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/kimai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/kimai.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ["facferreira","kishanprmr","MoShizzle","abuaboud"],
   actions: [

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined } from '@activepieces/shared';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { assertNotNullOrUndefined } from '@IOpeer/shared';
 import { figmaCommon } from '../common';
 import { figmaPostRequestWithMessage } from '../common/utils';
 import { figmaAuth } from '../../';

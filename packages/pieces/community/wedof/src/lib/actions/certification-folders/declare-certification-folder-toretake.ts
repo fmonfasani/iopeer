@@ -1,23 +1,23 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
 export const declareCertificationFolderToRetake = createAction({
   auth: wedofAuth,
   name: 'declareCertificationFolderToRetake',
-  displayName: 'Passer un dossier de certification à l’état : à repasser',
-  description: "Change l'état d'un dossier de certification vers : à repasser",
+  displayName: 'Passer un dossier de certification Ã  lâ€™Ã©tat : Ã  repasser',
+  description: "Change l'Ã©tat d'un dossier de certification vers : Ã  repasser",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     detailedResult: Property.ShortText({
-      displayName: "Détail du résultat de l'examen",
+      displayName: "DÃ©tail du rÃ©sultat de l'examen",
       required: false,
     }),
     europeanLanguageLevel: wedofCommon.europeanLanguageLevel,

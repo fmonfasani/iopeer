@@ -1,11 +1,11 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { HttpError } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, Property } from '@IOpeer/pieces-framework';
+import { HttpError } from '@IOpeer/pieces-common';
 import { dimoAuth } from '../../../index';
 import { DimoClient } from '../../common/helpers';
 import { CreateWebhookParams, WebhookInfo, WebhookPayload } from '../../common/types';
 import { TriggerField } from '../../common/constants';
 import { operatorStaticDropdown, verificationTokenInput } from '../../common/props';
-import { WebhookHandshakeStrategy } from '@activepieces/shared';
+import { WebhookHandshakeStrategy } from '@IOpeer/shared';
 
 const TRIGGER_KEY = 'dimo-charge-level-trigger';
 

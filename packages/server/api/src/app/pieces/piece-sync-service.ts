@@ -1,6 +1,6 @@
-import { PieceMetadataModel, PieceMetadataModelSummary } from '@activepieces/pieces-framework'
-import { AppSystemProp, apVersionUtil } from '@activepieces/server-shared'
-import { ListVersionsResponse, PackageType, PieceSyncMode, PieceType } from '@activepieces/shared'
+﻿import { PieceMetadataModel, PieceMetadataModelSummary } from '@IOpeer/pieces-framework'
+import { AppSystemProp, apVersionUtil } from '@IOpeer/server-shared'
+import { ListVersionsResponse, PackageType, PieceSyncMode, PieceType } from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
@@ -79,7 +79,7 @@ async function syncPiece(name: string, log: FastifyBaseLogger): Promise<void> {
         }
     }
     catch (error) {
-        log.error(error, 'Error syncing piece, please upgrade the activepieces to latest version')
+        log.error(error, 'Error syncing piece, please upgrade the IOpeer to latest version')
     }
 
 }

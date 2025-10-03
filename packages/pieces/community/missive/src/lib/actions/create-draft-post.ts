@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { missiveAuth } from '../common/auth';
 import { missiveCommon } from '../common/client';
 
@@ -56,7 +56,7 @@ export const createDraftPost = createAction({
         props.quote_previous_message = Property.Checkbox({
           displayName: 'Quote Previous Message',
           description:
-            '⚠️ WARNING: Only use if you know the conversation content. May leak sensitive information.',
+            'âš ï¸ WARNING: Only use if you know the conversation content. May leak sensitive information.',
             required: false,
           defaultValue: false,
         });

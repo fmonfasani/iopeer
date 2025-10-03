@@ -1,4 +1,4 @@
-import {
+﻿import {
   Navigate,
   RouterProvider,
   createBrowserRouter,
@@ -23,7 +23,7 @@ import { VerifyEmail } from '@/features/authentication/components/verify-email';
 import { Error } from '@/features/billing/components/error';
 import { Success } from '@/features/billing/components/success';
 import { AcceptInvitation } from '@/features/team/component/accept-invitation';
-import { Permission } from '@activepieces/shared';
+import { Permission } from '@IOpeer/shared';
 
 import { ApTableStateProvider } from '../../features/tables/components/ap-table-state-provider';
 import { PlatformLayout } from '../components/platform-layout';

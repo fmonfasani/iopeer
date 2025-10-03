@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Sparkle, ChevronRight } from 'lucide-react';
 import { FC, useEffect, useMemo, useState } from 'react';
 
@@ -16,13 +16,13 @@ import {
   BillingCycle,
   PlanName,
   StripePlanName,
-} from '@activepieces/ee-shared';
+} from '@IOpeer/ee-shared';
 import {
   ApEdition,
   ApFlagId,
   isNil,
   PlatformUsageMetric,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { billingMutations, billingQueries } from '../../lib/billing-hooks';
 

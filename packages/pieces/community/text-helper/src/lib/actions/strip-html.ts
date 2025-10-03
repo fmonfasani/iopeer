@@ -1,5 +1,5 @@
-import { stripHtml } from 'string-strip-html';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { stripHtml } from 'string-strip-html';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 
 export const stripHtmlContent = createAction({
   name: 'stripHtml',

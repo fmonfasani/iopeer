@@ -1,10 +1,10 @@
-import { businessCentralAuth } from '../..';
+﻿import { businessCentralAuth } from '../..';
 import {
   DropdownOption,
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { makeClient } from './client';
 import { ACTION_ENTITY_DROPDOWN_OPTIONS } from './constants';
 import { customersEntityProps } from './props/customers.entity';

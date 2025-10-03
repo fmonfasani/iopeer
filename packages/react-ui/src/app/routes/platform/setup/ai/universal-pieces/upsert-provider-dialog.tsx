@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';
@@ -28,7 +28,7 @@ import { flagsHooks } from '@/hooks/flags-hooks';
 import {
   CreateAIProviderRequest,
   SupportedAIProvider,
-} from '@activepieces/common-ai';
+} from '@IOpeer/common-ai';
 
 import { ApMarkdown } from '../../../../../../components/custom/markdown';
 

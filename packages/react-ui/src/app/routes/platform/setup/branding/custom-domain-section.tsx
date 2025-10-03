@@ -1,4 +1,4 @@
-import { QuestionMarkCircledIcon } from '@radix-ui/react-icons';
+﻿import { QuestionMarkCircledIcon } from '@radix-ui/react-icons';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { CheckCircleIcon, Trash } from 'lucide-react';
@@ -14,7 +14,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { customDomainApi } from '@/features/platform-admin/lib/custom-domain-api';
-import { CustomDomain, CustomDomainStatus } from '@activepieces/ee-shared';
+import { CustomDomain, CustomDomainStatus } from '@IOpeer/ee-shared';
 
 const CustomDomainsCard = () => {
   const { data, isLoading, isError, isSuccess, refetch } = useQuery({

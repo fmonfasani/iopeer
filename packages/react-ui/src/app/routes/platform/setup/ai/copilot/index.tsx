@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+﻿import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Bot, Pencil, Trash2 } from 'lucide-react';
 import { useState } from 'react';
@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { platformApi } from '@/lib/platforms-api';
-import { isNil, CopilotProviderType } from '@activepieces/shared';
+import { isNil, CopilotProviderType } from '@IOpeer/shared';
 
 import { ConfigureProviderDialog } from './configure-provider-dialog';
 

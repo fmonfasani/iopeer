@@ -1,9 +1,9 @@
-import {
+﻿import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { SubscriberListFieldType } from './constants';
 import {
   GetListsResponse,

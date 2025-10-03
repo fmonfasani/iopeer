@@ -1,10 +1,10 @@
-import {
+﻿import {
   createTrigger,
   DynamicPropsValue,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined, MarkdownVariant } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { assertNotNullOrUndefined, MarkdownVariant } from '@IOpeer/shared';
 
 const liveMarkdown = `**Live URL:**
 \`\`\`text

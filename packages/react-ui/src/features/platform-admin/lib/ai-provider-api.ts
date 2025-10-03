@@ -1,9 +1,9 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   AIProviderWithoutSensitiveData,
   CreateAIProviderRequest,
-} from '@activepieces/common-ai';
-import { SeekPage } from '@activepieces/shared';
+} from '@IOpeer/common-ai';
+import { SeekPage } from '@IOpeer/shared';
 
 export const aiProviderApi = {
   list() {

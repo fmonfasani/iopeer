@@ -1,9 +1,9 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import {
   ApitemplateAuthConfig,
   makeRequest,
 } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const regionDropdown = Property.StaticDropdown({
   displayName: 'Region',

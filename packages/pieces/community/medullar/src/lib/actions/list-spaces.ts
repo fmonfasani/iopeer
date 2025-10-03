@@ -1,5 +1,5 @@
-import { medullarAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { medullarAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { getUserSpaces } from '../common';
 
 export const listSpaces = createAction({

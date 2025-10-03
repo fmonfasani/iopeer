@@ -1,11 +1,11 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   HttpRequest,
   HttpMessageBody,
   AuthenticationType
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { respondIoAuth } from './auth';
 
 export type RespondIoApiCallParams = {

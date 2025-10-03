@@ -1,4 +1,4 @@
-import {
+﻿import {
 	AuthenticationType,
 	DedupeStrategy,
 	httpClient,
@@ -6,14 +6,14 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { hubspotAuth } from '../../';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 type Props = {
 	eventType?: string;

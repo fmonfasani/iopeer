@@ -1,10 +1,10 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
+import { MarkdownVariant } from '@IOpeer/shared';
 import dayjs from 'dayjs';
 
 export const oneDriveCommon = {

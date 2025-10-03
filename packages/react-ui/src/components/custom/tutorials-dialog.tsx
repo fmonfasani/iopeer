@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import {
   Bot,
   GraduationCap,
@@ -18,7 +18,7 @@ import {
   ApFlagId,
   ClickedTutorialTelemetryParams,
   TelemetryEventName,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { useTelemetry } from '../telemetry-provider';
 import { Button } from '../ui/button';

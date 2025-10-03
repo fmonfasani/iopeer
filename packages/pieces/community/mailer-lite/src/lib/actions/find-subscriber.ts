@@ -1,5 +1,5 @@
-import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import MailerLite from '@mailerlite/mailerlite-nodejs';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { mailerLiteAuth } from '../..';
 
 export const findSubscriberAction = createAction({

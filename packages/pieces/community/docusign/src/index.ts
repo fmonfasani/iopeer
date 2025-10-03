@@ -1,11 +1,11 @@
-import { AxiosError } from 'axios';
+﻿import { AxiosError } from 'axios';
 
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 import { createApiClient } from './lib/common';
 import { listEnvelopes } from './lib/actions/list-envelopes';
@@ -48,7 +48,7 @@ export const docusignAuth = PieceAuth.CustomAuth({
       displayName: 'scopes',
       required: true,
       description:
-        'Comma-separated list of scopes. These represent the OAuth scopes (permissions) that are being requested. For eSignature REST API methods, use the signature scope. The impersonation scope is implied by the JWT Grant operation and does not need to be included. If the access token will be used for other Docusign APIs, additional scopes may be required; see each API’s <https://developers.docusign.com/docs/esign-rest-api/esign101/auth/|authentication> requirements',
+        'Comma-separated list of scopes. These represent the OAuth scopes (permissions) that are being requested. For eSignature REST API methods, use the signature scope. The impersonation scope is implied by the JWT Grant operation and does not need to be included. If the access token will be used for other Docusign APIs, additional scopes may be required; see each APIâ€™s <https://developers.docusign.com/docs/esign-rest-api/esign101/auth/|authentication> requirements',
     }),
   },
   validate: async ({ auth, server }) => {
@@ -113,7 +113,7 @@ export const docusign = createPiece({
   displayName: 'Docusign',
   auth: docusignAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/docusign.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/docusign.png',
   authors: ['AdamSelene'],
   actions: [
     listEnvelopes,

@@ -1,11 +1,11 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { saveGallery } from '../api';
 import { cmsAuth } from '../auth';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const saveGalleryAction = createAction({
   name: 'save_gallery',

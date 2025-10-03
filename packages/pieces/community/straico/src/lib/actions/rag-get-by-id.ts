@@ -1,10 +1,10 @@
-import { straicoAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { straicoAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { baseUrlv0 } from '../common/common';
 
 export const getRagById = createAction({

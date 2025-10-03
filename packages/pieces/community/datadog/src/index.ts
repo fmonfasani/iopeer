@@ -1,10 +1,10 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createPiece, PieceAuth, Property } from "@IOpeer/pieces-framework";
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { constructDatadogBaseHeaders, constructDatadogBaseUrl, DatadogAuthType, getDatadogConfiguration } from "./lib/common";
 import { sendMultipleLogs } from "./lib/actions/send-multiple-logs";
 import { v1 } from "@datadog/datadog-api-client";
 import { sendOneLog } from "./lib/actions/send-one-log";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
 export const datadogAuth = PieceAuth.CustomAuth({
   description: 'Datadog authentication requires an API key and a site (by default, US1).',
@@ -61,7 +61,7 @@ export const datadog = createPiece({
   description: "Cloud monitoring and analytics platform",
   auth: datadogAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/datadog.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/datadog.png",
   categories:[PieceCategory.DEVELOPER_TOOLS],
   authors: ["chaimaa-kadaoui"],
   actions: [

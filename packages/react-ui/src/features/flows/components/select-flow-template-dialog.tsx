@@ -1,4 +1,4 @@
-import { DialogDescription } from '@radix-ui/react-dialog';
+﻿import { DialogDescription } from '@radix-ui/react-dialog';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ArrowLeft, Info, Search, SearchX } from 'lucide-react';
@@ -36,7 +36,7 @@ import {
   FlowOperationType,
   FlowTemplate,
   PopulatedFlow,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { flowsApi } from '../lib/flows-api';
 

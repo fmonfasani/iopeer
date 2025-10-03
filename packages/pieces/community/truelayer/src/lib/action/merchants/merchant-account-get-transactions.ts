@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 import { trueLayerCommon } from '../../common';
 
 export const merchantAccountGetTransactions = createAction({
@@ -15,12 +15,12 @@ export const merchantAccountGetTransactions = createAction({
     }),
     from: Property.ShortText({
       displayName: 'Start Timestamp',
-      description: 'Timestamp for the start of the range to query (inclusive). Uses the ISO-8601 format of YYYY-MM-DDTHH:MM:SS±HHMM.',
+      description: 'Timestamp for the start of the range to query (inclusive). Uses the ISO-8601 format of YYYY-MM-DDTHH:MM:SSÂ±HHMM.',
       required: true,
     }),
     to: Property.ShortText({
       displayName: 'End Timestamp',
-      description: 'Timestamp for the end of the range to query (inclusive). Uses the ISO-8601 format of YYYY-MM-DDTHH:MM:SS±HHMM.',
+      description: 'Timestamp for the end of the range to query (inclusive). Uses the ISO-8601 format of YYYY-MM-DDTHH:MM:SSÂ±HHMM.',
       required: true,
     }),
     cursor: Property.ShortText({

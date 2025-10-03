@@ -1,4 +1,4 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   CreateRecordsRequest,
   DeleteRecordsRequest,
@@ -6,7 +6,7 @@ import {
   PopulatedRecord,
   SeekPage,
   UpdateRecordRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { FieldsMapping } from './utils';
 

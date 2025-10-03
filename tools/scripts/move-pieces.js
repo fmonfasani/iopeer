@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
@@ -30,7 +30,7 @@ function listPackagesInFolders(folderPath) {
    packages.forEach(({ folder, packageName }) => {
         const destination = 'packages/pieces/community/' + folder;
 
-        const command = `nx g move --projectName=${packageName} --newProjectName=${packageName} --destination=${destination} --importPath=@activepieces/piece-${folder}`;
+        const command = `nx g move --projectName=${packageName} --newProjectName=${packageName} --destination=${destination} --importPath=@IOpeer/piece-${folder}`;
         try{
             execSync(command, { stdio: 'inherit' });
         }catch(err){

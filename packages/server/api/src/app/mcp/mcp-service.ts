@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     apId,
     ApId,
     assertNotNullOrUndefined,
@@ -12,7 +12,7 @@ import {
     McpToolType,
     McpWithTools,
     SeekPage, spreadIfDefined,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { ILike, IsNull } from 'typeorm'
@@ -79,7 +79,7 @@ export const mcpService = (_log: FastifyBaseLogger) => ({
         })
 
         if (isNil(mcp)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: { entityId: mcpId, entityType: 'MCP' },
             })
@@ -95,7 +95,7 @@ export const mcpService = (_log: FastifyBaseLogger) => ({
     async getByToken({ token }: { token: string }): Promise<McpWithTools> {
         const mcp = await mcpRepo().findOne({ where: { token } })
         if (isNil(mcp)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: { entityId: token, entityType: 'MCP' },
             })
@@ -106,7 +106,7 @@ export const mcpService = (_log: FastifyBaseLogger) => ({
     async getOneByExternalIdOrThrow({ externalId, projectId }: { externalId: string, projectId: ApId }): Promise<McpWithTools> {
         const mcp = await mcpRepo().findOne({ where: { externalId, projectId } })
         if (isNil(mcp)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: { entityType: 'MCP' },
             })
@@ -147,7 +147,7 @@ export const mcpService = (_log: FastifyBaseLogger) => ({
         })
 
         if (deleteResult.affected === 0) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: { entityId: mcpId, entityType: 'MCP' },
             })

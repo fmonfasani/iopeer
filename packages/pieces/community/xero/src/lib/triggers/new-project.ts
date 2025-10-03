@@ -1,9 +1,9 @@
-import {
+﻿import {
   TriggerStrategy,
   createTrigger,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { xeroAuth } from '../..';
 import {
   DedupeStrategy,
@@ -11,7 +11,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { props } from '../common/props';
 
 const polling: Polling<

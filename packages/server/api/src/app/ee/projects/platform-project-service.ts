@@ -1,8 +1,8 @@
-import {
+﻿import {
     UpdateProjectPlatformRequest,
-} from '@activepieces/ee-shared'
+} from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     assertNotNullOrUndefined,
     Cursor,
     ErrorCode,
@@ -15,7 +15,7 @@ import {
     SeekPage,
     spreadIfDefined,
     UserStatus,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EntityManager, Equal, ILike, In } from 'typeorm'
 import { appConnectionService } from '../../app-connection/app-connection-service/app-connection-service'
@@ -228,7 +228,7 @@ const assertAllProjectFlowsAreDisabled = async (
     })
 
     if (projectHasEnabledFlows) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.VALIDATION,
             params: {
                 message: 'PROJECT_HAS_ENABLED_FLOWS',
@@ -248,7 +248,7 @@ const softDeleteOrThrow = async ({
     })
 
     if (deleteResult.affected !== 1) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.ENTITY_NOT_FOUND,
             params: {
                 entityId: id,

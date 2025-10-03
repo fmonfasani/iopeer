@@ -1,11 +1,11 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { sendpulseAuth } from '../common/auth';
 import { sendpulseApiCall } from '../common/client';
 import { mailingListDropdown } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 function detectChanges(previous: any, current: any): Record<string, { from: any; to: any }> {
   const changes: Record<string, { from: any; to: any }> = {};

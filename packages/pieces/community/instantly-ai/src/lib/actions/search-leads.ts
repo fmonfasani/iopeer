@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { instantlyAiAuth } from '../../index';
 import { makeRequest } from '../common/client';
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
+import { HttpMethod, QueryParams } from '@IOpeer/pieces-common';
 import { campaignId, listId } from '../common/props';
 
 export const searchLeadsAction = createAction({

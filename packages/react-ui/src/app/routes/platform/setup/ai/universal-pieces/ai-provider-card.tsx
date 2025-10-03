@@ -1,9 +1,9 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Pencil, Trash } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { SupportedAIProvider } from '@activepieces/common-ai';
+import { SupportedAIProvider } from '@IOpeer/common-ai';
 
 import { UpsertAIProviderDialog } from './upsert-provider-dialog';
 

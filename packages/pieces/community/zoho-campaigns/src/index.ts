@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { addContactToMailingList } from './lib/actions/add-contact-to-mailing-list';
 import { addTagToContact } from './lib/actions/add-tag-to-contact';
 import { addUpdateContact } from './lib/actions/add-update-contact';
@@ -20,7 +20,7 @@ export const zohoCampaigns = createPiece({
     'Zoho Campaigns is an email marketing platform for managing mailing lists, sending campaigns, tracking engagement, and automating subscriber workflows.',
   auth: zohoCampaignsAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/zoho-campaigns.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/zoho-campaigns.png',
   authors: ['LuizDMM', 'onyedikachi-david'],
   actions: [
     // Write Actions

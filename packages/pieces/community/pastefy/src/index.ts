@@ -1,9 +1,9 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import actions from './lib/actions';
 import triggers from './lib/triggers';
 
@@ -31,7 +31,7 @@ export const pastefy = createPiece({
   displayName: 'Pastefy',
   description: 'Sharing code snippets platform',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/pastefy.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/pastefy.png',
   categories: [],
   authors: ["JanHolger","kishanprmr","MoShizzle","khaledmashaly","abuaboud"],
   auth: pastefyAuth,

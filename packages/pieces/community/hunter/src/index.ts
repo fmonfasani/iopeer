@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { PieceCategory } from '@IOpeer/shared';
 import { addRecipientsAction } from "./lib/actions/add-recipients";
 import { countEmailsAction } from "./lib/actions/count-emails";
 import { createLeadAction } from "./lib/actions/create-lead";
@@ -22,7 +22,7 @@ export const hunter = createPiece({
   description: 'Find, verify and manage professional email addresses at scale. Automate email discovery, validation, lead tracking, and campaign outreach with Hunter.io.',
   auth: hunterAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/hunter.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/hunter.png",
   authors: ['varshith257'],
   categories: [PieceCategory.SALES_AND_CRM],
   actions: [

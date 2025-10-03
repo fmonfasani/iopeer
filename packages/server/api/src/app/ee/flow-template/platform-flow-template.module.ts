@@ -1,7 +1,7 @@
-import { CreateFlowTemplateRequest } from '@activepieces/ee-shared'
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { CreateFlowTemplateRequest } from '@IOpeer/ee-shared'
+import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ALL_PRINCIPAL_TYPES,
     ApEdition,
     EndpointScope,
@@ -12,7 +12,7 @@ import {
     PrincipalType,
     SERVICE_KEY_SECURITY_OPENAPI,
     TemplateType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { Static, Type } from '@sinclair/typebox'
 import { StatusCodes } from 'http-status-codes'
@@ -67,7 +67,7 @@ const flowTemplateController: FastifyPluginAsyncTypebox = async (fastify) => {
                 break
             case TemplateType.PROJECT:
                 if (template.projectId !== request.principal.projectId) {
-                    throw new ActivepiecesError({
+                    throw new IOpeerError({
                         code: ErrorCode.AUTHORIZATION,
                         params: {},
                     })

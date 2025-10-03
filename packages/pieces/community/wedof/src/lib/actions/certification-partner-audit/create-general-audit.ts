@@ -1,21 +1,21 @@
-import { wedofAuth } from '../../../index';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../../index';
+import { createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../../common/wedof';
 
 export const createGeneralAudit = createAction({
   auth: wedofAuth,
   name: 'createGeneralAudit',
-  displayName: "Générer un audit général sur les partenaires d'une certification",
-  description: "Permet de générer et clôturer un audit pour chacun des partenariats (actifs) de certification",
+  displayName: "GÃ©nÃ©rer un audit gÃ©nÃ©ral sur les partenaires d'une certification",
+  description: "Permet de gÃ©nÃ©rer et clÃ´turer un audit pour chacun des partenariats (actifs) de certification",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
-      description: "Permet de n'obtenir que les partenariats liés à la certification considérée",
+      displayName: 'NÂ° certifInfo',
+      description: "Permet de n'obtenir que les partenariats liÃ©s Ã  la certification considÃ©rÃ©e",
       required: true,
     }),
     templateId: Property.DynamicProperties({
-      displayName: "Type du modèle d'audit",
+      displayName: "Type du modÃ¨le d'audit",
       refreshers: ['certifInfo'],
       required: true,
       props: async ({ auth, certifInfo }) => {
@@ -41,7 +41,7 @@ export const createGeneralAudit = createAction({
     
           return {
             templateId: Property.StaticDropdown({
-              displayName: "Modèle d'audit",
+              displayName: "ModÃ¨le d'audit",
               required: true,
               options: {
                 options: options,
@@ -56,8 +56,8 @@ export const createGeneralAudit = createAction({
       },
     }),
     complete: Property.StaticDropdown({
-        displayName: "Clôturer les audits automatiquement",
-        description: "Indique si l'audit doit être clôturer",
+        displayName: "ClÃ´turer les audits automatiquement",
+        description: "Indique si l'audit doit Ãªtre clÃ´turer",
         required: false,
         defaultValue : true,
         options: {
@@ -75,8 +75,8 @@ export const createGeneralAudit = createAction({
           },
     }),
     updateCompliance: Property.StaticDropdown({
-        displayName: "Mettre à jour la conformité du partenariat",
-        description: "Indique si il faut mettre à jour la conformité du partenariat",
+        displayName: "Mettre Ã  jour la conformitÃ© du partenariat",
+        description: "Indique si il faut mettre Ã  jour la conformitÃ© du partenariat",
         required: false,
         defaultValue : true,
         options: {
@@ -94,8 +94,8 @@ export const createGeneralAudit = createAction({
           },
     }),
     suspend: Property.StaticDropdown({
-        displayName: "Suspendre automatiquement le partenariat en cas de non-conformité",
-        description: "Indique si le partenariat doit être suspendu en cas de non-conformité (ne s'applique que pour les certifications actives)",
+        displayName: "Suspendre automatiquement le partenariat en cas de non-conformitÃ©",
+        description: "Indique si le partenariat doit Ãªtre suspendu en cas de non-conformitÃ© (ne s'applique que pour les certifications actives)",
         required: false,
         defaultValue : true,
         options: {

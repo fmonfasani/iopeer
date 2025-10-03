@@ -1,4 +1,4 @@
-import { DialogTrigger } from '@radix-ui/react-dialog';
+﻿import { DialogTrigger } from '@radix-ui/react-dialog';
 import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Search } from 'lucide-react';
@@ -22,12 +22,12 @@ import {
   McpToolType,
   McpWithTools,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 import type {
   McpTool,
   McpToolRequest,
   PopulatedFlow,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { McpFlowDialogContent } from './mcp-flow-dialog-content';
 
@@ -70,7 +70,7 @@ export function McpFlowDialog({
             (flow: PopulatedFlow) =>
               flow.version.trigger.type === FlowTriggerType.PIECE &&
               flow.version.trigger.settings.pieceName ===
-                '@activepieces/piece-mcp',
+                '@IOpeer/piece-mcp',
           );
         });
       return flows;

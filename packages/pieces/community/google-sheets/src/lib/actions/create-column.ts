@@ -1,5 +1,5 @@
-import { googleSheetsAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { googleSheetsAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
 	areSheetIdsValid,
 	columnToLabel,

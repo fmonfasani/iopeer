@@ -1,7 +1,7 @@
-import { createPiece, PiecePropValueSchema } from '@activepieces/pieces-framework';
+﻿import { createPiece, PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { crispAuth } from './lib/common/auth';
 import { createConversationAction } from './lib/actions/create-conversation';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/client';
 import { addNoteToConversationAction } from './lib/actions/add-note-to-conversation';
 import { createOrUpdateContactAction } from './lib/actions/create-or-update-contact';
@@ -10,13 +10,13 @@ import { updateConversationStateAction } from './lib/actions/update-conversation
 import { findConversationAction } from './lib/actions/find-conversation';
 import { newContactTrigger } from './lib/triggers/new-contact';
 import { newConversationTrigger } from './lib/triggers/new-conversation';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const crisp = createPiece({
 	displayName: 'Crisp',
 	auth: crispAuth,
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/crisp.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/crisp.png',
 	authors: ['kishanprmr','Ani-4x'],
 	categories:[PieceCategory.CUSTOMER_SUPPORT],
 	actions: [

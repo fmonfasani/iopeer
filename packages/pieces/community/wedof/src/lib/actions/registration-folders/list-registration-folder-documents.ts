@@ -1,18 +1,18 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const getRegistrationFolderDocuments = createAction({
   auth: wedofAuth,
   name: 'getRegistrationFolderDocuments',
   displayName: "Liste des documents d'un dossier de formation",
-  description: "Récupérer la liste de documents d'un dossier de formation à partir de son n° de dossier",
+  description: "RÃ©cupÃ©rer la liste de documents d'un dossier de formation Ã  partir de son nÂ° de dossier",
   props: {
     Id: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {Id} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {Id} du dossier de formation',
       required: true,
     }),
   },

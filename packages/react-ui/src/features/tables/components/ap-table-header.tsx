@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import {
   ArrowLeft,
   ChevronDown,
@@ -22,7 +22,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import EditableText from '@/components/ui/editable-text';
 import { useAuthorization } from '@/hooks/authorization-hooks';
-import { Permission } from '@activepieces/shared';
+import { Permission } from '@IOpeer/shared';
 
 import { useTableState } from './ap-table-state-provider';
 import { ImportCsvDialog } from './import-csv-dialog';

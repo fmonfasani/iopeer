@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { HttpError, HttpMethod, QueryParams } from '@IOpeer/pieces-common';
 import { hunterApiCall } from '../common';
 import { hunterAuth } from '../../index';
 import { emailProp } from '../common/props';

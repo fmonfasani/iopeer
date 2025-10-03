@@ -1,6 +1,6 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { getTaskListsDropdown } from '../common';
 import { microsoftToDoAuth } from '../../index';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';

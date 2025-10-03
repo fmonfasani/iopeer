@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-googlechat",
+﻿{
+  "name": "@IOpeer/piece-googlechat",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

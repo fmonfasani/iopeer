@@ -1,8 +1,8 @@
-import {
+﻿import {
   TriggerStrategy,
   createTrigger,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { quickbooksAuth } from '../index';
 import {
   DedupeStrategy,
@@ -10,7 +10,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { quickbooksCommon, QuickbooksEntityResponse } from '../lib/common';
 import dayjs from 'dayjs';
 import { QuickbooksInvoice } from '../lib/types';

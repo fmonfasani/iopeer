@@ -1,8 +1,8 @@
-import fs from 'fs/promises'
+﻿import fs from 'fs/promises'
 import { readFile } from 'node:fs/promises'
 import { inspect } from 'node:util'
 import path from 'path'
-import { ConnectionsManager, PauseHookParams, RespondHookParams, StopHookParams } from '@activepieces/pieces-framework'
+import { ConnectionsManager, PauseHookParams, RespondHookParams, StopHookParams } from '@IOpeer/pieces-framework'
 import { createConnectionService } from './services/connections.service'
 
 export type FileEntry = {

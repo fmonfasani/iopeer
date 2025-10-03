@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { ChevronRight } from 'lucide-react';
 
 import {
@@ -6,8 +6,8 @@ import {
   BillingCycle,
   PlanName,
   StripePlanName,
-} from '@activepieces/ee-shared';
-import { PlatformBillingInformation } from '@activepieces/shared';
+} from '@IOpeer/ee-shared';
+import { PlatformBillingInformation } from '@IOpeer/shared';
 
 import {
   ADDON_PRICES,

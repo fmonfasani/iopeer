@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
+﻿import dayjs from 'dayjs';
 import { t } from 'i18next';
 import { Shield, AlertTriangle, Check } from 'lucide-react';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { StatusIconWithText } from '@/components/ui/status-icon-with-text';
 import { formatUtils } from '@/lib/utils';
-import { isNil, PlatformWithoutSensitiveData } from '@activepieces/shared';
+import { isNil, PlatformWithoutSensitiveData } from '@IOpeer/shared';
 
 import { FeatureStatus } from './features-status';
 

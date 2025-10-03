@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -18,7 +18,7 @@ import {
 import { Form, FormField, FormItem } from '@/components/ui/form';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/components/ui/use-toast';
-import { PiecesFilterType } from '@activepieces/shared';
+import { PiecesFilterType } from '@IOpeer/shared';
 
 import { MultiSelectPieceProperty } from '../../../../components/custom/multi-select-piece-property';
 import { piecesHooks } from '../../../../features/pieces/lib/pieces-hooks';

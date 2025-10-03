@@ -1,5 +1,5 @@
-import { businessCentralAuth } from '../../';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { businessCentralAuth } from '../../';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { commonProps, formatRecordFields } from '../common';
 import { makeClient } from '../common/client';
 import { ACTION_ENTITY_DROPDOWN_OPTIONS } from '../common/constants';

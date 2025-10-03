@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { propsValidation, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { propsValidation, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { cloudconvertAuth, CloudConvertClient, convertFileProps, convertFileSchema } from '../common';
 
 // Get the props function result
@@ -220,10 +220,10 @@ export const convertFile = createAction({
                                 if (convertTask.engine === 'pdftron-pdf2word' && convertTask.code === 'UNKNOWN_ERROR') {
                                     errorMessage += '\n\nThis appears to be a file-specific issue. PDFs from website captures often contain complex layouts or images that cannot be converted to editable formats.';
                                     errorMessage += '\n\nSuggested alternatives:';
-                                    errorMessage += '\n• Try converting to TXT (text only) or HTML format instead';
-                                    errorMessage += '\n• Use RTF format which is simpler than DOCX';
-                                    errorMessage += '\n• If this is a scanned/image-based PDF, it may need OCR processing';
-                                    errorMessage += '\n• Consider capturing the website directly to HTML instead of PDF→DOCX';
+                                    errorMessage += '\nâ€¢ Try converting to TXT (text only) or HTML format instead';
+                                    errorMessage += '\nâ€¢ Use RTF format which is simpler than DOCX';
+                                    errorMessage += '\nâ€¢ If this is a scanned/image-based PDF, it may need OCR processing';
+                                    errorMessage += '\nâ€¢ Consider capturing the website directly to HTML instead of PDFâ†’DOCX';
                                 } else if (convertTask.engine === 'pdftron-pdf2word') {
                                     errorMessage += '\n\nTip: Try converting without specifying an engine, or try a different engine for better compatibility.';
                                 }

@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import {
   QueryObserverResult,
@@ -32,7 +32,7 @@ import { useAuthorization } from '@/hooks/authorization-hooks';
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { cn } from '@/lib/utils';
-import { FolderDto, Permission } from '@activepieces/shared';
+import { FolderDto, Permission } from '@IOpeer/shared';
 
 import { foldersApi } from '../lib/folders-api';
 

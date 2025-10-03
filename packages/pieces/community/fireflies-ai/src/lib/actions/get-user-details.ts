@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { firefliesAiAuth } from '../../index';
 import { getUser } from '../common/queries';
 import { BASE_URL } from '../common';

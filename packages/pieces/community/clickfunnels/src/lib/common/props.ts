@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { clickfunnelsApiService } from './requests';
 
 export const teamsDropdown = (refreshers: string[]) =>

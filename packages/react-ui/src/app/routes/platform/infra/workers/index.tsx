@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { t } from 'i18next';
 import { InfoIcon, Network, Server, ServerOff } from 'lucide-react';
@@ -16,7 +16,7 @@ import {
   ApFlagId,
   WorkerMachineStatus,
   WorkerMachineWithStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { WorkerConfigsModal } from './worker-configs-dialog';
 

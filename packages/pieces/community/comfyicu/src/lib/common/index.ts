@@ -1,11 +1,11 @@
-import {
+﻿import {
   HttpMethod,
   QueryParams,
   httpClient,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { Property } from '@IOpeer/pieces-framework';
 
 export async function comfyIcuApiCall({
   apiKey,

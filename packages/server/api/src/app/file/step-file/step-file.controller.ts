@@ -1,6 +1,6 @@
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ALL_PRINCIPAL_TYPES,
     ErrorCode,
     File,
@@ -8,7 +8,7 @@ import {
     FileType,
     PrincipalType,
     StepFileUpsertRequest,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { Type } from '@sinclair/typebox'
 import { FastifyBaseLogger } from 'fastify'
@@ -77,7 +77,7 @@ async function getFileByToken(token: string, log: FastifyBaseLogger): Promise<Om
         })
     }
     catch (e) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.INVALID_BEARER_TOKEN,
             params: {
                 message: 'invalid token or expired for the step file',

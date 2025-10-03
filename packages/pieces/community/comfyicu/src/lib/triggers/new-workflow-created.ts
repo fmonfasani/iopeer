@@ -1,15 +1,15 @@
-import {
+﻿import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { comfyIcuAuth } from '../../index';
 import {
   createTrigger,
   PiecePropValueSchema,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { comfyIcuApiCall } from '../common';
 import dayjs from 'dayjs';
 

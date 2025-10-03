@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { githubAuth } from '../../index';
 import { githubApiCall, githubCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 interface WebhookInformation {
   webhookId: number;
@@ -24,7 +24,7 @@ export const newBranchTrigger = createTrigger({
     description: 'A repository for testing',
     pusher_type: 'user',
     repository: {
-      full_name: 'activepieces/activepieces',
+      full_name: 'IOpeer/IOpeer',
     },
     sender: {
       login: 'Logan',

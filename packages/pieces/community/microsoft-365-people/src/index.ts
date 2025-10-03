@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import { createContact } from './lib/actions/create-contact';
 import { createContactFolder } from './lib/actions/create-contact-folder';
 import { deleteContact } from './lib/actions/delete-contact';
@@ -14,7 +14,7 @@ export const microsoft365People = createPiece({
   description: 'Manage contacts in Microsoft 365 People',
   auth: microsoft365PeopleAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-365-people.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-365-people.png',
   authors: ['LuizDMM'],
   actions: [
     createContact,

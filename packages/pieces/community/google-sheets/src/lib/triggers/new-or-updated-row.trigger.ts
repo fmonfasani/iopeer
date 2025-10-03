@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/shared';
+﻿import { isNil } from '@IOpeer/shared';
 import { googleSheetsAuth } from '../../';
 import { areSheetIdsValid, columnToLabel, labelToColumn } from '../common/common';
 import {
@@ -21,7 +21,7 @@ import {
 	Property,
 	PiecePropValueSchema,
 	DropdownOption,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import crypto from 'crypto';
 import { commonProps } from '../common/props';

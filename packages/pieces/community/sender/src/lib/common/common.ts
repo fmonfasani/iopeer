@@ -1,9 +1,9 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 
 export const senderAuth = PieceAuth.SecretText({
   displayName: 'API Token',

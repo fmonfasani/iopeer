@@ -1,7 +1,7 @@
-import { createAction, PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@activepieces/pieces-common';
-import { PopulatedRecord, UpdateRecordRequest } from '@activepieces/shared';
+import { AuthenticationType, httpClient, HttpMethod, propsValidation } from '@IOpeer/pieces-common';
+import { PopulatedRecord, UpdateRecordRequest } from '@IOpeer/shared';
 
 export const updateRecord = createAction({
   name: 'tables-update-record',

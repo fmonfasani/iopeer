@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { simplirouteAuth } from '../../../index';
 import { API_BASE_URL, commonHeaders } from '../../common/constants';
 
@@ -11,8 +11,8 @@ export const create_users = createAction({
     props: {
         username: Property.ShortText({ displayName: 'username', description: 'Nombre de usuario (login).', required: true }),
         name: Property.ShortText({ displayName: 'name', description: 'Nombre completo del usuario.', required: false }),
-        phone: Property.ShortText({ displayName: 'phone', description: 'Número de teléfono.', required: false }),
-        email: Property.ShortText({ displayName: 'email', description: 'Correo electrónico.', required: false }),
+        phone: Property.ShortText({ displayName: 'phone', description: 'NÃºmero de telÃ©fono.', required: false }),
+        email: Property.ShortText({ displayName: 'email', description: 'Correo electrÃ³nico.', required: false }),
         is_admin: Property.Checkbox({ displayName: 'is_admin', description: 'Whether the user is an administrator.', required: false, defaultValue: false }),
         password: Property.ShortText({ displayName: 'password', description: 'User password.', required: true }),
         is_driver: Property.Checkbox({ displayName: 'is_driver', description: 'Whether the user is a driver.', required: true, defaultValue: false }),

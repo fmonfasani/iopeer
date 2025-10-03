@@ -1,14 +1,14 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { mollieCommon } from '../common';
 import { mollieAuth } from '../../index';
 import dayjs from 'dayjs';

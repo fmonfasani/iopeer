@@ -1,4 +1,4 @@
-import { SUPPORTED_AI_PROVIDERS, SupportedAIProvider } from '@activepieces/common-ai'
+﻿import { SUPPORTED_AI_PROVIDERS, SupportedAIProvider } from '@IOpeer/common-ai'
 
 export function getProviderConfig(provider: string): SupportedAIProvider | undefined {
     return SUPPORTED_AI_PROVIDERS.find((p) => p.provider === provider)

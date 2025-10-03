@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { FileX } from 'lucide-react';
 import { createContext, useContext, useRef } from 'react';
@@ -13,7 +13,7 @@ import {
   createApTableStore,
 } from '@/features/tables/lib/store/ap-tables-client-state';
 import { cn } from '@/lib/utils';
-import { Field, Table, PopulatedRecord, isNil } from '@activepieces/shared';
+import { Field, Table, PopulatedRecord, isNil } from '@IOpeer/shared';
 
 import { fieldsApi } from '../lib/fields-api';
 import { recordsApi } from '../lib/records-api';
@@ -120,7 +120,7 @@ export function ApTableStateProvider({
           <h2 className="text-lg font-semibold">{t('Table not available')}</h2>
           <p className="text-sm text-muted-foreground">
             {t(
-              'We couldn’t load this table. It may have been removed or is unavailable.',
+              'We couldnâ€™t load this table. It may have been removed or is unavailable.',
             )}
           </p>
         </div>

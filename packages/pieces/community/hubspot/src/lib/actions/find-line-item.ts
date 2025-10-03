@@ -1,5 +1,5 @@
-import { MarkdownVariant } from '@activepieces/shared';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { MarkdownVariant } from '@IOpeer/shared';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { Client } from '@hubspot/api-client';
 import { hubspotAuth } from '../../';
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';

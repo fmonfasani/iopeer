@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { sendEvent } from "./lib/actions/send-event";
 
 export const gameballAuth = PieceAuth.SecretText({
@@ -12,7 +12,7 @@ export const gameball = createPiece({
   displayName: "Gameball",
   auth: gameballAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: "https://cdn.activepieces.com/pieces/gameball.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/gameball.png",
   authors: ["Raamyy"],
   actions: [sendEvent],
   triggers: [],

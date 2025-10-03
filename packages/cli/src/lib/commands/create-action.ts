@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs/promises';
+﻿import { writeFile } from 'node:fs/promises';
 import chalk from 'chalk';
 import { Command } from 'commander';
 import inquirer from 'inquirer';
@@ -8,7 +8,7 @@ import { join } from 'node:path';
 
 function createActionTemplate(displayName: string, description: string) {
   const camelCase = displayNameToCamelCase(displayName)
-  const actionTemplate = `import { createAction, Property } from '@activepieces/pieces-framework';
+  const actionTemplate = `import { createAction, Property } from '@IOpeer/pieces-framework';
 
 export const ${camelCase} = createAction({
   // auth: check https://www.iopeer.com/docs/developers/piece-reference/authentication,
@@ -27,7 +27,7 @@ export const ${camelCase} = createAction({
 
 const checkIfActionExists = async (actionPath: string) => {
   if (await checkIfFileExists(actionPath)) {
-    console.log(chalk.red(`🚨 Action already exists at ${actionPath}`));
+    console.log(chalk.red(`ðŸš¨ Action already exists at ${actionPath}`));
     process.exit(1);
   }
 }
@@ -43,7 +43,7 @@ const createAction = async (pieceName: string, displayActionName: string, action
 
   await makeFolderRecursive(actionsFolder);
   await writeFile(actionPath, actionTemplate);
-  console.log(chalk.yellow('✨'), `Action ${actionPath} created`);
+  console.log(chalk.yellow('âœ¨'), `Action ${actionPath} created`);
 };
 
 

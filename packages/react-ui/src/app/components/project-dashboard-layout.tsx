@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+﻿import React, { createContext, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar-shadcn';
@@ -8,7 +8,7 @@ import { WelcomeTrialDialog } from '@/features/billing/components/trial-dialog';
 import { UpgradeDialog } from '@/features/billing/components/upgrade-dialog';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
-import { ApFlagId, isNil } from '@activepieces/shared';
+import { ApFlagId, isNil } from '@IOpeer/shared';
 
 import { authenticationSession } from '../../lib/authentication-session';
 

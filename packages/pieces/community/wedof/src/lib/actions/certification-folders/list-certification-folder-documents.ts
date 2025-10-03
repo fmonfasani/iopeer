@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const getCertificationFolderDocuments = createAction({
@@ -8,12 +8,12 @@ export const getCertificationFolderDocuments = createAction({
   name: 'getCertificationFolderDocuments',
   displayName: "Liste des documents d'un dossier de certification",
   description:
-    "Récupérer la liste de documents d'un dossier de certification à partir de son n° de dossier",
+    "RÃ©cupÃ©rer la liste de documents d'un dossier de certification Ã  partir de son nÂ° de dossier",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
   },

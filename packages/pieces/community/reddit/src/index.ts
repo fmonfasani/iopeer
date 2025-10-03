@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@activepieces/pieces-framework";
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth, OAuth2AuthorizationMethod, Property, OAuth2PropertyValue } from "@IOpeer/pieces-framework";
 import { retrieveRedditPost } from './lib/actions/retrieve-reddit-post';
 import { getRedditPostDetails } from './lib/actions/get-reddit-post-details';
 import { createRedditPost } from './lib/actions/create-reddit-post';
@@ -9,8 +9,8 @@ import { editRedditPost } from './lib/actions/edit-reddit-post';
 import { editRedditComment } from './lib/actions/edit-reddit-comment';
 import { deleteRedditPost } from './lib/actions/delete-reddit-post';
 import { deleteRedditComment } from './lib/actions/delete-reddit-comment';
-import { PieceCategory } from '@activepieces/shared';
-import { OAuth2GrantType } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
+import { OAuth2GrantType } from '@IOpeer/shared';
 
 const markdown = `
 To obtain your Reddit API credentials:
@@ -43,7 +43,7 @@ export const redditAuth = PieceAuth.OAuth2({
 export const reddit = createPiece({
   displayName: 'Reddit',
   description: 'Interact with Reddit - fetch and submit posts.',
-  logoUrl: 'https://cdn.activepieces.com/pieces/reddit.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/reddit.png',
   minimumSupportedRelease: '0.36.1',
   categories: [PieceCategory.COMMUNICATION],
   authors: ['bhaviksingla1403'],

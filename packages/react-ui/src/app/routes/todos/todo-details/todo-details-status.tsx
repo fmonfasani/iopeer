@@ -1,4 +1,4 @@
-import { CheckCircle, X, CircleDot, Loader } from 'lucide-react';
+﻿import { CheckCircle, X, CircleDot, Loader } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { StatusIconWithText } from '@/components/ui/status-icon-with-text';
@@ -7,7 +7,7 @@ import {
   UNRESOLVED_STATUS,
   STATUS_VARIANT,
   STATUS_COLORS,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type TodoDetailsStatusProps = {
   todo: Todo;

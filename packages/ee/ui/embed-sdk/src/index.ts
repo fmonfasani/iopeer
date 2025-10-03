@@ -1,6 +1,6 @@
-//Client ==> Activepieces
+﻿//Client ==> IOpeer
 //Vendor ==> Customers using our embed sdk
-export enum ActivepiecesClientEventName {
+export enum IOpeerClientEventName {
   CLIENT_INIT = 'CLIENT_INIT',
   CLIENT_ROUTE_CHANGED = 'CLIENT_ROUTE_CHANGED',
   CLIENT_NEW_CONNECTION_DIALOG_CLOSED = 'CLIENT_NEW_CONNECTION_DIALOG_CLOSED',
@@ -12,53 +12,53 @@ export enum ActivepiecesClientEventName {
   CLIENT_CONNECTION_PIECE_NOT_FOUND = 'CLIENT_CONNECTION_PIECE_NOT_FOUND',
   CLIENT_BUILDER_HOME_BUTTON_CLICKED = 'CLIENT_BUILDER_HOME_BUTTON_CLICKED',
 }
-export interface ActivepiecesClientInit {
-  type: ActivepiecesClientEventName.CLIENT_INIT;
+export interface IOpeerClientInit {
+  type: IOpeerClientEventName.CLIENT_INIT;
   data: Record<string, never>;
 }
-export interface ActivepiecesClientAuthenticationSuccess {
-  type: ActivepiecesClientEventName.CLIENT_AUTHENTICATION_SUCCESS;
+export interface IOpeerClientAuthenticationSuccess {
+  type: IOpeerClientEventName.CLIENT_AUTHENTICATION_SUCCESS;
   data: Record<string, never>;
 }
-export interface ActivepiecesClientAuthenticationFailed {
-  type: ActivepiecesClientEventName.CLIENT_AUTHENTICATION_FAILED;
+export interface IOpeerClientAuthenticationFailed {
+  type: IOpeerClientEventName.CLIENT_AUTHENTICATION_FAILED;
   data: unknown;
 }
 // Added this event so in the future if we add another step between authentication and configuration finished, we can use this event to notify the parent
-export interface ActivepiecesClientConfigurationFinished {
-  type: ActivepiecesClientEventName.CLIENT_CONFIGURATION_FINISHED;
+export interface IOpeerClientConfigurationFinished {
+  type: IOpeerClientEventName.CLIENT_CONFIGURATION_FINISHED;
   data: Record<string, never>;
 }
-export interface ActivepiecesClientShowConnectionIframe {
-  type: ActivepiecesClientEventName.CLIENT_SHOW_CONNECTION_IFRAME;
+export interface IOpeerClientShowConnectionIframe {
+  type: IOpeerClientEventName.CLIENT_SHOW_CONNECTION_IFRAME;
   data: Record<string, never>;
 }
-export interface ActivepiecesClientConnectionNameIsInvalid {
-  type: ActivepiecesClientEventName.CLIENT_CONNECTION_NAME_IS_INVALID;
+export interface IOpeerClientConnectionNameIsInvalid {
+  type: IOpeerClientEventName.CLIENT_CONNECTION_NAME_IS_INVALID;
   data: {
     error: string;
   };
 }
 
-export interface ActivepiecesClientConnectionPieceNotFound {
-  type: ActivepiecesClientEventName.CLIENT_CONNECTION_PIECE_NOT_FOUND;
+export interface IOpeerClientConnectionPieceNotFound {
+  type: IOpeerClientEventName.CLIENT_CONNECTION_PIECE_NOT_FOUND;
   data: {
     error: string
   };
 }
 
-export interface ActivepiecesClientRouteChanged {
-  type: ActivepiecesClientEventName.CLIENT_ROUTE_CHANGED;
+export interface IOpeerClientRouteChanged {
+  type: IOpeerClientEventName.CLIENT_ROUTE_CHANGED;
   data: {
     route: string;
   };
 }
-export interface ActivepiecesNewConnectionDialogClosed {
-  type: ActivepiecesClientEventName.CLIENT_NEW_CONNECTION_DIALOG_CLOSED;
+export interface IOpeerNewConnectionDialogClosed {
+  type: IOpeerClientEventName.CLIENT_NEW_CONNECTION_DIALOG_CLOSED;
   data: { connection?: { id: string; name: string } };
 }
-export interface ActivepiecesBuilderHomeButtonClicked {
-  type: ActivepiecesClientEventName.CLIENT_BUILDER_HOME_BUTTON_CLICKED;
+export interface IOpeerBuilderHomeButtonClicked {
+  type: IOpeerClientEventName.CLIENT_BUILDER_HOME_BUTTON_CLICKED;
   data: {
     route: string;
   };
@@ -72,24 +72,24 @@ export const NEW_CONNECTION_QUERY_PARAMS = {
   randomId: 'randomId'
 };
 
-export type ActivepiecesClientEvent =
-  | ActivepiecesClientInit
-  | ActivepiecesClientRouteChanged;
+export type IOpeerClientEvent =
+  | IOpeerClientInit
+  | IOpeerClientRouteChanged;
 
-export enum ActivepiecesVendorEventName {
+export enum IOpeerVendorEventName {
   VENDOR_INIT = 'VENDOR_INIT',
   VENDOR_ROUTE_CHANGED = 'VENDOR_ROUTE_CHANGED',
 }
 
-export interface ActivepiecesVendorRouteChanged {
-  type: ActivepiecesVendorEventName.VENDOR_ROUTE_CHANGED;
+export interface IOpeerVendorRouteChanged {
+  type: IOpeerVendorEventName.VENDOR_ROUTE_CHANGED;
   data: {
     vendorRoute: string;
   };
 }
 
-export interface ActivepiecesVendorInit {
-  type: ActivepiecesVendorEventName.VENDOR_INIT;
+export interface IOpeerVendorInit {
+  type: IOpeerVendorEventName.VENDOR_INIT;
   data: {
     hideSidebar: boolean;
     hideFlowNameInBuilder?: boolean;
@@ -155,14 +155,14 @@ type ConfigureParams = {
 }
 
 type RequestMethod = Required<Parameters<typeof fetch>>[1]['method'];
-class ActivepiecesEmbedded {
+class IOpeerEmbedded {
   readonly _sdkVersion = "0.8.0";
   //used for  Automatically Sync URL feature i.e /org/1234
   _prefix = '/';
   _instanceUrl = '';
   //this is used to authenticate embedding for the first time
   _jwtToken = '';
-  _resolveNewConnectionDialogClosed?: (result: ActivepiecesNewConnectionDialogClosed['data']) => void;
+  _resolveNewConnectionDialogClosed?: (result: IOpeerNewConnectionDialogClosed['data']) => void;
   _dashboardAndBuilderIframeWindow?: Window;
   _rejectNewConnectionDialogClosed?: (error: unknown) => void;
   _handleVendorNavigation?: (data: { route: string }) => void;
@@ -237,12 +237,12 @@ class ActivepiecesEmbedded {
   };
 
   private _setupInitialMessageHandler(targetWindow: Window, initialRoute: string, callbackAfterConfigurationFinished?: () => void) {
-    const initialMessageHandler = (event: MessageEvent<ActivepiecesClientEvent>) => {
+    const initialMessageHandler = (event: MessageEvent<IOpeerClientEvent>) => {
       if (event.source === targetWindow && event.origin === new URL(this._instanceUrl).origin) {
         switch (event.data.type) {
-          case ActivepiecesClientEventName.CLIENT_INIT: {
-            const apEvent: ActivepiecesVendorInit = {
-              type: ActivepiecesVendorEventName.VENDOR_INIT,
+          case IOpeerClientEventName.CLIENT_INIT: {
+            const apEvent: IOpeerVendorInit = {
+              type: IOpeerVendorEventName.VENDOR_INIT,
               data: {
                 hideSidebar: this._embeddingState?.dashboard?.hideSidebar ?? false,
                 hideFlowsPageNavbar: this._embeddingState?.dashboard?.hideFlowsPageNavbar ?? false,
@@ -291,8 +291,8 @@ class ActivepiecesEmbedded {
   }
 
   private _createConfigurationFinishedListener = (targetWindow: Window, callbackAfterConfigurationFinished?: () => void) => {
-    const configurationFinishedHandler = (event: MessageEvent<ActivepiecesClientConfigurationFinished>) => {
-      if (event.data.type === ActivepiecesClientEventName.CLIENT_CONFIGURATION_FINISHED && event.source === targetWindow) {
+    const configurationFinishedHandler = (event: MessageEvent<IOpeerClientConfigurationFinished>) => {
+      if (event.data.type === IOpeerClientEventName.CLIENT_CONFIGURATION_FINISHED && event.source === targetWindow) {
         this._logger().log('Configuration finished')
         if (callbackAfterConfigurationFinished) {
           callbackAfterConfigurationFinished();
@@ -303,8 +303,8 @@ class ActivepiecesEmbedded {
   }
 
   private _createAuthenticationFailedListener = (targetWindow: Window) => {
-    const authenticationFailedHandler = (event: MessageEvent<ActivepiecesClientAuthenticationFailed>) => {
-        if (event.data.type === ActivepiecesClientEventName.CLIENT_AUTHENTICATION_FAILED && event.source === targetWindow) {
+    const authenticationFailedHandler = (event: MessageEvent<IOpeerClientAuthenticationFailed>) => {
+        if (event.data.type === IOpeerClientEventName.CLIENT_AUTHENTICATION_FAILED && event.source === targetWindow) {
            this._errorCreator('Authentication failed',event.data.data);
       }
     }
@@ -312,8 +312,8 @@ class ActivepiecesEmbedded {
   }
 
   private _createAuthenticationSuccessListener = (targetWindow: Window) => {
-    const authenticationSuccessHandler = (event: MessageEvent<ActivepiecesClientAuthenticationSuccess>) => {
-      if (event.data.type === ActivepiecesClientEventName.CLIENT_AUTHENTICATION_SUCCESS && event.source === targetWindow) {
+    const authenticationSuccessHandler = (event: MessageEvent<IOpeerClientAuthenticationSuccess>) => {
+      if (event.data.type === IOpeerClientEventName.CLIENT_AUTHENTICATION_SUCCESS && event.source === targetWindow) {
         this._logger().log('Authentication success')
         window.removeEventListener('message', authenticationSuccessHandler);
       }
@@ -387,7 +387,7 @@ class ActivepiecesEmbedded {
             }
           }, 500);
         }
-        return new Promise<ActivepiecesNewConnectionDialogClosed['data']>((resolve, reject) => {
+        return new Promise<IOpeerNewConnectionDialogClosed['data']>((resolve, reject) => {
           this._resolveNewConnectionDialogClosed = resolve;
           this._rejectNewConnectionDialogClosed = reject;
           this._setConnectionIframeEventsListener(target);
@@ -403,8 +403,8 @@ class ActivepiecesEmbedded {
       this._logger().error('dashboard iframe not found');
       return;
     }
-    const event: ActivepiecesVendorRouteChanged = {
-      type: ActivepiecesVendorEventName.VENDOR_ROUTE_CHANGED,
+    const event: IOpeerVendorRouteChanged = {
+      type: IOpeerVendorEventName.VENDOR_ROUTE_CHANGED,
       data: {
         vendorRoute: route,
       },
@@ -418,10 +418,10 @@ class ActivepiecesEmbedded {
   private _checkForClientRouteChanges = (source: Window) => {
     window.addEventListener(
       'message',
-      (event: MessageEvent<ActivepiecesClientRouteChanged>) => {
+      (event: MessageEvent<IOpeerClientRouteChanged>) => {
         if (
           event.data.type ===
-          ActivepiecesClientEventName.CLIENT_ROUTE_CHANGED &&
+          IOpeerClientEventName.CLIENT_ROUTE_CHANGED &&
           event.source === source && 
           this._embeddingState?.navigation?.handler         
         ) {
@@ -434,8 +434,8 @@ class ActivepiecesEmbedded {
   };
 
   private _checkForBuilderHomeButtonClicked = (source: Window) => {
-    window.addEventListener('message', (event: MessageEvent<ActivepiecesBuilderHomeButtonClicked>) => {
-      if (event.data.type === ActivepiecesClientEventName.CLIENT_BUILDER_HOME_BUTTON_CLICKED && event.source === source) {
+    window.addEventListener('message', (event: MessageEvent<IOpeerBuilderHomeButtonClicked>) => {
+      if (event.data.type === IOpeerClientEventName.CLIENT_BUILDER_HOME_BUTTON_CLICKED && event.source === source) {
         this._embeddingState?.builder?.homeButtonClickedHandler?.(event.data.data);
       }
     });
@@ -446,7 +446,7 @@ class ActivepiecesEmbedded {
   }
 
   //used for  Automatically Sync URL feature 
-  extractActivepiecesRouteFromUrl({ vendorUrl }: { vendorUrl: string }) {
+  extractIOpeerRouteFromUrl({ vendorUrl }: { vendorUrl: string }) {
     return this._extractRouteAfterPrefix(vendorUrl, this._removeTrailingSlashes(this._parentOrigin) + this._prefix);
   }
 
@@ -459,10 +459,10 @@ class ActivepiecesEmbedded {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   private _cleanConnectionIframe = () => { };
   private _setConnectionIframeEventsListener(target: Window | HTMLIFrameElement ) {
-    const connectionRelatedMessageHandler = (event: MessageEvent<ActivepiecesNewConnectionDialogClosed | ActivepiecesClientConnectionNameIsInvalid | ActivepiecesClientShowConnectionIframe | ActivepiecesClientConnectionPieceNotFound>) => {
+    const connectionRelatedMessageHandler = (event: MessageEvent<IOpeerNewConnectionDialogClosed | IOpeerClientConnectionNameIsInvalid | IOpeerClientShowConnectionIframe | IOpeerClientConnectionPieceNotFound>) => {
       if (event.data.type) {
         switch (event.data.type) {
-          case ActivepiecesClientEventName.CLIENT_NEW_CONNECTION_DIALOG_CLOSED: {
+          case IOpeerClientEventName.CLIENT_NEW_CONNECTION_DIALOG_CLOSED: {
             if (this._resolveNewConnectionDialogClosed) {
               this._resolveNewConnectionDialogClosed(event.data.data);
             }
@@ -470,8 +470,8 @@ class ActivepiecesEmbedded {
             window.removeEventListener('message', connectionRelatedMessageHandler);
             break;
           }
-          case ActivepiecesClientEventName.CLIENT_CONNECTION_NAME_IS_INVALID:
-          case ActivepiecesClientEventName.CLIENT_CONNECTION_PIECE_NOT_FOUND: {
+          case IOpeerClientEventName.CLIENT_CONNECTION_NAME_IS_INVALID:
+          case IOpeerClientEventName.CLIENT_CONNECTION_PIECE_NOT_FOUND: {
             this._removeEmbedding(target);
             if (this._rejectNewConnectionDialogClosed) {
               this._rejectNewConnectionDialogClosed(event.data.data);
@@ -482,7 +482,7 @@ class ActivepiecesEmbedded {
             window.removeEventListener('message', connectionRelatedMessageHandler);
             break;
           }
-          case ActivepiecesClientEventName.CLIENT_SHOW_CONNECTION_IFRAME: {
+          case IOpeerClientEventName.CLIENT_SHOW_CONNECTION_IFRAME: {
             if (target instanceof HTMLIFrameElement) {
               target.style.display = 'block';
             }
@@ -544,7 +544,7 @@ class ActivepiecesEmbedded {
   
   private _errorCreator(message: string,...args:any[]): never {
     this._logger().error(message,...args)
-    throw new Error(`Activepieces: ${message}`,);
+    throw new Error(`IOpeer: ${message}`,);
   }
   private _removeEmbedding(target:HTMLIFrameElement | Window) {
     if (target) {
@@ -561,13 +561,13 @@ class ActivepiecesEmbedded {
   private _logger() {
     return{
       log: (message: string, ...args: any[]) => {
-        console.log(`Activepieces: ${message}`, ...args)
+        console.log(`IOpeer: ${message}`, ...args)
       },
       error: (message: string, ...args: any[]) => {
-        console.error(`Activepieces: ${message}`, ...args)
+        console.error(`IOpeer: ${message}`, ...args)
       },
       warn: (message: string, ...args: any[]) => {
-        console.warn(`Activepieces: ${message}`, ...args)
+        console.warn(`IOpeer: ${message}`, ...args)
       }
     }
   }
@@ -614,5 +614,5 @@ class ActivepiecesEmbedded {
 }
 
 
-(window as any).activepieces = new ActivepiecesEmbedded();
-(window as any).ActivepiecesEmbedded = ActivepiecesEmbedded;
+(window as any).IOpeer = new IOpeerEmbedded();
+(window as any).IOpeerEmbedded = IOpeerEmbedded;

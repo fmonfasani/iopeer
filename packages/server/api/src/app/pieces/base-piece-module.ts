@@ -1,5 +1,5 @@
-import { PieceMetadataModel } from '@activepieces/pieces-framework'
-import { apVersionUtil } from '@activepieces/server-shared'
+﻿import { PieceMetadataModel } from '@IOpeer/pieces-framework'
+import { apVersionUtil } from '@IOpeer/server-shared'
 import {
     ALL_PRINCIPAL_TYPES,
     ApEdition,
@@ -16,7 +16,7 @@ import {
     PrincipalType,
     SampleDataFileType,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
 } from '@fastify/type-provider-typebox'

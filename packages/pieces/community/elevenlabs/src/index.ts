@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth, Property } from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
 import { textToSpeech } from './lib/actions/text-to-speech-action';
 import {
   createClient,
@@ -67,7 +67,7 @@ export const elevenlabs = createPiece({
   displayName: 'ElevenLabs',
   auth: elevenlabsAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/elevenlabs.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/elevenlabs.png',
   authors: ['pfernandez98'],
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   description: 'AI Voice Generator & Text to Speech',

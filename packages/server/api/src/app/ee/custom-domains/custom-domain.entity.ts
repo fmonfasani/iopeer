@@ -1,8 +1,8 @@
-import {
+﻿import {
     CustomDomain,
     CustomDomainStatus,
-} from '@activepieces/ee-shared'
-import { Platform } from '@activepieces/shared'
+} from '@IOpeer/ee-shared'
+import { Platform } from '@IOpeer/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

@@ -1,5 +1,5 @@
-
-import { createPiece } from "@activepieces/pieces-framework";
+﻿
+import { createPiece } from "@IOpeer/pieces-framework";
 import { teamworkAuth } from "./lib/common/auth";
 import { createProject } from "./lib/actions/create-project";
 import { createTaskList } from "./lib/actions/create-task-list";
@@ -26,14 +26,14 @@ import { newMessage } from "./lib/triggers/new-message";
 import { newFile } from "./lib/triggers/new-file";
 import { newExpense } from "./lib/triggers/new-expense";
 import { newInvoice } from "./lib/triggers/new-invoice";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
   export const teamwork = createPiece({
       displayName: "Teamwork",
       description: "Teamwork is a work and project management tool that helps teams improve collaboration, visibility, and accountability.",
       auth: teamworkAuth,
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/teamwork.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/teamwork.png",
       authors: ['sparkybug', 'onyedikachi-david'],
       categories: [PieceCategory.PRODUCTIVITY],
       actions: [

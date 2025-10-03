@@ -1,10 +1,10 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { Image, linkedinCommon, santizeText } from '../common';
 import { linkedinAuth } from '../..';
 

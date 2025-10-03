@@ -1,5 +1,5 @@
-import { exceptionHandler, pinoLogging } from '@activepieces/server-shared'
-import { ActivepiecesError, BeginExecuteFlowOperation, EngineResponseStatus, ErrorCode, ExecuteFlowJobData, ExecutionType, FlowRunStatus, FlowVersion, isNil, ResumeExecuteFlowOperation, ResumePayload, UpdateLogsBehavior } from '@activepieces/shared'
+﻿import { exceptionHandler, pinoLogging } from '@IOpeer/server-shared'
+import { IOpeerError, BeginExecuteFlowOperation, EngineResponseStatus, ErrorCode, ExecuteFlowJobData, ExecutionType, FlowRunStatus, FlowVersion, isNil, ResumeExecuteFlowOperation, ResumePayload, UpdateLogsBehavior } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { engineApiService } from '../api/server-api.service'
 import { flowWorkerCache } from '../cache/flow-worker-cache'
@@ -144,7 +144,7 @@ export const flowJobExecutor = (log: FastifyBaseLogger) => ({
             const { result, status } = await engineRunner(runLog).executeFlow(engineToken, input)
 
             if (result.status === FlowRunStatus.INTERNAL_ERROR || status === EngineResponseStatus.INTERNAL_ERROR) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.ENGINE_OPERATION_FAILURE,
                     params: {
                         message: result.error?.message ?? 'internal error',
@@ -154,8 +154,8 @@ export const flowJobExecutor = (log: FastifyBaseLogger) => ({
 
         }
         catch (e) {
-            const isTimeoutError = e instanceof ActivepiecesError && e.error.code === ErrorCode.EXECUTION_TIMEOUT
-            const isMemoryIssueError = e instanceof ActivepiecesError && e.error.code === ErrorCode.MEMORY_ISSUE
+            const isTimeoutError = e instanceof IOpeerError && e.error.code === ErrorCode.EXECUTION_TIMEOUT
+            const isMemoryIssueError = e instanceof IOpeerError && e.error.code === ErrorCode.MEMORY_ISSUE
 
             if (isTimeoutError) {
                 await handleTimeoutError(jobData, engineToken)

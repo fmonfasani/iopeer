@@ -1,6 +1,6 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, QueryParams, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+import { createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
@@ -8,11 +8,11 @@ export const searchCertificationFolder = createAction({
     auth: wedofAuth,
     name: 'searchCertificationFolder',
     displayName: 'Rechercher un ou plusieurs dossiers de certifications',
-    description: 'Liste les dossiers de certifications en fonction des critères sélectionnés',
+    description: 'Liste les dossiers de certifications en fonction des critÃ¨res sÃ©lectionnÃ©s',
     props: {
         query: Property.ShortText({
             displayName: 'Recherche',
-            description: 'Permet d\'effectuer une recherche libre sur les champs nom du candidat, prénom du candidat, email du candidat, tags, commentaire, id du dossier de certification et phoneNumber',
+            description: 'Permet d\'effectuer une recherche libre sur les champs nom du candidat, prÃ©nom du candidat, email du candidat, tags, commentaire, id du dossier de certification et phoneNumber',
             required: false
         }),
         period: wedofCommon.period,
@@ -26,12 +26,12 @@ export const searchCertificationFolder = createAction({
                 const props: DynamicPropsValue = {};        
                 if (_period === 'custom') {          
                     props['since'] = Property.DateTime({            
-                        displayName: '(Période) Entre le',            
+                        displayName: '(PÃ©riode) Entre le',            
                         description: 'Date au format YYYY-MM-DD',            
                         required: true,          
                     });          
                     props['until'] = Property.DateTime({            
-                        displayName: "(Période) et jusqu'au",            
+                        displayName: "(PÃ©riode) et jusqu'au",            
                         description: 'Date au format YYYY-MM-DD',            
                         required: true,          
                     });        
@@ -47,63 +47,63 @@ export const searchCertificationFolder = createAction({
                             }),
         state: Property.StaticMultiSelectDropdown({
             displayName: 'Etat du dossier de certification',
-            description: 'Permet de n\'obtenir que les dossiers dans l\'état d\'obtention de la certification considéré. Plusieurs états peuvent être sélectionnés.',
+            description: 'Permet de n\'obtenir que les dossiers dans l\'Ã©tat d\'obtention de la certification considÃ©rÃ©. Plusieurs Ã©tats peuvent Ãªtre sÃ©lectionnÃ©s.',
             required: false,
             options: {
                 options: [
                     { value: 'all', label: 'Tous' },
-                    { value: 'toRegister', label: 'À inscrire' },
-                    { value: 'refused', label: 'Refusé' },
+                    { value: 'toRegister', label: 'Ã€ inscrire' },
+                    { value: 'refused', label: 'RefusÃ©' },
                     { value: 'registered', label: 'Inscrit' },
-                    { value: 'toTake', label: 'À passer' },
-                    { value: 'toControl', label: 'À contrôler' },
-                    { value: 'toRetake', label: 'À repasser' },
-                    { value: 'failed', label: 'Échoué' },
-                    { value: 'aborted', label: 'Abandonné' },
-                    { value: 'success', label: 'Réussi' }
+                    { value: 'toTake', label: 'Ã€ passer' },
+                    { value: 'toControl', label: 'Ã€ contrÃ´ler' },
+                    { value: 'toRetake', label: 'Ã€ repasser' },
+                    { value: 'failed', label: 'Ã‰chouÃ©' },
+                    { value: 'aborted', label: 'AbandonnÃ©' },
+                    { value: 'success', label: 'RÃ©ussi' }
                 ]
             }
         }),
         registrationFolderState: Property.StaticMultiSelectDropdown({
-            displayName: 'État du dossier de formation',
-            description: 'Permet de n\'obtenir que les dossiers dans l\'état considéré. Plusieurs états peuvent être sélectionnés.',
+            displayName: 'Ã‰tat du dossier de formation',
+            description: 'Permet de n\'obtenir que les dossiers dans l\'Ã©tat considÃ©rÃ©. Plusieurs Ã©tats peuvent Ãªtre sÃ©lectionnÃ©s.',
             required: false,
             options: {
                 options: [
-                    { value: 'notProcessed', label: 'Non traité' },
-                    { value: 'validated', label: 'Validé' },
+                    { value: 'notProcessed', label: 'Non traitÃ©' },
+                    { value: 'validated', label: 'ValidÃ©' },
                     { value: 'waitingAcceptation', label: 'En attente d\'acceptation' },
-                    { value: 'rejectedWithoutTitulaireSuite', label: 'Rejeté sans suite titulaire' },
-                    { value: 'rejected', label: 'Rejeté' },
-                    { value: 'rejectedWithoutCdcSuite', label: 'Rejeté sans suite CDC' },
-                    { value: 'accepted', label: 'Accepté' },
+                    { value: 'rejectedWithoutTitulaireSuite', label: 'RejetÃ© sans suite titulaire' },
+                    { value: 'rejected', label: 'RejetÃ©' },
+                    { value: 'rejectedWithoutCdcSuite', label: 'RejetÃ© sans suite CDC' },
+                    { value: 'accepted', label: 'AcceptÃ©' },
                     { value: 'inTraining', label: 'En formation' },
-                    { value: 'terminated', label: 'Terminé' },
-                    { value: 'serviceDoneDeclared', label: 'Service déclaré fait' },
-                    { value: 'serviceDoneValidated', label: 'Service validé fait' },
-                    { value: 'canceledByAttendee', label: 'Annulé par le candidat' },
-                    { value: 'canceledByAttendeeNotRealized', label: 'Annulé par candidat non réalisé' },
-                    { value: 'canceledByOrganism', label: 'Annulé par l\'organisme' },
-                    { value: 'refusedByAttendee', label: 'Refusé par le candidat' },
-                    { value: 'refusedByOrganism', label: 'Refusé par l\'organisme' }
+                    { value: 'terminated', label: 'TerminÃ©' },
+                    { value: 'serviceDoneDeclared', label: 'Service dÃ©clarÃ© fait' },
+                    { value: 'serviceDoneValidated', label: 'Service validÃ© fait' },
+                    { value: 'canceledByAttendee', label: 'AnnulÃ© par le candidat' },
+                    { value: 'canceledByAttendeeNotRealized', label: 'AnnulÃ© par candidat non rÃ©alisÃ©' },
+                    { value: 'canceledByOrganism', label: 'AnnulÃ© par l\'organisme' },
+                    { value: 'refusedByAttendee', label: 'RefusÃ© par le candidat' },
+                    { value: 'refusedByOrganism', label: 'RefusÃ© par l\'organisme' }
                 ]
             }
         }),
         sort: Property.StaticDropdown({
-            displayName: 'Tri sur critère',
-            description: 'Trie les résultats sur un critère',
+            displayName: 'Tri sur critÃ¨re',
+            description: 'Trie les rÃ©sultats sur un critÃ¨re',
             required: false,
             options: {
                 options: [
-                    { value: 'stateLastUpdate', label: "Date du dernier changement d'état" },
-                    { value: 'id', label: 'ID de base de données' },
-                    { value: 'successDate', label: 'Date de réussite' }
+                    { value: 'stateLastUpdate', label: "Date du dernier changement d'Ã©tat" },
+                    { value: 'id', label: 'ID de base de donnÃ©es' },
+                    { value: 'successDate', label: 'Date de rÃ©ussite' }
                 ]
             }
         }),
         order: Property.StaticDropdown({
             displayName: 'Ordre',
-            description: 'Tri les résultats par ordre ascendant ou descendant',
+            description: 'Tri les rÃ©sultats par ordre ascendant ou descendant',
             required: false,
             options: {
                 options: [
@@ -113,15 +113,15 @@ export const searchCertificationFolder = createAction({
             }
         }),
         cdcState: Property.StaticDropdown({
-            displayName: 'État CDC',
-            description: 'Permet de n\'obtenir que les dossiers dans l\'état considéré lié à l\'export des dossiers',
+            displayName: 'Ã‰tat CDC',
+            description: 'Permet de n\'obtenir que les dossiers dans l\'Ã©tat considÃ©rÃ© liÃ© Ã  l\'export des dossiers',
             required: false,
             options: {
                 options: [
                     { value: 'all', label: 'Tous' },
-                    { value: 'notExported', label: 'Jamais accroché' },
-                    { value: 'exported', label: "Envoyé et en attente de l'accusé" },
-                    { value: 'processedOk', label: 'Accrochage réussi' },
+                    { value: 'notExported', label: 'Jamais accrochÃ©' },
+                    { value: 'exported', label: "EnvoyÃ© et en attente de l'accusÃ©" },
+                    { value: 'processedOk', label: 'Accrochage rÃ©ussi' },
                     { value: 'processedKo', label: 'Accrochage en erreur' }
                 ]
             }
@@ -138,8 +138,8 @@ export const searchCertificationFolder = createAction({
             }
         }),
         cdcCompliant: Property.StaticDropdown({
-            displayName: 'Données apprenant complètes',
-            description: "Permet de filtrer les dossiers de certification selon le fait qu'ils contiennent les données de l'apprenant obligatoires pour l'accrochage en cas d'obtention de la certification",
+            displayName: 'DonnÃ©es apprenant complÃ¨tes',
+            description: "Permet de filtrer les dossiers de certification selon le fait qu'ils contiennent les donnÃ©es de l'apprenant obligatoires pour l'accrochage en cas d'obtention de la certification",
             required: false,
             options: {
                 options: [
@@ -150,7 +150,7 @@ export const searchCertificationFolder = createAction({
         }),
         cdcToExport: Property.StaticDropdown({
             displayName: 'Inclus dans les prochains accrochages',
-            description: "Permet de filtrer les dossiers de certification qui devront être inclus dans les prochains exports pour l'accrochage",
+            description: "Permet de filtrer les dossiers de certification qui devront Ãªtre inclus dans les prochains exports pour l'accrochage",
             required: false,
             options: {
                 options: [
@@ -161,18 +161,18 @@ export const searchCertificationFolder = createAction({
         }),
         certifInfo: Property.Array({
             displayName: 'ID certification',
-            description: 'Permet de n\'obtenir que les dossiers liés à la certification considérée',
+            description: 'Permet de n\'obtenir que les dossiers liÃ©s Ã  la certification considÃ©rÃ©e',
             required: false
         }),
         dataProvider: Property.StaticMultiSelectDropdown({
             displayName: 'Type de financement',
-            description: 'Permet de n\'obtenir que les dossiers dans le type considéré. Plusieurs types peuvent être sélectionnés.',
+            description: 'Permet de n\'obtenir que les dossiers dans le type considÃ©rÃ©. Plusieurs types peuvent Ãªtre sÃ©lectionnÃ©s.',
             required: false,
             options: {
                 options: [
                     { value: 'cpf', label: 'CPF' },
                     { value: 'individual', label: 'Individuel' },
-                    { value: 'poleEmploi', label: 'Pôle Emploi' },
+                    { value: 'poleEmploi', label: 'PÃ´le Emploi' },
                     { value: 'company', label: 'Entreprise' },
                     { value: 'opco', label: 'OPCO' },
                     { value: 'opcoCfa', label: 'OPCO CFA' },
@@ -183,7 +183,7 @@ export const searchCertificationFolder = createAction({
         }),
         siret: Property.Array({
             displayName: 'SIRET',
-            description: 'Permet de n\'obtenir que les dossiers issus de l\'organisme de formation de siret considéré. Utilisez "all" pour récupérer tous les dossiers de tous les organismes.',
+            description: 'Permet de n\'obtenir que les dossiers issus de l\'organisme de formation de siret considÃ©rÃ©. Utilisez "all" pour rÃ©cupÃ©rer tous les dossiers de tous les organismes.',
             required: false,
             defaultValue:['all']
         }),
@@ -212,18 +212,18 @@ export const searchCertificationFolder = createAction({
         }),
         page: Property.Number({
             displayName: 'Page',
-            description: 'Numéro de page de la requête',
+            description: 'NumÃ©ro de page de la requÃªte',
             defaultValue: 1,
             required: false
         }),
         cdcFile: Property.ShortText({
             displayName: 'Fichier CDC',
-            description: 'Permet de filtrer les dossiers de certification exportés sur un fichier XML lié à l\'accrochage',
+            description: 'Permet de filtrer les dossiers de certification exportÃ©s sur un fichier XML liÃ© Ã  l\'accrochage',
             required: false
         }),
         certificatePrintData: Property.StaticDropdown({
-            displayName: 'Données d\'impression de certificat',
-            description: 'Permet de n\'obtenir que les dossiers pour lesquels un parchemin est en cours d\'impression ou a été imprimé',
+            displayName: 'DonnÃ©es d\'impression de certificat',
+            description: 'Permet de n\'obtenir que les dossiers pour lesquels un parchemin est en cours d\'impression ou a Ã©tÃ© imprimÃ©',
             required: false,
             options: {
                 options: [
@@ -234,7 +234,7 @@ export const searchCertificationFolder = createAction({
         }),
         columnId: Property.ShortText({
             displayName: 'ID de colonne',
-            description: 'Identifiant pour affichage personnalisé',
+            description: 'Identifiant pour affichage personnalisÃ©',
             required: false
         }),
         registrationFolderCompletionRate: Property.StaticDropdown({
@@ -243,54 +243,54 @@ export const searchCertificationFolder = createAction({
             required: false,
             options: {
                 options: [
-                    { value: '>80', label: 'Supérieur à 80%' },
-                    { value: '<80', label: 'Inférieur à 80%' }
+                    { value: '>80', label: 'SupÃ©rieur Ã  80%' },
+                    { value: '<80', label: 'InfÃ©rieur Ã  80%' }
                 ]
             }
         }),
         skillSets: Property.ShortText({
-            displayName: 'Blocs de compétences',
-            description: 'Permet de n\'obtenir que les dossiers liés à une certification RNCP pour les blocs de compétences considérés',
+            displayName: 'Blocs de compÃ©tences',
+            description: 'Permet de n\'obtenir que les dossiers liÃ©s Ã  une certification RNCP pour les blocs de compÃ©tences considÃ©rÃ©s',
             required: false
         }),
         survey: Property.StaticDropdown({
             displayName: "Questionnaire de suivi d'insertion professionnelle",
-            description: 'Permet de n\'obtenir que les dossiers pour lesquels un questionnaire doit être répondu ou a été répondu',
+            description: 'Permet de n\'obtenir que les dossiers pour lesquels un questionnaire doit Ãªtre rÃ©pondu ou a Ã©tÃ© rÃ©pondu',
             required: false,
             options: {
                 options: [
-                    { label: 'Questionnaire "Situation professionnelle en début de cursus" est accessible (Enquête créée)', value: 'initialExperienceStartDate',},
+                    { label: 'Questionnaire "Situation professionnelle en dÃ©but de cursus" est accessible (EnquÃªte crÃ©Ã©e)', value: 'initialExperienceStartDate',},
                     { label: 'Questionnaire "Situation professionnelle de 6 mois" est accessible', value: 'sixMonthExperienceStartDate',},          
                     { label: 'Questionnaire "Situation professionnelle au moins un an" est accessible', value: 'longTermExperienceStartDate',},          
-                    { label: 'Questionnaire "Situation professionnelle en début de cursus" répondu', value: 'initialExperienceAnsweredDate',},          
-                    { label: 'Questionnaire "Situation professionnelle de 6 mois" répondu', value: 'sixMonthExperienceAnsweredDate',},          
-                    { label: 'Questionnaire "Situation professionnelle au moins un an" répondu', value: 'longTermExperienceAnsweredDate',},
+                    { label: 'Questionnaire "Situation professionnelle en dÃ©but de cursus" rÃ©pondu', value: 'initialExperienceAnsweredDate',},          
+                    { label: 'Questionnaire "Situation professionnelle de 6 mois" rÃ©pondu', value: 'sixMonthExperienceAnsweredDate',},          
+                    { label: 'Questionnaire "Situation professionnelle au moins un an" rÃ©pondu', value: 'longTermExperienceAnsweredDate',},
                 ]
             }
         }),
         metadata: Property.Array({
-            displayName: 'Données personnalisées',
-            description: 'tableau associatif clé - valeur, disponible uniquement pour le certificateur',
+            displayName: 'DonnÃ©es personnalisÃ©es',
+            description: 'tableau associatif clÃ© - valeur, disponible uniquement pour le certificateur',
             required: false,
         }),
         messageState: Property.StaticDropdown({
-            displayName: 'État du message',
-            description: 'Permet de n\'obtenir que les dossiers liés à l\'état d\'envoi d\'un message considéré',
+            displayName: 'Ã‰tat du message',
+            description: 'Permet de n\'obtenir que les dossiers liÃ©s Ã  l\'Ã©tat d\'envoi d\'un message considÃ©rÃ©',
             required: false,
             options: {
                 options: [
-                    { value: 'sent', label: 'Message envoyé' },
-                    { value: 'notSent', label: 'Message non envoyé' },
-                    { value: 'notSentUnauthorized', label: 'Message non envoyé (non autorisé)' },
-                    { value: 'notSentEnforcedConditions', label: 'Message non envoyé (conditions renforcées)' },
-                    { value: 'failed', label: "Échec de l'envoi" },
-                    { value: 'scheduled', label: 'Envoi programmé' }
+                    { value: 'sent', label: 'Message envoyÃ©' },
+                    { value: 'notSent', label: 'Message non envoyÃ©' },
+                    { value: 'notSentUnauthorized', label: 'Message non envoyÃ© (non autorisÃ©)' },
+                    { value: 'notSentEnforcedConditions', label: 'Message non envoyÃ© (conditions renforcÃ©es)' },
+                    { value: 'failed', label: "Ã‰chec de l'envoi" },
+                    { value: 'scheduled', label: 'Envoi programmÃ©' }
                 ]
             }
         }),
         messageTemplate: Property.ShortText({
-            displayName: 'Modèle de message',
-            description: "Permet de n'obtenir que les dossiers pour lequels un message issue du modèle considéré a été créé - par défaut aucun filtre",
+            displayName: 'ModÃ¨le de message',
+            description: "Permet de n'obtenir que les dossiers pour lequels un message issue du modÃ¨le considÃ©rÃ© a Ã©tÃ© crÃ©Ã© - par dÃ©faut aucun filtre",
             required: false
         })
     },

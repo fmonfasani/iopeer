@@ -1,7 +1,7 @@
-import {
+﻿import {
     PiecePropertyMap,
     PropertyType,
-} from '@activepieces/pieces-framework'
+} from '@IOpeer/pieces-framework'
 import {
     FlowActionType,
     FlowOperationRequest,
@@ -14,7 +14,7 @@ import {
     PlatformId,
     ProjectId,
     RouterActionSettingsWithValidation,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { TSchema, Type } from '@sinclair/typebox'
 import { TypeCompiler } from '@sinclair/typebox/compiler'
 import { FastifyBaseLogger } from 'fastify'

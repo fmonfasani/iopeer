@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { googleCalendarCommon } from '../common';
 import { GoogleCalendarEvent } from '../common/types';
 import { googleCalendarAuth } from '../../';
@@ -11,13 +11,13 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 interface GoogleCalendarEventList {
   items: GoogleCalendarEvent[];

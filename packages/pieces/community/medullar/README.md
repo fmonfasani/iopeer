@@ -1,6 +1,6 @@
-# pieces-medullar
+﻿# pieces-medullar
 
-Library of [IOPeer](https://www.activepieces.com/) for [Medullar Solutions](https://www.medullar.com)
+Library of [IOPeer](https://www.IOpeer.com/) for [Medullar Solutions](https://www.medullar.com)
 
 ## Overview
 
@@ -14,7 +14,7 @@ Library of [IOPeer](https://www.activepieces.com/) for [Medullar Solutions](http
 
 ## Contributing
 
-We welcome contributions! Please refer to the [Contributing Guide](https://www.activepieces.com/docs/contributing/overview) for more details.
+We welcome contributions! Please refer to the [Contributing Guide](https://www.IOpeer.com/docs/contributing/overview) for more details.
 
 ## License
 

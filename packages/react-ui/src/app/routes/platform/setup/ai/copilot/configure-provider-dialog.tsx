@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Loader2 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -19,7 +19,7 @@ import {
   CopilotProviderType,
   CopilotSettings,
   OpenAiProvider,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type ConfigureProviderDialogProps = {
   open: boolean;

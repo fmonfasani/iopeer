@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { PieceAuth } from '@IOpeer/pieces-framework';
 import { lemlistApiService } from './requests';
 
 export const BASE_URL = 'https://api.lemlist.com/api';

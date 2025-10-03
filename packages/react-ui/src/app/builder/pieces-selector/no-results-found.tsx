@@ -1,10 +1,10 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { SearchX } from 'lucide-react';
 
 import { useEmbedding } from '@/components/embed-provider';
 import { Button } from '@/components/ui/button';
 import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApFlagId, supportUrl } from '@activepieces/shared';
+import { ApFlagId, supportUrl } from '@IOpeer/shared';
 
 const NoResultsFound = () => {
   const { data: showCommunityLinks } = flagsHooks.useFlag<boolean>(

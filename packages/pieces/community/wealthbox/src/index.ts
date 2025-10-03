@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import {
   createContact,
   createNote,
@@ -21,14 +21,14 @@ import {
 
 export const wealthboxAuth = PieceAuth.SecretText({
   displayName: 'API Access Token',
-  description: 'Enter your Wealthbox API access token. Get it from Settings → API Access Tokens in your Wealthbox account.',
+  description: 'Enter your Wealthbox API access token. Get it from Settings â†’ API Access Tokens in your Wealthbox account.',
   required: true,
 });
     export const wealthbox = createPiece({
       displayName: "Wealthbox",
       auth: wealthboxAuth,
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/wealthbox.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/wealthbox.png",
       authors: ["fortunamide", "onyedikachi-david"],
       actions: [
         createContact,

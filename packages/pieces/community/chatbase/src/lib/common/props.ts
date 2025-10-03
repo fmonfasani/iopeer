@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { DropdownOption, Property } from '@IOpeer/pieces-framework';
 import { makeRequest } from './index';
 
 export const chatbotIdDropdown = Property.Dropdown({

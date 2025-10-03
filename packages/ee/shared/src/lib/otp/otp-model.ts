@@ -1,4 +1,4 @@
-import { ApId, BaseModelSchema } from '@activepieces/shared'
+﻿import { ApId, BaseModelSchema } from '@IOpeer/shared'
 import { Static, Type } from '@sinclair/typebox'
 import { OtpType } from './otp-type'
 

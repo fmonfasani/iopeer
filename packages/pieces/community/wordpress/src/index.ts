@@ -1,16 +1,16 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createWordPressPage } from './lib/actions/create-page.action';
 import { createWordPressPost } from './lib/actions/create-post.action';
 import { getWordPressPost } from './lib/actions/get-post.action';
@@ -100,7 +100,7 @@ export const wordpress = createPiece({
   description: 'Open-source website creation software',
 
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/wordpress.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/wordpress.png',
   categories: [PieceCategory.MARKETING],
   auth: wordpressAuth,
   authors: [

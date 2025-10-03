@@ -1,8 +1,8 @@
-export const reachinboxCommon = {
+﻿export const reachinboxCommon = {
   baseUrl: 'https://api.reachinbox.ai/api/v1/',
 };
 
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 
 export interface Campaign {
   id: number;

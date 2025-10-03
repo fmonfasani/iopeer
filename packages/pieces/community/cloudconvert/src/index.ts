@@ -1,7 +1,7 @@
-
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { cloudconvertAuth } from './lib/common/auth';
 import { newJob } from './lib/triggers/new-job';
 import { jobFinished } from './lib/triggers/job-finished';
@@ -17,7 +17,7 @@ export const cloudconvert = createPiece({
     displayName: 'CloudConvert',
     description: 'File conversion and processing platform supporting 200+ formats',
     minimumSupportedRelease: '0.36.1',
-    logoUrl: 'https://cdn.activepieces.com/pieces/cloudconvert.png',
+    logoUrl: 'https://cdn.IOpeer.com/pieces/cloudconvert.png',
     categories: [PieceCategory.DEVELOPER_TOOLS, PieceCategory.CONTENT_AND_FILES],
     authors: ['owuzo'],
     auth: cloudconvertAuth,

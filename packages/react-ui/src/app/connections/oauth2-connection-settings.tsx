@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -21,7 +21,7 @@ import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   resolveValueFromProps,
   ApEdition,
@@ -34,7 +34,7 @@ import {
   UpsertOAuth2Request,
   UpsertPlatformOAuth2Request,
   isNil,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import {
   oauthAppsQueries,

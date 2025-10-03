@@ -1,10 +1,10 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import actions from './lib/actions';
 import triggers from './lib/triggers';
 
@@ -38,7 +38,7 @@ export const clockodo = createPiece({
   displayName: 'Clockodo',
   description: 'Time tracking made easy',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/clockodo.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/clockodo.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ["JanHolger","kishanprmr","MoShizzle","khaledmashaly","abuaboud"],
   auth: clockodoAuth,

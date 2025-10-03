@@ -1,13 +1,13 @@
-import { microsoftSharePointAuth } from '../../';
+﻿import { microsoftSharePointAuth } from '../../';
 import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { microsoftSharePointCommon } from '../common';
 import { Client } from '@microsoft/microsoft-graph-client';
 
-const clientState = 'activepieces_sharepoint_new_list_item_trigger';
+const clientState = 'IOpeer_sharepoint_new_list_item_trigger';
 
 export const newListItemTrigger = createTrigger({
   auth: microsoftSharePointAuth,

@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import {
@@ -35,7 +35,7 @@ import {
   ProjectRelease,
   ProjectReleaseType,
   Permission,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { ApplyButton } from './apply-plan';
 import { PushEverythingDialog } from './push-everything-dialog';

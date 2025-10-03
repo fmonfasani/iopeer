@@ -1,9 +1,9 @@
-import {
+﻿import {
   createAction,
   Property,
   DynamicPropsValue,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { capsuleCrmAuth, CapsuleCrmAuthType } from '../common/auth';
 import { capsuleCrmClient } from '../common/client';
 import { CreatePartyParams } from '../common/types';

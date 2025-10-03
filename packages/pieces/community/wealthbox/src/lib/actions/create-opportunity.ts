@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { fetchContacts, fetchUsers, fetchUserGroups, fetchOpportunityStages, fetchCustomFields, WEALTHBOX_API_BASE, handleApiError, DOCUMENT_TYPES, OPPORTUNITY_AMOUNT_KINDS, CURRENCIES } from '../common';
 
 export const createOpportunity = createAction({
@@ -36,8 +36,8 @@ export const createOpportunity = createAction({
       options: {
         options: [
           { label: 'USD ($)', value: CURRENCIES.USD },
-          { label: 'EUR (€)', value: CURRENCIES.EUR },
-          { label: 'GBP (£)', value: CURRENCIES.GBP },
+          { label: 'EUR (â‚¬)', value: CURRENCIES.EUR },
+          { label: 'GBP (Â£)', value: CURRENCIES.GBP },
           { label: 'CAD (C$)', value: CURRENCIES.CAD },
           { label: 'AUD (A$)', value: CURRENCIES.AUD }
         ]

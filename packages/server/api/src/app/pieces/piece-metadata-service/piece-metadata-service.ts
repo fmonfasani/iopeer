@@ -1,6 +1,6 @@
-import { PieceMetadata, 
+﻿import { PieceMetadata, 
     PieceMetadataModel,
-    PieceMetadataModelSummary } from '@activepieces/pieces-framework'
+    PieceMetadataModelSummary } from '@IOpeer/pieces-framework'
 import {
     ApEdition,
     ListVersionsResponse,
@@ -13,7 +13,7 @@ import {
     PlatformId,
     ProjectId,
     SuggestionType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { EntityManager } from 'typeorm'
 
 type ListParams = {

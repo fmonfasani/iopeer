@@ -1,22 +1,22 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const declareCertificationFolderFailed = createAction({
   auth: wedofAuth,
   name: 'declareCertificationFolderFailed',
-  displayName: 'Passer un dossier de certification à l’état : Échoué',
-  description: "Change l'état d'un dossier de certification vers : Échoué",
+  displayName: 'Passer un dossier de certification Ã  lâ€™Ã©tat : Ã‰chouÃ©',
+  description: "Change l'Ã©tat d'un dossier de certification vers : Ã‰chouÃ©",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     detailedResult: Property.ShortText({
-      displayName: "Détail du résultat de l'examen",
+      displayName: "DÃ©tail du rÃ©sultat de l'examen",
       required: false,
     }),
     europeanLanguageLevel: wedofCommon.europeanLanguageLevel,

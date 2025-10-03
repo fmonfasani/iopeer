@@ -1,5 +1,5 @@
-import { createPiece} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { senderAuth } from './lib/common/common';
 import { addUpdateSubscriberAction } from './lib/actions/add-subscriber';
 import { createCampaignAction } from './lib/actions/create-campaign';
@@ -20,7 +20,7 @@ export const sender = createPiece({
   displayName: 'Sender',
   auth: senderAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/sender.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/sender.png',
   authors: ['Ani-4x','sanket-a11y'],
   categories: [PieceCategory.MARKETING],
   actions: [

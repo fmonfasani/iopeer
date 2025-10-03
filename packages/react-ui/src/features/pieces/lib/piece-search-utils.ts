@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import {
   CategorizedStepMetadataWithSuggestions,
@@ -10,7 +10,7 @@ import {
   PieceCategory,
   FlowTriggerType,
   FlowActionType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const isFlowController = (stepMetadata: StepMetadata) => {
   if (
@@ -96,15 +96,15 @@ const getPinnedPieces = (
 };
 
 const POPULAR_PIECES_NAMES = [
-  '@activepieces/piece-google-sheets',
-  '@activepieces/piece-slack',
-  '@activepieces/piece-notion',
-  '@activepieces/piece-gmail',
-  '@activepieces/piece-hubspot',
-  '@activepieces/piece-openai',
-  '@activepieces/piece-google-forms',
-  '@activepieces/piece-google-drive',
-  '@activepieces/piece-google-docs',
+  '@IOpeer/piece-google-sheets',
+  '@IOpeer/piece-slack',
+  '@IOpeer/piece-notion',
+  '@IOpeer/piece-gmail',
+  '@IOpeer/piece-hubspot',
+  '@IOpeer/piece-openai',
+  '@IOpeer/piece-google-forms',
+  '@IOpeer/piece-google-drive',
+  '@IOpeer/piece-google-docs',
 ];
 const getPopularPieces = (
   queryResult: StepMetadataWithSuggestions[],
@@ -158,21 +158,21 @@ const sortByPieceNameOrder = (
   });
 };
 const HIGHLIGHTED_PIECES_NAMES_FOR_TRIGGERS = [
-  '@activepieces/piece-webhook',
-  '@activepieces/piece-schedule',
-  '@activepieces/piece-forms',
-  '@activepieces/piece-tables',
+  '@IOpeer/piece-webhook',
+  '@IOpeer/piece-schedule',
+  '@IOpeer/piece-forms',
+  '@IOpeer/piece-tables',
 ];
 
 const HIGHLIGHTED_PIECES_NAMES_FOR_ACTIONS = [
-  '@activepieces/piece-agent',
-  '@activepieces/piece-http',
-  '@activepieces/piece-tables',
-  '@activepieces/piece-todos',
-  '@activepieces/piece-forms',
-  '@activepieces/piece-webhook',
-  '@activepieces/piece-text-helper',
-  '@activepieces/piece-date-helper',
+  '@IOpeer/piece-agent',
+  '@IOpeer/piece-http',
+  '@IOpeer/piece-tables',
+  '@IOpeer/piece-todos',
+  '@IOpeer/piece-forms',
+  '@IOpeer/piece-webhook',
+  '@IOpeer/piece-text-helper',
+  '@IOpeer/piece-date-helper',
 ];
 
 export const pieceSearchUtils = {

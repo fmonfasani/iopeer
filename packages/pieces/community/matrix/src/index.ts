@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { sendMessage } from './lib/actions/send-message';
 
 export const matrixAuth = PieceAuth.CustomAuth({
@@ -35,7 +35,7 @@ export const matrix = createPiece({
   description:
     'Open standard for interoperable, decentralized, real-time communication',
 
-  logoUrl: 'https://cdn.activepieces.com/pieces/matrix.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/matrix.png',
   categories: [PieceCategory.COMMUNICATION],
   minimumSupportedRelease: '0.30.0',
   authors: ["MyWay","kishanprmr","MoShizzle","khaledmashaly","abuaboud"],

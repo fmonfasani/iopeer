@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 
 export const broadcastId = Property.ShortText({
   displayName: 'Broadcast Id',

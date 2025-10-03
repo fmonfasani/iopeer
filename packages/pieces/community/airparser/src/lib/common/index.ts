@@ -1,10 +1,10 @@
-import {
+﻿import {
 	httpClient,
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const BASE_URL = 'https://api.airparser.com';
 

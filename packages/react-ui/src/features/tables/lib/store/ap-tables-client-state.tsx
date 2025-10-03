@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+﻿import { nanoid } from 'nanoid';
 import { create } from 'zustand';
 
 import {
@@ -7,7 +7,7 @@ import {
   PopulatedRecord,
   Table,
   TableAutomationStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { createServerState } from './ap-tables-server-state';
 

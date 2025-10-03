@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { formStackAuth } from './lib/common/auth';
 
 import { createSubmission } from './lib/actions/create-submission';
@@ -18,7 +18,7 @@ export const formstack = createPiece({
   displayName: 'Formstack',
   auth: formStackAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/formstack.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/formstack.png',
   authors: ['Sanket6652', 'onyedikachi-david'],
   actions: [
     createSubmission,

@@ -1,11 +1,11 @@
-import { pipedriveAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
 	pipedriveTransformCustomFields,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { GetField } from '../common/types';
 
 export const getProductAction = createAction({

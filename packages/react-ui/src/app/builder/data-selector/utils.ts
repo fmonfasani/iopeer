@@ -1,10 +1,10 @@
-import {
+﻿import {
   isNil,
   isObject,
   FlowAction,
   FlowActionType,
   FlowTrigger,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import {
   DataSelectorTreeNode,
@@ -288,7 +288,7 @@ function traverseOutput(
 }
 
 function escapeMentionKey(key: string) {
-  return key.replaceAll(/[\\"'\n\r\t’]/g, (char) => `\\${char}`);
+  return key.replaceAll(/[\\"'\n\r\tâ€™]/g, (char) => `\\${char}`);
 }
 
 function getSearchableValue(

@@ -1,4 +1,4 @@
-import {
+﻿import {
   AuthenticationType,
   httpClient,
   HttpError,
@@ -8,14 +8,14 @@ import {
   HttpRequest,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { httpOauth2Auth } from '../..';
 import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { assertNotNullOrUndefined } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { assertNotNullOrUndefined } from '@IOpeer/shared';
 import FormData from 'form-data';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import axios from 'axios';

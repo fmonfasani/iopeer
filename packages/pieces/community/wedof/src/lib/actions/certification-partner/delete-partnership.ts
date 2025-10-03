@@ -1,22 +1,22 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const deletePartnership = createAction({
   auth: wedofAuth,
   name: 'deletePartnership',
   displayName: "Supprimer un partenariat",
-  description: "Supprime un partenariat à l'état Demande à compléter",
+  description: "Supprime un partenariat Ã  l'Ã©tat Demande Ã  complÃ©ter",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
-      description: 'Sélectionner le {certifInfo} de la certification considérée',
+      displayName: 'NÂ° certifInfo',
+      description: 'SÃ©lectionner le {certifInfo} de la certification considÃ©rÃ©e',
       required: true,
     }),
     siret: Property.ShortText({
-      displayName: 'N° Siret',
-      description: 'Sélectionner le {siret} du partenaire',
+      displayName: 'NÂ° Siret',
+      description: 'SÃ©lectionner le {siret} du partenaire',
       required: true,
     }),
   },

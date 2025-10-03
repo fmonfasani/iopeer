@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-systeme-io",
+﻿{
+  "name": "@IOpeer/piece-systeme-io",
   "version": "0.0.7",
   "type": "commonjs",
   "main": "./src/index.js",

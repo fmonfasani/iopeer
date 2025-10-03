@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import Odoo from './commom/index';
 import actions from './lib/actions';
 
@@ -63,7 +63,7 @@ export const odoo = createPiece({
   description: 'Open source all-in-one management software',
   auth: odooAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/odoo.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/odoo.png',
   authors: ["mariomeyer","kishanprmr","abuaboud"],
   actions,
   triggers: [],

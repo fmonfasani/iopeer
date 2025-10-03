@@ -1,4 +1,4 @@
-import { ActivepiecesError, ApId, apId, Cursor, ErrorCode, isNil, PlatformId, ProjectId, SeekPage, spreadIfDefined, TodoActivity, TodoActivityWithUser, UserId } from '@activepieces/shared'
+﻿import { IOpeerError, ApId, apId, Cursor, ErrorCode, isNil, PlatformId, ProjectId, SeekPage, spreadIfDefined, TodoActivity, TodoActivityWithUser, UserId } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { Server } from 'socket.io'
 import { repoFactory } from '../../core/db/repo-factory'
@@ -49,7 +49,7 @@ export const todoActivitiesService = (log: FastifyBaseLogger) => ({
     async getOneOrThrow(params: GetParams): Promise<TodoActivity> {
         const todoActivity = await this.getOne(params)
         if (!todoActivity) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: { entityType: 'todo_activity', entityId: params.id, message: 'Todo activity by id not found' },
             })

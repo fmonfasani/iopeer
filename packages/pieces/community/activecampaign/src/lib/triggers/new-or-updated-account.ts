@@ -1,5 +1,5 @@
-import { activeCampaignAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { activeCampaignAuth } from '../..';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { makeClient } from '../common';
 import { CreateWebhookResponse } from '../common/types';
 import { WEBHOOK_SOURCES } from '../common/constants';
@@ -8,7 +8,7 @@ export const newOrUpdatedAccountTrigger = createTrigger({
 	auth: activeCampaignAuth,
 	name: 'activecampaign_new_or_updated_account',
 	displayName: 'New or Updated Account',
-	description: 'Triggers when a new account is added or an existing account’s details are updated',
+	description: 'Triggers when a new account is added or an existing accountâ€™s details are updated',
 	type: TriggerStrategy.WEBHOOK,
 	props: {},
 	async onEnable(context) {

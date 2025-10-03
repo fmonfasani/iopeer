@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue, PieceAuth, createPiece } from '@IOpeer/pieces-framework';
 import {
 	addBlockedTimeAction,
 	createAppointmentAction,
@@ -8,8 +8,8 @@ import {
 	rescheduleAppointmentAction,
 	updateClientAction,
 } from './lib/actions';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { API_URL } from './lib/common';
 import { appointmentCanceledTrigger, appointmentScheduledTrigger } from './lib/triggers';
 
@@ -22,7 +22,7 @@ export const acuitySchedulingAuth = PieceAuth.OAuth2({
 
 export const acuityScheduling = createPiece({
 	displayName: 'Acuity Scheduling',
-	logoUrl: 'https://cdn.activepieces.com/pieces/acuity-scheduling.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/acuity-scheduling.png',
 	auth: acuitySchedulingAuth,
 	categories: [PieceCategory.PRODUCTIVITY, PieceCategory.SALES_AND_CRM],
 	minimumSupportedRelease: '0.36.1',

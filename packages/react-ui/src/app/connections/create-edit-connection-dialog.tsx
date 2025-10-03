@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -37,12 +37,12 @@ import {
   PieceMetadataModelSummary,
   PropertyType,
   SecretTextProperty,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AppConnectionWithoutSensitiveData,
   isNil,
   UpsertAppConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { newConnectionUtils } from '../../features/connections/lib/utils';
 import { formUtils } from '../../features/pieces/lib/form-utils';

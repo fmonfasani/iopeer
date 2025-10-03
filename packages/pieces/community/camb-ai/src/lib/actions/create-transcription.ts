@@ -1,5 +1,5 @@
-import { createAction, Property, ApFile, DynamicPropsValue } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, HttpMessageBody, HttpHeaders } from '@activepieces/pieces-common';
+﻿import { createAction, Property, ApFile, DynamicPropsValue } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient, HttpMessageBody, HttpHeaders } from '@IOpeer/pieces-common';
 import { cambaiAuth } from '../../index';
 import { API_BASE_URL, listSourceLanguagesDropdown, POLLING_INTERVAL_MS, LONG_MAX_POLLING_ATTEMPTS } from '../common';
 import FormData from 'form-data';

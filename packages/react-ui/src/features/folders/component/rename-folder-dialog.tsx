@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -18,7 +18,7 @@ import { FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { INTERNAL_ERROR_TOAST, toast } from '@/components/ui/use-toast';
 import { validationUtils } from '@/lib/utils';
-import { Folder } from '@activepieces/shared';
+import { Folder } from '@IOpeer/shared';
 
 import { foldersApi } from '../lib/folders-api';
 

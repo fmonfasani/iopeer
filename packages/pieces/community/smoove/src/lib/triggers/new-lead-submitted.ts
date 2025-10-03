@@ -1,6 +1,6 @@
-
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿
+import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, HttpMethod, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { smooveAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import { LandingPageIdDropdown } from '../common/props';

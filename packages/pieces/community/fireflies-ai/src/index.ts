@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 
 import { findMeetingByIdAction } from './lib/actions/find-meeting-by-id';
 import { findRecentMeetingAction } from './lib/actions/find-recent-meeting';
@@ -24,7 +24,7 @@ export const firefliesAiAuth = PieceAuth.SecretText({
 export const firefliesAi = createPiece({
 	displayName: 'Fireflies.ai',
 	description: 'Meeting assistant that automatically records, transcribes, and analyzes conversations',
-	logoUrl: 'https://cdn.activepieces.com/pieces/fireflies-ai.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/fireflies-ai.png',
 	authors: ['AnkitSharmaOnGithub'],
 	auth: firefliesAiAuth,
 	actions: [

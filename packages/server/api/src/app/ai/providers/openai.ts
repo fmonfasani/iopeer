@@ -1,5 +1,5 @@
-import { AIProvider, DALLE2PricingPerImage, DALLE3PricingPerImage, FlatLanguageModelPricing, GPTImage1PricingPerImage  } from '@activepieces/common-ai'
-import { ActivepiecesError, ErrorCode,  isNil } from '@activepieces/shared'
+﻿import { AIProvider, DALLE2PricingPerImage, DALLE3PricingPerImage, FlatLanguageModelPricing, GPTImage1PricingPerImage  } from '@IOpeer/common-ai'
+import { IOpeerError, ErrorCode,  isNil } from '@IOpeer/shared'
 import { createParser } from 'eventsource-parser'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 import { AIProviderStrategy, StreamingParser, Usage } from './types'
@@ -41,7 +41,7 @@ export const openaiProvider: AIProviderStrategy = {
         const languageModelConfig = providerConfig.languageModels.find((m) => m.instance.modelId === model)
         const imageModelConfig = providerConfig.imageModels.find((m) => m.instance.modelId === model)
         if (!languageModelConfig && !imageModelConfig) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AI_MODEL_NOT_SUPPORTED,
                 params: {
                     provider,
@@ -109,7 +109,7 @@ export const openaiProvider: AIProviderStrategy = {
 
         if (isStreaming) {
             if (!request.url.includes('chat/completions')) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.AI_REQUEST_NOT_SUPPORTED,
                     params: {
                         message: 'OpenAI streaming is only supported for chat/completions API',

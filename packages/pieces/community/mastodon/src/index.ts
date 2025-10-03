@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { postStatus } from './lib/actions/post-status';
 
 const markdownDescription = `
@@ -41,7 +41,7 @@ export const mastodon = createPiece({
   displayName: 'Mastodon',
   description: 'Open-source decentralized social network',
 
-  logoUrl: 'https://cdn.activepieces.com/pieces/mastodon.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mastodon.png',
   categories: [PieceCategory.COMMUNICATION],
   minimumSupportedRelease: '0.30.0',
   authors: ["denieler","kishanprmr","MoShizzle","khaledmashaly","abuaboud"],

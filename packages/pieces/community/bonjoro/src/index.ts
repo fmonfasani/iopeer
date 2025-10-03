@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { addGreetAction } from './lib/actions/add-greet';
 import { bonjoroAuth } from './lib/auth';
 
@@ -9,7 +9,7 @@ export const bonjoro = createPiece({
   description: 'Send personal video messages to delight customers',
   auth: bonjoroAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/bonjoro.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/bonjoro.png',
   categories: [PieceCategory.CUSTOMER_SUPPORT],
   authors: ["joeworkman","kishanprmr","MoShizzle","abuaboud"],
   actions: [

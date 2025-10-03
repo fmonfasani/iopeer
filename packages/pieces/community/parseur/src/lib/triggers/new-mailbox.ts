@@ -1,13 +1,13 @@
-import {
+﻿import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
     createTrigger,
     PiecePropValueSchema,
     TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { parseurAuth, parseurCommon } from '../common';
 
 const polling: Polling<

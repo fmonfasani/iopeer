@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { ticketFormDropdown } from '../common/props';
 

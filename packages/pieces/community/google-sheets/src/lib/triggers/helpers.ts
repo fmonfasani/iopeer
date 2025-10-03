@@ -1,8 +1,8 @@
-import { google } from 'googleapis';
+﻿import { google } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 
 import { googleSheetsAuth } from '../..';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 
 import { nanoid } from 'nanoid';
 import dayjs from 'dayjs';

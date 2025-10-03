@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { blueskyAuth } from './lib/common/auth';
 import { createPost } from './lib/actions/create-post';
 import { likePost } from './lib/actions/like-post';
@@ -18,7 +18,7 @@ export const bluesky = createPiece({
   displayName: 'Bluesky',
   auth: blueskyAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/bluesky.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/bluesky.png',
   authors: ['Sanket6652'],
   categories: [PieceCategory.COMMUNICATION],
   actions: [createPost, likePost, repostPost, findPost, findThread],

@@ -1,5 +1,5 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { PieceAuth } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod, AuthenticationType } from '@IOpeer/pieces-common';
 
 export const mistralAuth = PieceAuth.SecretText({
 	displayName: 'API Key',

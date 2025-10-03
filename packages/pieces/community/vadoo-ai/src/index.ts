@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { generateVideo } from './lib/actions/generate-video';
 import { generatePodcast } from './lib/actions/generate-podcast';
 import { generateAiImage } from './lib/actions/generate-ai-image';
 import { generateAiCaptions } from './lib/actions/generate-ai-captions';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const vadooAiAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -15,7 +15,7 @@ export const vadooAi = createPiece({
   displayName: 'Vadoo AI',
   auth: vadooAiAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/vadoo-ai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/vadoo-ai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['fortunamide'],
   actions: [

@@ -1,9 +1,9 @@
-import {
+﻿import {
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { codaAuth } from '../..';
 import { CodaRow, codaClient } from '../common/types';
 import dayjs from 'dayjs';

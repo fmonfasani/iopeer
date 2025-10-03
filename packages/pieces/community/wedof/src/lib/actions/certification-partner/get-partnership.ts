@@ -1,25 +1,25 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const getPartnership = createAction({
   auth: wedofAuth,
   name: 'getPartnership',
-  displayName: "Récupération d'un partenariat",
+  displayName: "RÃ©cupÃ©ration d'un partenariat",
   description:
-    "Récupération d'un partenariat par le certifInfo de la certification et du siret du partenaire",
+    "RÃ©cupÃ©ration d'un partenariat par le certifInfo de la certification et du siret du partenaire",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
+      displayName: 'NÂ° certifInfo',
       description:
-        'Sélectionner le {certifInfo} de la certification considérée',
+        'SÃ©lectionner le {certifInfo} de la certification considÃ©rÃ©e',
       required: true,
     }),
     siret: Property.ShortText({
-        displayName: 'N° Siret',
+        displayName: 'NÂ° Siret',
         description:
-          'Sélectionner le {siret} du partenaire',
+          'SÃ©lectionner le {siret} du partenaire',
         required: true,
       }),
   },

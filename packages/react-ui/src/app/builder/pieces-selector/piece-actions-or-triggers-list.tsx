@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { MoveLeft } from 'lucide-react';
 import React from 'react';
 
@@ -11,7 +11,7 @@ import {
   PieceSelectorOperation,
   StepMetadataWithSuggestions,
 } from '@/lib/types';
-import { FlowActionType, isNil, FlowTriggerType } from '@activepieces/shared';
+import { FlowActionType, isNil, FlowTriggerType } from '@IOpeer/shared';
 
 import { useBuilderStateContext } from '../builder-hooks';
 

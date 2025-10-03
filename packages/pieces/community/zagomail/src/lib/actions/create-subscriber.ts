@@ -1,8 +1,8 @@
-import { zagomailAuth } from '../../';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { zagomailAuth } from '../../';
+import { createAction } from '@IOpeer/pieces-framework';
 import { zagoMailApiService } from '../common/request';
 import { listFields, listUId } from '../common/props';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import dayjs from 'dayjs';
 
 export const createSubscriber = createAction({

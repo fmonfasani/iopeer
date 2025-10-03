@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const peekshotAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -32,7 +32,7 @@ export const peekshot = createPiece({
   displayName: 'PeekShot',
   auth: peekshotAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/peekshot.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/peekshot.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ['balwant1707'],
   actions: [

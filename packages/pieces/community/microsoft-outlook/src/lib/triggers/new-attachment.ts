@@ -1,10 +1,10 @@
-import { FilesService, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { FilesService, TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { Message, FileAttachment } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';
 import { microsoftOutlookAuth } from '../common/auth';
 import { mailFolderIdDropdown } from '../common/props';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 async function enrichAttachments(
 	client: Client,

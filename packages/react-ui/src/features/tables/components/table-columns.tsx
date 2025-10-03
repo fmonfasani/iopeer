@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Plus } from 'lucide-react';
 import { ReactNode } from 'react';
 import { Column, RenderCellProps } from 'react-data-grid';
@@ -16,7 +16,7 @@ import {
   isNil,
   Permission,
   PlatformUsageMetric,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { ClientRecordData } from '../lib/store/ap-tables-client-state';
 import { Row } from '../lib/types';

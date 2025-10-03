@@ -1,17 +1,17 @@
-import {
+﻿import {
   AuthenticationType,
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createCharge } from './lib/actions/create-charge';
 import { createCustomer } from './lib/actions/create-customer';
 
 export const saasticAuth = PieceAuth.SecretText({
   description:
-    ' You can find your project’s API key here: https://saastic.com/settings/developers',
+    ' You can find your projectâ€™s API key here: https://saastic.com/settings/developers',
   displayName: 'Api Key',
   required: true,
   validate: async (auth) => {
@@ -44,7 +44,7 @@ export const saastic = createPiece({
 
   auth: saasticAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/saastic.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/saastic.png',
   categories: [PieceCategory.MARKETING],
   authors: ["joselupianez","kishanprmr","MoShizzle","abuaboud"],
   actions: [

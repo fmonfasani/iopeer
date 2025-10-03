@@ -1,4 +1,4 @@
-import { Static, Type } from '@sinclair/typebox';
+﻿import { Static, Type } from '@sinclair/typebox';
 import { BotIcon } from 'lucide-react';
 import React from 'react';
 
@@ -13,7 +13,7 @@ import {
   ApErrorParams,
   ChatUIResponse,
   FileResponseInterface,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { MultiMediaMessage } from '../chat-message';
 

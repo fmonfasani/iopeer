@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-aircall",
+﻿{
+  "name": "@IOpeer/piece-aircall",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

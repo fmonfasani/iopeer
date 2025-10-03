@@ -1,10 +1,10 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export enum TaskStatus {
   NEEDS_ACTION = 'needsAction',

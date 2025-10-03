@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 
 export const purchaseId = Property.ShortText({
   displayName: 'Purchase ID',

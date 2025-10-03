@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-serpstat",
+﻿{
+  "name": "@IOpeer/piece-serpstat",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

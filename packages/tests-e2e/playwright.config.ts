@@ -1,4 +1,4 @@
-import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
+﻿import { defineConfig, devices, PlaywrightTestConfig } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -51,7 +51,7 @@ const config: PlaywrightTestConfig = {
   /* Configure projects for major browsers */
   projects: [
     {
-      name: `@activepieces/${AP_EDITION}`,
+      name: `@IOpeer/${AP_EDITION}`,
       use: {
         ...devices['Desktop Chrome'],
         headless: true,

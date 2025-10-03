@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { googleCalendarAuth } from '../../';
 import { googleCalendarCommon } from '../common';
 import { stopWatchEvent, watchEvent, getLatestEvent } from '../common/helper';

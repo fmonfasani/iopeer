@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { ChevronLeft, TicketPercent } from 'lucide-react';
 import { FC } from 'react';
 
@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Separator } from '@/components/ui/separator';
-import { BillingCycle, PlanName } from '@activepieces/ee-shared';
+import { BillingCycle, PlanName } from '@IOpeer/ee-shared';
 
 import {
   planData,

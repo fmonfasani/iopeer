@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 import { PageCollection, Client } from '@microsoft/microsoft-graph-client';
 import { MailFolder, Message } from '@microsoft/microsoft-graph-types';
 

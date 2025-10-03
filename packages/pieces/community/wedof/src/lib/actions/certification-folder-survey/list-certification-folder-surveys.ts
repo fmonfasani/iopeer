@@ -1,30 +1,30 @@
-import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, QueryParams, httpClient } from '@IOpeer/pieces-common';
   import { wedofAuth } from '../../..';
   import {
     createAction,
     Property,
-  } from '@activepieces/pieces-framework';
+  } from '@IOpeer/pieces-framework';
   import { wedofCommon } from '../../common/wedof';
   
   export const listCertificationFolderSurveys = createAction({
     auth: wedofAuth,
     name: 'listCertificationFolderSurveys',
-    displayName: 'Liste les enquêtes selon des critères',
-    description: "Récupérer l'ensemble des enquêtes de l'organisme de l'utilisateur connecté",
+    displayName: 'Liste les enquÃªtes selon des critÃ¨res',
+    description: "RÃ©cupÃ©rer l'ensemble des enquÃªtes de l'organisme de l'utilisateur connectÃ©",
     props: {
       certifInfo: Property.ShortText({
-        displayName: 'N° certifInfo',
-        description: "Permet de n'obtenir que les enquêtes liées à la certification considérée",
+        displayName: 'NÂ° certifInfo',
+        description: "Permet de n'obtenir que les enquÃªtes liÃ©es Ã  la certification considÃ©rÃ©e",
         required: false,
       }),
       limit: Property.ShortText({
-        displayName: "Nombre d'enquêtes",
-        description: "Nombre d'éléments retourné par requête - par défaut 100",
+        displayName: "Nombre d'enquÃªtes",
+        description: "Nombre d'Ã©lÃ©ments retournÃ© par requÃªte - par dÃ©faut 100",
         required: false,
       }),
       order: Property.StaticDropdown({
         displayName: "Ordre",
-        description: "Tri les résultats par ordre ascendant ou descendant",
+        description: "Tri les rÃ©sultats par ordre ascendant ou descendant",
         required: false,
         options: {
           options: [
@@ -41,14 +41,14 @@ import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common
         },
       }),
       page: Property.Number({
-        displayName: 'N° de page de la requête',
-        description: 'Par défaut : 1',
+        displayName: 'NÂ° de page de la requÃªte',
+        description: 'Par dÃ©faut : 1',
         defaultValue: 1,
         required: false,
       }),
       state: Property.StaticDropdown({
         displayName: "Etat",
-        description: "Permet de n'obtenir que les enquêtes en fonction de l'état considéré",
+        description: "Permet de n'obtenir que les enquÃªtes en fonction de l'Ã©tat considÃ©rÃ©",
         required: false,
         options: {
           options: [
@@ -58,19 +58,19 @@ import { HttpMethod, QueryParams, httpClient } from '@activepieces/pieces-common
             },
             {
               value: 'created',
-              label: 'Créé',
+              label: 'CrÃ©Ã©',
             },
             {
               value: 'beforeCertificationSuccess',
-              label: 'Avant la réussite de la certification',
+              label: 'Avant la rÃ©ussite de la certification',
             },
             {
               value: 'afterSixMonthsCertificationSuccess',
-              label: 'Six mois après la réussite de la certification',
+              label: 'Six mois aprÃ¨s la rÃ©ussite de la certification',
             },
             {
               value: 'finished',
-              label: 'Terminé',
+              label: 'TerminÃ©',
             },
           ],
           disabled: false,

@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useForm } from 'react-hook-form';
@@ -32,8 +32,8 @@ import {
   ConfigureRepoRequest,
   GitBranchType,
   GitRepo,
-} from '@activepieces/ee-shared';
-import { ApErrorParams, ErrorCode } from '@activepieces/shared';
+} from '@IOpeer/ee-shared';
+import { ApErrorParams, ErrorCode } from '@IOpeer/shared';
 
 import { gitSyncApi } from '../lib/git-sync-api';
 import { gitSyncHooks } from '../lib/git-sync-hooks';
@@ -121,7 +121,7 @@ const ConnectGitDialog = ({ open, setOpen, showButton }: ConnectGitProps) => {
                     <FormLabel>{t('Remote URL')}</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="git@github.com:activepieces/activepieces.git"
+                        placeholder="git@github.com:IOpeer/IOpeer.git"
                         {...field}
                       />
                     </FormControl>
@@ -147,7 +147,7 @@ const ConnectGitDialog = ({ open, setOpen, showButton }: ConnectGitProps) => {
                   <FormItem>
                     <FormLabel>{t('Folder')}</FormLabel>
                     <FormControl>
-                      <Input placeholder="activepieces" {...field} />
+                      <Input placeholder="IOpeer" {...field} />
                     </FormControl>
                     <FormDescription>
                       {t(

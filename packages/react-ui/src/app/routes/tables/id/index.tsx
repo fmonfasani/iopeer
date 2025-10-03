@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+﻿import { nanoid } from 'nanoid';
 import { useRef, useEffect } from 'react';
 import DataGrid, { DataGridHandle } from 'react-data-grid';
 import 'react-data-grid/lib/styles.css';
@@ -26,7 +26,7 @@ import {
   ApFlagId,
   Permission,
   WebsocketClientEvent,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import './react-data-grid.css';
 

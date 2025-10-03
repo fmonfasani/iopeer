@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -16,7 +16,7 @@ import { authenticationApi } from '@/lib/authentication-api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { useRedirectAfterLogin } from '@/lib/navigation-utils';
 import { formatUtils } from '@/lib/utils';
-import { OtpType } from '@activepieces/ee-shared';
+import { OtpType } from '@IOpeer/ee-shared';
 import {
   ApEdition,
   ApFlagId,
@@ -24,7 +24,7 @@ import {
   ErrorCode,
   isNil,
   SignInRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { CheckEmailNote } from './check-email-note';
 

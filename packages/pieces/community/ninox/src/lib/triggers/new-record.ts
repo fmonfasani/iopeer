@@ -1,4 +1,4 @@
-import {
+﻿import {
 	AuthenticationType,
 	DedupeStrategy,
 	httpClient,
@@ -6,13 +6,13 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
 	PiecePropValueSchema,
 	StaticPropsValue,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { BASE_URL } from '../common/client';
 import { NinoxAuth } from '../common/auth';
 import { teamidDropdown, databaseIdDropdown, tableIdDropdown } from '../common/props';

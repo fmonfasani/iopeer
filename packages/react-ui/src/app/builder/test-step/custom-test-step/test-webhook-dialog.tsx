@@ -1,4 +1,4 @@
-import { DialogClose } from '@radix-ui/react-dialog';
+﻿import { DialogClose } from '@radix-ui/react-dialog';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';
@@ -20,8 +20,8 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { api } from '@/lib/api';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { FlowAction, ApFlagId, apId, FlowTrigger } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { FlowAction, ApFlagId, apId, FlowTrigger } from '@IOpeer/shared';
 
 import { useBuilderStateContext } from '../../builder-hooks';
 import { DictionaryProperty } from '../../piece-properties/dictionary-property';

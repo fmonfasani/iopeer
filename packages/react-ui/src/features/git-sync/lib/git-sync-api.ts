@@ -1,10 +1,10 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   ConfigureRepoRequest,
   GitRepo,
   PushGitRepoRequest,
-} from '@activepieces/ee-shared';
-import { SeekPage } from '@activepieces/shared';
+} from '@IOpeer/ee-shared';
+import { SeekPage } from '@IOpeer/shared';
 
 export const gitSyncApi = {
   async get(projectId: string): Promise<GitRepo | null> {

@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 
 import { addWorksheetAction } from './lib/actions/add-worksheet';
 import { appendRowAction } from './lib/actions/append-row';
@@ -54,14 +54,14 @@ const authDesc = `
   - Or select based on your requirement.
 7. In **Redirect URI**, select **Web** and add the given URL.
 8. Click **Register**.
-9. After registration, you’ll be redirected to the app’s overview page. Copy the **Application (client) ID**.
+9. After registration, youâ€™ll be redirected to the appâ€™s overview page. Copy the **Application (client) ID**.
 10. From the left menu, go to **Certificates & secrets**.
   - Under **Client secrets**, click **New client secret**.
   - Provide a description, set an expiry, and click **Add**.
   - Copy the **Value** of the client secret (this will not be shown again).
 11. Go to **API permissions** from the left menu.
   - Click **Add a permission**.
-  - Select **Microsoft Graph** → **Delegated permissions**.
+  - Select **Microsoft Graph** â†’ **Delegated permissions**.
   - Add the following scopes:
     - Files.ReadWrite
     - offline_access
@@ -84,7 +84,7 @@ export const microsoftExcel = createPiece({
 
   auth: excelAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-excel-365.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-excel-365.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ['BastienMe', 'kishanprmr', 'MoShizzle', 'abuaboud', 'Pranith124', 'onyedikachi-david'],
   actions: [

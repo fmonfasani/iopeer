@@ -1,8 +1,8 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 import { murfAuth } from "../common/auth"; 
 import { murfCommon } from "../common/dropdown";
 import { makeRequest } from "../common/client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 
 export const translateText = createAction({
   auth: murfAuth,

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-amazon-ses",
+﻿{
+  "name": "@IOpeer/piece-amazon-ses",
   "version": "0.0.2",
   "dependencies": {
     "@aws-sdk/client-ses": "3.864.0"

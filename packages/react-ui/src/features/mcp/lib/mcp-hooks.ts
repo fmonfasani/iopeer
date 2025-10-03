@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from '@tanstack/react-query';
+﻿import { useQuery, useMutation } from '@tanstack/react-query';
 
 import { piecesApi } from '@/features/pieces/lib/pieces-api';
 import { authenticationSession } from '@/lib/authentication-session';
@@ -11,7 +11,7 @@ import {
   ToolCallContentBlock,
   ToolCallType,
   McpToolRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { mcpApi } from './mcp-api';
 

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { createPineconeClientFromAuth } from '../common/pinecone-client';
 import { pineconeAuth } from '../../index';
 
@@ -69,7 +69,7 @@ export const searchVector = createAction({
     }),
     filter: Property.Json({
       displayName: 'Metadata Filter',
-      description: 'Filter to apply using vector metadata. Examples:\n• {"genre": {"$eq": "documentary"}}\n• {"year": {"$gt": 2019}}\n• {"$and": [{"genre": {"$in": ["comedy", "drama"]}}, {"year": {"$gte": 2020}}]}',
+      description: 'Filter to apply using vector metadata. Examples:\nâ€¢ {"genre": {"$eq": "documentary"}}\nâ€¢ {"year": {"$gt": 2019}}\nâ€¢ {"$and": [{"genre": {"$in": ["comedy", "drama"]}}, {"year": {"$gte": 2020}}]}',
       required: false
     }),
     includeValues: Property.Checkbox({

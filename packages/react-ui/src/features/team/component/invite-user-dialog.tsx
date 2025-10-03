@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -50,7 +50,7 @@ import {
   Permission,
   PlatformRole,
   UserInvitationWithLink,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { userInvitationsHooks } from '../lib/user-invitations-hooks';
 

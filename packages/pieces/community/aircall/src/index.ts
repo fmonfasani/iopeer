@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { aircallAuth } from './lib/common/auth';
 import { commentACall } from './lib/actions/comment-a-call';
 import { createAContact } from './lib/actions/create-a-contact';
@@ -12,8 +12,8 @@ import { newContact } from './lib/triggers/new-contact';
 import { newNote } from './lib/triggers/new-note';
 import { newNumberCreated } from './lib/triggers/new-number-created';
 import { newSms } from './lib/triggers/new-sms';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/client';
 
 export const aircall = createPiece({
@@ -21,7 +21,7 @@ export const aircall = createPiece({
   auth: aircallAuth,
   minimumSupportedRelease: '0.36.1',
   categories:[PieceCategory.BUSINESS_INTELLIGENCE,PieceCategory.COMMUNICATION],
-  logoUrl: 'https://cdn.activepieces.com/pieces/aircall.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/aircall.png',
   authors: ['Sanket6652'],
   actions: [
     commentACall,

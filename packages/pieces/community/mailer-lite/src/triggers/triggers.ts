@@ -1,5 +1,5 @@
-import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import MailerLite from '@mailerlite/mailerlite-nodejs';
+import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { mailerLiteAuth } from '..';
 
 const subscriberSample = {

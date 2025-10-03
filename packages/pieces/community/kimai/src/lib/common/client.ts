@@ -1,9 +1,9 @@
-import {
+﻿import {
   HttpMethod,
   HttpMessageBody,
   httpClient,
   HttpResponse,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 type PingResponse = {
   message: string;

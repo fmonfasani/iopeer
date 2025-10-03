@@ -1,10 +1,10 @@
-import {
+﻿import {
   ActionBase,
   ErrorHandlingOptionsParam,
   PieceAuthProperty,
   PieceMetadataModelSummary,
   TriggerBase,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   FlowActionType,
   PackageType,
@@ -12,7 +12,7 @@ import {
   FlowTriggerType,
   FlowOperationType,
   StepLocationRelativeToParent,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type BaseStepMetadata = {
   displayName: string;

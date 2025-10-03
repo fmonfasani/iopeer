@@ -1,6 +1,6 @@
-import { slackAuth } from '../../index';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { slackAuth } from '../../index';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { WebClient } from '@slack/web-api';
 
 export const getFileAction = createAction({

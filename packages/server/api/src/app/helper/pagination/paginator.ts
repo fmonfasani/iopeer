@@ -1,4 +1,4 @@
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
 import {
     Brackets,
     EntitySchema,

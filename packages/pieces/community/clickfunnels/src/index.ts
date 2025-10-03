@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { scheduledAppointmentEventCreated } from './lib/triggers/scheduled-appointment-event-created';
 import {
   CLICKFUNNELS_APIKEY_AUTH,
@@ -18,14 +18,14 @@ import { removeTagFromContact } from './lib/actions/remove-tag-from-contact';
 import { enrollAContactIntoACourse } from './lib/actions/enroll-a-contact-into-a-course';
 import { updateOrCreateContact } from './lib/actions/update-or-create-contact';
 import { searchContacts } from './lib/actions/search-contacts';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 export const clickfunnels = createPiece({
   displayName: 'ClickFunnels',
   auth: clickfunnelsAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/clickfunnels.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/clickfunnels.png',
   categories: [PieceCategory.COMMUNICATION, PieceCategory.MARKETING],
   authors: ['gs03dev'],
   actions: [

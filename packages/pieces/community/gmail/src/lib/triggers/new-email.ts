@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
   FilesService,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { GmailLabel } from '../common/models';
 import { GmailProps } from '../common/props';

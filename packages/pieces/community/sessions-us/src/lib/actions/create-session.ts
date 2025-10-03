@@ -1,11 +1,11 @@
-import { baseUrl, getTimezones } from '../common';
+﻿import { baseUrl, getTimezones } from '../common';
 import { sessionAuth } from '../..';
 import {
   HttpMethod,
   httpClient,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 
 export const createSession = createAction({
   auth: sessionAuth,

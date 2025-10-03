@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Check, CheckCircle, CheckIcon } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
@@ -17,7 +17,7 @@ import { issuesApi } from '@/features/issues/api/issues-api';
 import { issueHooks } from '@/features/issues/hooks/issue-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
-import { IssueStatus, Permission, PopulatedIssue } from '@activepieces/shared';
+import { IssueStatus, Permission, PopulatedIssue } from '@IOpeer/shared';
 
 import { issuesTableColumns } from './columns';
 

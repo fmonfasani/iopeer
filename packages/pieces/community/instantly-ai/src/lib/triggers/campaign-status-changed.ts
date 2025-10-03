@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { instantlyAiAuth } from '../../index';
 
 export const campaignStatusChangedTrigger = createTrigger({

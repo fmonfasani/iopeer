@@ -1,6 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 
-import { InvitationType, UserInvitation } from '@activepieces/shared';
+import { InvitationType, UserInvitation } from '@IOpeer/shared';
 
 import { userInvitationApi } from './user-invitation';
 

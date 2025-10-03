@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 export const props = {
   audio_url: Property.ShortText({
     displayName: 'Audio URL',

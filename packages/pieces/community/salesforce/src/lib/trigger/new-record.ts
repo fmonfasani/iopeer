@@ -1,15 +1,15 @@
-import {
+﻿import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   OAuth2PropertyValue,
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { querySalesforceApi, salesforcesCommon } from '../common';
 
 import dayjs from 'dayjs';

@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';
@@ -21,7 +21,7 @@ import { signingKeyApi } from '@/features/platform-admin/lib/signing-key-api';
 import {
   AddSigningKeyRequestBody,
   AddSigningKeyResponse,
-} from '@activepieces/ee-shared';
+} from '@IOpeer/ee-shared';
 
 type NewSigningKeyDialogProps = {
   children: React.ReactNode;

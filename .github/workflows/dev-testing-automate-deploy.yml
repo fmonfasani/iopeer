@@ -1,4 +1,4 @@
-name: Dev Testing Automate Deploy
+﻿name: Dev Testing Automate Deploy
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/activepieces/activepieces:dev-testing
+          tags: ghcr.io/IOpeer/IOpeer:dev-testing
 
   Dev-Testing:
     needs: Build
@@ -56,4 +56,4 @@ jobs:
           
       - name: Deploy with Docker Compose
         run: |
-          ssh pre-prod -t -t 'bash -ic "cd dev-testing-activepieces && IMAGE_TAG=dev-testing docker compose pull && IMAGE_TAG=dev-testing docker compose up -d --force-recreate dev-testing-activepieces; exit"' 
+          ssh pre-prod -t -t 'bash -ic "cd dev-testing-IOpeer && IMAGE_TAG=dev-testing docker compose pull && IMAGE_TAG=dev-testing docker compose up -d --force-recreate dev-testing-IOpeer; exit"' 

@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { t } from 'i18next';
 import { Plus } from 'lucide-react';
@@ -26,7 +26,7 @@ import {
 import { alertMutations } from '@/features/alerts/lib/alert-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { formatUtils } from '@/lib/utils';
-import { Permission } from '@activepieces/shared';
+import { Permission } from '@IOpeer/shared';
 
 const FormSchema = Type.Object({
   email: Type.String({

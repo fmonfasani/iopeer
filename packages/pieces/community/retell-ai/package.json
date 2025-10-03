@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-retell-ai",
+﻿{
+  "name": "@IOpeer/piece-retell-ai",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./src/index.js",

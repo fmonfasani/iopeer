@@ -1,11 +1,11 @@
-import { PieceAuth, createPiece } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction, httpClient, HttpMethod } from "@activepieces/pieces-common";
+﻿import { PieceAuth, createPiece } from "@IOpeer/pieces-framework";
+import { createCustomApiCallAction, httpClient, HttpMethod } from "@IOpeer/pieces-common";
 import { createTextToSound } from "./lib/actions/create-text-to-sound";
 import { createTextToSpeech } from "./lib/actions/create-text-to-speech";
 import { createTranslation } from "./lib/actions/create-translation";
 import { createTranscription } from "./lib/actions/create-transcription";
 import { API_BASE_URL } from "./lib/common";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
 export const cambaiAuth = PieceAuth.SecretText({
     displayName: "API Key",
@@ -42,7 +42,7 @@ export const cambAi = createPiece({
     displayName: "Camb.AI",
     auth: cambaiAuth,
     minimumSupportedRelease: '0.36.1',
-    logoUrl: "https://cdn.activepieces.com/pieces/camb-ai.png",
+    logoUrl: "https://cdn.IOpeer.com/pieces/camb-ai.png",
     authors: ['david-oluwaseun420','sanket-a11y'], 
     categories:[PieceCategory.ARTIFICIAL_INTELLIGENCE],
     actions: [

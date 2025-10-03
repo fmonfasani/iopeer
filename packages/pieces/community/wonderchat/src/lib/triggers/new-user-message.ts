@@ -1,16 +1,16 @@
-import {
+﻿import {
   PiecePropValueSchema,
   createTrigger,
   TriggerStrategy,
   Property
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   Polling,
   pollingHelper,
   DedupeStrategy,
   httpClient,
   HttpMethod
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { wonderchatAuth } from '../..';
 
 interface Message {

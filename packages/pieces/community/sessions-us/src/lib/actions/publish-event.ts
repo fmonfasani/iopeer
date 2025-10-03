@@ -1,7 +1,7 @@
-import { baseUrl, getEvents } from '../common';
+﻿import { baseUrl, getEvents } from '../common';
 import { sessionAuth } from '../..';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 
 export const publishEvent = createAction({
   auth: sessionAuth,

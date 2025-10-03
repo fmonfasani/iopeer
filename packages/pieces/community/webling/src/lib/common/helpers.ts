@@ -1,10 +1,10 @@
-import { weblingAuth } from '../../index';
+﻿import { weblingAuth } from '../../index';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { CalendarObject, WeblingCalendarEvent, WeblingChanges } from './types';
 
 export async function callApi<Type>(

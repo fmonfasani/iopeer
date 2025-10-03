@@ -1,4 +1,4 @@
-/// <reference types='vitest' />
+﻿/// <reference types='vitest' />
 import path from 'path';
 
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
@@ -44,7 +44,7 @@ export default defineConfig(({ command, mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),
-        '@activepieces/shared': path.resolve(
+        '@IOpeer/shared': path.resolve(
           __dirname,
           '../../packages/shared/src',
         ),
@@ -52,11 +52,11 @@ export default defineConfig(({ command, mode }) => {
           __dirname,
           '../../packages/ee/ui/embed-sdk/src',
         ),
-        '@activepieces/ee-shared': path.resolve(
+        '@IOpeer/ee-shared': path.resolve(
           __dirname,
           '../../packages/ee/shared/src',
         ),
-        '@activepieces/pieces-framework': path.resolve(
+        '@IOpeer/pieces-framework': path.resolve(
           __dirname,
           '../../packages/pieces/community/framework/src',
         ),

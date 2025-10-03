@@ -1,4 +1,4 @@
----
+﻿---
 title: "Setup App Webhooks"
 description: ""
 icon: 'webhook'
@@ -14,7 +14,7 @@ Certain apps like Slack and Square only support one webhook per OAuth2 app. This
 2. Copy the "Signing Secret" and save it.
 3. Set the following environment variable in your iopeer environment: 
     ```
-    AP_APP_WEBHOOK_SECRETS={"@activepieces/piece-slack": {"webhookSecret": "SIGNING_SECRET"}}
+    AP_APP_WEBHOOK_SECRETS={"@IOpeer/piece-slack": {"webhookSecret": "SIGNING_SECRET"}}
     ```
 4. Restart your application instance.
 

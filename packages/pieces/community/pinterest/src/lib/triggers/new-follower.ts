@@ -1,16 +1,16 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';
 

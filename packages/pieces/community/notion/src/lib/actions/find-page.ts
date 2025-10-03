@@ -1,8 +1,8 @@
-import {
+﻿import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../..';
 
@@ -104,8 +104,8 @@ export const findPage = createAction({
     const matchType = exact_match ? 'exact match' : 'partial match';
     const resultMessage =
       filteredPages.length === 0
-        ? `🔍 No pages found matching "${title}" (${matchType}). Try using partial matching or check your search term.`
-        : `🔍 Found ${filteredPages.length} page${
+        ? `ðŸ” No pages found matching "${title}" (${matchType}). Try using partial matching or check your search term.`
+        : `ðŸ” Found ${filteredPages.length} page${
             filteredPages.length === 1 ? '' : 's'
           } matching "${title}" (${matchType})${
             formattedResults.length < filteredPages.length

@@ -1,4 +1,4 @@
-import {
+﻿import {
     ApId,
     assertNotNullOrUndefined,
     EndpointScope,
@@ -8,7 +8,7 @@ import {
     SERVICE_KEY_SECURITY_OPENAPI,
     UpdateUserRequestBody,
     UserWithMetaInformation,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
     Type,

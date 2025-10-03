@@ -1,7 +1,7 @@
-import { tarventAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { tarventAuth } from '../..';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { makeClient, tarventCommon } from '../common';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { z } from 'zod';
 
 export const createContact = createAction({

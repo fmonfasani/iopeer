@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { podioAuth } from '../../index';
 import { podioApiCall, getAccessToken, dynamicRefTypeProperty, dynamicRefIdProperty, dynamicAppProperty, dynamicSpaceProperty, dynamicOrgProperty, hookProperty, silentProperty } from '../common';
 
@@ -92,7 +92,7 @@ export const createTaskAction = createAction({
     silent: silentProperty,
   },
   async run(context) {
-    console.log('🔍 [Podio Task] Action run started with propsValue:', JSON.stringify(context.propsValue, null, 2));
+    console.log('ðŸ” [Podio Task] Action run started with propsValue:', JSON.stringify(context.propsValue, null, 2));
     
     const accessToken = getAccessToken(context.auth);
     const { 
@@ -234,7 +234,7 @@ export const createTaskAction = createAction({
       delete body.ref_type;
       delete body.ref_id;
     } else {
-      console.log('🔍 [Podio Task] Using general task endpoint:', resourceUri);
+      console.log('ðŸ” [Podio Task] Using general task endpoint:', resourceUri);
     }
 
     const response = await podioApiCall<{

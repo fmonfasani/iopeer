@@ -1,7 +1,7 @@
-import { ProjectPlanLimits, RESOURCE_TO_MESSAGE_MAPPING } from '@activepieces/ee-shared'
-import { exceptionHandler } from '@activepieces/server-shared'
+﻿import { ProjectPlanLimits, RESOURCE_TO_MESSAGE_MAPPING } from '@IOpeer/ee-shared'
+import { exceptionHandler } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     AiOverageState,
     ApEdition,
     apId,
@@ -13,7 +13,7 @@ import {
     ProjectPlan,
     spreadIfDefined,
     spreadIfNotUndefined,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../../core/db/repo-factory'
 import { system } from '../../../helper/system/system'
@@ -129,7 +129,7 @@ export const projectLimitsService = (log: FastifyBaseLogger) => ({
         const projectPlan = await projectLimitsService(system.globalLogger()).getOrCreateDefaultPlan(projectId)
 
         if (projectPlan.locked) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.RESOURCE_LOCKED,
                 params: {
                     message: RESOURCE_TO_MESSAGE_MAPPING[PlatformUsageMetric.PROJECTS],

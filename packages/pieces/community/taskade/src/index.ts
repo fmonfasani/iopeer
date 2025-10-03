@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { createTaskAction } from './lib/actions/create-task.action';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { completeTaskAction } from './lib/actions/complete-task.action';
 import { deleteTaskAction } from './lib/actions/delete-task.action';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 export const taskadeAuth = PieceAuth.SecretText({
 	displayName: 'Personal Token',
@@ -19,7 +19,7 @@ export const taskade = createPiece({
 	minimumSupportedRelease: '0.30.0',
 	categories: [PieceCategory.PRODUCTIVITY],
 	description: 'collaboration platform for remote teams to organize and manage projects',
-	logoUrl: 'https://cdn.activepieces.com/pieces/taskade.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/taskade.png',
 	authors: ['kishanprmr'],
 	actions: [
 		createTaskAction,

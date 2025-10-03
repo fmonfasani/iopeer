@@ -1,4 +1,4 @@
-export const baseUrl = 'https://api.textcortex.com/v1';
+﻿export const baseUrl = 'https://api.textcortex.com/v1';
 
 export const unauthorizedMessage = `Error Occurred: 401 
 
@@ -145,7 +145,7 @@ export const API_ENDPOINTS = {
   COMPLETIONS: '/texts/completions',
 };
 
-import { Property } from '@activepieces/pieces-framework';
+import { Property } from '@IOpeer/pieces-framework';
 
 export const createCommonProperties = () => ({
   model: Property.StaticDropdown({

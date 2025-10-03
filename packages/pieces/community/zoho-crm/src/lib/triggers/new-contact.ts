@@ -1,16 +1,16 @@
-import {
+﻿import {
   AuthenticationType,
   DedupeStrategy,
   httpClient,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   OAuth2PropertyValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { zohoCrmAuth } from '../..';
 
@@ -24,7 +24,7 @@ export const newContact = createTrigger({
     Owner: {
       name: 'IOPeer Apps',
       id: '560094000000343001',
-      email: 'apps@activepieces.com',
+      email: 'apps@IOpeer.com',
     },
     Email: 'capla-paprocki@yahoo.com',
     Description: null,
@@ -56,7 +56,7 @@ export const newContact = createTrigger({
     Modified_By: {
       name: 'IOPeer Apps',
       id: '560094000000343001',
-      email: 'apps@activepieces.com',
+      email: 'apps@IOpeer.com',
     },
     $review: null,
     $state: 'save',
@@ -83,7 +83,7 @@ export const newContact = createTrigger({
     Created_By: {
       name: 'IOPeer Apps',
       id: '560094000000343001',
-      email: 'apps@activepieces.com',
+      email: 'apps@IOpeer.com',
     },
     $zia_owner_assignment: 'owner_recommendation_unavailable',
     Secondary_Email: null,

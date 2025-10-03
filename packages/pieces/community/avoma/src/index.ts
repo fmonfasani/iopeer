@@ -1,5 +1,5 @@
-
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+    import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { newNote } from "./lib/triggers/new-note";
 import { createCall } from "./lib/actions/create-call";
 import { getMeetingTranscription } from "./lib/actions/get-meeting-transcription";
@@ -19,7 +19,7 @@ import { meetingCancelled } from "./lib/triggers/meeting-cancelled";
         required: true
       }),
       minimumSupportedRelease: '0.36.1',
-      logoUrl: 'https://cdn.activepieces.com/pieces/avoma.png',
+      logoUrl: 'https://cdn.IOpeer.com/pieces/avoma.png',
       authors: ["fortunamide", "onyedikachi-david"],
       actions: [createCall, getMeetingRecording, getMeetingTranscription],
       triggers: [newNote, newMeetingScheduled, meetingRescheduled, meetingCancelled]

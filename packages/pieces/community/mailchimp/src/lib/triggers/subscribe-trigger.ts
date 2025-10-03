@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, Property } from '@IOpeer/pieces-framework';
+import { getAccessTokenOrThrow } from '@IOpeer/pieces-common';
 import { mailchimpCommon } from '../common';
 import { MailChimpSubscribeWebhookRequest } from '../common/types';
 import { mailchimpAuth } from '../..';

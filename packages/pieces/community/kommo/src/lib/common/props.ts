@@ -1,5 +1,5 @@
-import { Property, DropdownOption } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property, DropdownOption } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { makeRequest } from './index';
 
 interface KommoAuth {

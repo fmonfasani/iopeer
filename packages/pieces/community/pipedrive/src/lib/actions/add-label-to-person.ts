@@ -1,5 +1,5 @@
-import { pipedriveAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { labelIdsProp, personIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -7,7 +7,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, GetPersonResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const addLabelToPersonAction = createAction({
 	auth: pipedriveAuth,

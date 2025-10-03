@@ -1,9 +1,9 @@
-import { ActionBase, TriggerBase } from '@activepieces/pieces-framework'
+﻿import { ActionBase, TriggerBase } from '@IOpeer/pieces-framework'
 
 import {
     PieceCategory,
     SuggestionType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import Fuse from 'fuse.js'
 import { PieceMetadataSchema } from '../../piece-metadata-entity'
 

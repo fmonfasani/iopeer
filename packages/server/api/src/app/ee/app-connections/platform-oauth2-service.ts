@@ -1,9 +1,9 @@
-import { PropertyType } from '@activepieces/pieces-framework'
+﻿import { PropertyType } from '@IOpeer/pieces-framework'
 import {
     AppConnectionType,
     isNil,
     PlatformOAuth2ConnectionValue,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import {
     ClaimOAuth2Request,

@@ -1,9 +1,9 @@
-import {
+﻿import {
   createAction,
   DynamicPropsValue,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@notionhq/client';
 import { NotionFieldMapping } from '../common/models';
 import { notionAuth } from '../..';

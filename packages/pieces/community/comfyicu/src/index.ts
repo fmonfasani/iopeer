@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { getRunOutputAction } from './lib/actions/get-run-outputs';
 import { getRunStatusAction } from './lib/actions/get-run-status';
 import { listWorkflowsAction } from './lib/actions/list-workflows';
@@ -19,7 +19,7 @@ export const comfyicu = createPiece({
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   auth: comfyIcuAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/comfyicu.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/comfyicu.png',
   authors: ['rimjhimyadav'],
   actions: [getRunOutputAction,getRunStatusAction,listWorkflowsAction,submitWorkflowRunAction],
   triggers: [newWorkflowCreatedTrigger,runCompletedTrigger,runFailedTrigger],

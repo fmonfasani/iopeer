@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { lemlistAuth } from '../common/constants';
 import { campaignsDropdown } from '../common/props';
 import { lemlistApiService } from '../common/requests';
@@ -63,7 +63,7 @@ export const addLeadToACampaign = createAction({
     }),
     verifyEmail: Property.Checkbox({
       displayName: 'Verify Email',
-      description: 'Verify the lead’s email using debounce',
+      description: 'Verify the leadâ€™s email using debounce',
       required: false,
       defaultValue: false,
     }),

@@ -1,4 +1,4 @@
-import { BellIcon, EyeNoneIcon, EyeOpenIcon } from '@radix-ui/react-icons';
+﻿import { BellIcon, EyeNoneIcon, EyeOpenIcon } from '@radix-ui/react-icons';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import React from 'react';
@@ -20,7 +20,7 @@ import {
   NotificationStatus,
   Permission,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { AlertOption } from './alert-option';
 

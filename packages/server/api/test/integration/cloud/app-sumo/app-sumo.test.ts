@@ -1,4 +1,4 @@
-import { FastifyInstance } from 'fastify'
+﻿import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { initializeDatabase } from '../../../../src/app/database'
 import { databaseConnection } from '../../../../src/app/database/database-connection'
@@ -47,7 +47,7 @@ describe('AppSumo API', () => {
 
             expect(responseBody?.message).toBe('success')
             expect(responseBody?.redirect_url).toBe(
-                `https://cloud.activepieces.com/sign-up?email=${mockEmail}`,
+                `https://cloud.IOpeer.com/sign-up?email=${mockEmail}`,
             )
         })
     })

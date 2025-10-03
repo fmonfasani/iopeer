@@ -1,5 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { EndpointScope, Permission, Principal, PrincipalType } from '@activepieces/shared'
+﻿// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { EndpointScope, Permission, Principal, PrincipalType } from '@IOpeer/shared'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import fastify from 'fastify'
 import { Server } from 'socket.io'

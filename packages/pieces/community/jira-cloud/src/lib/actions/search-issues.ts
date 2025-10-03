@@ -1,11 +1,11 @@
-import {
+﻿import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { jiraCloudAuth } from '../../auth';
 import { searchIssuesByJql } from '../common';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const searchIssues = createAction({
   name: 'search_issues',

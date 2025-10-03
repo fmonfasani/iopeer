@@ -1,6 +1,6 @@
-import { AppSystemProp, exceptionHandler, rejectedPromiseHandler } from '@activepieces/server-shared'
+﻿import { AppSystemProp, exceptionHandler, rejectedPromiseHandler } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     apId,
     assertNotNullOrUndefined,
     Cursor,
@@ -28,7 +28,7 @@ import {
     SeekPage,
     spreadIfDefined,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
@@ -179,7 +179,7 @@ export const flowRunService = (log: FastifyBaseLogger) => ({
         })
 
         if (isNil(flowRunToResume)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FLOW_RUN_NOT_FOUND,
                 params: {
                     id: flowRunId,
@@ -363,7 +363,7 @@ export const flowRunService = (log: FastifyBaseLogger) => ({
         )
 
         if (isNil(pauseMetadata)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: `pauseMetadata is undefined flowRunId=${flowRunId}`,
@@ -422,7 +422,7 @@ export const flowRunService = (log: FastifyBaseLogger) => ({
         })
 
         if (isNil(flowRun)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FLOW_RUN_NOT_FOUND,
                 params: {
                     id: params.id,

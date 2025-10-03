@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { kimaiCommon, makeClient } from '../common';
 import { kimaiAuth } from '../..';
 

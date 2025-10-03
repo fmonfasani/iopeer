@@ -1,5 +1,5 @@
-import { PieceProperty, PropertyType } from '@activepieces/pieces-framework'
-import { McpProperty, McpPropertyType } from '@activepieces/shared'
+﻿import { PieceProperty, PropertyType } from '@IOpeer/pieces-framework'
+import { McpProperty, McpPropertyType } from '@IOpeer/shared'
 import { z } from 'zod' 
 
 function mcpPropertyToZod(property: McpProperty): z.ZodTypeAny {

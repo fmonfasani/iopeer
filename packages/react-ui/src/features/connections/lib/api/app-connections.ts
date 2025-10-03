@@ -1,4 +1,4 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   AppConnectionOwners,
   AppConnectionWithoutSensitiveData,
@@ -8,7 +8,7 @@ import {
   SeekPage,
   UpdateConnectionValueRequestBody,
   UpsertAppConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const appConnectionsApi = {
   list(

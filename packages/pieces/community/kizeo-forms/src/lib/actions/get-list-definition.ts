@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { endpoint, kizeoFormsCommon } from '../common';
 import { kizeoFormsAuth } from '../..';
 
@@ -18,7 +18,7 @@ export const getListDefinition = createAction({
       method: HttpMethod.GET,
       url:
         endpoint +
-        `public/v4/lists/${listId}/definition?used-with-activepieces=`,
+        `public/v4/lists/${listId}/definition?used-with-IOpeer=`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: context.auth,

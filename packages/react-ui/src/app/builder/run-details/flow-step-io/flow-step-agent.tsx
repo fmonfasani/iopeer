@@ -1,9 +1,9 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Bot } from 'lucide-react';
 
 import { AgentTimeline } from '@/features/agents/agent-timeline';
 import { stepUtils } from '@/features/pieces/lib/step-utils';
-import { PieceAction, StepOutput } from '@activepieces/shared';
+import { PieceAction, StepOutput } from '@IOpeer/shared';
 
 type FlowStepAgentProps = {
   stepDetails: StepOutput;

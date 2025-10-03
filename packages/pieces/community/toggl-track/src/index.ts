@@ -1,6 +1,6 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { createClient } from './lib/actions/create-client';
 import { createProject } from './lib/actions/create-project';
 import { createTask } from './lib/actions/create-task';
@@ -61,7 +61,7 @@ export const togglTrack = createPiece({
   description: 'Toggl Track is a time tracking application that allows users to track their daily activities across different platforms.',
   auth: togglTrackAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/toggl-track.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/toggl-track.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ["Pranith124", "onyedikachi-david"],
   actions: [

@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { CheckCircle, WifiOff, Frown } from 'lucide-react';
 import React from 'react';
 import semver from 'semver';
@@ -9,7 +9,7 @@ import { DataTable } from '@/components/ui/data-table';
 import { DataTableColumnHeader } from '@/components/ui/data-table/data-table-column-header';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { cn } from '@/lib/utils';
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@IOpeer/shared';
 
 const STATUS = {
   SUCCESS: 'success',
@@ -43,7 +43,7 @@ export default function WorkersPage() {
         currentVersion || 'Unknown'
       }\n<b>Latest</b>: ${latestVersion || 'Unknown'}\n${
         !isVersionUpToDate
-          ? 'Upgrade now to enjoy the latest features and bug fixes.\nCheck the changelog <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://github.com/activepieces/activepieces/releases" target="_blank">releases</a>.'
+          ? 'Upgrade now to enjoy the latest features and bug fixes.\nCheck the changelog <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://github.com/IOpeer/IOpeer/releases" target="_blank">releases</a>.'
           : ''
       }`,
       faultIcon: <Frown size={16} />,

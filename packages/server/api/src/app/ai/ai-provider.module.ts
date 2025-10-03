@@ -1,7 +1,7 @@
-import { Writable } from 'stream'
-import { AI_USAGE_AGENT_ID_HEADER, AI_USAGE_FEATURE_HEADER, AI_USAGE_MCP_ID_HEADER, AIUsageFeature, AIUsageMetadata, SUPPORTED_AI_PROVIDERS, SupportedAIProvider } from '@activepieces/common-ai'
-import { exceptionHandler } from '@activepieces/server-shared'
-import { ActivepiecesError, ErrorCode, isNil, PlatformUsageMetric, PrincipalType } from '@activepieces/shared'
+﻿import { Writable } from 'stream'
+import { AI_USAGE_AGENT_ID_HEADER, AI_USAGE_FEATURE_HEADER, AI_USAGE_MCP_ID_HEADER, AIUsageFeature, AIUsageMetadata, SUPPORTED_AI_PROVIDERS, SupportedAIProvider } from '@IOpeer/common-ai'
+import { exceptionHandler } from '@IOpeer/server-shared'
+import { IOpeerError, ErrorCode, isNil, PlatformUsageMetric, PrincipalType } from '@IOpeer/shared'
 import proxy from '@fastify/http-proxy'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { FastifyRequest } from 'fastify'
@@ -129,7 +129,7 @@ export const aiProviderModule: FastifyPluginAsyncTypebox = async (app) => {
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         preHandler: async (request) => {
             if (![PrincipalType.ENGINE, PrincipalType.USER].includes(request.principal.type)) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.AUTHORIZATION,
                     params: {
                         message: 'invalid route for principal type',
@@ -144,7 +144,7 @@ export const aiProviderModule: FastifyPluginAsyncTypebox = async (app) => {
             const videoModelRequestCost = aiProviderService.getVideoModelCost({ provider, request })
             const exceededLimit = await projectLimitsService(request.log).checkAICreditsExceededLimit({ projectId, requestCostBeforeFiring: videoModelRequestCost })
             if (exceededLimit) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.QUOTA_EXCEEDED,
                     params: {
                         metric: PlatformUsageMetric.AI_CREDITS,
@@ -185,7 +185,7 @@ export const aiProviderModule: FastifyPluginAsyncTypebox = async (app) => {
 function getProviderConfigOrThrow(provider: string | undefined): SupportedAIProvider {
     const providerConfig = !isNil(provider) ? SUPPORTED_AI_PROVIDERS.find((p) => p.provider === provider) : undefined
     if (isNil(providerConfig)) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.PROVIDER_PROXY_CONFIG_NOT_FOUND_FOR_PROVIDER,
             params: {
                 provider: provider ?? 'unknown',

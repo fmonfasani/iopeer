@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Link } from 'react-router-dom';
 
 import { useEmbedding } from '@/components/embed-provider';
@@ -12,7 +12,7 @@ import { ProjectSwitcher } from '@/features/projects/components/project-switcher
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { cn, determineDefaultRoute } from '@/lib/utils';
-import { ApEdition, ApFlagId } from '@activepieces/shared';
+import { ApEdition, ApFlagId } from '@IOpeer/shared';
 
 export const AppSidebarHeader = () => {
   const { embedState } = useEmbedding();

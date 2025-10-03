@@ -1,4 +1,4 @@
-import { PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+﻿import { PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
 import { kimaiAuth } from '../..';
 import { KimaiClient } from './client';
 

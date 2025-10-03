@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { mollieCreateOrder } from './lib/actions/create-order';
 import { mollieCreatePaymentLink } from './lib/actions/create-payment-link';
 import { mollieCreatePayment } from './lib/actions/create-payment';
@@ -14,7 +14,7 @@ import { mollieNewInvoice } from './lib/triggers/new-invoice';
 import { mollieNewPayment } from './lib/triggers/new-payment';
 import { mollieNewRefund } from './lib/triggers/new-refund';
 import { mollieNewChargeback } from './lib/triggers/new-chargeback';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const mollieAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -26,7 +26,7 @@ export const mollie = createPiece({
   displayName: 'Mollie',
   auth: mollieAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/mollie.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mollie.png',
   authors: ['onyedikachi-david', 'Ani-4x'],
   description:
     'Automate Mollie payments, orders, refunds, customers, and invoices. Triggers on payment events and statuses.',

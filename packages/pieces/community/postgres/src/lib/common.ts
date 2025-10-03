@@ -1,4 +1,4 @@
-import { PiecePropValueSchema } from "@activepieces/pieces-framework";
+﻿import { PiecePropValueSchema } from "@IOpeer/pieces-framework";
 import { postgresAuth } from "..";
 import { Client } from "pg";
 

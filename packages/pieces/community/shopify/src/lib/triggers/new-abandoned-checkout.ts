@@ -1,9 +1,9 @@
-import {
+﻿import {
   Polling,
   DedupeStrategy,
   pollingHelper,
-} from '@activepieces/pieces-common';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { getAbandonedCheckouts } from '../common';
 import { shopifyAuth } from '../..';
 import { ShopifyAuth } from '../common/types';

@@ -1,5 +1,5 @@
-import { BasicAuthPropertyValue, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpRequest, HttpMethod } from '@activepieces/pieces-common';
+﻿import { BasicAuthPropertyValue, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpRequest, HttpMethod } from '@IOpeer/pieces-common';
 
 export interface WebhookInformation {
 	id: string;

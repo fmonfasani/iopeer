@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { t } from 'i18next';
 import { Lock, Unlock } from 'lucide-react';
@@ -26,7 +26,7 @@ import {
   oauthAppsMutations,
   oauthAppsQueries,
 } from '@/features/connections/lib/oauth-apps-hooks';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 type ConfigurePieceOAuth2DialogProps = {
   pieceName: string;

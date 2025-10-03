@@ -1,4 +1,4 @@
-import { HttpMethod } from "@activepieces/pieces-common";
+﻿import { HttpMethod } from "@IOpeer/pieces-common";
 import { VehicleEventsOperation, VehicleEventsBodyType } from "./type";
 
 const vehicleEventsBaseUrl = "https://vehicle-events-api.dimo.zone";

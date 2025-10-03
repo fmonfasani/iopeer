@@ -1,4 +1,4 @@
-import { CreateTrialLicenseKeyRequestBody } from '@activepieces/shared';
+﻿import { CreateTrialLicenseKeyRequestBody } from '@IOpeer/shared';
 
 import { api } from './api';
 import { flagsApi } from './flags-api';

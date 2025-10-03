@@ -1,17 +1,17 @@
-import { openRouterAuth } from '../../index';
+﻿import { openRouterAuth } from '../../index';
 import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { openRouterModels, promptResponse } from '../common';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const askOpenRouterAction = createAction({
   name: 'ask-lmm',

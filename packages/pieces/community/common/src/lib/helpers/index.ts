@@ -1,4 +1,4 @@
-import {
+﻿import {
   OAuth2PropertyValue,
   PieceAuthProperty,
   Property,
@@ -7,7 +7,7 @@ import {
   StaticPropsValue,
   InputPropertyMap,
   FilesService,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   HttpError,
   HttpHeaders,
@@ -16,7 +16,7 @@ import {
   QueryParams,
   httpClient,
 } from '../http';
-import { assertNotNullOrUndefined, isNil } from '@activepieces/shared';
+import { assertNotNullOrUndefined, isNil } from '@IOpeer/shared';
 import fs from 'fs';
 import mime from 'mime-types';
 

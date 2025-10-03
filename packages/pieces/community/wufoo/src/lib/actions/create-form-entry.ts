@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wufooApiCall } from '../common/client';
 import { wufooAuth } from '../../index';
 import { formIdentifier, dynamicFormFields } from '../common/props';

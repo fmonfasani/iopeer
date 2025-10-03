@@ -1,4 +1,4 @@
-import { SeekPage } from '@activepieces/shared'
+﻿import { SeekPage } from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { CursorResult } from './paginator'
 

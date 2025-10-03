@@ -1,10 +1,10 @@
-import {
+﻿import {
 	createAction,
 	Property,
 	DynamicPropsValue,
 	PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { confluenceAuth } from '../..';
 import { confluenceApiCall } from '../common';
 

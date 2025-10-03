@@ -1,11 +1,11 @@
-import { hubspotAuth } from '../../';
+﻿import { hubspotAuth } from '../../';
 
 import {
 	Property,
 	createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 import { OBJECT_TYPE } from '../common/constants';
 import {
 	getDefaultPropertiesForObject,

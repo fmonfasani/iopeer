@@ -1,4 +1,4 @@
-import { hubspotAuth } from '../../';
+﻿import { hubspotAuth } from '../../';
 import {
 	AuthenticationType,
 	DedupeStrategy,
@@ -7,12 +7,12 @@ import {
 	Polling,
 	pollingHelper,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { formDropdown } from '../common/props';
 
 type Props = {

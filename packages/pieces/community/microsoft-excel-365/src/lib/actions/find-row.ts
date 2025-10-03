@@ -1,13 +1,13 @@
-import {
+﻿import {
   createAction,
   Property,
   OAuth2PropertyValue
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { excelAuth } from '../../index';
 import { excelCommon } from '../common/common';
 
@@ -16,7 +16,7 @@ export const findRowAction = createAction({
   name: 'find_row',
   displayName: 'Find Row',
   description:
-    'Locate a row by specifying a lookup column and value (e.g. find a row where “ID” = 123).',
+    'Locate a row by specifying a lookup column and value (e.g. find a row where â€œIDâ€ = 123).',
   props: {
     workbook_id: excelCommon.workbook_id,
     worksheet_id: excelCommon.worksheet_id,

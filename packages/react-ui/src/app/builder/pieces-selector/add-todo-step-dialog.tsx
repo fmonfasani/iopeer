@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { InfoIcon } from 'lucide-react';
 import { useState } from 'react';
 
@@ -22,7 +22,7 @@ import {
 import { useNewWindow } from '@/lib/navigation-utils';
 import { PieceSelectorOperation, PieceSelectorPieceItem } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { isNil, TodoType } from '@activepieces/shared';
+import { isNil, TodoType } from '@IOpeer/shared';
 
 import { useBuilderStateContext } from '../builder-hooks';
 

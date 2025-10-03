@@ -1,4 +1,4 @@
-import { ApEdition, isNil, PlatformWithoutSensitiveData } from '@activepieces/shared'
+﻿import { ApEdition, isNil, PlatformWithoutSensitiveData } from '@IOpeer/shared'
 import { defaultTheme, generateTheme } from '../../flags/theme'
 import { system } from '../../helper/system/system'
 import { platformService } from '../../platform/platform.service'

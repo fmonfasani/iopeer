@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-help-scout",
+﻿{
+  "name": "@IOpeer/piece-help-scout",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

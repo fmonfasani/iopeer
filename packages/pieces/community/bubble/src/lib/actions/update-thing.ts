@@ -1,9 +1,9 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 import { bubbleAuth } from '../../index';
 import { bubbleCommon } from '../common';
@@ -28,7 +28,7 @@ export const bubbleUpdateThingAction = createAction({
       method: HttpMethod.PATCH,
       url: server_url,
       headers: {
-        'user-agent': 'activepieces',
+        'user-agent': 'IOpeer',
         Authorization: `Bearer ${token}`,
       },
       authentication: {

@@ -1,8 +1,8 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { shopifyAuth } from '../..';
 import { updateCustomer } from '../common';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const updateCustomerAction = createAction({
   auth: shopifyAuth,

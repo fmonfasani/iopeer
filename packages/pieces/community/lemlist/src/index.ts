@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { lemlistAuth } from './lib/common/constants';
 import { newActivity } from './lib/triggers/new-activity';
 import { unsubscribedRecipient } from './lib/triggers/unsubscribed-recipient';
@@ -19,7 +19,7 @@ export const lemlist = createPiece({
   displayName: 'Lemlist',
   auth: lemlistAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/lemlist.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/lemlist.png',
   authors: ['gs03-dev'],
   actions: [
     markLeadFromOneCampaignAsInterested,

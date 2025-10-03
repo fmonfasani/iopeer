@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { newLead } from './lib/triggers/new-lead';
 import crypto from 'node:crypto';
 
@@ -21,7 +21,7 @@ export const facebookLeads = createPiece({
 	displayName: 'Facebook Leads',
 	description: 'Capture leads from Facebook',
 	minimumSupportedRelease: '0.30.0',
-	logoUrl: 'https://cdn.activepieces.com/pieces/facebook.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/facebook.png',
 	authors: ['kishanprmr', 'MoShizzle', 'khaledmashaly', 'abuaboud', 'AbdulTheActivePiecer'],
 	categories: [PieceCategory.MARKETING],
 	auth: facebookLeadsAuth,
@@ -31,7 +31,7 @@ export const facebookLeads = createPiece({
 		parseAndReply: (context) => {
 			const payload = context.payload;
 			const payloadBody = payload.body as PayloadBody;
-			if (payload.queryParams['hub.verify_token'] == 'activepieces') {
+			if (payload.queryParams['hub.verify_token'] == 'IOpeer') {
 				return {
 					reply: {
 						body: payload.queryParams['hub.challenge'],

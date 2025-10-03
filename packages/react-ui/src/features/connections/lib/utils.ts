@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { CheckIcon, UnplugIcon, XIcon } from 'lucide-react';
 
 import { authenticationSession } from '@/lib/authentication-session';
@@ -8,7 +8,7 @@ import {
   PieceMetadataModel,
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AppConnectionType,
   AppConnectionWithoutSensitiveData,
@@ -17,7 +17,7 @@ import {
   isNil,
   apId,
   AppConnectionStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { appConnectionsApi } from './api/app-connections';
 import { globalConnectionsApi } from './api/global-connections';

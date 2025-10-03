@@ -1,13 +1,13 @@
-<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
+﻿<img src="https://www.seven.io/wp-content/uploads/Logo.svg" width="250" />
 
-Official seven piece for [IOPeer](https://www.activepieces.com/)
+Official seven piece for [IOPeer](https://www.IOpeer.com/)
 
 ## Installation
 ### Dashboard
 Settings -> My Pieces -> Install Piece -> type in `seven`
 
 ### Package Manager
-`npm i @seven.io/activepieces`
+`npm i @seven.io/IOpeer`
 
 ## Actions
 - Send SMS

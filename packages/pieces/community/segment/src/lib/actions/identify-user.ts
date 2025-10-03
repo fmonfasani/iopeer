@@ -1,5 +1,5 @@
-import { segmentAuth } from '../../.';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { segmentAuth } from '../../.';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { Analytics } from '@segment/analytics-node'
 
 export const identifyUser = createAction({

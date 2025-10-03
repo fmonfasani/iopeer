@@ -1,7 +1,7 @@
-import {
+﻿import {
   createAction,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../..';
 import { notionCommon } from '../common';
@@ -94,8 +94,8 @@ export const getPageComments = createAction({
       },
       message:
         allComments.length === 0
-          ? `📝 No comments found on this page yet.`
-          : `💬 Successfully retrieved ${allComments.length} comment${
+          ? `ðŸ“ No comments found on this page yet.`
+          : `ðŸ’¬ Successfully retrieved ${allComments.length} comment${
               allComments.length === 1 ? '' : 's'
             } from page${
               threadCount > 0

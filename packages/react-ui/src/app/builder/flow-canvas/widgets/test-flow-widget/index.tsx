@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import {
   ChatDrawerSource,
@@ -6,7 +6,7 @@ import {
 } from '@/app/builder/builder-hooks';
 import { flowsHooks } from '@/features/flows/lib/flows-hooks';
 import { pieceSelectorUtils } from '@/features/pieces/lib/piece-selector-utils';
-import { isNil, FlowTriggerType } from '@activepieces/shared';
+import { isNil, FlowTriggerType } from '@IOpeer/shared';
 
 import ViewOnlyWidget from '../view-only-widget';
 

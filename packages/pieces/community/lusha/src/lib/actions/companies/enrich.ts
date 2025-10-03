@@ -1,4 +1,4 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 
 export const enrichCompanies = createAction({
   name: 'enrich_companies',
@@ -28,7 +28,7 @@ export const enrichCompanies = createAction({
     const response = await fetch('https://api.lusha.com/prospecting/company/enrich', {
       method: 'POST',
       headers: {
-        'x-app': 'activepieces',
+        'x-app': 'IOpeer',
         'x-api-key': context.auth as string,
         'Content-Type': 'application/json',
         'Accept': 'application/json'

@@ -1,6 +1,6 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 const auth = PieceAuth.SecretText({
   displayName: "API Key",
@@ -10,7 +10,7 @@ export const pylon = createPiece({
   displayName: "Pylon",
   auth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/pylon.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/pylon.png",
   authors: [],
   actions: [
     createCustomApiCallAction({

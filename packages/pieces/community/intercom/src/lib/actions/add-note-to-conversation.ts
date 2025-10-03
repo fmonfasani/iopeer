@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { intercomAuth } from '../..';
 import { commonProps, intercomClient } from '../common';
 import { conversationIdProp } from '../common/props';

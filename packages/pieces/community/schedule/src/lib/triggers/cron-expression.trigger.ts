@@ -1,5 +1,5 @@
-import { TriggerStrategy } from '@activepieces/pieces-framework';
-import { createTrigger, Property } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy } from '@IOpeer/pieces-framework';
+import { createTrigger, Property } from '@IOpeer/pieces-framework';
 import { timezoneOptions } from '../common';
 
 export const cronExpressionTrigger = createTrigger({

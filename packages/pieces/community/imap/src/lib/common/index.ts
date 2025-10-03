@@ -1,8 +1,8 @@
-import {
+﻿import {
   FilesService,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { ImapFlow } from 'imapflow';
 import { imapAuth } from '../../';
 

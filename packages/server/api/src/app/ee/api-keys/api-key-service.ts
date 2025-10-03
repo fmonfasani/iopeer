@@ -1,17 +1,17 @@
-import {
+﻿import {
     ApiKey,
     ApiKeyResponseWithValue,
-} from '@activepieces/ee-shared'
-import { cryptoUtils } from '@activepieces/server-shared'
+} from '@IOpeer/ee-shared'
+import { cryptoUtils } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     apId,
     assertNotNullOrUndefined,
     ErrorCode,
     isNil,
     secureApId,
     SeekPage,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { ApiKeyEntity } from './api-key-entity'
 
@@ -59,7 +59,7 @@ export const apiKeyService = {
             id,
         })
         if (isNil(apiKey)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     message: `api key with id ${id} not found`,

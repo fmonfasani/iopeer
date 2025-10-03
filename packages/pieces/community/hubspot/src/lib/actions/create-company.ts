@@ -1,8 +1,8 @@
-import { hubspotAuth } from '../../';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { hubspotAuth } from '../../';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { getDefaultPropertiesForObject, standardObjectDynamicProperties, standardObjectPropertiesDropdown} from '../common/props';
 import { OBJECT_TYPE } from '../common/constants';
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 import { Client } from '@hubspot/api-client';
 
 export const createCompanyAction = createAction({

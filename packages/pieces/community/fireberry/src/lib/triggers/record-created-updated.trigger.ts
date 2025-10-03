@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { fireberryAuth } from '../../index';
 import { objectTypeDropdown } from '../common/props';
 import { FireberryClient } from '../common/client';

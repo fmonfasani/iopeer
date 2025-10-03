@@ -1,4 +1,4 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
 import { addMemberToList } from './lib/actions/add-member-to-list';
 import { addNoteToSubscriber } from './lib/actions/add-note-to-subscriber';
 import { removeSubscriberFromTag } from './lib/actions/remove-subscriber-from-tag';
@@ -14,7 +14,7 @@ import { findCustomer } from './lib/actions/find-customer';
 import { findTag } from './lib/actions/find-tag';
 import { findSubscriber } from './lib/actions/find-subscriber';
 
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { mailChimpSubscribeTrigger } from './lib/triggers/subscribe-trigger';
 import { mailChimpUnsubscriberTrigger } from './lib/triggers/unsubscribe-trigger';
 import { mailChimpNewCampaignTrigger } from './lib/triggers/new-campaign-trigger';
@@ -37,7 +37,7 @@ export const mailchimp = createPiece({
   displayName: 'Mailchimp',
   description: 'All-in-One integrated marketing platform for managing audiences, sending campaigns, tracking engagement, and automating lifecycle communications.',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/mailchimp.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mailchimp.png',
   authors: ["abdullahranginwala","TaskMagicKyle","kishanprmr","AbdulTheActivePiecer","khaledmashaly","abuaboud", "sparkybug", "onyedikachi-david"],
   categories: [PieceCategory.MARKETING],
   auth: mailchimpAuth,

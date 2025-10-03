@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { newPostCreated } from './lib/triggers/new-post';
 import { newMemberAdded } from './lib/triggers/new-member-added';
 import { createPost } from './lib/actions/create-post';
@@ -8,12 +8,12 @@ import { findMemberByEmail } from './lib/actions/find-member-by-email';
 import { getPostDetailsAction } from './lib/actions/get-post-details';
 import { getMemberDetails } from './lib/actions/get-member-details';
 import { circleAuth } from './lib/common/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common';
 
 export const circle = createPiece({
 	displayName: 'Circle',
-	logoUrl: 'https://cdn.activepieces.com/pieces/circle.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/circle.png',
 	description: 'Circle.so is a platform for creating and managing communities.',
 	auth: circleAuth,
 	minimumSupportedRelease: '0.36.1',

@@ -1,9 +1,9 @@
-import {
+﻿import {
     OtpType,
     ResetPasswordRequestBody,
     VerifyEmailRequestBody,
-} from '@activepieces/ee-shared'
-import { ActivepiecesError, ErrorCode, UserId, UserIdentity } from '@activepieces/shared'
+} from '@IOpeer/ee-shared'
+import { IOpeerError, ErrorCode, UserId, UserIdentity } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../../authentication/user-identity/user-identity-service'
 import { otpService } from '../otp/otp-service'
@@ -52,7 +52,7 @@ const confirmOtp = async ({
     })
 
     if (!isOtpValid) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.INVALID_OTP,
             params: {},
         })

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-microsoft-365-people",
+﻿{
+  "name": "@IOpeer/piece-microsoft-365-people",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,4 +1,4 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 import { supabaseAuth } from "../../index";
 import { createClient } from "@supabase/supabase-js";
 import { supabaseCommon } from "../common/props";

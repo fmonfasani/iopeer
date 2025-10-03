@@ -1,8 +1,8 @@
-import { weblingAuth } from '../../index';
-import { createAction, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+﻿import { weblingAuth } from '../../index';
+import { createAction, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
 import { getCalendars, getEventsById } from '../common/helpers';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const eventsById = createAction({
   auth: weblingAuth,

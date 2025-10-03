@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createAiAvatarPhoto } from './lib/actions/create-ai-avatar-photo';
 import { createAvatarVideo } from './lib/actions/create-avatar-video';
 import { createProductFromUrl } from './lib/actions/create-product-from-url';
@@ -23,7 +23,7 @@ export const joggAi = createPiece({
     'AI-powered content creation platform for generating avatar photos, videos, and product content using advanced AI technology.',
   auth: joggAiAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/jogg-ai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/jogg-ai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE, PieceCategory.MARKETING],
   authors: ['fortunamide', 'onyedikachi-david'],
   actions: [

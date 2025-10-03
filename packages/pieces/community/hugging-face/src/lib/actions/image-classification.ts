@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type {
   ImageClassificationInput,
@@ -6,7 +6,7 @@ import type {
   ZeroShotImageClassificationInput,
   ZeroShotImageClassificationOutput,
 } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const imageClassification = createAction({
@@ -24,11 +24,11 @@ export const imageClassification = createAction({
         disabled: false,
         options: [
           {
-            label: '🏷️ Pre-trained Categories (Standard)',
+            label: 'ðŸ·ï¸ Pre-trained Categories (Standard)',
             value: 'standard',
           },
           {
-            label: '🎯 Custom Categories (Zero-shot)',
+            label: 'ðŸŽ¯ Custom Categories (Zero-shot)',
             value: 'zero_shot',
           },
         ],
@@ -43,27 +43,27 @@ export const imageClassification = createAction({
         disabled: false,
         options: [
           {
-            label: '🛡️ Content Moderation & Safety',
+            label: 'ðŸ›¡ï¸ Content Moderation & Safety',
             value: 'moderation',
           },
           {
-            label: '🏷️ General Image Tagging',
+            label: 'ðŸ·ï¸ General Image Tagging',
             value: 'general',
           },
           {
-            label: '👤 People & Demographics',
+            label: 'ðŸ‘¤ People & Demographics',
             value: 'people',
           },
           {
-            label: '🎨 Creative & Media',
+            label: 'ðŸŽ¨ Creative & Media',
             value: 'creative',
           },
           {
-            label: '💼 Business & Commerce',
+            label: 'ðŸ’¼ Business & Commerce',
             value: 'business',
           },
           {
-            label: '🔍 Search All Models',
+            label: 'ðŸ” Search All Models',
             value: 'search',
           },
         ],
@@ -80,23 +80,23 @@ export const imageClassification = createAction({
           if (mode === 'zero_shot') {
             return [
               {
-                label: 'CLIP ViT Base (⚡ Fast & Versatile)',
+                label: 'CLIP ViT Base (âš¡ Fast & Versatile)',
                 value: 'openai/clip-vit-base-patch32',
                 description: '18.5M downloads | General purpose zero-shot',
               },
               {
-                label: 'CLIP ViT Large (🏆 High Accuracy)',
+                label: 'CLIP ViT Large (ðŸ† High Accuracy)',
                 value: 'openai/clip-vit-large-patch14',
                 description:
                   '9.3M downloads | Best accuracy for complex scenes',
               },
               {
-                label: 'CLIP ViT Large 336 (🔬 Ultra Precise)',
+                label: 'CLIP ViT Large 336 (ðŸ”¬ Ultra Precise)',
                 value: 'openai/clip-vit-large-patch14-336',
                 description: '7.9M downloads | Highest resolution processing',
               },
               {
-                label: 'Fashion CLIP (👗 Fashion Specialized)',
+                label: 'Fashion CLIP (ðŸ‘— Fashion Specialized)',
                 value: 'patrickjohncyh/fashion-clip',
                 description: '2.9M downloads | Perfect for fashion & retail',
               },
@@ -107,17 +107,17 @@ export const imageClassification = createAction({
             case 'moderation':
               return [
                 {
-                  label: 'NSFW Detection (🛡️ Content Safety)',
+                  label: 'NSFW Detection (ðŸ›¡ï¸ Content Safety)',
                   value: 'Falconsai/nsfw_image_detection',
                   description: '115M downloads | Industry-leading safety',
                 },
                 {
-                  label: 'AdamCodd NSFW Detector (🔍 Alternative Safety)',
+                  label: 'AdamCodd NSFW Detector (ðŸ” Alternative Safety)',
                   value: 'AdamCodd/vit-base-nsfw-detector',
                   description: '745K downloads | Reliable content filtering',
                 },
                 {
-                  label: 'ViT Base General (📊 Multi-purpose Safety)',
+                  label: 'ViT Base General (ðŸ“Š Multi-purpose Safety)',
                   value: 'google/vit-base-patch16-224',
                   description:
                     '3.5M downloads | General classification + safety',
@@ -126,22 +126,22 @@ export const imageClassification = createAction({
             case 'people':
               return [
                 {
-                  label: 'Face Expression Detection (😊 Emotion Analysis)',
+                  label: 'Face Expression Detection (ðŸ˜Š Emotion Analysis)',
                   value: 'trpakov/vit-face-expression',
                   description: '5.4M downloads | 7 emotion categories',
                 },
                 {
-                  label: 'Age Classification (👶 Age Detection)',
+                  label: 'Age Classification (ðŸ‘¶ Age Detection)',
                   value: 'nateraw/vit-age-classifier',
                   description: '1.2M downloads | Age group classification',
                 },
                 {
-                  label: 'FairFace Age Detection (📊 Demographic Analysis)',
+                  label: 'FairFace Age Detection (ðŸ“Š Demographic Analysis)',
                   value: 'dima806/fairface_age_image_detection',
                   description: '67M downloads | Professional demographics',
                 },
                 {
-                  label: 'Gender Classification (👥 Gender Analysis)',
+                  label: 'Gender Classification (ðŸ‘¥ Gender Analysis)',
                   value: 'rizvandwiki/gender-classification',
                   description: '1.1M downloads | Binary gender classification',
                 },
@@ -149,22 +149,22 @@ export const imageClassification = createAction({
             case 'general':
               return [
                 {
-                  label: 'ViT Base Patch16 (🏆 Industry Standard)',
+                  label: 'ViT Base Patch16 (ðŸ† Industry Standard)',
                   value: 'google/vit-base-patch16-224',
                   description: '3.5M downloads | 1000+ ImageNet categories',
                 },
                 {
-                  label: 'ResNet-50 (⚡ Fast & Reliable)',
+                  label: 'ResNet-50 (âš¡ Fast & Reliable)',
                   value: 'timm/resnet50.a1_in1k',
                   description: '16.8M downloads | Classic CNN architecture',
                 },
                 {
-                  label: 'ResNet-18 (🚀 Ultra Fast)',
+                  label: 'ResNet-18 (ðŸš€ Ultra Fast)',
                   value: 'timm/resnet18.a1_in1k',
                   description: '4.8M downloads | Lightweight classification',
                 },
                 {
-                  label: 'MobileNet V3 (📱 Mobile Optimized)',
+                  label: 'MobileNet V3 (ðŸ“± Mobile Optimized)',
                   value: 'timm/mobilenetv3_small_100.lamb_in1k',
                   description: '53M downloads | Edge deployment ready',
                 },
@@ -172,18 +172,18 @@ export const imageClassification = createAction({
             case 'creative':
               return [
                 {
-                  label: 'ViT Base Patch16 (🎨 Creative Content)',
+                  label: 'ViT Base Patch16 (ðŸŽ¨ Creative Content)',
                   value: 'google/vit-base-patch16-224',
                   description:
                     '3.5M downloads | Art, design, creative analysis',
                 },
                 {
-                  label: 'MobileViT Small (📸 Media Processing)',
+                  label: 'MobileViT Small (ðŸ“¸ Media Processing)',
                   value: 'apple/mobilevit-small',
                   description: '1.3M downloads | Optimized for media workflows',
                 },
                 {
-                  label: 'ResNet-50 (🖼️ Image Analysis)',
+                  label: 'ResNet-50 (ðŸ–¼ï¸ Image Analysis)',
                   value: 'timm/resnet50.a1_in1k',
                   description:
                     '16.8M downloads | Versatile image understanding',
@@ -192,17 +192,17 @@ export const imageClassification = createAction({
             case 'business':
               return [
                 {
-                  label: 'ViT Base Patch16 (💼 Business Ready)',
+                  label: 'ViT Base Patch16 (ðŸ’¼ Business Ready)',
                   value: 'google/vit-base-patch16-224',
                   description: '3.5M downloads | Professional grade accuracy',
                 },
                 {
-                  label: 'Fashion CLIP (🛍️ E-commerce)',
+                  label: 'Fashion CLIP (ðŸ›ï¸ E-commerce)',
                   value: 'patrickjohncyh/fashion-clip',
                   description: '2.9M downloads | Product categorization',
                 },
                 {
-                  label: 'ResNet-50 (📊 Business Intelligence)',
+                  label: 'ResNet-50 (ðŸ“Š Business Intelligence)',
                   value: 'timm/resnet50.a1_in1k',
                   description: '16.8M downloads | Reliable business workflows',
                 },
@@ -270,8 +270,8 @@ export const imageClassification = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '📎 Upload File', value: 'upload' },
-          { label: '🔗 Image URL', value: 'url' },
+          { label: 'ðŸ“Ž Upload File', value: 'upload' },
+          { label: 'ðŸ”— Image URL', value: 'url' },
         ],
       },
       defaultValue: 'upload',
@@ -318,10 +318,10 @@ export const imageClassification = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '📋 Business Summary', value: 'business' },
-          { label: '🔧 Technical Details', value: 'technical' },
-          { label: '📊 Statistical Analysis', value: 'analytics' },
-          { label: '🌐 Comprehensive Report', value: 'comprehensive' },
+          { label: 'ðŸ“‹ Business Summary', value: 'business' },
+          { label: 'ðŸ”§ Technical Details', value: 'technical' },
+          { label: 'ðŸ“Š Statistical Analysis', value: 'analytics' },
+          { label: 'ðŸŒ Comprehensive Report', value: 'comprehensive' },
         ],
       },
       defaultValue: 'business',
@@ -618,14 +618,14 @@ function getRecommendedAction(
     if (useCase === 'moderation') {
       return category.toLowerCase().includes('nsfw') ||
         category.toLowerCase().includes('inappropriate')
-        ? '🚨 Block content - high confidence inappropriate material'
-        : '✅ Approve content - safe for publication';
+        ? 'ðŸš¨ Block content - high confidence inappropriate material'
+        : 'âœ… Approve content - safe for publication';
     }
-    return `✅ High confidence classification as "${category}" - proceed with automated action`;
+    return `âœ… High confidence classification as "${category}" - proceed with automated action`;
   } else if (confidence > 0.5) {
-    return `⚠️ Medium confidence - consider manual review for "${category}"`;
+    return `âš ï¸ Medium confidence - consider manual review for "${category}"`;
   } else {
-    return `❓ Low confidence - manual review recommended`;
+    return `â“ Low confidence - manual review recommended`;
   }
 }
 
@@ -660,26 +660,26 @@ function getClassificationTips(
 
   if (results.length === 0) {
     tips.push(
-      '🔍 No confident classifications found - try adjusting the confidence threshold'
+      'ðŸ” No confident classifications found - try adjusting the confidence threshold'
     );
   } else {
     const topResult = results[0];
 
     if (topResult.confidence > 0.8) {
       tips.push(
-        '✅ High confidence classification - reliable for automated decisions'
+        'âœ… High confidence classification - reliable for automated decisions'
       );
     } else if (topResult.confidence > 0.5) {
-      tips.push('⚖️ Medium confidence - good for most use cases');
+      tips.push('âš–ï¸ Medium confidence - good for most use cases');
     } else {
       tips.push(
-        '⚠️ Low confidence - consider manual review or different model'
+        'âš ï¸ Low confidence - consider manual review or different model'
       );
     }
 
     if (mode === 'zero_shot') {
       tips.push(
-        '🎯 Zero-shot mode allows custom categories - refine labels for better accuracy'
+        'ðŸŽ¯ Zero-shot mode allows custom categories - refine labels for better accuracy'
       );
     }
 
@@ -688,7 +688,7 @@ function getClassificationTips(
       results.some((r) => r.label.toLowerCase().includes('nsfw'))
     ) {
       tips.push(
-        '🛡️ Content moderation detected - implement appropriate content policies'
+        'ðŸ›¡ï¸ Content moderation detected - implement appropriate content policies'
       );
     }
 
@@ -697,14 +697,14 @@ function getClassificationTips(
     ).length;
     if (highConfidenceCount > 3) {
       tips.push(
-        '📊 Multiple high-confidence matches - image may fit several categories'
+        'ðŸ“Š Multiple high-confidence matches - image may fit several categories'
       );
     }
   }
 
   if (tips.length === 0) {
     tips.push(
-      '💡 Good classification results - suitable for automated processing'
+      'ðŸ’¡ Good classification results - suitable for automated processing'
     );
   }
 
@@ -719,30 +719,30 @@ function getNextSteps(
   const steps: string[] = [];
 
   if (useCase === 'moderation') {
-    steps.push('🛡️ Implement content filtering rules based on classifications');
-    steps.push('📊 Set up monitoring dashboards for content safety metrics');
+    steps.push('ðŸ›¡ï¸ Implement content filtering rules based on classifications');
+    steps.push('ðŸ“Š Set up monitoring dashboards for content safety metrics');
   } else if (useCase === 'business') {
-    steps.push('🏷️ Automate product tagging and categorization workflows');
-    steps.push('📈 Analyze classification patterns for business insights');
+    steps.push('ðŸ·ï¸ Automate product tagging and categorization workflows');
+    steps.push('ðŸ“ˆ Analyze classification patterns for business insights');
   } else if (useCase === 'general') {
     steps.push(
-      '📁 Create automated file organization based on classifications'
+      'ðŸ“ Create automated file organization based on classifications'
     );
-    steps.push('🔍 Build searchable metadata from image classifications');
+    steps.push('ðŸ” Build searchable metadata from image classifications');
   }
 
   if (confidence > 0.8) {
     steps.push(
-      '⚡ Enable fully automated processing for high-confidence results'
+      'âš¡ Enable fully automated processing for high-confidence results'
     );
   } else {
-    steps.push('👁️ Set up human review workflows for low-confidence results');
+    steps.push('ðŸ‘ï¸ Set up human review workflows for low-confidence results');
   }
 
   steps.push(
-    '💾 Save successful classification settings for consistent results'
+    'ðŸ’¾ Save successful classification settings for consistent results'
   );
-  steps.push('🔄 Process image batches with the same model configuration');
+  steps.push('ðŸ”„ Process image batches with the same model configuration');
 
   return steps;
 }

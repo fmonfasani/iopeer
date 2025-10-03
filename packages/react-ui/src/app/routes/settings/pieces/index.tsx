@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckIcon, Package, Trash } from 'lucide-react';
 import { useMemo } from 'react';
@@ -19,8 +19,8 @@ import { PieceIcon } from '@/features/pieces/components/piece-icon';
 import { piecesApi } from '@/features/pieces/lib/pieces-api';
 import { piecesHooks } from '@/features/pieces/lib/pieces-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
-import { isNil, PieceType } from '@activepieces/shared';
+import { PieceMetadataModelSummary } from '@IOpeer/pieces-framework';
+import { isNil, PieceType } from '@IOpeer/shared';
 
 import { ManagePiecesDialog } from './manage-pieces-dialog';
 

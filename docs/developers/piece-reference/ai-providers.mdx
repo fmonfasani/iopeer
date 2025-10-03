@@ -1,4 +1,4 @@
----
+﻿---
 title: 'AI SDK & Providers'
 icon: 'brain'
 description: 'The AI Toolkit to build AI pieces tailored for specific use cases that work with many AI providers using the AI SDK'
@@ -6,17 +6,17 @@ description: 'The AI Toolkit to build AI pieces tailored for specific use cases 
 
 **What it provides:**
 
-- 🔐 **Centralized Credentials Management**: Admin manages credentials, end users use without hassle.
-- 🌐 **Support for Multiple AI Providers**: OpenAI, Anthropic, and many open-source models.
-- 💬 **Support for Various AI Capabilities**: Chat, Image, Agents, and more.
+- ðŸ” **Centralized Credentials Management**: Admin manages credentials, end users use without hassle.
+- ðŸŒ **Support for Multiple AI Providers**: OpenAI, Anthropic, and many open-source models.
+- ðŸ’¬ **Support for Various AI Capabilities**: Chat, Image, Agents, and more.
 
 ## Using the AI SDK
 
 IOPeer integrates with the [AI SDK](https://ai-sdk.dev/) to provide a unified interface for calling LLMs across multiple AI providers. Here's an example on how to use the AI SDK's `generateText` function to call an LLM in your actions.
 
 ```typescript
-import { SUPPORTED_AI_PROVIDERS, createAIModel, aiProps } from '@activepieces/common-ai';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { SUPPORTED_AI_PROVIDERS, createAIModel, aiProps } from '@IOpeer/common-ai';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { LanguageModel, generateText } from 'ai';
 
 export const askAI = createAction({
@@ -84,7 +84,7 @@ export const askAI = createAction({
 Use `aiProps` to create consistent AI-related properties:
 
 ```typescript
-import { aiProps } from '@activepieces/ai-common';
+import { aiProps } from '@IOpeer/ai-common';
 
 // For language models (text generation)
 props: {

@@ -1,10 +1,10 @@
-import { afforaiAuth } from '../../';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { afforaiAuth } from '../../';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const askChatbotAction = createAction({
   auth: afforaiAuth,

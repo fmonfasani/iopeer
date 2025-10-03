@@ -1,14 +1,14 @@
-import {
+﻿import {
   createAction,
   Property,
   BasicAuthPropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { generatebannersAuth } from '../../';
 
 export const renderTemplate = createAction({

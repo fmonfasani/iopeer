@@ -1,12 +1,12 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationPartnerSuspended = createTrigger({
   auth: wedofAuth,
   name: 'certificationPartnerSuspended',
   displayName: 'Partenariat suspendu',
-  description: "Se déclenche Lorsqu'un partenariat est suspendu",
+  description: "Se dÃ©clenche Lorsqu'un partenariat est suspendu",
   props: {},
   sampleData: {
     id: 0,

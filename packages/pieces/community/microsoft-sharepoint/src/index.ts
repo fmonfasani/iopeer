@@ -1,10 +1,10 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 
 import { createFolderAction } from './lib/actions/create-folder';
@@ -46,7 +46,7 @@ const authDesc = `
    - Or select based on your requirement.
 7. In **Redirect URI**, select **Web** and add the given URL.
 8. Click **Register**.
-9. After registration, you’ll be redirected to the app’s overview page. Copy the **Application (client) ID**.
+9. After registration, youâ€™ll be redirected to the appâ€™s overview page. Copy the **Application (client) ID**.
 10. From the left menu, go to **Certificates & secrets**.
     - Under **Client secrets**, click **New client secret**.
     - Provide a description, set an expiry, and click **Add**.
@@ -89,7 +89,7 @@ export const microsoftSharePoint = createPiece({
   displayName: 'Microsoft SharePoint',
   auth: microsoftSharePointAuth,
   minimumSupportedRelease: '0.27.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-sharepoint.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-sharepoint.png',
   categories: [PieceCategory.CONTENT_AND_FILES],
   authors: ['kishanprmr', 'pranith124', 'onyedikachi-david'],
   actions: [

@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@activepieces/pieces-common";
+﻿import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from "@IOpeer/pieces-common";
 
 export const CODY_BASE_URL = "https://getcody.ai/api/v1";
 

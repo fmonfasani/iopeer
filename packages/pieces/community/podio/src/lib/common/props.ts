@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { podioApiCall } from './client';
 import { getAccessToken } from './auth';
 
@@ -474,18 +474,18 @@ export const dynamicFileProperty = Property.Dropdown({
           if (file.mimetype) {
             const fileType = file.mimetype.split('/')[0];
             const iconMap: Record<string, string> = {
-              'image': '🖼️',
-              'video': '🎥',
-              'audio': '🎵',
-              'text': '📄',
-              'application': '📁'
+              'image': 'ðŸ–¼ï¸',
+              'video': 'ðŸŽ¥',
+              'audio': 'ðŸŽµ',
+              'text': 'ðŸ“„',
+              'application': 'ðŸ“'
             };
-            const icon = iconMap[fileType] || '📄';
+            const icon = iconMap[fileType] || 'ðŸ“„';
             label = `${icon} ${label}`;
           }
 
           if (file.context?.title) {
-            label += ` → ${file.context.title}`;
+            label += ` â†’ ${file.context.title}`;
           }
 
           return {
@@ -562,19 +562,19 @@ export const dynamicTaskProperty = Property.Dropdown({
           let label = task.text || `Task ${task.task_id}`;
           
           if (task.status === 'completed') {
-            label = `✓ ${label}`;
+            label = `âœ“ ${label}`;
           } else if (task.due_date) {
             const dueDate = new Date(task.due_date);
             const today = new Date();
             if (dueDate < today) {
-              label = `⚠️ ${label} (Overdue)`;
+              label = `âš ï¸ ${label} (Overdue)`;
             } else {
-              label = `📅 ${label}`;
+              label = `ðŸ“… ${label}`;
             }
           }
 
           if (task.ref?.title) {
-            label += ` → ${task.ref.title}`;
+            label += ` â†’ ${task.ref.title}`;
           }
 
           return {

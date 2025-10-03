@@ -1,9 +1,9 @@
-import {
+﻿import {
     CustomDomain,
     CustomDomainStatus,
     ListCustomDomainsRequest,
-} from '@activepieces/ee-shared'
-import { ActivepiecesError, ApEdition, apId, ErrorCode, isNil, SeekPage } from '@activepieces/shared'
+} from '@IOpeer/ee-shared'
+import { IOpeerError, ApEdition, apId, ErrorCode, isNil, SeekPage } from '@IOpeer/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { buildPaginator } from '../../helper/pagination/build-paginator'
 import { paginationHelper } from '../../helper/pagination/pagination-utils'
@@ -25,7 +25,7 @@ export const customDomainService = {
         })
 
         if (isNil(customDomain)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'CustomDomain',

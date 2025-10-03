@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from "@activepieces/shared";
+﻿import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { PieceCategory } from "@IOpeer/shared";
 import { createRecordAction } from "./lib/actions/create-record.action";
 import { updateRecordAction } from "./lib/actions/update-record.action";
 import { deleteRecordAction } from "./lib/actions/delete-record.action";
@@ -16,7 +16,7 @@ export const fireberry = createPiece({
   displayName: "Fireberry",
   auth: fireberryAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/fireberry.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/fireberry.png",
   authors: ["sparkybug", "onyedikachi-david"],
   categories: [PieceCategory.SALES_AND_CRM],
   actions: [

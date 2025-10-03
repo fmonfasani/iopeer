@@ -1,4 +1,4 @@
-import { DynamicPropsValue } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue } from '@IOpeer/pieces-framework';
 import {
   GristAPIClientOptions,
   GristCreateRecordsRequest,
@@ -20,7 +20,7 @@ import {
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 type Query = Record<string, string | number | string[] | undefined>;
 

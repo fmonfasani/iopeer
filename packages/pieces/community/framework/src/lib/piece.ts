@@ -1,10 +1,10 @@
-import { Trigger } from './trigger/trigger';
+﻿import { Trigger } from './trigger/trigger';
 import { Action } from './action/action';
 import {
   EventPayload,
   ParseEventResponse,
   PieceCategory,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 import { PieceBase, PieceMetadata} from './piece-metadata';
 import { PieceAuthProperty } from './property/authentication';
 import { ServerContext } from './context';

@@ -1,8 +1,8 @@
-import {
+﻿import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 export const everyXMinutesTrigger = createTrigger({
   name: 'every_x_minutes',

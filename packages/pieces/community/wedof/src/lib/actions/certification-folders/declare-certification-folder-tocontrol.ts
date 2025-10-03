@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
@@ -7,17 +7,17 @@ import dayjs from 'dayjs';
 export const declareCertificationFolderToControl = createAction({
   auth: wedofAuth,
   name: 'declareCertificationFolderToControl',
-  displayName: "Passer un dossier de certification à l'état : À contrôler",
-  description: "Change l'état d'un dossier de certification vers : À contrôler",
+  displayName: "Passer un dossier de certification Ã  l'Ã©tat : Ã€ contrÃ´ler",
+  description: "Change l'Ã©tat d'un dossier de certification vers : Ã€ contrÃ´ler",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     enrollmentDate: Property.DateTime({
-      displayName: "Date d'inscription à la certification",
+      displayName: "Date d'inscription Ã  la certification",
       description: 'Date au format YYYY-MM-DD.',
       required: false,
     }),
@@ -36,17 +36,17 @@ export const declareCertificationFolderToControl = createAction({
       required: true,
       defaultValue: {
         value: 'A_DISTANCE',
-        label: 'À distance',
+        label: 'Ã€ distance',
       },
       options: {
         options: [
           {
             value: 'A_DISTANCE',
-            label: 'À distance',
+            label: 'Ã€ distance',
           },
           {
             value: 'EN_PRESENTIEL',
-            label: 'En présentiel',
+            label: 'En prÃ©sentiel',
           },
           {
             value: 'MIXTE',

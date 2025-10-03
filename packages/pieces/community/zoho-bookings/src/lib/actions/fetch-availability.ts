@@ -1,6 +1,6 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { propsValidation } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { zohoBookingsAuth, zohoBookingsCommon } from '../common';
 
 export const fetchAvailability = createAction({

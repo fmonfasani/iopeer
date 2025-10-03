@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { WhatConvertsAuth } from './auth';
 import { whatConvertsClient } from './client';
 

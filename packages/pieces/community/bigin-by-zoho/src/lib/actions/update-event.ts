@@ -1,5 +1,5 @@
-import { biginAuth } from '../../index';
-import { createAction, InputPropertyMap, Property } from '@activepieces/pieces-framework';
+﻿import { biginAuth } from '../../index';
+import { createAction, InputPropertyMap, Property } from '@IOpeer/pieces-framework';
 import { tagsDropdown, usersDropdown } from '../common/props';
 import { API_ENDPOINTS } from '../common/constants';
 import { biginApiService } from '../common/request';
@@ -129,7 +129,7 @@ export const updateEvent = createAction({
               props[apiName] = Property.DateTime({
                 displayName: f.display_label || f.field_label || apiName,
                 description:
-                  f.tooltip || 'Format: ISO 8601 (YYYY-MM-DDTHH:mm:ss±HH:mm)',
+                  f.tooltip || 'Format: ISO 8601 (YYYY-MM-DDTHH:mm:ssÂ±HH:mm)',
                 required: false,
                 defaultValue,
               });

@@ -1,9 +1,9 @@
-import {
+﻿import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PieceAuth } from '@IOpeer/pieces-framework';
 
 const markdownDescription = `
 Follow these instructions to get your CometAPI Key:

@@ -1,6 +1,6 @@
-import { Readable } from 'stream'
-import { AppSystemProp, exceptionHandler } from '@activepieces/server-shared'
-import { apId, FileType, isNil, ProjectId } from '@activepieces/shared'
+﻿import { Readable } from 'stream'
+import { AppSystemProp, exceptionHandler } from '@IOpeer/server-shared'
+import { apId, FileType, isNil, ProjectId } from '@IOpeer/shared'
 import { DeleteObjectsCommand, GetObjectCommand, PutObjectCommand, S3, S3ClientConfig } from '@aws-sdk/client-s3'
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner'
 import dayjs from 'dayjs'
@@ -111,13 +111,13 @@ export const s3Helper = (log: FastifyBaseLogger) => ({
     async validateS3Configuration(): Promise<void> {
         const client = getS3Client()
         const bucketName = getS3BucketName()
-        const testKey = `activepieces-${apId()}-validation-test-key`
+        const testKey = `IOpeer-${apId()}-validation-test-key`
 
         try {
             await client.putObject({
                 Bucket: bucketName,
                 Key: testKey,
-                Body: 'activepieces-test',
+                Body: 'IOpeer-test',
             })
 
             await client.headObject({

@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type { TextToImageInput } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const createImage = createAction({
@@ -49,17 +49,17 @@ export const createImage = createAction({
             case 'speed':
               return [
                 {
-                  label: 'FLUX.1 Schnell (⚡ Ultra Fast - 1-4 steps)',
+                  label: 'FLUX.1 Schnell (âš¡ Ultra Fast - 1-4 steps)',
                   value: 'black-forest-labs/FLUX.1-schnell',
                   description: '634K downloads | Best for rapid prototyping',
                 },
                 {
-                  label: 'SD Turbo (⚡ Real-time - 1 step)',
+                  label: 'SD Turbo (âš¡ Real-time - 1 step)',
                   value: 'stabilityai/sd-turbo',
                   description: '1.2M downloads | Fastest generation',
                 },
                 {
-                  label: 'SDXL Turbo (⚡ Fast - 1-4 steps)',
+                  label: 'SDXL Turbo (âš¡ Fast - 1-4 steps)',
                   value: 'stabilityai/sdxl-turbo',
                   description: '223K downloads | Fast with good quality',
                 },
@@ -72,12 +72,12 @@ export const createImage = createAction({
                   description: '1.4M downloads | State-of-the-art results',
                 },
                 {
-                  label: 'Stable Diffusion XL (🎯 Reliable Quality)',
+                  label: 'Stable Diffusion XL (ðŸŽ¯ Reliable Quality)',
                   value: 'stabilityai/stable-diffusion-xl-base-1.0',
                   description: '2.2M downloads | Industry standard',
                 },
                 {
-                  label: 'SD 3 Medium (🔬 Advanced Features)',
+                  label: 'SD 3 Medium (ðŸ”¬ Advanced Features)',
                   value: 'stabilityai/stable-diffusion-3-medium',
                   description: '13K downloads | Latest technology',
                 },
@@ -85,17 +85,17 @@ export const createImage = createAction({
             case 'business':
               return [
                 {
-                  label: 'Stable Diffusion XL (💼 Professional)',
+                  label: 'Stable Diffusion XL (ðŸ’¼ Professional)',
                   value: 'stabilityai/stable-diffusion-xl-base-1.0',
                   description: '2.2M downloads | Business-ready quality',
                 },
                 {
-                  label: 'DreamShaper v7 (🎨 Versatile Style)',
+                  label: 'DreamShaper v7 (ðŸŽ¨ Versatile Style)',
                   value: 'Lykon/dreamshaper-7',
                   description: '833K downloads | Great for varied content',
                 },
                 {
-                  label: 'OpenJourney (🌟 Midjourney Style)',
+                  label: 'OpenJourney (ðŸŒŸ Midjourney Style)',
                   value: 'prompthero/openjourney',
                   description: '8K downloads | Artistic business content',
                 },
@@ -159,11 +159,11 @@ export const createImage = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '📱 Portrait (512×768) - Social Media', value: 'portrait' },
-          { label: '🖥️ Landscape (768×512) - Banners', value: 'landscape' },
-          { label: '⬜ Square (512×512) - Profile Pictures', value: 'square' },
-          { label: '📺 Wide (1024×576) - Headers', value: 'wide' },
-          { label: '⚙️ Custom Dimensions', value: 'custom' },
+          { label: 'ðŸ“± Portrait (512Ã—768) - Social Media', value: 'portrait' },
+          { label: 'ðŸ–¥ï¸ Landscape (768Ã—512) - Banners', value: 'landscape' },
+          { label: 'â¬œ Square (512Ã—512) - Profile Pictures', value: 'square' },
+          { label: 'ðŸ“º Wide (1024Ã—576) - Headers', value: 'wide' },
+          { label: 'âš™ï¸ Custom Dimensions', value: 'custom' },
         ],
       },
       defaultValue: 'square',
@@ -191,11 +191,11 @@ export const createImage = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '⚡ Fast (10-20 steps)', value: 'fast' },
-          { label: '⚖️ Balanced (20-30 steps)', value: 'balanced' },
-          { label: '🎯 High Quality (30-50 steps)', value: 'quality' },
-          { label: '🏆 Maximum Quality (50+ steps)', value: 'maximum' },
-          { label: '⚙️ Custom Steps', value: 'custom' },
+          { label: 'âš¡ Fast (10-20 steps)', value: 'fast' },
+          { label: 'âš–ï¸ Balanced (20-30 steps)', value: 'balanced' },
+          { label: 'ðŸŽ¯ High Quality (30-50 steps)', value: 'quality' },
+          { label: 'ðŸ† Maximum Quality (50+ steps)', value: 'maximum' },
+          { label: 'âš™ï¸ Custom Steps', value: 'custom' },
         ],
       },
       defaultValue: 'balanced',
@@ -373,7 +373,7 @@ export const createImage = createAction({
         metrics: {
           generationTimeSeconds: generationTime,
           imageSizeKB: imageSizeKB,
-          resolution: `${width}×${height}`,
+          resolution: `${width}Ã—${height}`,
           qualitySetting: qualitySettings || 'balanced',
           estimatedCost: calculateEstimatedCost(
             model,
@@ -429,25 +429,25 @@ function getQualityTips(
 
   if (prompt.length < 20) {
     tips.push(
-      '💡 Add more descriptive details to your prompt for better results'
+      'ðŸ’¡ Add more descriptive details to your prompt for better results'
     );
   }
 
   if (!negativePrompt) {
     tips.push(
-      '🚫 Consider adding negative prompts to avoid unwanted elements (blur, low quality, etc.)'
+      'ðŸš« Consider adding negative prompts to avoid unwanted elements (blur, low quality, etc.)'
     );
   }
 
   if (steps < 20) {
     tips.push(
-      '⚡ Using fast generation - increase steps for higher quality if needed'
+      'âš¡ Using fast generation - increase steps for higher quality if needed'
     );
   }
 
   if (steps > 50) {
     tips.push(
-      '⏱️ High step count may take longer - consider balanced setting for faster results'
+      'â±ï¸ High step count may take longer - consider balanced setting for faster results'
     );
   }
 
@@ -456,12 +456,12 @@ function getQualityTips(
     !prompt.toLowerCase().includes('detailed')
   ) {
     tips.push(
-      '🎯 Add quality keywords like "high resolution", "detailed", or "professional" to your prompt'
+      'ðŸŽ¯ Add quality keywords like "high resolution", "detailed", or "professional" to your prompt'
     );
   }
 
   if (tips.length === 0) {
-    tips.push('✅ Good generation parameters - expect quality results');
+    tips.push('âœ… Good generation parameters - expect quality results');
   }
 
   return tips;
@@ -472,25 +472,25 @@ function getNextSteps(useCase: string, imageSizeKB: number): string[] {
   const steps: string[] = [];
 
   if (useCase === 'business') {
-    steps.push('🎨 Try variations with different styles or angles');
+    steps.push('ðŸŽ¨ Try variations with different styles or angles');
     steps.push(
-      '📐 Consider generating multiple aspect ratios for different platforms'
+      'ðŸ“ Consider generating multiple aspect ratios for different platforms'
     );
   }
 
   if (useCase === 'speed') {
-    steps.push('🔄 Generate variations quickly with different seeds');
+    steps.push('ðŸ”„ Generate variations quickly with different seeds');
     steps.push(
-      '⬆️ Upscale to higher quality when you find the perfect concept'
+      'â¬†ï¸ Upscale to higher quality when you find the perfect concept'
     );
   }
 
   if (imageSizeKB > 1000) {
-    steps.push('📉 Consider optimizing image size for web use');
+    steps.push('ðŸ“‰ Consider optimizing image size for web use');
   }
 
-  steps.push('💾 Save successful prompts for consistent brand imagery');
-  steps.push('🔄 Use the same seed to create variations of this concept');
+  steps.push('ðŸ’¾ Save successful prompts for consistent brand imagery');
+  steps.push('ðŸ”„ Use the same seed to create variations of this concept');
 
   return steps;
 }

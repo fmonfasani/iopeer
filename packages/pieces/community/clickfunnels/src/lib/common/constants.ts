@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from "@activepieces/pieces-framework";
+﻿import { PieceAuth, Property } from "@IOpeer/pieces-framework";
 import { clickfunnelsApiService } from "./requests";
 
 export const CLICKFUNNELS_BASE_URL = (subdomain: string) => `https://${subdomain}.myclickfunnels.com/api/v2`;

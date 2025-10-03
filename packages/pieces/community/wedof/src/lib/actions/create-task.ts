@@ -1,18 +1,18 @@
-import { wedofAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../common/wedof';
 import dayjs from 'dayjs';
 
 export const createTask = createAction({
   auth: wedofAuth,
   name: 'createTask',
-  displayName: "Créer une tâche",
-  description: "Permet de créer une tâche d'un dossier (Dossier de formation / Dossier de certification)",
+  displayName: "CrÃ©er une tÃ¢che",
+  description: "Permet de crÃ©er une tÃ¢che d'un dossier (Dossier de formation / Dossier de certification)",
   props: {
     entityClass: Property.StaticDropdown({
       displayName: "Choisir le type de dossier",
-      description: "Permet de n'obtenir que les dossiers dans le type considéré - par défaut tous les types sont retournés",
+      description: "Permet de n'obtenir que les dossiers dans le type considÃ©rÃ© - par dÃ©faut tous les types sont retournÃ©s",
       required: true,
       options: {
         options: [
@@ -24,17 +24,17 @@ export const createTask = createAction({
       },
     }),
     externalId: Property.ShortText({
-      displayName: 'N° du dossier',
+      displayName: 'NÂ° du dossier',
       description:
-        'Sélectionner la propriété {externalId} du dossier',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier',
       required: true,
     }),
     title: Property.ShortText({
-        displayName: 'Titre de la tâche',
+        displayName: 'Titre de la tÃ¢che',
         required: true,
     }),
     dueDate: Property.DateTime({
-        displayName: "Date d'échéance",
+        displayName: "Date d'Ã©chÃ©ance",
         description: 'Date au format YYYY-MM-DDTHH:mm:ssZ.',
         required: false,
     }),
@@ -49,7 +49,7 @@ export const createTask = createAction({
         required: true,
     }),
     link: Property.ShortText({
-        displayName: "Lien (url) vers la tâche",
+        displayName: "Lien (url) vers la tÃ¢che",
         required: false,
     }),
 

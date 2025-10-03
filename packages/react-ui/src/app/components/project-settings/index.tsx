@@ -1,4 +1,4 @@
-import { DialogTitle } from '@radix-ui/react-dialog';
+﻿import { DialogTitle } from '@radix-ui/react-dialog';
 import { t } from 'i18next';
 import { Bell, Settings, Users } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { cn } from '@/lib/utils';
-import { Permission } from '@activepieces/shared';
+import { Permission } from '@IOpeer/shared';
 
 import { AlertsSettings } from './alerts';
 import { GeneralSettings } from './general';

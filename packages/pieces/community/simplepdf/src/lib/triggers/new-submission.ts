@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 const markdown = `
 - Paste this URL in the webhook integration endpoint:

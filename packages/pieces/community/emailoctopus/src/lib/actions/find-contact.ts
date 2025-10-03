@@ -1,6 +1,6 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
-// 👇 1. Remove `isAxiosError` and import `HttpError` instead
-import { HttpError, HttpMethod } from "@activepieces/pieces-common";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
+// ðŸ‘‡ 1. Remove `isAxiosError` and import `HttpError` instead
+import { HttpError, HttpMethod } from "@IOpeer/pieces-common";
 import { createHash } from "crypto";
 import { emailOctopusAuth } from "../common/auth";
 import { EmailOctopusClient } from "../common/client";

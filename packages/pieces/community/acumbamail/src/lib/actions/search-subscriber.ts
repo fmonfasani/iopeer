@@ -1,11 +1,11 @@
-import { acumbamailAuth } from '../../';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { acumbamailAuth } from '../../';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { acumbamailCommon } from '../common';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const searchSubscriberAction = createAction({
   auth: acumbamailAuth,

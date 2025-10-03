@@ -1,5 +1,5 @@
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { microsoftPowerBiAuth } from '../../index';
 
 type PowerBIRow = {

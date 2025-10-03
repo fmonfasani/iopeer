@@ -1,11 +1,11 @@
-import {
+﻿import {
     ConnectionKeyId,
     GetOrDeleteConnectionFromTokenRequest,
     ListConnectionKeysRequest,
     UpsertConnectionFromToken,
     UpsertSigningKeyConnection,
-} from '@activepieces/ee-shared'
-import { ALL_PRINCIPAL_TYPES, AppConnectionScope } from '@activepieces/shared'
+} from '@IOpeer/ee-shared'
+import { ALL_PRINCIPAL_TYPES, AppConnectionScope } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { FastifyRequest } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

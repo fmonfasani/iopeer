@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { sendText } from './lib/actions/send/text';
 import { send_iMessage } from './lib/actions/send/imessage';
 
@@ -15,7 +15,7 @@ export const contiguity = createPiece({
   description: 'Communications for what you\'re building',
   auth: contiguityAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/contiguity.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/contiguity.png',
   authors: ["Owlcept","Ozak93","kishanprmr","MoShizzle","abuaboud","Contiguity"],
   categories: [PieceCategory.MARKETING],
   actions: [

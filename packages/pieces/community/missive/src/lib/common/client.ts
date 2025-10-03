@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod, AuthenticationType } from '@IOpeer/pieces-common';
 
 const MISSIVE_API_BASE_URL = 'https://public.missiveapp.com/v1';
 

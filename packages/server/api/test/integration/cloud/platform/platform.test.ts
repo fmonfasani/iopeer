@@ -1,10 +1,10 @@
-import {
+﻿import {
     CopilotProviderType,
     FilteredPieceBehavior,
     PlatformRole,
     PrincipalType,
     UpdatePlatformRequestBody,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { faker } from '@faker-js/faker'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

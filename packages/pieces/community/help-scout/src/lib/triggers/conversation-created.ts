@@ -1,9 +1,9 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { helpScoutAuth } from '../common/auth';
 import { mailboxIdDropdown, userIdDropdown } from '../common/props';
 import crypto from 'crypto';
 import { helpScoutApiRequest, verifyWebhookSignature } from '../common/api';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 const WEBHOOK_KEY = 'helpscout_conversation_created';
 

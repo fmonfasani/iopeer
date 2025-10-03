@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { PieceAuth } from '@IOpeer/pieces-framework';
 import { retellAiApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 // For typing purposes in the client
 export const RetellAiAuth = PieceAuth.SecretText({

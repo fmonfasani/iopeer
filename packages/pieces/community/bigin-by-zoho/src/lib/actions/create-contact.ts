@@ -1,5 +1,5 @@
-import { biginAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { biginAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { companyDropdown, tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { handleDropdownError } from '../common/helpers';

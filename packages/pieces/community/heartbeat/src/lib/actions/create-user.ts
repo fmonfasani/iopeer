@@ -1,13 +1,13 @@
-import {
+﻿import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { heartbeatAuth } from '../..';
 import { z } from 'zod';
 

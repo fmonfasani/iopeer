@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   ListMcpsRequest,
   SeekPage,
   UpdateMcpRequestBody,
   McpWithTools,
   CreateMcpRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const mcpApi = {
   async create(request: CreateMcpRequestBody): Promise<McpWithTools> {

@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { autocallsAuth, baseApiUrl } from '../..';
 import dayjs from 'dayjs';
 

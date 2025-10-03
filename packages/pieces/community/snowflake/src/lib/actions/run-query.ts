@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import snowflake from 'snowflake-sdk';
 import { snowflakeAuth } from '../../index';
 import { configureConnection } from '../common';
@@ -14,7 +14,7 @@ export const runQuery = createAction({
   props: {
     sqlText: Property.ShortText({
       displayName: 'SQL query',
-      description: 'Use :1, :2… or ? placeholders to use binding parameters.',
+      description: 'Use :1, :2â€¦ or ? placeholders to use binding parameters.',
       required: true,
     }),
     binds: Property.Array({

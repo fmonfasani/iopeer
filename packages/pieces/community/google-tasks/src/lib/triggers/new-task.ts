@@ -1,16 +1,16 @@
-import {
+﻿import {
   OAuth2PropertyValue,
   OAuth2Props,
   StaticPropsValue,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { googleTasksAuth } from '../..';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { getTasks, googleTasksCommon } from '../common';
 
 const props = {

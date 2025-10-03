@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-bitly",
+﻿{
+  "name": "@IOpeer/piece-bitly",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,9 +1,9 @@
-import {
+﻿import {
   ActionContext,
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
-import { ExecutionType, PauseType } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { ExecutionType, PauseType } from '@IOpeer/shared';
 import { TranscriptParams } from 'assemblyai';
 import { assemblyaiAuth } from '../../auth';
 import { getAssemblyAIClient } from '../../client';

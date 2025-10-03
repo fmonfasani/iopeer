@@ -1,11 +1,11 @@
-import {
+﻿import {
 	AuthenticationType,
 	HttpMethod,
 	createCustomApiCallAction,
 	httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createImage } from './lib/actions/create-image';
 import { createPdf } from './lib/actions/create-pdf';
 import { createVideo } from './lib/actions/create-video';
@@ -55,7 +55,7 @@ export const placid = createPiece({
 	description:
 		'Creative automation engine that generates dynamic images, PDFs, and videos from templates and data.',
 	minimumSupportedRelease: '0.30.0',
-	logoUrl: 'https://cdn.activepieces.com/pieces/placid.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/placid.png',
 	categories: [PieceCategory.CONTENT_AND_FILES, PieceCategory.MARKETING],
 	auth: placidAuth,
 	actions: [

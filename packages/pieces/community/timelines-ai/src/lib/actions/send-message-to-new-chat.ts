@@ -1,8 +1,8 @@
-import {
+﻿import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 import { whatsappAccountDropdown } from '../common/properties';
 

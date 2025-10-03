@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from '@tanstack/react-query';
+﻿import { useQuery, useMutation } from '@tanstack/react-query';
 
 import {
   ListAgentsQueryParams,
@@ -7,7 +7,7 @@ import {
   AgentRun,
   RunAgentRequestBody,
   EnhaceAgentPrompt,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { agentsApi, agentRunsApi } from './agents-api';
 

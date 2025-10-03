@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createEntryAction } from './lib/actions/create-entry';
 import { updateEntryAction } from './lib/actions/update-entry';
 import { deleteEntryAction } from './lib/actions/delete-entry';
@@ -9,7 +9,7 @@ import { entryUpdatedTrigger } from './lib/triggers/entry-updated';
 import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { makeRequest } from './lib/common';
 
 export const cognitoFormsAuth = PieceAuth.SecretText({
@@ -37,7 +37,7 @@ export const cognitoFormsAuth = PieceAuth.SecretText({
 export const cognitoForms = createPiece({
   displayName: 'Cognito Forms',
   auth: cognitoFormsAuth,
-  logoUrl: 'https://cdn.activepieces.com/pieces/cognito-forms.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/cognito-forms.png',
   authors: ['krushnarout'],
   categories: [PieceCategory.PRODUCTIVITY, PieceCategory.FORMS_AND_SURVEYS],
   actions: [

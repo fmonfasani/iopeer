@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { lemlistAuth } from '../common/constants';
 import { campaignsDropdown } from '../common/props';
 import { lemlistApiService } from '../common/requests';
@@ -7,7 +7,7 @@ export const markLeadFromAllCampaignAsInterested = createAction({
   auth: lemlistAuth,
   name: 'markLeadFromAllCampaignAsInterested',
   displayName: 'Mark Lead From All Campaign as Interested',
-  description: 'Mark a lead as “interested” across all campaigns.',
+  description: 'Mark a lead as â€œinterestedâ€ across all campaigns.',
   props: {
     email: Property.ShortText({
       displayName: 'Lead Email',

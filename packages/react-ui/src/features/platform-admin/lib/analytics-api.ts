@@ -1,5 +1,5 @@
-import { api } from '@/lib/api';
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+﻿import { api } from '@/lib/api';
+import { PlatformAnalyticsReport } from '@IOpeer/shared';
 
 export const analyticsApi = {
   get(): Promise<PlatformAnalyticsReport> {

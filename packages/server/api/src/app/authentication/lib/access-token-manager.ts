@@ -1,4 +1,4 @@
-import { ActivepiecesError, apId, assertNotNullOrUndefined, EnginePrincipal, ErrorCode, PlatformId, Principal, PrincipalType, ProjectId, UserStatus, WorkerPrincipal } from '@activepieces/shared'
+﻿import { IOpeerError, apId, assertNotNullOrUndefined, EnginePrincipal, ErrorCode, PlatformId, Principal, PrincipalType, ProjectId, UserStatus, WorkerPrincipal } from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { jwtUtils } from '../../helper/jwt-utils'
 import { system } from '../../helper/system/system'
@@ -63,10 +63,10 @@ export const accessTokenManager = {
             return decoded
         }
         catch (e) {
-            if (e instanceof ActivepiecesError) {
+            if (e instanceof IOpeerError) {
                 throw e
             }
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.INVALID_BEARER_TOKEN,
                 params: {
                     message: 'invalid access token or session expired',
@@ -83,7 +83,7 @@ async function assertUserSession(decoded: Principal): Promise<void> {
     const identity = await userIdentityService(system.globalLogger()).getOneOrFail({ id: user.identityId })
     const isExpired = (identity.tokenVersion ?? null) !== (decoded.tokenVersion ?? null)
     if (isExpired || user.status === UserStatus.INACTIVE || !identity.verified) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.SESSION_EXPIRED,
             params: {
                 message: 'The session has expired or the user is not verified.',

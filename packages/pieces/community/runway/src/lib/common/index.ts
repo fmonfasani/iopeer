@@ -1,5 +1,5 @@
-export * from './auth';
-import { Property } from '@activepieces/pieces-framework';
+﻿export * from './auth';
+import { Property } from '@IOpeer/pieces-framework';
 
 export const runwayModelProperty = Property.ShortText({ displayName: 'Model', required: true });
 

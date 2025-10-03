@@ -1,9 +1,9 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { TwitterApi } from 'twitter-api-v2';
 import { createTweet } from './lib/actions/create-tweet';
 import { createReply } from './lib/actions/create-reply';
@@ -85,7 +85,7 @@ export const twitter = createPiece({
   displayName: 'Twitter',
   description: 'Social media platform with over 500 million user',
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/twitter.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/twitter.png',
   categories: [PieceCategory.COMMUNICATION],
   authors: ["Abdallah-Alwarawreh","Salem-Alaa","kishanprmr","AbdulTheActivePiecer","khaledmashaly","abuaboud"],
   auth: twitterAuth,

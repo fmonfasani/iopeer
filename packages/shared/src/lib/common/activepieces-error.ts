@@ -1,4 +1,4 @@
-import { FileId } from '../file'
+﻿import { FileId } from '../file'
 import { FlowRunId } from '../flow-run/flow-run'
 import { FlowId } from '../flows/flow'
 import { FlowVersionId } from '../flows/flow-version'
@@ -9,7 +9,7 @@ import { UserId } from '../user'
 import { ApId } from './id-generator'
 import { Permission } from './security'
 
-export class ActivepiecesError extends Error {
+export class IOpeerError extends Error {
     constructor(public error: ApErrorParams, message?: string) {
         super(error.code + (message ? `: ${message}` : ''))
     }

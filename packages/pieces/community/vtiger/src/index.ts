@@ -1,9 +1,9 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createRecord } from './lib/actions/create-record';
 import { deleteRecord } from './lib/actions/delete-record';
 import { getRecord } from './lib/actions/get-record';
@@ -13,7 +13,7 @@ import { updateRecord } from './lib/actions/update-record';
 import { instanceLogin, isBaseUrl } from './lib/common';
 import { newOrUpdatedRecord } from './lib/triggers/new-or-updated-record';
 import { queryRecords } from './lib/actions/query-records';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 const markdownProperty = `
 To obtain your Access Key, follow these steps:
@@ -105,7 +105,7 @@ export const vtiger = createPiece({
   description: 'CRM software for sales, marketing, and support teams',
   auth: vtigerAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/vtiger.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/vtiger.png',
   categories: [PieceCategory.SALES_AND_CRM],
   authors: ["kanarelo","kishanprmr","abuaboud", "privatestefans"],
   actions: [

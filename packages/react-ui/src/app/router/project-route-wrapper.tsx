@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Navigate, useParams, useSearchParams } from 'react-router-dom';
 
 import { useAuthorization } from '@/hooks/authorization-hooks';
@@ -8,7 +8,7 @@ import {
   useDefaultRedirectPath,
 } from '@/lib/navigation-utils';
 import { determineDefaultRoute } from '@/lib/utils';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 import { LoadingScreen } from '../../components/ui/loading-screen';
 import { authenticationSession } from '../../lib/authentication-session';

@@ -1,4 +1,4 @@
-import * as soap from 'soap';
+﻿import * as soap from 'soap';
 import {
   CustomAuthProps,
   Property,
@@ -7,7 +7,7 @@ import {
   StaticMultiSelectDropdownProperty,
   StaticPropsValue,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { soapAuth } from '../shared/auth';
 
 type DynamicProp =

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 
 import { CardListItemSkeleton } from '@/components/custom/card-list';
 import { Separator } from '@/components/ui/separator';
@@ -24,7 +24,7 @@ import {
   Agent,
   FlowOperationType,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { cn } from '../../../lib/utils';
 import { useBuilderStateContext } from '../builder-hooks';
@@ -237,7 +237,7 @@ const getNumberOfExtraActions = (
 ) => {
   if (
     pieceMetadata.type === FlowActionType.PIECE &&
-    pieceMetadata.pieceName === '@activepieces/piece-agent'
+    pieceMetadata.pieceName === '@IOpeer/piece-agent'
   ) {
     return agents?.length ?? 0;
   }

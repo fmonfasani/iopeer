@@ -1,5 +1,5 @@
-import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApEdition, ApFlagId } from '@activepieces/shared';
+﻿import { flagsHooks } from '@/hooks/flags-hooks';
+import { ApEdition, ApFlagId } from '@IOpeer/shared';
 
 type EditionGuardProps = {
   children: React.ReactNode;

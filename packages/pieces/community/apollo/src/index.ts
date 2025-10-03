@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { matchPerson } from "./lib/actions/match-person";
 import { enrichCompany } from "./lib/actions/enrich-company";
 
@@ -12,7 +12,7 @@ export const apollo = createPiece({
   displayName: "Apollo",
   auth: apolloAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: "https://cdn.activepieces.com/pieces/apollo.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/apollo.png",
   authors: ['abuaboud'],
   actions: [matchPerson, enrichCompany],
   triggers: [],

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-open-phone",
+﻿{
+  "name": "@IOpeer/piece-open-phone",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

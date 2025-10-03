@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-paperform",
+﻿{
+  "name": "@IOpeer/piece-paperform",
   "version": "0.0.9",
   "type": "commonjs",
   "main": "./src/index.js",

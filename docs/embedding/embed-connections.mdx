@@ -1,4 +1,4 @@
----
+﻿---
 title: "Create/Update Connections"
 description: ""
 icon: "cards"
@@ -31,7 +31,7 @@ icon: "cards"
 
         ```html
         <script> 
-        iopeer.connect({pieceName:'@activepieces/piece-google-sheets'});
+        iopeer.connect({pieceName:'@IOpeer/piece-google-sheets'});
         </script>
         ```
 
@@ -39,9 +39,9 @@ icon: "cards"
 
         | Parameter Name | Required | Type   | Description                                 |
         | -------------- | -------- | ------ | ------------------------------------------- |
-        | pieceName      | ✅      | string | The name of the piece you want to create a connection for.
-        | connectionName | ❌      | string | The external Id of the connection (you can get it by hovering the connection name in the connections table), when provided the connection created/upserted will use this as the external Id and display name.
-        | newWindow      | ❌      | \{ width?: number, height?: number, top?: number, left?: number \} | If set the connection dialog will be opened in a new window instead of an iframe taking the full page.
+        | pieceName      | âœ…      | string | The name of the piece you want to create a connection for.
+        | connectionName | âŒ      | string | The external Id of the connection (you can get it by hovering the connection name in the connections table), when provided the connection created/upserted will use this as the external Id and display name.
+        | newWindow      | âŒ      | \{ width?: number, height?: number, top?: number, left?: number \} | If set the connection dialog will be opened in a new window instead of an iframe taking the full page.
 
         **Connect Result**
 

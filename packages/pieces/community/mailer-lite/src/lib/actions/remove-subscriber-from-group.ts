@@ -1,5 +1,5 @@
-import MailerLite from '@mailerlite/mailerlite-nodejs';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import MailerLite from '@mailerlite/mailerlite-nodejs';
+import { createAction } from '@IOpeer/pieces-framework';
 import { mailerLiteAuth } from '../..';
 import { mailerLiteCommon } from '../common';
 

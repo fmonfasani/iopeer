@@ -1,11 +1,11 @@
-import { ApFile, createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { AIUsageFeature, createAIModel, SUPPORTED_AI_PROVIDERS } from '@activepieces/common-ai';
+﻿import { ApFile, createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
+import { AIUsageFeature, createAIModel, SUPPORTED_AI_PROVIDERS } from '@IOpeer/common-ai';
 import { generateText, ImageModel, ImagePart } from 'ai';
 import { experimental_generateImage as generateImage } from 'ai';
-import { aiProps } from '@activepieces/common-ai';
+import { aiProps } from '@IOpeer/common-ai';
 import { LanguageModelV2, ImageModelV2 } from '@ai-sdk/provider';
 import mime from 'mime-types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 const getGeneratedImage = async ({
   providerName,

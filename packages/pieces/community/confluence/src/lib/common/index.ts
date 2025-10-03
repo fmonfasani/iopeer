@@ -1,12 +1,12 @@
-import {
+﻿import {
 	AuthenticationType,
 	httpClient,
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export type ConfluenceApiCallParams = {
 	domain: string;

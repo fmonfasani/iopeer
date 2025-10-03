@@ -1,9 +1,9 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { sendEmail } from './lib/actions/send-email';
 import { smtpCommon } from './lib/common';
 
@@ -84,7 +84,7 @@ export const smtp = createPiece({
   displayName: 'SMTP',
   description: 'Send emails using Simple Mail Transfer Protocol',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/smtp.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/smtp.png',
   categories: [PieceCategory.CORE],
   authors: [
     'tahboubali',

@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy, Property, PiecePropValueSchema } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy, Property, PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { teamworkAuth } from '../common/auth';
 import { teamworkRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const newExpense = createTrigger({
 	name: 'new_expense',

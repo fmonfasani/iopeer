@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { dropboxCopyFile } from './lib/actions/copy-file';
 import { dropboxCopyFolder } from './lib/actions/copy-folder';
 import { dropboxCreateNewFolder } from './lib/actions/create-new-folder';
@@ -36,7 +36,7 @@ export const dropboxAuth = PieceAuth.OAuth2({
 
 export const dropbox = createPiece({
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/dropbox.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/dropbox.png',
   actions: [
     dropboxSearch,
     dropboxCreateNewTextFile,

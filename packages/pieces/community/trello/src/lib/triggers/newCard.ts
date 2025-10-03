@@ -1,8 +1,8 @@
-import { trelloAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { trelloAuth } from '../..';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { getCardDetail, getCardsInBoard, getCardsInList, trelloCommon } from '../common';
 import { TrelloNewCard } from '../common/props/card';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const newCardTrigger = createTrigger({
 	auth: trelloAuth,

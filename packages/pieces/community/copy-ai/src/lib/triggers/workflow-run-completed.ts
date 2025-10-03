@@ -1,7 +1,7 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 import { copyAiAuth } from '../../index';
 
 

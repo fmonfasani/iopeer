@@ -1,6 +1,6 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { OAuth2GrantType } from '@activepieces/shared';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { PieceAuth, Property } from '@IOpeer/pieces-framework';
+import { OAuth2GrantType } from '@IOpeer/shared';
 import * as properties from './properties';
 import * as schemas from './schemas';
 import {

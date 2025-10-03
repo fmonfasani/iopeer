@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import * as openpgp from 'openpgp';
 
 export const openpgpEncrypt = createAction({

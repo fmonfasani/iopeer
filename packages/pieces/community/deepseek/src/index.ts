@@ -1,9 +1,9 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { baseUrl, unauthorizedMessage } from "./lib/common/common";
 import OpenAI from 'openai';
 import { askDeepseek } from "./lib/actions/ask-deepseek";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
     export const deepseekAuth = PieceAuth.SecretText({
       description:`
@@ -45,7 +45,7 @@ import { PieceCategory } from "@activepieces/shared";
       auth: deepseekAuth,
       categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/deepseek.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/deepseek.png",
       authors: ["PFernandez98"],
       actions: [askDeepseek],
       triggers: [],

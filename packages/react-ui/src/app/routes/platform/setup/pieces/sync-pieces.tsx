@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { RefreshCcw } from 'lucide-react';
 
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
 import { piecesApi } from '@/features/pieces/lib/pieces-api';
 import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApFlagId, PieceSyncMode } from '@activepieces/shared';
+import { ApFlagId, PieceSyncMode } from '@IOpeer/shared';
 
 const SyncPiecesButton = () => {
   const { data: piecesSyncMode } = flagsHooks.useFlag<string>(
@@ -19,7 +19,7 @@ const SyncPiecesButton = () => {
     onSuccess: () => {
       toast({
         title: t('Pieces synced'),
-        description: t('Pieces have been synced from the activepieces cloud.'),
+        description: t('Pieces have been synced from the IOpeer cloud.'),
       });
     },
   });

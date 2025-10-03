@@ -1,9 +1,9 @@
-
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth, Property } from "@IOpeer/pieces-framework";
 import { DATA_CENTER_REGIONS } from "./lib/common/constants";
 import { getZohoBiginAccountAuthorizationUrl } from "./lib/common/helpers";
 import { newContactCreated } from "./lib/triggers/new-contact-created";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 import { companyUpdated } from "./lib/triggers/company-updated";
 import { contactUpdated } from "./lib/triggers/contact-updated";
 import { newCallCreated } from "./lib/triggers/new-call-created";
@@ -90,7 +90,7 @@ export const biginByZoho = createPiece({
   auth: biginAuth,
   minimumSupportedRelease: '0.36.1',
   categories: [PieceCategory.SALES_AND_CRM],
-  logoUrl: 'https://cdn.activepieces.com/pieces/bigin-by-zoho.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/bigin-by-zoho.png',
   authors: ['gs03dev'],
   actions: [
     createCompany,

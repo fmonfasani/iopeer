@@ -1,4 +1,4 @@
-import {
+﻿import {
     ApId,
     assertEqual,
     EndpointScope,
@@ -6,7 +6,7 @@ import {
     PrincipalType,
     SERVICE_KEY_SECURITY_OPENAPI,
     UpdatePlatformRequestBody,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
     Type,

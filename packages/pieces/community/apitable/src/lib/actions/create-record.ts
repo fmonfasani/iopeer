@@ -1,8 +1,8 @@
-import {
+﻿import {
   DynamicPropsValue,
   PiecePropValueSchema,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { APITableCommon, createNewFields, makeClient } from '../common';
 import { APITableAuth } from '../../index';
 

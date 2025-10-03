@@ -1,5 +1,5 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationPartnerProcessing = createTrigger({
@@ -7,7 +7,7 @@ export const certificationPartnerProcessing = createTrigger({
   name: 'certificationPartnerProcessing',
   displayName: 'Demande de partenariat en traitement',
   description:
-    "Se déclenche Lorsqu'une demande de partenariat est en traitement",
+    "Se dÃ©clenche Lorsqu'une demande de partenariat est en traitement",
   props: {},
   sampleData: {
     id: 0,

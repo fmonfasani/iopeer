@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { BASE_URL, CopperAuth } from './lib/common/constants';
 import { newPerson } from './lib/triggers/new-person';
 import { newLead } from './lib/triggers/new-lead';
@@ -34,14 +34,14 @@ import { searchForACompany } from './lib/actions/search-for-a-company';
 import { searchForAnOpportunity } from './lib/actions/search-for-an-opportunity';
 import { searchForAProject } from './lib/actions/search-for-a-project';
 import { newActivity } from './lib/triggers/new-activity';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 export const copper = createPiece({
   displayName: 'Copper',
   auth: CopperAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/copper.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/copper.png',
   authors: ['gs03-dev'],
   categories: [PieceCategory.SALES_AND_CRM, PieceCategory.PRODUCTIVITY],
   actions: [

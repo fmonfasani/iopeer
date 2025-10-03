@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { CircleMinus, Pencil, RotateCcw, Trash, User } from 'lucide-react';
 
@@ -17,7 +17,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { platformUserHooks } from '@/hooks/platform-user-hooks';
 import { platformUserApi } from '@/lib/platform-user-api';
 import { formatUtils } from '@/lib/utils';
-import { PlatformRole, UserStatus } from '@activepieces/shared';
+import { PlatformRole, UserStatus } from '@IOpeer/shared';
 
 import { UpdateUserDialog } from './update-user-dialog';
 

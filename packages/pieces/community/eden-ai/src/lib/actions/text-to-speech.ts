@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, propsValidation } from '@IOpeer/pieces-common';
 import { edenAiApiCall } from '../common/client';
 import { createStaticDropdown } from '../common/providers';
 import { z } from 'zod';
@@ -69,7 +69,7 @@ const TEXT_TO_SPEECH_LANGUAGES = [
   { label: 'Mongolian', value: 'mn' },
   { label: 'Nepali', value: 'ne' },
   { label: 'Norwegian', value: 'no' },
-  { label: 'Norwegian Bokmål', value: 'nb' },
+  { label: 'Norwegian BokmÃ¥l', value: 'nb' },
   { label: 'Panjabi', value: 'pa' },
   { label: 'Persian', value: 'fa' },
   { label: 'Polish', value: 'pl' },
@@ -146,7 +146,7 @@ const TEXT_TO_SPEECH_LANGUAGES = [
   { label: 'Dutch (Netherlands)', value: 'nl-NL' },
   { label: 'English (Australia)', value: 'en-AU' },
   { label: 'English (Canada)', value: 'en-CA' },
-  { label: 'English (Curaçao)', value: 'en-AN' },
+  { label: 'English (CuraÃ§ao)', value: 'en-AN' },
   { label: 'English (Hong Kong)', value: 'en-HK' },
   { label: 'English (India)', value: 'en-IN' },
   { label: 'English (Ireland)', value: 'en-IE' },
@@ -198,7 +198,7 @@ const TEXT_TO_SPEECH_LANGUAGES = [
   { label: 'Marathi (India)', value: 'mr-IN' },
   { label: 'Mongolian (Mongolia)', value: 'mn-MN' },
   { label: 'Nepali (Nepal)', value: 'ne-NP' },
-  { label: 'Norwegian Bokmål (Norway)', value: 'nb-NO' },
+  { label: 'Norwegian BokmÃ¥l (Norway)', value: 'nb-NO' },
   { label: 'Pashto (Afghanistan)', value: 'ps-AF' },
   { label: 'Persian (Iran)', value: 'fa-IR' },
   { label: 'Polish (Poland)', value: 'pl-PL' },
@@ -244,7 +244,7 @@ const TEXT_TO_SPEECH_LANGUAGES = [
   { label: 'Tamil (Sri Lanka)', value: 'ta-LK' },
   { label: 'Telugu (India)', value: 'te-IN' },
   { label: 'Thai (Thailand)', value: 'th-TH' },
-  { label: 'Turkish (Türkiye)', value: 'tr-TR' },
+  { label: 'Turkish (TÃ¼rkiye)', value: 'tr-TR' },
   { label: 'Ukrainian (Ukraine)', value: 'uk-UA' },
   { label: 'Urdu (India)', value: 'ur-IN' },
   { label: 'Urdu (Pakistan)', value: 'ur-PK' },

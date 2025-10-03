@@ -1,4 +1,4 @@
-import { Platform, PlatformPlan } from '@activepieces/shared'
+﻿import { Platform, PlatformPlan } from '@IOpeer/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

@@ -1,4 +1,4 @@
-name: Auto Merge Crowdin PRs Action
+﻿name: Auto Merge Crowdin PRs Action
 
 on:
   pull_request:
@@ -62,7 +62,7 @@ jobs:
             echo "Changes detected, committing..."
             
             # Configure git
-            git config --local user.email "abdulyki+automatedcommits@activepieces.com"
+            git config --local user.email "abdulyki+automatedcommits@IOpeer.com"
             git config --local user.name "automated-commits-ap"
             
             # Add all changes
@@ -174,5 +174,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
             -X POST \
-            -d "{\"content\": \"🚨 **Crowdin PR Merger Workflow Failed** 🚨\\n\\n**Repository:** ${{ github.repository }}\\n**Branch:** ${{ github.ref_name }}\\n**Commit:** ${{ github.sha }}\\n**PR #:** ${{ github.event.pull_request.number }}\\n**Action URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\nThe workflow has failed. Please check the logs for more details.\"}" \
+            -d "{\"content\": \"ðŸš¨ **Crowdin PR Merger Workflow Failed** ðŸš¨\\n\\n**Repository:** ${{ github.repository }}\\n**Branch:** ${{ github.ref_name }}\\n**Commit:** ${{ github.sha }}\\n**PR #:** ${{ github.event.pull_request.number }}\\n**Action URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\nThe workflow has failed. Please check the logs for more details.\"}" \
             ${{ secrets.DISCORD_ON_CALL_WEBHOOK }}

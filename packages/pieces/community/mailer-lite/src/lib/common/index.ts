@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import MailerLite from '@mailerlite/mailerlite-nodejs';
 
 export const mailerLiteCommon = {

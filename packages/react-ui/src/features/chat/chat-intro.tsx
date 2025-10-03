@@ -1,6 +1,6 @@
-import React from 'react';
+﻿import React from 'react';
 
-import { ChatUIResponse } from '@activepieces/shared';
+import { ChatUIResponse } from '@IOpeer/shared';
 
 interface ChatIntroProps {
   chatUI: ChatUIResponse | null | undefined;
@@ -20,10 +20,10 @@ export function ChatIntro({ chatUI, botName }: ChatIntroProps) {
         </div>
         <div className="flex items-center gap-1 justify-center">
           <p className="animate-typing overflow-hidden whitespace-nowrap pr-1 hidden lg:block lg:text-xl text-foreground leading-8">
-            Hi! I&apos;m {botName} 👋 How can I help you today?
+            Hi! I&apos;m {botName} ðŸ‘‹ How can I help you today?
           </p>
           <p className="animate-typing-sm overflow-hidden whitespace-nowrap pr-1 lg:hidden text-xl text-foreground leading-8">
-            Hi! I&apos;m {botName} 👋
+            Hi! I&apos;m {botName} ðŸ‘‹
           </p>
           <span className="w-4 h-4 rounded-full bg-foreground animate-[fade_0.15s_ease-out_forwards_0.7s_reverse]" />
         </div>

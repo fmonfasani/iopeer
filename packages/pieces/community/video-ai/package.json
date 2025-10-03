@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-video-ai",
+﻿{
+  "name": "@IOpeer/piece-video-ai",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./src/index.js",

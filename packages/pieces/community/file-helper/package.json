@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-file-helper",
+﻿{
+  "name": "@IOpeer/piece-file-helper",
   "version": "0.1.13",
   "dependencies": {
     "adm-zip": "^0.5.16"

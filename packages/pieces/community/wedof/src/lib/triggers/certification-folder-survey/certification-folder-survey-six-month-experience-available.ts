@@ -1,14 +1,14 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationFolderSurveySixMonthExperienceAvailable =
   createTrigger({
     auth: wedofAuth,
     name: 'certificationFolderSurveySixMonthExperienceAvailable',
-    displayName: 'Enquête "Situation professionnelle de 6 mois" disponible',
+    displayName: 'EnquÃªte "Situation professionnelle de 6 mois" disponible',
     description:
-      "Se déclenche lorsqu'un une enquête de 6 mois de cursus est disponible",
+      "Se dÃ©clenche lorsqu'un une enquÃªte de 6 mois de cursus est disponible",
     type: TriggerStrategy.WEBHOOK,
     props: {},
     sampleData: {

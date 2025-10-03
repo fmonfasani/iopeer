@@ -1,7 +1,7 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { heygenApiCall } from './client';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const folderDropdown = Property.Dropdown({
 	displayName: 'Folder',

@@ -1,7 +1,7 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { togglTrackAuth } from '../..';
 import {
   HttpMethod,
@@ -9,7 +9,7 @@ import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 const polling: Polling<string, any> = {
   strategy: DedupeStrategy.TIMEBASED,

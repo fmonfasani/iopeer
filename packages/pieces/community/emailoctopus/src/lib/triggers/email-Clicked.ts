@@ -1,7 +1,7 @@
-import { Property, createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { Property, createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { emailOctopusProps } from '../common/props';
 import { emailOctopusAuth } from '../common/auth';
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 
 interface EmailOctopusEvent {
   type: string;
@@ -33,7 +33,7 @@ export const emailClicked = createTrigger({
       **Manual Setup Required**
 
       1. Go to your EmailOctopus Dashboard.
-      2. Navigate to **API & Integrations** → **Webhooks**.
+      2. Navigate to **API & Integrations** â†’ **Webhooks**.
       3. Click **Add webhook**.
       4. Paste the Above URL into the **URL** field:
       5. Select the **Email clicked** event.

@@ -1,4 +1,4 @@
-import {
+﻿import {
   CardListItem,
   CardListItemSkeleton,
 } from '@/components/custom/card-list';
@@ -10,7 +10,7 @@ import {
 } from '@/features/pieces/lib/piece-selector-tabs-provider';
 import { piecesHooks } from '@/features/pieces/lib/pieces-hooks';
 import { PieceSelectorOperation } from '@/lib/types';
-import { FlowOperationType } from '@activepieces/shared';
+import { FlowOperationType } from '@IOpeer/shared';
 
 import { PieceActionsOrTriggersList } from './piece-actions-or-triggers-list';
 

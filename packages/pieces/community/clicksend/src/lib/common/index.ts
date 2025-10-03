@@ -1,15 +1,15 @@
-import {
+﻿import {
   Property,
   PiecePropValueSchema,
   DropdownOption,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   HttpMethod,
   HttpMessageBody,
   httpClient,
   AuthenticationType,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { clicksendAuth } from '../..';
 
 export const clicksendCommon = {

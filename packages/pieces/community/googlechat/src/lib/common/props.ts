@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { googleChatAPIService } from './requests';
 
 export const projectsDropdown = (refreshers: string[]) =>

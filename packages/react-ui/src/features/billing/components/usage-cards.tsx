@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import {
   Bot,
   ClipboardCheck,
@@ -13,13 +13,13 @@ import { CardContent, Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { cn } from '@/lib/utils';
-import { ApSubscriptionStatus, PlanName } from '@activepieces/ee-shared';
+import { ApSubscriptionStatus, PlanName } from '@IOpeer/ee-shared';
 import {
   ApEdition,
   ApFlagId,
   isNil,
   PlatformBillingInformation,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const UsageCards = ({
   platformSubscription,

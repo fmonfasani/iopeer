@@ -1,10 +1,10 @@
-import {
+﻿import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createCard } from './lib/actions/create-card';
 import { getCard } from './lib/actions/get-card';
 import { cardMovedTrigger } from './lib/triggers/cardMoved';
@@ -69,7 +69,7 @@ export const trello = createPiece({
   displayName: 'Trello',
   description: 'Project management tool for teams',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/trello.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/trello.png',
   authors: ["Salem-Alaa","kishanprmr","MoShizzle","khaledmashaly","abuaboud","AshotZaqoyan"],
   categories: [PieceCategory.PRODUCTIVITY],
   auth: trelloAuth,

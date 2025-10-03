@@ -1,5 +1,5 @@
-import { createTrigger, Property, TriggerStrategy, OAuth2PropertyValue } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
+﻿import { createTrigger, Property, TriggerStrategy, OAuth2PropertyValue } from "@IOpeer/pieces-framework";
+import { httpClient, HttpMethod } from "@IOpeer/pieces-common";
 
 export const newDeploySucceeded = createTrigger({
   name: "new_deploy_succeeded",

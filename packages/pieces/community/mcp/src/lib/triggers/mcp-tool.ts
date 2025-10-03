@@ -1,9 +1,9 @@
-import {
+﻿import {
     createTrigger,
     Property,
     TriggerStrategy,
-  } from '@activepieces/pieces-framework';
-import { McpPropertyType } from '@activepieces/shared';
+  } from '@IOpeer/pieces-framework';
+import { McpPropertyType } from '@IOpeer/shared';
 
 
 export const mcpTool = createTrigger({

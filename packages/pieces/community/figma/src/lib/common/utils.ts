@@ -1,9 +1,9 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   HttpRequest,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const figmaGetRequest = async ({
   token,

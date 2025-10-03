@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { fetchSequences } from '../../common/service';
 
 export const sequenceId = Property.ShortText({

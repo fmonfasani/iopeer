@@ -1,6 +1,6 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { checkoutComAuth, getEnvironmentFromApiKey } from '../common/auth';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const disputeEventsTrigger = createTrigger({
   name: 'dispute_events',

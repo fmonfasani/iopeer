@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-hunter",
+﻿{
+  "name": "@IOpeer/piece-hunter",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./src/index.js",

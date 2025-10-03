@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { intercomAuth } from '../..';
 import { intercomClient, TriggerPayload } from '../common';
 
@@ -164,7 +164,7 @@ export const newConversationFromUser = createTrigger({
 			state: 'in_progress',
 			ticket_type: 'zapier',
 			ticket_type_description: '',
-			ticket_type_emoji: '🚨',
+			ticket_type_emoji: 'ðŸš¨',
 			ticket_custom_state_admin_label: 'In progress',
 			ticket_custom_state_user_label: 'In progress',
 		},

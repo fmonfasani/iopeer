@@ -1,6 +1,6 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
+﻿import { useSuspenseQuery } from '@tanstack/react-query';
 
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@IOpeer/shared';
 
 import { flagsApi, FlagsMap } from '../lib/flags-api';
 

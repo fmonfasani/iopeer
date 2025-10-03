@@ -1,10 +1,10 @@
-import { microsoftSharePointAuth } from '../../';
+﻿import { microsoftSharePointAuth } from '../../';
 import {
   createAction,
   Property,
   DropdownOption,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { microsoftSharePointCommon } from '../common';
 import { Client, PageCollection, ResponseType } from '@microsoft/microsoft-graph-client';
 import { DriveItem } from '@microsoft/microsoft-graph-types';

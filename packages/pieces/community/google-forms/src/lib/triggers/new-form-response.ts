@@ -1,15 +1,15 @@
-import {
+﻿import {
   DedupeStrategy,
   httpClient,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   OAuth2PropertyValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { googleFormsCommon } from '../common/common';
 import { googleFormsAuth } from '../../';
@@ -44,7 +44,7 @@ export const newResponse = createTrigger({
         textAnswers: {
           answers: [
             {
-              value: 'نعم',
+              value: 'Ù†Ø¹Ù…',
             },
           ],
         },

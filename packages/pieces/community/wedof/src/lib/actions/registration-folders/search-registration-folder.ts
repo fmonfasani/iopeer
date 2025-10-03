@@ -1,14 +1,14 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import {
   createAction,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
@@ -17,11 +17,11 @@ export const searchRegistrationFolder = createAction({
   name: 'listRegistrationFolders',
   displayName: 'Rechercher un ou plusieurs dossiers de formation',
   description:
-    'Liste les dossiers de formation en fonction des critères sélectionnés',
+    'Liste les dossiers de formation en fonction des critÃ¨res sÃ©lectionnÃ©s',
   props: {
     query: Property.ShortText({
       displayName: 'Recherche',
-      description: 'Nom, prénom, N° de dossier, N° de certification etc..',
+      description: 'Nom, prÃ©nom, NÂ° de dossier, NÂ° de certification etc..',
       required: false,
     }),
     period: wedofCommon.period,
@@ -35,12 +35,12 @@ export const searchRegistrationFolder = createAction({
         const props: DynamicPropsValue = {};
         if (_period === 'custom') {
           props['since'] = Property.DateTime({
-            displayName: '(Période) Entre le',
+            displayName: '(PÃ©riode) Entre le',
             description: 'Date au format YYYY-MM-DD',
             required: true,
           });
           props['until'] = Property.DateTime({
-            displayName: "(Période) et jusqu'au",
+            displayName: "(PÃ©riode) et jusqu'au",
             description: 'Date au format YYYY-MM-DD',
             required: true,
           });
@@ -63,13 +63,13 @@ export const searchRegistrationFolder = createAction({
     certificationFolderState: wedofCommon.certificationFolderState,
     proposalCode: Property.ShortText({
       displayName: 'Code de proposition commercial',
-      description: 'Code de la proposition commercial Wedof associé',
+      description: 'Code de la proposition commercial Wedof associÃ©',
       required: false,
     }),
     siret: Property.ShortText({
       displayName: 'Siret',
       description:
-        "Permet de n'obtenir que les dossiers appartenant à l'organisme de siret considéré - par défaut l'organisme de l'utilisateur courant",
+        "Permet de n'obtenir que les dossiers appartenant Ã  l'organisme de siret considÃ©rÃ© - par dÃ©faut l'organisme de l'utilisateur courant",
       required: false,
     }),
     certifInfo: Property.ShortText({
@@ -79,13 +79,13 @@ export const searchRegistrationFolder = createAction({
     }),
     columnId: Property.ShortText({
       displayName: 'ID de colonne',
-      description: 'Identifiant pour affichage personnalisé',
+      description: 'Identifiant pour affichage personnalisÃ©',
       required: false,
     }),
     completionRate: Property.StaticDropdown({
-      displayName: 'Taux d’assiduité',
+      displayName: 'Taux dâ€™assiduitÃ©',
       description:
-        "Permet de n'obtenir que les dossiers dont le taux d'assiduité choisi",
+        "Permet de n'obtenir que les dossiers dont le taux d'assiduitÃ© choisi",
       required: false,
       options: {
         options: [
@@ -98,9 +98,9 @@ export const searchRegistrationFolder = createAction({
       },
     }),
     daysSinceLastUpdatedCompletionRate: Property.ShortText({
-      displayName: "Jours sans mise à jour d'assiduité",
+      displayName: "Jours sans mise Ã  jour d'assiduitÃ©",
       description:
-        "Permet de n'obtenir que les dossiers pour lesquels le taux d'avancement n'a pas été mis à jour depuis plus de X jours",
+        "Permet de n'obtenir que les dossiers pour lesquels le taux d'avancement n'a pas Ã©tÃ© mis Ã  jour depuis plus de X jours",
       required: false,
     }),
     format: Property.StaticDropdown({
@@ -115,31 +115,31 @@ export const searchRegistrationFolder = createAction({
       },
     }),
     messageState: Property.StaticDropdown({
-      displayName: 'État du message',
+      displayName: 'Ã‰tat du message',
       description:
-        "Permet de n'obtenir que les dossiers liés à l'état d'envoi d'un message considéré - par défaut tous les dossiers sont retournés",
+        "Permet de n'obtenir que les dossiers liÃ©s Ã  l'Ã©tat d'envoi d'un message considÃ©rÃ© - par dÃ©faut tous les dossiers sont retournÃ©s",
       required: false,
       options: {
         options: [
-          { label: 'Message envoyé', value: 'sent' },
-          { label: 'Message non envoyé', value: 'notSent' },
+          { label: 'Message envoyÃ©', value: 'sent' },
+          { label: 'Message non envoyÃ©', value: 'notSent' },
           {
-            label: 'Message non envoyé (non autorisé)',
+            label: 'Message non envoyÃ© (non autorisÃ©)',
             value: 'notSentUnauthorized',
           },
           {
-            label: 'Message non envoyé (conditions renforcées)',
+            label: 'Message non envoyÃ© (conditions renforcÃ©es)',
             value: 'notSentEnforcedConditions',
           },
           { label: "Echec de l'envoi", value: 'failed' },
-          { label: 'Envoi programmé', value: 'scheduled' },
+          { label: 'Envoi programmÃ©', value: 'scheduled' },
         ],
       },
     }),
     messageTemplate: Property.ShortText({
-      displayName: 'Modèle de message',
+      displayName: 'ModÃ¨le de message',
       description:
-        "Permet de n'obtenir que les dossiers pour lequels un message issue du modèle considéré a été créé - par défaut aucun filtre",
+        "Permet de n'obtenir que les dossiers pour lequels un message issue du modÃ¨le considÃ©rÃ© a Ã©tÃ© crÃ©Ã© - par dÃ©faut aucun filtre",
       required: false,
     }),
     order: Property.StaticDropdown({
@@ -153,7 +153,7 @@ export const searchRegistrationFolder = createAction({
       },
     }),
     organismType: Property.StaticDropdown({
-      displayName: 'Type d’organisme',
+      displayName: 'Type dâ€™organisme',
       required: false,
       options: {
         options: [
@@ -163,14 +163,14 @@ export const searchRegistrationFolder = createAction({
       },
     }),
     sort: Property.StaticDropdown({
-      displayName: 'Critère de tri',
-      description: 'Tri les résultats sur un critère',
+      displayName: 'CritÃ¨re de tri',
+      description: 'Tri les rÃ©sultats sur un critÃ¨re',
       required: false,
       options: {
         options: [
-          { label: 'Prénom', value: 'firstName' },
+          { label: 'PrÃ©nom', value: 'firstName' },
           { label: 'Nom', value: 'lastName' },
-          { label: 'Dernière mise à jour', value: 'lastUpdate' },
+          { label: 'DerniÃ¨re mise Ã  jour', value: 'lastUpdate' },
           { label: 'ID', value: 'id' },
         ],
       },
@@ -183,31 +183,31 @@ export const searchRegistrationFolder = createAction({
     trainingActionId: Property.ShortText({
       displayName: "ID de l'action de formation",
       description:
-        "Permet de n'obtenir que les dossiers liés à l'action de formation considérée",
+        "Permet de n'obtenir que les dossiers liÃ©s Ã  l'action de formation considÃ©rÃ©e",
       required: false,
     }),
     trainingId: Property.ShortText({
       displayName: 'ID de la formation',
       description:
-        "Permet de n'obtenir que les dossiers liés à la formation considérée",
+        "Permet de n'obtenir que les dossiers liÃ©s Ã  la formation considÃ©rÃ©e",
       required: false,
     }),
     sessionId: Property.ShortText({
       displayName: 'ID de la session',
       description:
-        "Permet de n'obtenir que les dossiers liés à la session considérée",
+        "Permet de n'obtenir que les dossiers liÃ©s Ã  la session considÃ©rÃ©e",
       required: false,
     }),
     limit: Property.Number({
       displayName: 'Nombre de dossiers de formation',
       description:
-        'Nombre de dossiers de formation maximum qui seront retournés par requête',
+        'Nombre de dossiers de formation maximum qui seront retournÃ©s par requÃªte',
       defaultValue: 100,
       required: false,
     }),
     page: Property.Number({
-      displayName: 'N° de page de la requête',
-      description: 'Par défaut : 1',
+      displayName: 'NÂ° de page de la requÃªte',
+      description: 'Par dÃ©faut : 1',
       defaultValue: 1,
       required: false,
     }),

@@ -1,10 +1,10 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export type BitlyAuthProps = {
   accessToken: string;

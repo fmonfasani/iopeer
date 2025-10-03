@@ -1,11 +1,11 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { wrikeAuth } from '../common/auth';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { wrikeCommon } from '../common/client';
 
 export const newSubtask = createTrigger({

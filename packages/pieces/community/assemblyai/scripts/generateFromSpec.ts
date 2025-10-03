@@ -1,4 +1,4 @@
-/* eslint-disable prefer-const */
+﻿/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import dotenv from 'dotenv';
 dotenv.config({
@@ -246,7 +246,7 @@ function mapType(schema: any) {
 function createTs(
   propsJson: Record<string, { type: string } & object>
 ): string {
-  let result = `import { Property } from "@activepieces/pieces-framework";
+  let result = `import { Property } from "@IOpeer/pieces-framework";
 export const props = `;
   result += createTsProps(propsJson);
   result += ';\n';

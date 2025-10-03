@@ -1,4 +1,4 @@
-import { Static, Type } from '@sinclair/typebox';
+﻿import { Static, Type } from '@sinclair/typebox';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -10,8 +10,8 @@ import {
   FormLabel,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { BasicAuthProperty } from '@activepieces/pieces-framework';
-import { UpsertBasicAuthRequest } from '@activepieces/shared';
+import { BasicAuthProperty } from '@IOpeer/pieces-framework';
+import { UpsertBasicAuthRequest } from '@IOpeer/shared';
 
 type BasicAuthConnectionSettingsProps = {
   authProperty: BasicAuthProperty;

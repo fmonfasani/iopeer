@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { timelinesAiAuth, timelinesAiCommon } from '../common';
 
 export const findMessageStatus = createAction({
   auth: timelinesAiAuth,
   name: 'findMessageStatus',
   displayName: 'Find Message Status',
-  description: 'Lookup a message’s delivery status by message ID.',
+  description: 'Lookup a messageâ€™s delivery status by message ID.',
   props: {
     message_uid: Property.ShortText({
       displayName: 'Message UID',

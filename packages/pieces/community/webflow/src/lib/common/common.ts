@@ -1,10 +1,10 @@
-import { Property, OAuth2PropertyValue, DynamicPropsValue } from '@activepieces/pieces-framework';
+﻿import { Property, OAuth2PropertyValue, DynamicPropsValue } from '@IOpeer/pieces-framework';
 import {
 	HttpRequest,
 	HttpMethod,
 	AuthenticationType,
 	httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const webflowCommon = {
 	baseUrl: 'https://api.webflow.com/',

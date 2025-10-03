@@ -1,4 +1,4 @@
-import { DialogTrigger } from '@radix-ui/react-dialog';
+﻿import { DialogTrigger } from '@radix-ui/react-dialog';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { GlobeIcon, WorkflowIcon } from 'lucide-react';
@@ -29,7 +29,7 @@ import { flowsApi } from '@/features/flows/lib/flows-api';
 import PieceIconWithPieceName from '@/features/pieces/components/piece-icon-from-name';
 import { piecesHooks } from '@/features/pieces/lib/pieces-hooks';
 import { cn } from '@/lib/utils';
-import { AppConnectionScope, PopulatedFlow } from '@activepieces/shared';
+import { AppConnectionScope, PopulatedFlow } from '@IOpeer/shared';
 
 type ReplaceConnectionsDialogProps = {
   onConnectionMerged: () => void;
@@ -147,8 +147,8 @@ const ReplaceConnectionsDialog = ({
     pieces
       ?.filter(
         (piece) =>
-          piece.name !== '@activepieces/piece-mcp' &&
-          piece.name !== '@activepieces/piece-webhook' &&
+          piece.name !== '@IOpeer/piece-mcp' &&
+          piece.name !== '@IOpeer/piece-webhook' &&
           connectionPieceNames.has(piece.name),
       )
       .map((piece) => ({

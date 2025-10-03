@@ -1,4 +1,4 @@
-import { useQueryClient } from '@tanstack/react-query';
+﻿import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { EllipsisVertical, Plus } from 'lucide-react';
 import { useEffect, useRef } from 'react';
@@ -25,7 +25,7 @@ import { tableHooks } from '@/features/tables/lib/table-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { cn } from '@/lib/utils';
-import { Permission, Table } from '@activepieces/shared';
+import { Permission, Table } from '@IOpeer/shared';
 
 export function TablesNavigation() {
   const navigate = useNavigate();

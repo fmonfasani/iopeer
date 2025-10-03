@@ -1,9 +1,9 @@
-import {
+﻿import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
-import { StopResponse } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { StopResponse } from '@IOpeer/shared';
 import { StatusCodes } from 'http-status-codes';
 
 enum ResponseType {

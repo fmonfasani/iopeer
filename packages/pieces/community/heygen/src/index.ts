@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createVideoFromTemplateAction } from './lib/actions/create-a-video-from-template';
 import { retrieveTranslatedVideoStatus } from './lib/actions/retrieve-a-translated-video-status';
 import { retrieveVideoStatusAction } from './lib/actions/retrieve-a-video-status';
@@ -18,7 +18,7 @@ export const heygen = createPiece({
   description: 'Generate and manage AI avatar videos using HeyGen.',
   auth: heygenAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/heygen.jpg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/heygen.jpg',
   authors: ['krushnarout'],
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   actions: [

@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   SeekPage,
   UpdateUserRequestBody,
   User,
   UserWithMetaInformation,
   ListUsersRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const platformUserApi = {
   list(request: ListUsersRequestBody) {

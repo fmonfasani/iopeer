@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+﻿import chalk from 'chalk';
 import { Command } from 'commander';
 import inquirer from 'inquirer';
 import { writeFile } from 'node:fs/promises';
@@ -15,8 +15,8 @@ function createTriggerTemplate(displayName: string, description: string, techniq
     let triggerTemplate = ''
     if (technique === 'polling') {
         triggerTemplate = `
-import { createTrigger, TriggerStrategy, PiecePropValueSchema  } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { createTrigger, TriggerStrategy, PiecePropValueSchema  } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import dayjs from 'dayjs';
 
 // replace auth with piece auth variable
@@ -60,7 +60,7 @@ async run(context) {
     }
     else {
         triggerTemplate = `
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 export const ${camelCase} = createTrigger({
     // auth: check https://www.iopeer.com/docs/developers/piece-reference/authentication,
     name: '${camelCase}',
@@ -86,7 +86,7 @@ export const ${camelCase} = createTrigger({
 }
 const checkIfTriggerExists = async (triggerPath: string) => {
     if (await checkIfFileExists(triggerPath)) {
-        console.log(chalk.red(`🚨 Trigger already exists at ${triggerPath}`));
+        console.log(chalk.red(`ðŸš¨ Trigger already exists at ${triggerPath}`));
         process.exit(1);
     }
 }
@@ -103,7 +103,7 @@ const createTrigger = async (pieceName: string, displayTriggerName: string, trig
 
     await makeFolderRecursive(triggersFolder);
     await writeFile(triggerPath, triggerTemplate);
-    console.log(chalk.yellow('✨'), `Trigger ${triggerPath} created`);
+    console.log(chalk.yellow('âœ¨'), `Trigger ${triggerPath} created`);
 };
 
 

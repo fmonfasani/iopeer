@@ -1,4 +1,4 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { PieceAuth } from '@IOpeer/pieces-framework';
 
 const authMarkdown = `
 

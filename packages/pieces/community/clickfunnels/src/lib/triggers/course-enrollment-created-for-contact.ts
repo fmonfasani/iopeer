@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { clickfunnelsAuth } from '../common/constants';
 import { teamsDropdown, workspacesDropdown } from '../common/props';
 import { clickfunnelsApiService } from '../common/requests';

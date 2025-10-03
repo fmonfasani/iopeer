@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { makeCallAction } from './lib/actions/make-call';
 import { getCallDetailsAction } from './lib/actions/get-call-details';
 import { addContactToListAction } from './lib/actions/add-contact-to-list';
@@ -32,7 +32,7 @@ export const kallabotAuth = PieceAuth.SecretText({
 export const kallabotAi = createPiece({
   displayName: 'Kallabot',
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/kallabot-ai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/kallabot-ai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['abdulrahmanmajid'],
   auth: kallabotAuth,

@@ -1,12 +1,12 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { vadooAiAuth } from '../../index';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { generateAiCaptionsSchema } from '../schemas';
-import { isEmpty } from '@activepieces/shared';
+import { isEmpty } from '@IOpeer/shared';
 
 export const generateAiCaptions = createAction({
   auth: vadooAiAuth,

@@ -1,32 +1,32 @@
-import { wedofAuth } from '../../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
 export const createCertificationFolder = createAction({
   auth: wedofAuth,
   name: 'createCertificationFolder',
-  displayName: "Créer un dossier de certification hors CPF",
-  description: "Permet de créer un nouveau dossier de certification",
+  displayName: "CrÃ©er un dossier de certification hors CPF",
+  description: "Permet de crÃ©er un nouveau dossier de certification",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° du certification',
-      description:'Le certifInfo de la certification sélectionnée',
+      displayName: 'NÂ° du certification',
+      description:'Le certifInfo de la certification sÃ©lectionnÃ©e',
       required: true,
     }),
     attendeeId: Property.ShortText({
       displayName: "L'ID de l'apprenant",
-      description:"ID de l'apprenant sélectionné",
+      description:"ID de l'apprenant sÃ©lectionnÃ©",
       required: true,
     }),
     optionName: Property.ShortText({
-        displayName: "Option si appliquée",
+        displayName: "Option si appliquÃ©e",
         required: false,
     }),
     enrollmentDate : Property.DateTime({
-            displayName: "Date d'inscription à la certification",
-            description: 'Date au format YYYY-MM-DD - peut être modifié dans les états toRegister, registered, toTake, toControl',
+            displayName: "Date d'inscription Ã  la certification",
+            description: 'Date au format YYYY-MM-DD - peut Ãªtre modifiÃ© dans les Ã©tats toRegister, registered, toTake, toControl',
             required: false,
           }),
     dataProvider: Property.StaticDropdown({
@@ -37,21 +37,21 @@ export const createCertificationFolder = createAction({
         options: [
             { label: 'Individuel', value: 'individual' },
             { label: 'OPCO', value: 'opco' },
-            { label: 'Pôle Emploi', value: 'poleEmploi' },
+            { label: 'PÃ´le Emploi', value: 'poleEmploi' },
             { label: 'Entreprise', value: 'company' }
         ],
         disabled: false,
       },
     }),
     type: Property.StaticDropdown({
-      displayName: "Dossier à l'initiative de",
-      description: "Initiative à laquelle l'inscription a été réalisée",
+      displayName: "Dossier Ã  l'initiative de",
+      description: "Initiative Ã  laquelle l'inscription a Ã©tÃ© rÃ©alisÃ©e",
       required: false,
       options: {
         options: [
-            { label: 'Certifié(e)', value: 'CERTIFIE' },
+            { label: 'CertifiÃ©(e)', value: 'CERTIFIE' },
             { label: 'Organisme de formation', value: 'OF' },
-            { label: 'Pôle Emploi', value: 'POLE_EMPLOI' },
+            { label: 'PÃ´le Emploi', value: 'POLE_EMPLOI' },
             { label: 'Employeur', value: 'EMPLOYEUR' },
             { label: 'Autre', value: 'AUTRE' }
         ],
@@ -60,7 +60,7 @@ export const createCertificationFolder = createAction({
     }),
     accesModality: Property.StaticDropdown({
       displayName: "accessModality",
-      description: "Si accessModality est de type VAE, accessModalityVae doit être déclaré",
+      description: "Si accessModality est de type VAE, accessModalityVae doit Ãªtre dÃ©clarÃ©",
       required: false,
       options: {
         options: [
@@ -81,7 +81,7 @@ export const createCertificationFolder = createAction({
       required: false,
       options: {
         options: [
-            { label: 'Congés Vae', value: 'CONGES_VAE' },
+            { label: 'CongÃ©s Vae', value: 'CONGES_VAE' },
             { label: 'Vae classique', value: 'VAE_CLASSIQUE' }
         ],
         disabled: false,
@@ -89,12 +89,12 @@ export const createCertificationFolder = createAction({
     }),
     tags: Property.Array({
       displayName: 'Tags',
-      description: 'Liste de tags associée au dossier de certification, uniquement pour le certificateur',
+      description: 'Liste de tags associÃ©e au dossier de certification, uniquement pour le certificateur',
       required: false,
     }),
     metadata: Property.Array({
-      displayName: 'Données personnalisées',
-      description: 'tableau associatif clé - valeur, disponible uniquement pour le certificateur',
+      displayName: 'DonnÃ©es personnalisÃ©es',
+      description: 'tableau associatif clÃ© - valeur, disponible uniquement pour le certificateur',
       required: false,
     })
   },

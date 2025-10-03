@@ -1,10 +1,10 @@
-import { intercomAuth } from '../../index';
+﻿import { intercomAuth } from '../../index';
 import {
 	createAction,
 	DropdownOption,
 	PiecePropValueSchema,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { intercomClient } from '../common';
 
 export const createConversationAction = createAction({

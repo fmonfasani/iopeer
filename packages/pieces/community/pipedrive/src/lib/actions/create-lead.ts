@@ -1,5 +1,5 @@
-import { pipedriveAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { leadCommonProps } from '../common/props';
 import {
     pipedriveApiCall,
@@ -7,7 +7,7 @@ import {
     pipedriveTransformCustomFields,
     pipedriveTransformV1CustomFields,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { GetField, GetLeadResponse } from '../common/types';
 import dayjs from 'dayjs';
 

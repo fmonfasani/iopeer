@@ -1,7 +1,7 @@
-import { createAction, PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { tablesCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PopulatedRecord } from '@activepieces/shared';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { PopulatedRecord } from '@IOpeer/shared';
 
 export const getRecord = createAction({
   name: 'tables-get-record',

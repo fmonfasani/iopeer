@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { History, CircleAlert, Workflow } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { RunsTable } from '@/features/flow-runs/components/runs-table';
 import { issueHooks } from '@/features/issues/hooks/issue-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
-import { Permission } from '@activepieces/shared';
+import { Permission } from '@IOpeer/shared';
 
 import { FlowsTable } from './flows-table';
 import { IssuesTable } from './issues-table';

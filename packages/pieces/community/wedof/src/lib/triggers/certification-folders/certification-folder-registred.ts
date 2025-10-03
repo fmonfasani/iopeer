@@ -1,12 +1,12 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationFolderRegistred = createTrigger({
   auth: wedofAuth,
   name: 'certificationFolderRegistred',
-  displayName: 'Dossier de certification enregistré',
-  description: "Se déclenche lorsqu'un dossier de certification est enregistré",
+  displayName: 'Dossier de certification enregistrÃ©',
+  description: "Se dÃ©clenche lorsqu'un dossier de certification est enregistrÃ©",
   props: {},
   sampleData: {
     attendeeLink: 'https://test.wedof.fr/candidat-1234-123456789',
@@ -65,7 +65,7 @@ export const certificationFolderRegistred = createTrigger({
       phoneNumber: '+1.112.666.0606',
       phoneFixed: null,
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',

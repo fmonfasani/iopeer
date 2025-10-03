@@ -1,14 +1,14 @@
-import { Content, GoogleGenerativeAI } from '@google/generative-ai';
+﻿import { Content, GoogleGenerativeAI } from '@google/generative-ai';
 import {
   Property,
   StoreScope,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import mime from 'mime-types';
 import { z } from 'zod';
 import { googleGeminiAuth } from '../../index';
 import { defaultLLM, getGeminiModelOptions } from '../common/common';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const chatGemini = createAction({
   auth: googleGeminiAuth,

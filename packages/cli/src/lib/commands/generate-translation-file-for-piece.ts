@@ -1,12 +1,12 @@
-import { writeFile } from 'node:fs/promises';
+﻿import { writeFile } from 'node:fs/promises';
 import chalk from 'chalk';
 import { Command } from 'commander';
 import { buildPiece, findPiece, findPieces } from '../utils/piece-utils';
 import { makeFolderRecursive } from '../utils/files';
 import { join, basename } from 'node:path';
 import { exec } from '../utils/exec';
-import { pieceTranslation } from '@activepieces/pieces-framework';
-import { MAX_KEY_LENGTH_FOR_CORWDIN } from '@activepieces/shared';
+import { pieceTranslation } from '@IOpeer/pieces-framework';
+import { MAX_KEY_LENGTH_FOR_CORWDIN } from '@IOpeer/shared';
 
 const findPieceInModule= async (pieceOutputFile: string) => {
     const module = await import(pieceOutputFile);
@@ -75,9 +75,9 @@ const generateTranslationFile = async (pieceName: string) => {
     const i18nFolder = join(pieceRoot, 'src', 'i18n')
     await makeFolderRecursive(i18nFolder);
     await writeFile(join(i18nFolder, 'translation.json'), JSON.stringify(i18n, null, 2));
-    console.log(chalk.yellow('✨'), `Translation file for piece created in ${i18nFolder}`);
+    console.log(chalk.yellow('âœ¨'), `Translation file for piece created in ${i18nFolder}`);
   } catch (error) {
-    console.error(chalk.red('❌'), `Error generating translation file for piece ${pieceName}, make sure you built the piece`,error);
+    console.error(chalk.red('âŒ'), `Error generating translation file for piece ${pieceName}, make sure you built the piece`,error);
   }
 };
 
@@ -104,9 +104,9 @@ export const generateTranslationFileForPieceCommand = new Command('generate-tran
       }
       const time= performance.now()
       await generateTranslationFile(piece);
-      console.log(chalk.yellow('✨'), `Translation file for piece ${piece} created in ${(performance.now() - time)/1000}s`)
+      console.log(chalk.yellow('âœ¨'), `Translation file for piece ${piece} created in ${(performance.now() - time)/1000}s`)
       totalTime += (performance.now() - time)/1000
       indexAcrossAllPieces++
     }
-    console.log(chalk.yellow('✨'), `Total time taken to generate translation files for selected pieces: ${totalTime}s`)
+    console.log(chalk.yellow('âœ¨'), `Total time taken to generate translation files for selected pieces: ${totalTime}s`)
   });

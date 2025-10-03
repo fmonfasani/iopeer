@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { TableField } from './types';
 
 export const BASE_URL = `https://tables-api.softr.io/api/v1`;

@@ -1,4 +1,4 @@
-import { Metadata, NotificationStatus, Nullable, PiecesFilterType, SAFE_STRING_PATTERN } from '@activepieces/shared'
+﻿import { Metadata, NotificationStatus, Nullable, PiecesFilterType, SAFE_STRING_PATTERN } from '@IOpeer/shared'
 import { Static, Type } from '@sinclair/typebox'
 
 export const UpdateProjectPlatformRequest = Type.Object({

@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   groupIdDropdown,
   makeSenderRequest,
   senderAuth,
   subscribersDropdown,
 } from '../common/common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const removeSubscriberFromGroupAction = createAction({
   auth: senderAuth,

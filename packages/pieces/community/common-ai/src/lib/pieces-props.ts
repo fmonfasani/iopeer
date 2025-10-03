@@ -1,7 +1,7 @@
-import { Property, InputPropertyMap } from "@activepieces/pieces-framework";
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property, InputPropertyMap } from "@IOpeer/pieces-framework";
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { ImageModel } from 'ai';
-import { isNil, SeekPage } from '@activepieces/shared';
+import { isNil, SeekPage } from '@IOpeer/shared';
 import { SUPPORTED_AI_PROVIDERS, SupportedAIProvider } from './supported-ai-providers';
 import { AIProviderWithoutSensitiveData } from './types';
 

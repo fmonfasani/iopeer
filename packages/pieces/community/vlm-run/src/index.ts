@@ -1,12 +1,12 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { analyzeAudio } from './lib/actions/analyze-audio';
 import { analyzeDocument } from './lib/actions/analyze-document';
 import { analyzeImage } from './lib/actions/analyze-image';
 import { analyzeVideo } from './lib/actions/analyze-video';
 import { getFile } from './lib/actions/get-file';
 import { vlmRunAuth } from './lib/common';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const vlmRun = createPiece({
   displayName: 'VLM Run',
@@ -15,7 +15,7 @@ export const vlmRun = createPiece({
   auth: vlmRunAuth,
   minimumSupportedRelease: '0.36.1',
   categories: [PieceCategory.BUSINESS_INTELLIGENCE, PieceCategory.CONTENT_AND_FILES],
-  logoUrl: 'https://cdn.activepieces.com/pieces/vlm-run.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/vlm-run.png',
   authors: ['LuizDMM', 'sanket-a11y'],
   actions: [
     analyzeAudio,

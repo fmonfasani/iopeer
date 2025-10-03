@@ -1,13 +1,13 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   ShortTextProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { getUsers, sendJiraRequest } from './lib/common';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { HttpError, HttpMethod } from '@IOpeer/pieces-common';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const jiraCloudAuth = PieceAuth.CustomAuth({
   description: `

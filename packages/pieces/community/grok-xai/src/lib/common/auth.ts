@@ -1,10 +1,10 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
-import { SUPPORTED_AI_PROVIDERS } from '@activepieces/common-ai';
+} from '@IOpeer/pieces-common';
+import { PieceAuth } from '@IOpeer/pieces-framework';
+import { SUPPORTED_AI_PROVIDERS } from '@IOpeer/common-ai';
 
 export const grokAuth = PieceAuth.SecretText({
   description: 

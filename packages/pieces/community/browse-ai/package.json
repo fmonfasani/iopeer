@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-browse-ai",
+﻿{
+  "name": "@IOpeer/piece-browse-ai",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

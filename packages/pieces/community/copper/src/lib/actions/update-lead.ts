@@ -1,8 +1,8 @@
-import {
+﻿import {
   createAction,
   InputPropertyMap,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { CopperAuth, isNonEmptyStr } from '../common/constants';
 import { leadDropdown, peopleDropdown } from '../common/props';
 import { CopperApiService } from '../common/requests';

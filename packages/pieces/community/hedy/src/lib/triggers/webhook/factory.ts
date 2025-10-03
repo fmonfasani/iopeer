@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { Property, TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { createHmac, timingSafeEqual } from 'crypto';
 import { hedyAuth } from '../../auth';
 import { HedyApiClient, unwrapResource } from '../../common/client';
@@ -74,7 +74,7 @@ export function createHedyWebhookTrigger(config: TriggerConfig) {
           path: `/webhooks/${webhookId}`,
         });
       } catch (error) {
-        // Ignore deletion errors – webhook may already be removed.
+        // Ignore deletion errors â€“ webhook may already be removed.
       } finally {
         await context.store.delete('webhookId');
         await context.store.delete('signingSecret');

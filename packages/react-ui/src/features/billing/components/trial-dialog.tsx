@@ -1,4 +1,4 @@
-import { useQueryClient } from '@tanstack/react-query';
+﻿import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { PartyPopper } from 'lucide-react';
 import { useState } from 'react';
@@ -8,8 +8,8 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { userHooks } from '@/hooks/user-hooks';
-import { ApSubscriptionStatus, StripePlanName } from '@activepieces/ee-shared';
-import { isNil, PlatformRole } from '@activepieces/shared';
+import { ApSubscriptionStatus, StripePlanName } from '@IOpeer/ee-shared';
+import { isNil, PlatformRole } from '@IOpeer/shared';
 
 import { billingMutations } from '../lib/billing-hooks';
 
@@ -74,7 +74,7 @@ export const WelcomeTrialDialog = () => {
                   {t(trialPlan ?? '')}
                 </Button>{' '}
                 {t(
-                  'plan — explore all features and make the most of your trial.',
+                  'plan â€” explore all features and make the most of your trial.',
                 )}
               </p>
             </div>

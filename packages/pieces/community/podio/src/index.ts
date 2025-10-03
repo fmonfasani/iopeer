@@ -1,5 +1,5 @@
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-    import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
+﻿    import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+    import { createCustomApiCallAction, HttpMethod } from '@IOpeer/pieces-common';
     import { createItemAction } from './lib/actions/create-item';
     import { updateItemAction } from './lib/actions/update-item';
     import { createTaskAction } from './lib/actions/create-task';
@@ -62,7 +62,7 @@
       displayName: "Podio",
       auth: podioAuth,
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/podio.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/podio.png",
       authors: ["sparkybug", "onyedikachi-david"],
       actions: [
         createItemAction,

@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { AlertCircle } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import { useAuthorization } from '@/hooks/authorization-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
 import { userHooks } from '@/hooks/user-hooks';
-import { ApFlagId, Permission, PlatformRole } from '@activepieces/shared';
+import { ApFlagId, Permission, PlatformRole } from '@IOpeer/shared';
 
 import { Button } from '../../../components/ui/button';
 

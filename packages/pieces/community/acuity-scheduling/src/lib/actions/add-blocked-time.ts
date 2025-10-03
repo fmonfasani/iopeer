@@ -1,5 +1,5 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
-import { AuthenticationType, HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
+import { AuthenticationType, HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { acuitySchedulingAuth } from '../../index';
 import { API_URL } from '../common';
 import { calendarIdDropdown } from '../common/props';

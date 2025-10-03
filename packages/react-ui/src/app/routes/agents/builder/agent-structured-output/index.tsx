@@ -1,11 +1,11 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Database, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { useBuilderAgentState } from '@/features/agents/lib/store/builder-agent-state-provider';
-import { AgentOutputType, AgentOutputFieldType } from '@activepieces/shared';
+import { AgentOutputType, AgentOutputFieldType } from '@IOpeer/shared';
 
 import { AddFieldPopover } from './add-field-popover';
 import { FieldTypeIcon } from './field-type-icon';

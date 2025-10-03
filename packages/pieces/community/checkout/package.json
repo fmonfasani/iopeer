@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-checkout",
+﻿{
+  "name": "@IOpeer/piece-checkout",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import { gitlabCommon, makeClient } from '../common';
 import { gitlabAuth } from '../..';

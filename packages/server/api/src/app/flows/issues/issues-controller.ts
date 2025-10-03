@@ -1,4 +1,4 @@
-import { ApId, ListIssuesParams, Permission, PrincipalType, UpdateIssueRequestBody } from '@activepieces/shared'
+﻿import { ApId, ListIssuesParams, Permission, PrincipalType, UpdateIssueRequestBody } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox, Type } from '@fastify/type-provider-typebox'
 import { issuesService } from './issues-service'
 

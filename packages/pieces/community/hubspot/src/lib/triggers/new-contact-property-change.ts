@@ -1,13 +1,13 @@
-import { hubspotAuth } from '../..';
+﻿import { hubspotAuth } from '../..';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { standardObjectPropertiesDropdown } from '../common/props';
 import { OBJECT_TYPE } from '../common/constants';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
-import { chunk } from '@activepieces/shared';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
+import { chunk } from '@IOpeer/shared';
 
 import { Client } from '@hubspot/api-client';
 import dayjs from 'dayjs';

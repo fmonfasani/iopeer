@@ -1,4 +1,4 @@
-import { AskCopilotRequest, AskCopilotResponse, Principal, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@activepieces/shared'
+﻿import { AskCopilotRequest, AskCopilotResponse, Principal, PrincipalType, WebsocketClientEvent, WebsocketServerEvent } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { websocketService } from '../core/websockets.service'
 import { copilotService } from './copilot.service'

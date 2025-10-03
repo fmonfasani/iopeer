@@ -1,8 +1,8 @@
-import {
+﻿import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
 import { sendpulseAuth } from './lib/common/auth';
 import { sendpulseApiCall } from './lib/common/client';
 import { newSubscriberTrigger } from './lib/triggers/new-subscriber';
@@ -18,7 +18,7 @@ export const sendpulse = createPiece({
   displayName: 'SendPulse',
   auth: sendpulseAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/sendpulse.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/sendpulse.png',
   authors: ['aryel780', 'onyedikachi-david'],
   actions: [
     addSubscriberAction,

@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     apId,
     CreateTableRequest,
     CreateTableWebhookRequest,
@@ -13,7 +13,7 @@ import {
     TableWebhook,
     TableWebhookEventType,
     UpdateTableRequest,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { ILike, In } from 'typeorm'
 import { repoFactory } from '../../core/db/repo-factory'
 import { APArrayContains } from '../../database/database-connection'
@@ -84,7 +84,7 @@ export const tableService = {
             where: { projectId, id },
         })
         if (isNil(table)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'Table',
@@ -101,7 +101,7 @@ export const tableService = {
     }: GetOneByExternalIdParams): Promise<Table> {
         const table = await tableRepo().findOneBy({ projectId, externalId })
         if (isNil(table)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'Table',

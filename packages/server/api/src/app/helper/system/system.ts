@@ -1,15 +1,15 @@
-import os from 'os'
+﻿import os from 'os'
 import path from 'path'
-import { AppSystemProp, ContainerType, environmentVariables, PiecesSource, pinoLogging, SystemProp, WorkerSystemProp } from '@activepieces/server-shared'
+import { AppSystemProp, ContainerType, environmentVariables, PiecesSource, pinoLogging, SystemProp, WorkerSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApEdition,
     ErrorCode,
     ExecutionMode,
     FileLocation,
     isNil,
     PieceSyncMode,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { Level } from 'pino'
 
@@ -112,7 +112,7 @@ export const system = {
         const value = system.getNumber(prop)
 
         if (isNil(value)) {
-            throw new ActivepiecesError(
+            throw new IOpeerError(
                 {
                     code: ErrorCode.SYSTEM_PROP_NOT_DEFINED,
                     params: {
@@ -163,7 +163,7 @@ export const system = {
         const value = getEnvVarOrReturnDefaultValue(prop) as T | undefined
 
         if (value === undefined) {
-            throw new ActivepiecesError(
+            throw new IOpeerError(
                 {
                     code: ErrorCode.SYSTEM_PROP_NOT_DEFINED,
                     params: {

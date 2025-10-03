@@ -1,8 +1,8 @@
-import {
+﻿import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { APITableCommon, makeClient } from '../common';
 import { APITableAuth } from '../../index';
 import { prepareQuery } from '../common/client';

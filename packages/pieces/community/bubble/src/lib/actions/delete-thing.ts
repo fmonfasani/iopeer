@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 import { bubbleAuth } from '../../index';
 import { bubbleCommon } from '../common';
@@ -27,7 +27,7 @@ export const bubbleDeleteThingAction = createAction({
       method: HttpMethod.DELETE,
       url: server_url,
       headers: {
-        'user-agent': 'activepieces',
+        'user-agent': 'IOpeer',
         Authorization: `Bearer ${token}`,
       },
       authentication: {

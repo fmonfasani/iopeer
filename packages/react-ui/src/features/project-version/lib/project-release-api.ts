@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   ProjectSyncPlan,
   SeekPage,
   CreateProjectReleaseRequestBody,
   ProjectRelease,
   DiffReleaseRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const projectReleaseApi = {
   async get(releaseId: string) {

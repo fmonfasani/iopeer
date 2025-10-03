@@ -1,4 +1,4 @@
-import { AuthenticationResponse, SAMLAuthnProviderConfig, UserIdentityProvider } from '@activepieces/shared'
+﻿import { AuthenticationResponse, SAMLAuthnProviderConfig, UserIdentityProvider } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { authenticationService } from '../../../authentication/authentication.service'
 import { createSamlClient, IdpLoginResponse } from './saml-client'

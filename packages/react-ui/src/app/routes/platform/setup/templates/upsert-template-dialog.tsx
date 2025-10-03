@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -19,14 +19,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { TagInput } from '@/components/ui/tag-input';
 import { templatesApi } from '@/features/templates/lib/templates-api';
-import { CreateFlowTemplateRequest } from '@activepieces/ee-shared';
+import { CreateFlowTemplateRequest } from '@IOpeer/ee-shared';
 import {
   flowMigrations,
   FlowTemplate,
   FlowVersionState,
   FlowVersionTemplate,
   TemplateType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { Textarea } from '../../../../../components/ui/textarea';
 

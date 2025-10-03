@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { addedSubscriber } from './lib/triggers/added-subscriber';
 import { unsubscribedSubscriber } from './lib/triggers/unsubscribed-subscriber';
 import { taggedSubscriber } from './lib/triggers/tagged-subscriber';
@@ -41,7 +41,7 @@ export const zagomailAuth = PieceAuth.SecretText({
 export const zagomail = createPiece({
 	displayName: 'Zagomail',
 	description: 'All-in-one email marketing and automation platform',
-	logoUrl: 'https://cdn.activepieces.com/pieces/zagomail.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/zagomail.png',
 	authors: ['gs03dev'],
 	auth: zagomailAuth,
 	actions: [

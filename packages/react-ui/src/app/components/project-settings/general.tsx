@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+﻿import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 
 import { Button } from '@/components/ui/button';
@@ -30,7 +30,7 @@ import {
   ErrorCode,
   PlatformRole,
   ProjectWithLimits,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const GeneralSettings = ({
   form,

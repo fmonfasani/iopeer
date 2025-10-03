@@ -1,9 +1,9 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import FormData from 'form-data';
 import { acumbamailAuth } from '../../';
 import { acumbamailCommon } from '../common';

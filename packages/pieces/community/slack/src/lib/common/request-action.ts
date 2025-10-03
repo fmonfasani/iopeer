@@ -1,9 +1,9 @@
-import { processMessageTimestamp, slackSendMessage } from './utils';
+﻿import { processMessageTimestamp, slackSendMessage } from './utils';
 import {
   assertNotNullOrUndefined,
   ExecutionType,
   PauseType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 import { ChatPostMessageResponse } from '@slack/web-api';
 
 export const requestAction = async (conversationId: string, context: any) => {

@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Eye, Pencil, Trash, Users } from 'lucide-react';
@@ -17,7 +17,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { projectRoleApi } from '@/features/platform-admin/lib/project-role-api';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { formatUtils } from '@/lib/utils';
-import { ProjectRole, RoleType, SeekPage } from '@activepieces/shared';
+import { ProjectRole, RoleType, SeekPage } from '@IOpeer/shared';
 
 import { ProjectRoleDialog } from './project-role-dialog';
 

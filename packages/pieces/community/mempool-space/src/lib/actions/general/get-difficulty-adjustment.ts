@@ -1,5 +1,5 @@
-import { createAction, PieceAuth } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, PieceAuth } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { MEMPOOL_API_BASE_URL } from '../../common';
 
 export const getDifficultyAdjustment = createAction({

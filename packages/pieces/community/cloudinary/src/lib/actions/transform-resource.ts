@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { cloudinaryAuth } from '../common/auth';
 import { resourceTypeDropdown, publicIdsDropdown } from '../common/props';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const transformResource = createAction({
   auth: cloudinaryAuth,

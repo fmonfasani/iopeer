@@ -1,4 +1,4 @@
-import { EndpointScope, PrincipalType, Project, UpdateProjectRequestInCommunity } from '@activepieces/shared'
+﻿import { EndpointScope, PrincipalType, Project, UpdateProjectRequestInCommunity } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox, Type } from '@fastify/type-provider-typebox'
 import { StatusCodes } from 'http-status-codes'
 import { paginationHelper } from '../helper/pagination/pagination-utils'

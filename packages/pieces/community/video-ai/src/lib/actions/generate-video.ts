@@ -1,7 +1,7 @@
-import { httpClient, HttpMethod } from "@activepieces/pieces-common";
-import { ApFile, createAction, Property } from "@activepieces/pieces-framework"
-import { spreadIfDefined } from "@activepieces/shared";
-import { SUPPORTED_AI_PROVIDERS, aiProps, AI_USAGE_FEATURE_HEADER, AIUsageFeature } from "@activepieces/common-ai";
+﻿import { httpClient, HttpMethod } from "@IOpeer/pieces-common";
+import { ApFile, createAction, Property } from "@IOpeer/pieces-framework"
+import { spreadIfDefined } from "@IOpeer/shared";
+import { SUPPORTED_AI_PROVIDERS, aiProps, AI_USAGE_FEATURE_HEADER, AIUsageFeature } from "@IOpeer/common-ai";
 import { GoogleGenAI } from "@google/genai";
 import mime from 'mime-types';
 

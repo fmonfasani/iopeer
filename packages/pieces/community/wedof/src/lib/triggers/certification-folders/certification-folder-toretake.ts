@@ -1,13 +1,13 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationFolderToretake = createTrigger({
   auth: wedofAuth,
   name: 'certificationFolderToretake',
-  displayName: 'Dossier de certification à repasser',
+  displayName: 'Dossier de certification Ã  repasser',
   description:
-    "Se déclanche lorsqu'un dossier de certification est prét à repasser",
+    "Se dÃ©clanche lorsqu'un dossier de certification est prÃ©t Ã  repasser",
   props: {},
   sampleData: {
     attendeeLink: 'https://test.wedof.fr/candidat-1234-123456789',
@@ -66,7 +66,7 @@ export const certificationFolderToretake = createTrigger({
       phoneNumber: '+1.112.666.0606',
       phoneFixed: null,
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',

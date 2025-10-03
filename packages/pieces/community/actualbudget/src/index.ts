@@ -1,14 +1,14 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { getBudget } from './lib/actions/get-budget';
 import { importTransaction } from './lib/actions/import-transaction';
 import { getCategories } from './lib/actions/get-categories';
 import { importTransactions } from './lib/actions/import-transactions';
 import { getAccounts } from './lib/actions/get-accounts';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const actualBudgetAuth = PieceAuth.CustomAuth({
   description: 'Enter authentication details',
@@ -26,7 +26,7 @@ export const actualBudgetAuth = PieceAuth.CustomAuth({
     sync_id: PieceAuth.SecretText({
       displayName: 'Sync ID',
       description:
-        'This is the ID from Settings → Show advanced settings → Sync ID',
+        'This is the ID from Settings â†’ Show advanced settings â†’ Sync ID',
       required: true,
     }),
     encryption_password: PieceAuth.SecretText({
@@ -43,7 +43,7 @@ export const actualbudget = createPiece({
   description: 'Personal finance app',
   auth: actualBudgetAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/actualbudget.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/actualbudget.png',
   categories: [PieceCategory.ACCOUNTING],
   authors: ['hugh-codes'],
 

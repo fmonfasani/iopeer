@@ -1,4 +1,4 @@
-import { Property, StoreScope } from "@activepieces/pieces-framework"
+﻿import { Property, StoreScope } from "@IOpeer/pieces-framework"
 
 export enum PieceStoreScope {
     PROJECT = 'COLLECTION',

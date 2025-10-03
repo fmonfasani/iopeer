@@ -1,4 +1,4 @@
-import Document from '@tiptap/extension-document';
+﻿import Document from '@tiptap/extension-document';
 import HardBreak from '@tiptap/extension-hard-break';
 import History from '@tiptap/extension-history';
 import Mention, { MentionNodeAttrs } from '@tiptap/extension-mention';
@@ -10,7 +10,7 @@ import { useEditor, EditorContent } from '@tiptap/react';
 import './tip-tap.css';
 import { stepsHooks } from '@/features/pieces/lib/steps-hooks';
 import { cn } from '@/lib/utils';
-import { flowStructureUtil, isNil } from '@activepieces/shared';
+import { flowStructureUtil, isNil } from '@IOpeer/shared';
 
 import { useBuilderStateContext } from '../../builder-hooks';
 

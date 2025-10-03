@@ -1,5 +1,5 @@
-import { googleDocsAuth } from '../../index';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { googleDocsAuth } from '../../index';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { google } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 

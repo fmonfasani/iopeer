@@ -1,8 +1,8 @@
-import { ApplicationEventName, ManagedAuthnRequestBody } from '@activepieces/ee-shared'
+﻿import { ApplicationEventName, ManagedAuthnRequestBody } from '@IOpeer/ee-shared'
 import {
     ALL_PRINCIPAL_TYPES,
     AuthenticationResponse,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { eventsHooks } from '../../helper/application-events'
 import { managedAuthnService } from './managed-authn-service'

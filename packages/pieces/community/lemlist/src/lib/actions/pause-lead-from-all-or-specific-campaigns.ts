@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { campaignsDropdown } from '../common/props';
 import { lemlistAuth } from '../common/constants';
 import { lemlistApiService } from '../common/requests';
@@ -7,7 +7,7 @@ export const pauseLeadFromAllOrSpecificCampaigns = createAction({
   auth: lemlistAuth,
   name: 'pauseLeadFromAllOrSpecificCampaigns',
   displayName: 'Pause Lead From All or Specific Campaigns',
-  description: 'Pause a lead’s outreach across all or specific campaigns.',
+  description: 'Pause a leadâ€™s outreach across all or specific campaigns.',
   props: {
     campaignId: campaignsDropdown({ refreshers: ['auth'], required: false }),
     email: Property.ShortText({

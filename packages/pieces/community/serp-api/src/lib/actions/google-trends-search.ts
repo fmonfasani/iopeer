@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { serpApiAuth } from '../../index';
 import { SerpApiClient } from '../services/serp-api-client';
 import { GoogleTrendsSearchConfig, SerpApiEngine } from '../types';
@@ -89,7 +89,7 @@ export const googleTrendsSearch = createAction({
           { label: 'Korean', value: 'ko' },
           { label: 'Krio (Sierra Leone)', value: 'kri' },
           { label: 'Kurdish', value: 'ku' },
-          { label: 'Kurdish (Soranî)', value: 'ckb' },
+          { label: 'Kurdish (SoranÃ®)', value: 'ckb' },
           { label: 'Kyrgyz', value: 'ky' },
           { label: 'Laothian', value: 'lo' },
           { label: 'Latin', value: 'la' },
@@ -239,7 +239,7 @@ export const googleTrendsSearch = createAction({
           { label: 'Cuba', value: 'CU' },
           { label: 'Cyprus', value: 'CY' },
           { label: 'Czechia', value: 'CZ' },
-          { label: "Côte d'Ivoire", value: 'CI' },
+          { label: "CÃ´te d'Ivoire", value: 'CI' },
           { label: 'Denmark', value: 'DK' },
           { label: 'Djibouti', value: 'DJ' },
           { label: 'Dominica', value: 'DM' },
@@ -360,7 +360,7 @@ export const googleTrendsSearch = createAction({
           { label: 'Romania', value: 'RO' },
           { label: 'Russia', value: 'RU' },
           { label: 'Rwanda', value: 'RW' },
-          { label: 'Réunion', value: 'RE' },
+          { label: 'RÃ©union', value: 'RE' },
           { label: 'Samoa', value: 'WS' },
           { label: 'San Marino', value: 'SM' },
           { label: 'Saudi Arabia', value: 'SA' },
@@ -379,7 +379,7 @@ export const googleTrendsSearch = createAction({
           { label: 'South Sudan', value: 'SS' },
           { label: 'Spain', value: 'ES' },
           { label: 'Sri Lanka', value: 'LK' },
-          { label: 'St. Barthélemy', value: 'BL' },
+          { label: 'St. BarthÃ©lemy', value: 'BL' },
           { label: 'St. Helena', value: 'SH' },
           { label: 'St. Kitts & Nevis', value: 'KN' },
           { label: 'St. Lucia', value: 'LC' },
@@ -392,7 +392,7 @@ export const googleTrendsSearch = createAction({
           { label: 'Sweden', value: 'SE' },
           { label: 'Switzerland', value: 'CH' },
           { label: 'Syria', value: 'SY' },
-          { label: 'São Tomé & Príncipe', value: 'ST' },
+          { label: 'SÃ£o TomÃ© & PrÃ­ncipe', value: 'ST' },
           { label: 'Taiwan', value: 'TW' },
           { label: 'Tajikistan', value: 'TJ' },
           { label: 'Tanzania', value: 'TZ' },

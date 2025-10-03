@@ -1,9 +1,9 @@
-import {
+﻿import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { dripCommon } from '../common';
 import { dripAuth } from '../../';
 

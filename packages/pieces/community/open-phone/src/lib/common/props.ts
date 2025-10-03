@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import {
   openPhoneCommon,
   OpenPhoneContactsListResponse,
@@ -248,7 +248,7 @@ export const callDropdown = Property.Dropdown({
         const statusInfo = call.status ? ` - ${call.status}` : '';
         const durationInfo = call.duration ? ` (${call.duration}s)` : '';
         const dateInfo = new Date(call.createdAt).toLocaleDateString();
-        const directionInfo = call.direction === 'incoming' ? '↓' : '↑';
+        const directionInfo = call.direction === 'incoming' ? 'â†“' : 'â†‘';
 
         return {
           label: `${directionInfo} ${call.id}${statusInfo}${durationInfo} - ${dateInfo}`,

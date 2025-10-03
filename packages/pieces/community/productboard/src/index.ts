@@ -1,5 +1,5 @@
-
-import { createPiece } from "@activepieces/pieces-framework";
+﻿
+import { createPiece } from "@IOpeer/pieces-framework";
 import { productboardAuth } from "./lib/common/auth";
 import { createFeature } from "./lib/actions/create-feature";
 import { createNote } from "./lib/actions/create-note";
@@ -8,7 +8,7 @@ import { getFeature } from "./lib/actions/get-feature";
 import { newFeature } from "./lib/triggers/new-feature";
 import { newNote } from "./lib/triggers/new-note";
 import { updatedFeature } from "./lib/triggers/updated-feature";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
 export const productboard = createPiece({
     displayName: "Productboard",
@@ -16,7 +16,7 @@ export const productboard = createPiece({
     description: "Productboard is a product management tool that helps you manage your product roadmap and features.",
     categories: [PieceCategory.PRODUCTIVITY],
     minimumSupportedRelease: '0.36.1',
-    logoUrl: "https://cdn.activepieces.com/pieces/productboard.png",
+    logoUrl: "https://cdn.IOpeer.com/pieces/productboard.png",
     authors: ["owuzo", "onyedikachi-david"],
     actions: [
         createFeature,

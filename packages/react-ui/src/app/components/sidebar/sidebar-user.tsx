@@ -1,4 +1,4 @@
-import { useQueryClient } from '@tanstack/react-query';
+﻿import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import {
   ChevronsUpDown,
@@ -35,7 +35,7 @@ import { useShowPlatformAdminDashboard } from '@/hooks/authorization-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
 import { userHooks } from '@/hooks/user-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
-import { PlatformRole } from '@activepieces/shared';
+import { PlatformRole } from '@IOpeer/shared';
 
 import AccountSettingsDialog from '../account-settings';
 import { ProjectSettingsDialog } from '../project-settings';

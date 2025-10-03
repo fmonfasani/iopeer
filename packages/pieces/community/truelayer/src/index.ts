@@ -1,5 +1,5 @@
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { OAuth2PropertyValue, PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { trueLayerCommon } from './lib/common';
 
 import { createPayout } from './lib/action/payouts/create-payout';
@@ -46,7 +46,7 @@ import { getPaymentRefund } from './lib/action/payments/get-payment-refund';
 
 import { searchPaymentProviders } from './lib/action/payments-providers/search-payment-providers';
 import { getPaymentProvider } from './lib/action/payments-providers/get-payment-provider';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const paymentsApiV3Payments = createPiece({
   displayName: 'TrueLayer',
@@ -54,7 +54,7 @@ export const paymentsApiV3Payments = createPiece({
   auth: trueLayerCommon.auth,
   minimumSupportedRelease: '0.20.0',
   categories: [PieceCategory.PAYMENT_PROCESSING],
-  logoUrl: 'https://cdn.activepieces.com/pieces/truelayer.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/truelayer.png',
   authors: ['ahmad-swanblocks'],
   actions: [
     createPayout,

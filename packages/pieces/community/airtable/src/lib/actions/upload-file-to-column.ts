@@ -1,5 +1,5 @@
-import { airtableAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { airtableAuth } from '../..';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { airtableCommon } from '../common';
 import { AirtableTable } from './../common/models';
 import {
@@ -7,7 +7,7 @@ import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const airtableUploadFileToColumnAction = createAction({
   auth: airtableAuth,

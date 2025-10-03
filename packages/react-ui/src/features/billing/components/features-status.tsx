@@ -1,11 +1,11 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Check, Lock } from 'lucide-react';
 
 import { StatusIconWithText } from '@/components/ui/status-icon-with-text';
 import {
   PlatformPlanLimits,
   PlatformWithoutSensitiveData,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const LICENSE_PROPS_MAP = {
   agentsEnabled: {

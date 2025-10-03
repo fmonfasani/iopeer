@@ -1,5 +1,5 @@
-
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+    import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
     import { addTextBlobAction } from "./lib/actions/add-text-blob-action";
     import { upsertContactAction } from "./lib/actions/upsert-contact-action";
     import { makeOutboundCallAction } from "./lib/actions/make-outbound-call-action";
@@ -7,7 +7,7 @@
     import { newCapturedForm } from "./lib/triggers/new-captured-form";
     import { newConversation } from "./lib/triggers/new-conversation";
     import { newContact } from "./lib/triggers/new-contact";
-    import { PieceCategory } from "@activepieces/shared";
+    import { PieceCategory } from "@IOpeer/shared";
 
     export const insightoAi = createPiece({
       displayName: "Insighto.ai",
@@ -18,7 +18,7 @@
         required: true,
       }),
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/insighto-ai.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/insighto-ai.png",
       authors: ['fortunamide', 'onyedikachi-david'],
       categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE, PieceCategory.COMMUNICATION],
       actions: [addTextBlobAction, upsertContactAction, makeOutboundCallAction, createCampaignAction],

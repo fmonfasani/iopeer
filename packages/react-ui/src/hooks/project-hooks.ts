@@ -1,4 +1,4 @@
-import { useQuery, QueryClient, useSuspenseQuery } from '@tanstack/react-query';
+﻿import { useQuery, QueryClient, useSuspenseQuery } from '@tanstack/react-query';
 import { HttpStatusCode } from 'axios';
 import { t } from 'i18next';
 import { useEffect } from 'react';
@@ -8,14 +8,14 @@ import { useEmbedding } from '@/components/embed-provider';
 import { useToast } from '@/components/ui/use-toast';
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
-import { UpdateProjectPlatformRequest } from '@activepieces/ee-shared';
+import { UpdateProjectPlatformRequest } from '@IOpeer/ee-shared';
 import {
   ApEdition,
   ApFlagId,
   isNil,
   ProjectWithLimits,
   ProjectWithLimitsWithPlatform,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { projectApi } from '../lib/project-api';
 

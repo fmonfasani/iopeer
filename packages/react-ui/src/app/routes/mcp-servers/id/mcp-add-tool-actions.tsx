@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { ChevronDown, Puzzle, Workflow } from 'lucide-react';
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ import {
   Permission,
   McpWithTools,
   McpToolRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { McpFlowDialog } from './mcp-flow-tool-dialog';
 import { McpPieceDialog } from './mcp-piece-tool-dialog';

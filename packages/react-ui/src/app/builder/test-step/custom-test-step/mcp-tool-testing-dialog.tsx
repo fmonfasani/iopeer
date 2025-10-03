@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { useForm, useFormContext } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
@@ -16,12 +16,12 @@ import {
   PropertyType,
   PiecePropertyMap,
   PieceProperty,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   FlowTrigger,
   McpPropertyType,
   mcpToolNaming,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { AutoPropertiesFormComponent } from '../../piece-properties/auto-properties-form';
 import { testStepHooks } from '../test-step-hooks';

@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Check, ChevronsUpDown, Globe } from 'lucide-react';
 import { useState } from 'react';
@@ -24,7 +24,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { LoadingSpinner } from '@/components/ui/spinner';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { cn, localesMap } from '@/lib/utils';
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@IOpeer/shared';
 
 export const LanguageToggle = () => {
   const { i18n } = useTranslation();
@@ -120,7 +120,7 @@ export const LanguageToggle = () => {
             target="_blank"
             to="https://docs.iopeer.com/about/i18n"
           >
-            {t('Help translate IOPeer →')}
+            {t('Help translate IOPeer â†’')}
           </Link>
         </div>
       )}

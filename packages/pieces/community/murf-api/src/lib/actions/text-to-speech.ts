@@ -1,7 +1,7 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 import { murfAuth } from "../common/auth";
 import { makeRequest } from "../common/client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 import { murfCommon } from "../common/dropdown";
 
 export const textToSpeech = createAction({
@@ -97,7 +97,7 @@ export const textToSpeech = createAction({
     variation: Property.Number({
       displayName: "Variation",
       description:
-        "Variation level (0–5). Defaults to 1. Higher = more natural pauses/pitch/speed.",
+        "Variation level (0â€“5). Defaults to 1. Higher = more natural pauses/pitch/speed.",
       required: false,
     }),
     wordDurationsAsOriginalText: Property.Checkbox({

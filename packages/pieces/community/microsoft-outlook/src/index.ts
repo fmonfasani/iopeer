@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { addLabelToEmailAction } from './lib/actions/add-label-to-email';
 import { createDraftEmailAction } from './lib/actions/create-draft-email';
 import { downloadAttachmentAction } from './lib/actions/download-email-attachment';
@@ -20,7 +20,7 @@ export const microsoftOutlook = createPiece({
 	displayName: 'Microsoft Outlook',
 	auth: microsoftOutlookAuth,
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-outlook.jpg',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-outlook.jpg',
 	categories: [PieceCategory.PRODUCTIVITY],
 	authors: ['lucaslimasouza', 'kishanprmr'],
 	actions: [

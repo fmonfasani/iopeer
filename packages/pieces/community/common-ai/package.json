@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/common-ai",
+﻿{
+  "name": "@IOpeer/common-ai",
   "version": "0.2.1",
   "type": "commonjs",
   "dependencies": {
@@ -11,8 +11,8 @@
     "@ai-sdk/replicate": "1.0.3",
     "ai": "5.0.12",
     "@sinclair/typebox": "0.34.11",
-    "@activepieces/shared": "0.22.0",
-    "@activepieces/pieces-framework": "0.20.1",
-    "@activepieces/pieces-common": "0.7.0"
+    "@IOpeer/shared": "0.22.0",
+    "@IOpeer/pieces-framework": "0.20.1",
+    "@IOpeer/pieces-common": "0.7.0"
   }
 }

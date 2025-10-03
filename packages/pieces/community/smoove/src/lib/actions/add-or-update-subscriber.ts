@@ -1,8 +1,8 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { smooveAuth } from '../common/auth';
 import { listsDropdown, emailDropdown } from '../common/props';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const addOrUpdateSubscriber = createAction({
   auth: smooveAuth,

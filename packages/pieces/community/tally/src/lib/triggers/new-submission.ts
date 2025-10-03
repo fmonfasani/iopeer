@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   PieceAuth,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 const markdown = `
 To set up the trigger for new form submissions, follow these steps:

@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { WEALTHBOX_API_BASE } from './constants';
 
 export const fetchUserGroups = async (auth: string) => {

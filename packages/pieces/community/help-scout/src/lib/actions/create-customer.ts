@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { helpScoutApiRequest } from '../common/api';
 import { helpScoutAuth } from '../common/auth';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { z } from 'zod';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { HttpStatusCode } from 'axios';
 
 export const createCustomer = createAction({
@@ -47,7 +47,7 @@ export const createCustomer = createAction({
     age: Property.ShortText({
       displayName: 'Age',
       required: false,
-      description: 'Customer’s age (string, e.g. "30-35")',
+      description: 'Customerâ€™s age (string, e.g. "30-35")',
     }),
     gender: Property.StaticDropdown({
       displayName: 'Gender',

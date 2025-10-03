@@ -1,4 +1,4 @@
-import deepEqual from 'deep-equal';
+﻿import deepEqual from 'deep-equal';
 import React, { useState, useRef, useContext } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { useDeepCompareEffectNoCheck } from 'use-deep-compare-effect';
@@ -7,8 +7,8 @@ import { useBuilderStateContext } from '@/app/builder/builder-hooks';
 import { SkeletonList } from '@/components/ui/skeleton';
 import { formUtils } from '@/features/pieces/lib/form-utils';
 import { piecesHooks } from '@/features/pieces/lib/pieces-hooks';
-import { PiecePropertyMap, PropertyType } from '@activepieces/pieces-framework';
-import { FlowAction, FlowTrigger } from '@activepieces/shared';
+import { PiecePropertyMap, PropertyType } from '@IOpeer/pieces-framework';
+import { FlowAction, FlowTrigger } from '@IOpeer/shared';
 
 import { useStepSettingsContext } from '../step-settings/step-settings-context';
 

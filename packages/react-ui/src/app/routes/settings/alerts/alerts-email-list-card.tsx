@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Trash } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -20,8 +20,8 @@ import {
   alertMutations,
 } from '@/features/alerts/lib/alert-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
-import { Alert } from '@activepieces/ee-shared';
-import { Permission } from '@activepieces/shared';
+import { Alert } from '@IOpeer/ee-shared';
+import { Permission } from '@IOpeer/shared';
 
 import { AddAlertEmailDialog } from './add-alert-email-dialog';
 

@@ -1,14 +1,14 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
-} from "@activepieces/pieces-framework";
+} from "@IOpeer/pieces-framework";
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
-} from "@activepieces/pieces-common";
+} from "@IOpeer/pieces-common";
 import dayjs from "dayjs";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";

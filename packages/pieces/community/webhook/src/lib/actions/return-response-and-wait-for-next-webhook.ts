@@ -1,9 +1,9 @@
-import {
+﻿import {
     DynamicPropsValue,
     Property,
     createAction,
-  } from '@activepieces/pieces-framework';
-  import { ExecutionType, PauseType, StopResponse } from '@activepieces/shared';
+  } from '@IOpeer/pieces-framework';
+  import { ExecutionType, PauseType, StopResponse } from '@IOpeer/shared';
   import { StatusCodes } from 'http-status-codes';
   
   enum ResponseType {
@@ -13,7 +13,7 @@ import {
   }
   
 
-  const RESUME_WEBHOOK_HEADER = 'x-activepieces-resume-webhook-url';
+  const RESUME_WEBHOOK_HEADER = 'x-IOpeer-resume-webhook-url';
   export const returnResponseAndWaitForNextWebhook = createAction({
     name: 'return_response_and_wait_for_next_webhook',
     displayName: 'Respond and Wait for Next Webhook',

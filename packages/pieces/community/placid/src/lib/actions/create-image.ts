@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { placidAuth } from '../../index';
 import { PlacidClient } from '../common/client';
 import {
@@ -8,7 +8,7 @@ import {
 	passthroughProperty,
 	templateLayersProperty,
 } from '../common/props';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { PlacidCreateImageRequest } from '../common';
 
 export const createImage = createAction({

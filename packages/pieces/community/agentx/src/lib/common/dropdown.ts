@@ -1,7 +1,7 @@
-import { Property } from "@activepieces/pieces-framework";
+﻿import { Property } from "@IOpeer/pieces-framework";
 import { makeRequest } from "./client";
 import { AgentXAuth } from "./auth";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 
 export const AgentIdDropdown = Property.Dropdown<string>({
   displayName: "Agent",

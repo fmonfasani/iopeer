@@ -1,4 +1,4 @@
-import {
+﻿import {
     CreateRecordsRequest,
     DeleteRecordsRequest,
     ListRecordsRequest,
@@ -9,7 +9,7 @@ import {
     SeekPage,
     SERVICE_KEY_SECURITY_OPENAPI,
     UpdateRecordRequest,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
     Type,

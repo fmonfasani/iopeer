@@ -1,16 +1,16 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     ErrorCode,
     isNil,
     PlatformRole,
     PlatformWithoutSensitiveData,
     PrincipalType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { onRequestAsyncHookHandler } from 'fastify'
 import { platformService } from '../../platform/platform.service'
 import { userService } from '../../user/user-service'
 
-const USER_NOT_ALLOWED_TO_PERFORM_OPERATION_ERROR = new ActivepiecesError({
+const USER_NOT_ALLOWED_TO_PERFORM_OPERATION_ERROR = new IOpeerError({
     code: ErrorCode.AUTHORIZATION,
     params: {},
 })
@@ -27,7 +27,7 @@ export const platformMustHaveFeatureEnabled = (handler: (platform: PlatformWitho
         const enabled = handler(platform)
 
         if (!enabled) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FEATURE_DISABLED,
                 params: {
                     message: 'Feature is disabled',

@@ -1,5 +1,5 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const newRegistrationFolderNotProcessed = createTrigger({
@@ -7,7 +7,7 @@ export const newRegistrationFolderNotProcessed = createTrigger({
   name: 'newRegistrationFolderNotProcessed',
   displayName: 'Nouveau dossier de formation',
   description:
-    "Se déclenche lorsqu'un nouveau dossier de formation est créé (non traité)",
+    "Se dÃ©clenche lorsqu'un nouveau dossier de formation est crÃ©Ã© (non traitÃ©)",
   type: TriggerStrategy.WEBHOOK,
   props: {},
   sampleData: {
@@ -26,7 +26,7 @@ export const newRegistrationFolderNotProcessed = createTrigger({
       phoneNumber: '(323) 853-2456',
       phoneFixed: '0666666666',
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',
@@ -153,7 +153,7 @@ export const newRegistrationFolderNotProcessed = createTrigger({
       },
       certification: {
         href: '/api/certifications/112713',
-        name: 'Gérer des projets avec la méthode Agile',
+        name: 'GÃ©rer des projets avec la mÃ©thode Agile',
         certifInfo: '112713',
         externalId: 'RS5695',
         id: 2,

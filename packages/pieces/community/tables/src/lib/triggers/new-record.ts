@@ -1,6 +1,6 @@
-import { createTrigger, PieceAuth, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, PieceAuth, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { tablesCommon } from '../common';
-import { PopulatedRecord, TableWebhookEventType } from '@activepieces/shared';
+import { PopulatedRecord, TableWebhookEventType } from '@IOpeer/shared';
 
 export const newRecordTrigger = createTrigger({
     name: 'newRecord',

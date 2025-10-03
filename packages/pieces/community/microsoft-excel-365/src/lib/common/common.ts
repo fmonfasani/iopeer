@@ -1,11 +1,11 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   HttpRequest
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export const excelCommon = {
   baseUrl: 'https://graph.microsoft.com/v1.0/me/drive',

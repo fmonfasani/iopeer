@@ -1,13 +1,13 @@
-import { googleSheetsAuth } from '../../index';
+﻿import { googleSheetsAuth } from '../../index';
 import {
 	createAction,
 	DynamicPropsValue,
 	OAuth2PropertyValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { areSheetIdsValid, Dimension, googleSheetsCommon, objectToArray, ValueInputOption } from '../common/common';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
-import { isNil, isString, MarkdownVariant } from '@activepieces/shared';
+import { getAccessTokenOrThrow } from '@IOpeer/pieces-common';
+import { isNil, isString, MarkdownVariant } from '@IOpeer/shared';
 import { getWorkSheetName } from '../triggers/helpers';
 import { google, sheets_v4 } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';

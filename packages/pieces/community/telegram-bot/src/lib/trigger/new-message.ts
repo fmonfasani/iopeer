@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
-import { httpClient, HttpMethod, HttpRequest } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod, HttpRequest } from '@IOpeer/pieces-common';
 
 export const telegramNewMessage = createTrigger({
   auth: telegramBotAuth,

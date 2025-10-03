@@ -1,5 +1,5 @@
-import { Property } from "@activepieces/pieces-framework";
-import { HttpMethod } from "@activepieces/pieces-common";
+﻿import { Property } from "@IOpeer/pieces-framework";
+import { HttpMethod } from "@IOpeer/pieces-common";
 import { makeRequest } from "./client";
 
 // Helper to fetch voices

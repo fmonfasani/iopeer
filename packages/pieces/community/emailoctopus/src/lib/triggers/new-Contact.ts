@@ -1,11 +1,11 @@
-import {
+﻿import {
   Property,
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { emailOctopusAuth } from '../common/auth';
 import { emailOctopusProps } from '../common/props';
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 
 interface EmailOctopusEvent {
   type: string;
@@ -39,7 +39,7 @@ export const newContact = createTrigger({
       **Manual Setup Required**
 
       1. Go to your EmailOctopus Dashboard.
-      2. Navigate to **API & Integrations → Webhooks**.
+      2. Navigate to **API & Integrations â†’ Webhooks**.
       3. Click **Add webhook**.
       4. Paste the Above URL.
       5. Select the **Contact created** event.

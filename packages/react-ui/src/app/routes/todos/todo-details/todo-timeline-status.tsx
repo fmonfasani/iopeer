@@ -1,6 +1,6 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
-import { STATUS_VARIANT, Todo } from '@activepieces/shared';
+import { STATUS_VARIANT, Todo } from '@IOpeer/shared';
 
 interface TodoTimelineStatusProps {
   todo: Todo;
