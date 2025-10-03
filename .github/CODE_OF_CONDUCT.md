@@ -86,7 +86,7 @@ While this code of conduct is specifically aimed at Activepieces’s official re
 Resources or incidents which break this code of conduct for any reason in a non-Activepieces community location will be considered in the same way as resources or incidents from owned channels, and subject to the same sanctions. 
 
 ## 10. Contact info
-For more information, please contact info@activepieces.com.
+For more information, please contact info@iopeer.com.
 
 ## 11. License and attribution
 This Code of Conduct is directly adapted from the Stumptown Syndicate and distributed under a [Creative Commons Attribution-ShareAlike license][cc-by-sa].
