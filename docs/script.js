@@ -34,11 +34,11 @@ inkeepScript.addEventListener("load", function () {
       primaryBrandColor: "#8143E3",
     },
     aiChatSettings: {
-      chatSubjectName: "Activepieces",
+      chatSubjectName: "IOPeer",
       botAvatarSrcUrl:
-        "https://storage.googleapis.com/organization-image-assets/activepieces-botAvatarSrcUrl-1709136841325.svg",
+        "https://storage.googleapis.com/organization-image-assets/iopeer-botAvatarSrcUrl-1709136841325.svg",
       botAvatarDarkSrcUrl:
-        "https://storage.googleapis.com/organization-image-assets/activepieces-botAvatarDarkSrcUrl-1709136840372.svg",
+        "https://storage.googleapis.com/organization-image-assets/iopeer-botAvatarDarkSrcUrl-1709136840372.svg",
       getHelpCallToActions: [
         {
           name: "Discord",
@@ -49,14 +49,14 @@ inkeepScript.addEventListener("load", function () {
         },
         {
           name: "Community",
-          url: "https://community.activepieces.com/",
+          url: "https://community.iopeer.com/",
           icon: {
             builtIn: "IoPeopleOutline",
           },
         },
         {
           name: "GitHub",
-          url: "https://github.com/activepieces/activepieces",
+          url: "https://github.com/iopeer/iopeer",
           icon: {
             builtIn: "FaGithub",
           },
