@@ -167,13 +167,13 @@ export const flagService = {
             },
             {
                 id: ApFlagId.PRIVACY_POLICY_URL,
-                value: 'https://www.activepieces.com/privacy',
+                value: 'https://iopeer.com/privacy',
                 created,
                 updated,
             },
             {
                 id: ApFlagId.TERMS_OF_SERVICE_URL,
-                value: 'https://www.activepieces.com/terms',
+                value: 'https://iopeer.com/terms',
                 created,
                 updated,
             },
