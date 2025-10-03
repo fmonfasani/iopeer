@@ -1,0 +1,19 @@
+encryptionsalt: v1:icXg2cmIvSc=:v1:y8+4YhdMCPPDY26J:5cNYmimH353n8sjUDDc6srvcPgb+8Q==
+config:
+  iopeer:environment: "prod"
+  iopeer:apEncryptionKey:
+  iopeer:apJwtSecret:
+  iopeer:deployLocalBuild: "true"
+  iopeer:repoName: "iopeer-prod-repo"
+  iopeer:containerCpu: "512"
+  iopeer:containerMemory: "1024"
+  iopeer:containerInstances: "1"
+  iopeer:usePostgres: "true"
+  iopeer:dbInstanceClass: "db.t3.small"
+  iopeer:dbIsPublic: "false"
+  iopeer:dbPassword:
+    secure: v1:MXNSOcqZCp10X2PX:mU2iTrcETjdisk8FkD5yHLJYUxRei/9l
+  iopeer:dbUsername: "postgres"
+  iopeer:useRedis: "true"
+  iopeer:redisNodeType: "cache.t3.small"
+  aws:region: "us-east-1"

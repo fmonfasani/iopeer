@@ -1,4 +1,4 @@
-# Default values for activepieces.
+# Default values for iopeer.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -7,7 +7,7 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: ghcr.io/activepieces/activepieces
+  repository: ghcr.io/iopeer/iopeer
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
@@ -123,12 +123,12 @@ nodeSelector: {}
 tolerations: []
 affinity: {}
 
-activepieces:
+iopeer:
   frontendUrl: "http://localhost:4200"
   executionMode: "SANDBOX_CODE_ONLY"
   environment: "prod"
   telemetryEnabled: true
-  templatesSourceUrl: "https://cloud.activepieces.com/api/v1/flow-templates"
+  templatesSourceUrl: "https://cloud.iopeer.com/api/v1/flow-templates"
   flowWorkerConcurrency: ""
   scheduledWorkerConcurrency: ""
   triggerDefaultPollInterval: ""
@@ -180,7 +180,7 @@ postgresql:
   useSSL: false
   url: ""
   auth:
-    database: "activepieces"
+    database: "iopeer"
     username: "postgres"
     # password is automatically generated if not provided
     password: ""
