@@ -21,7 +21,7 @@ You have to enable the project releases feature in the Settings -> Environments.
 
 **Requirements**
 - Empty Git Repository
-- Two Projects in Activepieces: one for Development and one for Production
+- Two Projects in IOPeer: one for Development and one for Production
 
 ### 1. Push Flow to Repository
 After making changes in the flow:
@@ -77,7 +77,7 @@ To manage your approval workflow, you can use Git by creating two branches: deve
 This GitHub action can be used to automatically pull changes upon merging.
 
 <Tip>
-Don't forget to replace `INSTANCE_URL` and `PROJECT_ID`, and add `ACTIVEPIECES_API_KEY` to the secrets.
+Don't forget to replace `INSTANCE_URL` and `PROJECT_ID`, and add `IOPEER_API_KEY` to the secrets.
 </Tip>
 
 
@@ -97,7 +97,7 @@ jobs:
         run: |
           curl --request POST \
             --url {INSTANCE_URL}/api/v1/git-repos/pull \
-            --header 'Authorization: Bearer ${{ secrets.ACTIVEPIECES_API_KEY }}' \
+            --header 'Authorization: Bearer ${{ secrets.IOPEER_API_KEY }}' \
             --header 'Content-Type: application/json' \
             --data '{
               "projectId": "{PROJECT_ID}"
