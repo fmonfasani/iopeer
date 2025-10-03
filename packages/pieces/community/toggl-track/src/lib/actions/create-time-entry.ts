@@ -76,7 +76,7 @@ export const createTimeEntry = createAction({
         description,
         start: new Date(start).toISOString(),
         duration,
-        created_with: 'Activepieces',
+        created_with: 'IOPeer',
         billable,
         ...(stop && { stop: new Date(stop).toISOString() }),
         ...(project_id && { project_id }),

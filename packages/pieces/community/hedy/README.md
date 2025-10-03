@@ -1,6 +1,6 @@
-# Hedy Piece for ActivePieces
+# Hedy Piece for IOPeer
 
-AI-powered meeting intelligence integration for ActivePieces.
+AI-powered meeting intelligence integration for IOPeer.
 
 ## Features
 - Retrieve meeting sessions, highlights, todos, and topics from Hedy.
@@ -12,7 +12,7 @@ AI-powered meeting intelligence integration for ActivePieces.
 1. Sign in to your Hedy dashboard.
 2. Navigate to **Settings → API**.
 3. Generate a new API key (it starts with `hedy_live_`).
-4. Paste the key into the Hedy piece connection in ActivePieces.
+4. Paste the key into the Hedy piece connection in IOPeer.
 
 ## Example Automations
 - **Post Session Recaps** – Trigger on `Session Ended` and send meeting notes to Slack, Microsoft Teams, or email.
@@ -28,4 +28,4 @@ The Hedy piece provides descriptive errors for common issues such as:
 ## Support
 - Hedy API documentation: https://api.hedy.bot/docs
 - Hedy support: support@hedy.bot
-- ActivePieces community: https://www.activepieces.com/discord
+- IOPeer community: https://www.activepieces.com/discord

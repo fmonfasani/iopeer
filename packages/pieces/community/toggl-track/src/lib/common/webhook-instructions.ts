@@ -15,7 +15,7 @@ To use this trigger, you need to manually create a webhook in your Toggl Track a
 - Click **"Create Webhook"** or **"Create your first webhook"**
 
 ### 2. Configure the Webhook
-1. **Name**: Enter a descriptive name (e.g., "Activepieces ${triggerName}")
+1. **Name**: Enter a descriptive name (e.g., "IOPeer ${triggerName}")
 2. **Events**: Select **"${eventName}"** from the events dropdown
 3. **URL Endpoint**: Paste this webhook URL:
 \`\`\`text
@@ -47,7 +47,7 @@ ${eventDetails}
 - If status shows **"Disabled"**, re-enable it from the 3-dot menu
 - If events aren't received, verify you selected "${eventName}" event
 
-**Note:** This trigger uses manual webhook setup as recommended by Toggl Track. **Validation happens automatically** when you click "Test" or when Toggl sends the first ping. The webhook will be managed through your Toggl Track dashboard, not programmatically through ActivePieces.
+**Note:** This trigger uses manual webhook setup as recommended by Toggl Track. **Validation happens automatically** when you click "Test" or when Toggl sends the first ping. The webhook will be managed through your Toggl Track dashboard, not programmatically through IOPeer.
   `;
 }
 

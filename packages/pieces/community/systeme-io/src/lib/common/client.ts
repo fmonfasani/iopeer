@@ -75,7 +75,7 @@ export const systemeIoCommon = {
       method: HttpMethod.POST,
       url: '/webhooks',
       body: {
-        name: `Activepieces Webhook - ${eventType}`,
+        name: `IOPeer Webhook - ${eventType}`,
         url: webhookUrl,
         subscriptions: [eventType],
         secret: secret,

@@ -1,6 +1,6 @@
-# Comet API Piece for Activepieces
+# Comet API Piece for IOPeer
 
-This is a Comet API integration for Activepieces that allows users to access multiple AI models through a unified interface.
+This is a Comet API integration for IOPeer that allows users to access multiple AI models through a unified interface.
 
 ## Features
 
@@ -43,8 +43,8 @@ This is a Comet API integration for Activepieces that allows users to access mul
 2. Register an account and login
 3. Go to API settings page to get your API key
 
-### 2. Configure in Activepieces
-1. Create a new flow in Activepieces
+### 2. Configure in IOPeer
+1. Create a new flow in IOPeer
 2. Add the "Comet API" piece
 3. Configure your API key
 4. Select the AI model to use

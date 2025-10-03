@@ -186,7 +186,7 @@ const captureWebsiteProps = () => ({
   }),
   store_file: Property.Checkbox({
     displayName: 'Store File',
-    description: 'Download and store the captured file in Activepieces',
+    description: 'Download and store the captured file in IOPeer',
     required: false,
     defaultValue: true,
   }),

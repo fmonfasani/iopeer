@@ -1,10 +1,10 @@
-# SimpliRoute Piece for Activepieces
+# SimpliRoute Piece for IOPeer
 
-A comprehensive integration piece for SimpliRoute, the last-mile delivery optimization platform. This piece enables seamless automation of delivery operations within Activepieces workflows.
+A comprehensive integration piece for SimpliRoute, the last-mile delivery optimization platform. This piece enables seamless automation of delivery operations within IOPeer workflows.
 
 ## Overview
 
-SimpliRoute is a powerful logistics optimization platform that helps businesses streamline their delivery operations. This Activepieces integration provides access to all major SimpliRoute features including client management, vehicle tracking, route optimization, visit scheduling, and fleet management.
+SimpliRoute is a powerful logistics optimization platform that helps businesses streamline their delivery operations. This IOPeer integration provides access to all major SimpliRoute features including client management, vehicle tracking, route optimization, visit scheduling, and fleet management.
 
 ## Features
 
@@ -69,7 +69,7 @@ This piece uses SimpliRoute API tokens for authentication:
 1. Log in to your SimpliRoute account.
 2. Go to the **Profile** section.
 3. Copy your API token.
-4. Use the token in your ActivePieces connection settings.
+4. Use the token in your IOPeer connection settings.
 
 The piece automatically validates your token against SimpliRoute's authentication endpoint.
 
@@ -80,9 +80,9 @@ The piece automatically validates your token against SimpliRoute's authenticatio
 
 ## Installation
 
-This piece is part of the Activepieces community pieces collection. To use it:
+This piece is part of the IOPeer community pieces collection. To use it:
 
-1. Create a new flow in Activepieces
+1. Create a new flow in IOPeer
 2. Add a SimpliRoute step
 3. Configure your API authentication
 4. Select the desired action
@@ -109,20 +109,20 @@ nx lint pieces-simpliroute
 
 ## Contributing
 
-This piece is part of the Activepieces community project. Contributions are welcome!
+This piece is part of the IOPeer community project. Contributions are welcome!
 
-1. Follow Activepieces coding standards
+1. Follow IOPeer coding standards
 2. Update documentation
 3. Ensure all linting passes
 
 ## Support
 
 For issues related to this piece:
-- [Activepieces GitHub Issues](https://github.com/activepieces/activepieces/issues)
+- [IOPeer GitHub Issues](https://github.com/activepieces/activepieces/issues)
 
 
 ## Version
 
 Current version: 0.0.1
 
-Built with ❤️ for the Activepieces community.
+Built with ❤️ for the IOPeer community.

@@ -1,7 +1,7 @@
 import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
 import { mondayClient } from './client';
 import { MondayColumnType, MondayNotWritableColumnType } from './constants';
-import { convertMondayColumnToActivepiecesProp } from './helper';
+import { convertMondayColumnToIOPeerProp } from './helper';
 
 export function makeClient(apiKey: string): mondayClient {
   return new mondayClient(apiKey);
@@ -197,7 +197,7 @@ export const mondayCommon = {
                 },
               });
             } else {
-              const prop = convertMondayColumnToActivepiecesProp(column);
+              const prop = convertMondayColumnToIOPeerProp(column);
               if (prop != null) fields[column.id] = prop;
             }
           }

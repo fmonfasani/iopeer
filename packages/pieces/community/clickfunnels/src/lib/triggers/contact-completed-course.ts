@@ -29,7 +29,7 @@ export const contactCompletedCourse = createTrigger({
         {
           webhooks_outgoing_endpoint: {
             url: webhookUrl,
-            name: `ActivePieces ${MODULE_NAME} Webhook - ${Date.now()}`,
+            name: `IOPeer ${MODULE_NAME} Webhook - ${Date.now()}`,
             event_type_ids: ['courses/enrollment.course_completed'],
           },
         }

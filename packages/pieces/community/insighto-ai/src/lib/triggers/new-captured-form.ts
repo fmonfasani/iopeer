@@ -38,7 +38,7 @@ export const newCapturedForm = createTrigger({
         queryParams: { api_key: apiKey },
         body: {
           endpoint: webhookUrl,
-          name: 'Activepieces Captured Form Webhook',
+          name: 'IOPeer Captured Form Webhook',
           enabled: true,
         },
         headers: {
