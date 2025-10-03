@@ -1,9 +1,3 @@
-
----
-
-# SECURITY.md (replace entire file)
-
-```markdown
 # Security
 
 Contact: security@iopeer.com
