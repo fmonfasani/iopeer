@@ -1,9 +1,9 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { AlertTriangle } from 'lucide-react';
 
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@IOpeer/shared';
 
 import { mcpConnectUtils } from './mcp-connect-utils';
 

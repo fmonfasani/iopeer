@@ -1,10 +1,10 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { rabbitmqAuth } from '../../index';
 import { rabbitmqConnect } from '../common';
 import dayjs from 'dayjs';

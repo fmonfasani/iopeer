@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { wedofCommon } from './lib/common/wedof';
 import { newRegistrationFolderNotProcessed } from './lib/triggers/registration-folders/new-registration-folder-created';
 import { registrationFolderUpdated } from './lib/triggers/registration-folders/registration-folder-updated';
@@ -78,9 +78,9 @@ import { createRegistrationFolder } from './lib/actions/registration-folders/cre
 
 
 export const wedofAuth = PieceAuth.SecretText({
-    displayName: 'Clé API',
+    displayName: 'ClÃ© API',
     required: true,
-    description: 'Veuillez saisir votre clé API fournie par wedof',
+    description: 'Veuillez saisir votre clÃ© API fournie par wedof',
     validate: async ({auth}) => {
         try {
             await httpClient.sendRequest({
@@ -95,7 +95,7 @@ export const wedofAuth = PieceAuth.SecretText({
         } catch (error) {
             return {
                 valid: false,
-                error: 'Clé Api invalide',
+                error: 'ClÃ© Api invalide',
             };
         }
     },
@@ -107,7 +107,7 @@ export const wedof = createPiece({
   description:
     'Automatisez la gestion de vos dossiers de formations (CPF, EDOF, Kairos, AIF, OPCO et autres)',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/wedof.svg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/wedof.svg',
   categories: [
     PieceCategory.SALES_AND_CRM,
     PieceCategory.CONTENT_AND_FILES,

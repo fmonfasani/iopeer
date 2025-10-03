@@ -1,4 +1,4 @@
-import { QuestionMarkCircledIcon } from '@radix-ui/react-icons';
+﻿import { QuestionMarkCircledIcon } from '@radix-ui/react-icons';
 import { t } from 'i18next';
 import { ChevronRight, BookOpen, History, VideoIcon } from 'lucide-react';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { SidebarMenuButton } from '@/components/ui/sidebar-shadcn';
 import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApFlagId, supportUrl } from '@activepieces/shared';
+import { ApFlagId, supportUrl } from '@IOpeer/shared';
 
 export const HelpAndFeedback = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ export const HelpAndFeedback = () => {
 
         <DropdownMenuItem asChild>
           <Link
-            to="https://github.com/activepieces/activepieces/releases"
+            to="https://github.com/IOpeer/IOpeer/releases"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-between w-full"

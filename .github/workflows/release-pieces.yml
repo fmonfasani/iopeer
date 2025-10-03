@@ -1,4 +1,4 @@
-name: Release Pieces
+﻿name: Release Pieces
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   Release-Pieces:
-    if: github.repository == 'activepieces/activepieces'
+    if: github.repository == 'IOpeer/IOpeer'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -83,5 +83,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
             -X POST \
-            -d "{\"content\": \"🚨 **Release Pieces Workflow Failed** 🚨\\n\\n**Repository:** ${{ github.repository }}\\n**Branch:** ${{ github.ref_name }}\\n**Commit:** ${{ github.sha }}\\n**Action URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\nThe release pieces workflow has failed. Please check the logs for more details.\"}" \
+            -d "{\"content\": \"ðŸš¨ **Release Pieces Workflow Failed** ðŸš¨\\n\\n**Repository:** ${{ github.repository }}\\n**Branch:** ${{ github.ref_name }}\\n**Commit:** ${{ github.sha }}\\n**Action URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n\\nThe release pieces workflow has failed. Please check the logs for more details.\"}" \
             ${{ secrets.DISCORD_ON_CALL_WEBHOOK }}

@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Create Action'
 icon: 'circle-5'
 description: ''
@@ -38,8 +38,8 @@ import {
   createAction,
   Property,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { gelatoAuth } from '../..';
 
 export const getIcecreamFlavor = createAction({
@@ -76,7 +76,7 @@ The `run` function utilizes the httpClient.sendRequest function to make a GET re
 To make the action readable by IOPeer, add it to the array of actions in the piece definition.
 
 ```typescript
-import { createPiece } from '@activepieces/pieces-framework';
+import { createPiece } from '@IOpeer/pieces-framework';
 // Don't forget to add the following import.
 import { getIcecreamFlavor } from './lib/actions/get-icecream-flavor';
 

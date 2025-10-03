@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   makeSenderRequest,
   senderAuth,
   subscriberDropdownSingle,
 } from '../common/common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { subscribe } from 'diagnostics_channel';
 
 export const unsubscribeSubscriberAction = createAction({

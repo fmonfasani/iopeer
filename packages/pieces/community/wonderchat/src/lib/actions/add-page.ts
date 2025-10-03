@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wonderchatAuth } from '../..';
 
 export const addPage = createAction({
   name: 'addPage',
   displayName: 'Add Page',
-  description: 'Add new pages to your chatbot’s knowledge base.',
+  description: 'Add new pages to your chatbotâ€™s knowledge base.',
   auth: wonderchatAuth,
   props: {
     chatbotId: Property.ShortText({

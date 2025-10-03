@@ -1,7 +1,7 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { krispcallAuth } from '../..';
-import { Property, PiecePropValueSchema } from '@activepieces/pieces-framework';
+import { Property, PiecePropValueSchema } from '@IOpeer/pieces-framework';
 
 interface Item {
   name: string;

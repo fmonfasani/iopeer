@@ -1,5 +1,5 @@
-import { propsValidation } from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { propsValidation } from '@IOpeer/pieces-common';
+import { createAction } from '@IOpeer/pieces-framework';
 import { PromptHubClient } from '../common/client';
 import { runPromptProps, runPromptSchema, sanitizeVariables } from '../common/props';
 

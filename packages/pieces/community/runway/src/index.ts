@@ -1,6 +1,6 @@
-
-import { createPiece } from "@activepieces/pieces-framework";
-import { PieceCategory } from "@activepieces/shared";
+﻿
+import { createPiece } from "@IOpeer/pieces-framework";
+import { PieceCategory } from "@IOpeer/shared";
 import { runwayAuth } from "./lib/common/auth";
 import { generateImageFromText } from "./lib/actions/generate-image-from-text";
 import { generateVideoFromImage } from "./lib/actions/generate-video-from-image";
@@ -12,7 +12,7 @@ export const runway = createPiece({
   description: "AI-powered content generation platform for creating high-quality images and videos using text prompts",
   auth: runwayAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/runway.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/runway.png",
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ["sparkybug"],
   actions: [generateImageFromText, generateVideoFromImage, getTaskDetails, cancelOrDeleteTask],

@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod, AuthenticationType } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod, AuthenticationType } from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 
 const WRIKE_API_BASE_URL = 'https://www.wrike.com/api/v4';
 

@@ -1,5 +1,5 @@
-import { Property, DropdownOption } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { Property, DropdownOption } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@IOpeer/pieces-common';
 
 export const modelDropdown = Property.Dropdown({
 	displayName: 'Model',

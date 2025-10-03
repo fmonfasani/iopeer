@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     ApId,
     apId,
     assertNotNullOrUndefined,
@@ -13,7 +13,7 @@ import {
     ProjectId,
     spreadIfDefined,
     UserId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FindOptionsWhere, ILike, In, IsNull, Not } from 'typeorm'
 import { repoFactory } from '../core/db/repo-factory'
 import { PlatformPlanHelper } from '../ee/platform/platform-plan/platform-plan-helper'
@@ -106,7 +106,7 @@ export const projectService = {
         const project = await this.getOne(projectId)
 
         if (isNil(project)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityId: projectId,
@@ -135,7 +135,7 @@ export const projectService = {
             userId,
         })
         if (isNil(projects) || projects.length === 0) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityId: userId,
@@ -213,7 +213,7 @@ async function assertExternalIdIsUnique(externalId: string | undefined | null, p
         })
 
         if (externalIdAlreadyExists) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.PROJECT_EXTERNAL_ID_ALREADY_EXISTS,
                 params: {
                     externalId,

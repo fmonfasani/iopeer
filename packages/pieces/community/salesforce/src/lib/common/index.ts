@@ -1,11 +1,11 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMessageBody,
   HttpMethod,
   HttpResponse,
   httpClient,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 
 export const salesforcesCommon = {
   object: Property.Dropdown<string>({

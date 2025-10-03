@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
@@ -7,17 +7,17 @@ import dayjs from 'dayjs';
 export const declareCertificationFolderSuccess = createAction({
   auth: wedofAuth,
   name: 'declareCertificationFolderSuccess',
-  displayName: "Passer un dossier de certification à l'état : Réussi",
-  description: "Change l'état d'un dossier de certification vers : Réussi",
+  displayName: "Passer un dossier de certification Ã  l'Ã©tat : RÃ©ussi",
+  description: "Change l'Ã©tat d'un dossier de certification vers : RÃ©ussi",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     detailedResult: Property.ShortText({
-      displayName: "Détail du résultat de l'examen",
+      displayName: "DÃ©tail du rÃ©sultat de l'examen",
       required: false,
     }),
     europeanLanguageLevel: wedofCommon.europeanLanguageLevel,
@@ -28,7 +28,7 @@ export const declareCertificationFolderSuccess = createAction({
     }),
     digitalProofLink: Property.ShortText({
       displayName:
-        "Lien vers la preuve numérique de l'obtention de la certification",
+        "Lien vers la preuve numÃ©rique de l'obtention de la certification",
       required: false,
     }),
     gradePass: wedofCommon.gradePass,

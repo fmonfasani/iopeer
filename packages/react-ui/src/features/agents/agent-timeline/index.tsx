@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Lightbulb } from 'lucide-react';
 
 import { ApMarkdown } from '@/components/custom/markdown';
@@ -11,7 +11,7 @@ import {
   ContentBlockType,
   isNil,
   MarkdownVariant,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { AgentToolBlock } from '../agent-tool-block';
 import { agentHooks, agentRunHooks } from '../lib/agent-hooks';

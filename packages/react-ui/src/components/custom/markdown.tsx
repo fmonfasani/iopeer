@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Check, Copy, Info, AlertTriangle, Lightbulb } from 'lucide-react';
 import React, { useState } from 'react';
@@ -7,7 +7,7 @@ import breaks from 'remark-breaks';
 import gfm from 'remark-gfm';
 
 import { cn } from '@/lib/utils';
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 
 import { Alert, AlertDescription } from '../ui/alert';
 import { Button } from '../ui/button';

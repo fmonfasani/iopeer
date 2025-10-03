@@ -1,7 +1,7 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
 import { JiraAuth, jiraCloudAuth } from './auth';
 import { createIssueAction } from './lib/actions/create-issue';
 import { searchIssues } from './lib/actions/search-issues';
@@ -27,7 +27,7 @@ export const jiraCloud = createPiece({
 
 	auth: jiraCloudAuth,
 	minimumSupportedRelease: '0.30.0',
-	logoUrl: 'https://cdn.activepieces.com/pieces/jira.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/jira.png',
 	categories: [PieceCategory.PRODUCTIVITY],
 	authors: ['kishanprmr', 'MoShizzle', 'abuaboud', 'prasanna2000-max'],
 	actions: [

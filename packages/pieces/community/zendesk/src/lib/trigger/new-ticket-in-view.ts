@@ -1,8 +1,8 @@
-import {
+﻿import {
   TriggerStrategy,
   createTrigger,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   DedupeStrategy,
@@ -10,7 +10,7 @@ import {
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { zendeskAuth } from '../..';
 
 export const newTicketInView = createTrigger({
@@ -58,7 +58,7 @@ export const newTicketInView = createTrigger({
     }),
   },
   sampleData: {
-    url: 'https://activepieceshelp.zendesk.com/api/v2/tickets/5.json',
+    url: 'https://IOpeerhelp.zendesk.com/api/v2/tickets/5.json',
     id: 5,
     external_id: null,
     via: {

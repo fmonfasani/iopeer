@@ -1,10 +1,10 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   HttpRequest,
   HttpMessageBody,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export type BrowseAiAuthProps = {
   apiKey: string;
@@ -73,7 +73,7 @@ export async function browseAiApiCall<T extends HttpMessageBody>({
       case 429:
         throw new Error('Rate Limit Exceeded: Please slow down your requests.');
       case 500:
-        throw new Error('Internal Server Error: Something went wrong on Browse AI’s side.');
+        throw new Error('Internal Server Error: Something went wrong on Browse AIâ€™s side.');
       default:
         {
         const message = errorData?.message || error.message || 'Unknown error';

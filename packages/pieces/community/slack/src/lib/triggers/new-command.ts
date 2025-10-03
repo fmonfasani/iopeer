@@ -1,9 +1,9 @@
-import {
+﻿import {
   OAuth2PropertyValue,
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { getChannels, multiSelectChannelInfo, userId } from '../common/props';
 import { slackAuth } from '../../';
 import { parseCommand } from '../common/utils';

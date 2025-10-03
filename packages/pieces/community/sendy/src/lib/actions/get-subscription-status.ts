@@ -1,12 +1,12 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { status } from '../api';
 import { buildListDropdown } from '../props';
 import { sendyAuth, SendyAuthType } from '../auth';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const statusAction = createAction({
   name: 'get_subscription_status',

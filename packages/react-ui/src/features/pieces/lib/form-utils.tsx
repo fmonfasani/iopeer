@@ -1,4 +1,4 @@
-import { TSchema, Type } from '@sinclair/typebox';
+﻿import { TSchema, Type } from '@sinclair/typebox';
 import { t } from 'i18next';
 
 import {
@@ -11,7 +11,7 @@ import {
   PieceMetadataModelSummary,
   PiecePropertyMap,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   CodeActionSchema,
   isEmpty,
@@ -39,7 +39,7 @@ import {
   PropertyExecutionType,
   PropertySettings,
   PieceTriggerSettings,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const addAuthToPieceProps = (
   props: PiecePropertyMap,

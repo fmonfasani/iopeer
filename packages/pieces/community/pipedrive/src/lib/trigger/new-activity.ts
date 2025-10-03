@@ -1,10 +1,10 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { pipedriveApiCall, pipedriveCommon } from '../common';
 import { pipedriveAuth } from '../..';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 interface PipedriveActivityV2 {
 	id: number;
@@ -148,16 +148,16 @@ export const newActivity = createTrigger({
 		public_description: 'This is a description',
 		location: {
 			// Nested object
-			value: 'Mustamäe tee 3, Tallinn, Estonia',
+			value: 'MustamÃ¤e tee 3, Tallinn, Estonia',
 			street_number: '3',
-			route: 'Mustamäe tee',
+			route: 'MustamÃ¤e tee',
 			sublocality: 'Kristiine',
 			locality: 'Tallinn',
 			admin_area_level_1: 'Harju maakond',
 			admin_area_level_2: null,
 			country: 'Estonia',
 			postal_code: '10616',
-			formatted_address: 'Mustamäe tee 3, 10616 Tallinn, Estonia',
+			formatted_address: 'MustamÃ¤e tee 3, 10616 Tallinn, Estonia',
 		},
 		org_id: 5,
 		person_id: 1101,

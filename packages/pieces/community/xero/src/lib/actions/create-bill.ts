@@ -1,10 +1,10 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { xeroAuth } from '../..';
 import { props } from '../common/props';
 

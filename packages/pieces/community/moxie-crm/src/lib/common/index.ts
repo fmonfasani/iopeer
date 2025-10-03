@@ -1,4 +1,4 @@
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+﻿import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 
 import { moxieCRMAuth } from '../../';
 import { MoxieCRMClient } from './client';

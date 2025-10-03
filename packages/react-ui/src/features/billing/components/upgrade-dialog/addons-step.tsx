@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Info } from 'lucide-react';
 import { FC } from 'react';
 
@@ -8,7 +8,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { PlanName } from '@activepieces/ee-shared';
+import { PlanName } from '@IOpeer/ee-shared';
 
 import {
   DEFAULT_ACTIVE_FLOWS,

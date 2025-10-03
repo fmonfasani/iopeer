@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-sendpulse",
+﻿{
+  "name": "@IOpeer/piece-sendpulse",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

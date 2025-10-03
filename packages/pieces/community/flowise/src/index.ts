@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createAction,
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 
 const flowiseAuth = PieceAuth.CustomAuth({
   description: 'Enter your Flowise URL and API Key',
@@ -80,7 +80,7 @@ export const flowise = createPiece({
   displayName: 'Flowise',
   description: 'No-Code AI workflow builder',
 
-  logoUrl: 'https://cdn.activepieces.com/pieces/flowise.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/flowise.png',
   auth: flowiseAuth,
   minimumSupportedRelease: '0.30.0',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

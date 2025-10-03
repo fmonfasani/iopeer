@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { excelAuth } from '../../index';
 import { excelCommon } from '../common/common';
 
@@ -11,7 +11,7 @@ export const getRangeAction = createAction({
   auth: excelAuth,
   name: 'get_range',
   displayName: 'Get Cells in Range',
-  description: 'Retrieve the values in a given cell range (e.g., “A1:C10”).',
+  description: 'Retrieve the values in a given cell range (e.g., â€œA1:C10â€).',
   props: {
     workbook_id: excelCommon.workbook_id,
     worksheet_id: excelCommon.worksheet_id,

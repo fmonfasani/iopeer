@@ -1,4 +1,4 @@
-name: Prototype Deployment
+﻿name: Prototype Deployment
 
 ## This is extreme protoype deployments of random wild ideas.
 
@@ -33,7 +33,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/activepieces/activepieces:prototype
+          tags: ghcr.io/IOpeer/IOpeer:prototype
 
       - name: Configure SSH
         run: |

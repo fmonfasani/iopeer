@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { createSpace } from './lib/actions/create-space';
 import { listSpaces } from './lib/actions/list-spaces';
 import { addSpaceRecord } from './lib/actions/add-space-record';
 import { askSpace } from './lib/actions/ask-space';
 import { deleteSpace } from './lib/actions/delete-space';
 import { renameSpace } from './lib/actions/rename-space';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const medullarAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -20,7 +20,7 @@ export const medullar = createPiece({
   auth: medullarAuth,
   minimumSupportedRelease: '0.36.1',
   logoUrl:  
-    'https://cdn.activepieces.com/pieces/medullar.png',
+    'https://cdn.IOpeer.com/pieces/medullar.png',
   authors: ['mllopart'],
   actions: [createSpace, listSpaces, addSpaceRecord, askSpace, deleteSpace, renameSpace],
   triggers: [],

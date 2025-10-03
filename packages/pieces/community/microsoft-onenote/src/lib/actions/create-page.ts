@@ -1,4 +1,4 @@
-import { Property, createAction, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { Property, createAction, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import { getNotebooksDropdown, getSectionsByNotebookDropdown } from '../common';
 import { oneNoteAuth } from '../../index';
 import { Client } from '@microsoft/microsoft-graph-client';

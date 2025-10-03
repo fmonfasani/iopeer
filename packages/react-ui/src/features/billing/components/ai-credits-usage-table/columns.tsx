@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 
 import { DataTableColumnHeader } from '@/components/ui/data-table/data-table-column-header';
@@ -6,7 +6,7 @@ import { formatUtils } from '@/lib/utils';
 import {
   AIUsageMetadata,
   ListAICreditsUsageResponse,
-} from '@activepieces/common-ai';
+} from '@IOpeer/common-ai';
 
 export const aiCreditUsageTableColumns: ColumnDef<ListAICreditsUsageResponse>[] =
   [

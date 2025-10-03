@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { CreditCard } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import {
   CURSOR_QUERY_PARAM,
 } from '@/components/ui/data-table';
 import { billingQueries } from '@/features/billing/lib/billing-hooks';
-import { ListAICreditsUsageRequest } from '@activepieces/common-ai';
+import { ListAICreditsUsageRequest } from '@IOpeer/common-ai';
 
 import { aiCreditUsageTableColumns } from './columns';
 

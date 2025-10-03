@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import pdfParse from 'pdf-parse';
 
 export const extractText = createAction({

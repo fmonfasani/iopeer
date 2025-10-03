@@ -1,17 +1,17 @@
-import { wedofAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../common/wedof';
 
 export const listActivitiesAndTasks = createAction({
   auth: wedofAuth,
   name: 'listActivitiesAndTasks',
-  displayName: "Liste de toutes les activités et tâches d'un dossier",
-  description: "Liste de toutes les activités et tâches d'un dossier (Dossier de formation / Dossier de certification)",
+  displayName: "Liste de toutes les activitÃ©s et tÃ¢ches d'un dossier",
+  description: "Liste de toutes les activitÃ©s et tÃ¢ches d'un dossier (Dossier de formation / Dossier de certification)",
   props: {
     entityClass: Property.StaticDropdown({
       displayName: "Choisir le type de dossier",
-      description: "Permet de n'obtenir que les dossiers dans le type considéré - par défaut tous les types sont retournés",
+      description: "Permet de n'obtenir que les dossiers dans le type considÃ©rÃ© - par dÃ©faut tous les types sont retournÃ©s",
       required: true,
       options: {
         options: [
@@ -28,9 +28,9 @@ export const listActivitiesAndTasks = createAction({
       },
     }),
     externalId: Property.ShortText({
-      displayName: 'N° du dossier',
+      displayName: 'NÂ° du dossier',
       description:
-        'Sélectionner la propriété {externalId} du dossier',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier',
       required: true,
     }),
   },

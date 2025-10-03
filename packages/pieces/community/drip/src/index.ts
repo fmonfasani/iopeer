@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { dripAddSubscriberToCampaign } from './lib/actions/add-subscriber-to-campaign.action';
 import { dripApplyTagToSubscriber } from './lib/actions/apply-tag-to-subscriber.action';
 import { dripUpsertSubscriberAction } from './lib/actions/upsert-subscriber.action';
@@ -17,7 +17,7 @@ export const drip = createPiece({
   displayName: 'Drip',
   description: 'E-commerce CRM for B2B marketers',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/drip.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/drip.png',
   authors: ["kishanprmr","MoShizzle","AbdulTheActivePiecer","khaledmashaly","abuaboud"],
   categories: [PieceCategory.MARKETING],
   auth: dripAuth,

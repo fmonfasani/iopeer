@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { CircleHelp, Zap } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -13,8 +13,8 @@ import {
 import {
   BillingCycle,
   PRICE_PER_EXTRA_5_ACTIVE_FLOWS_MAP,
-} from '@activepieces/ee-shared';
-import { PlatformBillingInformation } from '@activepieces/shared';
+} from '@IOpeer/ee-shared';
+import { PlatformBillingInformation } from '@IOpeer/shared';
 
 import { useManagePlanDialogStore } from './upgrade-dialog/store';
 

@@ -1,11 +1,11 @@
-import { pipedriveAuth } from '../../';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { pipedriveAuth } from '../../';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import {
     pipedriveApiCall,
     pipedriveCommon,
 } from '../common';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 interface PipedriveNoteV2 {
     id: number;

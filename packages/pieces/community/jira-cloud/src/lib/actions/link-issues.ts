@@ -1,8 +1,8 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import { jiraCloudAuth } from '../../auth';
 import { issueIdOrKeyProp, issueLinkTypeIdProp } from '../common/props';
-import { isNil } from '@activepieces/shared';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { isNil } from '@IOpeer/shared';
+import { HttpError, HttpMethod } from '@IOpeer/pieces-common';
 import { jiraApiCall } from '../common';
 
 export const linkIssuesAction = createAction({

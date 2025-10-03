@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { SES, GetSendQuotaCommand } from '@aws-sdk/client-ses';
 import { sendEmail } from './lib/actions/send-email';
 import { createEmailTemplate } from './lib/actions/create-email-template';
@@ -111,7 +111,7 @@ export const amazonSesAuth = PieceAuth.CustomAuth({
             value: 'me-south-1',
           },
           {
-            label: 'South America (São Paulo) [sa-east-1]',
+            label: 'South America (SÃ£o Paulo) [sa-east-1]',
             value: 'sa-east-1',
           },
           {
@@ -178,7 +178,7 @@ export const amazonSes = createPiece({
   displayName: 'Amazon SES',
   auth: amazonSesAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/amazon-ses.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/amazon-ses.png',
   authors: ["fortunamide"],
   actions: [
     sendEmail,

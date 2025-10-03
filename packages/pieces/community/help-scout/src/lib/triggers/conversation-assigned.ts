@@ -1,7 +1,7 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { helpScoutAuth } from '../common/auth';
 import { helpScoutApiRequest, verifyWebhookSignature } from '../common/api';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import crypto from 'crypto';
 import { mailboxIdDropdown, userIdDropdown } from '../common/props';
 

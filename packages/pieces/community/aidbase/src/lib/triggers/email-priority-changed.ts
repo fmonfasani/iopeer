@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { emailInboxDropdown } from '../common/props';
 
@@ -10,7 +10,7 @@ export const emailPriorityChanged = createTrigger({
   auth: aidbaseAuth,
   name: 'email_priority_changed',
   displayName: 'Email Priority Changed',
-  description: 'Fires when an email’s priority is changed.',
+  description: 'Fires when an emailâ€™s priority is changed.',
 
   props: {
     inbox_id: emailInboxDropdown,

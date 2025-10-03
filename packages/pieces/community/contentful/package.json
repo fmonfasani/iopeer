@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-contentful",
+﻿{
+  "name": "@IOpeer/piece-contentful",
   "version": "0.0.13",
   "dependencies": {
     "contentful-management": "11.48.1"

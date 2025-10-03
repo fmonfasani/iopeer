@@ -1,10 +1,10 @@
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 import { airparserAuth } from '../../index';
 import { airparserApiCall, GetDocumentResponse } from '../common';
 import { inboxIdDropdown } from '../common/props';

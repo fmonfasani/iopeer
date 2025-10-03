@@ -1,5 +1,5 @@
-import { pipedriveAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { organizationCommonProps } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -8,8 +8,8 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, GetOrganizationResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isEmpty } from '@IOpeer/shared';
 
 export const createOrganizationAction = createAction({
 	auth: pipedriveAuth,

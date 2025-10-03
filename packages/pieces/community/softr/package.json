@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-softr",
+﻿{
+  "name": "@IOpeer/piece-softr",
   "version": "0.0.8",
   "type": "commonjs",
   "main": "./src/index.js",

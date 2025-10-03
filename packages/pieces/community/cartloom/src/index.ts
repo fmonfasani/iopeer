@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createDiscountAction } from './lib/actions/create-discount';
 import { getDiscountAction } from './lib/actions/get-discount';
 import { getAllDiscountsAction } from './lib/actions/get-discounts';
@@ -15,7 +15,7 @@ export const cartloom = createPiece({
   description: 'Sell products beautifully',
   auth: cartloomAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/cartloom.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/cartloom.png',
   categories: [PieceCategory.COMMERCE],
   authors: ["joeworkman","kishanprmr","MoShizzle","abuaboud"],
   actions: [

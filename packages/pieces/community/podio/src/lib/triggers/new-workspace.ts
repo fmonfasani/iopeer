@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { podioAuth } from '../../index';
 import { podioApiCall, getAccessToken, dynamicSpaceProperty, dynamicOrgProperty } from '../common';
 

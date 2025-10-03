@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { ZOHO_WEBHOOK_TOKEN } from '../common/constants';
 import { biginAuth } from '../../index';
 import { biginApiService } from '../common/request';

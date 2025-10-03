@@ -1,7 +1,7 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { odooAuth } from '../../index';
 import Odoo from '../../commom/index';
 
@@ -153,7 +153,7 @@ export const customOdooApiCall = createAction({
             attributes: Property.Array({
               displayName: 'Attributes',
               description:
-                'Can be used to inspect a model’s fields and check which ones seem to be of interest.',
+                'Can be used to inspect a modelâ€™s fields and check which ones seem to be of interest.',
               required: false,
               defaultValue: ['string', 'help', 'type'],
             }),

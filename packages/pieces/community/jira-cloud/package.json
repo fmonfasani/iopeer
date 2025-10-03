@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-jira-cloud",
+﻿{
+  "name": "@IOpeer/piece-jira-cloud",
   "version": "0.1.16",
   "dependencies": {
     "@atlaskit/adf-schema": "50.4.0",

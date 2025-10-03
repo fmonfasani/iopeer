@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 
 // People actions
 import { getPersonPaths } from './lib/actions/people/get-person-paths';
@@ -26,7 +26,7 @@ export const village = createPiece({
   description: 'The Social Capital API',
   auth: villageAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/village.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/village.png',
   categories: [
     PieceCategory.PRODUCTIVITY,
     PieceCategory.SALES_AND_CRM,

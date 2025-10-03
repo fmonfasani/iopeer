@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { googleSheetsAuth } from '../..';
 import { commonProps } from '../common/props';
 import { areSheetIdsValid } from '../common/common';

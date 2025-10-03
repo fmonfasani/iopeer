@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { HttpError, HttpMethod, QueryParams } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { HttpError, HttpMethod, QueryParams } from '@IOpeer/pieces-common';
 import { hunterApiCall } from '../common';
 import { hunterAuth } from '../../index';
 import {
@@ -81,7 +81,7 @@ export const findEmailAction = createAction({
                 switch (errId) {
                     case 'wrong_params':
                         throw new Error(
-                            'Missing required parameter—please supply domain or company, and first_name+last_name or full_name.'
+                            'Missing required parameterâ€”please supply domain or company, and first_name+last_name or full_name.'
                         );
                     case 'invalid_first_name':
                         throw new Error('The supplied first_name is invalid.');
@@ -95,7 +95,7 @@ export const findEmailAction = createAction({
                         );
                     case 'invalid_max_duration':
                         throw new Error(
-                            'The supplied max_duration is invalid (must be 3–20 seconds).'
+                            'The supplied max_duration is invalid (must be 3â€“20 seconds).'
                         );
                 }
             }

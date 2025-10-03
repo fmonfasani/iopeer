@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { Settings, History, Link2, ChevronLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { mcpApi } from '@/features/mcp/lib/mcp-api';
 import { mcpHooks } from '@/features/mcp/lib/mcp-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { NEW_MCP_QUERY_PARAM } from '@/lib/utils';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 import { McpConfigPage } from './mcp-config';
 import { McpConnectPage } from './mcp-connect';

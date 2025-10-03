@@ -1,4 +1,4 @@
-import * as HyperDX from '@hyperdx/node-opentelemetry'
+﻿import * as HyperDX from '@hyperdx/node-opentelemetry'
 import { Level, Logger, pino, TransportTargetOptions } from 'pino'
 
 export type HyperDXCredentials = {
@@ -15,7 +15,7 @@ export const createHyperDXTransport = (level: Level, targets: TransportTargetOpt
     }
     HyperDX.init({
         apiKey: token,
-        service: 'activepieces',
+        service: 'IOpeer',
     })
 
     return pino(

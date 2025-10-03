@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -22,7 +22,7 @@ import { platformApi } from '@/lib/platforms-api';
 import {
   PlatformWithoutSensitiveData,
   UpdatePlatformRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type AllowedDomainDialogProps = {
   platform: PlatformWithoutSensitiveData;

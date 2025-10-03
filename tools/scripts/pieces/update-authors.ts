@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+﻿import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
 import semVer from 'semver';
@@ -257,7 +257,7 @@ const contributors = [
         "login": "leenmashni"
     },
     {
-        "name": "Fábio Ferreira",
+        "name": "FÃ¡bio Ferreira",
         "login": "facferreira"
     },
     {
@@ -353,7 +353,7 @@ const contributors = [
         "login": "fardeenpanjwani-codeglo"
     },
     {
-        "name": "Tân Một Nắng",
+        "name": "TÃ¢n Má»™t Náº¯ng",
         "login": "tanoggy"
     },
     {
@@ -381,7 +381,7 @@ const contributors = [
         "login": "creed983",
     },
     {
-        "name": "Activepieces Dev",
+        "name": "IOpeer Dev",
         "login": "ashrafsamhouri"
     },
     {
@@ -393,7 +393,7 @@ const contributors = [
         "login": "abuaboud"
     },
     {
-        "name": "ActivePieces",
+        "name": "IOpeer",
         "login": "abuaboud"
     },
     {

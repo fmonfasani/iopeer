@@ -1,10 +1,10 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { RegistrationResponse } from '../common/models';
 import { getRegistarantProps } from '../common/props';
 import { zoomAuth } from '../..';

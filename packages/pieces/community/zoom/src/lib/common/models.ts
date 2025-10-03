@@ -1,4 +1,4 @@
-import { HttpMessageBody } from '@activepieces/pieces-common';
+﻿import { HttpMessageBody } from '@IOpeer/pieces-common';
 
 export interface MeetingRegistrant {
   first_name: string;

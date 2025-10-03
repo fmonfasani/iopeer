@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { validateEmail } from "./lib/actions/validate-email";
 
 export const zerobounceAuth = PieceAuth.SecretText({
@@ -12,7 +12,7 @@ export const zerobounce = createPiece({
   auth: zerobounceAuth,
   description: "ZeroBounce is an email validation service that helps you reduce bounces, improve email deliverability and increase email marketing ROI.",
   minimumSupportedRelease: '0.30.0',
-  logoUrl: "https://cdn.activepieces.com/pieces/zerobounce.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/zerobounce.png",
   authors: ["abuaboud"],
   actions: [validateEmail],
   triggers: [],

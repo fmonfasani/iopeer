@@ -1,10 +1,10 @@
-import {
+﻿import {
   DynamicPropsValue,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { helpScoutApiRequest } from './api';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const customerIdDropdown = Property.Dropdown({
   displayName: 'Customer',

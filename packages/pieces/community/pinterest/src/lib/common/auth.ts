@@ -1,7 +1,7 @@
-import {
+﻿import {
   PieceAuth,
   OAuth2AuthorizationMethod,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 export const pinterestAuth = PieceAuth.OAuth2({
   description: 'Connect your Pinterest Business Account',

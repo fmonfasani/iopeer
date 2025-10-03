@@ -1,5 +1,5 @@
-import { ActionBase } from '@activepieces/pieces-framework'
-import { apId } from '@activepieces/shared'
+﻿import { ActionBase } from '@IOpeer/pieces-framework'
+import { apId } from '@IOpeer/shared'
 import { gt } from 'semver'
 import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
@@ -79,7 +79,7 @@ function isNil(value: unknown): value is null | undefined {
 }
 
 function isMcpTriggerPiece(trigger: { type: TriggerType, settings: { pieceName: string } }): boolean {
-    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@activepieces/piece-mcp'
+    return trigger.type === TriggerType.PIECE && trigger.settings.pieceName === '@IOpeer/piece-mcp'
 }
 
 const log = system.globalLogger()

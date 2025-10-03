@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { NinoxAuth } from './lib/common/auth';
 import { createRecord } from './lib/actions/create-record';
 import { updateRecord } from './lib/actions/update-record';
@@ -8,14 +8,14 @@ import { downloadFileFromRecord } from './lib/actions/download-file-from-record-
 import { findRecord } from './lib/actions/find-record';
 import { listFilesFromRecord } from './lib/actions/list-files-from-record';
 import { newRecord } from './lib/triggers/new-record';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/client';
 
 export const ninox = createPiece({
 	displayName: 'Ninox',
 	auth: NinoxAuth,
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/ninox.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/ninox.png',
 	authors: ['Sanket6652'],
 	actions: [
 		createRecord,

@@ -1,6 +1,6 @@
-import { OAuth2AuthorizationMethod } from '@activepieces/pieces-framework'
-import { apAxios } from '@activepieces/server-shared'
-import { ActivepiecesError,
+﻿import { OAuth2AuthorizationMethod } from '@IOpeer/pieces-framework'
+import { apAxios } from '@IOpeer/server-shared'
+import { IOpeerError,
     AppConnectionType,
     BaseOAuth2ConnectionValue,
     ErrorCode,
@@ -8,7 +8,7 @@ import { ActivepiecesError,
     OAuth2ConnectionValueWithApp,
     OAuth2GrantType,
     resolveValueFromProps,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { AxiosError } from 'axios'
 import { FastifyBaseLogger } from 'fastify'
 import {
@@ -98,7 +98,7 @@ export const credentialsOauth2Service = (log: FastifyBaseLogger): OAuth2Service<
                 log.error('Unknown Error:')
                 log.error(e)
             }
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.INVALID_CLAIM,
                 params: {
                     clientId: request.clientId,

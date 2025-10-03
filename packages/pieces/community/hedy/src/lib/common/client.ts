@@ -1,10 +1,10 @@
-import {
+﻿import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { HedyApiError } from './errors';
 import {
   ApiErrorPayload,
@@ -104,7 +104,7 @@ export class HedyApiClient {
         token: this.apiKey,
       },
       headers: {
-        'User-Agent': 'activepieces-hedy/1.0.0',
+        'User-Agent': 'IOpeer-hedy/1.0.0',
         'Content-Type': 'application/json',
       },
       body,

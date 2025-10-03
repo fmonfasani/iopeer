@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import FormData from 'form-data';
 import { zohoMailApiCall } from '../common';
 import { zohoMailAuth } from '../common/auth';

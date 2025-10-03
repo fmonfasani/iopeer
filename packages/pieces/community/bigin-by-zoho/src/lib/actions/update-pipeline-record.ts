@@ -1,5 +1,5 @@
-import { biginAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { biginAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { companyDropdown, contactsDropdown, layoutsDropdown, multiContactsDropdown, pipelineRecordsDropdown, productsDropdown, SubPipelineorStageDropdown, tagsDropdown, usersDropdown } from '../common/props';
 import { biginApiService } from '../common/request';
 import { formatDateOnly } from '../common/helpers';
@@ -89,7 +89,7 @@ export const updatePipelineRecord = createAction({
               props[apiName] = Property.DateTime({
                 displayName: f.display_label || f.field_label || apiName,
                 description:
-                  f.tooltip || 'Format: ISO 8601 (YYYY-MM-DDTHH:mm:ss±HH:mm)',
+                  f.tooltip || 'Format: ISO 8601 (YYYY-MM-DDTHH:mm:ssÂ±HH:mm)',
                 required: false,
                 defaultValue,
               });

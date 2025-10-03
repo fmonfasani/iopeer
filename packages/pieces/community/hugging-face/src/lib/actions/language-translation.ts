@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { TranslationArgs, InferenceClient } from '@huggingface/inference';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const languageTranslation = createAction({
@@ -22,55 +22,55 @@ export const languageTranslation = createAction({
         const popularModels = [
           // === TO ENGLISH (Most Popular) ===
           {
-            label: '🔥 French → English (953K downloads)',
+            label: 'ðŸ”¥ French â†’ English (953K downloads)',
             value: 'Helsinki-NLP/opus-mt-fr-en',
           },
           {
-            label: '🔥 Russian → English (426K downloads)',
+            label: 'ðŸ”¥ Russian â†’ English (426K downloads)',
             value: 'Helsinki-NLP/opus-mt-ru-en',
           },
           {
-            label: '🔥 Dutch → English (389K downloads)',
+            label: 'ðŸ”¥ Dutch â†’ English (389K downloads)',
             value: 'Helsinki-NLP/opus-mt-nl-en',
           },
           {
-            label: '🔥 Chinese → English (362K downloads)',
+            label: 'ðŸ”¥ Chinese â†’ English (362K downloads)',
             value: 'Helsinki-NLP/opus-mt-zh-en',
           },
           {
-            label: '🔥 German → English (338K downloads)',
+            label: 'ðŸ”¥ German â†’ English (338K downloads)',
             value: 'Helsinki-NLP/opus-mt-de-en',
           },
           {
-            label: '🔥 Spanish → English (181K downloads)',
+            label: 'ðŸ”¥ Spanish â†’ English (181K downloads)',
             value: 'Helsinki-NLP/opus-mt-es-en',
           },
 
           // === FROM ENGLISH ===
           {
-            label: '🔥 English → German (276K downloads)',
+            label: 'ðŸ”¥ English â†’ German (276K downloads)',
             value: 'Helsinki-NLP/opus-mt-en-de',
           },
           {
-            label: '🔥 English → French (223K downloads)',
+            label: 'ðŸ”¥ English â†’ French (223K downloads)',
             value: 'Helsinki-NLP/opus-mt-en-fr',
           },
           {
-            label: '🔥 English → Spanish (204K downloads)',
+            label: 'ðŸ”¥ English â†’ Spanish (204K downloads)',
             value: 'Helsinki-NLP/opus-mt-en-es',
           },
 
           // === OTHER POPULAR ===
           {
-            label: '🔥 Arabic → English (246K downloads)',
+            label: 'ðŸ”¥ Arabic â†’ English (246K downloads)',
             value: 'Helsinki-NLP/opus-mt-ar-en',
           },
           {
-            label: '🔥 Korean → English (236K downloads)',
+            label: 'ðŸ”¥ Korean â†’ English (236K downloads)',
             value: 'Helsinki-NLP/opus-mt-ko-en',
           },
           {
-            label: '🔥 Italian → English (231K downloads)',
+            label: 'ðŸ”¥ Italian â†’ English (231K downloads)',
             value: 'Helsinki-NLP/opus-mt-it-en',
           },
         ];
@@ -113,7 +113,7 @@ export const languageTranslation = createAction({
           // Combine popular models (marked) with all available models
           const allOptions = [
             ...popularModels,
-            { label: '─── All Available Models ───', value: '__separator__' },
+            { label: 'â”€â”€â”€ All Available Models â”€â”€â”€', value: '__separator__' },
             ...translationModels.filter(
               (model) =>
                 !popularModels.some((popular) => popular.value === model.value)

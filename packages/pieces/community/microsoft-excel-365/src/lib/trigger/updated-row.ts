@@ -1,23 +1,23 @@
-import {
+﻿import {
     OAuth2PropertyValue,
     Property,
     createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { excelCommon } from '../common/common';
 import { excelAuth } from '../..';
 import {
     DedupeStrategy,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { createHmac } from 'node:crypto';
 
 const triggerName = 'updated_row';
 
 function createRowHash(rowData: unknown[]): string {
     const rowString = JSON.stringify(rowData);
-    return createHmac('sha1', 'activepieces').update(rowString).digest('hex');
+    return createHmac('sha1', 'IOpeer').update(rowString).digest('hex');
 }
 
 // Helper function to get all worksheet rows with error handling

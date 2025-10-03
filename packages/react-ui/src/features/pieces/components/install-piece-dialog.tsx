@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { HttpStatusCode } from 'axios';
@@ -42,7 +42,7 @@ import {
   ApFlagId,
   PackageType,
   PieceScope,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { piecesApi } from '../lib/pieces-api';
 const FormSchema = Type.Object(
@@ -251,7 +251,7 @@ const InstallPieceDialog = ({
                         value={field.value || ''}
                         id="pieceName"
                         type="text"
-                        placeholder="@activepieces/piece-name"
+                        placeholder="@IOpeer/piece-name"
                         className="rounded-sm"
                       />
                       <FormMessage />

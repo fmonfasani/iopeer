@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient, HttpRequest, AuthenticationType } from '@IOpeer/pieces-common';
 
 const FIREBERRY_API_BASE_URL = 'https://api.fireberry.com';
 const MAX_RETRIES = 3;

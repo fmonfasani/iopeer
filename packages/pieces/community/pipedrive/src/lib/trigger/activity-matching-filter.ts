@@ -1,10 +1,10 @@
-import { pipedriveAuth } from '../../index';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { filterIdProp } from '../common/props';
 import { pipedriveApiCall, pipedrivePaginatedV2ApiCall } from '../common';
 import { LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const activityMatchingFilterTrigger = createTrigger({
 	auth: pipedriveAuth,
@@ -117,7 +117,7 @@ export const activityMatchingFilterTrigger = createTrigger({
 		subject: 'Deadline',
 		public_description: 'This is a description',
 		calendar_sync_include_context: '',
-		location: 'Mustamäe tee 3, Tallinn, Estonia',
+		location: 'MustamÃ¤e tee 3, Tallinn, Estonia',
 		org_id: 5,
 		person_id: 1101,
 		deal_id: 300,
@@ -137,14 +137,14 @@ export const activityMatchingFilterTrigger = createTrigger({
 		created_by_user_id: 1234,
 		location_subpremise: '',
 		location_street_number: '3',
-		location_route: 'Mustamäe tee',
+		location_route: 'MustamÃ¤e tee',
 		location_sublocality: 'Kristiine',
 		location_locality: 'Tallinn',
 		location_admin_area_level_1: 'Harju maakond',
 		location_admin_area_level_2: '',
 		location_country: 'Estonia',
 		location_postal_code: '10616',
-		location_formatted_address: 'Mustamäe tee 3, 10616 Tallinn, Estonia',
+		location_formatted_address: 'MustamÃ¤e tee 3, 10616 Tallinn, Estonia',
 		attendees: [
 			{
 				email_address: 'attendee@pipedrivemail.com',

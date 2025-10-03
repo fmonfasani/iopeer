@@ -1,6 +1,6 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 import { clockifyAuth } from '../../index';
 import { clockifyApiCall } from '../common/client';
 import { projectId, workspaceId } from '../common/props';

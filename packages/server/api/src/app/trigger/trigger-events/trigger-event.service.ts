@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     apId,
     Cursor,
     ErrorCode,
@@ -16,7 +16,7 @@ import {
     TriggerEventWithPayload,
     TriggerHookType,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EngineHelperResponse, EngineHelperTriggerResult } from 'server-worker'
 import { repoFactory } from '../../core/db/repo-factory'
@@ -89,7 +89,7 @@ export const triggerEventService = (log: FastifyBaseLogger) => ({
                     flowId: flow.id,
                 })
                 if (!engineResponse.result.success) {
-                    throw new ActivepiecesError({
+                    throw new IOpeerError({
                         code: ErrorCode.TEST_TRIGGER_FAILED,
                         params: {
                             message: engineResponse.result.message!,

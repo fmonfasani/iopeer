@@ -1,13 +1,13 @@
-import { wedofAuth } from '../../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../../common/wedof';
 
 export const createRegistrationFolder = createAction({
   auth: wedofAuth,
   name: 'createRegistrationFolder',
-  displayName: "Créer un dossier de formation hors CPF",
-  description: "Permet de créer un nouveau dossier de formation",
+  displayName: "CrÃ©er un dossier de formation hors CPF",
+  description: "Permet de crÃ©er un nouveau dossier de formation",
   props: {
     sessionId: Property.Number({
       displayName: 'ID de session',
@@ -16,7 +16,7 @@ export const createRegistrationFolder = createAction({
     }),
     attendeeId: Property.Number({
       displayName: "L'ID de l'apprenant",
-      description:"ID de l'apprenant sélectionné",
+      description:"ID de l'apprenant sÃ©lectionnÃ©",
       required: true,
     }),
     totalTTC: Property.Number({
@@ -25,13 +25,13 @@ export const createRegistrationFolder = createAction({
     }),
     type: Property.StaticDropdown({
       displayName: "Type de financement",
-      description: "Type de financement du dossier créer",
+      description: "Type de financement du dossier crÃ©er",
       required: true,
       options: {
         options: [
             { label: 'Individuel', value: 'individual' },
             { label: 'OPCO', value: 'opco' },
-            { label: 'Pôle Emploi', value: 'poleEmploi' },
+            { label: 'PÃ´le Emploi', value: 'poleEmploi' },
             { label: 'Entreprise', value: 'company' }
         ],
         disabled: true,
@@ -43,7 +43,7 @@ export const createRegistrationFolder = createAction({
       required: false,
     }),
     poleEmploiRegionCode: Property.StaticDropdown({
-      displayName: "Le département de l'apprenant",
+      displayName: "Le dÃ©partement de l'apprenant",
       description: "UNIQUEMENT requis si le type du dossier est poleEmploi",
       required: false,
       options: {
@@ -87,7 +87,7 @@ export const createRegistrationFolder = createAction({
       },
     }),
     poleEmploiDevis: Property.ShortText({
-        displayName: "Le numéro de devis Pole Emploi de l'apprenant",
+        displayName: "Le numÃ©ro de devis Pole Emploi de l'apprenant",
         description: "UNIQUEMENT requis si le type du dossier est poleEmploi",
         required: false,
     }),

@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { missiveAuth } from './lib/common/auth';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -16,7 +16,7 @@ import { newContactGroup } from './lib/triggers/new-contact-group';
 export const missive = createPiece({
     displayName: 'Missive',
     minimumSupportedRelease: '0.36.1',
-    logoUrl: 'https://cdn.activepieces.com/pieces/missive.png',
+    logoUrl: 'https://cdn.IOpeer.com/pieces/missive.png',
     categories: [PieceCategory.COMMUNICATION, PieceCategory.SALES_AND_CRM],
     authors: ['owuzo', 'onyedikachi-david'],
     auth: missiveAuth,

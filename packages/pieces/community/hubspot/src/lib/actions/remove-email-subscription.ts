@@ -1,6 +1,6 @@
-import { hubspotAuth } from '../../';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { hubspotAuth } from '../../';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 
 export const removeEmailSubscriptionAction = createAction({
 	auth: hubspotAuth,

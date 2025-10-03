@@ -1,5 +1,5 @@
-import { FlatLanguageModelPricing } from '@activepieces/common-ai'
-import { ActivepiecesError, ErrorCode } from '@activepieces/shared'
+﻿import { FlatLanguageModelPricing } from '@IOpeer/common-ai'
+import { IOpeerError, ErrorCode } from '@IOpeer/shared'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 import { AIProviderStrategy, Usage } from './types'
 import { calculateTokensCost, calculateWebSearchCost, getProviderConfig } from './utils'
@@ -19,7 +19,7 @@ export const anthropicProvider: AIProviderStrategy = {
 
         const languageModelConfig = providerConfig.languageModels.find((m) => m.instance.modelId === model)
         if (!languageModelConfig) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AI_MODEL_NOT_SUPPORTED,
                 params: {
                     provider,

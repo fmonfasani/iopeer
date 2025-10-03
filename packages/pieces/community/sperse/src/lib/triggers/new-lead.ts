@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { sperseAuth } from '../..';
 import { sperseCommon } from '../common/common';
 

@@ -1,4 +1,4 @@
-import { ApplicationEventName } from '@activepieces/ee-shared'
+﻿import { ApplicationEventName } from '@IOpeer/ee-shared'
 import {
     CreateFolderRequest,
     DeleteFolderRequest,
@@ -7,7 +7,7 @@ import {
     PrincipalType,
     SERVICE_KEY_SECURITY_OPENAPI,
     UpdateFolderRequest,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { Type } from '@sinclair/typebox'
 import { StatusCodes } from 'http-status-codes'

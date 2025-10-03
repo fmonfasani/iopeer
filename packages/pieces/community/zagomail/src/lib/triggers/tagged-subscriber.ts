@@ -1,12 +1,12 @@
-import { zagomailAuth } from '../../';
+﻿import { zagomailAuth } from '../../';
 import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { zagoMailApiService } from '../common/request';
 import { StoredWebhookId, Tag, WebhookResponse } from '../common/constants';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 const CACHE_KEY = 'zagomail_tagged_subscriber_trigger';
 

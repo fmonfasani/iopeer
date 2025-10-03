@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { zohoDeskApiCall } from '../common';
 import { zohoDeskAuth } from '../common/auth';
 import { organizationId } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export const findContactAction = createAction({
 	auth: zohoDeskAuth,

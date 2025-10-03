@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useMemo, useRef, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -28,7 +28,7 @@ import { authenticationApi } from '@/lib/authentication-api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { useRedirectAfterLogin } from '@/lib/navigation-utils';
 import { cn, formatUtils } from '@/lib/utils';
-import { OtpType } from '@activepieces/ee-shared';
+import { OtpType } from '@IOpeer/ee-shared';
 import {
   ApEdition,
   ApFlagId,
@@ -36,7 +36,7 @@ import {
   ErrorCode,
   isNil,
   SignUpRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { passwordValidation } from '../lib/password-validation-utils';
 
@@ -80,7 +80,7 @@ const SignUpForm = ({
       case ApEdition.CLOUD: {
         if (
           typeof websiteName === 'string' &&
-          websiteName.toLowerCase() === 'activepieces'
+          websiteName.toLowerCase() === 'IOpeer'
         ) {
           form.setValue('newsLetter', true);
           return true;
@@ -315,7 +315,7 @@ const SignUpForm = ({
                     ></Checkbox>
                   </FormControl>
                   <Label htmlFor="newsLetter">
-                    {t(`Receive updates and newsletters from activepieces`)}
+                    {t(`Receive updates and newsletters from IOpeer`)}
                   </Label>
                   <FormMessage />
                 </FormItem>

@@ -1,4 +1,4 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+﻿import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -32,7 +32,7 @@ import {
   ProjectWithLimits,
   ApErrorParams,
   ErrorCode,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 interface EditProjectDialogProps {
   open: boolean;

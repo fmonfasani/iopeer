@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { frontAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { channelIdDropdown, tagIdsDropdown } from '../common/dropdown';
 
 export const sendMessage = createAction({

@@ -1,9 +1,9 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import {
   createTrigger,
   Trigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { shopifyAuth } from '../..';
 
 export const createShopifyWebhookTrigger = ({

@@ -1,5 +1,5 @@
-import { AppSystemProp } from '@activepieces/server-shared'
-import { ActivepiecesError, apId, CreateFieldRequest, ErrorCode, Field, isNil, UpdateFieldRequest } from '@activepieces/shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
+import { IOpeerError, apId, CreateFieldRequest, ErrorCode, Field, isNil, UpdateFieldRequest } from '@IOpeer/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { system } from '../../helper/system/system'
 import { FieldEntity } from './field.entity'
@@ -33,7 +33,7 @@ export const fieldService = {
         })
 
         if (isNil(field)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'Field',
@@ -70,7 +70,7 @@ export const fieldService = {
     async validateCount(params: CountParams): Promise<void> {
         const countRes = await this.count(params)
         if (countRes + 1 > system.getNumberOrThrow(AppSystemProp.MAX_FIELDS_PER_TABLE)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: { message: `Max fields per table reached: ${system.getNumberOrThrow(AppSystemProp.MAX_FIELDS_PER_TABLE)}`,
                 },

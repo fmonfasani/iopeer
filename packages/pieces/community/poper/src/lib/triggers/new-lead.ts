@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 const message = `
 1. Log in to your [Poper Account](https://app.poper.ai/).

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { CreateListItem } from './lib/actions/create-list-item';
 import { deleteListItem } from './lib/actions/delete-list-item';
 import { downloadCustomExportInItsOriginalFormat } from './lib/actions/download-custom-export-in-its-original-format';
@@ -34,7 +34,7 @@ export const kizeoForms = createPiece({
   description: 'Create custom mobile forms',
 
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/kizeo-forms.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/kizeo-forms.png',
   authors: ["BastienMe","kishanprmr","MoShizzle","khaledmashaly","abuaboud"],
   categories: [PieceCategory.FORMS_AND_SURVEYS],
   auth: kizeoFormsAuth,

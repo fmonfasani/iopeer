@@ -1,9 +1,9 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   CreateOtpRequestBody,
   ResetPasswordRequestBody,
   VerifyEmailRequestBody,
-} from '@activepieces/ee-shared';
+} from '@IOpeer/ee-shared';
 import {
   AuthenticationResponse,
   ClaimTokenRequest,
@@ -15,7 +15,7 @@ import {
   SwitchProjectRequest,
   ThirdPartyAuthnProviderEnum,
   UserIdentity,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const authenticationApi = {
   signIn(request: SignInRequest) {

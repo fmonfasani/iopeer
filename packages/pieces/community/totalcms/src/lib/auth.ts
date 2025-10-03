@@ -1,6 +1,6 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { saveContent } from './api';
 
 export type TotalCMSAuthType = { license: string; domain: string };
@@ -26,7 +26,7 @@ export const cmsAuth = PieceAuth.CustomAuth({
       license: z.string(),
     });
 
-    const response = await saveContent(auth, 'text', 'activepieces', {
+    const response = await saveContent(auth, 'text', 'IOpeer', {
       text: 'verified',
     });
     if (response.success !== true) {

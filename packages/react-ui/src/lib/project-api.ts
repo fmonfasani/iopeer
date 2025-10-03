@@ -1,15 +1,15 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 import {
   CreatePlatformProjectRequest,
   UpdateProjectPlatformRequest,
-} from '@activepieces/ee-shared';
+} from '@IOpeer/ee-shared';
 import {
   ListProjectRequestForUserQueryParams,
   ProjectWithLimits,
   ProjectWithLimitsWithPlatform,
   SeekPage,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const projectApi = {
   current: async () => {

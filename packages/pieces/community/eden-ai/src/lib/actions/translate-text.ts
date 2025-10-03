@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, propsValidation } from '@IOpeer/pieces-common';
 import { edenAiApiCall } from '../common/client';
 import { createStaticDropdown } from '../common/providers';
 import { z } from 'zod';
@@ -107,7 +107,7 @@ const TRANSLATION_LANGUAGES = [
   { label: 'Mongolian (Mongolian)', value: 'mn-Mong' },
   { label: 'Nepali', value: 'ne' },
   { label: 'Norwegian', value: 'no' },
-  { label: 'Norwegian Bokmål', value: 'nb' },
+  { label: 'Norwegian BokmÃ¥l', value: 'nb' },
   { label: 'Norwegian Nynorsk', value: 'nn' },
   { label: 'Nyanja', value: 'ny' },
   { label: 'Oriya', value: 'or' },
@@ -119,7 +119,7 @@ const TRANSLATION_LANGUAGES = [
   { label: 'Portuguese (Brazil)', value: 'pt-BR' },
   { label: 'Portuguese (Portugal)', value: 'pt-PT' },
   { label: 'Pushto', value: 'ps' },
-  { label: 'Querétaro Otomi', value: 'otq' },
+  { label: 'QuerÃ©taro Otomi', value: 'otq' },
   { label: 'Romanian', value: 'ro' },
   { label: 'Russian', value: 'ru' },
   { label: 'Samoan', value: 'sm' },

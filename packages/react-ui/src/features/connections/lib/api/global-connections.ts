@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   AppConnectionWithoutSensitiveData,
   ListGlobalConnectionsRequestQuery,
   SeekPage,
   UpdateGlobalConnectionValueRequestBody,
   UpsertGlobalConnectionRequestBody,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const globalConnectionsApi = {
   list(

@@ -1,12 +1,12 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wonderchatAuth } from '../..';
 
 export const askQuestion = createAction({
   name: 'askQuestion',
   displayName: 'Ask Question',
   description:
-    'Sends a question to a Wonderchat bot; returns the bot’s answer.',
+    'Sends a question to a Wonderchat bot; returns the botâ€™s answer.',
   auth: wonderchatAuth,
   props: {
     chatbotId: Property.ShortText({

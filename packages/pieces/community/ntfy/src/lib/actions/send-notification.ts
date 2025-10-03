@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { ntfyAuth } from '../..';
 
 const encodeToRFC2047 = (text: string) => {

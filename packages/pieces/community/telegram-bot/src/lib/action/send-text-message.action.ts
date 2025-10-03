@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { telegramCommons } from '../common';
 import { telegramBotAuth } from '../..';
 

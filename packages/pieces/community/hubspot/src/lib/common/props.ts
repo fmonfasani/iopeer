@@ -1,16 +1,16 @@
-import {
+﻿import {
 	DropdownOption,
 	DynamicPropsValue,
 	OAuth2PropertyValue,
 	PiecePropValueSchema,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { WorkflowResponse, HubspotProperty, HubspotFieldType, ListBlogsResponse } from './types';
 import {
 	DEFAULT_COMPANY_PROPERTIES,

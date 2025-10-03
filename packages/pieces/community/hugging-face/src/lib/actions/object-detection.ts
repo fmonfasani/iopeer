@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type {
   ObjectDetectionInput,
   ObjectDetectionOutput,
 } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const objectDetection = createAction({
@@ -22,23 +22,23 @@ export const objectDetection = createAction({
         disabled: false,
         options: [
           {
-            label: '📋 General Objects (COCO Dataset)',
+            label: 'ðŸ“‹ General Objects (COCO Dataset)',
             value: 'general',
           },
           {
-            label: '📊 Documents & Tables',
+            label: 'ðŸ“Š Documents & Tables',
             value: 'documents',
           },
           {
-            label: '🛡️ Security & Monitoring',
+            label: 'ðŸ›¡ï¸ Security & Monitoring',
             value: 'security',
           },
           {
-            label: '🏢 Business & Commerce',
+            label: 'ðŸ¢ Business & Commerce',
             value: 'business',
           },
           {
-            label: '🔍 Search All Models',
+            label: 'ðŸ” Search All Models',
             value: 'search',
           },
         ],
@@ -57,22 +57,22 @@ export const objectDetection = createAction({
             case 'general':
               return [
                 {
-                  label: 'DETR ResNet-50 (🏆 Industry Standard)',
+                  label: 'DETR ResNet-50 (ðŸ† Industry Standard)',
                   value: 'facebook/detr-resnet-50',
                   description: '306K downloads | 80+ object classes',
                 },
                 {
-                  label: 'YOLOS Small (⚡ Fast Detection)',
+                  label: 'YOLOS Small (âš¡ Fast Detection)',
                   value: 'hustvl/yolos-small',
                   description: '756K downloads | Lightweight & efficient',
                 },
                 {
-                  label: 'YOLOS Tiny (🚀 Ultra Fast)',
+                  label: 'YOLOS Tiny (ðŸš€ Ultra Fast)',
                   value: 'hustvl/yolos-tiny',
                   description: '128K downloads | Mobile-friendly',
                 },
                 {
-                  label: 'YOLOv8 (🔬 Latest Technology)',
+                  label: 'YOLOv8 (ðŸ”¬ Latest Technology)',
                   value: 'Ultralytics/YOLOv8',
                   description: '4.6K downloads | State-of-the-art accuracy',
                 },
@@ -80,17 +80,17 @@ export const objectDetection = createAction({
             case 'documents':
               return [
                 {
-                  label: 'Table Transformer Detection (📊 Table Expert)',
+                  label: 'Table Transformer Detection (ðŸ“Š Table Expert)',
                   value: 'microsoft/table-transformer-detection',
                   description: '2.3M downloads | Perfect for table detection',
                 },
                 {
-                  label: 'Table Structure Recognition (🔍 Structure Analysis)',
+                  label: 'Table Structure Recognition (ðŸ” Structure Analysis)',
                   value: 'microsoft/table-transformer-structure-recognition',
                   description: '1.2M downloads | Analyzes table structure',
                 },
                 {
-                  label: 'Doc Table Detection (📋 Document Focus)',
+                  label: 'Doc Table Detection (ðŸ“‹ Document Focus)',
                   value: 'TahaDouaji/detr-doc-table-detection',
                   description: '651K downloads | Document-specific tables',
                 },
@@ -98,17 +98,17 @@ export const objectDetection = createAction({
             case 'security':
               return [
                 {
-                  label: 'License Plate Detection (🚗 Vehicle Focus)',
+                  label: 'License Plate Detection (ðŸš— Vehicle Focus)',
                   value: 'keremberke/yolov5n-license-plate',
                   description: '151K downloads | Vehicle identification',
                 },
                 {
-                  label: 'CRAFT Text Detection (📝 Text Security)',
+                  label: 'CRAFT Text Detection (ðŸ“ Text Security)',
                   value: 'hezarai/CRAFT',
                   description: '101K downloads | Text content monitoring',
                 },
                 {
-                  label: 'DETR ResNet-50 (👁️ General Security)',
+                  label: 'DETR ResNet-50 (ðŸ‘ï¸ General Security)',
                   value: 'facebook/detr-resnet-50',
                   description: '306K downloads | People & object detection',
                 },
@@ -116,17 +116,17 @@ export const objectDetection = createAction({
             case 'business':
               return [
                 {
-                  label: 'Stock Pattern Detection (📈 Trading Analysis)',
+                  label: 'Stock Pattern Detection (ðŸ“ˆ Trading Analysis)',
                   value: 'foduucom/stockmarket-pattern-detection-yolov8',
                   description: '8.2K downloads | Financial chart analysis',
                 },
                 {
-                  label: 'RT-DETR R101 (💼 Professional Quality)',
+                  label: 'RT-DETR R101 (ðŸ’¼ Professional Quality)',
                   value: 'PekingU/rtdetr_r101vd_coco_o365',
                   description: '139K downloads | High-precision detection',
                 },
                 {
-                  label: 'RT-DETR R50 (⚖️ Balanced Performance)',
+                  label: 'RT-DETR R50 (âš–ï¸ Balanced Performance)',
                   value: 'PekingU/rtdetr_r50vd_coco_o365',
                   description: '84K downloads | Business-grade accuracy',
                 },
@@ -202,10 +202,10 @@ export const objectDetection = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '🎯 High Confidence Only (>0.7)', value: 'high_confidence' },
-          { label: '⚖️ Balanced Results (>0.5)', value: 'balanced' },
-          { label: '📊 All Detections (>0.1)', value: 'all_results' },
-          { label: '⚙️ Custom Threshold', value: 'custom' },
+          { label: 'ðŸŽ¯ High Confidence Only (>0.7)', value: 'high_confidence' },
+          { label: 'âš–ï¸ Balanced Results (>0.5)', value: 'balanced' },
+          { label: 'ðŸ“Š All Detections (>0.1)', value: 'all_results' },
+          { label: 'âš™ï¸ Custom Threshold', value: 'custom' },
         ],
       },
       defaultValue: 'balanced',
@@ -217,10 +217,10 @@ export const objectDetection = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '📋 Business Summary', value: 'business' },
-          { label: '🔧 Technical Details', value: 'technical' },
-          { label: '📊 Statistical Analysis', value: 'analytics' },
-          { label: '🌐 All Information', value: 'comprehensive' },
+          { label: 'ðŸ“‹ Business Summary', value: 'business' },
+          { label: 'ðŸ”§ Technical Details', value: 'technical' },
+          { label: 'ðŸ“Š Statistical Analysis', value: 'analytics' },
+          { label: 'ðŸŒ All Information', value: 'comprehensive' },
         ],
       },
       defaultValue: 'business',
@@ -491,39 +491,39 @@ function getDetectionTips(
   const tips: string[] = [];
 
   if (detections.length === 0) {
-    tips.push('🔍 No objects detected - try lowering the confidence threshold');
-    tips.push('📸 Ensure image has clear, well-lit objects');
+    tips.push('ðŸ” No objects detected - try lowering the confidence threshold');
+    tips.push('ðŸ“¸ Ensure image has clear, well-lit objects');
   } else if (detections.length < 3) {
     tips.push(
-      '💡 Few objects detected - consider lowering threshold for more results'
+      'ðŸ’¡ Few objects detected - consider lowering threshold for more results'
     );
   } else if (detections.length > 20) {
     tips.push(
-      '📊 Many objects detected - consider higher threshold for quality'
+      'ðŸ“Š Many objects detected - consider higher threshold for quality'
     );
   }
 
   if (threshold > 0.7) {
-    tips.push('🎯 High threshold set - only very confident detections shown');
+    tips.push('ðŸŽ¯ High threshold set - only very confident detections shown');
   } else if (threshold < 0.3) {
-    tips.push('⚠️ Low threshold may include false positives');
+    tips.push('âš ï¸ Low threshold may include false positives');
   }
 
   const avgConfidence =
     detections.reduce((sum, d) => sum + d.confidence, 0) / detections.length;
   if (avgConfidence < 0.6) {
-    tips.push('📈 Consider using a different model for better accuracy');
+    tips.push('ðŸ“ˆ Consider using a different model for better accuracy');
   }
 
   if (
     useCase === 'documents' &&
     detections.some((d) => d.label.includes('table'))
   ) {
-    tips.push('📋 Tables detected - great for document processing workflows');
+    tips.push('ðŸ“‹ Tables detected - great for document processing workflows');
   }
 
   if (tips.length === 0) {
-    tips.push('✅ Good detection results - objects identified successfully');
+    tips.push('âœ… Good detection results - objects identified successfully');
   }
 
   return tips;
@@ -538,30 +538,30 @@ function getNextSteps(
   const steps: string[] = [];
 
   if (useCase === 'business') {
-    steps.push('📊 Use detections to trigger inventory management workflows');
-    steps.push('🏷️ Implement automatic product tagging and categorization');
+    steps.push('ðŸ“Š Use detections to trigger inventory management workflows');
+    steps.push('ðŸ·ï¸ Implement automatic product tagging and categorization');
   }
 
   if (useCase === 'security') {
-    steps.push('🚨 Set up alerts for specific object types detected');
-    steps.push('📹 Integrate with monitoring systems for real-time analysis');
+    steps.push('ðŸš¨ Set up alerts for specific object types detected');
+    steps.push('ðŸ“¹ Integrate with monitoring systems for real-time analysis');
   }
 
   if (useCase === 'documents') {
-    steps.push('📄 Extract detected tables for data processing');
-    steps.push('🔍 Combine with OCR for complete document analysis');
+    steps.push('ðŸ“„ Extract detected tables for data processing');
+    steps.push('ðŸ” Combine with OCR for complete document analysis');
   }
 
   if (detectionCount > 10) {
-    steps.push('📈 Consider batch processing for multiple images');
+    steps.push('ðŸ“ˆ Consider batch processing for multiple images');
   }
 
   if (uniqueLabels > 5) {
-    steps.push('🏷️ Implement multi-category filtering and sorting');
+    steps.push('ðŸ·ï¸ Implement multi-category filtering and sorting');
   }
 
-  steps.push('💾 Save successful detection settings for consistent results');
-  steps.push('🔄 Process similar images with the same model configuration');
+  steps.push('ðŸ’¾ Save successful detection settings for consistent results');
+  steps.push('ðŸ”„ Process similar images with the same model configuration');
 
   return steps;
 }

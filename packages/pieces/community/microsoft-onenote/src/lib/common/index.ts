@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import { Client } from '@microsoft/microsoft-graph-client';
 
 export async function getNotebooksDropdown(auth: OAuth2PropertyValue) {

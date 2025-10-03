@@ -1,6 +1,6 @@
-import { ActionBase, PieceProperty, PiecePropertyMap, PropertyType } from '@activepieces/pieces-framework'
+﻿import { ActionBase, PieceProperty, PiecePropertyMap, PropertyType } from '@IOpeer/pieces-framework'
 
-import { isNil, PiecePackage, WorkerJobType } from '@activepieces/shared'
+import { isNil, PiecePackage, WorkerJobType } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EngineHelperPropResult, EngineHelperResponse } from 'server-worker'
 import { z } from 'zod' 
@@ -23,7 +23,7 @@ IMPORTANT:
 - THE OPTIONS ARRAY WILL BE [{ label: string, value: string | object }]. YOU MUST SELECT THE value FIELD FROM THE OPTION OBJECT.
 - For DATE_TIME properties, return date strings in ISO format (YYYY-MM-DDTHH:mm:ss.sssZ)
 - Use actual values from the user instructions to determine the correct value for each property, either as a hint for selecting options from dropdowns or to fill in the property if possible.
-- Must include all required properties, even if the user does not provide a value. If a required field is missing, look up the correct value or provide a reasonable default—otherwise, the task may fail.
+- Must include all required properties, even if the user does not provide a value. If a required field is missing, look up the correct value or provide a reasonable defaultâ€”otherwise, the task may fail.
 - IMPORTANT: If a property is not required and you do not have any information to fill it, you MUST skip it.
 `
 

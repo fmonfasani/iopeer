@@ -1,7 +1,7 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 import { AgentIdDropdown, ConversationIdDropdown } from "../common/dropdown";
 
 export const findConversation = createAction({

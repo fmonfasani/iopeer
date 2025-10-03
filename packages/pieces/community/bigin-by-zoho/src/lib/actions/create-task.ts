@@ -1,5 +1,5 @@
-import { biginAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { biginAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { tagsDropdown, usersDropdown } from '../common/props';
 import { API_ENDPOINTS } from '../common/constants';
 import { formatDateOnly, formatDateTime, getSafeLabel, handleDropdownError } from '../common/helpers';

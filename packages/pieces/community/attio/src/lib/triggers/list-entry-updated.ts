@@ -1,10 +1,10 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { attioApiCall, verifyWebhookSignature } from '../common/client';
 import { attioAuth } from '../../index';
 import { listIdDropdown } from '../common/props';
 import { ListWebhookPayload, WebhookResponse } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 const TRIGGER_KEY = 'updated-list-entry-trigger';
 

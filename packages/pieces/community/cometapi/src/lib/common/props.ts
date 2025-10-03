@@ -1,9 +1,9 @@
-import {
+﻿import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { Property } from '@IOpeer/pieces-framework';
 import { BASE_URL } from './auth';
 
 export const modelIdDropdown = Property.Dropdown({

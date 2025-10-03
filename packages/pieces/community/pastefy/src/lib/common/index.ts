@@ -1,9 +1,9 @@
-import {
+﻿import {
   PiecePropValueSchema,
   PiecePropertyMap,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { PastefyClient } from './client';
 import { FolderHierarchy } from './models/folder';
 import { PasteVisibility } from './models/paste';

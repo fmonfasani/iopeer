@@ -1,6 +1,6 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { closeAuth } from './../../index';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { closeApiCall } from '../common/client';
 import { customFields, statusId } from '../common/props';
 

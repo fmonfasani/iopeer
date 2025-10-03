@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import { X } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
@@ -10,7 +10,7 @@ import { SonnerToaster } from '@/components/ui/sonner';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { userHooks } from '@/hooks/user-hooks';
 import { changelogApi } from '@/lib/changelog-api';
-import { isNil, Changelog, ApFlagId } from '@activepieces/shared';
+import { isNil, Changelog, ApFlagId } from '@IOpeer/shared';
 
 interface ChangelogToastProps {
   id: string | number;

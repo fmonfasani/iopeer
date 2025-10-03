@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { stripeAuth } from '../..';
 import { getClient } from '../common';
 import { Stripe } from 'stripe';
@@ -55,7 +55,7 @@ export const stripeCreatePaymentLink = createAction({
     billing_address_collection: Property.StaticDropdown({
       displayName: 'Billing Address Collection',
       description:
-        'Describes whether Checkout should collect the customer’s billing address.',
+        'Describes whether Checkout should collect the customerâ€™s billing address.',
       required: false,
       options: {
         options: [

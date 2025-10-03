@@ -1,9 +1,9 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const jotformCommon = {
   baseUrl: (region: string) => {

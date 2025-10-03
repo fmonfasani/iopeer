@@ -1,12 +1,12 @@
-import { TriggerBase } from '@activepieces/pieces-framework'
+﻿import { TriggerBase } from '@IOpeer/pieces-framework'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ErrorCode,
     FlowTriggerType,
     FlowVersion,
     isNil,
     ProjectId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { pieceMetadataService } from '../../pieces/piece-metadata-service'
 import { projectService } from '../../project/project-service'
@@ -20,7 +20,7 @@ export const triggerUtils = (log: FastifyBaseLogger) => ({
 
         })
         if (isNil(pieceTrigger)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.PIECE_TRIGGER_NOT_FOUND,
                 params: {
                     pieceName: flowVersion.trigger.settings.pieceName,

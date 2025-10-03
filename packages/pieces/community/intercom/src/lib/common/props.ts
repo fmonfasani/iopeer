@@ -1,4 +1,4 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { intercomClient } from '.';
 import { intercomAuth } from '../../index';
 import {
@@ -6,7 +6,7 @@ import {
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 export const conversationIdProp = (displayName: string, required = true) =>
 	Property.Dropdown({

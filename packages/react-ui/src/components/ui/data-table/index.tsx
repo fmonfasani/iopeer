@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import {
   ColumnDef as TanstackColumnDef,
@@ -20,7 +20,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { cn } from '@/lib/utils';
-import { apId, isNil, SeekPage } from '@activepieces/shared';
+import { apId, isNil, SeekPage } from '@IOpeer/shared';
 
 import { Button } from '../button';
 import {

@@ -1,4 +1,4 @@
-name: Automate Deploy
+﻿name: Automate Deploy
 
 on:
   workflow_dispatch:
@@ -40,7 +40,7 @@ jobs:
             linux/amd64
           push: true
           tags: |
-            ghcr.io/activepieces/activepieces-cloud:${{ env.RELEASE }}.${{ github.sha }}.beta
+            ghcr.io/IOpeer/IOpeer-cloud:${{ env.RELEASE }}.${{ github.sha }}.beta
 
       - name: Configure SSH
         run: |

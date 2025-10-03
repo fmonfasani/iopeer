@@ -1,15 +1,15 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { frontAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 

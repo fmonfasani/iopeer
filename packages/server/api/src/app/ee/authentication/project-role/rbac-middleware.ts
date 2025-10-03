@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     ApEdition,
     ApId,
     ErrorCode,
@@ -9,7 +9,7 @@ import {
     Principal,
     PrincipalType,
     ProjectRole,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger, FastifyRequest } from 'fastify'
 import { system } from '../../../helper/system/system'
 import { projectMemberService } from '../../projects/project-members/project-member.service'
@@ -106,7 +106,7 @@ export const getPrincipalRoleOrThrow = async (principal: Principal, log: Fastify
     })
 
     if (isNil(projectRole)) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.AUTHORIZATION,
             params: {
                 message: 'No role found for the user',
@@ -137,7 +137,7 @@ const grantAccess = async ({ principalRoleId, routePermission }: GrantAccessArgs
 }
 
 const throwPermissionDenied = (projectRole: ProjectRole, principal: Principal, permission: Permission | undefined): never => {
-    throw new ActivepiecesError({
+    throw new IOpeerError({
         code: ErrorCode.PERMISSION_DENIED,
         params: {
             userId: principal.id,

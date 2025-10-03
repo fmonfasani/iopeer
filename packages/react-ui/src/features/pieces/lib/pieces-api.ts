@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { toast } from '@/components/ui/use-toast';
 import { api } from '@/lib/api';
@@ -8,7 +8,7 @@ import {
   PropertyType,
   ExecutePropsResult,
   InputPropertyMap,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AddPieceRequestBody,
   GetPieceRequestParams,
@@ -16,7 +16,7 @@ import {
   ListPiecesRequestQuery,
   PackageType,
   PieceOptionRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const piecesApi = {
   list(request: ListPiecesRequestQuery): Promise<PieceMetadataModelSummary[]> {

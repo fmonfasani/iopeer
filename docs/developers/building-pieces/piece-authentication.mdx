@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Add Piece Authentication'
 icon: 'circle-4'
 description: ''
@@ -14,7 +14,7 @@ Now, let's establish authentication for this piece, which necessitates the inclu
 Modify `src/index.ts` file to add authentication,
 
 ```ts
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
 
 export const gelatoAuth = PieceAuth.SecretText({
   displayName: 'API Key',

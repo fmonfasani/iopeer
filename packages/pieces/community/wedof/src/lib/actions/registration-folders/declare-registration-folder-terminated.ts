@@ -1,20 +1,20 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
 export const declareRegistrationFolderTerminated = createAction({
   auth: wedofAuth,
   name: 'declareRegistrationFolderTerminated',
-  displayName: "Passer un dossier de formation à l'état : sortie de formation",
+  displayName: "Passer un dossier de formation Ã  l'Ã©tat : sortie de formation",
   description:
-    "Change l'état d'un dossier de formation vers : sortie de formation",
+    "Change l'Ã©tat d'un dossier de formation vers : sortie de formation",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {externalId} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de formation',
       required: true,
     }),
     date: Property.DateTime({
@@ -25,7 +25,7 @@ export const declareRegistrationFolderTerminated = createAction({
     }),
     code: Property.Dropdown({
       displayName: 'Raison de la sortie de formation',
-      description: 'Sélectionner la raison de sortie de formation',
+      description: 'SÃ©lectionner la raison de sortie de formation',
       required: true,
       refreshers: ['auth'],
       refreshOnSearch: false,
@@ -60,9 +60,9 @@ export const declareRegistrationFolderTerminated = createAction({
       },
     }),
     absenceDuration: Property.Number({
-      displayName: "durée d'absence",
+      displayName: "durÃ©e d'absence",
       description:
-        "La durée d'une éventuelle absence en heures. 0 si aucune absence.",
+        "La durÃ©e d'une Ã©ventuelle absence en heures. 0 si aucune absence.",
       required: false,
       defaultValue: 0,
     }),

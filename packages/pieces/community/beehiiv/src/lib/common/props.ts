@@ -1,6 +1,6 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { BeehiivPaginatedApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const publicationId = Property.Dropdown({
 	displayName: 'Publication',

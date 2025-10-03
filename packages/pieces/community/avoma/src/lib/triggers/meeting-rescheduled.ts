@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy, Property } from '@IOpeer/pieces-framework';
 
 export const meetingRescheduled = createTrigger({
   name: 'meeting_rescheduled',

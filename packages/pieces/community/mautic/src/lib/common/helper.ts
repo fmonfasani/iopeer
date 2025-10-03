@@ -1,9 +1,9 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 // Function Section
 export const mapMauticToIOPeerProperty = (

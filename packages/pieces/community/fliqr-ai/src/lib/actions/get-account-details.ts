@@ -1,11 +1,11 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { fliqrAuth } from '../../index';
 import { fliqrConfig } from '../common/models';
 
 
 export const getFliqrAccountDetails = createAction({
-  // auth: check https://www.activepieces.com/docs/developers/piece-reference/authentication,
+  // auth: check https://www.IOpeer.com/docs/developers/piece-reference/authentication,
   name: 'get_fliqr_account_details',
   auth: fliqrAuth,
   displayName: 'Get Business Account details',

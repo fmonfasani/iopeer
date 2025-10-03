@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { addContactAction } from './lib/actions/add-contact';
 import { addTagToContactAction } from './lib/actions/add-tag-to-contact';
 import { createEmailMarketingCampaignAction } from './lib/actions/create-campaign';
@@ -45,7 +45,7 @@ export const vbout = createPiece({
   description: 'Marketing automation platform for agencies',
   auth: vboutAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/vbout.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/vbout.png',
   authors: ["kishanprmr","abuaboud"],
   categories: [PieceCategory.MARKETING],
   actions: [

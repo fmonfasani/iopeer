@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { uploadFile } from './lib/actions/upload-file';
 import { createRow } from './lib/actions/create-row';
 import { deleteRows } from './lib/actions/delete-rows';
@@ -20,7 +20,7 @@ const markdown = `
 ### 1. Get Your Project URL
 - Go to your [Supabase Dashboard](https://supabase.com/dashboard)
 - Select your project
-- Go to **Settings** → **API**
+- Go to **Settings** â†’ **API**
 - Copy the **Project URL** (format: \`https://your-project-ref.supabase.co\`)
 
 ### 2. Get Your API Key
@@ -36,7 +36,7 @@ Choose the appropriate key based on your use case:
 
 **Security Note:** Keep your Service Role Key secret - it bypasses all RLS policies.
 
-Find your keys in **Settings** → **API** → **Project API keys**
+Find your keys in **Settings** â†’ **API** â†’ **Project API keys**
 `;
 
 export const supabaseAuth = PieceAuth.CustomAuth({
@@ -130,7 +130,7 @@ export const supabase = createPiece({
   description: 'The open-source Firebase alternative',
   auth: supabaseAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/supabase.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/supabase.png',
   categories: [PieceCategory.DEVELOPER_TOOLS],
   authors: ["kishanprmr","MoShizzle","abuaboud","fortunamide"],
   actions: [

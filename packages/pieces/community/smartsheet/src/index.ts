@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { HttpMethod, HttpRequest, httpClient } from '@activepieces/pieces-common';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { HttpMethod, HttpRequest, httpClient } from '@IOpeer/pieces-common';
 
 // Actions
 import { addRowToSheet } from './lib/actions/add-row-to-sheet';
@@ -67,7 +67,7 @@ export const smartsheet = createPiece({
 		'Dynamic work execution platform for teams to plan, capture, manage, automate, and report on work at scale.',
 	auth: smartsheetAuth,
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/smartsheet.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/smartsheet.png',
 	categories: [PieceCategory.PRODUCTIVITY],
 	authors: ['onyedikachi-david', 'kishanprmr'],
 	actions: [

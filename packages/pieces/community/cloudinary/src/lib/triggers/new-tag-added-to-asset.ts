@@ -1,17 +1,17 @@
-
+﻿
 import {
     DedupeStrategy,
     HttpMethod,
     Polling,
     pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
     PiecePropValueSchema,
     Property,
     StaticPropsValue,
     TriggerStrategy,
     createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { cloudinaryAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
 import dayjs from 'dayjs';

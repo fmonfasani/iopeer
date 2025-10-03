@@ -1,4 +1,4 @@
-import { Property, DynamicPropsValue } from "@activepieces/pieces-framework";
+﻿import { Property, DynamicPropsValue } from "@IOpeer/pieces-framework";
 import { createClient } from "@supabase/supabase-js";
 
 async function getColumnOptions(auth: any, table_name: string) {
@@ -641,7 +641,7 @@ export const supabaseCommon = {
 
       if (on_conflict) {
         properties['_info'] = Property.MarkDown({
-          value: `💡 **Note**: The "${on_conflict}" field is used for conflict detection and should not be included in the row data unless you want to update it.`
+          value: `ðŸ’¡ **Note**: The "${on_conflict}" field is used for conflict detection and should not be included in the row data unless you want to update it.`
         });
       }
 

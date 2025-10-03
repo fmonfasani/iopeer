@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 
 export const decodeEmbeddings = (embeddingsString: Buffer) => {
   let embeddings = embeddingsString.toString('utf-8') as

@@ -1,8 +1,8 @@
-import {
+﻿import {
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
-import { isEmpty } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { isEmpty } from '@IOpeer/shared';
 import dayjs from 'dayjs';
 import { MondayColumnType } from './constants';
 import { ColumnValue, MondayColumn } from './models';

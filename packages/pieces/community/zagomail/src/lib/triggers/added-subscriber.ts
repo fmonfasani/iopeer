@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 import { zagomailAuth } from '../../index';
 import { zagoMailApiService, } from '../common/request';
 import { StoredWebhookId, WebhookResponse } from '../common/constants';

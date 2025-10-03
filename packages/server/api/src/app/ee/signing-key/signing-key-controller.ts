@@ -1,11 +1,11 @@
-import { AddSigningKeyRequestBody, ApplicationEventName } from '@activepieces/ee-shared'
+﻿import { AddSigningKeyRequestBody, ApplicationEventName } from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApId,
     assertNotNullOrUndefined,
     ErrorCode,
     isNil,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
     Type,
@@ -47,7 +47,7 @@ export const signingKeyController: FastifyPluginAsyncTypebox = async (app) => {
             id: req.params.id,
         })
         if (isNil(signingKey)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     message: `SigningKey with id ${req.params.id} not found`,

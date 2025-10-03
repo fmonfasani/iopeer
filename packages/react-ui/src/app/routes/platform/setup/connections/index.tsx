@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckIcon, Trash, Globe } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -36,7 +36,7 @@ import {
   AppConnectionStatus,
   AppConnectionWithoutSensitiveData,
   Permission,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const STATUS_QUERY_PARAM = 'status';
 const filters: DataTableFilters<keyof AppConnectionWithoutSensitiveData>[] = [

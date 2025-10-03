@@ -1,13 +1,13 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import OpenAI from 'openai';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { localaiAuth } from '../..';
 import { json } from 'stream/consumers';
 

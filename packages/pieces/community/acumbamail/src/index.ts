@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { addUpdateSubscriberAction } from './lib/actions/add-subscriber';
 import { createSubscriberListAction } from './lib/actions/create-subscriber-list';
 import { unsubscribeAction } from './lib/actions/unsubscribe-subscriber';
@@ -23,7 +23,7 @@ export const acumbamail = createPiece({
   description: 'Easily send email and SMS campaigns and boost your business',
   auth: acumbamailAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/acumbamail.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/acumbamail.png',
   authors: ["kishanprmr","abuaboud"],
   actions: [
     addUpdateSubscriberAction,

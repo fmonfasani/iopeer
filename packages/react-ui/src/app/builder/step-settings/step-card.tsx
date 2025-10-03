@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 import ImageWithFallback from '@/components/ui/image-with-fallback';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -11,7 +11,7 @@ import {
   isNil,
   FlowTrigger,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { EditAgentInFlowBuilderButton } from './edit-agent-inside-flow-builder-button';
 

@@ -1,8 +1,8 @@
-import { todoistAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { todoistAuth } from '../..';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { todoistProjectIdDropdown } from '../common/props';
 import { todoistRestClient } from '../common/client/rest-client';
-import { assertNotNullOrUndefined } from '@activepieces/shared';
+import { assertNotNullOrUndefined } from '@IOpeer/shared';
 
 export const todoistFindTaskAction = createAction({
 	auth: todoistAuth,

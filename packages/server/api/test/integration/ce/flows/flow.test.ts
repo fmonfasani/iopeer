@@ -1,4 +1,4 @@
-import { WebhookRenewStrategy } from '@activepieces/pieces-framework'
+﻿import { WebhookRenewStrategy } from '@IOpeer/pieces-framework'
 import {
     FlowOperationType,
     FlowStatus,
@@ -10,7 +10,7 @@ import {
     TriggerStrategy,
     TriggerTestStrategy,
     WebhookHandshakeStrategy,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyInstance } from 'fastify'
 import { StatusCodes } from 'http-status-codes'
 import { initializeDatabase } from '../../../../src/app/database'
@@ -105,7 +105,7 @@ describe('Flow API', () => {
             const { mockProject, mockOwner, mockPlatform } = await mockAndSaveBasicSetup()
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@activepieces/piece-schedule',
+                name: '@IOpeer/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     'every_hour': {
@@ -148,7 +148,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-schedule',
+                        pieceName: '@IOpeer/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: {
                             run_on_weekends: false,
@@ -290,7 +290,7 @@ describe('Flow API', () => {
             const { mockProject, mockOwner, mockPlatform } = await mockAndSaveBasicSetup()
 
             const mockPieceMetadata1 = createMockPieceMetadata({
-                name: '@activepieces/piece-schedule',
+                name: '@IOpeer/piece-schedule',
                 version: '0.1.5',
                 triggers: {
                     'every_hour': {
@@ -333,7 +333,7 @@ describe('Flow API', () => {
                 trigger: {
                     type: FlowTriggerType.PIECE,
                     settings: {
-                        pieceName: '@activepieces/piece-schedule',
+                        pieceName: '@IOpeer/piece-schedule',
                         pieceVersion: '0.1.5',
                         input: {
                             run_on_weekends: false,

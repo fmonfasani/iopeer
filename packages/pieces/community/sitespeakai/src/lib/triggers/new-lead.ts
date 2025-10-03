@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, StaticPropsValue } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, StaticPropsValue } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper, HttpMethod } from '@IOpeer/pieces-common';
 import dayjs from 'dayjs';
 import { makeRequest } from '../common/client';
 import { SiteSpeakAuth } from '../common/auth';

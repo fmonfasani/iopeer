@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue, PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { hubSpotListsAddContactAction } from './lib/actions/add-contact-to-list-action';
 import { newCompanyTrigger } from './lib/triggers/new-company';
 import { newContactTrigger } from './lib/triggers/new-contact';
@@ -112,7 +112,7 @@ export const hubspot = createPiece({
 	displayName: 'HubSpot',
 	description: 'Powerful CRM that offers tools for sales, customer service, and marketing automation.',
 	minimumSupportedRelease: '0.5.0',
-	logoUrl: 'https://cdn.activepieces.com/pieces/hubspot.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/hubspot.png',
 	authors: ['Salem-Alaa', 'kishanprmr', 'MoShizzle', 'khaledmashaly', 'abuaboud'],
 	categories: [PieceCategory.SALES_AND_CRM],
 	auth: hubspotAuth,

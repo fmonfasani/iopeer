@@ -1,13 +1,13 @@
-import {wedofAuth} from '../../index';
-import {createAction} from '@activepieces/pieces-framework';
-import {HttpMethod, httpClient} from '@activepieces/pieces-common';
+﻿import {wedofAuth} from '../../index';
+import {createAction} from '@IOpeer/pieces-framework';
+import {HttpMethod, httpClient} from '@IOpeer/pieces-common';
 import {wedofCommon} from '../common/wedof';
 
 export const myOrganism = createAction({
     auth: wedofAuth,
     name: 'myOrganism',
-    displayName: "Récupérer mon organisme",
-    description: "Récupérer mon organisme et afficher ses détails",
+    displayName: "RÃ©cupÃ©rer mon organisme",
+    description: "RÃ©cupÃ©rer mon organisme et afficher ses dÃ©tails",
     props: {},
     async run(context) {
         return (

@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { createPptFromTopic } from './lib/actions/create-ppt-from-topic';
 import { createPptFromSummary } from './lib/actions/create-ppt-from-summary';
 import { createPptFromYoutubeVideo } from './lib/actions/create-ppt-from-youtube-video';
@@ -9,7 +9,7 @@ export const magicslides = createPiece({
   auth: MagicSlidesAuth,
   description: 'Create PowerPoint presentations from topics, summaries, or YouTube videos using AI.',
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/magicslides.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/magicslides.png',
   authors: ['Niket2035'],
   actions: [
     createPptFromTopic,

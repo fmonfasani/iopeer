@@ -1,12 +1,12 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationPartnerRefused = createTrigger({
   auth: wedofAuth,
   name: 'certificationPartnerRefused',
-  displayName: 'Demande de partenariat refusée',
-  description: "Se déclenche Lorsqu'une demande de partenariat est refusée",
+  displayName: 'Demande de partenariat refusÃ©e',
+  description: "Se dÃ©clenche Lorsqu'une demande de partenariat est refusÃ©e",
   props: {},
   sampleData: {
     id: 0,

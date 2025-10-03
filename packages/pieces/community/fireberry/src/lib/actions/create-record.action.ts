@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { fireberryAuth } from '../../index';
 import { objectTypeDropdown, objectFields } from '../common/props';
 import { FireberryClient } from '../common/client';

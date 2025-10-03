@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-rabbitmq",
+﻿{
+  "name": "@IOpeer/piece-rabbitmq",
   "version": "0.0.8",
   "dependencies": {
     "amqplib": "^0.10.4"

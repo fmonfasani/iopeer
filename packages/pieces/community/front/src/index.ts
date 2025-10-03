@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { addComment } from "./lib/actions/add-comment";
 import { addContactHandle } from "./lib/actions/add-contact-handle";
 import { addConversationLinks } from "./lib/actions/add-conversation-links";
@@ -27,13 +27,13 @@ import { findContact } from "./lib/actions/find-contact";
 import { findConversation } from "./lib/actions/find-conversation";
 import { newConversationStateChange } from "./lib/triggers/new-conversation-state-change";
 import { frontAuth } from "./lib/common/auth";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
 export const front = createPiece({
   displayName: "Front",
   auth: frontAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/front.jpg",
+  logoUrl: "https://cdn.IOpeer.com/pieces/front.jpg",
   authors: ['Niket2035'],
   categories:[PieceCategory.CUSTOMER_SUPPORT],
   actions: [

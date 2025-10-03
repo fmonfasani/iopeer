@@ -1,13 +1,13 @@
-import { teamleaderAuth } from '../common/auth';
+﻿import { teamleaderAuth } from '../common/auth';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { teamleaderCommon } from '../common/client';
 
 export const dealAccepted = createTrigger({

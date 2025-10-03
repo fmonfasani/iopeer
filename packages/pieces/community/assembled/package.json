@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-assembled",
+﻿{
+  "name": "@IOpeer/piece-assembled",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./src/index.js",

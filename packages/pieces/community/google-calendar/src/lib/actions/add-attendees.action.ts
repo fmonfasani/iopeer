@@ -1,5 +1,5 @@
-import { googleCalendarAuth } from '../../';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { googleCalendarAuth } from '../../';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { google, calendar_v3 } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 import { googleCalendarCommon } from '../common';

@@ -1,4 +1,4 @@
-import { exceptionHandler } from '@activepieces/server-shared'
+﻿import { exceptionHandler } from '@IOpeer/server-shared'
 import {
     FileType,
     FlowOperationRequest,
@@ -8,7 +8,7 @@ import {
     FlowVersion,
     isNil,
     ProjectId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { mcpService } from '../../mcp/mcp-service'
 import { triggerSourceService } from '../../trigger/trigger-source/trigger-source-service'
@@ -55,7 +55,7 @@ type PostApplyOperation = {
 }
 function isMcpTriggerPiece(flowVersion: FlowVersion): boolean {
     return flowVersion.trigger.type === FlowTriggerType.PIECE && 
-           flowVersion.trigger.settings.pieceName === '@activepieces/piece-mcp'
+           flowVersion.trigger.settings.pieceName === '@IOpeer/piece-mcp'
 }
 
 async function handleSampleDataDeletion(projectId: ProjectId, flowVersion: FlowVersion, operation: FlowOperationRequest, log: FastifyBaseLogger): Promise<void> {

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { cambaiAuth } from '../../index';
 import { API_BASE_URL, MAX_POLLING_ATTEMPTS, POLLING_INTERVAL_MS } from '../common';
 import { listFoldersDropdown } from '../common';
@@ -8,7 +8,7 @@ export const createTextToSound = createAction({
     auth: cambaiAuth,
     name: 'create_text_to_sound',
     displayName: 'Create Text-to-Sound',
-    description: 'Convert input text into “sound effects” using an AI model.',
+    description: 'Convert input text into â€œsound effectsâ€ using an AI model.',
     props: {
         prompt: Property.LongText({
             displayName: 'Prompt',

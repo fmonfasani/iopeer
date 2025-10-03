@@ -1,13 +1,13 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { grokAuth } from '../common/auth';
 import { XAI_BASE_URL } from '../common/constants';
 import { 

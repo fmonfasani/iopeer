@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { githubAuth } from '../../index';
 import { githubApiCall, githubCommon } from '../common';
-import { HttpError, HttpMethod } from '@activepieces/pieces-common';
+import { HttpError, HttpMethod } from '@IOpeer/pieces-common';
 import { HttpStatusCode } from 'axios';
 
 export const githubFindBranchAction = createAction({

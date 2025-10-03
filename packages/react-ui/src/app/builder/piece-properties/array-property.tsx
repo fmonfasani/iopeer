@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Plus, TrashIcon } from 'lucide-react';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
@@ -12,7 +12,7 @@ import {
   ArrayProperty,
   ArraySubProps,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import { AutoPropertiesFormComponent } from './auto-properties-form';
 import { TextInputWithMentions } from './text-input-with-mentions';

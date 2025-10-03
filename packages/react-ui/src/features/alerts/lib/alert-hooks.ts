@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+﻿import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { HttpStatusCode } from 'axios';
 import { t } from 'i18next';
 import { UseFormReturn } from 'react-hook-form';
@@ -6,7 +6,7 @@ import { UseFormReturn } from 'react-hook-form';
 import { INTERNAL_ERROR_TOAST, toast } from '@/components/ui/use-toast';
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
-import { Alert, AlertChannel } from '@activepieces/ee-shared';
+import { Alert, AlertChannel } from '@IOpeer/ee-shared';
 
 import { alertsApi } from './api';
 

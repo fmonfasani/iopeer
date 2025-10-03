@@ -1,11 +1,11 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { airtableCreateRecordAction } from './lib/actions/create-record';
 import { airtableDeleteRecordAction } from './lib/actions/delete-record';
 import { airtableFindRecordAction } from './lib/actions/find-record';
@@ -59,10 +59,10 @@ export const airtableAuth = PieceAuth.SecretText({
 
 export const airtable = createPiece({
   displayName: 'Airtable',
-  description: 'Low‒code platform to build apps.',
+  description: 'Lowâ€’code platform to build apps.',
 
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/airtable.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/airtable.png',
   authors: [
     'kanarelo',
     'TaskMagicKyle',

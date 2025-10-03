@@ -1,11 +1,11 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { foreplayCoApiCall } from '../common';
 import {
   HttpMethod,
   Polling,
   DedupeStrategy,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { newAdInSpyder as newAdInSpyderProperties } from '../properties';
 import { newAdInSpyderSchema } from '../schemas';
 

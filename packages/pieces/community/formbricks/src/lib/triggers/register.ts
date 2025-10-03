@@ -1,14 +1,14 @@
-import {
+﻿import {
   PiecePropValueSchema,
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { formBricksAuth } from '../..';
 
 export const formBricksRegisterTrigger = ({

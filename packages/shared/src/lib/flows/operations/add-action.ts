@@ -1,6 +1,6 @@
-import { TypeCompiler } from '@sinclair/typebox/compiler'
+﻿import { TypeCompiler } from '@sinclair/typebox/compiler'
 import { isNil } from '../../common'
-import { ActivepiecesError, ErrorCode } from '../../common/activepieces-error'
+import { IOpeerError, ErrorCode } from '../../common/IOpeer-error'
 import { FlowAction, FlowActionType, LoopOnItemsAction, RouterAction, SingleActionSchema } from '../actions/action'
 import { FlowVersion } from '../flow-version'
 import { flowStructureUtil, Step } from '../util/flow-structure-util'
@@ -78,7 +78,7 @@ function handleLoopOnItems(parentStep: LoopOnItemsAction, request: AddActionRequ
         })
     }
     else {
-        throw new ActivepiecesError(
+        throw new IOpeerError(
             {
                 code: ErrorCode.FLOW_OPERATION_INVALID,
                 params: {
@@ -101,7 +101,7 @@ function handleRouter(parentStep: RouterAction, request: AddActionRequest): Step
         })
     }
     else {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.FLOW_OPERATION_INVALID,
             params: {
                 message: `Router step parent ${request.stepLocationRelativeToParent} not found`,

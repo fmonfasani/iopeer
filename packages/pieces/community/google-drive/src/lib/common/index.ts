@@ -1,10 +1,10 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   AuthenticationType,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { OAuth2Client } from 'googleapis-common';
 import { google } from 'googleapis';

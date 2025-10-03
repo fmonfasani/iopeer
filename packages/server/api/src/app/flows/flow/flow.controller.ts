@@ -1,7 +1,7 @@
-
-import { ApplicationEventName, GitPushOperationType } from '@activepieces/ee-shared'
+﻿
+import { ApplicationEventName, GitPushOperationType } from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApId,
     CountFlowsRequest,
     CreateFlowRequest,
@@ -24,7 +24,7 @@ import {
     PrincipalType,
     SeekPage,
     SERVICE_KEY_SECURITY_OPENAPI,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
     Type,
@@ -213,7 +213,7 @@ async function assertThatFlowIsNotBeingUsed(
         flow.version.updatedBy !== userId &&
         currentTime.diff(dayjs(flow.version.updated), 'minute') <= 1
     ) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.FLOW_IN_USE,
             params: {
                 flowVersionId: flow.version.id,

@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { lemlistAuth } from '../common/constants';
 import { campaignsDropdown } from '../common/props';
 import { lemlistApiService } from '../common/requests';

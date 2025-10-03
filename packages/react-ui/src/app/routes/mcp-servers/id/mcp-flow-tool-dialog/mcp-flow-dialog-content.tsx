@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Workflow } from 'lucide-react';
 import { useMemo } from 'react';
 import { useDebounce } from 'use-debounce';
@@ -10,7 +10,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { PopulatedFlow } from '@activepieces/shared';
+import { PopulatedFlow } from '@IOpeer/shared';
 
 import { CreateMcpFlowButton } from './create-mcp-flow-button';
 import { mcpFlowDialogUtils } from './mcp-flow-dialog-utils';

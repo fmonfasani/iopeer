@@ -1,5 +1,5 @@
-import { rejectedPromiseHandler } from '@activepieces/server-shared'
-import { ActivepiecesError, ErrorCode, Principal, PrincipalType, WebsocketServerEvent } from '@activepieces/shared'
+﻿import { rejectedPromiseHandler } from '@IOpeer/server-shared'
+import { IOpeerError, ErrorCode, Principal, PrincipalType, WebsocketServerEvent } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { Socket } from 'socket.io'
 import { accessTokenManager } from '../authentication/lib/access-token-manager'
@@ -45,7 +45,7 @@ export const websocketService = {
                 break
             }
             default: {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.AUTHENTICATION,
                     params: {
                         message: 'Invalid principal type',

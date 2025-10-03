@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -7,7 +7,7 @@ import {
   ApFlagId,
   ThirdPartyAuthnProviderEnum,
   ThirdPartyAuthnProvidersToShowMap,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import GoogleIcon from '../../../assets/img/custom/auth/google-icon.svg';
 import SamlIcon from '../../../assets/img/custom/auth/saml.svg';

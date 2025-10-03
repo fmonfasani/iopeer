@@ -1,4 +1,4 @@
-import { BellIcon, EyeNoneIcon, EyeOpenIcon } from '@radix-ui/react-icons';
+﻿import { BellIcon, EyeNoneIcon, EyeOpenIcon } from '@radix-ui/react-icons';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Check, Bell, Trash } from 'lucide-react';
@@ -29,12 +29,12 @@ import { projectHooks } from '@/hooks/project-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { projectApi } from '@/lib/project-api';
 import { cn } from '@/lib/utils';
-import { Alert } from '@activepieces/ee-shared';
+import { Alert } from '@IOpeer/ee-shared';
 import {
   Permission,
   ProjectWithLimits,
   NotificationStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const AlertOption = ({
   title,
@@ -129,7 +129,7 @@ export const AlertsSettings = () => {
           {writeAlertPermission === false && (
             <div className="p-3 bg-amber-50 border border-amber-200 rounded-md">
               <p className="text-xs text-amber-700">
-                <span className="font-medium">⚠️ Limited Access:</span>{' '}
+                <span className="font-medium">âš ï¸ Limited Access:</span>{' '}
                 {t(
                   'Project and alert permissions are required to change this setting.',
                 )}

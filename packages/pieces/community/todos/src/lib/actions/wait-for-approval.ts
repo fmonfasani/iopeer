@@ -1,10 +1,10 @@
-import { httpClient } from '@activepieces/pieces-common';
-import { AuthenticationType } from '@activepieces/pieces-common';
-import { HttpRequest } from '@activepieces/pieces-common';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { PauseType } from '@activepieces/shared';
-import { ExecutionType } from '@activepieces/shared';
+﻿import { httpClient } from '@IOpeer/pieces-common';
+import { AuthenticationType } from '@IOpeer/pieces-common';
+import { HttpRequest } from '@IOpeer/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { PauseType } from '@IOpeer/shared';
+import { ExecutionType } from '@IOpeer/shared';
 
 export const waitForApproval = createAction({
   name: 'wait_for_approval',

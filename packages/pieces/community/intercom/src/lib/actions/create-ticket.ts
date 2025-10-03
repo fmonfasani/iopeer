@@ -1,5 +1,5 @@
-import { intercomAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { intercomAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { intercomClient } from '../common';
 import {
 	companyIdProp,

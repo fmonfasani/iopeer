@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, HttpResponse } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient, HttpResponse } from '@IOpeer/pieces-common';
 import { cambaiAuth } from '../../index';
 import { API_BASE_URL, listSourceLanguagesDropdown, listVoicesDropdown ,POLLING_INTERVAL_MS,MAX_POLLING_ATTEMPTS } from '../common';
 import { listFoldersDropdown } from '../common';

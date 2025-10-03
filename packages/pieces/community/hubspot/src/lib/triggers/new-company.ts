@@ -1,10 +1,10 @@
-import { PiecePropValueSchema, Property, createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { PiecePropValueSchema, Property, createTrigger } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';
 import dayjs from 'dayjs';
-import { MarkdownVariant } from '@activepieces/shared';
+import { MarkdownVariant } from '@IOpeer/shared';
 import { OBJECT_TYPE } from '../common/constants';
 import { hubspotAuth } from '../..';
 import { Client } from '@hubspot/api-client';

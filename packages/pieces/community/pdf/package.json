@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-pdf",
+﻿{
+  "name": "@IOpeer/piece-pdf",
   "version": "0.2.14",
   "dependencies": {
     "jimp": "^0.22.12",

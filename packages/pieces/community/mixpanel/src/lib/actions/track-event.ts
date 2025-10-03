@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { mixpanelAuth } from '../../index';
 
 const API_URL = 'https://api.mixpanel.com';
@@ -29,7 +29,7 @@ export const trackEvent = createAction({
     event_properties: Property.Object({
       displayName: 'Event Properties',
       description:
-        "Event Properties are bits of extra information that you send along with your Events describing the details of that action. They are usually specific to the Event they’re describing and don’t apply universally to other Events. Leveraging Event Properties allows you to conduct deeper analysis to better understand user behavior for a specific action. For example, a 'Song Added to Playlist' event could have 'Artist' and 'Playlist' as the properties. Properties are sent as key-value pairs where the key is the property name and the value is the property value.",
+        "Event Properties are bits of extra information that you send along with your Events describing the details of that action. They are usually specific to the Event theyâ€™re describing and donâ€™t apply universally to other Events. Leveraging Event Properties allows you to conduct deeper analysis to better understand user behavior for a specific action. For example, a 'Song Added to Playlist' event could have 'Artist' and 'Playlist' as the properties. Properties are sent as key-value pairs where the key is the property name and the value is the property value.",
       required: false,
     }),
   },

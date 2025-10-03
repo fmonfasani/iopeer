@@ -1,8 +1,8 @@
-import {
+﻿import {
   PiecePropValueSchema,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { firstSeenAtFromField, firstSeenAtUntilField, lastSeenAtFromField, lastSeenAtUntilField, limitField, makeClient, pageField } from '../common';
 import { PredictLeadsAuth } from '../../index';
 import { prepareQuery } from '../common/client';

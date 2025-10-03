@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Archive, Check, X } from 'lucide-react';
 
@@ -11,7 +11,7 @@ import {
   IssueStatus,
   PopulatedIssue,
   FlowRunStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const issuesTableColumns: ColumnDef<
   RowDataWithActions<PopulatedIssue>

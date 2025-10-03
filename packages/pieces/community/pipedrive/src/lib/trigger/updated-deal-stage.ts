@@ -1,11 +1,11 @@
-import { pipedriveAuth } from '../../index';
+﻿import { pipedriveAuth } from '../../index';
 import {
 	createTrigger,
 	DropdownOption,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedrivePaginatedV1ApiCall,
@@ -13,8 +13,8 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, RequestParams, WebhookCreateResponse } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedriveDealV2 {

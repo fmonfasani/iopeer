@@ -1,13 +1,13 @@
-import {
+﻿import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   MarkdownVariant,
   USE_DRAFT_QUERY_PARAM_NAME,
   ChatFormResponse,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const responseMarkdown = `
 This trigger sets up a chat interface. Ensure that **Respond on UI** is used in your flow`;

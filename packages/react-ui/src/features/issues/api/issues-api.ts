@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   IssueStatus,
   ListIssuesParams,
   PopulatedIssue,
   UpdateIssueRequestBody,
   SeekPage,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const issuesApi = {
   list(request: ListIssuesParams): Promise<SeekPage<PopulatedIssue>> {

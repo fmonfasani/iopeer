@@ -1,4 +1,4 @@
-import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
+﻿import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ import {
   PopulatedFlow,
   FlowTrigger,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { flowsApi } from './flows-api';
 import { flowsUtils } from './flows-utils';
@@ -167,7 +167,7 @@ export const flowsHooks = {
           displayName: t('Untitled'),
         });
         const mcpPiece = await piecesApi.get({
-          name: '@activepieces/piece-mcp',
+          name: '@IOpeer/piece-mcp',
         });
         const trigger = mcpPiece.triggers['mcp_tool'];
         if (!trigger) {

@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { X, Check } from 'lucide-react';
 
 import { JsonViewer } from '@/components/json-viewer';
@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/tooltip';
 import { StepMetadataWithSuggestions } from '@/lib/types';
 import { formatUtils } from '@/lib/utils';
-import { McpRun, McpRunStatus } from '@activepieces/shared';
+import { McpRun, McpRunStatus } from '@IOpeer/shared';
 
 import { mcpRunUtils } from './mcp-run-utils';
 
@@ -63,11 +63,11 @@ const McpRunDetails = ({
                 <p>{mcpRunUtils.getTooltipContent(selectedItem)}</p>
               </TooltipContent>
             </Tooltip>
-            <span>•</span>
+            <span>â€¢</span>
             <span>
               {formatUtils.formatDate(new Date(selectedItem.created))}
             </span>
-            <span>•</span>
+            <span>â€¢</span>
             <div className="text-left">
               <StatusIconWithText
                 icon={selectedItem.status === McpRunStatus.SUCCESS ? Check : X}

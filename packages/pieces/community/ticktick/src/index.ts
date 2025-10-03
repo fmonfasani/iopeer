@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, OAuth2PropertyValue, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, OAuth2PropertyValue, PieceAuth } from '@IOpeer/pieces-framework';
 import { completeTaskAction } from './lib/actions/complete-task';
 import { createTaskAction } from './lib/actions/create-task';
 import { deleteTaskAction } from './lib/actions/delete-task';
@@ -18,7 +18,7 @@ export const ticktickAuth = PieceAuth.OAuth2({
 
 export const ticktick = createPiece({
 	displayName: 'TickTick',
-	logoUrl: 'https://cdn.activepieces.com/pieces/ticktick.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/ticktick.png',
 	auth: ticktickAuth,
 	authors: ['onyedikachi-david', 'kishanprmr'],
 	actions: [

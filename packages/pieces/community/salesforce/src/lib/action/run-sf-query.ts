@@ -1,6 +1,6 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { salesforcesCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { querySalesforceApi } from '../common';
 import { salesforceAuth } from '../..';
 

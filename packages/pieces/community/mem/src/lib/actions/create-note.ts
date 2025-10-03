@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { memAuth } from '../../index';
 import { makeRequest } from '../common';
 
@@ -22,7 +22,7 @@ export const createNoteAction = createAction({
     add_to_collections: Property.Array({
       displayName: 'Add to Collections',
       required: false,
-      description: 'Collection titles or IDs to assign this note to. New collections will be created if they don’t exist.',
+      description: 'Collection titles or IDs to assign this note to. New collections will be created if they donâ€™t exist.',
     }),
   },
   async run(context) {

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 import { Skeleton } from '@/components/ui/skeleton';
 import { flagsHooks } from '@/hooks/flags-hooks';
@@ -9,7 +9,7 @@ import {
   PieceActionSettings,
   PieceTrigger,
   PieceTriggerSettings,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { AutoPropertiesFormComponent } from '../../piece-properties/auto-properties-form';
 import { useStepSettingsContext } from '../step-settings-context';

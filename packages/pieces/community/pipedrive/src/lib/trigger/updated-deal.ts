@@ -1,11 +1,11 @@
-import {
+﻿import {
 	createTrigger,
 	DropdownOption,
 	DynamicPropsValue,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
 	pipedriveApiCall,
 	pipedriveCommon,
@@ -13,9 +13,9 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { pipedriveAuth } from '../..';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { FieldsResponse, GetField, RequestParams } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedriveDealV2 {

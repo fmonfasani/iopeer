@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -19,7 +19,7 @@ import { Label } from '@/components/ui/label';
 import { toast } from '@/components/ui/use-toast';
 import { projectReleaseApi } from '@/features/project-version/lib/project-release-api';
 import { projectHooks } from '@/hooks/project-hooks';
-import { DiffReleaseRequest, ProjectReleaseType } from '@activepieces/shared';
+import { DiffReleaseRequest, ProjectReleaseType } from '@IOpeer/shared';
 
 import { CreateReleaseDialog } from '../create-release-dialog';
 

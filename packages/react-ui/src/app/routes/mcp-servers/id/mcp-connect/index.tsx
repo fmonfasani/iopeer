@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Server } from 'lucide-react';
 import { useParams } from 'react-router-dom';
@@ -12,7 +12,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { mcpApi } from '@/features/mcp/lib/mcp-api';
 import { mcpHooks } from '@/features/mcp/lib/mcp-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
-import { ApFlagId } from '@activepieces/shared';
+import { ApFlagId } from '@IOpeer/shared';
 
 import { ConfigDisplay } from './config-display';
 import { ExposeMcpNote } from './expose-mcp-note';
@@ -133,7 +133,7 @@ export const McpConnectPage = () => {
                     >
                       claude.ai/settings/integrations
                     </a>{' '}
-                    → <Badge variant="outline">{t('Add More')}</Badge>
+                    â†’ <Badge variant="outline">{t('Add More')}</Badge>
                     <p className="mt-3">
                       {t(
                         'This feature is only available with a Claude Pro subscription. Alternatively, you can use the Claude desktop application to connect to the MCP server.',
@@ -146,10 +146,10 @@ export const McpConnectPage = () => {
                     title={t('Configure Claude Integration')}
                   >
                     <div className="mt-3">
-                      {t('Open Claude')} →{' '}
-                      <Badge variant="outline">{t('Settings')}</Badge> →{' '}
-                      <Badge variant="outline">{t('Developer')}</Badge> →{' '}
-                      <Badge variant="outline">{t('Edit Config')}</Badge> →{' '}
+                      {t('Open Claude')} â†’{' '}
+                      <Badge variant="outline">{t('Settings')}</Badge> â†’{' '}
+                      <Badge variant="outline">{t('Developer')}</Badge> â†’{' '}
+                      <Badge variant="outline">{t('Edit Config')}</Badge> â†’{' '}
                       <Badge variant="outline">
                         {t('Open claude_desktop_config.json')}
                       </Badge>
@@ -181,10 +181,10 @@ export const McpConnectPage = () => {
                 <h3 className="text-lg font-semibold">{t('Setup')}</h3>
                 <div className="space-y-3">
                   <StepCard stepNumber={1} title={t('Configure Cursor')}>
-                    {t('Open Cursor')} →{' '}
-                    <Badge variant="outline">{t('Settings')}</Badge> →{' '}
-                    <Badge variant="outline">{t('Cursor Settings')}</Badge> →{' '}
-                    <Badge variant="outline">{t('MCP')}</Badge> →{' '}
+                    {t('Open Cursor')} â†’{' '}
+                    <Badge variant="outline">{t('Settings')}</Badge> â†’{' '}
+                    <Badge variant="outline">{t('Cursor Settings')}</Badge> â†’{' '}
+                    <Badge variant="outline">{t('MCP')}</Badge> â†’{' '}
                     <Badge variant="outline">
                       {t('Add new global MCP server')}
                     </Badge>
@@ -214,10 +214,10 @@ export const McpConnectPage = () => {
                 <div className="space-y-3">
                   <StepCard stepNumber={1} title={t('Configure Windsurf')}>
                     {t('Open')} <Badge variant="outline">{t('Windsurf')}</Badge>{' '}
-                    → <Badge variant="outline">{t('Settings')}</Badge> →{' '}
-                    <Badge variant="outline">{t('Advanced')}</Badge> →{' '}
-                    <Badge variant="outline">{t('Cascade')}</Badge> →{' '}
-                    <Badge variant="outline">{t('Add Server')}</Badge> →{' '}
+                    â†’ <Badge variant="outline">{t('Settings')}</Badge> â†’{' '}
+                    <Badge variant="outline">{t('Advanced')}</Badge> â†’{' '}
+                    <Badge variant="outline">{t('Cascade')}</Badge> â†’{' '}
+                    <Badge variant="outline">{t('Add Server')}</Badge> â†’{' '}
                     <Badge variant="outline">{t('Add custom server +')}</Badge>
                     <br />
                     <br />

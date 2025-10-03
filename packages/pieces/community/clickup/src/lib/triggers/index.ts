@@ -1,4 +1,4 @@
-import { ClickupEventType } from '../common/models';
+﻿import { ClickupEventType } from '../common/models';
 import { clickupRegisterTrigger } from './register-trigger';
 import { triggerTaskTagUpdated } from './task-tag-updated';
 
@@ -86,7 +86,7 @@ export const triggers = [
           user: {
             id: 55053258,
             username: 'IOPeer Apps',
-            email: 'apps@activepieces.com',
+            email: 'apps@IOpeer.com',
             color: '#aa2fff',
             initials: 'AA',
             profilePicture: null,
@@ -120,7 +120,7 @@ export const triggers = [
           user: {
             id: 55053258,
             username: 'IOPeer Apps',
-            email: 'apps@activepieces.com',
+            email: 'apps@IOpeer.com',
             color: '#aa2fff',
             initials: 'AA',
             profilePicture: null,
@@ -423,7 +423,7 @@ export const triggers = [
           user: {
             id: 55053258,
             username: 'IOPeer Apps',
-            email: 'apps@activepieces.com',
+            email: 'apps@IOpeer.com',
             color: '#aa2fff',
             initials: 'AA',
             profilePicture: null,
@@ -463,7 +463,7 @@ export const triggers = [
           user: {
             id: 55053258,
             username: 'IOPeer Apps',
-            email: 'apps@activepieces.com',
+            email: 'apps@IOpeer.com',
             color: '#aa2fff',
             initials: 'AA',
             profilePicture: null,

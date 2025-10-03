@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
 import { zagoMailApiService } from './request';
 
 export const listUId = Property.Dropdown({

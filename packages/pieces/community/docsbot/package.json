@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-docsbot",
+﻿{
+  "name": "@IOpeer/piece-docsbot",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,13 +1,13 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const registrationFolderTobill = createTrigger({
   auth: wedofAuth,
   name: 'registrationFolderTobill',
-  displayName: 'Dossier de formation à facturer',
+  displayName: 'Dossier de formation Ã  facturer',
   description:
-    "Se déclenche lorsqu'un dossier de formation est prêt à être facturé (service fait validé)",
+    "Se dÃ©clenche lorsqu'un dossier de formation est prÃªt Ã  Ãªtre facturÃ© (service fait validÃ©)",
   props: {},
   sampleData: {
     withPoleEmploi: false,
@@ -25,7 +25,7 @@ export const registrationFolderTobill = createTrigger({
       phoneNumber: '(323) 853-2456',
       phoneFixed: '0666666666',
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',
@@ -152,7 +152,7 @@ export const registrationFolderTobill = createTrigger({
       },
       certification: {
         href: '/api/certifications/112713',
-        name: 'Gérer des projets avec la méthode Agile',
+        name: 'GÃ©rer des projets avec la mÃ©thode Agile',
         certifInfo: '112713',
         externalId: 'RS5695',
         id: 2,

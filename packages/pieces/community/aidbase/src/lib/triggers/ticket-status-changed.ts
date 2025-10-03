@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { ticketFormDropdown } from '../common/props';
 
@@ -10,7 +10,7 @@ export const ticketStatusChanged = createTrigger({
   auth: aidbaseAuth,
   name: 'ticket_status_changed',
   displayName: 'Ticket Status Changed',
-  description: 'Fires when a ticket’s overall status changes.',
+  description: 'Fires when a ticketâ€™s overall status changes.',
 
   props: {
     ticket_form_id: ticketFormDropdown,

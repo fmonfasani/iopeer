@@ -1,5 +1,5 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
-import { HttpMethod } from "@activepieces/pieces-common";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
+import { HttpMethod } from "@IOpeer/pieces-common";
 import { emailOctopusAuth } from "../common/auth";
 import { EmailOctopusClient } from "../common/client";
 

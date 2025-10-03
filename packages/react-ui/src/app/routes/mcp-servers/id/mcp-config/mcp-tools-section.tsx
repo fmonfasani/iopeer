@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Hammer } from 'lucide-react';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -8,8 +8,8 @@ import type {
   McpTool,
   McpToolRequest,
   McpWithTools,
-} from '@activepieces/shared';
-import { isNil, McpToolType } from '@activepieces/shared';
+} from '@IOpeer/shared';
+import { isNil, McpToolType } from '@IOpeer/shared';
 
 import { McpAddToolDropdown } from '../mcp-add-tool-actions';
 

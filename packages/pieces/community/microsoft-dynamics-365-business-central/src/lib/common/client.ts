@@ -1,4 +1,4 @@
-import { businessCentralAuth } from '../../';
+﻿import { businessCentralAuth } from '../../';
 import {
   HttpMessageBody,
   HttpMethod,
@@ -7,8 +7,8 @@ import {
   HttpRequest,
   AuthenticationType,
   HttpHeaders,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 
 interface ListAPIResponse<T> {
   '@odata.context': string;

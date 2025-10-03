@@ -1,29 +1,29 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
 export const updateRegistrationFolder = createAction({
   auth: wedofAuth,
   name: 'updateRegistrationFolder',
-  displayName: 'Mettre à jour un dossier de formation',
+  displayName: 'Mettre Ã  jour un dossier de formation',
   description:
-    "Met à jour certaines informations modifiables d'un dossier de formation",
+    "Met Ã  jour certaines informations modifiables d'un dossier de formation",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {externalId} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de formation',
       required: true,
     }),
     fieldsToUpdate: Property.StaticMultiSelectDropdown({
-      displayName: 'Champs à mettre à jour',
-      description: 'Sélectionner les champs que vous souhaitez mettre à jour',
+      displayName: 'Champs Ã  mettre Ã  jour',
+      description: 'SÃ©lectionner les champs que vous souhaitez mettre Ã  jour',
       required: true,
       options: {
         disabled: false,
@@ -33,7 +33,7 @@ export const updateRegistrationFolder = createAction({
             value: 'price',
           },
           {
-            label: 'Date de début de la session de formation',
+            label: 'Date de dÃ©but de la session de formation',
             value: 'sessionStartDate',
           },
           {
@@ -41,7 +41,7 @@ export const updateRegistrationFolder = createAction({
             value: 'sessionEndDate',
           },
           {
-            label: 'Notes privées',
+            label: 'Notes privÃ©es',
             value: 'notes',
           },
           {
@@ -53,7 +53,7 @@ export const updateRegistrationFolder = createAction({
             value: 'completionRate',
           },
           {
-            label: 'Durée moyenne de la formation',
+            label: 'DurÃ©e moyenne de la formation',
             value: 'indicativeDuration',
           },
           {
@@ -68,7 +68,7 @@ export const updateRegistrationFolder = createAction({
       },
     }),
     dynamicFields: Property.DynamicProperties({
-      displayName: 'Champs sélectionnés',
+      displayName: 'Champs sÃ©lectionnÃ©s',
       refreshers: ['fieldsToUpdate'],
       required: false,
       props: async ({ fieldsToUpdate }) => {
@@ -78,14 +78,14 @@ export const updateRegistrationFolder = createAction({
         if (selectedFields.includes('price')) {
           fields['price'] = Property.Number({
             displayName: 'Prix de la formation',
-            description: 'Nouveau tarif en €',
+            description: 'Nouveau tarif en â‚¬',
             required: false,
           });
         }
 
         if (selectedFields.includes('sessionStartDate')) {
           fields['sessionStartDate'] = Property.DateTime({
-            displayName: 'Date de début de la session de formation',
+            displayName: 'Date de dÃ©but de la session de formation',
             description: 'Date au format YYYY-MM-DD',
             required: false,
           });
@@ -102,7 +102,7 @@ export const updateRegistrationFolder = createAction({
         if (selectedFields.includes('notes')) {
           fields['notes'] = Property.LongText({
             displayName: 'Notes',
-            description: "Notes privées (non-visible par l'apprenant)",
+            description: "Notes privÃ©es (non-visible par l'apprenant)",
             required: false,
           });
         }
@@ -119,15 +119,15 @@ export const updateRegistrationFolder = createAction({
           fields['completionRate'] = Property.Number({
             displayName: "Taux d'avancement",
             description:
-              "Taux d'avancement en % compris entre 0% et 100%. Uniquement sous format d'un entier. Uniquement possible à l'état En formation et Sortie de formation",
+              "Taux d'avancement en % compris entre 0% et 100%. Uniquement sous format d'un entier. Uniquement possible Ã  l'Ã©tat En formation et Sortie de formation",
             required: false,
           });
         }
 
         if (selectedFields.includes('indicativeDuration')) {
           fields['indicativeDuration'] = Property.Number({
-            displayName: 'Durée moyenne de la formation',
-            description: 'En heures, durée moyenne de la formation',
+            displayName: 'DurÃ©e moyenne de la formation',
+            description: 'En heures, durÃ©e moyenne de la formation',
             required: false,
           });
         }
@@ -135,7 +135,7 @@ export const updateRegistrationFolder = createAction({
         if (selectedFields.includes('weeklyDuration')) {
           fields['weeklyDuration'] = Property.Number({
             displayName: 'Temps de formation par semaine',
-            description: 'En heures, ne peut pas être supérieur à 99',
+            description: 'En heures, ne peut pas Ãªtre supÃ©rieur Ã  99',
             required: false,
           });
         }
@@ -144,7 +144,7 @@ export const updateRegistrationFolder = createAction({
           fields['tags'] = Property.Array({
             displayName: 'Tags',
             description:
-              'Liste de tags associée au dossier de formation, si vous souhaitez garder vos précédents tags, il faut les réécrire dans le champ',
+              'Liste de tags associÃ©e au dossier de formation, si vous souhaitez garder vos prÃ©cÃ©dents tags, il faut les rÃ©Ã©crire dans le champ',
             required: false,
           });
         }

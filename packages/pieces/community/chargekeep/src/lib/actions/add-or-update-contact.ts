@@ -1,7 +1,7 @@
-// add-or-update-contact.ts
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿// add-or-update-contact.ts
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { chargekeepAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const addOrUpdateContact = createAction({
   name: 'addOrUpdateContact',

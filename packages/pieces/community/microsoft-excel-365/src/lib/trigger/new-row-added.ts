@@ -1,16 +1,16 @@
-import {
+﻿import {
   OAuth2PropertyValue,
   Property,
   createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { excelCommon } from '../common/common';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 import { excelAuth } from '../..';
 
 const polling: Polling<

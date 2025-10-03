@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
 import { foldersHooks } from '@/features/folders/lib/folders-hooks';
-import { Flow, FlowOperationType, PopulatedFlow } from '@activepieces/shared';
+import { Flow, FlowOperationType, PopulatedFlow } from '@IOpeer/shared';
 
 import { flowsApi } from '../lib/flows-api';
 

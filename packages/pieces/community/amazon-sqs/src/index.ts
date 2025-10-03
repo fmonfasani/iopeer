@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+﻿
+import { createPiece, PieceAuth, Property } from "@IOpeer/pieces-framework";
 import { ListQueuesCommand, SQS } from '@aws-sdk/client-sqs';
 import { sendMessage } from "./lib/actions/send-message";
 
@@ -102,7 +102,7 @@ export const amazonSqsAuth = PieceAuth.CustomAuth({
             value: 'me-south-1',
           },
           {
-            label: 'South America (São Paulo) [sa-east-1]',
+            label: 'South America (SÃ£o Paulo) [sa-east-1]',
             value: 'sa-east-1',
           },
           {
@@ -170,7 +170,7 @@ export const awsSqs = createPiece({
   displayName: "Amazon SQS",
   auth: amazonSqsAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: "https://cdn.activepieces.com/pieces/aws-sqs.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/aws-sqs.png",
   authors: ["abuaboud"],
   actions: [sendMessage],
   triggers: [],

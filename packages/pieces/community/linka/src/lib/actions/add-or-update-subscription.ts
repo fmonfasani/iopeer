@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { linkaAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const addOrUpdateSubscription = createAction({
   name: 'addOrUpdateSubscription',

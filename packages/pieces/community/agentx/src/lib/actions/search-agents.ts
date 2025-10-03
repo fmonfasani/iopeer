@@ -1,7 +1,7 @@
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { createAction, Property } from "@IOpeer/pieces-framework";
 import { makeRequest } from "../common/client";
 import { AgentXAuth } from "../common/auth";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 
 export const searchAgents = createAction({
   auth: AgentXAuth,

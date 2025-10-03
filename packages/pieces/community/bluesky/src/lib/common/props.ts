@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 
 export const languageOptions = [
   { label: 'English', value: 'en' },

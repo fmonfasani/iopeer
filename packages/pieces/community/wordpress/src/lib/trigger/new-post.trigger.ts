@@ -1,13 +1,13 @@
-import {
+﻿import {
   createTrigger,
   PiecePropValueSchema,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { wordpressCommon } from '../common';
 import dayjs from 'dayjs';
 import { wordpressAuth } from '../..';

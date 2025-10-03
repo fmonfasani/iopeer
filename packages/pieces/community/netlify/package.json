@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-netlify",
+﻿{
+  "name": "@IOpeer/piece-netlify",
   "version": "0.0.4",
   "type": "commonjs",
   "main": "./src/index.js",

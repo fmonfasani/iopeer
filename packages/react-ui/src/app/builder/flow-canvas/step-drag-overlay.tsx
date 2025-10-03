@@ -1,8 +1,8 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { useSidebar } from '@/components/ui/sidebar-shadcn';
 import { stepsHooks } from '@/features/pieces/lib/steps-hooks';
-import { FlowAction, FlowTrigger } from '@activepieces/shared';
+import { FlowAction, FlowTrigger } from '@IOpeer/shared';
 
 import {
   BUILDER_NAVIGATION_SIDEBAR_ID,

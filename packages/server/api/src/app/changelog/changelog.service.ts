@@ -1,5 +1,5 @@
-import { AppSystemProp } from '@activepieces/server-shared'
-import { ActivepiecesError, ApEdition, Changelog, ErrorCode, ListChangelogsResponse } from '@activepieces/shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
+import { IOpeerError, ApEdition, Changelog, ErrorCode, ListChangelogsResponse } from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { distributedStore } from '../helper/key-value'
@@ -41,7 +41,7 @@ async function getChangelog(logger: FastifyBaseLogger): Promise<ListChangelogsRe
             return await getChangelogFeaturebaseRequest()
         }
         else {
-            return await getChangelogActivepiecesRequest()
+            return await getChangelogIOpeerRequest()
         }
     }
     catch (error) {
@@ -74,7 +74,7 @@ async function getChangelogFeaturebaseRequest(): Promise<ListChangelogsResponse>
             headers,
         })
         if (!response.ok) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: 'Could not fetch changelog',
@@ -106,7 +106,7 @@ async function getChangelogFeaturebaseRequest(): Promise<ListChangelogsResponse>
     }
 }
 
-async function getChangelogActivepiecesRequest(): Promise<ListChangelogsResponse> {
+async function getChangelogIOpeerRequest(): Promise<ListChangelogsResponse> {
     const url = new URL('https://cloud.iopeer.com/api/v1/changelogs')
 
     const response = await fetch(url.toString(), {
@@ -116,7 +116,7 @@ async function getChangelogActivepiecesRequest(): Promise<ListChangelogsResponse
         },
     })
     if (!response.ok) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.VALIDATION,
             params: {
                 message: 'Could not fetch changelog',

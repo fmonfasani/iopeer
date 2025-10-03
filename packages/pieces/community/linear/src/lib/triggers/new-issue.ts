@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { linearAuth } from '../..';
 import { makeClient } from '../common/client';
 import { props } from '../common/props';

@@ -1,5 +1,5 @@
-import { OAuth2GrantType } from '@activepieces/shared';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { OAuth2GrantType } from '@IOpeer/shared';
+import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 
 export const cloudconvertAuth = PieceAuth.OAuth2({
     description: 'Connect your CloudConvert account using OAuth2',

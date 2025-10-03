@@ -1,10 +1,10 @@
-import { beamerAuth } from '../../index';
+﻿import { beamerAuth } from '../../index';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { Property, createAction } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { beamerCommon } from '../common';
 
 export const createNewFeatureRequest = createAction({

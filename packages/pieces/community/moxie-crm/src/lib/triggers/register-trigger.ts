@@ -1,8 +1,8 @@
-import {
+﻿import {
   TriggerStrategy,
   createTrigger,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { MoxieCRMEventType } from '.';
 import { moxieCRMAuth } from '../../';
 export const moxieCRMRegisterTrigger = ({

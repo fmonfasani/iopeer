@@ -1,12 +1,12 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { baseUrl, getContacts, leadConnectorHeaders } from './lib/common';
 
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { addContactToCampaignAction } from './lib/actions/add-contact-to-campaign';
 import { addContactToWorkflowAction } from './lib/actions/add-contact-to-workflow';
 import { addNoteToContactAction } from './lib/actions/add-note-to-contact';
@@ -81,7 +81,7 @@ export const leadConnector = createPiece({
   description: 'Lead Connector - Go High Level',
   auth: leadConnectorAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/lead-connector.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/lead-connector.png',
   categories: [PieceCategory.SALES_AND_CRM],
   authors: ['kishanprmr', 'MoShizzle', 'abuaboud'],
   actions: [

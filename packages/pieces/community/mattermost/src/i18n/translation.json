@@ -1,10 +1,10 @@
-{
+﻿{
   "Open-source, self-hosted Slack alternative": "Open-source, self-hosted Slack alternative",
   "Workspace URL": "Workspace URL",
   "Bot Token": "Bot Token",
-  "The workspace URL of the Mattermost instance (e.g https://activepieces.mattermost.com)": "The workspace URL of the Mattermost instance (e.g https://activepieces.mattermost.com)",
+  "The workspace URL of the Mattermost instance (e.g https://IOpeer.mattermost.com)": "The workspace URL of the Mattermost instance (e.g https://IOpeer.mattermost.com)",
   "The bot token to use to authenticate": "The bot token to use to authenticate",
-  "\n**Workspace URL**: The url of mattermost instance (e.g `https://activepieces.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n": "\n**Workspace URL**: The url of mattermost instance (e.g `https://activepieces.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n",
+  "\n**Workspace URL**: The url of mattermost instance (e.g `https://IOpeer.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n": "\n**Workspace URL**: The url of mattermost instance (e.g `https://IOpeer.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n",
   "Send Message": "Send Message",
   "Custom API Call": "Custom API Call",
   "Send a message to a Mattermost channel": "Send a message to a Mattermost channel",

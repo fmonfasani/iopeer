@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { EllipsisVertical, Pencil, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { cn } from '@/lib/utils';
-import { FolderDto, Permission } from '@activepieces/shared';
+import { FolderDto, Permission } from '@IOpeer/shared';
 
 import { foldersApi } from '../lib/folders-api';
 

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-prompthub",
+﻿{
+  "name": "@IOpeer/piece-prompthub",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

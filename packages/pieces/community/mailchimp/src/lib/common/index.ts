@@ -1,11 +1,11 @@
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-import { AuthenticationType } from '@activepieces/pieces-common';
+import { AuthenticationType } from '@IOpeer/pieces-common';
 import crypto from 'crypto';
 
 export const mailchimpCommon = {

@@ -1,8 +1,8 @@
-# Contributing to IOPeer
+﻿# Contributing to IOPeer
 
-Thank you — your help makes IOPeer better. This document is for internal contributors and authorized partners only. This repository is **not** open-source: contributions are governed under our commercial/enterprise policies.
+Thank you â€” your help makes IOPeer better. This document is for internal contributors and authorized partners only. This repository is **not** open-source: contributions are governed under our commercial/enterprise policies.
 
-> Note: some components were adapted from Activepieces; original attribution and license notices remain in the files where required. Please do not remove those headers. :contentReference[oaicite:6]{index=6}
+> Note: some components were adapted from IOpeer; original attribution and license notices remain in the files where required. Please do not remove those headers. :contentReference[oaicite:6]{index=6}
 
 ## Before you contribute
 - This codebase is private. Do not fork, mirror, or publish it externally.

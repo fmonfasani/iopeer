@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createTask } from './lib/actions/create-task';
 
 const mddescription = `
@@ -33,7 +33,7 @@ export const nifty = createPiece({
 
   auth: niftyAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/nifty.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/nifty.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ["kishanprmr","MoShizzle","abuaboud"],
   actions: [

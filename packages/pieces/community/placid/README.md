@@ -1,4 +1,4 @@
-# Placid
+﻿# Placid
 
 Placid is a creative automation engine that generates dynamic images, PDFs, and videos from templates and data. This integration empowers AI agents and workflows to produce and retrieve media assets automatically.
 
@@ -25,7 +25,7 @@ This piece requires a Placid API token. You can obtain your API token by:
 ## Logo Requirements
 
 This piece requires a logo to be uploaded to the IOPeer CDN at:
-`https://cdn.activepieces.com/pieces/placid.png`
+`https://cdn.IOpeer.com/pieces/placid.png`
 
 ### Logo Files Included:
 - `placid-logo.png` - Downloaded from Placid's official site

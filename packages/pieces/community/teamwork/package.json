@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-teamwork",
+﻿{
+  "name": "@IOpeer/piece-teamwork",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

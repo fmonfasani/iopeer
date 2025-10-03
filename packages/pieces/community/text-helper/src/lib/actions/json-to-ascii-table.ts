@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 
 export const jsonToAsciiTable = createAction({
   description: 'Convert a list of items to a text table',

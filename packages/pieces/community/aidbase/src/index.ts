@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { aidbaseAuth } from './lib/common/auth';
 import { emailReceived } from './lib/triggers/email-received';
 import { emailStatusChanged } from './lib/triggers/email-status-changed';
@@ -14,16 +14,16 @@ import { addFaqItem } from './lib/actions/add-faq-item';
 import { createFaq } from './lib/actions/create-faq';
 import { createChatbotReply } from './lib/actions/create-chatbot-reply';
 import { startTraining } from './lib/actions/start-training';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { API_BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const aidbase = createPiece({
   displayName: 'Aidbase',
   auth: aidbaseAuth,
   minimumSupportedRelease: '0.36.1',
   categories:[PieceCategory.CUSTOMER_SUPPORT, PieceCategory.COMMUNICATION],
-  logoUrl: 'https://cdn.activepieces.com/pieces/aidbase.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/aidbase.png',
   authors: ['Prabhukiran161', 'sanket-a11y'],
   actions: [
     addVideo,

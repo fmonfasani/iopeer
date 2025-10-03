@@ -1,5 +1,5 @@
-import { gristAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { gristAuth } from '../..';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { commonProps } from '../common/props';
 import { GristAPIClient, transformTableColumnValues } from '../common/helpers';
 

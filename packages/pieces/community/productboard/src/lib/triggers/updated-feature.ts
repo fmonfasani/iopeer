@@ -1,9 +1,9 @@
-import { productboardAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { productboardAuth } from '../common/auth';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import {
     TriggerStrategy,
     createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { productboardCommon } from '../common/client';
 
 export const updatedFeature = createTrigger({

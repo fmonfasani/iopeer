@@ -1,8 +1,8 @@
-import { pipedriveAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { dealIdProp, productIdProp } from '../common/props';
 import { pipedriveApiCall } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const addProductToDealAction = createAction({
     auth: pipedriveAuth,

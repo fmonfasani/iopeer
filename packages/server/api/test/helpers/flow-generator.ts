@@ -1,4 +1,4 @@
-import { apId, FlowAction, FlowActionType, FlowStatus, FlowTrigger, FlowTriggerType, FlowVersion, FlowVersionState, PopulatedFlow } from '@activepieces/shared'
+﻿import { apId, FlowAction, FlowActionType, FlowStatus, FlowTrigger, FlowTriggerType, FlowVersion, FlowVersionState, PopulatedFlow } from '@IOpeer/shared'
 import { faker } from '@faker-js/faker'
 
 
@@ -69,7 +69,7 @@ function generateAction(): FlowAction {
         skip: false,
         settings: {
             input: {},
-            pieceName: faker.helpers.arrayElement(['@activepieces/piece-schedule', '@activepieces/piece-webhook']),
+            pieceName: faker.helpers.arrayElement(['@IOpeer/piece-schedule', '@IOpeer/piece-webhook']),
             pieceVersion: faker.system.semver(),
             actionName: faker.hacker.noun(),
             propertySettings: {},
@@ -84,7 +84,7 @@ function generateTrigger(): FlowTrigger {
         displayName: faker.hacker.noun(),
         name: apId(),
         settings: {
-            pieceName: faker.helpers.arrayElement(['@activepieces/piece-schedule', '@activepieces/piece-webhook']),
+            pieceName: faker.helpers.arrayElement(['@IOpeer/piece-schedule', '@IOpeer/piece-webhook']),
             pieceVersion: faker.system.semver(),
             triggerName: faker.hacker.noun(),
             input: {},

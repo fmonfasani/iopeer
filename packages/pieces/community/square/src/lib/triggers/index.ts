@@ -1,5 +1,5 @@
-import { squareAuth } from '../../';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { squareAuth } from '../../';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 
 const triggerData = [
   {

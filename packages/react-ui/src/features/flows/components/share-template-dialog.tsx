@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { DialogDescription, DialogTrigger } from '@radix-ui/react-dialog';
 import { Static, Type } from '@sinclair/typebox';
 import { useMutation } from '@tanstack/react-query';
@@ -19,7 +19,7 @@ import { Label } from '@/components/ui/label';
 import { flowsApi } from '@/features/flows/lib/flows-api';
 import { templatesApi } from '@/features/templates/lib/templates-api';
 import { useNewWindow } from '@/lib/navigation-utils';
-import { FlowTemplate, TemplateType } from '@activepieces/shared';
+import { FlowTemplate, TemplateType } from '@IOpeer/shared';
 
 const ShareTemplateSchema = Type.Object({
   description: Type.String(),

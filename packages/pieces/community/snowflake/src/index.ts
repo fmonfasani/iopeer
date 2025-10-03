@@ -1,11 +1,11 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { runMultipleQueries } from './lib/actions/run-multiple-queries';
 import { runQuery } from './lib/actions/run-query';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { insertRowAction } from './lib/actions/insert-row';
 
 export const snowflakeAuth = PieceAuth.CustomAuth({
@@ -71,7 +71,7 @@ export const snowflake = createPiece({
 
   auth: snowflakeAuth,
   minimumSupportedRelease: '0.27.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/snowflake.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/snowflake.png',
   categories: [PieceCategory.DEVELOPER_TOOLS],
   authors: ['AdamSelene', 'abuaboud', 'valentin-mourtialon'],
   actions: [runQuery, runMultipleQueries, insertRowAction],

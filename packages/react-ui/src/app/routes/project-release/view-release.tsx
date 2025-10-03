@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { formatDistance } from 'date-fns';
 import { t } from 'i18next';
 import {
@@ -18,7 +18,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { projectReleaseApi } from '@/features/project-version/lib/project-release-api';
-import { isNil, ProjectReleaseType } from '@activepieces/shared';
+import { isNil, ProjectReleaseType } from '@IOpeer/shared';
 
 import { ApplyButton } from './apply-plan';
 

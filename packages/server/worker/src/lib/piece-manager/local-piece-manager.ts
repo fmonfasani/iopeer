@@ -1,7 +1,7 @@
-import { readFile, writeFile } from 'node:fs/promises'
+﻿import { readFile, writeFile } from 'node:fs/promises'
 import { join, resolve, sep } from 'node:path'
-import { ApLock, filePiecesUtils, fileSystemUtils, memoryLock } from '@activepieces/server-shared'
-import { assertEqual, assertNotNullOrUndefined, isEmpty, PackageType, PiecePackage } from '@activepieces/shared'
+import { ApLock, filePiecesUtils, fileSystemUtils, memoryLock } from '@IOpeer/server-shared'
+import { assertEqual, assertNotNullOrUndefined, isEmpty, PackageType, PiecePackage } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { cacheState } from '../cache/cache-state'
 import { packageManager } from '../cache/package-manager'
@@ -41,14 +41,14 @@ export class LocalPieceManager extends PieceManager {
             const packages = workerMachine.getSettings().DEV_PIECES || []
 
             const frameworkPackages = {
-                '@activepieces/pieces-common': `link:${communityPiecesDistPath}/common`,
-                '@activepieces/pieces-framework': `link:${communityPiecesDistPath}/framework`,
-                '@activepieces/shared': `link:${basePath}/dist/packages/shared`,
-                '@activepieces/common-ai': `link:${communityPiecesDistPath}/common-ai`,
+                '@IOpeer/pieces-common': `link:${communityPiecesDistPath}/common`,
+                '@IOpeer/pieces-framework': `link:${communityPiecesDistPath}/framework`,
+                '@IOpeer/shared': `link:${basePath}/dist/packages/shared`,
+                '@IOpeer/common-ai': `link:${communityPiecesDistPath}/common-ai`,
             }
-            await linkPackages(projectPath, join(communityPiecesDistPath, 'framework'), '@activepieces/pieces-framework', frameworkPackages, params.log)
-            await linkPackages(projectPath, join(communityPiecesDistPath, 'common'), '@activepieces/pieces-common', frameworkPackages, params.log)
-            await linkPackages(projectPath, join(communityPiecesDistPath, 'common-ai'), '@activepieces/common-ai', frameworkPackages, params.log)
+            await linkPackages(projectPath, join(communityPiecesDistPath, 'framework'), '@IOpeer/pieces-framework', frameworkPackages, params.log)
+            await linkPackages(projectPath, join(communityPiecesDistPath, 'common'), '@IOpeer/pieces-common', frameworkPackages, params.log)
+            await linkPackages(projectPath, join(communityPiecesDistPath, 'common-ai'), '@IOpeer/common-ai', frameworkPackages, params.log)
             for (const piece of pieces) {
                 assertEqual(piece.packageType, PackageType.REGISTRY, 'packageType', `Piece ${piece.pieceName} is not of type REGISTRY`)
                 const directoryPath = await filePiecesUtils(packages, params.log).findDirectoryByPackageName(piece.pieceName)

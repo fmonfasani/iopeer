@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { amazonS3Auth } from '../..';
 import { createS3 } from '../common';
 

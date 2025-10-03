@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+﻿import { create } from 'zustand';
 
 import { PromiseQueue } from '@/lib/promise-queue';
 import {
@@ -6,7 +6,7 @@ import {
   UpdateAgentRequestBody,
   debounce,
   spreadIfDefined,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { agentsApi } from '../agents-api';
 

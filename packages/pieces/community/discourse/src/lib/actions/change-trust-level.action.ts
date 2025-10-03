@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { discourseAuth } from '../../index';
-import { Property, createAction } from '@activepieces/pieces-framework';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 
 export const changeUserTrustLevel = createAction({
   auth: discourseAuth,

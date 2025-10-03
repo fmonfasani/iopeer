@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { CopperApiService } from './requests';
 
 export const BASE_URL = 'https://api.copper.com/developer_api';

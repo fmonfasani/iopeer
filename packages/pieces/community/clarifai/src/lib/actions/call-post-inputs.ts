@@ -1,5 +1,5 @@
-import { clarifaiAuth } from '../../';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { clarifaiAuth } from '../../';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import {
   CommonClarifaiProps,
   callPostInputs,

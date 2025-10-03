@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { WorkflowIcon } from 'lucide-react';
 
 import {
@@ -7,8 +7,8 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { PieceIcon } from '@/features/pieces/components/piece-icon';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
-import { McpToolType, McpWithTools } from '@activepieces/shared';
+import { PieceMetadataModelSummary } from '@IOpeer/pieces-framework';
+import { McpToolType, McpWithTools } from '@IOpeer/shared';
 
 interface McpToolsIconProps {
   mcpTools: McpWithTools['tools'];

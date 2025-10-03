@@ -1,9 +1,9 @@
-import {
+﻿import {
   createTrigger,
   Property,
   StoreScope,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { makeClient } from '../common';
 import { createHash } from 'crypto';
 import { pastefyAuth } from '../..';

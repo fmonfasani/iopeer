@@ -1,14 +1,14 @@
-import {
+﻿import {
   Property,
   DynamicPropsValue,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { bannerbearAuth } from '../../';
 
 export const bannerbearCreateImageAction = createAction({

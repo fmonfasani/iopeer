@@ -1,38 +1,38 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const updatePartnership = createAction({
   auth: wedofAuth,
   name: 'updatePartnership',
-  displayName: 'Mettre à jour le partenariat',
-  description: 'Permet de mettre à jour le partenariat',
+  displayName: 'Mettre Ã  jour le partenariat',
+  description: 'Permet de mettre Ã  jour le partenariat',
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
+      displayName: 'NÂ° certifInfo',
       description:
-        'Sélectionner le {certifInfo} de la certification considérée',
+        'SÃ©lectionner le {certifInfo} de la certification considÃ©rÃ©e',
       required: true,
     }),
     siret: Property.ShortText({
-      displayName: 'N° Siret',
-      description: 'Sélectionner le {siret} du partenaire',
+      displayName: 'NÂ° Siret',
+      description: 'SÃ©lectionner le {siret} du partenaire',
       required: true,
     }),
     fieldsToUpdate: Property.StaticMultiSelectDropdown({
-      displayName: 'Champs à mettre à jour',
-      description: 'Sélectionner les champs que vous souhaitez mettre à jour',
+      displayName: 'Champs Ã  mettre Ã  jour',
+      description: 'SÃ©lectionner les champs que vous souhaitez mettre Ã  jour',
       required: true,
       options: {
         disabled: false,
         options: [
           {
-            label: 'État du partenariat',
+            label: 'Ã‰tat du partenariat',
             value: 'state',
           },
           {
@@ -48,7 +48,7 @@ export const updatePartnership = createAction({
             value: 'pendingActivation',
           },
           {
-            label: 'En attente de révocation',
+            label: 'En attente de rÃ©vocation',
             value: 'pendingRevocation',
           },
           {
@@ -60,7 +60,7 @@ export const updatePartnership = createAction({
             value: 'amountHt',
           },
           {
-            label: 'Conformité',
+            label: 'ConformitÃ©',
             value: 'compliance',
           },
           {
@@ -68,7 +68,7 @@ export const updatePartnership = createAction({
             value: 'tags',
           },
           {
-            label: 'Méta-données',
+            label: 'MÃ©ta-donnÃ©es',
             value: 'metadata',
           },
           {
@@ -76,14 +76,14 @@ export const updatePartnership = createAction({
             value: 'trainingsZone',
           },
           {
-            label: 'Blocs de compétences',
+            label: 'Blocs de compÃ©tences',
             value: 'skillSets',
           },
         ],
       },
     }),
     dynamicFields: Property.DynamicProperties({
-      displayName: 'Champs sélectionnés',
+      displayName: 'Champs sÃ©lectionnÃ©s',
       refreshers: ['fieldsToUpdate'],
       required: false,
       props: async ({ fieldsToUpdate }) => {
@@ -101,7 +101,7 @@ export const updatePartnership = createAction({
         if (selectedFields.includes('comment')) {
           fields['comment'] = Property.LongText({
             displayName: 'Commentaire',
-            description: 'Informations complémentaires sur le partenariat',
+            description: 'Informations complÃ©mentaires sur le partenariat',
             required: false,
           });
         }
@@ -115,7 +115,7 @@ export const updatePartnership = createAction({
 
         if (selectedFields.includes('pendingRevocation')) {
           fields['pendingRevocation'] = Property.Checkbox({
-            displayName: 'En attente de révocation',
+            displayName: 'En attente de rÃ©vocation',
             required: false,
           });
         }
@@ -144,15 +144,15 @@ export const updatePartnership = createAction({
           fields['tags'] = Property.Array({
             displayName: 'Tags',
             description:
-              'Liste de tags associés au partenariat, si vous souhaitez garder vos précédents tags, il faut les réécrire dans le champ',
+              'Liste de tags associÃ©s au partenariat, si vous souhaitez garder vos prÃ©cÃ©dents tags, il faut les rÃ©Ã©crire dans le champ',
             required: false,
           });
         }
 
         if (selectedFields.includes('metadata')) {
           fields['metadata'] = Property.Array({
-            displayName: 'Méta-données',
-            description: 'Données supplémentaires liées au partenariat',
+            displayName: 'MÃ©ta-donnÃ©es',
+            description: 'DonnÃ©es supplÃ©mentaires liÃ©es au partenariat',
             required: false,
           });
         }
@@ -166,7 +166,7 @@ export const updatePartnership = createAction({
 
         if (selectedFields.includes('skillSets')) {
           fields['skillSets'] = Property.Array({
-            displayName: 'Blocs de compétences',
+            displayName: 'Blocs de compÃ©tences',
             required: false,
           });
         }

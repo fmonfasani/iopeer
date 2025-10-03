@@ -1,7 +1,7 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import { invoiceninjaAuth } from '../..';
 

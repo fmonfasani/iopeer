@@ -1,4 +1,4 @@
-import { fileCompressor } from '@activepieces/server-shared'
+﻿import { fileCompressor } from '@IOpeer/server-shared'
 import {
     ExecutionType,
     FlowActionType,
@@ -12,7 +12,7 @@ import {
     PropertyExecutionType,
     RunEnvironment,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
 import { flowJobExecutor, flowWorker, workerMachine } from 'server-worker'
 import { accessTokenManager } from '../../../../../src/app/authentication/lib/access-token-manager'
@@ -62,13 +62,13 @@ describe('flow execution', () => {
         await databaseConnection().getRepository('flow').save([mockFlow])
 
         const mockPieceMetadata1 = createMockPieceMetadata({
-            name: '@activepieces/piece-schedule',
+            name: '@IOpeer/piece-schedule',
             version: '0.1.5',
             pieceType: PieceType.OFFICIAL,
             packageType: PackageType.REGISTRY,
         })
         const mockPieceMetadata2 = createMockPieceMetadata({
-            name: '@activepieces/piece-data-mapper',
+            name: '@IOpeer/piece-data-mapper',
             version: '0.3.0',
             pieceType: PieceType.OFFICIAL,
             packageType: PackageType.REGISTRY,
@@ -84,7 +84,7 @@ describe('flow execution', () => {
             trigger: {
                 type: FlowTriggerType.PIECE,
                 settings: {
-                    pieceName: '@activepieces/piece-schedule',
+                    pieceName: '@IOpeer/piece-schedule',
                     pieceVersion: '0.1.5',
                     input: {
                         run_on_weekends: false,
@@ -121,7 +121,7 @@ describe('flow execution', () => {
                         displayName: 'Datamapper',
                         type: FlowActionType.PIECE,
                         settings: {
-                            pieceName: '@activepieces/piece-data-mapper',
+                            pieceName: '@IOpeer/piece-data-mapper',
                             pieceVersion: '0.3.0',
                             actionName: 'advanced_mapping',
                             input: {

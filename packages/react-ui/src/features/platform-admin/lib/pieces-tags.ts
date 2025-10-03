@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   UpsertTagRequest,
   ListTagsRequest,
   SeekPage,
   SetPieceTagsRequest,
   Tag,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const piecesTagsApi = {
   upsert(tag: UpsertTagRequest) {

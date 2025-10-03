@@ -1,8 +1,8 @@
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { Property, TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { singleSelectChannelInfo, slackChannel } from '../common/props';
 import { slackAuth } from '../../';
 import { WebClient } from '@slack/web-api';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { getFirstFiveOrAll } from '../common/utils';
 
 

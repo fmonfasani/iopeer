@@ -1,5 +1,5 @@
-
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import {
   search,
   checkRedirect,
@@ -41,7 +41,7 @@ export const blockscout = createPiece({
   displayName: "Blockscout",
   description: "Blockscout is a tool for inspecting and analyzing EVM chains.",
   auth: PieceAuth.None(),
-  logoUrl: 'https://cdn.activepieces.com/pieces/blockscout.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/blockscout.png',
   authors: ['reemayoush'],
   actions: [
     search,

@@ -1,17 +1,17 @@
-import {
+﻿import {
   PiecePropValueSchema,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wooAuth } from '../../';
 import { WebhookInformation, wooCommon } from '../common';
-import { isEmpty, WebhookHandshakeStrategy } from '@activepieces/shared';
+import { isEmpty, WebhookHandshakeStrategy } from '@IOpeer/shared';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 export const woocommerceRegisterTrigger = ({
   name,
   topic,

@@ -1,7 +1,7 @@
-import {
+﻿import {
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { getProducts } from './api';
 
 export type CartloomAuthType = { apiKey: string; domain: string };

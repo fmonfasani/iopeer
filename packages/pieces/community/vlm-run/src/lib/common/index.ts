@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { PieceAuth } from '@IOpeer/pieces-framework';
 import FormData from 'form-data';
 import {
   AnalyzeAudioParams,

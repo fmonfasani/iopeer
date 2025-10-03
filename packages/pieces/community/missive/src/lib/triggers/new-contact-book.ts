@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { missiveAuth } from '../common/auth';
 
 export const newContactBook = createTrigger({

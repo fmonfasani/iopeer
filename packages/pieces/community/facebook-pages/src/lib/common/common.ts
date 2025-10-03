@@ -1,9 +1,9 @@
-import {
+﻿import {
   HttpMethod,
   httpClient,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 
 export const facebookPagesCommon = {
   baseUrl: 'https://graph.facebook.com/v17.0',

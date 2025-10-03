@@ -1,14 +1,14 @@
-import {
+﻿import {
   TriggerStrategy,
   createTrigger,
   Property,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { TotalCMSAuthType, cmsAuth } from '../auth';
 import { getContent } from '../api';
 

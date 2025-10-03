@@ -1,4 +1,4 @@
-import { ArrowUpIcon, Paperclip } from 'lucide-react';
+﻿import { ArrowUpIcon, Paperclip } from 'lucide-react';
 import * as React from 'react';
 import { useRef, useState } from 'react';
 
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { FileInputPreview } from '@/components/ui/chat/chat-input/file-input-preview';
 import { ResizableTextareaProps, Textarea } from '@/components/ui/textarea';
 import { cn, useElementSize } from '@/lib/utils';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export interface ChatMessage {
   textContent: string;

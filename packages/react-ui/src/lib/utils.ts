@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios';
+﻿import { AxiosError } from 'axios';
 import { clsx, type ClassValue } from 'clsx';
 import dayjs from 'dayjs';
 import i18next, { t } from 'i18next';
@@ -6,7 +6,7 @@ import JSZip from 'jszip';
 import { useEffect, useRef, useState, RefObject } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { LocalesEnum, Permission } from '@activepieces/shared';
+import { LocalesEnum, Permission } from '@IOpeer/shared';
 
 import { authenticationSession } from './authentication-session';
 
@@ -152,15 +152,15 @@ export function useForwardedRef<T>(ref: React.ForwardedRef<T>) {
 }
 
 export const localesMap = {
-  [LocalesEnum.CHINESE_SIMPLIFIED]: '简体中文',
+  [LocalesEnum.CHINESE_SIMPLIFIED]: 'ç®€ä½“ä¸­æ–‡',
   [LocalesEnum.GERMAN]: 'Deutsch',
   [LocalesEnum.ENGLISH]: 'English',
-  [LocalesEnum.SPANISH]: 'Español',
-  [LocalesEnum.FRENCH]: 'Français',
-  [LocalesEnum.JAPANESE]: '日本語',
+  [LocalesEnum.SPANISH]: 'EspaÃ±ol',
+  [LocalesEnum.FRENCH]: 'FranÃ§ais',
+  [LocalesEnum.JAPANESE]: 'æ—¥æœ¬èªž',
   [LocalesEnum.DUTCH]: 'Nederlands',
-  [LocalesEnum.PORTUGUESE]: 'Português',
-  [LocalesEnum.CHINESE_TRADITIONAL]: '繁體中文',
+  [LocalesEnum.PORTUGUESE]: 'PortuguÃªs',
+  [LocalesEnum.CHINESE_TRADITIONAL]: 'ç¹é«”ä¸­æ–‡',
 };
 
 export const useElementSize = (ref: RefObject<HTMLElement>) => {

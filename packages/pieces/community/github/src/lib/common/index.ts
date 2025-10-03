@@ -1,4 +1,4 @@
-import {
+﻿import {
   AuthenticationType,
   httpClient,
   HttpMessageBody,
@@ -6,9 +6,9 @@ import {
   HttpRequest,
   HttpResponse,
   QueryParams,
-} from '@activepieces/pieces-common';
-import { Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 
 export const githubCommon = {
   baseUrl: 'https://api.github.com',

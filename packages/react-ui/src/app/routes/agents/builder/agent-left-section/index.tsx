@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { FlaskConical } from 'lucide-react';
 import { useState } from 'react';
 
@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import EditableTextWithPen from '@/components/ui/editable-text-with-pen';
 import ImageWithFallback from '@/components/ui/image-with-fallback';
 import { useBuilderAgentState } from '@/features/agents/lib/store/builder-agent-state-provider';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 import { AgentPromptEditor } from './agent-prompt-editor';
 

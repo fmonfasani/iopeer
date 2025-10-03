@@ -1,5 +1,5 @@
-import { OtpModel, OtpState, OtpType } from '@activepieces/ee-shared'
-import { UserIdentity } from '@activepieces/shared'
+﻿import { OtpModel, OtpState, OtpType } from '@IOpeer/ee-shared'
+import { UserIdentity } from '@IOpeer/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

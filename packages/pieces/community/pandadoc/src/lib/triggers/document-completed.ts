@@ -1,10 +1,10 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { WebhookHandshakeStrategy } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { WebhookHandshakeStrategy } from '@IOpeer/shared';
 import { pandadocAuth, pandadocClient } from '../common';
 
 export const documentCompleted = createTrigger({

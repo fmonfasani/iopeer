@@ -1,14 +1,14 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   DropdownState,
   DynamicPropsValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import Airtable from 'airtable';
 import {
   AirtableBase,
@@ -23,7 +23,7 @@ import {
   AirtableTable,
   AirtableView,
 } from './models';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 
 interface Params {

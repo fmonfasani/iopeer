@@ -1,4 +1,4 @@
-import { ApFile, createAction, Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
+﻿import { ApFile, createAction, Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import { microsoftOutlookAuth } from '../common/auth';
 import { BodyType, Message } from '@microsoft/microsoft-graph-types';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';

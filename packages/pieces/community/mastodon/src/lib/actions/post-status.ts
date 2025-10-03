@@ -1,10 +1,10 @@
-import FormData from 'form-data';
-import { Property, createAction, ApFile } from '@activepieces/pieces-framework';
+﻿import FormData from 'form-data';
+import { Property, createAction, ApFile } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { mastodonAuth } from '../..';
 
 const uploadMedia = async (media: ApFile, baseUrl: string, token: string) => {

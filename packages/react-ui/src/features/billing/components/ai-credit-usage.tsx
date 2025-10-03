@@ -1,4 +1,4 @@
-import { useQueryClient } from '@tanstack/react-query';
+﻿import { useQueryClient } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Sparkles, Info, Loader2 } from 'lucide-react';
 import { useEffect, useState, useMemo, useCallback } from 'react';
@@ -14,11 +14,11 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from '@/components/ui/tooltip';
-import { ApSubscriptionStatus, PlanName } from '@activepieces/ee-shared';
+import { ApSubscriptionStatus, PlanName } from '@IOpeer/ee-shared';
 import {
   AiOverageState,
   PlatformBillingInformation,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { billingMutations } from '../lib/billing-hooks';
 

@@ -1,6 +1,6 @@
-import { createCustomApiCallAction, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createComment } from './lib/actions/create-comment';
 import { createNewFeatureRequest } from './lib/actions/create-feature-request';
 import { createBeamerPost } from './lib/actions/create-posts';
@@ -36,7 +36,7 @@ export const beamerAuth = PieceAuth.SecretText({
 export const beamer = createPiece({
   displayName: 'Beamer',
   description: 'Engage users with targeted announcements',
-  logoUrl: 'https://cdn.activepieces.com/pieces/beamer.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/beamer.png',
   categories: [PieceCategory.PRODUCTIVITY],
   auth: beamerAuth,
   authors: ["i-nithin","kishanprmr","MoShizzle","abuaboud"],

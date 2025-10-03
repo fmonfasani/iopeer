@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { batchUpdate, getSlide, PageElement } from '../commons/common';
 import { googleSlidesAuth } from '../..';
 

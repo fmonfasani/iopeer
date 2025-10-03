@@ -1,5 +1,5 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
 import { closeChat } from './lib/actions/close-chat';
 import { findChat } from './lib/actions/find-chat';
 import { findMessage } from './lib/actions/find-message';
@@ -18,13 +18,13 @@ import { newReceivedMessage } from './lib/triggers/new-received-message';
 import { newSentMessage } from './lib/triggers/new-sent-message';
 import { newUploadedFile } from './lib/triggers/new-uploaded-file';
 import { newWhatsappAccount } from './lib/triggers/new-whatsapp-account';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const timelinesAi = createPiece({
   displayName: 'TimelinesAI',
   auth: timelinesAiAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/timelines-ai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/timelines-ai.png',
   authors: ['LuizDMM', 'sanket-a11y'],
   categories: [PieceCategory.MARKETING, PieceCategory.COMMUNICATION],
   actions: [

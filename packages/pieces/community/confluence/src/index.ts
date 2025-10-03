@@ -1,8 +1,8 @@
-import { createPiece, PieceAuth, Property ,PiecePropValueSchema, Piece} from "@activepieces/pieces-framework";
+﻿import { createPiece, PieceAuth, Property ,PiecePropValueSchema, Piece} from "@IOpeer/pieces-framework";
 import { getPageContent } from "./lib/actions/get-page-content";
 import { newPageTrigger } from "./lib/triggers/new-page";
-import { PieceCategory } from "@activepieces/shared";
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { PieceCategory } from "@IOpeer/shared";
+import { createCustomApiCallAction } from "@IOpeer/pieces-common";
 import { createPageFromTemplateAction } from "./lib/actions/create-page-from-template";
 
 export const confluenceAuth = PieceAuth.CustomAuth({
@@ -31,7 +31,7 @@ export const confluence = createPiece({
   displayName: "Confluence",
   auth: confluenceAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: "https://cdn.activepieces.com/pieces/confluence.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/confluence.png",
   authors: ["geekyme"],
   actions: [getPageContent,createPageFromTemplateAction,
     createCustomApiCallAction({

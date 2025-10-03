@@ -1,6 +1,6 @@
----
+﻿---
 name: MCP Bounty
-about: Request a new Piece for Activepieces
+about: Request a new Piece for IOpeer
 title: '[Piece Request] <Your Product Name>'
 labels: ['pieces']
 assignees: ''
@@ -9,14 +9,14 @@ assignees: ''
 
 (Replace everything other than the titles that start with ##)
 
-## 🧩 Product Overview  
+## ðŸ§© Product Overview  
 What does your product do? Who uses it?
 
 ---
 
-## ⚙️ Actions  
+## âš™ï¸ Actions  
 These are the things you want AI agents to be able to do with your product.  
-They’ll also be available for automations in Activepieces.
+Theyâ€™ll also be available for automations in IOpeer.
 
 Examples:  
 - Create Contact  
@@ -25,7 +25,7 @@ Examples:
 
 ---
 
-## ⏱️ Triggers  
+## â±ï¸ Triggers  
 Triggers are only used in automation.  
 What events in your product should start a workflow?
 
@@ -35,26 +35,26 @@ Examples:
 
 ---
 
-## 📚 API Reference  
+## ðŸ“š API Reference  
 Link to your public API docs or developer portal.
 
 ---
 
-## 🧪 Test Account Access  
+## ðŸ§ª Test Account Access  
 How can contributors test your API? (Free trial, sandbox credentials, etc.)
 
 ---
 
-## 💡 Extra Notes  
+## ðŸ’¡ Extra Notes  
 Anything else worth mentioning? (Edge cases, beta features, known limitations)
 
 ---
 
-## 🔄 Alternatives Explored (Optional)  
+## ðŸ”„ Alternatives Explored (Optional)  
 Have you used other platforms or approaches for integration?
 
 ---
 
-## 📬 Contact for Contributors (Optional)  
-If you’re not actively monitoring this issue, how can contributors reach you?  
+## ðŸ“¬ Contact for Contributors (Optional)  
+If youâ€™re not actively monitoring this issue, how can contributors reach you?  
 Example: yourname@yourcompany.com

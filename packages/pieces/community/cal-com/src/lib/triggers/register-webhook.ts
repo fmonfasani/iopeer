@@ -1,14 +1,14 @@
-import {
+﻿import {
   createTrigger,
   Trigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpRequest,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { calcomAuth } from '../..';
 
 export const registerWebhooks = ({

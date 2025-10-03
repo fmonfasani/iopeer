@@ -1,11 +1,11 @@
-import qs from 'qs';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import qs from 'qs';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { LEVER_BASE_URL, leverAuth } from '../..';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const getOpportunity = createAction({
   name: 'getOpportunity',

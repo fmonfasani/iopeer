@@ -1,13 +1,13 @@
-import {
+﻿import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   TriggerStrategy,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { getPages } from '../common';
 import { notionAuth } from '../..';
@@ -35,7 +35,7 @@ export const updatedPage = createTrigger({
     cover: null,
     icon: {
       type: 'emoji',
-      emoji: '💰',
+      emoji: 'ðŸ’°',
     },
     parent: {
       type: 'workspace',

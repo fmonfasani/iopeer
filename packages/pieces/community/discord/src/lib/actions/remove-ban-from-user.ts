@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { discordCommon } from '../common';
 import { discordAuth } from '../../index';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const discordRemoveBanFromUser = createAction({
   auth: discordAuth,

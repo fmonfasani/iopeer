@@ -1,9 +1,9 @@
-import assert from 'node:assert'
+﻿import assert from 'node:assert'
 import { argv } from 'node:process'
 import { exec } from '../utils/exec'
 import { readPackageJson, readProjectJson } from '../utils/files'
 import { findAllPiecesDirectoryInSource } from '../utils/piece-script-utils'
-import { isNil } from '@activepieces/shared'
+import { isNil } from '@IOpeer/shared'
 import chalk from 'chalk'
 import path from 'node:path'
 

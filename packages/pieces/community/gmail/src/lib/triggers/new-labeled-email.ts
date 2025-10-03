@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   FilesService,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { GmailProps } from '../common/props';
 import { gmailAuth } from '../../';
 import { google } from 'googleapis';

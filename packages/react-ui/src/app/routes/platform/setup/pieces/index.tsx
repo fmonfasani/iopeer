@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckIcon, Package } from 'lucide-react';
 import { useMemo, useState } from 'react';
@@ -24,7 +24,7 @@ import { platformHooks } from '@/hooks/platform-hooks';
 import {
   PieceMetadataModelSummary,
   PropertyType,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   ApEdition,
   ApFlagId,
@@ -32,7 +32,7 @@ import {
   isNil,
   OAuth2GrantType,
   PieceScope,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const PlatformPiecesPage = () => {
   const { platform } = platformHooks.useCurrentPlatform();

@@ -1,5 +1,5 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { realTimeWebSearch } from './lib/actions/real-time-data';
 import { sportsNewsSearch } from './lib/actions/sports-news';
 import { stockMarketDataSearch } from './lib/actions/stock-market-data';
@@ -13,8 +13,8 @@ export const dappierAuth = PieceAuth.SecretText({
 
 export const dappier = createPiece({
   displayName: 'Dappier',
-  logoUrl: 'https://cdn.activepieces.com/pieces/dappier.png',
-  description: 'Enable fast, free real-time web search and access premium data from trusted media brands—news, financial markets, sports, entertainment, weather, and more. Build powerful AI agents with Dappier',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/dappier.png',
+  description: 'Enable fast, free real-time web search and access premium data from trusted media brandsâ€”news, financial markets, sports, entertainment, weather, and more. Build powerful AI agents with Dappier',
   auth: dappierAuth,
   authors: [],
   actions: [

@@ -1,16 +1,16 @@
-import {
+﻿import {
     ListOAuth2AppRequest,
     OAuthApp,
     UpsertOAuth2AppRequest,
-} from '@activepieces/ee-shared'
+} from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     apId,
     deleteProps,
     ErrorCode,
     isNil,
     SeekPage,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { encryptUtils } from '../../helper/encryption'
 import { buildPaginator } from '../../helper/pagination/build-paginator'
@@ -92,7 +92,7 @@ export const oauthAppService = {
     }): Promise<void> {
         const oauthApp = await oauthRepo().findOneBy({ platformId, id })
         if (isNil(oauthApp)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     message: `OAuth with id ${id} not found`,

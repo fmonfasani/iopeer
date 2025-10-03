@@ -1,4 +1,4 @@
-import { createPiece } from "@activepieces/pieces-framework"
+﻿import { createPiece } from "@IOpeer/pieces-framework"
 import { paperformAuth } from "./lib/common/auth"
 
 import { newPartialFormSubmission } from './lib/triggers/new-partial-form-submission';
@@ -18,16 +18,16 @@ import { updateSpace } from './lib/actions/update-space';
 import { findFormProduct } from './lib/actions/find-form-product';
 import { findForm } from './lib/actions/find-form';
 import { findSpace } from './lib/actions/find-space';
-import { createCustomApiCallAction } from "@activepieces/pieces-common";
+import { createCustomApiCallAction } from "@IOpeer/pieces-common";
 import { paperformCommon } from "./lib/common/client";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
 export const paperform = createPiece({
   displayName: "Paperform",
   auth: paperformAuth,
   categories:[PieceCategory.FORMS_AND_SURVEYS],
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/paperform.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/paperform.png",
   authors: ['nuvex-dev'],
   actions: [
     deleteFormSubmission,

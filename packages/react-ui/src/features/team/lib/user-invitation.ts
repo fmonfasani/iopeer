@@ -1,10 +1,10 @@
-import {
+﻿import {
   ListUserInvitationsRequest,
   SeekPage,
   SendUserInvitationRequest,
   UserInvitation,
   UserInvitationWithLink,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { api } from '../../../lib/api';
 

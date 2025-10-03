@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Calendar, SquareFunction, File } from 'lucide-react';
 import { ControllerRenderProps, useFormContext } from 'react-hook-form';
 
@@ -11,12 +11,12 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { cn } from '@/lib/utils';
-import { PieceProperty, PropertyType } from '@activepieces/pieces-framework';
+import { PieceProperty, PropertyType } from '@IOpeer/pieces-framework';
 import {
   FlowAction,
   FlowTrigger,
   PropertyExecutionType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { ArrayPiecePropertyInInlineItemMode } from './array-property-in-inline-item-mode';
 import { TextInputWithMentions } from './text-input-with-mentions';

@@ -1,9 +1,9 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { currentYear } from '../common';
 import { ClockodoClient } from '../common/client';
 import { clockodoAuth } from '../../';

@@ -1,14 +1,14 @@
-import {
+﻿import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   PiecePropValueSchema,
   StaticPropsValue,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { zohoCampaignsAuth, zohoCampaignsCommon } from '../common';
 

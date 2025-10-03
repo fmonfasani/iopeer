@@ -1,9 +1,9 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
-import { OAuth2PropertyValue } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { OAuth2PropertyValue } from '@IOpeer/pieces-framework';
 import jwt from 'jsonwebtoken';
 
 export const baseUrl = 'https://services.leadconnectorhq.com';

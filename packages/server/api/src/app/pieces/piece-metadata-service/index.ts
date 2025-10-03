@@ -1,5 +1,5 @@
-import { PieceMetadataModel, PieceMetadataModelSummary } from '@activepieces/pieces-framework'
-import { AppSystemProp, PiecesSource } from '@activepieces/server-shared'
+﻿import { PieceMetadataModel, PieceMetadataModelSummary } from '@IOpeer/pieces-framework'
+import { AppSystemProp, PiecesSource } from '@IOpeer/server-shared'
 import {
     assertNotNullOrUndefined,
     PackageType,
@@ -8,7 +8,7 @@ import {
     PrivatePiecePackage,
     PublicPiecePackage,
     SuggestionType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../helper/system/system'
 import { PieceMetadataSchema } from '../piece-metadata-entity'

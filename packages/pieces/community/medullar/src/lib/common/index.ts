@@ -1,5 +1,5 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { Property } from '@IOpeer/pieces-framework';
 
 export const medullarCommon = {
   baseUrl: 'https://api.medullar.com',

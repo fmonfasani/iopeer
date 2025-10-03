@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Workflow, Trash2, EllipsisVertical } from 'lucide-react';
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ import { useAuthorization } from '@/hooks/authorization-hooks';
 import {
   McpFlowTool as McpFlowToolType,
   Permission,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type McpFlowToolProps = {
   tool: McpFlowToolType;

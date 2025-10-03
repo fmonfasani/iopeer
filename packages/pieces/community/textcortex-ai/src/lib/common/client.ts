@@ -1,4 +1,4 @@
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient, AuthenticationType } from '@IOpeer/pieces-common';
 import { baseUrl } from './common';
 
 export interface TextCortexAuth {

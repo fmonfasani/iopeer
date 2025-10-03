@@ -1,4 +1,4 @@
-# SimpliRoute Piece for IOPeer
+﻿# SimpliRoute Piece for IOPeer
 
 A comprehensive integration piece for SimpliRoute, the last-mile delivery optimization platform. This piece enables seamless automation of delivery operations within IOPeer workflows.
 
@@ -8,19 +8,19 @@ SimpliRoute is a powerful logistics optimization platform that helps businesses 
 
 ## Features
 
-### 📋 Client Management
+### ðŸ“‹ Client Management
 - **Get Clients** - Retrieve all clients with optional filtering
 - **Create Clients** - Add single or multiple clients  
 - **Bulk Delete Clients** - Remove multiple clients efficiently
 - **Create Client Properties** - Add custom client attributes
 
-### 🚛 Vehicle Management
+### ðŸš› Vehicle Management
 - **Get Vehicles** - List all registered vehicles
 - **Create Vehicle** - Register new vehicles with full configuration
 - **Get Vehicle** - Retrieve detailed vehicle information
 - **Delete Vehicle** - Remove vehicles from fleet
 
-### 📍 Visit Management
+### ðŸ“ Visit Management
 - **Get Visits** - Retrieve visits by date
 - **Create Visits** - Schedule single or multiple visits
 - **Get Visit** - Get specific visit details
@@ -29,26 +29,26 @@ SimpliRoute is a powerful logistics optimization platform that helps businesses 
 - **Add Visit Items** - Attach items to existing visits
 - **Get Visit Detail** - Complete visit information
 
-### 🗺️ Route Management
+### ðŸ—ºï¸ Route Management
 - **Get Routes** - List all routes
 - **Create Route** - Manual route creation
 - **Get Route** - Detailed route information
 - **Delete Route** - Remove routes
 
-### 🎯 Planning & Optimization
+### ðŸŽ¯ Planning & Optimization
 - **Get Plans** - Retrieve routing plans
 - **Create Plan** - Generate optimization plans
 - **Get Plan Vehicles** - List plan-assigned vehicles
 - **Create Full Plan** - Complete plan with visits and vehicles
 
-### 👥 User Management
+### ðŸ‘¥ User Management
 - **Get Drivers** - List all drivers
 - **Create Users** - Add drivers and users
 - **Get User** - Retrieve user information
 - **Update User** - Modify user details
 - **Delete User** - Remove users
 
-### 🏷️ Metadata Management
+### ðŸ·ï¸ Metadata Management
 - **Get Skills** - Available vehicle/driver skills
 - **Get Observations** - System observations
 - **Get Tags** - Available tags
@@ -56,7 +56,7 @@ SimpliRoute is a powerful logistics optimization platform that helps businesses 
 - **Get Fleets** - Fleet information
 - **Get Sellers** - Sales representatives
 
-### ⚡ Advanced Features
+### âš¡ Advanced Features
 - **Custom API Call** - Direct SimpliRoute API access for advanced use cases
 - **Multi-language Support** - Full Spanish (es) localization
 - **Comprehensive Error Handling** - Robust error management
@@ -118,11 +118,11 @@ This piece is part of the IOPeer community project. Contributions are welcome!
 ## Support
 
 For issues related to this piece:
-- [IOPeer GitHub Issues](https://github.com/activepieces/activepieces/issues)
+- [IOPeer GitHub Issues](https://github.com/IOpeer/IOpeer/issues)
 
 
 ## Version
 
 Current version: 0.0.1
 
-Built with ❤️ for the IOPeer community.
+Built with â¤ï¸ for the IOPeer community.

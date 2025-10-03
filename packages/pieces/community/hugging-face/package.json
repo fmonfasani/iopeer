@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-hugging-face",
+﻿{
+  "name": "@IOpeer/piece-hugging-face",
   "version": "0.0.5",
   "dependencies": {
     "@huggingface/inference": "4.7.1"

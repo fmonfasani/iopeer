@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/shared'
+﻿import { IOpeerError, ErrorCode } from '@IOpeer/shared'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 import { AIProviderStrategy, Usage } from './types'
 import { calculateTokensCost, calculateWebSearchCost, getProviderConfig } from './utils'
@@ -83,7 +83,7 @@ export const googleProvider: AIProviderStrategy = {
                 if (typeof imageModelConfig.pricing !== 'number' && imageModelConfig.pricing.type === 'GPTImage1') {
                     cost += calculateTokensCost(promptTokenCount, imageModelConfig.pricing.input.image) + calculateTokensCost(candidatesTokenCount + (thoughtsTokenCount ?? 0), imageModelConfig.pricing.output)
                 }
-                else throw new ActivepiecesError({
+                else throw new IOpeerError({
                     code: ErrorCode.AI_MODEL_NOT_SUPPORTED,
                     params: {
                         provider,
@@ -123,7 +123,7 @@ export const googleProvider: AIProviderStrategy = {
         if (request.url.includes(':predictLongRunning')) {
             const sampleCount = (request.body as { parameters?: { sampleCount?: number } }).parameters?.sampleCount
             if (!sampleCount || sampleCount > 1) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.VALIDATION,
                     params: {
                         message: 'Only one video can be generated at a time, make sure to set sampleCount to 1.',

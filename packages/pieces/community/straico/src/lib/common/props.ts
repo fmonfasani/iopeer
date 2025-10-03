@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
-import { Property } from "@activepieces/pieces-framework";
+﻿import { AuthenticationType, httpClient, HttpMethod } from "@IOpeer/pieces-common";
+import { Property } from "@IOpeer/pieces-framework";
 import { baseUrlv0 } from "./common";
 
 export const agentIdDropdown =(displayName:string, desc:string)=> Property.Dropdown({

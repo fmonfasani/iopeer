@@ -1,19 +1,19 @@
-import {
+﻿import {
     ConfigureRepoRequest,
     GitBranchType,
     GitPushOperationType,
     GitRepo,
     PushGitRepoRequest,
-} from '@activepieces/ee-shared'
+} from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApEdition,
     apId,
     ErrorCode,
     isNil,
     ProjectState,
     SeekPage,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { repoFactory } from '../../../../core/db/repo-factory'
 import { paginationHelper } from '../../../../helper/pagination/pagination-utils'
@@ -49,7 +49,7 @@ export const gitRepoService = (_log: FastifyBaseLogger) => ({
     async getOneByProjectOrThrow({ projectId }: { projectId: string }): Promise<GitRepo> {
         const gitRepo = await repo().findOneBy({ projectId })
         if (isNil(gitRepo)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'git-repo',
@@ -61,7 +61,7 @@ export const gitRepoService = (_log: FastifyBaseLogger) => ({
     async getOrThrow({ id }: { id: string }): Promise<GitRepo> {
         const gitRepo = await repo().findOneByOrFail({ id })
         if (isNil(gitRepo)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityId: id,
@@ -128,7 +128,7 @@ export const gitRepoService = (_log: FastifyBaseLogger) => ({
                 break
             }
             default:
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.VALIDATION,
                     params: {
                         message: `Only supported operations are ${GitPushOperationType.DELETE_FLOW} and ${GitPushOperationType.DELETE_TABLE}`,
@@ -239,7 +239,7 @@ export const gitRepoService = (_log: FastifyBaseLogger) => ({
     async delete({ id, projectId }: DeleteParams): Promise<void> {
         const gitRepo = await repo().findOneBy({ id, projectId })
         if (isNil(gitRepo)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityId: id,

@@ -1,10 +1,10 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { lineAuth2 } from '../..';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const pushMessage = createAction({
   name: 'push_message', // Must be a unique across the piece, this shouldn't be changed.

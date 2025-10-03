@@ -1,9 +1,9 @@
-import { ApFile, createAction, Property } from '@activepieces/pieces-framework';
+﻿import { ApFile, createAction, Property } from '@IOpeer/pieces-framework';
 import {
   HttpRequest,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { discordAuth } from '../../index';
 import { discordCommon } from '../common';
 import FormData from 'form-data';

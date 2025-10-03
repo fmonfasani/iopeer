@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createRecordAction } from './lib/actions/create-record';
 import { findRecordsAction } from './lib/actions/find-records';
 import { findRecordAction} from './lib/actions/find-record';
@@ -55,7 +55,7 @@ export const bika = createPiece({
   auth: BikaAuth,
   description: `Interactive spreadsheets with collaboration`,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/bika.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/bika.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: [
     'codegino'

@@ -1,11 +1,11 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
 import { makePhoneCall } from "./lib/actions/make-phone-call";
 import { phoneCallEnded } from "./lib/triggers/phone-call-ended";
 import { addLead } from "./lib/actions/add-lead";
 import { sendSms } from "./lib/actions/send-sms";
 import { inboundCall } from "./lib/triggers/inbound-call";
 import { getAssistants } from "./lib/triggers/get-assistants";
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { campaignControl } from "./lib/actions/campaign-control";
 import { deleteLead } from "./lib/actions/delete-lead";
 
@@ -50,7 +50,7 @@ export const autocalls = createPiece({
   displayName: "Autocalls",
   auth:autocallsAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/autocalls.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/autocalls.png",
   description: "Automate phone calls using our AI calling platform.",
   authors: ['Zebi15'],
   actions: [addLead,sendSms,campaignControl,makePhoneCall,deleteLead],

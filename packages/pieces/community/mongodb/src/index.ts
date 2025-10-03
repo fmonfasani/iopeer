@@ -1,11 +1,11 @@
-import {
+﻿import {
   PiecePropValueSchema,
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { propsValidation } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { z } from 'zod';
 
 import actions from './lib/actions';
@@ -89,7 +89,7 @@ export const mongodb = createPiece({
   auth: mongodbAuth,
   minimumSupportedRelease: '0.36.1',
   categories: [PieceCategory.DEVELOPER_TOOLS],
-  logoUrl: 'https://cdn.activepieces.com/pieces/mongodb.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mongodb.png',
   authors: ['denieler'],
   actions,
   triggers: [],

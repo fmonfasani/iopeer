@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { Activity } from 'lucide-react';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { DataTable } from '@/components/ui/data-table';
 import { mcpRunApi } from '@/features/mcp/lib/mcp-run-api';
 import { stepsHooks } from '@/features/pieces/lib/steps-hooks';
-import { McpRun, McpRunStatus } from '@activepieces/shared';
+import { McpRun, McpRunStatus } from '@IOpeer/shared';
 
 import McpRunDetails from './mcp-run-details';
 import { mcpRunColumns, mcpRunFilters } from './mcp-run-utils';

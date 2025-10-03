@@ -1,6 +1,6 @@
-import { QdrantClient } from '@qdrant/js-client-rest';
+﻿import { QdrantClient } from '@qdrant/js-client-rest';
 import { qdrantAuth } from '../..';
-import { createAction } from '@activepieces/pieces-framework';
+import { createAction } from '@IOpeer/pieces-framework';
 
 export const collectionList = createAction({
   auth: qdrantAuth,

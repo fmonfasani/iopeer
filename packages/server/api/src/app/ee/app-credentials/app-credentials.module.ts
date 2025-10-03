@@ -1,11 +1,11 @@
-import {
+﻿import {
     AppCredential,
     AppCredentialId,
     AppCredentialType,
     ListAppCredentialsRequest,
     UpsertAppCredentialRequest,
-} from '@activepieces/ee-shared'
-import { ALL_PRINCIPAL_TYPES, SeekPage } from '@activepieces/shared'
+} from '@IOpeer/ee-shared'
+import { ALL_PRINCIPAL_TYPES, SeekPage } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { FastifyRequest } from 'fastify'
 import { StatusCodes } from 'http-status-codes'

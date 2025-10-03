@@ -1,4 +1,4 @@
-import { httpClient, HttpMethod, HttpRequest, AuthenticationType } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod, HttpRequest, AuthenticationType } from '@IOpeer/pieces-common';
 
 export interface PromptHubClientOptions {
   baseUrl?: string;

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework'
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework'
 import { propsProcessor } from '../../src/lib/variables/props-processor'
 describe('Property Validation', () => {
     describe('required properties', () => {

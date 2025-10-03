@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { placidAuth } from '../../index';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient, AuthenticationType } from '@IOpeer/pieces-common';
 import { PLACID_BASE_URL } from '../common';
 import FormData from 'form-data';
 

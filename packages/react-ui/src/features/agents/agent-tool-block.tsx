@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { ApMarkdown } from '@/components/custom/markdown';
 import { DataList } from '@/components/data-list';
@@ -16,7 +16,7 @@ import {
   MarkdownVariant,
   ToolCallContentBlock,
   ToolCallStatus,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { AgentToolBlockHeader } from './agent-tool-block-header';
 

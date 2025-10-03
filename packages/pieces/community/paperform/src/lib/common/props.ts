@@ -1,4 +1,4 @@
-import { Property } from '@activepieces/pieces-framework';
+﻿import { Property } from '@IOpeer/pieces-framework';
 import { paperformCommon } from './client';
 import {
   PaperformCoupon,
@@ -6,7 +6,7 @@ import {
   PaperformProduct,
   PaperformSpace,
 } from './types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const paperformCommonProps = {
   spaceId: Property.Dropdown({

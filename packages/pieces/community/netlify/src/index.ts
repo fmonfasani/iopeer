@@ -1,5 +1,5 @@
-
-    import { createPiece } from "@activepieces/pieces-framework";
+﻿
+    import { createPiece } from "@IOpeer/pieces-framework";
     import { netlifyAuth } from "./lib/common/auth";
     import { startDeploy } from "./lib/actions/start-deploy";
     import { getSite } from "./lib/actions/get-site";
@@ -9,14 +9,14 @@
     import { newDeploySucceeded } from "./lib/triggers/new-deploy-succeeded";
     import { newDeployFailed } from "./lib/triggers/new-deploy-failed";
     import { newFormSubmission } from "./lib/triggers/new-form-submission";
-import { PieceCategory } from "@activepieces/shared";
+import { PieceCategory } from "@IOpeer/shared";
 
     export const netlify = createPiece({
       displayName: "Netlify",
       auth: netlifyAuth,
       minimumSupportedRelease: '0.36.1',
       description: "Netlify is a platform for building and deploying websites and apps.",
-      logoUrl: "https://cdn.activepieces.com/pieces/netlify.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/netlify.png",
       authors: ["sparkybug"],
       categories: [PieceCategory.DEVELOPER_TOOLS],
       actions: [

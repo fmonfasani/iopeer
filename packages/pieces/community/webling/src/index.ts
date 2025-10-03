@@ -1,16 +1,16 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { onEventChanged } from './lib/triggers/calendar-event';
 import { onChangedData } from './lib/triggers/on-changed-data';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { eventsById } from './lib/actions/get-events-by-id';
 
 export const weblingAuth = PieceAuth.CustomAuth({
@@ -52,7 +52,7 @@ export const webling = createPiece({
   displayName: 'Webling',
   auth: weblingAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/webling.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/webling.png',
   categories: [PieceCategory.PRODUCTIVITY],
   authors: ['felifluid'],
   actions: [eventsById],

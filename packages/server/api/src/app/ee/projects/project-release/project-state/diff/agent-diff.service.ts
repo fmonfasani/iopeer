@@ -1,4 +1,4 @@
-import { AgentOperation, AgentOperationType, AgentState, isNil, ProjectState } from '@activepieces/shared'
+﻿import { AgentOperation, AgentOperationType, AgentState, isNil, ProjectState } from '@IOpeer/shared'
 
 export const agentDiffService = {
     diff({ newState, currentState }: DiffParams): AgentOperation[] {

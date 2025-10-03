@@ -1,12 +1,12 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationPartnerActive = createTrigger({
   auth: wedofAuth,
   name: 'certificationPartnerActive',
   displayName: 'Partenariat actif',
-  description: "Se déclenche Lorsqu'une demande de partenariat est actif",
+  description: "Se dÃ©clenche Lorsqu'une demande de partenariat est actif",
   props: {},
   sampleData: {
     id: 0,

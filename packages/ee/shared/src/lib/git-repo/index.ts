@@ -1,4 +1,4 @@
-import { BaseModelSchema } from '@activepieces/shared'
+﻿import { BaseModelSchema } from '@IOpeer/shared'
 import { Static, Type } from '@sinclair/typebox'
 
 export enum GitBranchType {

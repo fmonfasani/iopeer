@@ -1,27 +1,27 @@
-import { wedofAuth } from '../../../index';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../../index';
+import { createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../../common/wedof';
 
 export const createCertificationPartnerAudit = createAction({
   auth: wedofAuth,
   name: 'createCertificationPartnerAudit',
-  displayName: "Créer un audit sur un partenariat de certification",
-  description: "Permet de créer un audit sur un partenariat de certification",
+  displayName: "CrÃ©er un audit sur un partenariat de certification",
+  description: "Permet de crÃ©er un audit sur un partenariat de certification",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
-      description: "Permet de n'obtenir que les modèles liés à la certification considérée",
+      displayName: 'NÂ° certifInfo',
+      description: "Permet de n'obtenir que les modÃ¨les liÃ©s Ã  la certification considÃ©rÃ©e",
       required: true,
     }),
     siret: Property.ShortText({
-      displayName: 'N° de siret',
+      displayName: 'NÂ° de siret',
       description:
-        'Sélectionner le SIRET du partenaire',
+        'SÃ©lectionner le SIRET du partenaire',
       required: true,
     }),
     templateId: Property.DynamicProperties({
-      displayName: "Type du modèle d'audit",
+      displayName: "Type du modÃ¨le d'audit",
       refreshers: ['certifInfo'],
       required: true,
       props: async ({ auth, certifInfo }) => {
@@ -47,7 +47,7 @@ export const createCertificationPartnerAudit = createAction({
     
           return {
             templateId: Property.StaticDropdown({
-              displayName: "Modèle d'audit",
+              displayName: "ModÃ¨le d'audit",
               required: true,
               options: {
                 options: options,

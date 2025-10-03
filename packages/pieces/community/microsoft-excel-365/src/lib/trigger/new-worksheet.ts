@@ -1,8 +1,8 @@
-import {
+﻿import {
   OAuth2PropertyValue,
   createTrigger
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { excelCommon } from '../common/common';
 import { excelAuth } from '../..';
 import {
@@ -12,7 +12,7 @@ import {
   Polling,
   pollingHelper,
   DedupeStrategy
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 interface Worksheet {
   id: string;

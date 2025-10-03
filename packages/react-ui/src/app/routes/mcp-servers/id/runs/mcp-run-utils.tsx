@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckCircle2, Search, WorkflowIcon, X, Check } from 'lucide-react';
 
@@ -11,7 +11,7 @@ import { StatusIconWithText } from '@/components/ui/status-icon-with-text';
 import { PieceIcon } from '@/features/pieces/components/piece-icon';
 import { StepMetadataWithSuggestions } from '@/lib/types';
 import { formatUtils } from '@/lib/utils';
-import { McpRun, McpRunStatus } from '@activepieces/shared';
+import { McpRun, McpRunStatus } from '@IOpeer/shared';
 
 const getToolIcon = (
   item: McpRun,
@@ -99,7 +99,7 @@ export const mcpRunColumns = (
               <p className="font-medium text-sm truncate">
                 {getActionName(item)}
               </p>
-              <span className="text-xs text-muted-foreground">•</span>
+              <span className="text-xs text-muted-foreground">â€¢</span>
               <span className="text-xs text-muted-foreground">
                 {getToolDisplayName(item)}
               </span>

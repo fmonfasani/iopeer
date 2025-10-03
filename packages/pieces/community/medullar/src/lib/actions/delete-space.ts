@@ -1,6 +1,6 @@
-import { medullarAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { medullarAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { medullarCommon } from '../common';
 import { medullarPropsCommon } from '../common';
 

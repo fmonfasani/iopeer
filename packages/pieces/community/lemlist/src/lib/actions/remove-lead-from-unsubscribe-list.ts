@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { lemlistAuth } from '../common/constants';
 import { lemlistApiService } from '../common/requests';
 
@@ -6,7 +6,7 @@ export const removeLeadFromUnsubscribeList = createAction({
   auth: lemlistAuth,
   name: 'removeLeadFromUnsubscribeList',
   displayName: 'Remove Lead From Unsubscribe List',
-  description: 'Remove a lead from “unsubscribe” list.',
+  description: 'Remove a lead from â€œunsubscribeâ€ list.',
   props: {
     email: Property.ShortText({
       displayName: 'Lead Email',

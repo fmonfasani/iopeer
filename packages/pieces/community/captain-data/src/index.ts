@@ -1,9 +1,9 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { launchWorkflow } from './lib/actions/launch-workflow';
 import { getJobResults } from './lib/actions/get-job-results';
 
@@ -32,7 +32,7 @@ export const captainData = createPiece({
   displayName: 'Captain-data',
   auth: captainDataAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/captain-data.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/captain-data.png',
   authors: ['AdamSelene'],
   actions: [
     launchWorkflow,

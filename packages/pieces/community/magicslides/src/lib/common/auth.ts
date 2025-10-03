@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 
 export const MagicSlidesAuth = PieceAuth.CustomAuth({
   
@@ -6,7 +6,7 @@ export const MagicSlidesAuth = PieceAuth.CustomAuth({
 ---
 ### How to obtain your API key
 1. Sign up or log in at [magicslides.app](https://www.magicslides.app/).
-2. Go to **Dashboard → API**.
+2. Go to **Dashboard â†’ API**.
 3. Copy your **Access ID** and paste it here.
 4. And copy your registered email address and paste it here.
 `,

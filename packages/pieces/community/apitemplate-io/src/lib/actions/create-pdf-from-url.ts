@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { ApitemplateAuth } from '../common/auth';
 import { ApitemplateAuthConfig, makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const createPdfFromUrl = createAction({
   auth: ApitemplateAuth,

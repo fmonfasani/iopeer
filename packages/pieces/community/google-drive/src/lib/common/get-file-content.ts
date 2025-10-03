@@ -1,11 +1,11 @@
-import {
+﻿import {
   FilesService,
   OAuth2PropertyValue,
   OAuth2Props,
   Property,
   ShortTextProperty,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { extension } from 'mime-types';
 
 async function getMimeType(

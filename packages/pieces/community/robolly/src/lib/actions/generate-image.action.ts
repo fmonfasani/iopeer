@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { HttpMethod, httpClient } from "@activepieces/pieces-common";
-import { DynamicPropsValue, Property, createAction } from "@activepieces/pieces-framework";
+﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+import { HttpMethod, httpClient } from "@IOpeer/pieces-common";
+import { DynamicPropsValue, Property, createAction } from "@IOpeer/pieces-framework";
 
 export  const generateImage = createAction({
     description: 'Generate an image using Robolly',
@@ -10,7 +10,7 @@ export  const generateImage = createAction({
         template_id: Property.Dropdown({
             displayName: 'Template',
             required: true,
-            description: 'Select your template. (If you want to use Template ID. Click on the "(x)" above this field. Template ID can be found by opening a template and going to “Render”. Being there copy the template ID from the top right.)',
+            description: 'Select your template. (If you want to use Template ID. Click on the "(x)" above this field. Template ID can be found by opening a template and going to â€œRenderâ€. Being there copy the template ID from the top right.)',
             refreshers: [],
             options: async ({ auth }) => {
                 if (!auth) {

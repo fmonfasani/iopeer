@@ -1,5 +1,5 @@
-import { TriggerStrategy, createTrigger, PiecePropValueSchema } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { TriggerStrategy, createTrigger, PiecePropValueSchema } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { microsoftToDoAuth } from '../../index';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { TodoTaskList } from '@microsoft/microsoft-graph-types';

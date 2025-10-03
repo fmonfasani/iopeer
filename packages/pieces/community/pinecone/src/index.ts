@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth, Property } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { createIndex } from './lib/actions/create-index';
 import { upsertVector } from './lib/actions/upsert-vector';
 import { updateVector } from './lib/actions/update-vector';
@@ -54,7 +54,7 @@ export const pinecone = createPiece({
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   auth: pineconeAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/pinecone.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/pinecone.png',
   authors: ['fortunamide', 'onyedikachi-david'],
   actions: [createIndex, upsertVector, updateVector, getVector, deleteVector, searchVector, searchIndex],
   triggers: []

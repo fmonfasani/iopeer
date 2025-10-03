@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { aidbaseAuth } from '../common/auth';
 import { aidbaseClient } from '../common/client';
 import { faqDropdown } from '../common/props';

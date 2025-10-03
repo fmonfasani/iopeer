@@ -1,6 +1,6 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { hubspotAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { pageType } from '../common/props';
 
 export const createPageAction = createAction({

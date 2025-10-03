@@ -1,4 +1,4 @@
-import { PopoverTrigger } from '@radix-ui/react-popover';
+﻿import { PopoverTrigger } from '@radix-ui/react-popover';
 import { t } from 'i18next';
 import { Plus, Sparkles } from 'lucide-react';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Popover, PopoverContent } from '@/components/ui/popover';
 import { LoadingSpinner } from '@/components/ui/spinner';
 import { Textarea } from '@/components/ui/textarea';
-import { Agent, CreateAgentRequest } from '@activepieces/shared';
+import { Agent, CreateAgentRequest } from '@IOpeer/shared';
 
 import { AgentImageLoading } from './agent-image-loading';
 import { agentHooks } from './lib/agent-hooks';

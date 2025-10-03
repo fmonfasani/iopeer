@@ -1,7 +1,7 @@
-import { nanoid } from 'nanoid';
+﻿import { nanoid } from 'nanoid';
 import { useSearchParams } from 'react-router-dom';
 
-import { isNil, ThirdPartyAuthnProviderEnum } from '@activepieces/shared';
+import { isNil, ThirdPartyAuthnProviderEnum } from '@IOpeer/shared';
 
 import {
   FROM_QUERY_PARAM,

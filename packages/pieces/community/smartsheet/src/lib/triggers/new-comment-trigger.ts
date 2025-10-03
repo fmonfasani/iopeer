@@ -1,4 +1,4 @@
-import { createTrigger, TriggerStrategy, Property } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy, Property } from '@IOpeer/pieces-framework';
 import { smartsheetAuth } from '../../index';
 import {
 	smartsheetCommon,
@@ -8,7 +8,7 @@ import {
 	verifyWebhookSignature,
 	getCommentFullDetails,
 } from '../common';
-import { WebhookHandshakeStrategy } from '@activepieces/shared';
+import { WebhookHandshakeStrategy } from '@IOpeer/shared';
 
 const TRIGGER_KEY = 'smartsheet_new_comment_trigger';
 

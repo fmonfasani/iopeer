@@ -1,5 +1,5 @@
-import { googleDriveAuth } from '../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { googleDriveAuth } from '../..';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { downloadFileFromDrive } from '../common/get-file-content';
 
 export const readFile = createAction({

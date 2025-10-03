@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     AdminRetryRunsRequestBody,
     ApplyLicenseKeyByEmailRequestBody,
     ErrorCode,
@@ -9,7 +9,7 @@ import {
     isNil,
     PlatformRole,
     ProjectId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { In } from 'typeorm'
 import { userIdentityService } from '../../../authentication/user-identity/user-identity-service'
@@ -37,7 +37,7 @@ export const adminPlatformService = (log: FastifyBaseLogger) => ({
             })
         }
         if (!createdAfter || !createdBefore) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: 'createdAfter and createdBefore are required',

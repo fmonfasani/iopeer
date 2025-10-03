@@ -1,8 +1,8 @@
-import {
+﻿import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   addContact,
   Country,
@@ -13,7 +13,7 @@ import {
 } from '../common';
 import { leadConnectorAuth } from '../..';
 import { z } from 'zod';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 
 export const createContact = createAction({
   auth: leadConnectorAuth,

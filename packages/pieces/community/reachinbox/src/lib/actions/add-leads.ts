@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   fetchCampaigns,
   addLeadsToCampaign,
   reachinboxCommon,
 } from '../common/index';
 import { reachinbox, ReachinboxAuth } from '../..';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 
 // Define the structure for custom variables
 interface CustomVariable {

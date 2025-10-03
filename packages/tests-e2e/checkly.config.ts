@@ -1,4 +1,4 @@
-import { defineConfig } from 'checkly'
+﻿import { defineConfig } from 'checkly'
 import { AlertEscalationBuilder, RetryStrategyBuilder } from 'checkly/constructs'
 
 /**
@@ -10,7 +10,7 @@ const config = defineConfig({
   /** A logical ID that needs to be unique across your Checkly account,
    * See https://www.checklyhq.com/docs/cli/constructs/ to learn more about logical IDs.
    */
-  logicalId: `activepieces-e2e-tests-${process.env.E2E_CONFIG_MODE}`,
+  logicalId: `IOpeer-e2e-tests-${process.env.E2E_CONFIG_MODE}`,
   /* An optional URL to your Git repo to be shown in your test sessions and resource activity log */
   /* repoUrl: 'https://github.com/checkly/checkly-cli', */
   /* Sets default values for Checks */
@@ -33,7 +33,7 @@ const config = defineConfig({
     /* Global configuration option for Playwright-powered checks. See https://www.checklyhq.com/docs/browser-checks/playwright-test/#global-configuration */
     playwrightConfig: {
       use: {
-        baseURL: 'https://cloud.activepieces.com',
+        baseURL: 'https://cloud.IOpeer.com',
         viewport: { width: 1280, height: 720 },
       }
     },

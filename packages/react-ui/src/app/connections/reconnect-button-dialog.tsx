@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { RefreshCw } from 'lucide-react';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ import { piecesHooks } from '@/features/pieces/lib/pieces-hooks';
 import {
   AppConnectionScope,
   AppConnectionWithoutSensitiveData,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 type ReconnectButtonDialogProps = {
   connection: AppConnectionWithoutSensitiveData;

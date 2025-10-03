@@ -1,4 +1,4 @@
-import { typeboxResolver } from '@hookform/resolvers/typebox';
+﻿import { typeboxResolver } from '@hookform/resolvers/typebox';
 import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { useState } from 'react';
@@ -28,7 +28,7 @@ import {
   PlatformRole,
   UpdateUserRequestBody,
   User,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { Input } from '../../../../components/ui/input';
 

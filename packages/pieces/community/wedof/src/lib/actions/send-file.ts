@@ -1,6 +1,6 @@
-import { wedofAuth } from '../../index';
-import { createAction, DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../index';
+import { createAction, DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../common/wedof';
 
 export const sendFile = createAction({
@@ -11,7 +11,7 @@ export const sendFile = createAction({
   props: {
     entityClass: Property.StaticDropdown({
       displayName: "Choisir le type de dossier",
-      description: "Permet de n'obtenir que les dossiers dans le type considéré - par défaut tous les types sont retournés",
+      description: "Permet de n'obtenir que les dossiers dans le type considÃ©rÃ© - par dÃ©faut tous les types sont retournÃ©s",
       required: true,
       options: {
         options: [
@@ -28,9 +28,9 @@ export const sendFile = createAction({
       },
     }),
     externalId: Property.ShortText({
-      displayName: 'N° du dossier',
+      displayName: 'NÂ° du dossier',
       description:
-        'Sélectionner la propriété {externalId} du dossier',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier',
       required: true,
     }),
     title: Property.ShortText({
@@ -84,7 +84,7 @@ export const sendFile = createAction({
     }),
     typeFile: Property.StaticDropdown({
       displayName: "Choisir le format d'envoi du fichier",
-      description: "Permet de choisir la méthode d'envoi du fichier",
+      description: "Permet de choisir la mÃ©thode d'envoi du fichier",
       required: false,
       defaultValue: "file",
       options:  {
@@ -99,7 +99,7 @@ export const sendFile = createAction({
             },
             {
               value: "url",
-              label: "Ajouter à partir d'un lien",
+              label: "Ajouter Ã  partir d'un lien",
             },
           ],
        disabled : false,
@@ -117,7 +117,7 @@ export const sendFile = createAction({
       if (_type === "url") {
         props['fileToDownload'] = Property.LongText({
           displayName: "Lien vers le document",
-          description: 'URL du fichier à télécharger',
+          description: 'URL du fichier Ã  tÃ©lÃ©charger',
           required: true,
       });
       } else if (_type === "fileUrl") {

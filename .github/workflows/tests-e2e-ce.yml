@@ -1,4 +1,4 @@
-name: E2E Tests - Community Edition
+﻿name: E2E Tests - Community Edition
 
 on:
   workflow_call:
@@ -14,7 +14,7 @@ env:
   AP_POSTGRES_PORT: 5432
   AP_POSTGRES_USERNAME: postgres
   AP_POSTGRES_PASSWORD: postgres
-  AP_POSTGRES_DATABASE: activepieces
+  AP_POSTGRES_DATABASE: IOpeer
   AP_POSTGRES_USE_SSL: "false"
   AP_REDIS_URL: redis://localhost:6379
   AP_QUEUE_MODE: REDIS
@@ -38,7 +38,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: activepieces
+          POSTGRES_DB: IOpeer
         options: >-
           --health-cmd pg_isready
           --health-interval 10s

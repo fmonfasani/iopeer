@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { ExternalLink, Plus, Workflow } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ import {
   PopulatedFlow,
   Agent,
   FlowTriggerType,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const template = {
   created: '1751253117904',
@@ -25,7 +25,7 @@ const template = {
   name: 'Chat With Agent',
   description: '',
   tags: [],
-  pieces: ['@activepieces/piece-forms', '@activepieces/piece-agent'],
+  pieces: ['@IOpeer/piece-forms', '@IOpeer/piece-agent'],
   template: {
     displayName: 'Chat With Agent',
     trigger: {
@@ -34,7 +34,7 @@ const template = {
       displayName: 'Chat UI',
       type: FlowTriggerType.PIECE,
       settings: {
-        pieceName: '@activepieces/piece-forms',
+        pieceName: '@IOpeer/piece-forms',
         pieceVersion: '~0.4.3',
         pieceType: PieceType.OFFICIAL,
         packageType: PackageType.REGISTRY,
@@ -48,7 +48,7 @@ const template = {
         name: 'step_2',
         valid: true,
         settings: {
-          pieceName: '@activepieces/piece-agent',
+          pieceName: '@IOpeer/piece-agent',
           pieceType: PieceType.OFFICIAL,
           packageType: PackageType.REGISTRY,
           actionName: 'run_agent',
@@ -73,7 +73,7 @@ const template = {
           valid: true,
           skip: false,
           settings: {
-            pieceName: '@activepieces/piece-forms',
+            pieceName: '@IOpeer/piece-forms',
             pieceType: PieceType.OFFICIAL,
             packageType: PackageType.REGISTRY,
             actionName: 'return_response',
@@ -146,7 +146,7 @@ export const LinkedFlowsSection = ({ agent }: LinkedFlowsSectionProps) => {
     onError: () => {},
   });
 
-  const hasAgentPiece = template.pieces.includes('@activepieces/piece-agent');
+  const hasAgentPiece = template.pieces.includes('@IOpeer/piece-agent');
 
   if (!hasAgentPiece) {
     return null;

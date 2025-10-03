@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { frontAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { contactIdDropdown } from '../common/dropdown';
 
 export const updateContact = createAction({
@@ -23,7 +23,7 @@ export const updateContact = createAction({
     }),
     avatar_url: Property.ShortText({
       displayName: 'Avatar URL',
-      description: 'URL of the contact’s avatar image.',
+      description: 'URL of the contactâ€™s avatar image.',
       required: false,
     }),
     links: Property.Array({

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
@@ -7,17 +7,17 @@ import dayjs from 'dayjs';
 export const declareCertificationFolderRegistred = createAction({
   auth: wedofAuth,
   name: 'declareCertificationFolderRegistred',
-  displayName: "Passer un dossier de certification à l'état : Enregistré",
-  description: "Change l'état d'un dossier de certification vers : Enregistré",
+  displayName: "Passer un dossier de certification Ã  l'Ã©tat : EnregistrÃ©",
+  description: "Change l'Ã©tat d'un dossier de certification vers : EnregistrÃ©",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     enrollmentDate: Property.DateTime({
-      displayName: "Date d'inscription à la certification",
+      displayName: "Date d'inscription Ã  la certification",
       description: 'Date au format YYYY-MM-DD.',
       required: false,
     }),

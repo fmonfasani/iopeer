@@ -1,11 +1,11 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { beamerAuth } from '../../index';
 import { beamerCommon } from '../common';
 import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const createComment = createAction({
   auth: beamerAuth,

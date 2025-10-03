@@ -1,10 +1,10 @@
-import { birdAuth } from '../auth';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { birdAuth } from '../auth';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const sendSMSAction = createAction({
   auth: birdAuth,

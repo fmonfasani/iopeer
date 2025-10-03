@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, propsValidation } from '@IOpeer/pieces-common';
 import { edenAiApiCall } from '../common/client';
 import { createStaticDropdown } from '../common/providers';
 import { z } from 'zod';
@@ -138,7 +138,7 @@ const OCR_LANGUAGES = [
   { label: 'Kurdish (Arabic)', value: 'ku-arab' },
   { label: 'Kurdish (Latin)', value: 'ku-latn' },
   { label: 'Kurukh', value: 'kru' },
-  { label: 'Kölsch', value: 'ksh' },
+  { label: 'KÃ¶lsch', value: 'ksh' },
   { label: 'Lak', value: 'lbe' },
   { label: 'Lakota', value: 'lkt' },
   { label: 'Latin', value: 'la' },
@@ -210,7 +210,7 @@ const OCR_LANGUAGES = [
   { label: 'Thangmi', value: 'thf' },
   { label: 'Tonga', value: 'to' },
   { label: 'Turkish', value: 'tr' },
-  { label: 'Turkish (Türkiye)', value: 'tr-TR' },
+  { label: 'Turkish (TÃ¼rkiye)', value: 'tr-TR' },
   { label: 'Turkmen', value: 'tk' },
   { label: 'Tuvinian', value: 'tyv' },
   { label: 'Uighur', value: 'ug' },
@@ -221,7 +221,7 @@ const OCR_LANGUAGES = [
   { label: 'Uzbek (Arabic)', value: 'uz-arab' },
   { label: 'Uzbek (Cyrillic)', value: 'uz-cyrl' },
   { label: 'Vietnamese', value: 'vi' },
-  { label: 'Volapük', value: 'vo' },
+  { label: 'VolapÃ¼k', value: 'vo' },
   { label: 'Walser', value: 'wae' },
   { label: 'Welsh', value: 'cy' },
   { label: 'Western Frisian', value: 'fy' },

@@ -1,7 +1,7 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import { NinoxAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { teamidDropdown, databaseIdDropdown, tableIdDropdown, recordIdDropdown } from '../common/props';
 
 export const listFilesFromRecord = createAction({

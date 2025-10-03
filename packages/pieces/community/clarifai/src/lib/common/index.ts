@@ -1,4 +1,4 @@
-import { Property, ApFile } from '@activepieces/pieces-framework';
+﻿import { Property, ApFile } from '@IOpeer/pieces-framework';
 import { grpc } from 'clarifai-nodejs-grpc';
 import {
   Model,

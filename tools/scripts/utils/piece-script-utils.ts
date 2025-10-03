@@ -1,13 +1,13 @@
-
+﻿
 import { readdir, stat } from 'node:fs/promises'
 import { resolve, join } from 'node:path'
 import { cwd } from 'node:process'
-import { extractPieceFromModule } from '@activepieces/shared'
+import { extractPieceFromModule } from '@IOpeer/shared'
 import * as semver from 'semver'
 import { readPackageJson } from './files'
 import { StatusCodes } from 'http-status-codes'
 import { execSync } from 'child_process'
-import { pieceTranslation,PieceMetadata } from '@activepieces/pieces-framework'
+import { pieceTranslation,PieceMetadata } from '@IOpeer/pieces-framework'
 type SubPiece = {
     name: string;
     displayName: string;
@@ -17,10 +17,10 @@ type SubPiece = {
     metadata(): Omit<PieceMetadata, 'name' | 'version'>;
 };
 
-export const AP_CLOUD_API_BASE = 'https://cloud.activepieces.com/api/v1';
+export const AP_CLOUD_API_BASE = 'https://cloud.IOpeer.com/api/v1';
 export const PIECES_FOLDER = 'packages/pieces'
 export const COMMUNITY_PIECE_FOLDER = 'packages/pieces/community'
-export const NON_PIECES_PACKAGES = ['@activepieces/pieces-framework', '@activepieces/pieces-common']
+export const NON_PIECES_PACKAGES = ['@IOpeer/pieces-framework', '@IOpeer/pieces-common']
 
 const validateSupportedRelease = (minRelease: string | undefined, maxRelease: string | undefined) => {
     if (minRelease !== undefined && !semver.valid(minRelease)) {

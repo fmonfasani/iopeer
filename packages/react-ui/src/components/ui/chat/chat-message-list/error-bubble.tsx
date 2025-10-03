@@ -1,4 +1,4 @@
-import { BotIcon, CircleX, RotateCcw } from 'lucide-react';
+﻿import { BotIcon, CircleX, RotateCcw } from 'lucide-react';
 import React from 'react';
 
 import {
@@ -7,7 +7,7 @@ import {
   ChatBubbleAvatar,
   ChatBubbleMessage,
 } from '@/components/ui/chat/chat-bubble';
-import { ApErrorParams, ChatUIResponse, ErrorCode } from '@activepieces/shared';
+import { ApErrorParams, ChatUIResponse, ErrorCode } from '@IOpeer/shared';
 
 const formatError = (
   projectId: string | undefined | null,

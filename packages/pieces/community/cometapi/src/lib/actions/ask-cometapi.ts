@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { cometApiAuth } from '../common/auth';
 import { z } from 'zod';
 import { modelIdDropdown } from '../common/props';

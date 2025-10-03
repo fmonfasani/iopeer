@@ -1,4 +1,4 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   CreateTableRequest,
   ExportTableResponse,
@@ -6,7 +6,7 @@ import {
   SeekPage,
   Table,
   UpdateTableRequest,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const tablesApi = {
   async list(request: ListTablesRequest): Promise<SeekPage<Table>> {

@@ -1,4 +1,4 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { supabaseAuth } from '../../index';
 import { supabaseCommon } from '../common/props';
 
@@ -24,7 +24,7 @@ export const newRow = createTrigger({
         instructions: Property.MarkDown({
             value: `## Setup Instructions
 
-1. **Go to your Supabase Dashboard** → Database → Webhooks
+1. **Go to your Supabase Dashboard** â†’ Database â†’ Webhooks
 2. **Click "Create a new hook"**
 3. **Configure the webhook:**
    - **Name**: Give it a descriptive name (e.g., "IOPeer New Row")

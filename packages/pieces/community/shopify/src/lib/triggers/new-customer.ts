@@ -1,4 +1,4 @@
-import { createShopifyWebhookTrigger } from '../common/register-webhook';
+﻿import { createShopifyWebhookTrigger } from '../common/register-webhook';
 
 export const newCustomer = createShopifyWebhookTrigger({
   name: 'new_customer',
@@ -7,7 +7,7 @@ export const newCustomer = createShopifyWebhookTrigger({
   displayName: 'New Customer',
   sampleData: {
     id: 6972943892790,
-    email: 'john@activepieces.com',
+    email: 'john@IOpeer.com',
     accepts_marketing: false,
     created_at: '2023-03-24T18:13:56-04:00',
     updated_at: '2023-03-24T18:13:56-04:00',

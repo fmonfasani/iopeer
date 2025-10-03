@@ -1,4 +1,4 @@
-import { AIUsage } from '@activepieces/common-ai'
+﻿import { AIUsage } from '@IOpeer/common-ai'
 import {
     AppConnection,
     Cell,
@@ -12,7 +12,7 @@ import {
     TableWebhook,
     TriggerEvent,
     User,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { EntitySchema } from 'typeorm'
 import {
     ApIdSchema,

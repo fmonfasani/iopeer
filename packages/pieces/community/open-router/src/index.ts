@@ -1,12 +1,12 @@
-import {
+﻿import {
   AuthenticationType,
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
   HttpRequest,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { askOpenRouterAction } from './lib/actions/ask-open-router';
 
 const markdownDescription = `
@@ -51,7 +51,7 @@ export const openRouter = createPiece({
   description: 'Use any AI model to generate code, text, or images via OpenRouter.ai.',
   auth: openRouterAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/open-router.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/open-router.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ["Salem-Alaa","kishanprmr","MoShizzle","abuaboud"],
   actions: [

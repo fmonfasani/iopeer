@@ -1,6 +1,6 @@
-
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { PieceCategory } from "@activepieces/shared";
+﻿
+import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { PieceCategory } from "@IOpeer/shared";
 import { getAdById, getAdsByPage, findBrands, findAds, findBoards } from "./lib/actions";
 import { newAdInSpyder, newAdInBoard, newSwipefileAd } from "./lib/triggers";
 
@@ -13,7 +13,7 @@ export const foreplayCo = createPiece({
     required: true,
   }),
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/foreplay-co.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/foreplay-co.png",
   categories: [PieceCategory.MARKETING],
   authors: ['fortunamide', 'onyedikachi-david'],
   actions: [getAdById, getAdsByPage, findBrands, findAds, findBoards],

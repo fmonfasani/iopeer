@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { InferenceClient } from '@huggingface/inference';
 import type { ChatCompletionInput } from '@huggingface/tasks';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const chatCompletion = createAction({
@@ -573,36 +573,36 @@ function getQualityTips(response: string, finishReason: string): string[] {
 
   if (response.length < 20) {
     tips.push(
-      '⚠️ Response is very short - consider using Normal or Detailed length'
+      'âš ï¸ Response is very short - consider using Normal or Detailed length'
     );
   }
 
   if (response.length > 1000) {
     tips.push(
-      '📝 Very long response - consider using Brief or Normal length for better user experience'
+      'ðŸ“ Very long response - consider using Brief or Normal length for better user experience'
     );
   }
 
   if (finishReason === 'length') {
     tips.push(
-      '✂️ Response was truncated - increase max tokens for complete responses'
+      'âœ‚ï¸ Response was truncated - increase max tokens for complete responses'
     );
   }
 
   if (finishReason === 'stop') {
     tips.push(
-      '🛑 Response stopped at stop sequence - this is expected behavior'
+      'ðŸ›‘ Response stopped at stop sequence - this is expected behavior'
     );
   }
 
   if (response.includes("I don't know") || response.includes('I cannot')) {
     tips.push(
-      '🎯 Consider providing more context or using a template with better instructions'
+      'ðŸŽ¯ Consider providing more context or using a template with better instructions'
     );
   }
 
   if (tips.length === 0) {
-    tips.push('✅ Good response quality achieved');
+    tips.push('âœ… Good response quality achieved');
   }
 
   return tips;
@@ -615,19 +615,19 @@ function getNextSteps(
   const steps: string[] = [];
 
   if (conversationMode === 'single') {
-    steps.push('💡 Switch to Multi-turn mode for follow-up conversations');
+    steps.push('ðŸ’¡ Switch to Multi-turn mode for follow-up conversations');
   }
 
   if (conversationMode === 'multi') {
-    steps.push('🔄 Add this response to conversation history for context');
+    steps.push('ðŸ”„ Add this response to conversation history for context');
   }
 
   if (finishReason === 'length') {
-    steps.push('⚙️ Increase max tokens or use Detailed response length');
+    steps.push('âš™ï¸ Increase max tokens or use Detailed response length');
   }
 
-  steps.push('📊 Monitor token usage for cost optimization');
-  steps.push('🎯 Fine-tune temperature and penalties for better responses');
+  steps.push('ðŸ“Š Monitor token usage for cost optimization');
+  steps.push('ðŸŽ¯ Fine-tune temperature and penalties for better responses');
 
   return steps;
 }

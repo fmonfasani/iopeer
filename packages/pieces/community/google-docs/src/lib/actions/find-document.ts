@@ -1,9 +1,9 @@
-import { googleDocsAuth } from '../..';
+﻿import { googleDocsAuth } from '../..';
 import {
 	createAction,
 	DynamicPropsValue,
 	Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { google } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 import { folderIdProp } from '../common/props';

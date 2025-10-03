@@ -1,11 +1,11 @@
-import { microsoftTeamsAuth } from '../../index';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { microsoftTeamsAuth } from '../../index';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { Chat, ChatType } from '@microsoft/microsoft-graph-types';
 import dayjs from 'dayjs';

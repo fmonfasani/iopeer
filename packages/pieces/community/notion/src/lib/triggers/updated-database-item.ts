@@ -1,18 +1,18 @@
-import {
+﻿import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   TriggerStrategy,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import dayjs from 'dayjs';
 import { notionCommon } from '../common';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../..';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export const updatedDatabaseItem = createTrigger({
   auth: notionAuth,
@@ -27,7 +27,7 @@ export const updatedDatabaseItem = createTrigger({
     url: 'https://www.notion.so/Take-Fig-on-a-walk-d23872cdc1064afab33dd3fd66064ccb',
     icon: {
       type: 'emoji',
-      emoji: '🐶',
+      emoji: 'ðŸ¶',
     },
     cover: null,
     object: 'page',

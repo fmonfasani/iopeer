@@ -1,11 +1,11 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   ListTriggerEventsRequest,
   SaveTriggerEventRequest,
   SeekPage,
   TestTriggerRequestBody,
   TriggerEventWithPayload,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const triggerEventsApi = {
   test(request: TestTriggerRequestBody) {

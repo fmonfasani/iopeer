@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import { zooAuth } from '../../../index'
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const getOpenApiSchemaAction = createAction({
   name: 'get_openapi_schema',

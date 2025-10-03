@@ -1,10 +1,10 @@
-import { api } from '@/lib/api';
-import { CreateFlowTemplateRequest } from '@activepieces/ee-shared';
+﻿import { api } from '@/lib/api';
+import { CreateFlowTemplateRequest } from '@IOpeer/ee-shared';
 import {
   FlowTemplate,
   ListFlowTemplatesRequest,
   SeekPage,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const templatesApi = {
   getTemplate(templateId: string) {

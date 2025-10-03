@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { pinterestAuth } from './lib/common/auth';
 import { createPin } from './lib/actions/create-pin';
 import { createBoard } from './lib/actions/create-board';
@@ -14,7 +14,7 @@ export const pinterest = createPiece({
   displayName: 'Pinterest',
   auth: pinterestAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/pinterest.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/pinterest.png',
   authors: ['Sanket6652'],
   actions: [
     createPin,

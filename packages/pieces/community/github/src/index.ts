@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { githubCreateIssueAction } from './lib/actions/create-issue';
 import { githubUnlockIssueAction } from './lib/actions/unlock-issue';
 import { githubTriggers } from './lib/trigger';
@@ -37,7 +37,7 @@ export const github = createPiece({
     'Developer platform that allows developers to create, store, manage and share their code',
 
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/github.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/github.png',
   categories: [PieceCategory.DEVELOPER_TOOLS],
   auth: githubAuth,
   actions: [

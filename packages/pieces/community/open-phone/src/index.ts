@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { sendMessage } from './lib/actions/send-message';
 import { createContact } from './lib/actions/create-contact';
 import { updateContact } from './lib/actions/update-contact';
@@ -20,7 +20,7 @@ export const openPhone = createPiece({
   displayName: 'OpenPhone',
   auth: openPhoneAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/open-phone.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/open-phone.png',
   authors: ['Ani-4x', 'onyedikachi-david'],
   actions: [sendMessage, createContact, updateContact, getCallSummary],
   triggers: [

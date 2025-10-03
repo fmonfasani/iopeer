@@ -1,5 +1,5 @@
-
-    import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
+﻿
+    import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
     import { generateTextAction } from './lib/actions/generate-text';
     import { summarizeTextAction } from './lib/actions/summarize-text';
     import { extractKeywordsAction } from './lib/actions/extract-keywords';
@@ -13,8 +13,8 @@
     import { ocrImageAction } from './lib/actions/ocr-image';
     import { imageGenerationAction } from './lib/actions/image-generation';
     import { textToSpeechAction } from './lib/actions/text-to-speech';
-    import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { PieceCategory } from "@activepieces/shared";
+    import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
+import { PieceCategory } from "@IOpeer/shared";
 
     export const edenAiAuth = PieceAuth.SecretText({
       displayName: 'Eden AI API Key',
@@ -49,7 +49,7 @@ import { PieceCategory } from "@activepieces/shared";
       displayName: "Eden AI",
       auth: edenAiAuth,
       minimumSupportedRelease: '0.36.1',
-      logoUrl: "https://cdn.activepieces.com/pieces/eden-ai.png",
+      logoUrl: "https://cdn.IOpeer.com/pieces/eden-ai.png",
       authors: ["sparkybug"],
       description: "Eden AI is a platform that provides a range of AI services, including text generation, summarization, translation, and more.",
       categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],

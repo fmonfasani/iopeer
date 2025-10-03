@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { addOrUpdateContactExtended } from './lib/actions/add-or-update-contact-extended';
 import { addOrUpdateContact } from './lib/actions/add-or-update-contact';
 import { addOrUpdateSubscription } from './lib/actions/add-or-update-subscription';
@@ -12,7 +12,7 @@ import { getContactDetails } from './lib/actions/get-contact-details';
 import { newLead } from './lib/triggers/new-lead';
 import { newPayment } from './lib/triggers/new-payment';
 import { newSubscription } from './lib/triggers/new-subscription';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 const markdownDescription = `
   Follow these instructions to get your Upgrade.chat API Key:
@@ -57,7 +57,7 @@ export const upgradechat = createPiece({
     'Supercharge your Discord or Telegram communities with subscription payments and membership tools.',
   auth: upgradechatAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/upgradechat.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/upgradechat.png',
   authors: ['Trayshmhirk', 'OmarSayed'],
   categories: [PieceCategory.SALES_AND_CRM],
   actions: [

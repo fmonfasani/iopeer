@@ -1,23 +1,23 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const resetPartnership = createAction({
   auth: wedofAuth,
   name: 'resetPartnership',
-  displayName: "Réinitialiser un partenariat",
-  description: "Permet de réinitialiser les données du partenariat en état 'Demande en traitement'",
+  displayName: "RÃ©initialiser un partenariat",
+  description: "Permet de rÃ©initialiser les donnÃ©es du partenariat en Ã©tat 'Demande en traitement'",
 
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
+      displayName: 'NÂ° certifInfo',
       description: 'Identifiant de la certification',
       required: true,
     }),
     siret: Property.ShortText({
-      displayName: 'N° siret',
-      description: 'Numéro SIRET du partenaire à réinitialiser',
+      displayName: 'NÂ° siret',
+      description: 'NumÃ©ro SIRET du partenaire Ã  rÃ©initialiser',
       required: true,
     }),
   },

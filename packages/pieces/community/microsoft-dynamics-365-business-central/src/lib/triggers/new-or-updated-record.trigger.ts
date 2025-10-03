@@ -1,15 +1,15 @@
-import { businessCentralAuth } from '../../';
+﻿import { businessCentralAuth } from '../../';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createTrigger,
   PiecePropValueSchema,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { commonProps } from '../common';
 import { filterParams, makeClient } from '../common/client';
 import dayjs from 'dayjs';

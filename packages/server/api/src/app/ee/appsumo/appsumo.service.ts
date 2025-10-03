@@ -1,5 +1,5 @@
-import { APPSUMO_PLAN, FREE_CLOUD_PLAN } from '@activepieces/ee-shared'
-import { isNil, PlatformPlanWithOnlyLimits, PlatformRole } from '@activepieces/shared'
+﻿import { APPSUMO_PLAN, FREE_CLOUD_PLAN } from '@IOpeer/ee-shared'
+import { isNil, PlatformPlanWithOnlyLimits, PlatformRole } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { userIdentityService } from '../../authentication/user-identity/user-identity-service'
 import { repoFactory } from '../../core/db/repo-factory'
@@ -11,48 +11,48 @@ import { AppSumoEntity, AppSumoPlan } from './appsumo.entity'
 const appsumoRepo = repoFactory(AppSumoEntity)
 
 const appSumoPlans: Record<string, PlatformPlanWithOnlyLimits> = {
-    activepieces_tier1: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier1',
+    IOpeer_tier1: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier1',
         tasksLimit: 10000,
         userSeatsLimit: 1,
         agentsLimit: 5,
         tablesLimit: 5,
         mcpLimit: 5,
     }),
-    activepieces_tier2: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier2',
+    IOpeer_tier2: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier2',
         tasksLimit: 50000,
         userSeatsLimit: 1,
         agentsLimit: 5,
         tablesLimit: 5,
         mcpLimit: 5,
     }),
-    activepieces_tier3: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier3',
+    IOpeer_tier3: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier3',
         tasksLimit: 200000,
         userSeatsLimit: 5,
         agentsLimit: 5,
         tablesLimit: 5,
         mcpLimit: 5,
     }),
-    activepieces_tier4: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier4',
+    IOpeer_tier4: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier4',
         tasksLimit: 500000,
         userSeatsLimit: 5,
         agentsLimit: 10,
         tablesLimit: 10,
         mcpLimit: 10,
     }),
-    activepieces_tier5: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier5',
+    IOpeer_tier5: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier5',
         tasksLimit: 1000000,
         userSeatsLimit: 5,
         agentsLimit: 20,
         tablesLimit: 20,
         mcpLimit: 20,
     }),
-    activepieces_tier6: APPSUMO_PLAN({
-        planName: 'appsumo_activepieces_tier6',
+    IOpeer_tier6: APPSUMO_PLAN({
+        planName: 'appsumo_IOpeer_tier6',
         tasksLimit: 10000000,
         userSeatsLimit: 5,
         agentsLimit: 50,

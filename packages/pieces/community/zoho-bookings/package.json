@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-zoho-bookings",
+﻿{
+  "name": "@IOpeer/piece-zoho-bookings",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

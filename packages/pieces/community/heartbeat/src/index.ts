@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { heartBeatCreateUser } from './lib/actions/create-user';
 
 const markdownPropertyDescription = `
@@ -24,7 +24,7 @@ export const Heartbeat = createPiece({
 
   auth: heartbeatAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/heartbeat.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/heartbeat.png',
   categories: [PieceCategory.COMMUNICATION],
   authors: ["kanarelo","kishanprmr","abuaboud"],
   actions: [

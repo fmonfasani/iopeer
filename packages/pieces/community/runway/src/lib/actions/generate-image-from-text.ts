@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { runwayAuth } from '../common';
 import RunwayML from '@runwayml/sdk';
 import { z } from 'zod';

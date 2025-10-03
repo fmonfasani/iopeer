@@ -1,4 +1,4 @@
-import {
+﻿import {
     AuthenticationType,
 	httpClient,
 	HttpHeaders,
@@ -6,8 +6,8 @@ import {
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { crispAuth } from './auth';
 
 

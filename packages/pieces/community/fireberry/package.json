@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-fireberry",
+﻿{
+  "name": "@IOpeer/piece-fireberry",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./src/index.js",

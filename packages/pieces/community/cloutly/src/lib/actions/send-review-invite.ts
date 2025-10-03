@@ -1,6 +1,6 @@
-import { cloutlyAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { cloutlyAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 
 export const sendReviewInvite = createAction({
   auth:cloutlyAuth,
@@ -73,7 +73,7 @@ export const sendReviewInvite = createAction({
       body: data,
       headers: {
         'Content-Type': 'application/json',
-        'x-app': 'activepieces',
+        'x-app': 'IOpeer',
         'x-api-key': apiKey
       }
     })

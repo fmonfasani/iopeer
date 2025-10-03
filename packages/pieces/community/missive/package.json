@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-missive",
+﻿{
+  "name": "@IOpeer/piece-missive",
   "version": "0.0.9",
   "type": "commonjs",
   "main": "./src/index.js",

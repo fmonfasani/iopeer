@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { googleChatApiAuth, googleChatCommon } from '../common';
 import { allSpacesDropdown, spacesDropdown, peoplesDropdown, threadsDropdown } from '../common/props';
 import { googleChatAPIService } from '../common/requests';

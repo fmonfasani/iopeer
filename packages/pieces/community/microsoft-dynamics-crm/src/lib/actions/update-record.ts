@@ -1,7 +1,7 @@
-import {
+﻿import {
   PiecePropValueSchema,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { dynamicsCRMAuth } from '../../';
 import { DynamicsCRMCommon, makeClient } from '../common';
 

@@ -1,6 +1,6 @@
-import { slidespeakAuth } from '../../index';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { slidespeakAuth } from '../../index';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { BASE_URL } from '../common/constants';
 
 export const getTaskStatusAction = createAction({

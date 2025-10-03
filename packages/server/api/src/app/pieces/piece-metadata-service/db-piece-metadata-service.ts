@@ -1,6 +1,6 @@
-
-import { PieceMetadataModel, PieceMetadataModelSummary, pieceTranslation } from '@activepieces/pieces-framework'
-import { ActivepiecesError, apId, assertNotNullOrUndefined, ErrorCode, EXACT_VERSION_REGEX, isNil, ListVersionsResponse, PieceType } from '@activepieces/shared'
+﻿
+import { PieceMetadataModel, PieceMetadataModelSummary, pieceTranslation } from '@IOpeer/pieces-framework'
+import { IOpeerError, apId, assertNotNullOrUndefined, ErrorCode, EXACT_VERSION_REGEX, isNil, ListVersionsResponse, PieceType } from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import semVer from 'semver'
@@ -76,7 +76,7 @@ export const FastDbPieceMetadataService = (log: FastifyBaseLogger): PieceMetadat
         async getOrThrow({ projectId, version, name, platformId, locale }): Promise<PieceMetadataModel> {
             const piece = await this.get({ projectId, version, name, platformId })
             if (isNil(piece)) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.ENTITY_NOT_FOUND,
                     params: {
                         message: `piece_metadata_not_found projectId=${projectId} pieceName=${name}`,
@@ -139,7 +139,7 @@ export const FastDbPieceMetadataService = (log: FastifyBaseLogger): PieceMetadat
                 platformId: platformId ?? IsNull(),
             })
             if (!isNil(existingMetadata)) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.VALIDATION,
                     params: {
                         message: `piece_metadata_already_exists name=${pieceMetadata.name} version=${pieceMetadata.version} projectId=${projectId}`,

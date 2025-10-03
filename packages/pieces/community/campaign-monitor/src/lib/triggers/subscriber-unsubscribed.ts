@@ -1,11 +1,11 @@
-import {
+﻿import {
   createTrigger,
   Property,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { makeRequest, transformCustomFields } from '../common/client';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { campaignMonitorAuth } from '../../index';
 import { clientId, listId } from '../common/props';
 

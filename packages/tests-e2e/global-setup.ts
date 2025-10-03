@@ -1,11 +1,11 @@
-import { chromium } from '@playwright/test';
+﻿import { chromium } from '@playwright/test';
 import { AuthenticationPage } from './pages/authentication.page';
 
-export const DEFAULT_EMAIL = 'test@activepieces.com';
+export const DEFAULT_EMAIL = 'test@IOpeer.com';
 export const DEFAULT_PASSWORD = 'TestPassword123!@#';
 
 async function globalSetup() {
-  console.log('🔧 Running global setup...');
+  console.log('ðŸ”§ Running global setup...');
 
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
@@ -17,13 +17,13 @@ async function globalSetup() {
 
   try {
     if (process.env.E2E_EMAIL && process.env.E2E_PASSWORD) {
-      console.log('✓ Using credentials from environment variables for sign-in');
+      console.log('âœ“ Using credentials from environment variables for sign-in');
       await authPage.signIn({
         email: process.env.E2E_EMAIL,
         password: process.env.E2E_PASSWORD,
       });
     } else {
-      console.log('✓ Using default credentials for sign-up');
+      console.log('âœ“ Using default credentials for sign-up');
       await authPage.signUp({
         email: DEFAULT_EMAIL,
         password: DEFAULT_PASSWORD,
@@ -35,9 +35,9 @@ async function globalSetup() {
     // Wait for successful authentication (redirect to flows page or dashboard)
     await page.waitForURL('**/flows', { timeout: 15000 });
 
-    console.log('✓ Global setup completed successfully');
+    console.log('âœ“ Global setup completed successfully');
   } catch (error) {
-    console.error('❌ Global setup failed:', error);
+    console.error('âŒ Global setup failed:', error);
     throw error;
   } finally {
     await context.close();

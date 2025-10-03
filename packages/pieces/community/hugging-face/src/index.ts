@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { documentQuestionAnswering } from './lib/actions/document-question-answering';
 import { languageTranslation } from './lib/actions/language-translation';
 import { textClassification } from './lib/actions/text-classification';
@@ -22,7 +22,7 @@ export const huggingface = createPiece({
     'Run inference on 100,000+ open ML models for NLP, vision, and audio tasks',
   auth: huggingFaceAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/huggingface.svg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/huggingface.svg',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['Ani-4x'],
   actions: [

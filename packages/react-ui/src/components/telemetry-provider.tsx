@@ -1,4 +1,4 @@
-import { AnalyticsBrowser } from '@segment/analytics-next';
+﻿import { AnalyticsBrowser } from '@segment/analytics-next';
 import posthog from 'posthog-js';
 import React, { useEffect, useState, useRef } from 'react';
 import { useDeepCompareEffect } from 'react-use';
@@ -10,7 +10,7 @@ import {
   isNil,
   TelemetryEvent,
   UserWithMetaInformationAndProject,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 interface TelemetryProviderProps {
   children: React.ReactNode;
@@ -81,8 +81,8 @@ const TelemetryProvider = ({ children }: TelemetryProviderProps) => {
       email: user.email,
       firstName: user.firstName,
       lastName: user.lastName,
-      activepiecesVersion: currentVersion,
-      activepiecesEnvironment: environment,
+      IOpeerVersion: currentVersion,
+      IOpeerEnvironment: environment,
       ui: 'react',
     });
 
@@ -98,8 +98,8 @@ const TelemetryProvider = ({ children }: TelemetryProviderProps) => {
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
-        activepiecesVersion: currentVersion,
-        activepiecesEnvironment: environment,
+        IOpeerVersion: currentVersion,
+        IOpeerEnvironment: environment,
       });
     });
     setAnalytics(newAnalytics);

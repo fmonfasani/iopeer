@@ -1,10 +1,10 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const props = {
   tenant_id: Property.Dropdown({
@@ -105,7 +105,7 @@ export const props = {
             if (inv.Contact?.Name) labelParts.push(inv.Contact.Name);
             if (inv.Status) labelParts.push(inv.Status);
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: inv.InvoiceID,
             };
           });
@@ -171,7 +171,7 @@ export const props = {
               inv.AmountDue ? `Due ${inv.AmountDue}` : undefined,
             ];
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: inv.InvoiceID,
             };
           });
@@ -234,7 +234,7 @@ export const props = {
             if (inv.Contact?.Name) labelParts.push(inv.Contact.Name);
             if (inv.Status) labelParts.push(inv.Status);
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: inv.InvoiceID,
             };
           });
@@ -305,7 +305,7 @@ export const props = {
             if (inv.Contact?.Name) labelParts.push(inv.Contact.Name);
             if (inv.Status) labelParts.push(inv.Status);
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: inv.InvoiceID,
             };
           });
@@ -366,7 +366,7 @@ export const props = {
             if (cn.Type) labelParts.push(cn.Type);
             if (cn.Status) labelParts.push(cn.Status);
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: cn.CreditNoteID,
             };
           });
@@ -431,7 +431,7 @@ export const props = {
             const labelParts = [c.Name];
             if (c.EmailAddress) labelParts.push(c.EmailAddress);
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: c.ContactID,
             };
           });
@@ -507,7 +507,7 @@ export const props = {
               const labelParts = [acc.Name || acc.Code || acc.AccountID];
               if (acc.Code) labelParts.push(acc.Code);
               return {
-                label: labelParts.filter(Boolean).join(' • '),
+                label: labelParts.filter(Boolean).join(' â€¢ '),
                 value: acc.AccountID,
               };
             });
@@ -624,7 +624,7 @@ export const props = {
               po.Status,
             ];
             return {
-              label: labelParts.filter(Boolean).join(' • '),
+              label: labelParts.filter(Boolean).join(' â€¢ '),
               value: po.PurchaseOrderID,
             };
           });
@@ -691,7 +691,7 @@ export const props = {
               if (acc.Code) labelParts.push(acc.Code);
               if (acc.Type) labelParts.push(acc.Type);
               return {
-                label: labelParts.filter(Boolean).join(' • '),
+                label: labelParts.filter(Boolean).join(' â€¢ '),
                 value: acc.AccountID,
               };
             });
@@ -802,7 +802,7 @@ export const props = {
         if (result.status === 200) {
           const currencies: any[] = result.body?.Currencies ?? [];
           const options = currencies.slice(0, 300).map((c) => ({
-            label: `${c.Code} • ${c.Description ?? ''}`.trim(),
+            label: `${c.Code} â€¢ ${c.Description ?? ''}`.trim(),
             value: c.Code,
           }));
           return { disabled: false, options };

@@ -1,9 +1,9 @@
-import {
+﻿import {
     OAuth2PropertyValue,
     Property,
     createTrigger,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { excelCommon } from '../common/common';
 import {
     DedupeStrategy,
@@ -12,8 +12,8 @@ import {
     httpClient,
     HttpMethod,
     AuthenticationType
-} from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 import { excelAuth } from '../..';
 
 interface TableRow {

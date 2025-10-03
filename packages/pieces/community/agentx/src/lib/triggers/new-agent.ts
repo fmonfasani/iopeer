@@ -1,8 +1,8 @@
-import {createTrigger,TriggerStrategy,PiecePropValueSchema,} from "@activepieces/pieces-framework";
-import {DedupeStrategy,Polling,pollingHelper,} from "@activepieces/pieces-common";
+﻿import {createTrigger,TriggerStrategy,PiecePropValueSchema,} from "@IOpeer/pieces-framework";
+import {DedupeStrategy,Polling,pollingHelper,} from "@IOpeer/pieces-common";
 import dayjs from "dayjs";
 import { makeRequest } from "../common/client";
-import { HttpMethod } from "@activepieces/pieces-common";
+import { HttpMethod } from "@IOpeer/pieces-common";
 import { AgentXAuth } from "../common/auth";
 
 type Agent = {

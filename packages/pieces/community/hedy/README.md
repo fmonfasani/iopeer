@@ -1,4 +1,4 @@
-# Hedy Piece for IOPeer
+﻿# Hedy Piece for IOPeer
 
 AI-powered meeting intelligence integration for IOPeer.
 
@@ -10,14 +10,14 @@ AI-powered meeting intelligence integration for IOPeer.
 
 ## Authentication
 1. Sign in to your Hedy dashboard.
-2. Navigate to **Settings → API**.
+2. Navigate to **Settings â†’ API**.
 3. Generate a new API key (it starts with `hedy_live_`).
 4. Paste the key into the Hedy piece connection in IOPeer.
 
 ## Example Automations
-- **Post Session Recaps** – Trigger on `Session Ended` and send meeting notes to Slack, Microsoft Teams, or email.
-- **Sync Todos** – When a todo is exported from Hedy, automatically create matching tasks in Asana, Todoist, or ClickUp.
-- **Daily Digest** – Schedule a flow that lists sessions from the last 24 hours, summarises them with AI, and emails the highlights to your team.
+- **Post Session Recaps** â€“ Trigger on `Session Ended` and send meeting notes to Slack, Microsoft Teams, or email.
+- **Sync Todos** â€“ When a todo is exported from Hedy, automatically create matching tasks in Asana, Todoist, or ClickUp.
+- **Daily Digest** â€“ Schedule a flow that lists sessions from the last 24 hours, summarises them with AI, and emails the highlights to your team.
 
 ## Error Handling
 The Hedy piece provides descriptive errors for common issues such as:
@@ -28,4 +28,4 @@ The Hedy piece provides descriptive errors for common issues such as:
 ## Support
 - Hedy API documentation: https://api.hedy.bot/docs
 - Hedy support: support@hedy.bot
-- IOPeer community: https://www.activepieces.com/discord
+- IOPeer community: https://www.IOpeer.com/discord

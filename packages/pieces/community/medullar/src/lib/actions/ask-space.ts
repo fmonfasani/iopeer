@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { medullarAuth } from '../../index';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { getUser, medullarCommon, medullarPropsCommon } from '../common';
 
 export const askSpace = createAction({
@@ -67,7 +67,7 @@ export const askSpace = createAction({
         method: HttpMethod.POST,
         url: `${medullarCommon.exploratorUrl}/chats/`,
         body: {
-          name: 'activepieces automated',
+          name: 'IOpeer automated',
           space: {
             uuid: context.propsValue['spaceId'],
           },

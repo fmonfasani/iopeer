@@ -1,8 +1,8 @@
-{
-  "\n  To authenticate with Capsule CRM:\n  1. Go to your Capsule CRM user settings.\n  2. Navigate to \"My Preferences\" > \"API Authentication Tokens\".\n  3. Register a new application to get a Client ID and Client Secret.\n  4. Add https://cloud.activepieces.com/redirect to the authorized redirect URIs.\n  5. Use the OAuth2 flow below.": "\n  Om te verifiëren met Capsule CRM:\n  1. Ga naar uw Capsule CRM-instellingen.\n  2. Navigeer naar \"Mijn Voorkeuren\" > \"API Authenticatie Token\".\n  3. Een nieuwe applicatie registreren om een client-ID en client-geheim te krijgen.\n  4. Voeg https://cloud. ctivepieces.com/redirect naar de toegestane redirect URIs.\n  5. Gebruik de OAuth2 flow hieronder.",
+﻿{
+  "\n  To authenticate with Capsule CRM:\n  1. Go to your Capsule CRM user settings.\n  2. Navigate to \"My Preferences\" > \"API Authentication Tokens\".\n  3. Register a new application to get a Client ID and Client Secret.\n  4. Add https://cloud.IOpeer.com/redirect to the authorized redirect URIs.\n  5. Use the OAuth2 flow below.": "\n  Om te verifiÃ«ren met Capsule CRM:\n  1. Ga naar uw Capsule CRM-instellingen.\n  2. Navigeer naar \"Mijn Voorkeuren\" > \"API Authenticatie Token\".\n  3. Een nieuwe applicatie registreren om een client-ID en client-geheim te krijgen.\n  4. Voeg https://cloud. ctivepieces.com/redirect naar de toegestane redirect URIs.\n  5. Gebruik de OAuth2 flow hieronder.",
   "Create Contact": "Contactpersoon aanmaken",
   "Update Contact": "Contactpersoon bijwerken",
-  "Create Opportunity": "Verkoopkans creëren",
+  "Create Opportunity": "Verkoopkans creÃ«ren",
   "Create Project": "Project aanmaken",
   "Create Task": "Taak maken",
   "Update Opportunity": "Update Verkoopkans",
@@ -74,7 +74,7 @@
   "The main contact for this project.": "Het hoofdcontact voor dit project.",
   "The name of this project.": "De naam van dit project.",
   "The description of this project.": "De beschrijving van dit project.",
-  "An optional link to the opportunity that this project was created to support.": "Een facultatieve link naar de mogelijkheid die dit project werd gecreëerd om te ondersteunen.",
+  "An optional link to the opportunity that this project was created to support.": "Een facultatieve link naar de mogelijkheid die dit project werd gecreÃ«erd om te ondersteunen.",
   "The stage that this project is on.": "De fase waarin dit project zich bevindt.",
   "The status of the project.": "De status van het project.",
   "The expected close date of this project.": "De verwachte sluitingsdatum van dit project.",
@@ -86,7 +86,7 @@
   "The date when this task is due.": "De datum waarop deze taak afgelopen is.",
   "More details about the task.": "Meer details over de taak.",
   "The time when this task is due (e.g., 18:00:00). Note: The time is in the user's timezone.": "De tijd waarin deze taak afgerond moet zijn (bijv. 18:00:00). Opmerking: De tijd ligt in de tijdzone van de gebruiker.",
-  "The entity this task is linked to. Only one can be selected.": "De entiteit waaraan deze taak is gekoppeld. Er kan maar één geselecteerd worden.",
+  "The entity this task is linked to. Only one can be selected.": "De entiteit waaraan deze taak is gekoppeld. Er kan maar Ã©Ã©n geselecteerd worden.",
   "The category of this task.": "De categorie van deze taak.",
   "The user this task is assigned to.": "De gebruiker waaraan deze taak is toegewezen.",
   "The body of the note.": "De body van de notitie.",
@@ -112,7 +112,7 @@
   "New Task": "Nieuwe taak",
   "New Project": "Nieuw project",
   "Fires when a new case (project) is created in Capsule CRM.": "Vuurt wanneer een nieuw geval (project) is gemaakt in Capsule CRM.",
-  "Fires when a new opportunity is created.": "Vuurt af wanneer een nieuwe kans wordt gecreëerd.",
+  "Fires when a new opportunity is created.": "Vuurt af wanneer een nieuwe kans wordt gecreÃ«erd.",
   "Fires when a new task is created.": "Vuurt af wanneer een nieuwe taak is aangemaakt.",
   "Fires when a project is created.": "Vuurt wanneer een project wordt aangemaakt."
 }

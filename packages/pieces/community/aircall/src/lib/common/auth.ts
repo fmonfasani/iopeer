@@ -1,6 +1,6 @@
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { PieceAuth } from '@IOpeer/pieces-framework';
 import { makeRequest } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const aircallAuth = PieceAuth.BasicAuth({
   description: `You can create API key by naviagting to **Integrations & API** menu.`,

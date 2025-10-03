@@ -1,16 +1,16 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/constants';
 import { uploadDocumentAction } from './lib/actions/upload-document';
 import { createPresentationAction } from './lib/actions/create-presentation';
 import { editPresentationAction } from './lib/actions/edit-presentation';
 import { getTaskStatusAction } from './lib/actions/get-task-status';
 import { newPresentationTrigger } from './lib/triggers/new-presentation';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const slidespeakAuth = PieceAuth.SecretText({
   displayName: 'API Key',
@@ -42,7 +42,7 @@ export const slidespeak = createPiece({
   displayName: 'SlideSpeak',
   auth: slidespeakAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/slidespeak.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/slidespeak.png',
   authors: ['rimjhimyadav'],
   categories:[PieceCategory.CONTENT_AND_FILES,PieceCategory.PRODUCTIVITY],
   actions: [

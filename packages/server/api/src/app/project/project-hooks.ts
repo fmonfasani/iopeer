@@ -1,4 +1,4 @@
-import { Project } from '@activepieces/shared'
+﻿import { Project } from '@IOpeer/shared'
 import { hooksFactory } from '../helper/hooks-factory'
 
 export type ProjectHooks = {

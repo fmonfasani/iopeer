@@ -1,12 +1,12 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { CheckIcon, Crown, Sparkle, StarIcon, Zap } from 'lucide-react';
 import { FC } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { BillingCycle, PlanName } from '@activepieces/ee-shared';
-import { isNil } from '@activepieces/shared';
+import { BillingCycle, PlanName } from '@IOpeer/ee-shared';
+import { isNil } from '@IOpeer/shared';
 
 import { planData } from './data';
 

@@ -1,5 +1,5 @@
-import { PieceAuth } from "@activepieces/pieces-framework";
-import { HttpError, HttpMethod, httpClient } from "@activepieces/pieces-common";
+﻿import { PieceAuth } from "@IOpeer/pieces-framework";
+import { HttpError, HttpMethod, httpClient } from "@IOpeer/pieces-common";
 
 const markdownDescription = `
 Follow these steps to get your Gamma API Key:

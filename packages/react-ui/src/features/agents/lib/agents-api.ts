@@ -1,4 +1,4 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   Agent,
   CreateAgentRequest,
@@ -10,7 +10,7 @@ import {
   RunAgentRequestBody,
   EnhancedAgentPrompt,
   EnhaceAgentPrompt,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const agentsApi = {
   async list(params?: ListAgentsQueryParams): Promise<SeekPage<Agent>> {

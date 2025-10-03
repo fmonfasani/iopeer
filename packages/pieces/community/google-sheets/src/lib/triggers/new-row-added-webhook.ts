@@ -1,11 +1,11 @@
-import {
+﻿import {
 	DEDUPE_KEY_PROPERTY,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
 	WebhookRenewStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import {
 	createFileNotification,

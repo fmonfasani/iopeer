@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { tarventAuth } from '../..';
 import { makeClient, tarventCommon } from '../common';
 import { CreateWebhookResponse } from '../common/types';

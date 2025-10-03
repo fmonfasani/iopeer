@@ -1,5 +1,5 @@
-import { googleDocsAuth } from '../../index';
-import { DropdownOption, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+﻿import { googleDocsAuth } from '../../index';
+import { DropdownOption, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
 import { google, drive_v3 } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 

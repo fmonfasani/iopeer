@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-mailchain",
+﻿{
+  "name": "@IOpeer/piece-mailchain",
   "version": "0.0.6",
   "dependencies": {
     "@mailchain/sdk": "^0.31.0"

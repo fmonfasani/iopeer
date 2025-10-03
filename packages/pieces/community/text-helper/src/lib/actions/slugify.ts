@@ -1,5 +1,5 @@
-import slugify from 'slugify';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import slugify from 'slugify';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 
 export const slugifyAction = createAction({
   description: 'Slugifies strings.',

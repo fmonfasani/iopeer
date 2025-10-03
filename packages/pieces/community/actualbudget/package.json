@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-actualbudget",
+﻿{
+  "name": "@IOpeer/piece-actualbudget",
   "version": "0.0.9",
   "dependencies": {
     "@actual-app/api": "25.3.1"

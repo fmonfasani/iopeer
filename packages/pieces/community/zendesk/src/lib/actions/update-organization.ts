@@ -1,12 +1,12 @@
-import {
+﻿import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { zendeskAuth } from '../..';
 import { organizationIdDropdown, groupIdDropdown } from '../common/props';
 

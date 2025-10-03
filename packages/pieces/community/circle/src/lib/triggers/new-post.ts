@@ -1,8 +1,8 @@
-import {
+﻿import {
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { BASE_URL, spaceIdDropdown } from '../common';
 import {
 	DedupeStrategy,
@@ -10,7 +10,7 @@ import {
 	HttpMethod,
 	Polling,
 	pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { circleAuth } from '../common/auth';
 import { ListBasicPostsResponse } from '../common/types';
 import dayjs from 'dayjs';

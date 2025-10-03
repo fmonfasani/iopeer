@@ -1,39 +1,39 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const listPartnerships = createAction({
   auth: wedofAuth,
   name: 'listPartnerships',
   displayName: "Lister les partenariats",
-  description: "Récupère l'ensemble des partenariats d'une certification",
+  description: "RÃ©cupÃ¨re l'ensemble des partenariats d'une certification",
   props: {
     certifInfo: Property.ShortText({
-      displayName: 'N° certifInfo',
+      displayName: 'NÂ° certifInfo',
       description: 'Identifiant de la certification',
       required: true,
     }),
     certifier: Property.ShortText({
-      displayName: 'N° Siret Certificateur',
+      displayName: 'NÂ° Siret Certificateur',
       required: false,
     }),
     certifierAccessState: Property.StaticDropdown({
-      displayName: 'État d\'accès du certificateur',
+      displayName: 'Ã‰tat d\'accÃ¨s du certificateur',
       required: false,
       options: {
         options: [
             { label: 'Tous', value: 'all' },
             { label: 'En attente', value: 'waiting' },
-            { label: 'Accepté', value: 'accepted' },
-            { label: 'Refusé', value: 'refused' },
-            { label: 'Terminé', value: 'terminated' },
+            { label: 'AcceptÃ©', value: 'accepted' },
+            { label: 'RefusÃ©', value: 'refused' },
+            { label: 'TerminÃ©', value: 'terminated' },
             { label: 'Aucun', value: 'none' },
           ]
       }
     }),
     compliance: Property.StaticDropdown({
-      displayName: 'Conformité',
+      displayName: 'ConformitÃ©',
       required: false,
       options: {
         options: [
@@ -46,13 +46,13 @@ export const listPartnerships = createAction({
       }
     }),
     connectionIssue: Property.Checkbox({
-      displayName: 'Problème de connexion',
+      displayName: 'ProblÃ¨me de connexion',
       required: false,
     }),
     limit: Property.Number({
       displayName: 'Limite',
       defaultValue: 100,
-      description: 'Nombre maximal de résultats à retourner - 100 par défault',
+      description: 'Nombre maximal de rÃ©sultats Ã  retourner - 100 par dÃ©fault',
       required: false,
     }),
     order: Property.StaticDropdown({
@@ -68,11 +68,11 @@ export const listPartnerships = createAction({
     page: Property.Number({
       displayName: 'Page',
       defaultValue: 1,
-      description: 'Numéro de la page de résultats - 1 par défault',
+      description: 'NumÃ©ro de la page de rÃ©sultats - 1 par dÃ©fault',
       required: false,
     }),
     query: Property.ShortText({
-      displayName: 'Requête de recherche',
+      displayName: 'RequÃªte de recherche',
       required: false,
     }),
     sort: Property.StaticDropdown({
@@ -82,12 +82,12 @@ export const listPartnerships = createAction({
       options: {
         options: [
           { label: "Nom de l'organisme", value: 'name' },
-          { label: 'État', value: 'state' },
+          { label: 'Ã‰tat', value: 'state' },
         ]
       }
     }),
     state: Property.StaticDropdown({
-      displayName: 'État',
+      displayName: 'Ã‰tat',
       required: false,
       defaultValue: 'all',
       options: {
@@ -102,11 +102,11 @@ export const listPartnerships = createAction({
             },
             {
                 value: 'aborted',
-                label: 'Demande abondonnée',
+                label: 'Demande abondonnÃ©e',
             },
             {
                 value: 'refused',
-                label: 'Demande refusée',
+                label: 'Demande refusÃ©e',
             },
             {
                 value: 'suspended',
@@ -114,7 +114,7 @@ export const listPartnerships = createAction({
             },
             {
                 value: 'revoked',
-                label: 'Partenariat révoqué',
+                label: 'Partenariat rÃ©voquÃ©',
             },
             {
                 value: 'all',

@@ -1,12 +1,12 @@
-import { hubspotAuth } from '../../';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { hubspotAuth } from '../../';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	Property,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
-import { MarkdownVariant } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { MarkdownVariant } from '@IOpeer/shared';
 import { getDefaultPropertiesForObject, standardObjectPropertiesDropdown } from '../common/props';
 import { OBJECT_TYPE } from '../common/constants';
 import { Client } from '@hubspot/api-client';

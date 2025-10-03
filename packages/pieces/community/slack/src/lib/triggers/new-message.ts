@@ -1,4 +1,4 @@
-import { Property, TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { Property, TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { slackAuth } from '../../';
 
 export const newMessageTrigger = createTrigger({

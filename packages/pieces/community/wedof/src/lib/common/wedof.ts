@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 
 export const wedofCommon = {
   baseUrl: 'https://www.wedof.fr/api',
@@ -17,7 +17,7 @@ export const wedofCommon = {
       headers: {
         'Content-Type': 'application/json',
         'X-Api-Key': apiKey,
-        'User-Agent': 'activepieces',
+        'User-Agent': 'IOpeer',
       },
       body: {
         url: webhookUrl,
@@ -30,7 +30,7 @@ export const wedofCommon = {
     };
     const response = await httpClient.sendRequest(request);
     if (response.status !== 201) {
-      let errorMessage = `Échec de la création du webhook. Code de statut reçu: ${response.status}`;
+      let errorMessage = `Ã‰chec de la crÃ©ation du webhook. Code de statut reÃ§u: ${response.status}`;
       if (response.body && typeof response.body === 'object') {
         const errorBody = response.body as any;
         if (errorBody.detail) {
@@ -40,10 +40,10 @@ export const wedofCommon = {
           const violations = errorBody.violations
             .map((v: any) => `${v.propertyPath}: ${v.title}`)
             .join(', ');
-          errorMessage += `. Détails: ${violations}`;
+          errorMessage += `. DÃ©tails: ${violations}`;
         }
         if (!errorBody.detail && !errorBody.violations) {
-          errorMessage += `. Réponse: ${JSON.stringify(response.body)}`;
+          errorMessage += `. RÃ©ponse: ${JSON.stringify(response.body)}`;
         }
       }
       throw new Error(errorMessage);
@@ -67,10 +67,10 @@ export const wedofCommon = {
         );
         await context.store.put('_webhookId', webhookId);
       } catch (error) {
-        console.error('Erreur lors de la création du webhook:', error);
+        console.error('Erreur lors de la crÃ©ation du webhook:', error);
         const errorMessage =
           error instanceof Error ? error.message : 'Erreur inconnue';
-        throw new Error(`Échec de la création du webhook: ${errorMessage}`);
+        throw new Error(`Ã‰chec de la crÃ©ation du webhook: ${errorMessage}`);
       }
     } else {
       console.log('/////////// webhook already exist ////');
@@ -84,7 +84,7 @@ export const wedofCommon = {
       headers: {
         'Content-Type': 'application/json',
         'X-Api-Key': apiKey,
-        'User-Agent': 'activepieces',
+        'User-Agent': 'IOpeer',
       },
     };
     return await httpClient.sendRequest(request);
@@ -97,19 +97,19 @@ export const wedofCommon = {
       options: [
         {
           value: 'notProcessed',
-          label: 'Non traité',
+          label: 'Non traitÃ©',
         },
         {
           value: 'validated',
-          label: 'Validé',
+          label: 'ValidÃ©',
         },
         {
           value: 'waitingAcceptation',
-          label: "Validé (En cours d'instruction par France Travail)",
+          label: "ValidÃ© (En cours d'instruction par France Travail)",
         },
         {
           value: 'accepted',
-          label: 'Accepté',
+          label: 'AcceptÃ©',
         },
         {
           value: 'inTraining',
@@ -121,31 +121,31 @@ export const wedofCommon = {
         },
         {
           value: 'serviceDoneDeclared',
-          label: 'Service fait déclaré',
+          label: 'Service fait dÃ©clarÃ©',
         },
         {
           value: 'serviceDoneValidated',
-          label: 'Service fait validé',
+          label: 'Service fait validÃ©',
         },
         {
           value: 'canceledByAttendee',
-          label: 'Annulé (par le titulaire)',
+          label: 'AnnulÃ© (par le titulaire)',
         },
         {
           value: 'canceledByAttendeeNotRealized',
-          label: 'Annulation titulaire (non réalisé)',
+          label: 'Annulation titulaire (non rÃ©alisÃ©)',
         },
         {
           value: 'canceledByOrganism',
-          label: "Annulé (par l'organisme)",
+          label: "AnnulÃ© (par l'organisme)",
         },
         {
           value: 'canceledByFinancer',
-          label: 'Annulé (par le financeur)',
+          label: 'AnnulÃ© (par le financeur)',
         },
         {
           value: 'rejectedWithoutTitulaireSuite',
-          label: 'Annulé sans suite',
+          label: 'AnnulÃ© sans suite',
         },
         {
           value: 'refusedByAttendee',
@@ -153,11 +153,11 @@ export const wedofCommon = {
         },
         {
           value: 'refusedByOrganism',
-          label: "Refusé (par l'organisme)",
+          label: "RefusÃ© (par l'organisme)",
         },
         {
           value: 'refusedByFinancer',
-          label: 'Refusé (par le financeur)',
+          label: 'RefusÃ© (par le financeur)',
         },
       ],
       disabled: false,
@@ -165,7 +165,7 @@ export const wedofCommon = {
   }),
 
   partnershipState: Property.StaticDropdown({
-    displayName: 'État du partenariat de certification',
+    displayName: 'Ã‰tat du partenariat de certification',
     required: false,
     options: {
       disabled: false,
@@ -180,11 +180,11 @@ export const wedofCommon = {
         },
         {
           value: 'aborted',
-          label: 'Demande abondonnée',
+          label: 'Demande abondonnÃ©e',
         },
         {
           value: 'refused',
-          label: 'Demande refusée',
+          label: 'Demande refusÃ©e',
         },
         {
           value: 'suspended',
@@ -192,7 +192,7 @@ export const wedofCommon = {
         },
         {
           value: 'revoked',
-          label: 'Partenariat révoqué',
+          label: 'Partenariat rÃ©voquÃ©',
         },
       ],
     },
@@ -206,7 +206,7 @@ export const wedofCommon = {
       options: [
         {
           value: 'evaluate',
-          label: 'Habilitation pour organiser l’évaluation',
+          label: 'Habilitation pour organiser lâ€™Ã©valuation',
         },
         {
           value: 'train',
@@ -214,14 +214,14 @@ export const wedofCommon = {
         },
         {
           value: 'train_evaluate',
-          label: 'Habilitation pour former et organiser l’évaluation',
+          label: 'Habilitation pour former et organiser lâ€™Ã©valuation',
         },
       ],
     },
   }),
 
   compliance: Property.StaticDropdown({
-    displayName: 'Conformité',
+    displayName: 'ConformitÃ©',
     required: false,
     options: {
       options: [
@@ -233,33 +233,33 @@ export const wedofCommon = {
   }),
 
   events: Property.StaticMultiSelectDropdown({
-    displayName: 'Événement sur le dossier de formation',
+    displayName: 'Ã‰vÃ©nement sur le dossier de formation',
     required: true,
     options: {
       options: [
         {
           value: 'registrationFolder.created',
-          label: 'Créé',
+          label: 'CrÃ©Ã©',
         },
         {
           value: 'registrationFolder.updated',
-          label: 'Mis à jour',
+          label: 'Mis Ã  jour',
         },
         {
           value: 'registrationFolder.notProcessed',
-          label: 'Non traité',
+          label: 'Non traitÃ©',
         },
         {
           value: 'registrationFolder.validated',
-          label: 'Validé',
+          label: 'ValidÃ©',
         },
         {
           value: 'registrationFolder.waitingAcceptation',
-          label: "Validé (En cours d'instruction par France Travail)",
+          label: "ValidÃ© (En cours d'instruction par France Travail)",
         },
         {
           value: 'registrationFolder.accepted',
-          label: 'Accepté',
+          label: 'AcceptÃ©',
         },
         {
           value: 'registrationFolder.inTraining',
@@ -271,15 +271,15 @@ export const wedofCommon = {
         },
         {
           value: 'registrationFolder.serviceDoneDeclared',
-          label: 'Service fait déclaré',
+          label: 'Service fait dÃ©clarÃ©',
         },
         {
           value: 'registrationFolder.serviceDoneValidated',
-          label: 'Service fait validé',
+          label: 'Service fait validÃ©',
         },
         {
           value: 'registrationFolderFile.added',
-          label: 'Document ajouté',
+          label: 'Document ajoutÃ©',
         },
         {
           value: 'registrationFolderFile.updated',
@@ -287,39 +287,39 @@ export const wedofCommon = {
         },
         {
           value: 'registrationFolderFile.deleted',
-          label: 'Document supprimé',
+          label: 'Document supprimÃ©',
         },
         {
           value: 'registrationFolderFile.valid',
-          label: 'Document validé',
+          label: 'Document validÃ©',
         },
         {
           value: 'registrationFolderFile.refused',
-          label: 'Document refusé',
+          label: 'Document refusÃ©',
         },
         {
           value: 'registrationFolderFile.toReview',
-          label: 'Document à vérifier',
+          label: 'Document Ã  vÃ©rifier',
         },
         {
           value: 'registrationFolder.canceledByAttendee',
-          label: 'Annulé (par le titulaire)',
+          label: 'AnnulÃ© (par le titulaire)',
         },
         {
           value: 'registrationFolder.canceledByAttendeeNotRealized',
-          label: 'Annulation titulaire (non réalisé)',
+          label: 'Annulation titulaire (non rÃ©alisÃ©)',
         },
         {
           value: 'registrationFolder.canceledByOrganism',
-          label: "Annulé (par l'organisme)",
+          label: "AnnulÃ© (par l'organisme)",
         },
         {
           value: 'registrationFolder.canceledByFinancer',
-          label: 'Annulé (par le financeur)',
+          label: 'AnnulÃ© (par le financeur)',
         },
         {
           value: 'registrationFolder.rejectedWithoutTitulaireSuite',
-          label: 'Annulé sans suite',
+          label: 'AnnulÃ© sans suite',
         },
         {
           value: 'registrationFolder.refusedByAttendee',
@@ -327,15 +327,15 @@ export const wedofCommon = {
         },
         {
           value: 'registrationFolder.refusedByOrganism',
-          label: "Refusé (par l'organisme)",
+          label: "RefusÃ© (par l'organisme)",
         },
         {
           value: 'registrationFolder.refusedByFinancer',
-          label: 'Refusé (par le financeur)',
+          label: 'RefusÃ© (par le financeur)',
         },
         {
           value: 'registrationFolder.refusedByFinancer',
-          label: 'Refusé (par le financeur)',
+          label: 'RefusÃ© (par le financeur)',
         },
         {
           value: 'registrationFolderBilling.notBillable',
@@ -343,11 +343,11 @@ export const wedofCommon = {
         },
         {
           value: 'registrationFolderBilling.depositWait',
-          label: 'Acompte en attente de dépot',
+          label: 'Acompte en attente de dÃ©pot',
         },
         {
           value: 'registrationFolderBilling.depositPaid',
-          label: 'Acompte déposé',
+          label: 'Acompte dÃ©posÃ©',
         },
         {
           value: 'registrationFolderBilling.toBill',
@@ -355,11 +355,11 @@ export const wedofCommon = {
         },
         {
           value: 'registrationFolderBilling.billed',
-          label: 'Facturé',
+          label: 'FacturÃ©',
         },
         {
           value: 'registrationFolderBilling.paid',
-          label: 'Payé',
+          label: 'PayÃ©',
         },
       ],
       disabled: false,
@@ -367,21 +367,21 @@ export const wedofCommon = {
   }),
 
   certificationEvents: Property.StaticMultiSelectDropdown({
-    displayName: 'Événement sur le dossier de certification',
+    displayName: 'Ã‰vÃ©nement sur le dossier de certification',
     required: true,
     options: {
       options: [
         {
           value: 'certificationFolder.created',
-          label: 'Créé',
+          label: 'CrÃ©Ã©',
         },
         {
           value: 'certificationFolder.updated',
-          label: 'Mis à jour',
+          label: 'Mis Ã  jour',
         },
         {
           value: 'certificationFolder.accrochageOk',
-          label: 'Accrochage réussi',
+          label: 'Accrochage rÃ©ussi',
         },
         {
           value: 'certificationFolder.accrochageKo',
@@ -389,43 +389,43 @@ export const wedofCommon = {
         },
         {
           value: 'certificationFolder.toRegister',
-          label: 'À enregistrer',
+          label: 'Ã€ enregistrer',
         },
         {
           value: 'certificationFolder.registered',
-          label: 'Enregistré',
+          label: 'EnregistrÃ©',
         },
         {
           value: 'certificationFolder.toTake',
-          label: 'Prêt à passer',
+          label: 'PrÃªt Ã  passer',
         },
         {
           value: 'certificationFolder.toControl',
-          label: 'À contrôler',
+          label: 'Ã€ contrÃ´ler',
         },
         {
           value: 'certificationFolder.success',
-          label: 'Réussi',
+          label: 'RÃ©ussi',
         },
         {
           value: 'certificationFolder.refused',
-          label: 'Refusé',
+          label: 'RefusÃ©',
         },
         {
           value: 'certificationFolder.failed',
-          label: 'Échoué',
+          label: 'Ã‰chouÃ©',
         },
         {
           value: 'certificationFolder.aborted',
-          label: 'Abandonné',
+          label: 'AbandonnÃ©',
         },
         {
           value: 'certificationFolder.inTrainingStarted',
-          label: 'Formation démarrée',
+          label: 'Formation dÃ©marrÃ©e',
         },
         {
           value: 'certificationFolder.inTrainingEnded',
-          label: 'Formation terminée',
+          label: 'Formation terminÃ©e',
         },
       ],
       disabled: false,
@@ -453,7 +453,7 @@ export const wedofCommon = {
   }),
 
   europeanLanguageLevel: Property.StaticDropdown({
-    displayName: 'Nomenclature européeenne pour les certifications de langues',
+    displayName: 'Nomenclature europÃ©eenne pour les certifications de langues',
     required: false,
     defaultValue: null,
     options: {
@@ -497,11 +497,11 @@ export const wedofCommon = {
       options: [
         {
           value: 'A_DISTANCE',
-          label: 'À distance',
+          label: 'Ã€ distance',
         },
         {
           value: 'EN_PRESENTIEL',
-          label: 'En présentiel',
+          label: 'En prÃ©sentiel',
         },
         {
           value: 'MIXTE',
@@ -515,21 +515,21 @@ export const wedofCommon = {
   controlState: Property.StaticMultiSelectDropdown({
     displayName: 'Etat de controle',
     description:
-      "Permet de n'obtenir que les dossiers dans l'état de contrôle considéré",
+      "Permet de n'obtenir que les dossiers dans l'Ã©tat de contrÃ´le considÃ©rÃ©",
     required: false,
     options: {
       options: [
         {
           value: 'notInControl',
-          label: 'Aucun contrôle',
+          label: 'Aucun contrÃ´le',
         },
         {
           value: 'inControl',
-          label: 'En cours de contrôle',
+          label: 'En cours de contrÃ´le',
         },
         {
           value: 'released',
-          label: 'Contrôle terminé',
+          label: 'ContrÃ´le terminÃ©',
         },
       ],
       disabled: false,
@@ -537,7 +537,7 @@ export const wedofCommon = {
   }),
 
   certificationFolderState: Property.StaticMultiSelectDropdown({
-    displayName: 'État du dossier de certification',
+    displayName: 'Ã‰tat du dossier de certification',
     required: false,
     options: {
       options: [
@@ -546,43 +546,43 @@ export const wedofCommon = {
           value: 'all',
         },
         {
-          label: 'À enregistrer',
+          label: 'Ã€ enregistrer',
           value: 'toRegister',
         },
         {
-          label: 'Enregistré',
+          label: 'EnregistrÃ©',
           value: 'registered',
         },
         {
-          label: 'Prêt à passer',
+          label: 'PrÃªt Ã  passer',
           value: 'toTake',
         },
         {
-          label: 'À contrôler',
+          label: 'Ã€ contrÃ´ler',
           value: 'toControl',
         },
         {
-          label: 'Réussi',
+          label: 'RÃ©ussi',
           value: 'success',
         },
         {
-          label: 'À repasser',
+          label: 'Ã€ repasser',
           value: 'toRetake',
         },
         {
-          label: 'Échoué',
+          label: 'Ã‰chouÃ©',
           value: 'failed',
         },
         {
-          label: 'Refusé',
+          label: 'RefusÃ©',
           value: 'refused',
         },
         {
-          label: 'Abandonné',
+          label: 'AbandonnÃ©',
           value: 'aborted',
         },
         {
-          label: 'À enregistrer',
+          label: 'Ã€ enregistrer',
           value: 'toRegister',
         },
       ],
@@ -591,7 +591,7 @@ export const wedofCommon = {
   }),
 
   billingState: Property.StaticMultiSelectDropdown({
-    displayName: 'État de facturation',
+    displayName: 'Ã‰tat de facturation',
     required: false,
     options: {
       options: [
@@ -608,7 +608,7 @@ export const wedofCommon = {
           value: 'depositWait',
         },
         {
-          label: 'Virement effectué',
+          label: 'Virement effectuÃ©',
           value: 'depositPaid',
         },
         {
@@ -616,11 +616,11 @@ export const wedofCommon = {
           value: 'toBill',
         },
         {
-          label: 'Facturé',
+          label: 'FacturÃ©',
           value: 'billed',
         },
         {
-          label: 'Payé',
+          label: 'PayÃ©',
           value: 'paid',
         },
       ],
@@ -658,7 +658,7 @@ export const wedofCommon = {
           value: 'individual',
         },
         {
-          label: 'Pôle Emploi (Autres)',
+          label: 'PÃ´le Emploi (Autres)',
           value: 'poleEmploi',
         },
       ],
@@ -667,13 +667,13 @@ export const wedofCommon = {
   }),
 
   period: Property.StaticDropdown({
-    displayName: 'Période',
+    displayName: 'PÃ©riode',
     required: false,
     defaultValue: null,
     options: {
       options: [
         {
-          label: 'Personnalisée',
+          label: 'PersonnalisÃ©e',
           value: 'custom',
         },
         {
@@ -701,7 +701,7 @@ export const wedofCommon = {
           value: 'nextWeek',
         },
         {
-          label: 'Semaine précédente',
+          label: 'Semaine prÃ©cÃ©dente',
           value: 'previousWeek',
         },
         {
@@ -721,7 +721,7 @@ export const wedofCommon = {
           value: 'nextMonth',
         },
         {
-          label: 'Mois précédent',
+          label: 'Mois prÃ©cÃ©dent',
           value: 'previousMonth',
         },
         {
@@ -737,19 +737,19 @@ export const wedofCommon = {
           value: 'rollingYearFuture',
         },
         {
-          label: 'Année prochaine',
+          label: 'AnnÃ©e prochaine',
           value: 'nextYear',
         },
         {
-          label: 'Année précédente',
+          label: 'AnnÃ©e prÃ©cÃ©dente',
           value: 'previousYear',
         },
         {
-          label: 'Année courante',
+          label: 'AnnÃ©e courante',
           value: 'currentYear',
         },
         {
-          label: 'Période de facturation Wedof en cours',
+          label: 'PÃ©riode de facturation Wedof en cours',
           value: 'wedofInvoice',
         },
       ],
@@ -758,81 +758,81 @@ export const wedofCommon = {
   }),
 
   filterOnStateDate: Property.StaticDropdown({
-    displayName: '(Période) Basé sur la date de',
+    displayName: '(PÃ©riode) BasÃ© sur la date de',
     required: true,
     defaultValue: 'lastUpdate',
     options: {
       disabled: false,
       options: [
         {
-          label: 'Date de mise à jour',
+          label: 'Date de mise Ã  jour',
           value: 'lastUpdate',
         },
         { 
-          label: 'Dernière mise à jour', 
+          label: 'DerniÃ¨re mise Ã  jour', 
           value: 'updatedOn' },
         {
-          label: 'Date de Création',
+          label: 'Date de CrÃ©ation',
           value: 'createdOn',
         },
         {
-          label: 'Passage à Non Traité',
+          label: 'Passage Ã  Non TraitÃ©',
           value: 'notProcessedDate',
         },
         {
-          label: 'Passage à Validé',
+          label: 'Passage Ã  ValidÃ©',
           value: 'validatedDate',
         },
         {
-          label: 'Passage à Accepter',
+          label: 'Passage Ã  Accepter',
           value: 'acceptedDate',
         },
         {
-          label: 'Passage à Entrer en formation',
+          label: 'Passage Ã  Entrer en formation',
           value: 'inTrainingDate',
         },
         {
-          label: 'Passage à Sortie de formation',
+          label: 'Passage Ã  Sortie de formation',
           value: 'terminatedDate',
         },
         {
-          label: 'Passage à Service fait Déclaré',
+          label: 'Passage Ã  Service fait DÃ©clarÃ©',
           value: 'serviceDoneDeclaredDate',
         },
         {
-          label: 'Passage à Service fait Validé',
+          label: 'Passage Ã  Service fait ValidÃ©',
           value: 'serviceDoneValidatedDate',
         },
         {
-          label: 'Passage à Facturer',
+          label: 'Passage Ã  Facturer',
           value: 'billedDate',
         },
         {
-          label: 'Passage à Refus titulaire',
+          label: 'Passage Ã  Refus titulaire',
           value: 'refusedByAttendeeDate',
         },
         {
-          label: "Passage à Refusé (par l'organisme)",
+          label: "Passage Ã  RefusÃ© (par l'organisme)",
           value: 'refusedByOrganismDate',
         },
         {
-          label: 'Passage à Annulé (parle titulaire)',
+          label: 'Passage Ã  AnnulÃ© (parle titulaire)',
           value: 'canceledByAttendeeDate',
         },
         {
-          label: "Passage à Annulé (par l'organisme)",
+          label: "Passage Ã  AnnulÃ© (par l'organisme)",
           value: 'canceledByOrganismDate',
         },
         {
-          label: 'Passage à Annulation titulaire (non réalisé)',
+          label: 'Passage Ã  Annulation titulaire (non rÃ©alisÃ©)',
           value: 'canceledByAttendeeNotRealizedDate',
         },
         {
-          label: 'Passage à Annulé sans suite',
+          label: 'Passage Ã  AnnulÃ© sans suite',
           value: 'rejectedWithoutTitulaireSuiteDate',
         },
         {
-          label: 'Date de début de session',
+          label: 'Date de dÃ©but de session',
           value: 'sessionStartDate',
         },
         {
@@ -843,14 +843,14 @@ export const wedofCommon = {
     },
   }),
   filterOnStateDateFuture: Property.StaticDropdown({
-    displayName: '(Période) Basé sur la date de',
+    displayName: '(PÃ©riode) BasÃ© sur la date de',
     required: true,
     defaultValue: 'sessionStartDate',
     options: {
       disabled: false,
       options: [
         {
-          label: 'Date de début de session',
+          label: 'Date de dÃ©but de session',
           value: 'sessionStartDate',
         },
         {
@@ -858,7 +858,7 @@ export const wedofCommon = {
           value: 'sessionEndDate',
         },
         {
-          label: 'Date prévisionnelle de paiment',
+          label: 'Date prÃ©visionnelle de paiment',
           value: 'paymentScheduledDate',
         },
       ],
@@ -866,103 +866,103 @@ export const wedofCommon = {
   }),
 
   filterOnStateDateCf: Property.StaticDropdown({
-    displayName: '(Période) Basé sur la date de',
+    displayName: '(PÃ©riode) BasÃ© sur la date de',
     required: true,
     defaultValue: 'stateLastUpdate',
     options: {
       disabled: false,
       options: [
         { 
-          label: 'Dernièr changement d’état', 
+          label: 'DerniÃ¨r changement dâ€™Ã©tat', 
           value: 'stateLastUpdate' },
         { 
-          label: 'Dernière mise à jour', 
+          label: 'DerniÃ¨re mise Ã  jour', 
           value: 'updatedOn' },
         { 
-          label: 'Passage à À prendre en charge', 
+          label: 'Passage Ã  Ã€ prendre en charge', 
           value: 'toTakeDate' },
         { 
-          label: 'Passage à À reprogrammer', 
+          label: 'Passage Ã  Ã€ reprogrammer', 
           value: 'toRetakeDate' },
         { 
-          label: 'Passage à À contrôler', 
+          label: 'Passage Ã  Ã€ contrÃ´ler', 
           value: 'toControlDate' },
         { 
-          label: 'Passage à Échec', 
+          label: 'Passage Ã  Ã‰chec', 
           value: 'failedDate' },
         { 
-          label: 'Passage à Succès', 
+          label: 'Passage Ã  SuccÃ¨s', 
           value: 'successDate' },
         { 
-          label: 'Passage à À inscrire', 
+          label: 'Passage Ã  Ã€ inscrire', 
           value: 'toRegisterDate' },
         { 
-          label: 'Passage à Enregistrer', 
+          label: 'Passage Ã  Enregistrer', 
           value: 'registeredDate' },
         { 
-          label: 'Passage à Refusé', 
+          label: 'Passage Ã  RefusÃ©', 
           value: 'refusedDate' },
         { 
-          label: 'Passage à Abandonné', 
+          label: 'Passage Ã  AbandonnÃ©', 
           value: 'abortedDate' },
         {
-          label: 'Passage à Non traité',
+          label: 'Passage Ã  Non traitÃ©',
           value: 'notProcessedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Validé',
+          label: 'Passage Ã  ValidÃ©',
           value: 'validatedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Accepté',
+          label: 'Passage Ã  AcceptÃ©',
           value: 'acceptedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à En formation',
+          label: 'Passage Ã  En formation',
           value: 'inTrainingRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Sortie de formation',
+          label: 'Passage Ã  Sortie de formation',
           value: 'terminatedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Service fait déclaré',
+          label: 'Passage Ã  Service fait dÃ©clarÃ©',
           value: 'serviceDoneDeclaredRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Service fait validé',
+          label: 'Passage Ã  Service fait validÃ©',
           value: 'serviceDoneValidatedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à À facturer',
+          label: 'Passage Ã  Ã€ facturer',
           value: 'billedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Refusé par le titulaire',
+          label: 'Passage Ã  RefusÃ© par le titulaire',
           value: 'refusedByAttendeeRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Refusé par l’organisme',
+          label: 'Passage Ã  RefusÃ© par lâ€™organisme',
           value: 'refusedByOrganismRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Annulé par le titulaire',
+          label: 'Passage Ã  AnnulÃ© par le titulaire',
           value: 'canceledByAttendeeRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Annulé par l’organisme',
+          label: 'Passage Ã  AnnulÃ© par lâ€™organisme',
           value: 'canceledByOrganismRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Annulation non réalisée (titulaire)',
+          label: 'Passage Ã  Annulation non rÃ©alisÃ©e (titulaire)',
           value: 'canceledByAttendeeNotRealizedRegistrationFolderStateDate',
         },
         {
-          label: 'Passage à Annulé sans suite',
+          label: 'Passage Ã  AnnulÃ© sans suite',
           value: 'rejectedWithoutTitulaireSuiteRegistrationFolderStateDate',
         },
         {
-          label: 'Date de début de session',
+          label: 'Date de dÃ©but de session',
           value: 'sessionStartDateRegistrationFolderDate',
         },
         {
@@ -971,14 +971,14 @@ export const wedofCommon = {
         },
         { label: 'Facturable par WEDOF', value: 'wedofInvoice' },
         { label: "Date d'inscription", value: 'enrollmentDate' },
-        { label: "Date début de l'examen", value: 'examinationDate' },
+        { label: "Date dÃ©but de l'examen", value: 'examinationDate' },
         { label: "Date fin de l'examen", value: 'examinationEndDate' },
       ],
     },
   }),
 
   filterOnStateDateFutureCf: Property.StaticDropdown({
-    displayName: '(Période) Basé sur la date de',
+    displayName: '(PÃ©riode) BasÃ© sur la date de',
     required: true,
     options: {
       disabled: false,
@@ -988,7 +988,7 @@ export const wedofCommon = {
           value: 'enrollmentDate',
         },
         {
-          label: "Date début de l'examen",
+          label: "Date dÃ©but de l'examen",
           value: 'examinationDate',
         },
         {
@@ -1000,22 +1000,22 @@ export const wedofCommon = {
   }),
 
   sort: Property.StaticDropdown({
-    displayName: 'Tri sur critère',
+    displayName: 'Tri sur critÃ¨re',
     required: true,
     defaultValue: 'stateLastUpdate',
     options: {
       disabled: false,
       options: [
         {
-          label: "Date du dernier changement d'état",
+          label: "Date du dernier changement d'Ã©tat",
           value: 'stateLastUpdate',
         },
         {
-          label: 'Date du dernier dossier mis à réussi',
+          label: 'Date du dernier dossier mis Ã  rÃ©ussi',
           value: 'successDate',
         },
         {
-          label: 'ID de base de donnée',
+          label: 'ID de base de donnÃ©e',
           value: 'id',
         },
       ],
@@ -1025,7 +1025,7 @@ export const wedofCommon = {
   order: Property.StaticDropdown({
     displayName: 'Ordre',
     description:
-      'Tri les résultats par ordre ascendant ou descendant - par défaut descendant',
+      'Tri les rÃ©sultats par ordre ascendant ou descendant - par dÃ©faut descendant',
     required: false,
     options: {
       disabled: false,
@@ -1043,13 +1043,13 @@ export const wedofCommon = {
   }),
 
   tasks: Property.StaticDropdown({
-    displayName: 'Type de tâche',
+    displayName: 'Type de tÃ¢che',
     required: true,
     options: {
       disabled: false,
       options: [
         {
-          label: 'Téléphone',
+          label: 'TÃ©lÃ©phone',
           value: 'phone',
         },
         {
@@ -1085,7 +1085,7 @@ export const wedofCommon = {
   }),
 
   qualiopiIndicators: Property.StaticDropdown({
-    displayName: 'Associée à Qualiopi',
+    displayName: 'AssociÃ©e Ã  Qualiopi',
     required: false,
     options: {
       disabled: false,
@@ -1095,7 +1095,7 @@ export const wedofCommon = {
           value: 1,
         },
         {
-          label: 'Ind. 2 : Indicateurs de résultats',
+          label: 'Ind. 2 : Indicateurs de rÃ©sultats',
           value: 2,
         },
         {
@@ -1115,15 +1115,15 @@ export const wedofCommon = {
           value: 6,
         },
         {
-          label: 'Ind. 7 : Adéquation contenus / exigences',
+          label: 'Ind. 7 : AdÃ©quation contenus / exigences',
           value: 7,
         },
         {
-          label: "Ind. 8 : Positionnement à l'entrée",
+          label: "Ind. 8 : Positionnement Ã  l'entrÃ©e",
           value: 8,
         },
         {
-          label: 'Ind. 9 : Condition de déroulement',
+          label: 'Ind. 9 : Condition de dÃ©roulement',
           value: 9,
         },
         {
@@ -1135,7 +1135,7 @@ export const wedofCommon = {
           value: 11,
         },
         {
-          label: 'Ind. 12 : Engagement des bénéficiaires',
+          label: 'Ind. 12 : Engagement des bÃ©nÃ©ficiaires',
           value: 12,
         },
         {
@@ -1143,15 +1143,15 @@ export const wedofCommon = {
           value: 13,
         },
         {
-          label: 'Ind. 14 : Exercice de la citoyenneté',
+          label: 'Ind. 14 : Exercice de la citoyennetÃ©',
           value: 14,
         },
         {
-          label: "Ind. 15 : Droits à devoirs de l'apprenti",
+          label: "Ind. 15 : Droits Ã  devoirs de l'apprenti",
           value: 15,
         },
         {
-          label: 'Ind. 16 : Présentation à la certification',
+          label: 'Ind. 16 : PrÃ©sentation Ã  la certification',
           value: 16,
         },
         {
@@ -1163,27 +1163,27 @@ export const wedofCommon = {
           value: 18,
         },
         {
-          label: 'Ind. 19 : Ressources pédagogiques',
+          label: 'Ind. 19 : Ressources pÃ©dagogiques',
           value: 19,
         },
         {
-          label: 'Ind. 20 : Personnels dédiés',
+          label: 'Ind. 20 : Personnels dÃ©diÃ©s',
           value: 20,
         },
         {
-          label: 'Ind. 21 : Compétences des acteurs',
+          label: 'Ind. 21 : CompÃ©tences des acteurs',
           value: 21,
         },
         {
-          label: 'Ind. 22 : Gestion des compétences',
+          label: 'Ind. 22 : Gestion des compÃ©tences',
           value: 22,
         },
         {
-          label: 'Ind. 23 : Veille légale et réglementaire',
+          label: 'Ind. 23 : Veille lÃ©gale et rÃ©glementaire',
           value: 23,
         },
         {
-          label: 'Ind. 24 : Veille emplois et métiers',
+          label: 'Ind. 24 : Veille emplois et mÃ©tiers',
           value: 24,
         },
         {
@@ -1207,15 +1207,15 @@ export const wedofCommon = {
           value: 29,
         },
         {
-          label: 'Ind. 30 : Recueil des appréciations',
+          label: 'Ind. 30 : Recueil des apprÃ©ciations',
           value: 30,
         },
         {
-          label: 'Ind. 31 : Traitement des réclamations',
+          label: 'Ind. 31 : Traitement des rÃ©clamations',
           value: 31,
         },
         {
-          label: "Ind. 32 : Mesures d'amélioration continue",
+          label: "Ind. 32 : Mesures d'amÃ©lioration continue",
           value: 32,
         },
       ],
@@ -1223,9 +1223,9 @@ export const wedofCommon = {
   }),
 
   cdcState: Property.StaticDropdown({
-    displayName: "État de l'accrochage",
+    displayName: "Ã‰tat de l'accrochage",
     description:
-      "Permet de n'obtenir que les dossiers dans l'état considéré lié à l'export des dossiers - par défaut tous les dossiers sont retournés",
+      "Permet de n'obtenir que les dossiers dans l'Ã©tat considÃ©rÃ© liÃ© Ã  l'export des dossiers - par dÃ©faut tous les dossiers sont retournÃ©s",
     required: false,
     options: {
       disabled: false,
@@ -1235,15 +1235,15 @@ export const wedofCommon = {
           value: 'all',
         },
         {
-          label: 'Jamais accroché',
+          label: 'Jamais accrochÃ©',
           value: 'notExported',
         },
         {
-          label: "Envoyé et en attente de l'accusé",
+          label: "EnvoyÃ© et en attente de l'accusÃ©",
           value: 'exported',
         },
         {
-          label: 'Accrochage réussi',
+          label: 'Accrochage rÃ©ussi',
           value: 'processedOk',
         },
         {

@@ -1,7 +1,7 @@
-import {
+﻿import {
   createCustomApiCallAction
-} from '@activepieces/pieces-common';
-import { createPiece } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { createPiece } from '@IOpeer/pieces-framework';
 import { shortIoAuth } from './lib/common/auth';
 import { createCountryTargetingRuleAction } from './lib/actions/create-country-targeting-for-a-link';
 import { createShortLinkAction } from './lib/actions/create-short-link';
@@ -18,7 +18,7 @@ export const shortIo = createPiece({
   displayName: 'Short.io',
   auth: shortIoAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/short-io.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/short-io.png',
   authors: ['aryel780'],
   actions: [
     createCountryTargetingRuleAction,

@@ -1,11 +1,11 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { PieceAuth } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { PieceAuth } from '@IOpeer/pieces-framework';
 import { HedyApiClient } from '../common/client';
 
 export const hedyAuth = PieceAuth.SecretText({
   displayName: 'API Key',
   description:
-    'Generate an API key from your Hedy dashboard under Settings → API, then paste the key here (it begins with `hedy_live_`).',
+    'Generate an API key from your Hedy dashboard under Settings â†’ API, then paste the key here (it begins with `hedy_live_`).',
   required: true,
   validate: async ({ auth }) => {
     if (!auth || typeof auth !== 'string') {

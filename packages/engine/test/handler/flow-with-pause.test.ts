@@ -1,4 +1,4 @@
-import { BranchOperator, LoopStepOutput, RouterExecutionType, RouterStepOutput } from '@activepieces/shared'
+﻿import { BranchOperator, LoopStepOutput, RouterExecutionType, RouterStepOutput } from '@IOpeer/shared'
 import { ExecutionVerdict, FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { StepExecutionPath } from '../../src/lib/handler/context/step-execution-path'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
@@ -7,7 +7,7 @@ import { buildCodeAction, buildPieceAction, buildRouterWithOneCondition, buildSi
 
 const simplePauseFlow = buildPieceAction({
     name: 'approval',
-    pieceName: '@activepieces/piece-approval',
+    pieceName: '@IOpeer/piece-approval',
     actionName: 'wait_for_approval',
     input: {},
     nextAction: buildCodeAction({
@@ -18,7 +18,7 @@ const simplePauseFlow = buildPieceAction({
 
 const flawWithTwoPause = buildPieceAction({
     name: 'approval',
-    pieceName: '@activepieces/piece-approval',
+    pieceName: '@IOpeer/piece-approval',
     actionName: 'wait_for_approval',
     input: {},
     nextAction: buildCodeAction({
@@ -26,7 +26,7 @@ const flawWithTwoPause = buildPieceAction({
         input: {},
         nextAction: buildPieceAction({
             name: 'approval-1',
-            pieceName: '@activepieces/piece-approval',
+            pieceName: '@IOpeer/piece-approval',
             actionName: 'wait_for_approval',
             input: {},
             nextAction: buildCodeAction({
@@ -210,7 +210,7 @@ describe('flow with pause', () => {
             children: [
                 buildPieceAction({
                     name: 'approval_1',
-                    pieceName: '@activepieces/piece-approval',
+                    pieceName: '@IOpeer/piece-approval',
                     actionName: 'wait_for_approval',
                     input: {},
                     nextAction: buildCodeAction({
@@ -220,7 +220,7 @@ describe('flow with pause', () => {
                 }),
                 buildPieceAction({
                     name: 'approval_2',
-                    pieceName: '@activepieces/piece-approval',
+                    pieceName: '@IOpeer/piece-approval',
                     actionName: 'wait_for_approval',
                     input: {},
                     nextAction: buildCodeAction({

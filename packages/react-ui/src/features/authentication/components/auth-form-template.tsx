@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import React, { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ import { useRedirectAfterLogin } from '@/lib/navigation-utils';
 import {
   ApFlagId,
   ThirdPartyAuthnProvidersToShowMap,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { HorizontalSeparatorWithText } from '../../../components/ui/separator';
 import { flagsHooks } from '../../../hooks/flags-hooks';

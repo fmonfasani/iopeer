@@ -1,4 +1,4 @@
-import { BaseModelSchema, DiscriminatedUnion, SeekPage } from '@activepieces/shared'
+﻿import { BaseModelSchema, DiscriminatedUnion, SeekPage } from '@IOpeer/shared'
 import { Static, Type } from '@sinclair/typebox'
 
 

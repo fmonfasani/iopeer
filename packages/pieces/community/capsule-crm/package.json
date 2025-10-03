@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-capsule-crm",
+﻿{
+  "name": "@IOpeer/piece-capsule-crm",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

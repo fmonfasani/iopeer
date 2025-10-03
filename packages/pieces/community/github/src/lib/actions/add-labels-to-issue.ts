@@ -1,7 +1,7 @@
-import { githubAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { githubAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { githubApiCall, githubCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const githubAddLabelsToIssueAction = createAction({
   auth: githubAuth,

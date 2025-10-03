@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { hedyAuth } from './lib/auth';
 import {
   getSession,
@@ -21,10 +21,10 @@ import {
 
 export const hedy = createPiece({
   displayName: 'Hedy',
-  description: 'AI-powered meeting intelligence – be the brightest person in the room.',
+  description: 'AI-powered meeting intelligence â€“ be the brightest person in the room.',
   auth: hedyAuth,
   minimumSupportedRelease: '0.69.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/hedy.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/hedy.png',
   categories: [PieceCategory.PRODUCTIVITY, PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['HedyAI'],
   actions: [

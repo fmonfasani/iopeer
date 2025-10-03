@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { EllipsisVertical } from 'lucide-react';
 import { Dispatch, SetStateAction } from 'react';
@@ -12,7 +12,7 @@ import { FlowStatusToggle } from '@/features/flows/components/flow-status-toggle
 import { FolderBadge } from '@/features/folders/component/folder-badge';
 import { PieceIconList } from '@/features/pieces/components/piece-icon-list';
 import { formatUtils } from '@/lib/utils';
-import { PopulatedFlow } from '@activepieces/shared';
+import { PopulatedFlow } from '@IOpeer/shared';
 
 type FlowsTableColumnsProps = {
   refetch: () => void;

@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const billRegistrationFolder = createAction({
@@ -8,23 +8,23 @@ export const billRegistrationFolder = createAction({
   name: 'billRegistrationFolder',
   displayName: 'Facturer le dossier de formation',
   description:
-    'Associe le dossier de formation à un n° de facture et transmets les informations de facturation au financeur (EDOF par exemple)',
+    'Associe le dossier de formation Ã  un nÂ° de facture et transmets les informations de facturation au financeur (EDOF par exemple)',
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {externalId} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de formation',
       required: true,
     }),
     billNumber: Property.ShortText({
-      displayName: 'N° de facture',
-      description: 'N° de la facture à associer',
+      displayName: 'NÂ° de facture',
+      description: 'NÂ° de la facture Ã  associer',
       required: true,
     }),
     vatRate: Property.Number({
       displayName: 'TVA',
       description:
-        'Permet de forcer un Taux de TVA en %. Par défaut la TVA est calculée à partir des données du dossier de formation',
+        'Permet de forcer un Taux de TVA en %. Par dÃ©faut la TVA est calculÃ©e Ã  partir des donnÃ©es du dossier de formation',
       required: false,
     }),
   },

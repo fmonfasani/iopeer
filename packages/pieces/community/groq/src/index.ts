@@ -1,11 +1,11 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { askGroq } from './lib/actions/ask-groq';
 import { transcribeAudio } from './lib/actions/transcribe-audio';
 import { translateAudio } from './lib/actions/translate-audio';
@@ -44,7 +44,7 @@ export const groq = createPiece({
   displayName: 'Groq',
   description: 'Use Groq\'s fast language models and audio processing capabilities.',
   minimumSupportedRelease: '0.9.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/groq.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/groq.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   auth: groqAuth,
   actions: [

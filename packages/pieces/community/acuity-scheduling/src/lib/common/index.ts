@@ -1,9 +1,9 @@
-import {
+﻿import {
 	HttpMethod,
 	httpClient,
 	HttpRequest,
 	AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export const API_URL = 'https://acuityscheduling.com/api/v1';
 

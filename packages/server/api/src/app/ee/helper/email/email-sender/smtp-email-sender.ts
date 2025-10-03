@@ -1,6 +1,6 @@
-import { readFile } from 'node:fs/promises'
-import { AppSystemProp } from '@activepieces/server-shared'
-import { ActivepiecesError, ApEdition, ApEnvironment, ErrorCode, isNil, Platform, SMTPInformation } from '@activepieces/shared'
+﻿import { readFile } from 'node:fs/promises'
+import { AppSystemProp } from '@IOpeer/server-shared'
+import { IOpeerError, ApEdition, ApEnvironment, ErrorCode, isNil, Platform, SMTPInformation } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import Mustache from 'mustache'
 import nodemailer, { Transporter } from 'nodemailer'
@@ -28,7 +28,7 @@ export const smtpEmailSender = (log: FastifyBaseLogger): SMTPEmailSender => {
                 await smtpClient.verify()
             }
             catch (e) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.INVALID_SMTP_CREDENTIALS,
                     params: {
                         message: JSON.stringify(e),
@@ -130,7 +130,7 @@ const getEmailSubject = (templateName: EmailTemplateData['name'], vars: Record<s
         'invitation-email': 'You have been invited to a team',
         '3-days-left-on-trial': 'Unlock More with 10 Automation Templates',
         '1-day-left-on-trial': 'Your Plus Trial Ends Today - Upgrade ',
-        '7-days-in-trial': '7 Days in – 15 Automation Ideas to Inspire You 🚀',
+        '7-days-in-trial': '7 Days in â€“ 15 Automation Ideas to Inspire You ðŸš€',
         'welcome-to-trial': 'Welcome to IOPeer + 4 Resources to Get Started ',
         'quota-50': '[ACTION REQUIRED] 50% of your IOPeer tasks are consumed',
         'quota-90': '[URGENT] 90% of your IOPeer tasks are consumed',

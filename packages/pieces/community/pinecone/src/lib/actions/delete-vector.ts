@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { createPineconeClientFromAuth } from '../common/pinecone-client';
 import { pineconeAuth } from '../../index';
 
@@ -60,7 +60,7 @@ export const deleteVector = createAction({
     }),
     filter: Property.Json({
       displayName: 'Metadata Filter',
-      description: 'Metadata filter expression to select vectors to delete. Examples:\n• {"genre": {"$eq": "documentary"}}\n• {"year": {"$gt": 2019}}\n• {"$and": [{"genre": "comedy"}, {"year": {"$gte": 2020}}]}',
+      description: 'Metadata filter expression to select vectors to delete. Examples:\nâ€¢ {"genre": {"$eq": "documentary"}}\nâ€¢ {"year": {"$gt": 2019}}\nâ€¢ {"$and": [{"genre": "comedy"}, {"year": {"$gte": 2020}}]}',
       required: false
     })
   },

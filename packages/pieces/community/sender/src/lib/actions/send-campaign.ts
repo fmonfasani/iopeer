@@ -1,10 +1,10 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import {
   campaignDropdown,
   makeSenderRequest,
   senderAuth,
 } from '../common/common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const sendCampaignAction = createAction({
   auth: senderAuth,

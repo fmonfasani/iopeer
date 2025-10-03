@@ -1,12 +1,12 @@
-import { AddSigningKeyResponse, SigningKey, SigningKeyId } from '@activepieces/ee-shared'
+﻿import { AddSigningKeyResponse, SigningKey, SigningKeyId } from '@IOpeer/ee-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     apId,
     ErrorCode,
     isNil,
     PlatformId,
     SeekPage,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { repoFactory } from '../../core/db/repo-factory'
 import { SigningKeyEntity } from './signing-key-entity'
 import { signingKeyGenerator } from './signing-key-generator'
@@ -57,7 +57,7 @@ export const signingKeyService = {
             id,
         })
         if (isNil(entity)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     message: `signing key with id ${id} not found`,

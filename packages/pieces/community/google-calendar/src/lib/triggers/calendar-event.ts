@@ -1,10 +1,10 @@
-import { createTrigger, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { googleCalendarCommon } from '../common';
 import { getEvents } from '../common/helper';
 import { GoogleCalendarEvent } from '../common/types';
 import { googleCalendarAuth } from '../../';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 
 const polling: Polling<
 	PiecePropValueSchema<typeof googleCalendarAuth>,

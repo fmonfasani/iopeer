@@ -1,5 +1,5 @@
-import { supabaseAuth } from '../../index';
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { supabaseAuth } from '../../index';
+import { Property, createAction } from '@IOpeer/pieces-framework';
 import { createClient } from '@supabase/supabase-js';
 
 export const uploadFile = createAction({

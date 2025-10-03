@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+﻿import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Plus, Trash2, Table2 } from 'lucide-react';
 import { useState, useMemo } from 'react';
@@ -24,8 +24,8 @@ import { useAuthorization } from '@/hooks/authorization-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
 import { formatUtils, NEW_MCP_QUERY_PARAM } from '@/lib/utils';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
-import { McpWithTools, Permission } from '@activepieces/shared';
+import { PieceMetadataModelSummary } from '@IOpeer/pieces-framework';
+import { McpWithTools, Permission } from '@IOpeer/shared';
 
 import { McpToolsIcon } from './mcp-tools-icon';
 

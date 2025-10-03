@@ -1,7 +1,7 @@
-import {
+﻿import {
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { shopifyAuth } from '../..';
 import { createCustomer } from '../common';
 

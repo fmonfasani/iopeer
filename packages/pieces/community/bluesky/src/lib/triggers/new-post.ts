@@ -1,5 +1,5 @@
-import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { createTrigger, TriggerStrategy, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import { blueskyAuth } from '../common/auth';
 import { createBlueskyAgent } from '../common/client';
 import { simpleLanguageDropdown } from '../common/props';
@@ -174,7 +174,7 @@ export const newPost = createTrigger({
     record: {
       $type: 'app.bsky.feed.post',
       createdAt: '2024-01-01T12:00:00.000Z',
-      text: 'This post matches your search criteria! #automation #activepieces',
+      text: 'This post matches your search criteria! #automation #IOpeer',
       langs: ['en']
     },
     indexedAt: '2024-01-01T12:00:00.000Z',

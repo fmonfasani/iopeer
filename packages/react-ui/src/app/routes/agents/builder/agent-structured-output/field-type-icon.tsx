@@ -1,10 +1,10 @@
-import {
+﻿import {
   Type as TextIcon,
   Hash as NumberIcon,
   CheckSquare as BooleanIcon,
 } from 'lucide-react';
 
-import { AgentOutputFieldType } from '@activepieces/shared';
+import { AgentOutputFieldType } from '@IOpeer/shared';
 
 interface FieldTypeIconProps {
   type: AgentOutputFieldType;

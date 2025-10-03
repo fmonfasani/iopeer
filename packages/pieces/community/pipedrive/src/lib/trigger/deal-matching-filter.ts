@@ -1,6 +1,6 @@
-import { pipedriveAuth } from '../../index';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { filterIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -9,7 +9,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField, LeadListResponse } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 
 export const dealMatchingFilterTrigger = createTrigger({
@@ -213,9 +213,9 @@ export const dealMatchingFilterTrigger = createTrigger({
 		next_activity_type: 'call',
 		next_activity_duration: '00:30:00',
 		next_activity_note: 'Note content',
-		formatted_value: '€5,000',
+		formatted_value: 'â‚¬5,000',
 		weighted_value: 5000,
-		formatted_weighted_value: '€5,000',
+		formatted_weighted_value: 'â‚¬5,000',
 		weighted_value_currency: 'EUR',
 		rotten_time: null,
 		owner_name: 'Creator',

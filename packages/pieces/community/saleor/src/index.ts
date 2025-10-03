@@ -1,4 +1,4 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
+﻿import { createPiece, PieceAuth, Property } from "@IOpeer/pieces-framework";
 import { saleorRawGraphqlQuery } from "./lib/actions/raw-graphql-query";
 import { getOrder } from "./lib/actions/get-order";
 import { addOrderNote } from "./lib/actions/add-note-to-order";
@@ -24,7 +24,7 @@ export const saleor = createPiece({
   displayName: "Saleor",
   auth: saleorAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/saleor.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/saleor.png",
   authors: ["Kevinyu-alan"],
   actions: [
     saleorRawGraphqlQuery,

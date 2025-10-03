@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { hunterApiCall } from './index';
 
 export const campaignIdProp = Property.Dropdown({
@@ -155,7 +155,7 @@ export const confidenceScoreProp = Property.Number({
     displayName: 'Confidence Score',
     required: false,
     description:
-        'Probability the email is correct (0–100).',
+        'Probability the email is correct (0â€“100).',
 });
 
 export const websiteProp = Property.ShortText({
@@ -376,7 +376,7 @@ export const websiteFilterProp = filterProp(
 );
 export const countryCodeFilterProp = filterProp(
     'Country Code',
-    'Filter by ISO 3166‑1 alpha‑2 country code.'
+    'Filter by ISOâ€¯3166â€‘1 alphaâ€‘2 country code.'
 );
 export const companySizeFilterProp = filterProp(
     'Company Size',
@@ -442,7 +442,7 @@ export const customAttributesFilterProp = Property.Json({
     displayName: 'Custom Attributes Filter',
     required: false,
     description:
-        'JSON object of slug→filterValue (use "*", "~", or substrings).',
+        'JSON object of slugâ†’filterValue (use "*", "~", or substrings).',
 });
 
 export const queryProp = Property.ShortText({

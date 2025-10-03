@@ -1,4 +1,4 @@
-name: E2E Tests - Enterprise Edition
+﻿name: E2E Tests - Enterprise Edition
 
 on:
   workflow_call:
@@ -16,7 +16,7 @@ env:
   AP_POSTGRES_PORT: 5432
   AP_POSTGRES_USERNAME: postgres
   AP_POSTGRES_PASSWORD: postgres
-  AP_POSTGRES_DATABASE: activepieces
+  AP_POSTGRES_DATABASE: IOpeer
   AP_POSTGRES_USE_SSL: "false"
   AP_JWT_SECRET: "secret"
   AP_ENCRYPTION_KEY: "fdbe51af3678563560972e4a912aee6d"
@@ -38,7 +38,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: activepieces
+          POSTGRES_DB: IOpeer
         options: >-
           --health-cmd pg_isready
           --health-interval 10s

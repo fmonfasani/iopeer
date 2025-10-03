@@ -1,6 +1,6 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { magicalApiAuth } from './lib/common/auth';
 import { BASE_URL } from './lib/common/client';
 import { reviewResume } from './lib/actions/review-resume';
@@ -14,7 +14,7 @@ export const magicalApi = createPiece({
   description: 'Automate resume parsing, review, scoring, and LinkedIn profile/company data retrieval with Magical API.',
   auth: magicalApiAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/magical-api.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/magical-api.png',
   authors: ['Pranith124', 'sanket-a11y'],
   categories: [
     PieceCategory.HUMAN_RESOURCES,

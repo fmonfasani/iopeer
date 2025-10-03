@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { Download, PencilIcon, TrashIcon, UploadCloud } from 'lucide-react';
 import React from 'react';
 
@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { PushToGitDialog } from '@/features/git-sync/components/push-to-git-dialog';
 import { useAuthorization } from '@/hooks/authorization-hooks';
-import { Permission, Table } from '@activepieces/shared';
+import { Permission, Table } from '@IOpeer/shared';
 
 import { tablesApi } from '../lib/tables-api';
 import { tablesUtils } from '../lib/utils';

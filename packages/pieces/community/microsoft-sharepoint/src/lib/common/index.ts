@@ -1,10 +1,10 @@
-import { microsoftSharePointAuth } from '../../';
+﻿import { microsoftSharePointAuth } from '../../';
 import {
   DropdownOption,
   DynamicPropsValue,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import {
   Site,

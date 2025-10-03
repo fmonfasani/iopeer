@@ -1,16 +1,16 @@
-import { comfyIcuAuth } from '../../index';
+﻿import { comfyIcuAuth } from '../../index';
 import {
   createTrigger,
   PiecePropValueSchema,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { comfyIcuApiCall, commonProps } from '../common';
 import {
   DedupeStrategy,
   HttpMethod,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import dayjs from 'dayjs';
 
 const polling: Polling<

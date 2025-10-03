@@ -1,15 +1,15 @@
-import {
+﻿import {
 	DedupeStrategy,
 	HttpMethod,
 	Polling,
 	QueryParams,
 	pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
 	PiecePropValueSchema,
 	TriggerStrategy,
 	createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { zohoMailApiCall } from '../common';
 import { zohoMailAuth } from '../common/auth';
 import { accountId, folderId } from '../common/props';

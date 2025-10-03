@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-runware",
+﻿{
+  "name": "@IOpeer/piece-runware",
   "version": "0.0.2",
   "type": "commonjs",
   "main": "./src/index.js",

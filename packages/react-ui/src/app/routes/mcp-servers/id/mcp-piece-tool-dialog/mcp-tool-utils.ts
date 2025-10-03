@@ -1,4 +1,4 @@
-import { McpTool, McpToolRequest, McpToolType } from '@activepieces/shared';
+﻿import { McpTool, McpToolRequest, McpToolType } from '@IOpeer/shared';
 
 export const mcpToolUtils = {
   convertToMcpToolRequest: (tool: McpTool): McpToolRequest => {

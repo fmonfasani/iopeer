@@ -1,11 +1,11 @@
-import { ActionBase } from '@activepieces/pieces-framework'
+﻿import { ActionBase } from '@IOpeer/pieces-framework'
 import {
     ExecuteActionResponse,
     isNil,
     PiecePackage,
     spreadIfDefined,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { LanguageModelV2 } from '@ai-sdk/provider'
 import { type Schema as AiSchema, generateObject } from 'ai'
 import { EngineHelperResponse } from 'server-worker'

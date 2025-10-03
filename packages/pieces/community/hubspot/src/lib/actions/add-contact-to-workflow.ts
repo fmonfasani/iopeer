@@ -1,7 +1,7 @@
-import { hubspotAuth } from "../../";
-import { createAction, Property } from "@activepieces/pieces-framework";
+﻿import { hubspotAuth } from "../../";
+import { createAction, Property } from "@IOpeer/pieces-framework";
 import { workflowIdDropdown } from "../common/props";
-import { AuthenticationType, httpClient, HttpMethod } from "@activepieces/pieces-common";
+import { AuthenticationType, httpClient, HttpMethod } from "@IOpeer/pieces-common";
 
 export const addContactToWorkflowAction = createAction({
     auth:hubspotAuth,

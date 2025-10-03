@@ -1,6 +1,6 @@
-import { createTrigger, TriggerStrategy, Property } from "@activepieces/pieces-framework";
+﻿import { createTrigger, TriggerStrategy, Property } from "@IOpeer/pieces-framework";
 import { foreplayCoApiCall } from "../common";
-import { HttpMethod, Polling, DedupeStrategy, pollingHelper } from "@activepieces/pieces-common";
+import { HttpMethod, Polling, DedupeStrategy, pollingHelper } from "@IOpeer/pieces-common";
 import { newAdInBoard as newAdInBoardProperties } from "../properties";
 import { newAdInBoardSchema } from "../schemas";
 

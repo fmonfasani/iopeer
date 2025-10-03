@@ -1,5 +1,5 @@
-import { DynamicPropsValue, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpRequest, HttpMethod } from '@activepieces/pieces-common';
+﻿import { DynamicPropsValue, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpRequest, HttpMethod } from '@IOpeer/pieces-common';
 import crypto from 'crypto';
 
 export const smartsheetCommon = {
@@ -55,7 +55,7 @@ export const smartsheetCommon = {
 			if (!auth) {
 				return {
 					disabled: true,
-					placeholder: '⚠️ Please authenticate with Smartsheet first',
+					placeholder: 'âš ï¸ Please authenticate with Smartsheet first',
 					options: [],
 				};
 			}
@@ -63,7 +63,7 @@ export const smartsheetCommon = {
 			if (!sheet_id) {
 				return {
 					disabled: true,
-					placeholder: '📋 Please select a sheet first',
+					placeholder: 'ðŸ“‹ Please select a sheet first',
 					options: [],
 				};
 			}
@@ -77,7 +77,7 @@ export const smartsheetCommon = {
 				if (columns.length === 0) {
 					return {
 						disabled: true,
-						placeholder: '📄 No columns found in this sheet',
+						placeholder: 'ðŸ“„ No columns found in this sheet',
 						options: [],
 					};
 				}
@@ -91,7 +91,7 @@ export const smartsheetCommon = {
 			} catch (error) {
 				return {
 					disabled: true,
-					placeholder: '❌ Failed to load columns - check your permissions',
+					placeholder: 'âŒ Failed to load columns - check your permissions',
 					options: [],
 				};
 			}
@@ -287,7 +287,7 @@ export const smartsheetCommon = {
 			if (!auth) {
 				return {
 					disabled: true,
-					placeholder: '⚠️ Please authenticate with Smartsheet first',
+					placeholder: 'âš ï¸ Please authenticate with Smartsheet first',
 					options: [],
 				};
 			}
@@ -298,7 +298,7 @@ export const smartsheetCommon = {
 				if (sheets.length === 0) {
 					return {
 						disabled: true,
-						placeholder: '📂 No sheets found in your account',
+						placeholder: 'ðŸ“‚ No sheets found in your account',
 						options: [],
 					};
 				}
@@ -312,7 +312,7 @@ export const smartsheetCommon = {
 			} catch (error) {
 				return {
 					disabled: true,
-					placeholder: '❌ Failed to load sheets - check your permissions',
+					placeholder: 'âŒ Failed to load sheets - check your permissions',
 					options: [],
 				};
 			}
@@ -329,7 +329,7 @@ export const smartsheetCommon = {
 			if (!auth) {
 				return {
 					disabled: true,
-					placeholder: '⚠️ Please authenticate with Smartsheet first',
+					placeholder: 'âš ï¸ Please authenticate with Smartsheet first',
 					options: [],
 				};
 			}
@@ -340,7 +340,7 @@ export const smartsheetCommon = {
 				if (reports.length === 0) {
 					return {
 						disabled: true,
-						placeholder: '📊 No reports found in your account',
+						placeholder: 'ðŸ“Š No reports found in your account',
 						options: [],
 					};
 				}
@@ -354,7 +354,7 @@ export const smartsheetCommon = {
 			} catch (error) {
 				return {
 					disabled: true,
-					placeholder: '❌ Failed to load reports - check your permissions',
+					placeholder: 'âŒ Failed to load reports - check your permissions',
 					options: [],
 				};
 			}
@@ -371,7 +371,7 @@ export const smartsheetCommon = {
 			if (!auth) {
 				return {
 					disabled: true,
-					placeholder: '⚠️ Please authenticate with Smartsheet first',
+					placeholder: 'âš ï¸ Please authenticate with Smartsheet first',
 					options: [],
 				};
 			}
@@ -379,7 +379,7 @@ export const smartsheetCommon = {
 			if (!sheet_id) {
 				return {
 					disabled: true,
-					placeholder: '📋 Please select a sheet first',
+					placeholder: 'ðŸ“‹ Please select a sheet first',
 					options: [],
 				};
 			}
@@ -396,7 +396,7 @@ export const smartsheetCommon = {
 				if (searchableColumns.length === 0) {
 					return {
 						disabled: true,
-						placeholder: '📄 No searchable columns found in this sheet',
+						placeholder: 'ðŸ“„ No searchable columns found in this sheet',
 						options: [],
 					};
 				}
@@ -410,7 +410,7 @@ export const smartsheetCommon = {
 			} catch (error) {
 				return {
 					disabled: true,
-					placeholder: '❌ Failed to load columns - check your permissions',
+					placeholder: 'âŒ Failed to load columns - check your permissions',
 					options: [],
 				};
 			}

@@ -1,5 +1,5 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { browserlessAuth } from './lib/common/auth';
 import { captureScreenshot } from './lib/actions/capture-screenshot';
 import { generatePdf } from './lib/actions/generate-pdf';
@@ -10,7 +10,7 @@ import { getWebsitePerformance } from './lib/actions/get-website-performance';
 export const browserless = createPiece({
     displayName: 'Browserless',
     minimumSupportedRelease: '0.36.1',
-    logoUrl: 'https://cdn.activepieces.com/pieces/browserless.png',
+    logoUrl: 'https://cdn.IOpeer.com/pieces/browserless.png',
     categories: [PieceCategory.DEVELOPER_TOOLS],
     description: 'Browserless is a headless browser automation tool that allows you to scrape websites, take screenshots, and more.',
     authors: ['owuzo', 'onyedikachi-david'],

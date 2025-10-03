@@ -1,9 +1,9 @@
-import {
+﻿import {
   createCustomApiCallAction,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { clicksendSendSmsAction } from './lib/action/send-sms';
 import { clicksendSendMms } from './lib/action/send-mms';
 import { clicksendCreateContactAction } from './lib/action/create-contact';
@@ -47,7 +47,7 @@ export const clicksend = createPiece({
   description:
     'Cloud-based messaging platform for sending SMS, MMS, voice, email, and more.',
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/clicksend.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/clicksend.png',
   auth: clicksendAuth,
   categories: [PieceCategory.COMMUNICATION],
   actions: [

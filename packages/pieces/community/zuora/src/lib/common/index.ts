@@ -1,16 +1,16 @@
-import { zuoraAuth } from '../../';
+﻿import { zuoraAuth } from '../../';
 import {
   DropdownOption,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   AuthenticationType,
   httpClient,
   HttpMethod,
   HttpRequest,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 export async function queryAccounts(
   auth: PiecePropValueSchema<typeof zuoraAuth>

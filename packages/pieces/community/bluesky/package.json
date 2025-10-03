@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-bluesky",
+﻿{
+  "name": "@IOpeer/piece-bluesky",
   "version": "0.0.6",
   "type": "commonjs",
   "main": "./src/index.js",

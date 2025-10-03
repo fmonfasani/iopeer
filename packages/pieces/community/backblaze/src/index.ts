@@ -1,9 +1,9 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { readBackBlazeFileAction } from './lib/actions/read-file';
 import { backBlazes3UploadFileAction } from './lib/actions/upload-file';
 import { createBackBlazeS3 } from './lib/common';
@@ -125,7 +125,7 @@ export const backBlazeS3Auth = PieceAuth.CustomAuth({
             value: 'me-south-1',
           },
           {
-            label: 'South America (São Paulo) [sa-east-1]',
+            label: 'South America (SÃ£o Paulo) [sa-east-1]',
             value: 'sa-east-1',
           },
           {
@@ -188,7 +188,7 @@ export const backBlazeS3Auth = PieceAuth.CustomAuth({
 export const backblaze = createPiece({
   displayName: 'Backblaze',
   description: 'Scalable storage in the cloud',
-  logoUrl: 'https://cdn.activepieces.com/pieces/backblaze.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/backblaze.png',
   minimumSupportedRelease: '0.30.0',
   authors: ["nhnansari","kishanprmr"],
   categories: [PieceCategory.DEVELOPER_TOOLS],

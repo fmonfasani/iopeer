@@ -1,5 +1,5 @@
-import { intercomAuth } from '../../index';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { intercomAuth } from '../../index';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { intercomClient, TriggerPayload } from '../common';
 
 export const newTicketTrigger = createTrigger({
@@ -63,7 +63,7 @@ export const newTicketTrigger = createTrigger({
 			id: '1',
 			name: 'test',
 			description: '',
-			icon: '🚨',
+			icon: 'ðŸš¨',
 			workspace_id: 'nzekhfwb',
 			archived: false,
 			created_at: 1739105534,

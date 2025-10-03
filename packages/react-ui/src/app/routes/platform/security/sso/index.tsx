@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+﻿import { useMutation } from '@tanstack/react-query';
 import { t } from 'i18next';
 import { LockIcon, MailIcon, Earth } from 'lucide-react';
 import React from 'react';
@@ -14,7 +14,7 @@ import { Switch } from '@/components/ui/switch';
 import { toast } from '@/components/ui/use-toast';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { platformApi } from '@/lib/platforms-api';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 import GoogleIcon from '../../../../../assets/img/custom/auth/google-icon.svg';
 

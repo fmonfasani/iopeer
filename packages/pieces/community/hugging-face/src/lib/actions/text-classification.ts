@@ -1,10 +1,10 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   TextClassificationArgs,
   ZeroShotClassificationArgs,
   InferenceClient,
 } from '@huggingface/inference';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const textClassification = createAction({
@@ -22,15 +22,15 @@ export const textClassification = createAction({
         disabled: false,
         options: [
           {
-            label: '🎯 Zero-Shot (Custom Categories)',
+            label: 'ðŸŽ¯ Zero-Shot (Custom Categories)',
             value: 'zero-shot',
           },
           {
-            label: '📊 Pre-trained Models',
+            label: 'ðŸ“Š Pre-trained Models',
             value: 'pretrained',
           },
           {
-            label: '🔍 Search All Models',
+            label: 'ðŸ” Search All Models',
             value: 'search',
           },
         ],
@@ -45,19 +45,19 @@ export const textClassification = createAction({
         disabled: false,
         options: [
           {
-            label: '🔥 Facebook BART-Large (5.4M downloads)',
+            label: 'ðŸ”¥ Facebook BART-Large (5.4M downloads)',
             value: 'facebook/bart-large-mnli',
           },
           {
-            label: '🔥 DeBERTa TaskSource (904K downloads)',
+            label: 'ðŸ”¥ DeBERTa TaskSource (904K downloads)',
             value: 'sileod/deberta-v3-base-tasksource-nli',
           },
           {
-            label: '🔥 DeBERTa MNLI-FEVER (668K downloads)',
+            label: 'ðŸ”¥ DeBERTa MNLI-FEVER (668K downloads)',
             value: 'MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli',
           },
           {
-            label: '🌍 DistilBERT Multilingual (520K downloads)',
+            label: 'ðŸŒ DistilBERT Multilingual (520K downloads)',
             value:
               'lxyuan/distilbert-base-multilingual-cased-sentiments-student',
           },
@@ -80,50 +80,50 @@ export const textClassification = createAction({
         options: [
           // === SENTIMENT ANALYSIS ===
           {
-            label: '😊 Sentiment: Twitter RoBERTa (3M downloads)',
+            label: 'ðŸ˜Š Sentiment: Twitter RoBERTa (3M downloads)',
             value: 'cardiffnlp/twitter-roberta-base-sentiment-latest',
           },
           {
-            label: '😊 Sentiment: DistilBERT SST-2 (2.9M downloads)',
+            label: 'ðŸ˜Š Sentiment: DistilBERT SST-2 (2.9M downloads)',
             value: 'distilbert/distilbert-base-uncased-finetuned-sst-2-english',
           },
           {
-            label: '🌍 Sentiment: Multilingual BERT (1.7M downloads)',
+            label: 'ðŸŒ Sentiment: Multilingual BERT (1.7M downloads)',
             value: 'nlptown/bert-base-multilingual-uncased-sentiment',
           },
 
           // === BUSINESS & FINANCE ===
           {
-            label: '💰 Finance: FinBERT Sentiment (1.5M downloads)',
+            label: 'ðŸ’° Finance: FinBERT Sentiment (1.5M downloads)',
             value: 'ProsusAI/finbert',
           },
           {
-            label: '💰 Finance: FinBERT Tone (1.4M downloads)',
+            label: 'ðŸ’° Finance: FinBERT Tone (1.4M downloads)',
             value: 'yiyanghkust/finbert-tone',
           },
 
           // === CONTENT MODERATION ===
           {
-            label: '🛡️ Hate Speech: RoBERTa (2M downloads)',
+            label: 'ðŸ›¡ï¸ Hate Speech: RoBERTa (2M downloads)',
             value: 'facebook/roberta-hate-speech-dynabench-r4-target',
           },
           {
-            label: '🛡️ Toxicity: HateBERT (1.1M downloads)',
+            label: 'ðŸ›¡ï¸ Toxicity: HateBERT (1.1M downloads)',
             value: 'tomh/toxigen_hatebert',
           },
           {
-            label: '🛡️ Toxicity: ToxDect RoBERTa (1.1M downloads)',
+            label: 'ðŸ›¡ï¸ Toxicity: ToxDect RoBERTa (1.1M downloads)',
             value: 'Xuhui/ToxDect-roberta-large',
           },
 
           // === CUSTOMER SERVICE ===
           {
-            label: '🎧 Customer Service: Banking Intent',
+            label: 'ðŸŽ§ Customer Service: Banking Intent',
             value:
               'atulgupta002/banking_customer_service_query_intent_classifier',
           },
           {
-            label: '📧 Spam: SMS Classification',
+            label: 'ðŸ“§ Spam: SMS Classification',
             value: 'wesleyacheng/sms-spam-classification-with-bert',
           },
         ],
@@ -138,15 +138,15 @@ export const textClassification = createAction({
       options: async ({ auth }) => {
         const popularModels = [
           {
-            label: '🔥 Facebook BART Zero-Shot (5.4M downloads)',
+            label: 'ðŸ”¥ Facebook BART Zero-Shot (5.4M downloads)',
             value: 'facebook/bart-large-mnli',
           },
           {
-            label: '🔥 Twitter Sentiment RoBERTa (3M downloads)',
+            label: 'ðŸ”¥ Twitter Sentiment RoBERTa (3M downloads)',
             value: 'cardiffnlp/twitter-roberta-base-sentiment-latest',
           },
           {
-            label: '🔥 DistilBERT Sentiment (2.9M downloads)',
+            label: 'ðŸ”¥ DistilBERT Sentiment (2.9M downloads)',
             value: 'distilbert/distilbert-base-uncased-finetuned-sst-2-english',
           },
         ];

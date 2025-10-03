@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy, createTrigger, PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { createWebsocketSubscription, deleteWebsocketSubscription } from './helpers';
 import { websocketCommon } from '../common/common';
 

@@ -1,5 +1,5 @@
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+﻿import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { Property } from '@IOpeer/pieces-framework';
 
 export const BASE_URL = 'https://api.manychat.com/fb';
 

@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { Property } from '@IOpeer/pieces-framework';
 import { HedyApiClient } from './client';
 import { PaginatedResponse, Topic } from './types';
 

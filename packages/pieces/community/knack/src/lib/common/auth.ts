@@ -1,6 +1,6 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 import { knackApiCall } from './client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const knackAuth = PieceAuth.CustomAuth({
   props: {

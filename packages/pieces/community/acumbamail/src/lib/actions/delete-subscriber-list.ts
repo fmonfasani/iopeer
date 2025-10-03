@@ -1,9 +1,9 @@
-import {
+﻿import {
   HttpMethod,
   HttpRequest,
   httpClient,
-} from '@activepieces/pieces-common';
-import { createAction } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { createAction } from '@IOpeer/pieces-framework';
 
 import { acumbamailAuth } from '../../';
 import { acumbamailCommon } from '../common';

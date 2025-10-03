@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from "@activepieces/pieces-framework";
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createPiece, PieceAuth } from "@IOpeer/pieces-framework";
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { searchCompanies } from "./lib/actions/companies/search";
 import { enrichCompanies } from "./lib/actions/companies/enrich";
 
@@ -13,7 +13,7 @@ export const lusha = createPiece({
   displayName: "Lusha",
   auth: lushaAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/lusha.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/lusha.png",
   authors: ["Kevinyu-alan"],
   actions: [
     searchCompanies,
@@ -24,7 +24,7 @@ export const lusha = createPiece({
       },
       auth: lushaAuth,
       authMapping: async (auth) => ({
-        'x-app': 'activepieces',
+        'x-app': 'IOpeer',
         'api_key': auth as string,
       }),
     })

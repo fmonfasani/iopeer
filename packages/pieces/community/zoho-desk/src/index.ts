@@ -1,10 +1,10 @@
-import {
+﻿import {
 	OAuth2PropertyValue,
 	createPiece,
 	PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { listTicketsAction } from './lib/actions/list-tickets';
 import { createTicketAction } from './lib/actions/create-ticket';
 import { organizationId } from './lib/common/props';
@@ -17,7 +17,7 @@ export const piecesZohoDesk = createPiece({
 	auth: zohoDeskAuth,
 	categories: [PieceCategory.CUSTOMER_SUPPORT],
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/zoho-desk.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/zoho-desk.png',
 	authors: ['volubile', 'kishanprmr'],
 	actions: [
 		listTicketsAction,

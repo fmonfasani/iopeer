@@ -1,9 +1,9 @@
-import {
+﻿import {
 	createAction,
 	Property,
 	OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { quickbooksAuth } from '../index';
 import { QuickbooksEntityResponse, quickbooksCommon } from '../lib/common';
 import { QuickbooksCustomer, QuickbooksInvoice, QuickbooksRef } from '../lib/types';

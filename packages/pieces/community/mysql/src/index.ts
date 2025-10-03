@@ -1,9 +1,9 @@
-import {
+﻿import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import actions from './lib/actions';
 
 export const mysqlAuth = PieceAuth.CustomAuth({
@@ -43,7 +43,7 @@ export const mysql = createPiece({
   description: "The world's most popular open-source database",
 
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/mysql.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/mysql.png',
   categories: [PieceCategory.DEVELOPER_TOOLS],
   authors: ["JanHolger","kishanprmr","khaledmashaly","abuaboud"],
   auth: mysqlAuth,

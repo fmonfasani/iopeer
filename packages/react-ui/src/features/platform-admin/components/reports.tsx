@@ -1,11 +1,11 @@
-import { Download } from 'lucide-react';
+﻿import { Download } from 'lucide-react';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { PieceIcon } from '@/features/pieces/components/piece-icon';
-import { PlatformAnalyticsReport } from '@activepieces/shared';
+import { PlatformAnalyticsReport } from '@IOpeer/shared';
 
 type ReportItem = {
   name: React.ReactNode;

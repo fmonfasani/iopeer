@@ -1,4 +1,4 @@
-import { OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 import { fetchAddons, fetchAppointmentTypes, fetchCalendars, fetchLabels } from '.';
 
 interface DropdownParams {

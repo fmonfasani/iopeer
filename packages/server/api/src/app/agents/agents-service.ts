@@ -1,5 +1,5 @@
-import { AIUsageFeature, createAIModel } from '@activepieces/common-ai'
-import { ActivepiecesError, Agent, AgentOutputField, AgentOutputType, apId, Cursor, EnhancedAgentPrompt, ErrorCode, isNil, PlatformUsageMetric, PopulatedAgent, SeekPage, spreadIfDefined } from '@activepieces/shared'
+﻿import { AIUsageFeature, createAIModel } from '@IOpeer/common-ai'
+import { IOpeerError, Agent, AgentOutputField, AgentOutputType, apId, Cursor, EnhancedAgentPrompt, ErrorCode, isNil, PlatformUsageMetric, PopulatedAgent, SeekPage, spreadIfDefined } from '@IOpeer/shared'
 import { openai } from '@ai-sdk/openai'
 import { Schema as AiSchema, generateObject } from 'ai'
 import { FastifyBaseLogger } from 'fastify'
@@ -96,7 +96,7 @@ export const agentsService = (log: FastifyBaseLogger) => ({
     async getOneByExternalIdOrThrow(params: GetOneByExternalIdParams): Promise<PopulatedAgent> {
         const agent = await agentRepo().findOneBy({ externalId: params.externalId, projectId: params.projectId })
         if (isNil(agent)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'agent',
@@ -131,7 +131,7 @@ export const agentsService = (log: FastifyBaseLogger) => ({
     async getOneOrThrow(params: GetOneParams): Promise<PopulatedAgent> {
         const agent = await this.getOne({ id: params.id, projectId: params.projectId })
         if (isNil(agent)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'agent',
@@ -206,7 +206,7 @@ function getEnhancementPrompt(originalPrompt: string) {
 
                 2. **Agent Name**: Generate a short, well-formatted name for the agent using title case and spaces (e.g., "Legal Summarizer" or "Resume Optimizer").
 
-                3. **Agent Description**: Write a concise description (maximum 10 words) that clearly communicates the agent’s purpose.`,
+                3. **Agent Description**: Write a concise description (maximum 10 words) that clearly communicates the agentâ€™s purpose.`,
     }
 }
 

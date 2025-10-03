@@ -1,5 +1,5 @@
-import { Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { ListBasicPostsResponse, ListCommunityMembersResponse, ListSpacesResponse } from './types';
 
 export const BASE_URL = 'https://app.circle.so/api/admin/v2';

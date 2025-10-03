@@ -1,10 +1,10 @@
-import {
+﻿import {
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { clarifaiAskLLM } from './lib/actions/ask-llm';
 import { audioToTextModelPredictAction } from './lib/actions/call-audio-model';
 import {
@@ -53,7 +53,7 @@ export const clarifai = createPiece({
   displayName: 'Clarifai',
   description: 'AI-powered visual recognition',
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/clarifai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/clarifai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ["akatechis","zeiler","Salem-Alaa","kishanprmr","MoShizzle","abuaboud"],
   auth: clarifaiAuth,

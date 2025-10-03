@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { toast } from '@/components/ui/use-toast';
 import {
@@ -9,7 +9,7 @@ import {
   FlowVersion,
   StepLocationRelativeToParent,
   PasteLocation,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { BuilderState } from '../builder-hooks';
 

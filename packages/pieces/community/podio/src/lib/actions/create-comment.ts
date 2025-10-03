@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { podioAuth } from '../../index';
 import { podioApiCall, getAccessToken, silentProperty, hookProperty, dynamicAppProperty, dynamicSpaceProperty, dynamicOrgProperty } from '../common';
 
@@ -106,7 +106,7 @@ export const createCommentAction = createAction({
                 options: taskResponse?.map((task: any) => {
                   let label = task.text || `Task ${task.task_id}`;
                   if (task.ref?.title) {
-                    label += ` → ${task.ref.title}`;
+                    label += ` â†’ ${task.ref.title}`;
                   }
                   return {
                     label,

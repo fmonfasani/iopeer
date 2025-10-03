@@ -1,9 +1,9 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { askAI } from './lib/actions/ask-ai';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { summarizeText } from './lib/actions/summarize-text';
 
-export const activepiecesAi = createPiece({
+export const IOpeerAi = createPiece({
   displayName: 'Text AI',
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.67.3',
@@ -11,7 +11,7 @@ export const activepiecesAi = createPiece({
     PieceCategory.ARTIFICIAL_INTELLIGENCE,
     PieceCategory.UNIVERSAL_AI,
   ],
-  logoUrl: 'https://cdn.activepieces.com/pieces/text-ai.svg',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/text-ai.svg',
   authors: ['anasbarg', 'amrdb'],
   actions: [askAI, summarizeText],
   triggers: [],

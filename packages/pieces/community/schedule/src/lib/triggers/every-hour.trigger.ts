@@ -1,5 +1,5 @@
-import { TriggerStrategy } from '@activepieces/pieces-framework';
-import { createTrigger, Property } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy } from '@IOpeer/pieces-framework';
+import { createTrigger, Property } from '@IOpeer/pieces-framework';
 
 export const everyHourTrigger = createTrigger({
   name: 'every_hour',

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { askQuestion } from './lib/actions/ask-question';
 import { addPage } from './lib/actions/add-page';
 import { addTag } from './lib/actions/add-tag';
@@ -24,7 +24,7 @@ export const wonderchat = createPiece({
     'Wonderchat is a no-code chatbot platform that lets you deploy AI-powered chatbots for websites quickly.',
   auth: wonderchatAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/wonderchat.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/wonderchat.png',
   categories: [
     PieceCategory.ARTIFICIAL_INTELLIGENCE,
   ],

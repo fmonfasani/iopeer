@@ -1,7 +1,7 @@
-import {
+﻿import {
   createAction,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../..';
 import { notionCommon } from '../common';
@@ -196,7 +196,7 @@ export const retrieveDatabase = createAction({
           {}
         ),
       },
-      message: `📊 Database structure retrieved successfully! Found ${totalProperties} properties including ${
+      message: `ðŸ“Š Database structure retrieved successfully! Found ${totalProperties} properties including ${
         Object.keys(formStructure.selectOptions).length
       } dropdown fields and ${
         Object.keys(formStructure.statusOptions).length

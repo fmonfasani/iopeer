@@ -1,5 +1,5 @@
-import { AIUsageFeature, createAIModel } from '@activepieces/common-ai'
-import { rejectedPromiseHandler } from '@activepieces/server-shared'
+﻿import { AIUsageFeature, createAIModel } from '@IOpeer/common-ai'
+import { rejectedPromiseHandler } from '@IOpeer/server-shared'
 import {
     EngineResponseStatus,
     isNil,
@@ -10,7 +10,7 @@ import {
     McpToolType,
     McpTrigger,
     TelemetryEventName,
-} from '@activepieces/shared'       
+} from '@IOpeer/shared'       
 import { openai } from '@ai-sdk/openai'
 import { LanguageModelV2 } from '@ai-sdk/provider'
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
@@ -302,7 +302,7 @@ async function addFlowToServer(
                 return {
                     content: [{
                         type: 'text',
-                        text: `✅ Successfully executed flow ${populatedFlow.version.displayName}\n\n` +
+                        text: `âœ… Successfully executed flow ${populatedFlow.version.displayName}\n\n` +
                             `Output:\n\`\`\`json\n${JSON.stringify(response, null, 2)}\n\`\`\``,
                     }],
                 }
@@ -311,7 +311,7 @@ async function addFlowToServer(
                 return {
                     content: [{
                         type: 'text',
-                        text: `❌ Error executing flow ${populatedFlow.version.displayName}\n\n` +
+                        text: `âŒ Error executing flow ${populatedFlow.version.displayName}\n\n` +
                             `Error details:\n\`\`\`json\n${JSON.stringify(response, null, 2) || 'Unknown error occurred'}\n\`\`\``,
                     }],
                 }

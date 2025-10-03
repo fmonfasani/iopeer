@@ -1,15 +1,15 @@
-import {
+﻿import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   createPiece,
   PieceAuth,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { triggers } from './lib/triggers';
 
 const markdownPropertyDescription = `
@@ -74,7 +74,7 @@ export const formbricks = createPiece({
   description: 'Open source Survey Platform',
   auth: formBricksAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/formbricks.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/formbricks.png',
   categories: [PieceCategory.BUSINESS_INTELLIGENCE],
   authors: ['kanarelo', 'kishanprmr', 'MoShizzle', 'abuaboud'],
   actions: [

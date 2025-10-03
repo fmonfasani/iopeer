@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { EllipsisVertical, Puzzle, Trash2 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -12,13 +12,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuthorization } from '@/hooks/authorization-hooks';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
+import { PieceMetadataModelSummary } from '@IOpeer/pieces-framework';
 import {
   McpTool,
   McpToolType,
   McpWithTools,
   Permission,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { mcpConfigUtils } from './mcp-config-utils';
 

@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { frontAuth } from '../common/auth';
 import { makeRequest } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const createContact = createAction({
   auth: frontAuth,
@@ -51,7 +51,7 @@ export const createContact = createAction({
 
     avatar_url: Property.File({
       displayName: 'Avatar URL',
-      description: 'URL of the contact’s avatar image.',
+      description: 'URL of the contactâ€™s avatar image.',
       required: false,
     }),
     links: Property.Array({

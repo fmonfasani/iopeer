@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { useState } from 'react';
 
 import LockedFeatureGuard from '@/app/components/locked-feature-guard';
@@ -6,7 +6,7 @@ import { DashboardPageHeader } from '@/components/custom/dashboard-page-header';
 import { LoadingScreen } from '@/components/ui/loading-screen';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
-import { Agent, ApFlagId } from '@activepieces/shared';
+import { Agent, ApFlagId } from '@IOpeer/shared';
 
 import agentsGroupImage from '../../../assets/img/custom/agents-group.png';
 import { AgentCard } from '../../../features/agents/agent-card';

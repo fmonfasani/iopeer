@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, propsValidation } from '@IOpeer/pieces-common';
 import { edenAiApiCall } from '../common/client';
 import { createStaticDropdown } from '../common/providers';
 import { z } from 'zod';
@@ -87,7 +87,7 @@ const SPELL_CHECK_LANGUAGES = [
   { label: 'Mongolian', value: 'mn' },
   { label: 'Nepali', value: 'ne' },
   { label: 'Norwegian', value: 'no' },
-  { label: 'Norwegian Bokmål', value: 'nb' },
+  { label: 'Norwegian BokmÃ¥l', value: 'nb' },
   { label: 'Nyanja', value: 'ny' },
   { label: 'Oriya', value: 'or' },
   { label: 'Panjabi', value: 'pa' },

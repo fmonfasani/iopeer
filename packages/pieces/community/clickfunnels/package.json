@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-clickfunnels",
+﻿{
+  "name": "@IOpeer/piece-clickfunnels",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./src/index.js",

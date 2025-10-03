@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+﻿import dayjs from 'dayjs';
 import { t } from 'i18next';
 import { Clock, Rocket } from 'lucide-react';
 import React from 'react';
@@ -13,8 +13,8 @@ import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
 import { cn, formatUtils } from '@/lib/utils';
-import { ApSubscriptionStatus } from '@activepieces/ee-shared';
-import { ApEdition, ApFlagId, isNil } from '@activepieces/shared';
+import { ApSubscriptionStatus } from '@IOpeer/ee-shared';
+import { ApEdition, ApFlagId, isNil } from '@IOpeer/shared';
 
 import { FlagGuard } from '../flag-guard';
 

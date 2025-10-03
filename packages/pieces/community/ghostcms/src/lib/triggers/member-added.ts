@@ -1,4 +1,4 @@
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 
 import { ghostAuth } from '../..';
 import { common } from '../common';

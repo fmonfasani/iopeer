@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner } from 'typeorm'
+﻿import { MigrationInterface, QueryRunner } from 'typeorm'
 import { system } from '../../../helper/system/system'
 
 const FLOW_VERSION_TABLE = 'flow_version'
@@ -106,11 +106,11 @@ async function updateTriggerEvent(
     for (const triggerEvent of triggerEvents) {
         if (triggerEvent.source) {
             if (revert) {
-                triggerEvent.source = `@activepieces/piece-${triggerEvent.source}`
+                triggerEvent.source = `@IOpeer/piece-${triggerEvent.source}`
             }
             else {
                 triggerEvent.source = triggerEvent.source.replace(
-                    '@activepieces/piece-',
+                    '@IOpeer/piece-',
                     '',
                 )
             }
@@ -226,7 +226,7 @@ const getPackageNameForPiece = (
         return pieceName
     }
     if (revert) {
-        return pieceName.replace('@activepieces/piece-', '')
+        return pieceName.replace('@IOpeer/piece-', '')
     }
-    return `@activepieces/piece-${pieceName}`
+    return `@IOpeer/piece-${pieceName}`
 }

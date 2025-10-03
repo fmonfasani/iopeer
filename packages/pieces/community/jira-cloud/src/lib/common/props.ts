@@ -1,4 +1,4 @@
-import {
+﻿import {
 	getIssueTypes,
 	getProjects,
 	getUsers,
@@ -6,11 +6,11 @@ import {
 	jiraPaginatedApiCall,
 	sendJiraRequest,
 } from '.';
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+import { DropdownOption, Property } from '@IOpeer/pieces-framework';
 import { JiraAuth } from '../../auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { IssueFieldMetaData, IssueTypeMetadata } from './types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import dayjs from 'dayjs';
 
 export function getProjectIdDropdown(data?: DropdownParams) {

@@ -1,6 +1,6 @@
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ApEdition,
     ApEnvironment,
     apId,
@@ -27,7 +27,7 @@ import {
     UpsertAppConnectionRequestBody,
     UserId,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EngineHelperResponse, EngineHelperValidateAuthResult } from 'server-worker'
 import { Equal, FindOperator, FindOptionsWhere, ILike, In } from 'typeorm'
@@ -167,7 +167,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
             ...(params.projectId ? APArrayContains('projectIds', [params.projectId]) : {}),
         })
         if (isNil(connectionById)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'AppConnection',
@@ -206,7 +206,7 @@ export const appConnectionService = (log: FastifyBaseLogger) => ({
         })
         
         if (sourceAppConnection.pieceName !== targetAppConnection.pieceName) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: 'Connections must be from the same app',
@@ -382,7 +382,7 @@ async function assertProjectIds(projectIds: ProjectId[], platformId: string): Pr
         platformId,
     })
     if (filteredProjects !== projectIds.length) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.ENTITY_NOT_FOUND,
             params: {
                 entityType: 'Project',
@@ -524,7 +524,7 @@ const engineValidateAuth = async (
             engineResponse,
             '[AppConnectionService#engineValidateAuth] engineResponse',
         )
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.ENGINE_OPERATION_FAILURE,
             params: {
                 message: 'Failed to run engine validate auth',
@@ -536,7 +536,7 @@ const engineValidateAuth = async (
     const validateAuthResult = engineResponse.result
 
     if (!validateAuthResult.valid) {
-        throw new ActivepiecesError({
+        throw new IOpeerError({
             code: ErrorCode.INVALID_APP_CONNECTION,
             params: {
                 error: validateAuthResult.error,

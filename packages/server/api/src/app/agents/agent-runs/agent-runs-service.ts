@@ -1,4 +1,4 @@
-import { ActivepiecesError, AgentRun, AgentTaskStatus, apId, Cursor, ErrorCode, isNil, SeekPage, spreadIfDefined, UpdateAgentRunRequestBody, WorkerJobType } from '@activepieces/shared'
+﻿import { IOpeerError, AgentRun, AgentTaskStatus, apId, Cursor, ErrorCode, isNil, SeekPage, spreadIfDefined, UpdateAgentRunRequestBody, WorkerJobType } from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { Equal, FindOperator } from 'typeorm'
 import { repoFactory } from '../../core/db/repo-factory'
@@ -56,7 +56,7 @@ export const agentRunsService = (log: FastifyBaseLogger) => ({
     async getOneOrThrow(params: GetOneParams): Promise<AgentRun> {
         const agentRun = await this.getOne({ id: params.id, projectId: params.projectId })
         if (isNil(agentRun)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityType: 'agent run',

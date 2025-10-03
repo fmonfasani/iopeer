@@ -1,4 +1,4 @@
-# Security
+﻿# Security
 
 Contact: security@iopeer.com
 
@@ -17,7 +17,7 @@ This repository is part of the private IOPeer SaaS product. Security is a top pr
 ## Guidelines
 - Avoid automated scanning on production systems without prior approval.
 - Provide clear reproduction steps (IP, timestamps, request payloads, logs).
-- Use responsible disclosure — we will work with you to remediate quickly.
+- Use responsible disclosure â€” we will work with you to remediate quickly.
 
 ## What we promise
 - Acknowledge receipt within 3 business days.
@@ -25,4 +25,4 @@ This repository is part of the private IOPeer SaaS product. Security is a top pr
 - If you follow responsible disclosure guidance, we will not pursue legal action for the report.
 - We will credit researchers for reported issues, unless they request anonymity.
 
-> Note: This file was updated for IOPeer branding; original Activepieces security content (if present) was used as a reference and attribution was preserved where required. :contentReference[oaicite:8]{index=8}
+> Note: This file was updated for IOPeer branding; original IOpeer security content (if present) was used as a reference and attribution was preserved where required. :contentReference[oaicite:8]{index=8}

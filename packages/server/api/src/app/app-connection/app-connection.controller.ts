@@ -1,4 +1,4 @@
-import { ApplicationEventName } from '@activepieces/ee-shared'
+﻿import { ApplicationEventName } from '@IOpeer/ee-shared'
 import {
     ApId,
     AppConnectionOwners,
@@ -13,7 +13,7 @@ import {
     SERVICE_KEY_SECURITY_OPENAPI,
     UpdateConnectionValueRequestBody,
     UpsertAppConnectionRequestBody,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginCallbackTypebox,
     Type,

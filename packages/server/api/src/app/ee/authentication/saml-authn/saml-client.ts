@@ -1,5 +1,5 @@
-
-import { ActivepiecesError, ErrorCode, SAMLAuthnProviderConfig } from '@activepieces/shared'
+﻿
+import { IOpeerError, ErrorCode, SAMLAuthnProviderConfig } from '@IOpeer/shared'
 import * as validator from '@authenio/samlify-node-xmllint'
 import { Type } from '@sinclair/typebox'
 import { TypeCompiler } from '@sinclair/typebox/compiler'
@@ -42,7 +42,7 @@ class SamlClient {
 
         const atts = loginResult.extract.attributes
         if (!samlResponseValidator.Check(atts)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.INVALID_SAML_RESPONSE,
                 params: {
                     message: 'Invalid SAML response, It should contain these firstName, lastName, email fields.',

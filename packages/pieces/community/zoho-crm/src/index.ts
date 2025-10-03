@@ -1,11 +1,11 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { newContact } from './lib/triggers/new-contact';
 import { readFile } from './lib/actions/read-file';
 
@@ -56,7 +56,7 @@ export const zohoCrm = createPiece({
   displayName: 'Zoho CRM',
   description: 'Customer relationship management software',
 
-  logoUrl: 'https://cdn.activepieces.com/pieces/zoho-crm.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/zoho-crm.png',
   minimumSupportedRelease: '0.30.0',
   categories: [PieceCategory.SALES_AND_CRM],
   authors: ["kishanprmr","MoShizzle","khaledmashaly","abuaboud","ikus060"],

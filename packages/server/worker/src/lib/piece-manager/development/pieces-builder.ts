@@ -1,8 +1,8 @@
-import { spawn } from 'child_process'
+﻿import { spawn } from 'child_process'
 import fs from 'fs/promises'
 import { resolve } from 'path'
-import { ApLock, filePiecesUtils, memoryLock, PiecesSource } from '@activepieces/server-shared'
-import { debounce, isNil, WebsocketClientEvent } from '@activepieces/shared'
+import { ApLock, filePiecesUtils, memoryLock, PiecesSource } from '@IOpeer/server-shared'
+import { debounce, isNil, WebsocketClientEvent } from '@IOpeer/shared'
 import chalk from 'chalk'
 import chokidar from 'chokidar'
 import { FastifyBaseLogger, FastifyInstance } from 'fastify'
@@ -28,7 +28,7 @@ async function checkBuildTarget(nxProjectFilePath: string): Promise<string> {
 async function handleFileChange(packages: string[], pieceProjectName: string, piecePackageName: string, nxProjectFilePath: string, io: Server, log: FastifyBaseLogger): Promise<void> {
     log.info(
         chalk.blueBright.bold(
-            '👀 Detected changes in pieces. Waiting... 👀 ' + pieceProjectName,
+            'ðŸ‘€ Detected changes in pieces. Waiting... ðŸ‘€ ' + pieceProjectName,
         ),
     )
     let lock: ApLock | undefined
@@ -36,7 +36,7 @@ async function handleFileChange(packages: string[], pieceProjectName: string, pi
         lock = await memoryLock.acquire(PIECES_BUILDER_MUTEX_KEY)
 
         const buildTarget = await checkBuildTarget(nxProjectFilePath)
-        log.info(chalk.blue.bold(`🤌 Building pieces with target: ${buildTarget} for ${pieceProjectName}... 🤌`))
+        log.info(chalk.blue.bold(`ðŸ¤Œ Building pieces with target: ${buildTarget} for ${pieceProjectName}... ðŸ¤Œ`))
 
         if (!/^[A-Za-z0-9-]+$/.test(pieceProjectName)) {
             throw new Error(`Piece package name contains invalid character: ${pieceProjectName}`)
@@ -55,10 +55,10 @@ async function handleFileChange(packages: string[], pieceProjectName: string, pi
         await filePiecesUtils(packages, log).clearPieceCache(piecePackageName)
 
         const cache = cacheState(GLOBAL_CACHE_COMMON_PATH)
-        await cache.setCache('@activepieces/pieces-framework', CacheState.PENDING)
-        await cache.setCache('@activepieces/pieces-common', CacheState.PENDING)
-        await cache.setCache('@activepieces/shared', CacheState.PENDING)
-        await cache.setCache('@activepieces/common-ai', CacheState.PENDING)
+        await cache.setCache('@IOpeer/pieces-framework', CacheState.PENDING)
+        await cache.setCache('@IOpeer/pieces-common', CacheState.PENDING)
+        await cache.setCache('@IOpeer/shared', CacheState.PENDING)
+        await cache.setCache('@IOpeer/common-ai', CacheState.PENDING)
         await cache.setCache(piecePackageName, CacheState.PENDING)
 
         io.emit(WebsocketClientEvent.REFRESH_PIECE)
@@ -72,7 +72,7 @@ async function handleFileChange(packages: string[], pieceProjectName: string, pi
         }
         log.info(
             chalk.green.bold(
-                '✨ Changes are ready! Please refresh the frontend to see the new updates. ✨',
+                'âœ¨ Changes are ready! Please refresh the frontend to see the new updates. âœ¨',
             ),
         )
     }

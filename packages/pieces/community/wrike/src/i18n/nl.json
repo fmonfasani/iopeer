@@ -1,5 +1,5 @@
-{
-  "\n    To obtain your OAuth2 credentials:\n\n    1. Go to Wrike (https://www.wrike.com/)\n    2. Sign in to your account or create one\n    3. Go to Apps & Integrations (https://www.wrike.com/apps/)\n    4. Click \"Create new app\" or use an existing one\n    5. For local development, add `http://localhost:4200/redirect` to the allowed redirect URIs\n    6. For production, add `https://cloud.activepieces.com/redirect` to the allowed redirect URIs\n    7. Copy the Client ID and Client Secret\n    ": "\n    Om uw OAuth2 referenties te verkrijgen:\n\n    1. Ga naar Wrike (https://www. rike.com/)\n    2. Meld je aan bij je account of maak een\n    3. Ga naar Apps & Integraties (https://www.wrike.com/apps/)\n    4. Klik op \"Nieuwe app maken\" of gebruik een bestaande\n    5. Voor lokale ontwikkeling, voeg `http://localhost:4200/redirect` toe aan de toegestane redirect URIs\n    6. Voor productie, voeg `https://cloud. ctivepieces.com/redirect` to the allowed redirect URIs\n    7. Copy the Client ID and Client Secret\n    ",
+﻿{
+  "\n    To obtain your OAuth2 credentials:\n\n    1. Go to Wrike (https://www.wrike.com/)\n    2. Sign in to your account or create one\n    3. Go to Apps & Integrations (https://www.wrike.com/apps/)\n    4. Click \"Create new app\" or use an existing one\n    5. For local development, add `http://localhost:4200/redirect` to the allowed redirect URIs\n    6. For production, add `https://cloud.IOpeer.com/redirect` to the allowed redirect URIs\n    7. Copy the Client ID and Client Secret\n    ": "\n    Om uw OAuth2 referenties te verkrijgen:\n\n    1. Ga naar Wrike (https://www. rike.com/)\n    2. Meld je aan bij je account of maak een\n    3. Ga naar Apps & Integraties (https://www.wrike.com/apps/)\n    4. Klik op \"Nieuwe app maken\" of gebruik een bestaande\n    5. Voor lokale ontwikkeling, voeg `http://localhost:4200/redirect` toe aan de toegestane redirect URIs\n    6. Voor productie, voeg `https://cloud. ctivepieces.com/redirect` to the allowed redirect URIs\n    7. Copy the Client ID and Client Secret\n    ",
   "Create Task": "Taak maken",
   "Update Task": "Taak bijwerken",
   "Create Folder": "Map aanmaken",
@@ -99,7 +99,7 @@
   "Select whether to attach the file to a task or folder": "Selecteer of het bestand aan een taak of map gekoppeld moet worden",
   "The ID of the task or folder to attach the file to": "Het ID van de taak of map om het bestand bij te voegen",
   "The file to upload and attach": "Het bestand om te uploaden en bijvoegen",
-  "Optional custom name for the uploaded file": "Optionele aangepaste naam voor het geüploade bestand",
+  "Optional custom name for the uploaded file": "Optionele aangepaste naam voor het geÃ¼ploade bestand",
   "The ID of the task to retrieve. If provided, other search criteria will be ignored.": "De ID van de taak om op te halen. Indien opgegeven, worden andere zoekcriteria genegeerd.",
   "Search for tasks by title (partial match)": "Zoek naar taken op titel (gedeeltelijke overeenstemming)",
   "Search for tasks within a specific folder": "Zoeken naar taken binnen een specifieke map",
@@ -117,7 +117,7 @@
   "Maximum number of folders/projects to return (max 1000)": "Maximum aantal mappen/projecten om terug te sturen (max 1000)",
   "Filter by authors (users who created the folders)": "Filteren op auteurs (gebruikers die de mappen hebben gemaakt)",
   "Filter by owners (users who own the projects)": "Filter op eigenaren (gebruikers die eigenaar zijn van de projecten)",
-  "Authorization headers are injected automatically from your connection.": "Autorisatie headers worden automatisch geïnjecteerd vanuit uw verbinding.",
+  "Authorization headers are injected automatically from your connection.": "Autorisatie headers worden automatisch geÃ¯njecteerd vanuit uw verbinding.",
   "Enable for files like PDFs, images, etc..": "Inschakelen voor bestanden zoals PDF's, afbeeldingen etc..",
   "Active": "Actief",
   "Completed": "Voltooid",

@@ -1,4 +1,4 @@
-import { isNil } from '@activepieces/shared';
+﻿import { isNil } from '@IOpeer/shared';
 import { SNSClient } from '@aws-sdk/client-sns';
 
 export function createSNS(auth: {

@@ -1,12 +1,12 @@
-import {
+﻿import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { pushRowsToDatasetTableAction } from './lib/actions/push-rows-to-table';
 import { createDatasetAction } from './lib/actions/create-dataset';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 const authDesc = `
 1. Sign in to [Microsoft Azure Portal](https://portal.azure.com/).
@@ -19,14 +19,14 @@ const authDesc = `
    - Or select based on your requirement.
 7. In **Redirect URI**, select **Web** and add the given URL.
 8. Click **Register**.
-9. After registration, you’ll be redirected to the app’s overview page. Copy the **Application (client) ID**.
+9. After registration, youâ€™ll be redirected to the appâ€™s overview page. Copy the **Application (client) ID**.
 10. From the left menu, go to **Certificates & secrets**.
     - Under **Client secrets**, click **New client secret**.
     - Provide a description, set an expiry, and click **Add**.
     - Copy the **Value** of the client secret (this will not be shown again).
 11. Go to **API permissions** from the left menu.
     - Click **Add a permission**.
-    - Select **Power BI Service** → **Delegated permissions**.
+    - Select **Power BI Service** â†’ **Delegated permissions**.
     - Add the following scopes:
 	    - Dataset.ReadWrite.All
 	    - offline_access
@@ -50,7 +50,7 @@ export const microsoftPowerBi = createPiece({
   displayName: 'Microsoft Power BI',
   description: 'Create and manage Power BI datasets and push data to them',
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-power-bi.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-power-bi.png',
   categories: [PieceCategory.BUSINESS_INTELLIGENCE],
   auth: microsoftPowerBiAuth,
   authors: ['calladodan'],

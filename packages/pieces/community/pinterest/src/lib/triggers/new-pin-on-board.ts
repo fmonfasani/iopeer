@@ -1,17 +1,17 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   PiecePropValueSchema,
   Property,
   OAuth2PropertyValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
   HttpMethod,
   getAccessTokenOrThrow,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import dayjs from 'dayjs';
 import { makeRequest } from '../common';
 import { pinterestAuth } from '../common/auth';

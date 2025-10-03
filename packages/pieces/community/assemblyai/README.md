@@ -1,12 +1,12 @@
-# AssemblyAI piece for IOPeer
+﻿# AssemblyAI piece for IOPeer
 
 Use the AssemblyAI piece for IOPeer to use AssemblyAI's models to
-[transcribe audio with Speech-to-Text models](https://www.assemblyai.com/products/speech-to-text?utm_source=activepieces), analyze audio with [audio intelligence models](https://www.assemblyai.com/products/speech-understanding?utm_source=activepieces), build generative AI features on top of audio with LLMs using [LeMUR](https://www.assemblyai.com/blog/lemur/?utm_source=activepieces).
+[transcribe audio with Speech-to-Text models](https://www.assemblyai.com/products/speech-to-text?utm_source=IOpeer), analyze audio with [audio intelligence models](https://www.assemblyai.com/products/speech-understanding?utm_source=IOpeer), build generative AI features on top of audio with LLMs using [LeMUR](https://www.assemblyai.com/blog/lemur/?utm_source=IOpeer).
 
 Learn more about this piece:
 
-- [IOPeer Integrations](https://www.activepieces.com/pieces/assemblyai)
-- [AssemblyAI Documentation](https://www.assemblyai.com/docs/integrations/activepieces)
+- [IOPeer Integrations](https://www.IOpeer.com/pieces/assemblyai)
+- [AssemblyAI Documentation](https://www.assemblyai.com/docs/integrations/IOpeer)
 
 This library was built upon the [AssemblyAI JavaScript SDK](https://github.com/AssemblyAI/assemblyai-node-sdk).
 

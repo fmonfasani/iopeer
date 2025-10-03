@@ -1,5 +1,5 @@
-
-    import { createPiece } from "@activepieces/pieces-framework";
+﻿
+    import { createPiece } from "@IOpeer/pieces-framework";
     import { capsuleCrmAuth } from "../src/lib/common/auth";
     import { createContactAction } from "../src/lib/actions/create-contact";
     import { updateContactAction } from "../src/lib/actions/update-contact";
@@ -20,7 +20,7 @@
       displayName: 'Capsule CRM',
       auth: capsuleCrmAuth,
       minimumSupportedRelease: '0.36.1',
-      logoUrl: 'https://cdn.activepieces.com/pieces/capsule-crm.png',
+      logoUrl: 'https://cdn.IOpeer.com/pieces/capsule-crm.png',
       authors: ['Prabhukiran161', 'onyedikachi-david'],
       actions: [
         createContactAction,

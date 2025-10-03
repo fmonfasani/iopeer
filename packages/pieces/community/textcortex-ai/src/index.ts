@@ -1,7 +1,7 @@
-
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿
+import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { textcortexAuth } from './lib/common/auth';
 import { baseUrl } from './lib/common/common';
 import { sendPrompt } from './lib/actions/send-prompt';
@@ -18,7 +18,7 @@ export const textcortexAi = createPiece({
   description: 'AI-powered writing assistant for content creation, code generation, translations, and more using multiple AI models.',
   auth: textcortexAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/textcortex-ai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/textcortex-ai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['owuzo', 'onyedikachi-david'],
   actions: [

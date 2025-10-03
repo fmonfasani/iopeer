@@ -1,5 +1,5 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationFolderSurveyInitialExperienceAvailable =
@@ -7,9 +7,9 @@ export const certificationFolderSurveyInitialExperienceAvailable =
     auth: wedofAuth,
     name: 'certificationFolderSurveyInitialExperienceAvailable',
     displayName:
-      'Enquête "Situation professionnelle en début de cursus" disponible',
+      'EnquÃªte "Situation professionnelle en dÃ©but de cursus" disponible',
     description:
-      "Se déclenche lorsqu'un une enquête de début de cursus est disponible",
+      "Se dÃ©clenche lorsqu'un une enquÃªte de dÃ©but de cursus est disponible",
     type: TriggerStrategy.WEBHOOK,
     props: {},
     sampleData: {

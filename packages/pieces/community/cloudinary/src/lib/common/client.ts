@@ -1,5 +1,5 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
-import { BasicAuthConnectionValue, CustomAuthConnectionValue } from '@activepieces/shared';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
+import { BasicAuthConnectionValue, CustomAuthConnectionValue } from '@IOpeer/shared';
 
 export const BASE_URL = 'https://api.cloudinary.com/v1_1';
 

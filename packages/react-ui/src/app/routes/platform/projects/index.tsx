@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+﻿import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { CheckIcon, Lock, Package, Pencil, Plus, Trash } from 'lucide-react';
@@ -29,7 +29,7 @@ import { platformHooks } from '@/hooks/platform-hooks';
 import { projectHooks } from '@/hooks/project-hooks';
 import { projectApi } from '@/lib/project-api';
 import { formatUtils, validationUtils } from '@/lib/utils';
-import { isNil, ProjectWithLimits } from '@activepieces/shared';
+import { isNil, ProjectWithLimits } from '@IOpeer/shared';
 
 import { NewProjectDialog } from './new-project-dialog';
 

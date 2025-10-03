@@ -1,8 +1,8 @@
-import { OAuth2AuthorizationMethod } from '@activepieces/pieces-framework'
+﻿import { OAuth2AuthorizationMethod } from '@IOpeer/pieces-framework'
 import {
     BaseOAuth2ConnectionValue,
     OAuth2GrantType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 
 export type OAuth2Service<CONNECTION_VALUE extends BaseOAuth2ConnectionValue> =
   {

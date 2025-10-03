@@ -1,6 +1,6 @@
-// action to return reports from InvoiceNinja with filtering
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿// action to return reports from InvoiceNinja with filtering
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { invoiceninjaAuth } from '../..';
 export const getReport = createAction({
   auth: invoiceninjaAuth,

@@ -1,10 +1,10 @@
-import {
+﻿import {
 	createAction,
 	Property,
 	PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { teamworkAuth } from '../common/auth';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { teamworkRequest } from '../common/client';
 
 // Helper to fetch all tasks, handling pagination
@@ -34,7 +34,7 @@ async function getAllTasks(auth: PiecePropValueSchema<typeof teamworkAuth>) {
 export const updateTask = createAction({
 	name: 'update_task',
 	displayName: 'Update Task',
-	description: 'Modify a task’s fields (due date, assignee, content, priority, etc.).',
+	description: 'Modify a taskâ€™s fields (due date, assignee, content, priority, etc.).',
 	auth: teamworkAuth,
 	props: {
 		taskId: Property.Dropdown({

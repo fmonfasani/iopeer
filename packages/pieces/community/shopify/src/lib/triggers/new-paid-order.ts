@@ -1,4 +1,4 @@
-import { createShopifyWebhookTrigger } from '../common/register-webhook';
+﻿import { createShopifyWebhookTrigger } from '../common/register-webhook';
 
 export const newPaidOrder = createShopifyWebhookTrigger({
   name: 'new_paid_order',
@@ -94,7 +94,7 @@ export const newPaidOrder = createShopifyWebhookTrigger({
     number: 10,
     order_number: 1010,
     order_status_url:
-      'https://activepieces-test.myshopify.com/74392404278/orders/2979b599ca9a25049397820ac12aaf87/authenticate?key=42a8db0d2e048823fea486a316d0d231',
+      'https://IOpeer-test.myshopify.com/74392404278/orders/2979b599ca9a25049397820ac12aaf87/authenticate?key=42a8db0d2e048823fea486a316d0d231',
     original_total_duties_set: null,
     payment_gateway_names: ['manual'],
     presentment_currency: 'USD',
@@ -225,7 +225,7 @@ export const newPaidOrder = createShopifyWebhookTrigger({
         variant_id: 44872881439030,
         variant_inventory_management: 'shopify',
         variant_title: null,
-        vendor: 'activepieces-test',
+        vendor: 'IOpeer-test',
         tax_lines: [],
         duties: [],
         discount_allocations: [],

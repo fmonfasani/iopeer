@@ -1,4 +1,4 @@
-import { createAction, OAuth2PropertyValue, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, OAuth2PropertyValue, Property } from '@IOpeer/pieces-framework';
 import { addContactToCampaign, getCampaigns, getContacts } from '../common';
 import { leadConnectorAuth } from '../..';
 

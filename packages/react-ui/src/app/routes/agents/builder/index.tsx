@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { ArrowLeft, Settings, Play } from 'lucide-react';
 import { ReactNode, useState } from 'react';
 
@@ -16,7 +16,7 @@ import {
   AgentBuilderProvider,
   useBuilderAgentState,
 } from '@/features/agents/lib/store/builder-agent-state-provider';
-import { Agent, isNil } from '@activepieces/shared';
+import { Agent, isNil } from '@IOpeer/shared';
 
 import { AgentLeftSection } from './agent-left-section';
 import { AgentPreviewSection } from './agent-preview-section';

@@ -1,9 +1,9 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { stripeAuth } from '../..';
 import { stripeCommon } from '../common';
 
@@ -16,13 +16,13 @@ export const stripeCreateProduct = createAction({
     name: Property.ShortText({
       displayName: 'Product Name',
       description:
-        'The product’s name, meant to be displayable to the customer.',
+        'The productâ€™s name, meant to be displayable to the customer.',
       required: true,
     }),
     description: Property.LongText({
       displayName: 'Description',
       description:
-        'The product’s description, meant to be displayable to the customer.',
+        'The productâ€™s description, meant to be displayable to the customer.',
       required: false,
     }),
     active: Property.Checkbox({

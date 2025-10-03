@@ -1,5 +1,5 @@
-import { HttpMethod, QueryParams } from '@activepieces/pieces-common';
-import { DropdownOption, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod, QueryParams } from '@IOpeer/pieces-common';
+import { DropdownOption, Property } from '@IOpeer/pieces-framework';
 import { makeRequest } from './client';
 
 export const listId = (required = true) =>

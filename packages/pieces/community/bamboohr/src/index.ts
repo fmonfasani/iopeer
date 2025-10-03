@@ -1,9 +1,9 @@
-import {
+﻿import {
   createPiece,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-framework';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { reportFieldChanged } from './lib/triggers/report-field-changed';
 
 export const bambooHrAuth = PieceAuth.CustomAuth({
@@ -28,7 +28,7 @@ export const bambooHr = createPiece({
   displayName: 'BambooHR',
   auth: bambooHrAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/bamboohr.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/bamboohr.png',
   authors: ['AdamSelene'],
   actions: [
     createCustomApiCallAction({

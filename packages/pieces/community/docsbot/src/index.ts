@@ -1,12 +1,12 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { askQuestion } from './lib/actions/ask-question';
 import { createBot } from './lib/actions/create-bot';
 import { createSource } from './lib/actions/create-source';
 import { findBot } from './lib/actions/find-bot';
 import { uploadSourceFile } from './lib/actions/upload-source-file';
 import { docsbotAuth, docsbotCommon } from './lib/common';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { PieceCategory } from '@activepieces/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
 
 export const docsbot = createPiece({
   displayName: 'DocsBot',
@@ -15,7 +15,7 @@ export const docsbot = createPiece({
   auth: docsbotAuth,
   minimumSupportedRelease: '0.36.1',
   categories:[PieceCategory.ARTIFICIAL_INTELLIGENCE,PieceCategory.PRODUCTIVITY],
-  logoUrl: 'https://cdn.activepieces.com/pieces/docsbot.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/docsbot.png',
   authors: ['LuizDMM'],
   actions: [
     askQuestion,

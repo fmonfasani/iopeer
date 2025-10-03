@@ -1,10 +1,10 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
 import { listProjects } from './lib/actions/list-projects';
 import { getProjectHead } from './lib/actions/get-project-head';
 import { runPrompt } from './lib/actions/run-prompt';
@@ -40,7 +40,7 @@ export const prompthub = createPiece({
     'Integrate with PromptHub projects, retrieve heads, and run prompts.',
   auth: prompthubAuth,
   minimumSupportedRelease: '0.63.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/prompthub.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/prompthub.png',
   authors: ['sparkybug'],
   actions: [
     listProjects,

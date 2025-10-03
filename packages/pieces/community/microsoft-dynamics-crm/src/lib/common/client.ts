@@ -1,11 +1,11 @@
-import {
+﻿import {
   AuthenticationType,
   HttpHeaders,
   HttpMessageBody,
   HttpMethod,
   QueryParams,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { EntityAttributeType } from './constants';
 import {
   EntityAttributeOptionsResponse,

@@ -1,6 +1,6 @@
-import { ApSubscriptionStatus, BILLING_CYCLE_HIERARCHY, BillingCycle, METRIC_TO_LIMIT_MAPPING, METRIC_TO_USAGE_MAPPING, PLAN_HIERARCHY, PlanName, PRICE_ID_MAP, PRICE_NAMES, RESOURCE_TO_MESSAGE_MAPPING } from '@activepieces/ee-shared'
-import { AppSystemProp } from '@activepieces/server-shared'
-import { ActivepiecesError, ApEdition, ErrorCode, FlowStatus, isNil, PlatformPlanLimits, PlatformRole, PlatformUsageMetric, UserStatus } from '@activepieces/shared'
+﻿import { ApSubscriptionStatus, BILLING_CYCLE_HIERARCHY, BillingCycle, METRIC_TO_LIMIT_MAPPING, METRIC_TO_USAGE_MAPPING, PLAN_HIERARCHY, PlanName, PRICE_ID_MAP, PRICE_NAMES, RESOURCE_TO_MESSAGE_MAPPING } from '@IOpeer/ee-shared'
+import { AppSystemProp } from '@IOpeer/server-shared'
+import { IOpeerError, ApEdition, ErrorCode, FlowStatus, isNil, PlatformPlanLimits, PlatformRole, PlatformUsageMetric, UserStatus } from '@IOpeer/shared'
 import Stripe from 'stripe'
 import { flowService } from '../../../flows/flow/flow.service'
 import { system } from '../../../helper/system/system'
@@ -69,7 +69,7 @@ export const PlatformPlanHelper = {
         const usageKey = METRIC_TO_USAGE_MAPPING[metric]
 
         if (!limitKey || !usageKey) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: `Unknown metric: ${metric}`,
@@ -81,7 +81,7 @@ export const PlatformPlanHelper = {
         const currentUsage = platformUsage[usageKey]
 
         if (!isNil(limit) && currentUsage >= limit) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.QUOTA_EXCEEDED,
                 params: {
                     metric,
@@ -103,7 +103,7 @@ export const PlatformPlanHelper = {
         const usageKey = METRIC_TO_USAGE_MAPPING[resource]
 
         if (!limitKey || !usageKey) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: `Unknown resource: ${resource}`,
@@ -115,7 +115,7 @@ export const PlatformPlanHelper = {
         const currentUsage = platformUsage[usageKey]
 
         if (!isNil(limit) && currentUsage > limit) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.RESOURCE_LOCKED,
                 params: {
                     message: RESOURCE_TO_MESSAGE_MAPPING[resource],
@@ -131,7 +131,7 @@ export const PlatformPlanHelper = {
         const requestProjectAddon = !isNil(projectsAddon) && projectsAddon > 0
 
         if (isNotBusinessPlan && (requestUserSeatAddon || requestProjectAddon)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.VALIDATION,
                 params: {
                     message: 'Extra users and projects are only available for the Business plan',

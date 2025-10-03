@@ -1,4 +1,4 @@
-import {
+﻿import {
   DefaultErrorFunction,
   SetErrorFunction,
 } from '@sinclair/typebox/errors';
@@ -28,7 +28,7 @@ import {
   isNil,
   QuotaExceededParams,
   ResourceLockedParams,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { ChangelogProvider } from './components/changelog-provider';
 import { EmbeddingFontLoader } from './components/embedding-font-loader';

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-bika",
+﻿{
+  "name": "@IOpeer/piece-bika",
   "version": "0.0.5",
   "type": "commonjs",
   "main": "./src/index.js",

@@ -1,4 +1,4 @@
-import {
+﻿import {
   ArrayProperty,
   BasePropertySchema,
   CheckboxProperty,
@@ -9,7 +9,7 @@ import {
   ObjectProperty,
   Property,
   ShortTextProperty,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { ContentFields, FieldType } from 'contentful-management';
 import { getLinkHelperText } from '../common';
 

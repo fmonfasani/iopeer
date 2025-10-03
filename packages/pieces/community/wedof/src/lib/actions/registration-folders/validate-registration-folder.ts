@@ -1,30 +1,30 @@
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const validateRegistrationFolder = createAction({
   auth: wedofAuth,
   name: 'validateRegistrationFolder',
   displayName: 'Valider le dossier de formation',
-  description: "Passer l'état du dossier de formation à l'état validé",
+  description: "Passer l'Ã©tat du dossier de formation Ã  l'Ã©tat validÃ©",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {externalId} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de formation',
       required: true,
     }),
     indicativeDuration: Property.Number({
-      displayName: 'Durée totale de la formation',
+      displayName: 'DurÃ©e totale de la formation',
       description:
         "Obligatoire dans le cas d'un dossier de formation avec financement France Travail",
       required: false,
     }),
     weeklyDuration: Property.Number({
-      displayName: 'Intensité hebdomadaire',
+      displayName: 'IntensitÃ© hebdomadaire',
       description:
-        'Intensité hebdomadaire de la formation, en heures par semaine',
+        'IntensitÃ© hebdomadaire de la formation, en heures par semaine',
       required: false,
     }),
   },

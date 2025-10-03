@@ -1,5 +1,5 @@
-import { codaAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { codaAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { docIdDropdown, tableIdDropdown } from '../common/props';
 import { codaClient } from '../common/types';
 

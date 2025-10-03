@@ -1,11 +1,11 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { excelAuth } from '../../index';
 import { excelCommon } from '../common/common';
 import {
   httpClient,
   HttpMethod,
   AuthenticationType
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 
 // Define the response type for creating a worksheet for better type-safety
 interface CreateWorksheetResponse {

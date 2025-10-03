@@ -1,7 +1,7 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import { NinoxAuth } from '../common/auth';
 import { BASE_URL, makeRequest } from '../common/client';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import {
 	teamidDropdown,
 	databaseIdDropdown,

@@ -1,7 +1,7 @@
-import { zerobounceAuth } from '../..';
-import { createAction, Property, StoreScope } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+﻿import { zerobounceAuth } from '../..';
+import { createAction, Property, StoreScope } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export const validateEmail = createAction({
   name: 'validateEmail',

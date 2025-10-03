@@ -1,7 +1,7 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { paperformAuth } from '../common/auth';
 import { paperformCommon } from '../common/client';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { PaperformCreateCouponResponse } from '../common/types';
 import { paperformCommonProps } from '../common/props';
 
@@ -74,7 +74,7 @@ export const updateFormCoupon = createAction({
       discountAmount < 0
     ) {
       throw new Error(
-        'Discount amount must be ≥ 0 when discount type is amount'
+        'Discount amount must be â‰¥ 0 when discount type is amount'
       );
     }
 

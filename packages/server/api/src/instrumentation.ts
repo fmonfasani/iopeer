@@ -1,4 +1,4 @@
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { AppSystemProp } from '@IOpeer/server-shared'
 import { FastifyOtelInstrumentation } from '@fastify/otel'
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node'
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto'
@@ -10,7 +10,7 @@ import { system } from './app/helper/system/system'
 
 function getServiceName(): string {
     const isApp = system.isApp()
-    const serviceName = isApp ? 'activepieces-api' : 'activepieces-worker'
+    const serviceName = isApp ? 'IOpeer-api' : 'IOpeer-worker'
 
     return serviceName
 }

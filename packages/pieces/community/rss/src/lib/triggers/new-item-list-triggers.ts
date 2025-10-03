@@ -1,18 +1,18 @@
-import {
+﻿import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   PieceAuthProperty,
   PiecePropValueSchema,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { rssFeedUrls } from '../common/props';
 import FeedParser from 'feedparser';
 import axios from 'axios';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import dayjs from 'dayjs';
 import { getId } from '../common/getId';
 import { sampleData } from '../common/sampleData';

@@ -1,14 +1,14 @@
-import {
+﻿import {
   HttpRequest,
   HttpMethod,
   AuthenticationType,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import {
   Property,
   DropdownState,
   PiecePropValueSchema
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Stripe } from 'stripe';
 import { stripeAuth } from '../..';
 import {

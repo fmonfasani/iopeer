@@ -1,7 +1,7 @@
-import { createAction, Property, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createAction, Property, PieceAuth } from '@IOpeer/pieces-framework';
 import { agentCommon } from '../common';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { AgentRun, RunAgentRequestBody } from '@activepieces/shared';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { AgentRun, RunAgentRequestBody } from '@IOpeer/shared';
 import { StatusCodes } from 'http-status-codes';
 
 

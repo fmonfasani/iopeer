@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-runway",
+﻿{
+  "name": "@IOpeer/piece-runway",
   "version": "0.0.2",
   "dependencies": {
     "@runwayml/sdk": "2.9.0"

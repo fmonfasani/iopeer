@@ -1,5 +1,5 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { shortIoApiCall } from '../common/client';
 import { shortIoAuth } from '../common/auth';
 import { domainIdDropdown, folderIdDropdown } from '../common/props';
@@ -82,7 +82,7 @@ export const createShortLinkAction = createAction({
     ttl: Property.Number({
       displayName: 'Time to Live (in seconds)',
       description:
-        '⚠️ CAUTION: Link will be PERMANENTLY DELETED after this many seconds. This action cannot be undone. Use with extreme caution.',
+        'âš ï¸ CAUTION: Link will be PERMANENTLY DELETED after this many seconds. This action cannot be undone. Use with extreme caution.',
       required: false,
     }),
     androidURL: Property.ShortText({

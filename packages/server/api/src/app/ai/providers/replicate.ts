@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/shared'
+﻿import { IOpeerError, ErrorCode } from '@IOpeer/shared'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 import { AIProviderStrategy, Usage } from './types'
 import { getProviderConfig } from './utils'
@@ -30,7 +30,7 @@ export const replicateProvider: AIProviderStrategy = {
 
         const imageModelConfig = providerConfig.imageModels.find((m) => m.instance.modelId.split(':')[0] === model)
         if (!imageModelConfig) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AI_MODEL_NOT_SUPPORTED,
                 params: {
                     provider,

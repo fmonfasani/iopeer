@@ -1,5 +1,5 @@
-import { StripePlanName } from '@activepieces/ee-shared'
-import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, GiftTrialByEmailRequestBody, isNil, PrincipalType } from '@activepieces/shared'
+﻿import { StripePlanName } from '@IOpeer/ee-shared'
+import { AdminRetryRunsRequestBody, ApplyLicenseKeyByEmailRequestBody, GiftTrialByEmailRequestBody, isNil, PrincipalType } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { StatusCodes } from 'http-status-codes'
 import { stripeHelper } from '../platform-plan/stripe-helper'

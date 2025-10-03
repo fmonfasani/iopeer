@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-flowise",
+﻿{
+  "name": "@IOpeer/piece-flowise",
   "version": "0.0.10",
   "devDependencies": {
     "@types/is-url": "^1.2.32"

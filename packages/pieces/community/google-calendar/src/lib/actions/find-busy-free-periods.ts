@@ -1,5 +1,5 @@
-import { createAction, Property, OAuth2PropertyValue } from '@activepieces/pieces-framework';
-import { HttpRequest, HttpMethod, AuthenticationType, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property, OAuth2PropertyValue } from '@IOpeer/pieces-framework';
+import { HttpRequest, HttpMethod, AuthenticationType, httpClient } from '@IOpeer/pieces-common';
 import { googleCalendarAuth } from '../../'; 
 import { googleCalendarCommon } from '../common';
 import { getCalendars } from '../common/helper';

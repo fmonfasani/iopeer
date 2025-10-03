@@ -1,10 +1,10 @@
-import {
+﻿import {
   Property,
   TriggerStrategy,
   createTrigger,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { quickzuAuth } from '../../';
-import { WebhookHandshakeStrategy } from '@activepieces/shared';
+import { WebhookHandshakeStrategy } from '@IOpeer/shared';
 const markdown = `
 - Go to the **Settings->API and Webhooks** section.
 - In the webhook settings, paste this URL: 
@@ -81,7 +81,7 @@ const sampleData = {
         symbol: 'Rs',
         rounding: 0,
         name_plural: 'Indian rupees',
-        symbol_native: '₹',
+        symbol_native: 'â‚¹',
         decimal_digits: 2,
       },
       payment_status: 'unpaid',
@@ -156,7 +156,7 @@ const sampleData = {
         symbol: 'Rs',
         rounding: 0,
         name_plural: 'Indian rupees',
-        symbol_native: '₹',
+        symbol_native: 'â‚¹',
         decimal_digits: 2,
       },
       payment_modes: {

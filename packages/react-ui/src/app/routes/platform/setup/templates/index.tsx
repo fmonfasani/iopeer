@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
+﻿import { useMutation, useQuery } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { FileText, Pencil, Plus, Trash } from 'lucide-react';
@@ -26,7 +26,7 @@ import { PieceIconList } from '@/features/pieces/components/piece-icon-list';
 import { templatesApi } from '@/features/templates/lib/templates-api';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { formatUtils } from '@/lib/utils';
-import { FlowTemplate } from '@activepieces/shared';
+import { FlowTemplate } from '@IOpeer/shared';
 
 import { UpsertTemplateDialog } from './upsert-template-dialog';
 

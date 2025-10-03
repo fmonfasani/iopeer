@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "iopeer",
   "version": "0.70.2",
   "rcVersion": "0.70.2-rc.0",
@@ -29,7 +29,7 @@
   },
   "private": true,
   "dependencies": {
-    "@activepieces/import-fresh-webpack": "3.3.0",
+    "@IOpeer/import-fresh-webpack": "3.3.0",
     "@ai-sdk/anthropic": "2.0.3",
     "@ai-sdk/azure": "2.0.12",
     "@ai-sdk/google": "2.0.6",

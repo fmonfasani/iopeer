@@ -1,7 +1,7 @@
-import { PieceMetadata, PieceMetadataModel } from '@activepieces/pieces-framework'
-import { AppSystemProp } from '@activepieces/server-shared'
+﻿import { PieceMetadata, PieceMetadataModel } from '@IOpeer/pieces-framework'
+import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     AddPieceRequestBody,
     ApEdition,
     EngineResponseStatus,
@@ -19,7 +19,7 @@ import {
     PlatformId,
     ProjectId,
     WorkerJobType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { EngineHelperExtractPieceInformation, EngineHelperResponse } from 'server-worker'
 import { fileService } from '../../file/file.service'
@@ -65,10 +65,10 @@ export const pieceService = (log: FastifyBaseLogger) => ({
         catch (error) {
             log.error(error, '[PieceService#add]')
 
-            if ((error as ActivepiecesError).error.code === ErrorCode.VALIDATION) {
+            if ((error as IOpeerError).error.code === ErrorCode.VALIDATION) {
                 throw error
             }
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENGINE_OPERATION_FAILURE,
                 params: {
                     message: JSON.stringify(error),
@@ -86,7 +86,7 @@ const assertInstallProjectEnabled = (scope: PieceScope): void => {
             sandboxMode === ExecutionMode.UNSANDBOXED &&
             [ApEdition.ENTERPRISE, ApEdition.CLOUD].includes(edition)
         ) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AUTHORIZATION,
                 params: {
                     message:

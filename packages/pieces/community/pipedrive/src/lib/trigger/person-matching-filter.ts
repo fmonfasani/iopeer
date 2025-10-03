@@ -1,6 +1,6 @@
-import { pipedriveAuth } from '../../index';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { filterIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -9,7 +9,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { PERSON_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedrivePersonV2 {

@@ -1,6 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 
-import { SeekPage, TriggerEventWithPayload } from '@activepieces/shared';
+import { SeekPage, TriggerEventWithPayload } from '@IOpeer/shared';
 
 import { triggerEventsApi } from './trigger-events-api';
 

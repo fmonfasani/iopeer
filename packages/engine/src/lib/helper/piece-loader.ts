@@ -1,7 +1,7 @@
-import fs from 'fs/promises'
+﻿import fs from 'fs/promises'
 import path from 'path'
-import { Action, Piece, PiecePropertyMap, Trigger } from '@activepieces/pieces-framework'
-import { ActivepiecesError, ErrorCode, ExecutePropsOptions, extractPieceFromModule, getPackageAliasForPiece, isNil } from '@activepieces/shared'
+import { Action, Piece, PiecePropertyMap, Trigger } from '@IOpeer/pieces-framework'
+import { IOpeerError, ErrorCode, ExecutePropsOptions, extractPieceFromModule, getPackageAliasForPiece, isNil } from '@IOpeer/shared'
 import { utils } from '../utils'
 
 export const pieceLoader = {
@@ -23,7 +23,7 @@ export const pieceLoader = {
         })
 
         if (isNil(piece)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.PIECE_NOT_FOUND,
                 params: {
                     pieceName,
@@ -58,7 +58,7 @@ export const pieceLoader = {
         const pieceAction = piece.getAction(actionName)
 
         if (isNil(pieceAction)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.STEP_NOT_FOUND,
                 params: {
                     pieceName,
@@ -82,7 +82,7 @@ export const pieceLoader = {
         const actionOrTrigger = piece.getAction(actionOrTriggerName) ?? piece.getTrigger(actionOrTriggerName)
 
         if (isNil(actionOrTrigger)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.STEP_NOT_FOUND,
                 params: {
                     pieceName: piecePackage.pieceName,
@@ -95,7 +95,7 @@ export const pieceLoader = {
         const prop = (actionOrTrigger.props as PiecePropertyMap)[propertyName]
 
         if (isNil(prop)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.CONFIG_NOT_FOUND,
                 params: {
                     pieceName: piecePackage.pieceName,
@@ -132,7 +132,7 @@ export const pieceLoader = {
                 break
         }
         if (isNil(piecePath)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.PIECE_NOT_FOUND,
                 params: {
                     pieceName: packageName,

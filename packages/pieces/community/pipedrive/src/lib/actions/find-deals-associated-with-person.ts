@@ -1,13 +1,13 @@
-import { pipedriveAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { personIdProp } from '../common/props';
 import {
 	pipedrivePaginatedV1ApiCall,
 	pipedrivePaginatedV2ApiCall,
 	pipedriveTransformCustomFields,
 } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 import { GetField } from '../common/types';
 import { DEAL_OPTIONAL_FIELDS } from '../common/constants';
 

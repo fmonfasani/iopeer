@@ -1,4 +1,4 @@
-import { DynamicPropsValue, Property, createAction } from '@activepieces/pieces-framework';
+﻿import { DynamicPropsValue, Property, createAction } from '@IOpeer/pieces-framework';
 import { JiraAuth, jiraCloudAuth } from '../../auth';
 import {
 	createPropertyDefinition,
@@ -9,8 +9,8 @@ import {
 } from '../common/props';
 import { jiraApiCall } from '../common';
 import { IssueFieldMetaData, VALID_CUSTOM_FIELD_TYPES } from '../common/types';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export const updateIssueAction = createAction({
 	name: 'update_issue',

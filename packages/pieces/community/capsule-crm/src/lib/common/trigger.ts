@@ -1,7 +1,7 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { capsuleCrmAuth } from './auth';
 import { capsuleCrmClient } from './client';
 

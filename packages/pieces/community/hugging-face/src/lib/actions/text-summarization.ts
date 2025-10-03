@@ -1,6 +1,6 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { SummarizationArgs, InferenceClient } from '@huggingface/inference';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { huggingFaceAuth } from '../../index';
 
 export const textSummarization = createAction({
@@ -18,31 +18,31 @@ export const textSummarization = createAction({
         disabled: false,
         options: [
           {
-            label: '📰 News Articles & Blog Posts',
+            label: 'ðŸ“° News Articles & Blog Posts',
             value: 'news',
           },
           {
-            label: '📧 Emails & Support Tickets',
+            label: 'ðŸ“§ Emails & Support Tickets',
             value: 'email',
           },
           {
-            label: '🎯 Meetings & Conversations',
+            label: 'ðŸŽ¯ Meetings & Conversations',
             value: 'meeting',
           },
           {
-            label: '📚 General Text & Documents',
+            label: 'ðŸ“š General Text & Documents',
             value: 'general',
           },
           {
-            label: '🏥 Medical & Scientific',
+            label: 'ðŸ¥ Medical & Scientific',
             value: 'medical',
           },
           {
-            label: '🌍 Multilingual Content',
+            label: 'ðŸŒ Multilingual Content',
             value: 'multilingual',
           },
           {
-            label: '🔍 Search All Models',
+            label: 'ðŸ” Search All Models',
             value: 'search',
           },
         ],
@@ -62,33 +62,33 @@ export const textSummarization = createAction({
               return [
                 {
                   label:
-                    '🔥 Facebook BART-CNN (4.5M downloads) - News optimized',
+                    'ðŸ”¥ Facebook BART-CNN (4.5M downloads) - News optimized',
                   value: 'facebook/bart-large-cnn',
                 },
                 {
-                  label: '⚡ DistilBART-CNN (2M downloads) - Faster',
+                  label: 'âš¡ DistilBART-CNN (2M downloads) - Faster',
                   value: 'sshleifer/distilbart-cnn-12-6',
                 },
                 {
                   label:
-                    '📝 Google Pegasus-XSum (118K downloads) - Abstractive',
+                    'ðŸ“ Google Pegasus-XSum (118K downloads) - Abstractive',
                   value: 'google/pegasus-xsum',
                 },
               ];
             case 'email':
               return [
                 {
-                  label: '🔥 Facebook BART-CNN (4.5M downloads) - Best overall',
+                  label: 'ðŸ”¥ Facebook BART-CNN (4.5M downloads) - Best overall',
                   value: 'facebook/bart-large-cnn',
                 },
                 {
                   label:
-                    '📧 Falconsai Text Summary (30K downloads) - General text',
+                    'ðŸ“§ Falconsai Text Summary (30K downloads) - General text',
                   value: 'Falconsai/text_summarization',
                 },
                 {
                   label:
-                    '⚡ Google T5-Small (2.7M downloads) - Fast & versatile',
+                    'âš¡ Google T5-Small (2.7M downloads) - Fast & versatile',
                   value: 'google-t5/t5-small',
                 },
               ];
@@ -96,31 +96,31 @@ export const textSummarization = createAction({
               return [
                 {
                   label:
-                    '🎯 Meeting Summary (29K downloads) - Meeting optimized',
+                    'ðŸŽ¯ Meeting Summary (29K downloads) - Meeting optimized',
                   value: 'knkarthick/MEETING_SUMMARY',
                 },
                 {
                   label:
-                    '💬 BART SAMSum (104K downloads) - Conversation focused',
+                    'ðŸ’¬ BART SAMSum (104K downloads) - Conversation focused',
                   value: 'philschmid/bart-large-cnn-samsum',
                 },
                 {
-                  label: '🔥 Facebook BART-CNN (4.5M downloads) - Reliable',
+                  label: 'ðŸ”¥ Facebook BART-CNN (4.5M downloads) - Reliable',
                   value: 'facebook/bart-large-cnn',
                 },
               ];
             case 'general':
               return [
                 {
-                  label: '🔥 Google T5-Base (1.7M downloads) - High quality',
+                  label: 'ðŸ”¥ Google T5-Base (1.7M downloads) - High quality',
                   value: 'google-t5/t5-base',
                 },
                 {
-                  label: '⚡ Google T5-Small (2.7M downloads) - Fast',
+                  label: 'âš¡ Google T5-Small (2.7M downloads) - Fast',
                   value: 'google-t5/t5-small',
                 },
                 {
-                  label: '🎯 Google T5-Large (327K downloads) - Best quality',
+                  label: 'ðŸŽ¯ Google T5-Large (327K downloads) - Best quality',
                   value: 'google-t5/t5-large',
                 },
               ];
@@ -128,38 +128,38 @@ export const textSummarization = createAction({
               return [
                 {
                   label:
-                    '🏥 Medical Summarization (45K downloads) - Medical optimized',
+                    'ðŸ¥ Medical Summarization (45K downloads) - Medical optimized',
                   value: 'Falconsai/medical_summarization',
                 },
                 {
-                  label: '📚 Google T5-Base (1.7M downloads) - General purpose',
+                  label: 'ðŸ“š Google T5-Base (1.7M downloads) - General purpose',
                   value: 'google-t5/t5-base',
                 },
                 {
-                  label: '🔥 Facebook BART-CNN (4.5M downloads) - Reliable',
+                  label: 'ðŸ”¥ Facebook BART-CNN (4.5M downloads) - Reliable',
                   value: 'facebook/bart-large-cnn',
                 },
               ];
             case 'multilingual':
               return [
                 {
-                  label: '🌍 mT5 Multilingual (37K downloads) - 44 languages',
+                  label: 'ðŸŒ mT5 Multilingual (37K downloads) - 44 languages',
                   value: 'csebuetnlp/mT5_multilingual_XLSum',
                 },
                 {
                   label:
-                    '⚡ Google T5-Small (2.7M downloads) - Multilingual capable',
+                    'âš¡ Google T5-Small (2.7M downloads) - Multilingual capable',
                   value: 'google-t5/t5-small',
                 },
                 {
-                  label: '🎯 Google T5-Base (1.7M downloads) - Better quality',
+                  label: 'ðŸŽ¯ Google T5-Base (1.7M downloads) - Better quality',
                   value: 'google-t5/t5-base',
                 },
               ];
             default:
               return [
                 {
-                  label: '🔥 Facebook BART-CNN (4.5M downloads)',
+                  label: 'ðŸ”¥ Facebook BART-CNN (4.5M downloads)',
                   value: 'facebook/bart-large-cnn',
                 },
               ];
@@ -177,15 +177,15 @@ export const textSummarization = createAction({
         // Handle search mode - load all summarization models
         const popularModels = [
           {
-            label: '🔥 Facebook BART-CNN (4.5M downloads)',
+            label: 'ðŸ”¥ Facebook BART-CNN (4.5M downloads)',
             value: 'facebook/bart-large-cnn',
           },
           {
-            label: '⚡ DistilBART-CNN (2M downloads)',
+            label: 'âš¡ DistilBART-CNN (2M downloads)',
             value: 'sshleifer/distilbart-cnn-12-6',
           },
           {
-            label: '🎯 Google T5-Base (1.7M downloads)',
+            label: 'ðŸŽ¯ Google T5-Base (1.7M downloads)',
             value: 'google-t5/t5-base',
           },
         ];
@@ -259,10 +259,10 @@ export const textSummarization = createAction({
       options: {
         disabled: false,
         options: [
-          { label: '📝 Brief (30-80 words)', value: 'brief' },
-          { label: '📄 Medium (80-150 words)', value: 'medium' },
-          { label: '📚 Detailed (150-300 words)', value: 'detailed' },
-          { label: '⚙️ Custom Length', value: 'custom' },
+          { label: 'ðŸ“ Brief (30-80 words)', value: 'brief' },
+          { label: 'ðŸ“„ Medium (80-150 words)', value: 'medium' },
+          { label: 'ðŸ“š Detailed (150-300 words)', value: 'detailed' },
+          { label: 'âš™ï¸ Custom Length', value: 'custom' },
         ],
       },
       defaultValue: 'medium',
@@ -466,29 +466,29 @@ function getQualityTips(originalWords: number, summaryWords: number): string[] {
   const tips: string[] = [];
 
   if (originalWords < 100) {
-    tips.push('⚠️ Text is quite short - summaries work best with 200+ words');
+    tips.push('âš ï¸ Text is quite short - summaries work best with 200+ words');
   }
 
   if (originalWords > 2000) {
     tips.push(
-      '📝 Very long text - consider breaking into sections for better results'
+      'ðŸ“ Very long text - consider breaking into sections for better results'
     );
   }
 
   if (summaryWords / originalWords > 0.7) {
     tips.push(
-      '💡 Summary is quite long - try Brief mode for more concise results'
+      'ðŸ’¡ Summary is quite long - try Brief mode for more concise results'
     );
   }
 
   if (summaryWords / originalWords < 0.1) {
     tips.push(
-      '🔍 Very aggressive summarization - try Medium or Detailed for more context'
+      'ðŸ” Very aggressive summarization - try Medium or Detailed for more context'
     );
   }
 
   if (tips.length === 0) {
-    tips.push('✅ Good summarization ratio achieved');
+    tips.push('âœ… Good summarization ratio achieved');
   }
 
   return tips;

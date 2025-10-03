@@ -1,6 +1,6 @@
-import { createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL, cometApiAuth } from './lib/common/auth';
 import { askCometApiAction } from './lib/actions/ask-cometapi';
 
@@ -10,7 +10,7 @@ export const cometapi = createPiece({
     'Access multiple AI models through CometAPI - unified interface for GPT, Claude, Gemini, and more.',
   auth: cometApiAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/cometapi.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/cometapi.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   authors: ['TensorNull'],
   actions: [

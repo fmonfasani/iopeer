@@ -1,5 +1,5 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const newCertificationFolderCreated = createTrigger({
@@ -7,7 +7,7 @@ export const newCertificationFolderCreated = createTrigger({
   name: 'newCertificationFolderCreated',
   displayName: 'Nouveau dossier de certification',
   description:
-    "Se déclenche lorsqu'un nouveau dossier de certification est créé",
+    "Se dÃ©clenche lorsqu'un nouveau dossier de certification est crÃ©Ã©",
   type: TriggerStrategy.WEBHOOK,
   props: {},
   sampleData: {
@@ -67,7 +67,7 @@ export const newCertificationFolderCreated = createTrigger({
       phoneNumber: '+1.112.666.0606',
       phoneFixed: null,
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',

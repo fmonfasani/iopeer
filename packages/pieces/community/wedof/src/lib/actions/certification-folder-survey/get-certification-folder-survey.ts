@@ -1,20 +1,20 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
   import { wedofAuth } from '../../..';
   import {
     createAction,
     Property,
-  } from '@activepieces/pieces-framework';
+  } from '@IOpeer/pieces-framework';
   import { wedofCommon } from '../../common/wedof';
   
   export const getCertificationFolderSurvey = createAction({
     auth: wedofAuth,
     name: 'getCertificationFolderSurvey',
-    displayName: "Récupération d'une enquête",
-    description: "Permet de récupérer une enquête associée à un dossier de certification",
+    displayName: "RÃ©cupÃ©ration d'une enquÃªte",
+    description: "Permet de rÃ©cupÃ©rer une enquÃªte associÃ©e Ã  un dossier de certification",
     props: {
       certificationFolderExternalId: Property.ShortText({
-        displayName: 'N° de dossier de certification',
-        description: "Sélectionner la propriété {externalId} du dossier de certification",
+        displayName: 'NÂ° de dossier de certification',
+        description: "SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification",
         required: true,
       }),
     },

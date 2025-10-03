@@ -1,7 +1,7 @@
-import {
+﻿import {
   DismissChangelogRequest,
   ListChangelogsResponse,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 import { api } from './api';
 

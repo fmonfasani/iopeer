@@ -1,11 +1,11 @@
-<p align="center">
+﻿<p align="center">
   <a href="https://iopeer.com" target="_blank">
     <img src="assets/IOPeer-logo-name.png" alt="IOPeer" height="240">
   </a>
 </p>
 
 
-<p align="center"><i>Developer-first automation platform — visual workflows, connectors, and AI in one place.</i></p>
+<p align="center"><i>Developer-first automation platform â€” visual workflows, connectors, and AI in one place.</i></p>
 
 <p align="center">
   <a href="#security"><img src="https://img.shields.io/badge/Security-Policy-blue?style=for-the-badge"></a>
@@ -16,17 +16,17 @@
 ---
 
 ## What is IOPeer?
-**IOPeer** is a private, commercial SaaS product for building and running **visual workflows** (DAG) that integrate APIs, databases, queues, and **LLMs**. It’s built for developer teams that want speed **without** losing control, security, or observability.
+**IOPeer** is a private, commercial SaaS product for building and running **visual workflows** (DAG) that integrate APIs, databases, queues, and **LLMs**. Itâ€™s built for developer teams that want speed **without** losing control, security, or observability.
 
 **Highlights**
-- 🎛️ **Visual builder** (drag & drop), versioned flows.
-- 🔌 **Connectors** for HTTP, DBs, Email/SMTP, S3/MinIO, Slack, GitHub, and more.
-- 🤖 **AI-first**: LLM calls, embeddings, classification, agent patterns.
-- 📈 **Observability**: logs, metrics, and traces per step.
-- 🔐 **Security-conscious**: encrypted credentials, isolated execution, RBAC (roadmap).
-- 🧰 **SDK (TypeScript)** to implement custom nodes for your org.
+- ðŸŽ›ï¸ **Visual builder** (drag & drop), versioned flows.
+- ðŸ”Œ **Connectors** for HTTP, DBs, Email/SMTP, S3/MinIO, Slack, GitHub, and more.
+- ðŸ¤– **AI-first**: LLM calls, embeddings, classification, agent patterns.
+- ðŸ“ˆ **Observability**: logs, metrics, and traces per step.
+- ðŸ” **Security-conscious**: encrypted credentials, isolated execution, RBAC (roadmap).
+- ðŸ§° **SDK (TypeScript)** to implement custom nodes for your org.
 
-> **Attribution notice:** Portions of this codebase adapt components that were originally available under the MIT License from the Activepieces project. Those original notices are preserved in the respective files where applicable. This repository is a private, commercial IOPeer product and is not public/open-source. See the LICENSE section for details.
+> **Attribution notice:** Portions of this codebase adapt components that were originally available under the MIT License from the IOpeer project. Those original notices are preserved in the respective files where applicable. This repository is a private, commercial IOPeer product and is not public/open-source. See the LICENSE section for details.
 
 ---
 

@@ -1,4 +1,4 @@
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
+﻿import { PieceAuth, Property } from '@IOpeer/pieces-framework';
 
 export const browserlessAuth = PieceAuth.CustomAuth({
     description: `
@@ -10,9 +10,9 @@ export const browserlessAuth = PieceAuth.CustomAuth({
     4. Choose your preferred regional endpoint for optimal performance
 
     Regional Endpoints:
-    • US West (SFO): https://production-sfo.browserless.io
-    • Europe UK (London): https://production-lon.browserless.io
-    • Europe (Amsterdam): https://production-ams.browserless.io
+    â€¢ US West (SFO): https://production-sfo.browserless.io
+    â€¢ Europe UK (London): https://production-lon.browserless.io
+    â€¢ Europe (Amsterdam): https://production-ams.browserless.io
 
     For custom/dedicated instances, select "Custom" and enter your specific endpoint URL.
     `,

@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 
 import { boxAuth } from '../..';
 import { WebhookInformation, common } from '../common';

@@ -1,39 +1,39 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import {
   createAction,
   Property,
   DynamicPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 import dayjs from 'dayjs';
 
 export const updateCertificationFolder = createAction({
   auth: wedofAuth,
   name: 'updateCertificationFolder',
-  displayName: 'Mettre à jour un dossier de certification',
+  displayName: 'Mettre Ã  jour un dossier de certification',
   description:
-    "Met à jour certaines informations modifiables d'un dossier de certification",
+    "Met Ã  jour certaines informations modifiables d'un dossier de certification",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     fieldsToUpdate: Property.StaticMultiSelectDropdown({
-      displayName: 'Champs à mettre à jour',
-      description: 'Sélectionner les champs que vous souhaitez mettre à jour',
+      displayName: 'Champs Ã  mettre Ã  jour',
+      description: 'SÃ©lectionner les champs que vous souhaitez mettre Ã  jour',
       required: true,
       options: {
         disabled: false,
         options: [
           {
-            label: "Date d'inscription à la certification",
+            label: "Date d'inscription Ã  la certification",
             value: 'enrollmentDate',
           },
           {
-            label: "Date de début de l'examen",
+            label: "Date de dÃ©but de l'examen",
             value: 'examinationDate',
           },
           {
@@ -65,11 +65,11 @@ export const updateCertificationFolder = createAction({
             value: 'optionName',
           },
           {
-            label: "Modalité d'accès",
+            label: "ModalitÃ© d'accÃ¨s",
             value: 'accessModality',
           },
           {
-            label: 'Modalité VAE',
+            label: 'ModalitÃ© VAE',
             value: 'accessModalityVae',
           },
           {
@@ -116,7 +116,7 @@ export const updateCertificationFolder = createAction({
       },
     }),
     dynamicFields: Property.DynamicProperties({
-      displayName: 'Champs sélectionnés',
+      displayName: 'Champs sÃ©lectionnÃ©s',
       refreshers: ['fieldsToUpdate'],
       required: false,
       props: async ({ fieldsToUpdate }) => {
@@ -125,16 +125,16 @@ export const updateCertificationFolder = createAction({
 
         if (selectedFields.includes('enrollmentDate')) {
           fields['enrollmentDate'] = Property.DateTime({
-            displayName: "Date d'inscription à la certification",
-            description: 'Date au format YYYY-MM-DD - peut être modifié dans les états toRegister, registered, toTake, toControl',
+            displayName: "Date d'inscription Ã  la certification",
+            description: 'Date au format YYYY-MM-DD - peut Ãªtre modifiÃ© dans les Ã©tats toRegister, registered, toTake, toControl',
             required: false,
           });
         }
 
         if (selectedFields.includes('examinationDate')) {
           fields['examinationDate'] = Property.DateTime({
-            displayName: "Date de début de l'examen de certification",
-            description: 'Date au format YYYY-MM-DD - peut être modifié dans les états registered, toTake, toRetake, toControl',
+            displayName: "Date de dÃ©but de l'examen de certification",
+            description: 'Date au format YYYY-MM-DD - peut Ãªtre modifiÃ© dans les Ã©tats registered, toTake, toRetake, toControl',
             required: false,
           });
         }
@@ -142,7 +142,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('examinationEndDate')) {
           fields['examinationEndDate'] = Property.DateTime({
             displayName: "Date de fin de l'examen de certification",
-            description: 'Date au format YYYY-MM-DD - peut être modifié dans les états registered, toTake, toRetake, toControl',
+            description: 'Date au format YYYY-MM-DD - peut Ãªtre modifiÃ© dans les Ã©tats registered, toTake, toRetake, toControl',
             required: false,
           });
         }
@@ -150,7 +150,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('examinationPlace')) {
           fields['examinationPlace'] = Property.ShortText({
             displayName: "Lieu de l'examen",
-            description: "Lieu de l'examen de certification - peut être modifié dans les états registered, toTake, toControl, toRetake",
+            description: "Lieu de l'examen de certification - peut Ãªtre modifiÃ© dans les Ã©tats registered, toTake, toControl, toRetake",
             required: false,
           });
         }
@@ -158,7 +158,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('examinationCenterZipCode')) {
           fields['examinationCenterZipCode'] = Property.ShortText({
             displayName: "Code postal du centre d'examen",
-            description: "Code postal du centre d'examen principal - peut être modifié dans tous les états sauf success",
+            description: "Code postal du centre d'examen principal - peut Ãªtre modifiÃ© dans tous les Ã©tats sauf success",
             required: false,
           });
         }
@@ -173,7 +173,7 @@ export const updateCertificationFolder = createAction({
               options: [
                 { label: 'Individuel', value: 'individual' },
                 { label: 'OPCO', value: 'opco' },
-                { label: 'Pôle Emploi', value: 'poleEmploi' },
+                { label: 'PÃ´le Emploi', value: 'poleEmploi' },
                 { label: 'Entreprise', value: 'company' },
               ],
             },
@@ -183,13 +183,13 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('examinationType')) {
           fields['examinationType'] = Property.StaticDropdown({
             displayName: "Type de passage de l'examen",
-            description: "Type de passage de l'examen - peut être modifié dans les états registered, toTake, toControl, toRetake",
+            description: "Type de passage de l'examen - peut Ãªtre modifiÃ© dans les Ã©tats registered, toTake, toControl, toRetake",
             required: false,
             options: {
               disabled: false,
               options: [
-                { label: 'À distance', value: 'A_DISTANCE' },
-                { label: 'En présentiel', value: 'EN_PRESENTIEL' },
+                { label: 'Ã€ distance', value: 'A_DISTANCE' },
+                { label: 'En prÃ©sentiel', value: 'EN_PRESENTIEL' },
                 { label: 'Mixte', value: 'MIXTE' },
               ],
             },
@@ -199,7 +199,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('verbatim')) {
           fields['verbatim'] = Property.ShortText({
             displayName: 'Verbatim',
-            description: 'Information complémentaire sur la certification - peut être modifié dans tous les états sauf success',
+            description: 'Information complÃ©mentaire sur la certification - peut Ãªtre modifiÃ© dans tous les Ã©tats sauf success',
             required: false,
           });
         }
@@ -207,15 +207,15 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('optionName')) {
           fields['optionName'] = Property.ShortText({
             displayName: 'Option',
-            description: 'Option si appliquée - peut être modifié dans tous les états sauf success',
+            description: 'Option si appliquÃ©e - peut Ãªtre modifiÃ© dans tous les Ã©tats sauf success',
             required: false,
           });
         }
 
         if (selectedFields.includes('accessModality')) {
           fields['accessModality'] = Property.StaticDropdown({
-            displayName: "Modalité d'accès",
-            description: "Modalité d'accès - peut être modifié dans tous les états sauf success",
+            displayName: "ModalitÃ© d'accÃ¨s",
+            description: "ModalitÃ© d'accÃ¨s - peut Ãªtre modifiÃ© dans tous les Ã©tats sauf success",
             required: false,
             options: {
               disabled: false,
@@ -225,7 +225,7 @@ export const updateCertificationFolder = createAction({
                 { label: 'Formation continue hors contrat de professionnalisation', value: 'FORMATION_CONTINUE_HORS_CONTRAT_DE_PROFESSIONNALISATION' },
                 { label: 'Formation continue contrat de professionnalisation', value: 'FORMATION_CONTINUE_CONTRAT_DE_PROFESSIONNALISATION' },
                 { label: 'VAE', value: 'VAE' },
-                { label: 'Équivalence (diplôme étranger)', value: 'EQUIVALENCE_(DIPLOME_ETRANGER)' },
+                { label: 'Ã‰quivalence (diplÃ´me Ã©tranger)', value: 'EQUIVALENCE_(DIPLOME_ETRANGER)' },
                 { label: 'Candidat libre', value: 'CANDIDAT_LIBRE' },
               ],
             },
@@ -234,13 +234,13 @@ export const updateCertificationFolder = createAction({
 
         if (selectedFields.includes('accessModalityVae')) {
           fields['accessModalityVae'] = Property.StaticDropdown({
-            displayName: 'Modalité VAE',
+            displayName: 'ModalitÃ© VAE',
             description: "Requis si la valeur accessModality est 'VAE'",
             required: false,
             options: {
               disabled: false,
               options: [
-                { label: 'Congés VAE', value: 'CONGES_VAE' },
+                { label: 'CongÃ©s VAE', value: 'CONGES_VAE' },
                 { label: 'VAE classique', value: 'VAE_CLASSIQUE' },
               ],
             },
@@ -250,7 +250,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('comment')) {
           fields['comment'] = Property.LongText({
             displayName: 'Commentaire',
-            description: 'Commentaires - peut être modifié dans tous les états de certification',
+            description: 'Commentaires - peut Ãªtre modifiÃ© dans tous les Ã©tats de certification',
             required: false,
           });
         }
@@ -258,14 +258,14 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('type')) {
           fields['type'] = Property.StaticDropdown({
             displayName: "Initiative de l'inscription",
-            description: "Initiative à laquelle l'inscription a été réalisée - peut être modifié dans tous les états sauf success",
+            description: "Initiative Ã  laquelle l'inscription a Ã©tÃ© rÃ©alisÃ©e - peut Ãªtre modifiÃ© dans tous les Ã©tats sauf success",
             required: false,
             options: {
               disabled: false,
               options: [
-                { label: 'Certifié(e)', value: 'CERTIFIE' },
+                { label: 'CertifiÃ©(e)', value: 'CERTIFIE' },
                 { label: 'Organisme de formation', value: 'OF' },
-                { label: 'Pôle Emploi', value: 'POLE_EMPLOI' },
+                { label: 'PÃ´le Emploi', value: 'POLE_EMPLOI' },
                 { label: 'Employeur', value: 'EMPLOYEUR' },
                 { label: 'Autre', value: 'AUTRE' },
               ],
@@ -276,7 +276,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('tags')) {
           fields['tags'] = Property.Array({
             displayName: 'Tags',
-            description: 'Liste de tags associée au dossier de certification, uniquement pour le certificateur',
+            description: 'Liste de tags associÃ©e au dossier de certification, uniquement pour le certificateur',
             required: false,
           });
         }
@@ -284,7 +284,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('cdcExcluded')) {
           fields['cdcExcluded'] = Property.StaticDropdown({
             displayName: "Exclus de l'accrochage",
-            description: "Indique si le dossier de certification doit être exclu de l'accrochage",
+            description: "Indique si le dossier de certification doit Ãªtre exclu de l'accrochage",
             required: false,
             options: {
               disabled: false,
@@ -346,7 +346,7 @@ export const updateCertificationFolder = createAction({
         if (selectedFields.includes('badgeAssertion')) {
           fields['badgeAssertion'] = Property.ShortText({
             displayName: 'Badge de certification',
-            description: "Lien vers le badge de la certification - peut être mis à jour par le certificateur et à l'état success",
+            description: "Lien vers le badge de la certification - peut Ãªtre mis Ã  jour par le certificateur et Ã  l'Ã©tat success",
             required: false,
           });
         }

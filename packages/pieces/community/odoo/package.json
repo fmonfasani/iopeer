@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-odoo",
+﻿{
+  "name": "@IOpeer/piece-odoo",
   "version": "0.0.15",
   "dependencies": {
     "url": "^0.11.3",

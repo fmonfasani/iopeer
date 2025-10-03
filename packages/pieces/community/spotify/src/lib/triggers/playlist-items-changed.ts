@@ -1,8 +1,8 @@
-import {
+﻿import {
   createTrigger,
   StoreScope,
   TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { spotifyCommon, makeClient } from '../common';
 import { createHash } from 'crypto';
 

@@ -1,5 +1,5 @@
-import { activeCampaignAuth } from '../..';
-import { TriggerStrategy, createTrigger } from '@activepieces/pieces-framework';
+﻿import { activeCampaignAuth } from '../..';
+import { TriggerStrategy, createTrigger } from '@IOpeer/pieces-framework';
 import { makeClient } from '../common';
 import { CreateWebhookResponse } from '../common/types';
 import { WEBHOOK_SOURCES } from '../common/constants';

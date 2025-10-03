@@ -1,6 +1,6 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { callSalesforceApi, salesforcesCommon } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { salesforceAuth } from '../..';
 
 export const upsertByExternalId = createAction({

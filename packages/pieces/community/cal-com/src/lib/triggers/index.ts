@@ -1,4 +1,4 @@
-import { EventTrigger } from '../common';
+﻿import { EventTrigger } from '../common';
 import { registerWebhooks } from './register-webhook';
 
 export const triggers = [
@@ -16,7 +16,7 @@ export const triggers = [
         startTime: '2023-02-21T11:00:00+00:00',
         endTime: '2023-02-21T11:30:00+00:00',
         organizer: {
-          email: 'mo@activepieces.com',
+          email: 'mo@IOpeer.com',
           name: 'Mohammad Abu Aboud',
           timeZone: 'Europe/Berlin',
           language: {

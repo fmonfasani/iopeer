@@ -1,8 +1,8 @@
-import {
+﻿import {
   createAction,
   OAuth2PropertyValue,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Client } from '@notionhq/client';
 import { notionAuth } from '../..';
 import { notionCommon } from '../common';
@@ -58,7 +58,7 @@ export const addComment = createAction({
         return {
           success: true,
           message:
-            '💬 Comment posted successfully! Your comment has been added to the page.',
+            'ðŸ’¬ Comment posted successfully! Your comment has been added to the page.',
           comment_id: response.id,
           note: 'Limited comment details available. To see full comment content, ensure your Notion integration has "Read comments" capability enabled in your workspace settings.',
         };
@@ -67,7 +67,7 @@ export const addComment = createAction({
       return {
         success: true,
         message:
-          '💬 Comment posted successfully! Your comment has been added to the page.',
+          'ðŸ’¬ Comment posted successfully! Your comment has been added to the page.',
         comment: response,
       };
     } catch (error: any) {

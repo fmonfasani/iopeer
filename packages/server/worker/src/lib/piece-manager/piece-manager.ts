@@ -1,5 +1,5 @@
-import { resolve } from 'node:path'
-import { enrichErrorContext, systemConstants } from '@activepieces/server-shared'
+﻿import { resolve } from 'node:path'
+import { enrichErrorContext, systemConstants } from '@IOpeer/server-shared'
 import {
     getPackageAliasForPiece,
     getPackageArchivePathForPiece,
@@ -7,7 +7,7 @@ import {
     PackageType,
     PiecePackage,
     PieceType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { PackageInfo } from '../cache/package-manager'
 

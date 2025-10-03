@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { getBaseUrl, instasentAuth } from '../..';
 import { ApiResponse, EventParameter, EventSpec, InstasentAuthType } from '../common/types';
 import { BOOLEAN_OPTIONS } from '../common/constants';

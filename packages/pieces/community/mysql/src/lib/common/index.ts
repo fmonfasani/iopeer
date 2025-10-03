@@ -1,8 +1,8 @@
-import {
+﻿import {
   PiecePropValueSchema,
   Property,
   StaticPropsValue,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { Connection, createConnection } from 'promise-mysql';
 import { mysqlAuth } from '../..';
 import sqlstring from 'sqlstring';

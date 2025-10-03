@@ -1,4 +1,4 @@
-import { DialogTrigger } from '@radix-ui/react-dialog';
+﻿import { DialogTrigger } from '@radix-ui/react-dialog';
 import { t } from 'i18next';
 import { ChevronLeft, Search } from 'lucide-react';
 import React, { useState, useMemo } from 'react';
@@ -26,8 +26,8 @@ import type {
   McpPieceTool,
   McpWithTools,
   McpToolRequest,
-} from '@activepieces/shared';
-import { isNil, McpToolType } from '@activepieces/shared';
+} from '@IOpeer/shared';
+import { isNil, McpToolType } from '@IOpeer/shared';
 
 import { McpPieceActionsDialog } from './mcp-piece-actions';
 import { McpPiecesContent } from './mcp-pieces-content';

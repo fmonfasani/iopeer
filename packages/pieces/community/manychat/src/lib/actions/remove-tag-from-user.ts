@@ -1,5 +1,5 @@
-import { createAction } from '@activepieces/pieces-framework';
-import { AuthenticationType, httpClient, HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction } from '@IOpeer/pieces-framework';
+import { AuthenticationType, httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { BASE_URL, subscriberId, tagIdDropdown } from '../common/props';
 import { manychatAuth } from '../../index';
 

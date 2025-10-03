@@ -1,8 +1,8 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { API_ENDPOINTS, BASE_URL } from './constants';
 
 async function fireHttpRequest({

@@ -1,5 +1,5 @@
-import { createPiece, PieceAuth, Property } from "@activepieces/pieces-framework";
-import { PieceCategory } from "@activepieces/shared";
+﻿import { createPiece, PieceAuth, Property } from "@IOpeer/pieces-framework";
+import { PieceCategory } from "@IOpeer/shared";
 
 import { identifyAction } from './lib/actions/identify';
 import { trackAction } from './lib/actions/track';
@@ -26,7 +26,7 @@ export const dittofeed = createPiece({
   displayName: "Dittofeed",
   auth: dittofeedAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: "https://cdn.activepieces.com/pieces/dittofeed.png",
+  logoUrl: "https://cdn.IOpeer.com/pieces/dittofeed.png",
   authors: [
     'SmarterService'
   ],

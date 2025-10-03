@@ -1,4 +1,4 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import snowflake, { Statement, SnowflakeError } from 'snowflake-sdk';
 import { snowflakeAuth } from '../../index';
 import { configureConnection } from '../common';
@@ -18,7 +18,7 @@ export const runMultipleQueries = createAction({
     sqlTexts: Property.Array({
       displayName: 'SQL queries',
       description:
-        'Array of SQL queries to execute in order, in the same transaction. Use :1, :2… placeholders to use binding parameters. ' +
+        'Array of SQL queries to execute in order, in the same transaction. Use :1, :2â€¦ placeholders to use binding parameters. ' +
         'Avoid using "?" to avoid unexpected behaviors when having multiple queries.',
       required: true,
     }),

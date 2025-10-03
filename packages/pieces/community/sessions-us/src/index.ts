@@ -1,11 +1,11 @@
-import {
+﻿import {
   createCustomApiCallAction,
   httpClient,
   HttpMethod,
-} from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { createEvent } from './lib/actions/create-event';
 import { createSession } from './lib/actions/create-session';
 import { publishEvent } from './lib/actions/publish-event';
@@ -53,7 +53,7 @@ export const sessionsUs = createPiece({
   description: 'Video conferencing platform for businesses and professionals',
   auth: sessionAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/sessions-us.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/sessions-us.png',
   authors: ["kishanprmr","MoShizzle","abuaboud"],
   categories: [PieceCategory.BUSINESS_INTELLIGENCE],
   actions: [

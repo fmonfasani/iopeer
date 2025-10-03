@@ -1,5 +1,5 @@
-import { AIProviderWithoutSensitiveData, CreateAIProviderRequest } from '@activepieces/common-ai'
-import { PrincipalType, SeekPage } from '@activepieces/shared'
+﻿import { AIProviderWithoutSensitiveData, CreateAIProviderRequest } from '@IOpeer/common-ai'
+import { PrincipalType, SeekPage } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox, Type } from '@fastify/type-provider-typebox'
 import { StatusCodes } from 'http-status-codes'
 import { aiProviderService } from './ai-provider-service'

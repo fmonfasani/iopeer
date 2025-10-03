@@ -1,9 +1,9 @@
-import { createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { stripeCommon } from '../common';
 import { stripeAuth } from '../..';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
-import { isEmpty } from '@activepieces/shared';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
+import { isEmpty } from '@IOpeer/shared';
 
 export const stripePaymentFailed = createTrigger({
   auth: stripeAuth,
@@ -34,7 +34,7 @@ export const stripePaymentFailed = createTrigger({
       name: null,
       phone: null,
     },
-    calculated_statement_descriptor: 'WWW.ACTIVEPIECES.COM',
+    calculated_statement_descriptor: 'WWW.IOpeer.COM',
     captured: false,
     created: 1675181413,
     currency: 'usd',
@@ -148,7 +148,7 @@ export const stripePaymentFailed = createTrigger({
       usage: 'reusable',
     },
     source_transfer: null,
-    statement_descriptor: 'www.activepieces.com',
+    statement_descriptor: 'www.IOpeer.com',
     statement_descriptor_suffix: null,
     status: 'failed',
     transfer_data: null,

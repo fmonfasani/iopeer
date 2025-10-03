@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   OAuth2PropertyValue,
   PieceAuth,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { googleTasksAddNewTaskAction } from './lib/actions/new-task';
 import { googleTasksCommon } from './lib/common';
 import { newTaskTrigger } from './lib/triggers/new-task';
@@ -20,7 +20,7 @@ export const googleTasksAuth = PieceAuth.OAuth2({
 
 export const googleTasks = createPiece({
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/google-tasks.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/google-tasks.png',
   categories: [PieceCategory.PRODUCTIVITY],
   actions: [
     googleTasksAddNewTaskAction,

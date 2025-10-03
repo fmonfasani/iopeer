@@ -1,8 +1,8 @@
-import { microsoftTeamsAuth } from '../../';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { microsoftTeamsAuth } from '../../';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { microsoftTeamsCommon } from '../common';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { Chat } from '@microsoft/microsoft-graph-types';
 
 export const createChatAndSendMessageAction = createAction({

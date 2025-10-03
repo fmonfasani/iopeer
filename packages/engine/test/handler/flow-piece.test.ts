@@ -1,4 +1,4 @@
-import { FlowAction } from '@activepieces/shared'
+﻿import { FlowAction } from '@IOpeer/shared'
 import { ExecutionVerdict, FlowExecutorContext } from '../../src/lib/handler/context/flow-execution-context'
 import { flowExecutor } from '../../src/lib/handler/flow-executor'
 import { pieceExecutor } from '../../src/lib/handler/piece-executor'
@@ -10,7 +10,7 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'data_mapper',
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@IOpeer/piece-data-mapper',
                 actionName: 'advanced_mapping',
                 input: {
                     mapping: {
@@ -27,10 +27,10 @@ describe('pieceExecutor', () => {
         const result = await pieceExecutor.handle({
             action: buildPieceAction({
                 name: 'send_http',
-                pieceName: '@activepieces/piece-http',
+                pieceName: '@IOpeer/piece-http',
                 actionName: 'send_request',
                 input: {
-                    'url': 'https://cloud.activepieces.com/api/v1/asd',
+                    'url': 'https://cloud.IOpeer.com/api/v1/asd',
                     'method': 'GET',
                     'headers': {},
                     'body_type': 'none',
@@ -62,7 +62,7 @@ describe('pieceExecutor', () => {
                 name: 'data_mapper',
                 input: {},
                 skip: true,
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@IOpeer/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }), executionState: FlowExecutorContext.empty(), constants: generateMockEngineConstants(),
         })
@@ -79,13 +79,13 @@ describe('pieceExecutor', () => {
                     },
                 },
                 skip: false,
-                pieceName: '@activepieces/piece-data-mapper',
+                pieceName: '@IOpeer/piece-data-mapper',
                 actionName: 'advanced_mapping',
             }),
             nextAction: {
                 ...buildPieceAction({
                     name: 'send_http',
-                    pieceName: '@activepieces/piece-http',
+                    pieceName: '@IOpeer/piece-http',
                     actionName: 'send_request',
                     input: {},
                     skip: true,

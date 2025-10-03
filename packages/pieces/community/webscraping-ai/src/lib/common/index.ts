@@ -1,10 +1,10 @@
-import {
+﻿import {
     httpClient,
     HttpMethod,
     QueryParams,
-} from '@activepieces/pieces-common';
-import { PieceAuth, Property } from '@activepieces/pieces-framework';
-import { pickBy } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, Property } from '@IOpeer/pieces-framework';
+import { pickBy } from '@IOpeer/shared';
 
 const baseRequestProperties = {
   url: Property.ShortText({
@@ -59,8 +59,8 @@ const baseRequestProperties = {
     defaultValue: 'datacenter',
     options: {
       options: [
-        { label: '🏢 Datacenter (Fast)', value: 'datacenter' },
-        { label: '🏠 Residential (Stealth)', value: 'residential' },
+        { label: 'ðŸ¢ Datacenter (Fast)', value: 'datacenter' },
+        { label: 'ðŸ  Residential (Stealth)', value: 'residential' },
       ],
     },
   }),

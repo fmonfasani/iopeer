@@ -1,11 +1,11 @@
-import {
+﻿import {
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@activepieces/pieces-common';
-import { FilesService, PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { FilesService, PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { Attachment, ParsedMail, simpleParser } from 'mailparser';
 import { zohoMailAuth } from './auth';
 

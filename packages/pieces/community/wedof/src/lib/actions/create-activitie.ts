@@ -1,18 +1,18 @@
-import { wedofAuth } from '../../index';
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { wedofAuth } from '../../index';
+import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofCommon } from '../common/wedof';
 import dayjs from 'dayjs';
 
 export const createActivitie = createAction({
   auth: wedofAuth,
   name: 'createActivitie',
-  displayName: "Créer une activité",
-  description: "Permet de créer une activité d'un dossier (Dossier de formation / Dossier de certification)",
+  displayName: "CrÃ©er une activitÃ©",
+  description: "Permet de crÃ©er une activitÃ© d'un dossier (Dossier de formation / Dossier de certification)",
   props: {
     entityClass: Property.StaticDropdown({
       displayName: "Choisir le type de dossier",
-      description: "Permet de n'obtenir que les dossiers dans le type considéré - par défaut tous les types sont retournés",
+      description: "Permet de n'obtenir que les dossiers dans le type considÃ©rÃ© - par dÃ©faut tous les types sont retournÃ©s",
       required: true,
       options: {
         options: [
@@ -24,13 +24,13 @@ export const createActivitie = createAction({
       },
     }),
     externalId: Property.ShortText({
-      displayName: 'N° du dossier',
+      displayName: 'NÂ° du dossier',
       description:
-        'Sélectionner la propriété {externalId} du dossier',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier',
       required: true,
     }),
     title: Property.ShortText({
-        displayName: "Titre de l'activité",
+        displayName: "Titre de l'activitÃ©",
         required: true,
     }),
     type:wedofCommon.tasks,
@@ -44,17 +44,17 @@ export const createActivitie = createAction({
         required: true,
     }),
     eventTime: Property.DateTime({
-      displayName: "Date de début",
+      displayName: "Date de dÃ©but",
       description: 'Date au format YYYY-MM-DDTHH:mm:ssZ.',
       required: true,
     }),
     eventEndTime: Property.DateTime({
-     displayName: "Date d'échéance",
+     displayName: "Date d'Ã©chÃ©ance",
      description: 'Date au format YYYY-MM-DDTHH:mm:ssZ.',
      required: false,
     }),
     link: Property.ShortText({
-        displayName: "Lien (url) vers la tâche",
+        displayName: "Lien (url) vers la tÃ¢che",
         required: false,
     }),
 

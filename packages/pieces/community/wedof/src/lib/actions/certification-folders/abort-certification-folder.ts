@@ -1,18 +1,18 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const abortCertificationFolder = createAction({
   auth: wedofAuth,
   name: 'abortCertificationFolder',
-  displayName: 'Passer un dossier de certification à l’état : Abandonné',
-  description: "Change l'état d'un dossier de certification vers : Abandonné",
+  displayName: 'Passer un dossier de certification Ã  lâ€™Ã©tat : AbandonnÃ©',
+  description: "Change l'Ã©tat d'un dossier de certification vers : AbandonnÃ©",
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de certification',
+      displayName: 'NÂ° du dossier de certification',
       description:
-        'Sélectionner la propriété {externalId} du dossier de certification',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de certification',
       required: true,
     }),
     comment: Property.LongText({

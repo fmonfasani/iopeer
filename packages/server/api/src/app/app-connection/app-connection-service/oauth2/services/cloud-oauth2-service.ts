@@ -1,12 +1,12 @@
-
-import { OAuth2AuthorizationMethod } from '@activepieces/pieces-framework'
-import { apAxios } from '@activepieces/server-shared'
+﻿
+import { OAuth2AuthorizationMethod } from '@IOpeer/pieces-framework'
+import { apAxios } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     AppConnectionType,
     CloudOAuth2ConnectionValue,
     ErrorCode,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { system } from '../../../../helper/system/system'
 import {
@@ -71,7 +71,7 @@ export const cloudOAuth2Service = (log: FastifyBaseLogger): OAuth2Service<CloudO
         }
         catch (e: unknown) {
             log.error(e)
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.INVALID_CLOUD_CLAIM,
                 params: {
                     pieceName,

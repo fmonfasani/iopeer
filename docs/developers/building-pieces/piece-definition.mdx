@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Create Piece Definition'
 icon: 'circle-3'
 description: ''
@@ -30,7 +30,7 @@ You will be asked three questions to define your new piece:
 npm run cli pieces create
 
 ? Enter the piece name: gelato
-? Enter the package name: @activepieces/piece-gelato
+? Enter the package name: @IOpeer/piece-gelato
 ? Select the piece type: community
 ```
 
@@ -38,7 +38,7 @@ The piece will be generated at `packages/pieces/community/gelato/`,
 the `src/index.ts` file should contain the following code
 
 ```ts
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
 
 export const gelato = createPiece({
   displayName: 'Gelato',

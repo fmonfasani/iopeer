@@ -1,16 +1,16 @@
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { sendSMSAction } from './lib/actions/send-sms.action';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { listMessages } from './lib/actions/list-messages';
 import { birdAuth, BirdAuthValue } from './lib/auth';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 
 export const messagebird = createPiece({
   displayName: 'Bird',
   description: 'Unified CRM for Marketing, Service & Payments',
   auth: birdAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/messagebird.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/messagebird.png',
   categories: [PieceCategory.MARKETING, PieceCategory.COMMUNICATION],
   authors: ['kishanprmr', 'geekyme','prasanna2000-max'],
   actions: [

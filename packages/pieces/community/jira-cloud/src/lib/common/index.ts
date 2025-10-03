@@ -1,13 +1,13 @@
-import {
+﻿import {
 	AuthenticationType,
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
 	httpClient,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { JiraAuth } from '../../auth';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 
 export async function sendJiraRequest(request: HttpRequest & { auth: JiraAuth }) {
 	return httpClient.sendRequest({

@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import { ElevenAuthType, createClient, ExtendedReadableStream } from '../common';
 
 export const textToSpeech = createAction({

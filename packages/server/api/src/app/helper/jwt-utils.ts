@@ -1,12 +1,12 @@
-import { randomBytes } from 'crypto'
+﻿import { randomBytes } from 'crypto'
 import { promisify } from 'util'
-import { AppSystemProp } from '@activepieces/server-shared'
+import { AppSystemProp } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     ErrorCode,
     isNil,
     spreadIfDefined,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { Mutex } from 'async-mutex'
 import jwtLibrary, {
     DecodeOptions,
@@ -24,7 +24,7 @@ export enum JwtSignAlgorithm {
 
 const ONE_WEEK = 7 * 24 * 3600
 const KEY_ID = '1'
-const ISSUER = 'activepieces'
+const ISSUER = 'IOpeer'
 const ALGORITHM = JwtSignAlgorithm.HS256
 
 const redisType = redisConnections.getRedisType()
@@ -51,7 +51,7 @@ export const jwtUtils = {
 
                 if (isNil(token)) {
                     return reject(
-                        new ActivepiecesError({
+                        new IOpeerError({
                             code: ErrorCode.INVALID_BEARER_TOKEN,
                             params: {},
                         }),
@@ -70,7 +70,7 @@ export const jwtUtils = {
         if (redisType === RedisType.MEMORY) {
             return getOrGenerateAndStoreSecret()
         }
-        throw new ActivepiecesError(
+        throw new IOpeerError(
             {
                 code: ErrorCode.SYSTEM_PROP_INVALID,
                 params: {

@@ -1,12 +1,12 @@
-import {
+﻿import {
 	httpClient,
 	HttpHeaders,
 	HttpMessageBody,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
-import { PiecePropValueSchema } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { PiecePropValueSchema } from '@IOpeer/pieces-framework';
 import { zohoDeskAuth } from './auth';
 
 export type ZohoDeskApiCallParams = {

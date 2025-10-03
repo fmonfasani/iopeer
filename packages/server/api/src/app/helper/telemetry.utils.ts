@@ -1,5 +1,5 @@
-import { AppSystemProp, apVersionUtil } from '@activepieces/server-shared'
-import { ProjectId, TelemetryEvent, User, UserId, UserIdentity } from '@activepieces/shared'
+﻿import { AppSystemProp, apVersionUtil } from '@IOpeer/server-shared'
+import { ProjectId, TelemetryEvent, User, UserId, UserIdentity } from '@IOpeer/shared'
 import { Analytics } from '@segment/analytics-node'
 import { FastifyBaseLogger } from 'fastify'
 import { platformService } from '../platform/platform.service'
@@ -70,8 +70,8 @@ async function getMetadata() {
     const currentVersion = await apVersionUtil.getCurrentRelease()
     const edition = system.getEdition()
     return {
-        activepiecesVersion: currentVersion,
-        activepiecesEnvironment: system.get(AppSystemProp.ENVIRONMENT),
-        activepiecesEdition: edition,
+        IOpeerVersion: currentVersion,
+        IOpeerEnvironment: system.get(AppSystemProp.ENVIRONMENT),
+        IOpeerEdition: edition,
     }
 }

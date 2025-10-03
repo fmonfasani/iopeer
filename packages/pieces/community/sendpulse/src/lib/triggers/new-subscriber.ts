@@ -1,12 +1,12 @@
-import {
+﻿import {
   createTrigger,
   TriggerStrategy,
   WebhookResponse,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { sendpulseAuth } from '../common/auth';
 import { sendpulseApiCall } from '../common/client';
 import { mailingListDropdown } from '../common/props';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const newSubscriberTrigger = createTrigger({
   auth: sendpulseAuth,

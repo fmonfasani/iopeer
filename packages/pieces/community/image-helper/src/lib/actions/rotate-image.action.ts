@@ -1,4 +1,4 @@
-import { Property, createAction } from '@activepieces/pieces-framework';
+﻿import { Property, createAction } from '@IOpeer/pieces-framework';
 import jimp from 'jimp';
 
 export const rotateImage = createAction({
@@ -17,9 +17,9 @@ export const rotateImage = createAction({
       required: true,
       options: {
         options: [
-          { value: 90, label: '90°' },
-          { value: 180, label: '180°' },
-          { value: 270, label: '270°' },
+          { value: 90, label: '90Â°' },
+          { value: 180, label: '180Â°' },
+          { value: 270, label: '270Â°' },
         ],
       },
     }),

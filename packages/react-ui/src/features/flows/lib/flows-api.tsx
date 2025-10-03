@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 
 import { Button } from '@/components/ui/button';
 import { toast, UNSAVED_CHANGES_TOAST } from '@/components/ui/use-toast';
@@ -16,7 +16,7 @@ import {
   ListFlowsRequest,
   PopulatedFlow,
   SeekPage,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 export const flowsApi = {
   list(request: ListFlowsRequest): Promise<SeekPage<PopulatedFlow>> {

@@ -1,5 +1,5 @@
-{
-  "name": "@activepieces/piece-dittofeed",
+﻿{
+  "name": "@IOpeer/piece-dittofeed",
   "version": "0.0.3",
   "type": "commonjs",
   "main": "./src/index.js",

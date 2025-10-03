@@ -1,6 +1,6 @@
-import { createTrigger, Property, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, Property, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { makeSenderRequest, senderAuth } from '../common/common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 
 export const newSubscriberInGroupTrigger = createTrigger({

@@ -1,7 +1,7 @@
-import { Property, TriggerStrategy, createTrigger } from "@activepieces/pieces-framework";
+﻿import { Property, TriggerStrategy, createTrigger } from "@IOpeer/pieces-framework";
 import { emailOctopusAuth } from "../common/auth";
 import { emailOctopusProps } from "../common/props";
-import { MarkdownVariant } from "@activepieces/shared";
+import { MarkdownVariant } from "@IOpeer/shared";
 
 export const emailBounced = createTrigger({
     auth: emailOctopusAuth,

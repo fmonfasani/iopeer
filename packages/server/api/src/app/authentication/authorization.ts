@@ -1,9 +1,9 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     ErrorCode,
     isNil,
     isObject,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { preSerializationHookHandler } from 'fastify'
 
 export function extractResourceName(url: string): string | undefined {
@@ -47,7 +47,7 @@ Payload | null
         }
 
         if (verdict === 'DENY') {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.AUTHORIZATION,
                 params: {
                     message: 'not owned by current project',

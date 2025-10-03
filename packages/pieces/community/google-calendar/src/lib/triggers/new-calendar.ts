@@ -1,15 +1,15 @@
-import {
+﻿import {
   createTrigger,
   PiecePropValueSchema,
   Property,
-} from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import { googleCalendarAuth } from '../../';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { getCalendars } from '../common/helper';
 import { CalendarObject } from '../common/types';
 

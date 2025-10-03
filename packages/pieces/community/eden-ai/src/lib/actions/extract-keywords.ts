@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, propsValidation } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, propsValidation } from '@IOpeer/pieces-common';
 import { edenAiApiCall } from '../common/client';
 import { createStaticDropdown } from '../common/providers';
 import { z } from 'zod';
@@ -41,7 +41,7 @@ const KEYWORD_EXTRACTION_LANGUAGES = [
   { label: 'Korean', value: 'ko' },
   { label: 'Latvian', value: 'lv' },
   { label: 'Norwegian', value: 'no' },
-  { label: 'Norwegian Bokmål', value: 'nb' },
+  { label: 'Norwegian BokmÃ¥l', value: 'nb' },
   { label: 'Polish', value: 'pl' },
   { label: 'Portuguese', value: 'pt' },
   { label: 'Portuguese (Brazil)', value: 'pt-BR' },

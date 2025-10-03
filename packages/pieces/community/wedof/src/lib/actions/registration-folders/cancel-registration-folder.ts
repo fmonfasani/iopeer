@@ -1,6 +1,6 @@
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
-import { createAction, Property } from '@activepieces/pieces-framework';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const cancelRegistrationFolder = createAction({
@@ -10,14 +10,14 @@ export const cancelRegistrationFolder = createAction({
   description: 'Annuler le dossier de formation',
   props: {
     externalId: Property.ShortText({
-      displayName: 'N° du dossier de formation',
+      displayName: 'NÂ° du dossier de formation',
       description:
-        'Sélectionner la propriété {externalId} du dossier de formation',
+        'SÃ©lectionner la propriÃ©tÃ© {externalId} du dossier de formation',
       required: true,
     }),
     code: Property.Dropdown({
       displayName: "Raison de l'annulation du dossier de formation",
-      description: "Sélectionner la raison de l'annulation",
+      description: "SÃ©lectionner la raison de l'annulation",
       required: true,
       refreshers: ['auth'],
       refreshOnSearch: false,

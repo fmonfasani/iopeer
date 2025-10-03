@@ -1,5 +1,5 @@
-import { hubspotAuth } from '../../';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { hubspotAuth } from '../../';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 
 import { Client } from '@hubspot/api-client';
 import { standardObjectDynamicProperties } from '../common/props';

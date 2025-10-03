@@ -1,5 +1,5 @@
-import {
-    ActivepiecesError,
+﻿import {
+    IOpeerError,
     AppConnection,
     assertNotNullOrUndefined,
     EnginePrincipal,
@@ -7,7 +7,7 @@ import {
     GetAppConnectionForWorkerRequestQuery,
     isNil,
     PrincipalType,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import {
     FastifyPluginAsyncTypebox,
 } from '@fastify/type-provider-typebox'
@@ -25,7 +25,7 @@ export const appConnectionWorkerController: FastifyPluginAsyncTypebox = async (a
         })
 
         if (isNil(appConnection)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     entityId: `externalId=${request.params.externalId}`,

@@ -1,11 +1,11 @@
-import {
+﻿import {
   AuthenticationType,
   HttpMethod,
   createCustomApiCallAction,
   httpClient,
-} from '@activepieces/pieces-common';
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory,  } from '@activepieces/shared';
+} from '@IOpeer/pieces-common';
+import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory,  } from '@IOpeer/shared';
 import { askAssistant } from './lib/actions/ask-assistant';
 import { generateImage } from './lib/actions/generate-image';
 import { askOpenAI } from './lib/actions/send-prompt';
@@ -15,7 +15,7 @@ import { translateAction } from './lib/actions/translation';
 import { visionPrompt } from './lib/actions/vision-prompt';
 import { baseUrl } from './lib/common/common';
 import { extractStructuredDataAction } from './lib/actions/extract-structure-data.action';
-import { SUPPORTED_AI_PROVIDERS } from '@activepieces/common-ai';
+import { SUPPORTED_AI_PROVIDERS } from '@IOpeer/common-ai';
 
 export const openaiAuth = PieceAuth.SecretText({
   description: SUPPORTED_AI_PROVIDERS.find(p => p.provider === 'openai')?.markdown,
@@ -49,7 +49,7 @@ export const openai = createPiece({
   displayName: 'OpenAI',
   description: 'Use the many tools ChatGPT has to offer.',
   minimumSupportedRelease: '0.63.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/openai.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/openai.png',
   categories: [PieceCategory.ARTIFICIAL_INTELLIGENCE],
   auth: openaiAuth,
   actions: [

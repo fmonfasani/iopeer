@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient, AuthenticationType } from '@activepieces/pieces-common';
+﻿/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient, AuthenticationType } from '@IOpeer/pieces-common';
 
 export const docsCommon = {
 	baseUrl: 'https://docs.googleapis.com/v1',

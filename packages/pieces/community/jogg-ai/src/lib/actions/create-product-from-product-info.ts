@@ -1,9 +1,9 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { z } from 'zod';
 import { joggAiAuth } from '../..';
 

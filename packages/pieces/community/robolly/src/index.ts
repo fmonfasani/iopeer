@@ -1,6 +1,6 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { generateImage } from './lib/actions/generate-image.action';
 
 const markdownDescription = `
@@ -24,11 +24,11 @@ export const robollyAuth = PieceAuth.SecretText({
 export const robolly = createPiece({
   displayName: 'Robolly',
   description:
-    'Robolly is the all‑in‑one service for personalized image, video & PDF generation with API',
+    'Robolly is the allâ€‘inâ€‘one service for personalized image, video & PDF generation with API',
 
   auth: robollyAuth,
   minimumSupportedRelease: '0.30.0',
-  logoUrl: 'https://cdn.activepieces.com/pieces/robolly.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/robolly.png',
   categories: [PieceCategory.MARKETING],
   authors: ["pfernandez98","kishanprmr","MoShizzle","abuaboud"],
   actions: [

@@ -1,8 +1,8 @@
-import {
+﻿import {
   DynamicPropsValue,
   Property,
   createAction,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { quickzuAuth } from '../../..';
 import { makeClient } from '../../common';
 import {

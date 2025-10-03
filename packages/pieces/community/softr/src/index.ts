@@ -1,4 +1,4 @@
-import { createPiece } from '@activepieces/pieces-framework';
+﻿import { createPiece } from '@IOpeer/pieces-framework';
 import { SoftrAuth } from './lib/common/auth';
 import { createDatabaseRecord } from './lib/actions/create-database-record';
 import { createAppUser } from './lib/actions/create-app-user';
@@ -6,16 +6,16 @@ import { deleteAppUser } from './lib/actions/delete-app-user';
 import { deleteDatabaseRecord } from './lib/actions/delete-database-record';
 import { findDatabaseRecord } from './lib/actions/find-database-record';
 import { updateDatabaseRecord } from './lib/actions/update-database-record';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { BASE_URL } from './lib/common/client';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 import { newDatabaseRecord } from './lib/triggers/new-database-record';
 
 export const softr = createPiece({
   displayName: 'Softr',
   auth: SoftrAuth,
   minimumSupportedRelease: '0.36.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/softr.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/softr.png',
   categories:[PieceCategory.CONTENT_AND_FILES,PieceCategory.PRODUCTIVITY],
   authors: ['Sanket6652'],
   actions: [

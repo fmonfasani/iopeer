@@ -1,5 +1,5 @@
-import { AppSystemProp, rejectedPromiseHandler } from '@activepieces/server-shared'
-import { ActivepiecesError, ApEdition, CreateTrialLicenseKeyRequestBody, ErrorCode, isNil, LicenseKeyEntity, TelemetryEventName } from '@activepieces/shared'
+﻿import { AppSystemProp, rejectedPromiseHandler } from '@IOpeer/server-shared'
+import { IOpeerError, ApEdition, CreateTrialLicenseKeyRequestBody, ErrorCode, isNil, LicenseKeyEntity, TelemetryEventName } from '@IOpeer/shared'
 import { PlanName } from '@ee/shared/src/lib/billing'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
@@ -27,7 +27,7 @@ export const licenseKeysService = (log: FastifyBaseLogger) => ({
             body: JSON.stringify(request),
         })
         if (response.status === StatusCodes.CONFLICT) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.EMAIL_ALREADY_HAS_ACTIVATION_KEY,
                 params: request,
             })
@@ -107,7 +107,7 @@ export const licenseKeysService = (log: FastifyBaseLogger) => ({
         })
 
         if (response.status === StatusCodes.NOT_FOUND) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.ENTITY_NOT_FOUND,
                 params: {
                     message: 'License key not found',

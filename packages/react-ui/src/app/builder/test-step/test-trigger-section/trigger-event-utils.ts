@@ -1,6 +1,6 @@
-import { pieceSelectorUtils } from '@/features/pieces/lib/piece-selector-utils';
-import { TriggerBase, TriggerStrategy } from '@activepieces/pieces-framework';
-import { TriggerTestStrategy } from '@activepieces/shared';
+﻿import { pieceSelectorUtils } from '@/features/pieces/lib/piece-selector-utils';
+import { TriggerBase, TriggerStrategy } from '@IOpeer/pieces-framework';
+import { TriggerTestStrategy } from '@IOpeer/shared';
 
 export type TestType =
   | 'mcp-tool'
@@ -26,7 +26,7 @@ export const triggerEventUtils = {
       return 'chat-trigger';
     }
     if (
-      pieceName === '@activepieces/piece-webhook' &&
+      pieceName === '@IOpeer/piece-webhook' &&
       triggerName === 'catch_webhook'
     ) {
       return 'webhook';

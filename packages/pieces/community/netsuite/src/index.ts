@@ -1,13 +1,13 @@
-import {
+﻿import {
   PieceAuth,
   createPiece,
   Property,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { getVendor } from './lib/actions/get-vendor';
 import { getCustomer } from './lib/actions/get-customer';
-import { PieceCategory } from '@activepieces/shared';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { PieceCategory } from '@IOpeer/shared';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { createOAuthHeader } from './lib/oauth';
 
 export const netsuiteAuth = PieceAuth.CustomAuth({
@@ -43,7 +43,7 @@ export const netsuiteAuth = PieceAuth.CustomAuth({
 
 export const netsuite = createPiece({
   displayName: 'NetSuite',
-  logoUrl: 'https://cdn.activepieces.com/pieces/netsuite.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/netsuite.png',
   categories: [PieceCategory.SALES_AND_CRM],
   auth: netsuiteAuth,
   authors: ['geekyme'],

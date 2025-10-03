@@ -1,9 +1,9 @@
-
-import { PieceMetadata, PieceMetadataModel, PieceMetadataModelSummary, pieceTranslation } from '@activepieces/pieces-framework'
-import { AppSystemProp, filePiecesUtils } from '@activepieces/server-shared'
+﻿
+import { PieceMetadata, PieceMetadataModel, PieceMetadataModelSummary, pieceTranslation } from '@IOpeer/pieces-framework'
+import { AppSystemProp, filePiecesUtils } from '@IOpeer/server-shared'
 
 import {
-    ActivepiecesError,
+    IOpeerError,
     ErrorCode,
     EXACT_VERSION_REGEX,
     isNil,
@@ -11,7 +11,7 @@ import {
     PackageType,
     PieceType,
     ProjectId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import { FastifyBaseLogger } from 'fastify'
 import { nanoid } from 'nanoid'
 import { system } from '../../helper/system/system'
@@ -99,7 +99,7 @@ export const FilePieceMetadataService = (_log: FastifyBaseLogger): PieceMetadata
             })
 
             if (isNil(pieceMetadata)) {
-                throw new ActivepiecesError({
+                throw new IOpeerError({
                     code: ErrorCode.PIECE_NOT_FOUND,
                     params: {
                         pieceName: name,

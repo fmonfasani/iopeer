@@ -1,11 +1,11 @@
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import {
 	AuthenticationType,
 	httpClient,
 	HttpMethod,
 	HttpRequest,
 	QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { acuitySchedulingAuth } from '../../index';
 import { API_URL, getAppointmentDetails } from '../common';
 import { appointmentTypeIdDropdown, calendarIdDropdown } from '../common/props';

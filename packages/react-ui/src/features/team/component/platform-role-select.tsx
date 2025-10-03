@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import { UseFormReturn } from 'react-hook-form';
 
 import { FormField, FormItem, FormMessage } from '@/components/ui/form';
@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { PlatformRole } from '@activepieces/shared';
+import { PlatformRole } from '@IOpeer/shared';
 
 type PlatformRoleSelectProps = {
   form: UseFormReturn<any>;

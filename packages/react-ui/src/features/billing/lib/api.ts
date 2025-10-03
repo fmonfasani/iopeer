@@ -1,16 +1,16 @@
-import { api } from '@/lib/api';
+﻿import { api } from '@/lib/api';
 import {
   ListAICreditsUsageRequest,
   ListAICreditsUsageResponse,
-} from '@activepieces/common-ai';
+} from '@IOpeer/common-ai';
 import {
   CreateSubscriptionParams,
   ToggleAiCreditsOverageEnabledParams,
   SetAiCreditsOverageLimitParams,
   UpdateSubscriptionParams,
   StartTrialParams,
-} from '@activepieces/ee-shared';
-import { PlatformPlan, PlatformBillingInformation } from '@activepieces/shared';
+} from '@IOpeer/ee-shared';
+import { PlatformPlan, PlatformBillingInformation } from '@IOpeer/shared';
 
 export const platformBillingApi = {
   getSubscriptionInfo() {

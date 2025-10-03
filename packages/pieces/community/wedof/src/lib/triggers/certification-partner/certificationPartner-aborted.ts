@@ -1,12 +1,12 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationPartnerAborted = createTrigger({
   auth: wedofAuth,
   name: 'certificationPartnerAborted',
-  displayName: 'Demande de partenariat abandonnée',
-  description: "Se déclenche Lorsqu'une demande de partenariat estabandonnée",
+  displayName: 'Demande de partenariat abandonnÃ©e',
+  description: "Se dÃ©clenche Lorsqu'une demande de partenariat estabandonnÃ©e",
   props: {},
   sampleData: {
     id: 0,

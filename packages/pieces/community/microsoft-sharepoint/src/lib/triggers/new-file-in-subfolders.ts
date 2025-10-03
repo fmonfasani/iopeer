@@ -1,16 +1,16 @@
-import { microsoftSharePointAuth } from '../../';
+﻿import { microsoftSharePointAuth } from '../../';
 import {
   createTrigger,
   TriggerStrategy,
   Property,
   DropdownOption,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { microsoftSharePointCommon } from '../common';
 import { Client, PageCollection } from '@microsoft/microsoft-graph-client';
 import { DriveItem } from '@microsoft/microsoft-graph-types';
 
-const clientState = 'activepieces_sharepoint_subfolder_trigger';
+const clientState = 'IOpeer_sharepoint_subfolder_trigger';
 
 export const newFileInSubfoldersTrigger = createTrigger({
   auth: microsoftSharePointAuth,

@@ -1,20 +1,20 @@
-import {
+﻿import {
   httpClient,
   HttpMethod,
   QueryParams,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { wedofAuth } from '../../..';
 import {
   createAction,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const listPartnerStats = createAction({
   auth: wedofAuth,
   name: 'listPartnerStats',
   displayName: 'Lister les statistiques des partenaires',
-  description: 'Récupère les statistiques des partenaires de certification',
+  description: 'RÃ©cupÃ¨re les statistiques des partenaires de certification',
 
   props: {
     certifInfo: Property.ShortText({
@@ -22,22 +22,22 @@ export const listPartnerStats = createAction({
       required: true,
     }),
     certifierAccessState: Property.StaticDropdown({
-      displayName: 'État de synchronisation du partenariat',
+      displayName: 'Ã‰tat de synchronisation du partenariat',
       required: false,
       options: {
         options: [
           { label: 'En attente', value: 'waiting' },
-          { label: 'Accepté', value: 'accepted' },
-          { label: 'Refusé', value: 'refused' },
-          { label: 'Terminé', value: 'terminated' },
+          { label: 'AcceptÃ©', value: 'accepted' },
+          { label: 'RefusÃ©', value: 'refused' },
+          { label: 'TerminÃ©', value: 'terminated' },
           { label: 'Aucun', value: 'none' },
-          { label: 'Tous les états', value: 'all' },
+          { label: 'Tous les Ã©tats', value: 'all' },
         ],
       },
       defaultValue : 'all',
     }),
     compliance: Property.StaticDropdown({
-      displayName: 'État de conformité',
+      displayName: 'Ã‰tat de conformitÃ©',
       required: false,
       options: {
         options: [
@@ -52,7 +52,7 @@ export const listPartnerStats = createAction({
       defaultValue : 'all',
     }),
     connectionIssue: Property.StaticDropdown({
-      displayName: 'Présence de problème de connexion',
+      displayName: 'PrÃ©sence de problÃ¨me de connexion',
       required: false,
       options: {
         options: [
@@ -62,7 +62,7 @@ export const listPartnerStats = createAction({
       },
     }),
     format: Property.StaticDropdown({
-      displayName: 'Format de la réponse',
+      displayName: 'Format de la rÃ©ponse',
       required: false,
       defaultValue: 'json',
       options: {
@@ -73,7 +73,7 @@ export const listPartnerStats = createAction({
       },
     }),
     limit: Property.Number({
-      displayName: 'Nombre de résultats',
+      displayName: 'Nombre de rÃ©sultats',
       required: false,
       defaultValue: 100,
     }),
@@ -89,7 +89,7 @@ export const listPartnerStats = createAction({
       },
     }),
     page: Property.Number({
-      displayName: 'Numéro de page',
+      displayName: 'NumÃ©ro de page',
       required: false,
       defaultValue: 1,
     }),
@@ -99,25 +99,25 @@ export const listPartnerStats = createAction({
       defaultValue: 'stateLastUpdate',
       options: {
         options: [
-          { label: 'Dernier changement d’état', value: 'stateLastUpdate' },
+          { label: 'Dernier changement dâ€™Ã©tat', value: 'stateLastUpdate' },
           { label: 'Nom', value: 'name' },
-          { label: 'État', value: 'state' },
+          { label: 'Ã‰tat', value: 'state' },
         ],
       },
     }),
     state: Property.StaticDropdown({
-      displayName: 'État du partenariat',
+      displayName: 'Ã‰tat du partenariat',
       required: false,
       defaultValue: 'all',
       options: {
         options: [
-          { label: 'Tous les états', value: 'all' },
+          { label: 'Tous les Ã©tats', value: 'all' },
           { label: 'Brouillon', value: 'draft' },
           { label: 'En cours de traitement', value: 'processing' },
           { label: 'Actif', value: 'active	' },
-          { label: 'Annulé', value: 'aborted' },
-          { label: 'Refusé', value: 'refused' },
-          { label: 'Révoqué', value: 'revoked' },
+          { label: 'AnnulÃ©', value: 'aborted' },
+          { label: 'RefusÃ©', value: 'refused' },
+          { label: 'RÃ©voquÃ©', value: 'revoked' },
           { label: 'Suspendu', value: 'suspended' },
         ],
       },

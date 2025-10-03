@@ -1,7 +1,7 @@
-import dayjs from 'dayjs';
+﻿import dayjs from 'dayjs';
 import { jwtDecode } from 'jwt-decode';
 
-import { AuthenticationResponse, isNil, Principal } from '@activepieces/shared';
+import { AuthenticationResponse, isNil, Principal } from '@IOpeer/shared';
 
 import { ApStorage } from './ap-browser-storage';
 import { authenticationApi } from './authentication-api';

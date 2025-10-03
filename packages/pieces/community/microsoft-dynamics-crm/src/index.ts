@@ -1,15 +1,15 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   createPiece,
   OAuth2PropertyValue,
   PieceAuth,
   Property,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { createRecordAction } from './lib/actions/create-record';
 import { deleteRecordAction } from './lib/actions/delete-record';
 import { getRecordAction } from './lib/actions/get-record';
 import { updateRecordAction } from './lib/actions/update-record';
-import { PieceCategory } from '@activepieces/shared';
+import { PieceCategory } from '@IOpeer/shared';
 
 const authDesc = `
 1. Sign in to [Microsoft Azure Portal](https://portal.azure.com/).
@@ -22,14 +22,14 @@ const authDesc = `
    - Or select based on your requirement.
 7. In **Redirect URI**, select **Web** and add the given URL.
 8. Click **Register**.
-9. After registration, you’ll be redirected to the app’s overview page. Copy the **Application (client) ID**.
+9. After registration, youâ€™ll be redirected to the appâ€™s overview page. Copy the **Application (client) ID**.
 10. From the left menu, go to **Certificates & secrets**.
     - Under **Client secrets**, click **New client secret**.
     - Provide a description, set an expiry, and click **Add**.
     - Copy the **Value** of the client secret (this will not be shown again).
 11. Go to **API permissions** from the left menu.
     - Click **Add a permission**.
-    - Select **Dynamics CRM** → **Delegated permissions**.
+    - Select **Dynamics CRM** â†’ **Delegated permissions**.
     - Click **Add permissions**.
 12. Copy your **Client ID** and **Client Secret**.
 `
@@ -76,7 +76,7 @@ export const microsoftDynamicsCrm = createPiece({
   description:
     'Customer relationship management software package developed by Microsoft.',
   minimumSupportedRelease: '0.27.1',
-  logoUrl: 'https://cdn.activepieces.com/pieces/microsoft-dynamics-crm.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/microsoft-dynamics-crm.png',
   authors: ['kishanprmr'],
   categories: [PieceCategory.SALES_AND_CRM],
   actions: [

@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod } from '@IOpeer/pieces-common';
 import { makeRequest } from '../common';
 import { kommoAuth } from '../../index';
 import { pipelineDropdown, statusDropdown, userDropdown, lossReasonDropdown, leadDropdown } from '../common/props';

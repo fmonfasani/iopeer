@@ -1,4 +1,4 @@
-import {
+﻿import {
     BranchExecutionType,
     BranchOperator,
     FlowAction,
@@ -362,8 +362,8 @@ test('Duplicate Flow With Loops using Import', () => {
             settings: {
                 input: {
                     repository: {
-                        repo: 'activepieces',
-                        owner: 'activepieces',
+                        repo: 'IOpeer',
+                        owner: 'IOpeer',
                     },
                     authentication: '{{connections.github}}',
                 },

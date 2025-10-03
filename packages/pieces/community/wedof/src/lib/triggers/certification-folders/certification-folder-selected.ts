@@ -1,13 +1,13 @@
-import { wedofAuth } from '../../..';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { wedofAuth } from '../../..';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { wedofCommon } from '../../common/wedof';
 
 export const certificationFolderSelected = createTrigger({
   auth: wedofAuth,
   name: 'certificationFolderSelected',
-  displayName: 'Événement sur le dossier de certification',
+  displayName: 'Ã‰vÃ©nement sur le dossier de certification',
   description:
-    "Se déclenche lorsque l'événement choisi se produit sur un dossier de certification",
+    "Se dÃ©clenche lorsque l'Ã©vÃ©nement choisi se produit sur un dossier de certification",
   props: {
     scope: wedofCommon.certificationEvents,
   },
@@ -68,7 +68,7 @@ export const certificationFolderSelected = createTrigger({
       phoneNumber: '+1.112.666.0606',
       phoneFixed: null,
       degree: 7,
-      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingénieur... (NIVEAU 7)',
+      degreeTitle: 'BAC+5 : grade master, DEA, DESS, ingÃ©nieur... (NIVEAU 7)',
       address: {
         id: null,
         city: 'string',

@@ -1,6 +1,6 @@
-import { AppSystemProp, exceptionHandler, fileCompressor } from '@activepieces/server-shared'
+﻿import { AppSystemProp, exceptionHandler, fileCompressor } from '@IOpeer/server-shared'
 import {
-    ActivepiecesError,
+    IOpeerError,
     apId,
     assertNotNullOrUndefined,
     ErrorCode,
@@ -11,7 +11,7 @@ import {
     FileType,
     isNil,
     ProjectId,
-} from '@activepieces/shared'
+} from '@IOpeer/shared'
 import dayjs from 'dayjs'
 import { FastifyBaseLogger } from 'fastify'
 import { In, LessThanOrEqual } from 'typeorm'
@@ -88,7 +88,7 @@ export const fileService = (log: FastifyBaseLogger) => ({
     async getFileOrThrow(params: GetOneParams): Promise<File> {
         const file = await this.getFile(params)
         if (isNil(file)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FILE_NOT_FOUND,
                 params: {
                     id: params.fileId,
@@ -116,7 +116,7 @@ export const fileService = (log: FastifyBaseLogger) => ({
             type,
         })
         if (isNil(file)) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.FILE_NOT_FOUND,
                 params: {
                     id: fileId,

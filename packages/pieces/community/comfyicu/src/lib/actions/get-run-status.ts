@@ -1,7 +1,7 @@
-import { comfyIcuAuth } from '../../index';
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { comfyIcuAuth } from '../../index';
+import { createAction } from '@IOpeer/pieces-framework';
 import { comfyIcuApiCall, commonProps } from '../common';
-import { HttpMethod } from '@activepieces/pieces-common';
+import { HttpMethod } from '@IOpeer/pieces-common';
 
 export const getRunStatusAction = createAction({
   auth: comfyIcuAuth,

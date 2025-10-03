@@ -1,9 +1,9 @@
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { HttpMethod } from '@IOpeer/pieces-common';
+import { createAction, Property } from '@IOpeer/pieces-framework';
 import { airtopAuth } from '../common/auth';
 import { airtopApiCall, extractApiData, AirtopSession } from '../common/client';
 import { fileId } from '../common/props';
-import { propsValidation } from '@activepieces/pieces-common';
+import { propsValidation } from '@IOpeer/pieces-common';
 import { z } from 'zod';
 
 export const uploadFileToSessionAction = createAction({

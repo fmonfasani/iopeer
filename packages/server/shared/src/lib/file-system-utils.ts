@@ -1,4 +1,4 @@
-import { access, mkdir } from 'node:fs/promises'
+﻿import { access, mkdir } from 'node:fs/promises'
 import { join } from 'path'
 import lockfile from 'proper-lockfile'
 
@@ -36,7 +36,7 @@ export const fileSystemUtils = {
     },
 
     runExclusive: async <T>(directory: string, key: string, fn: () => Promise<T>, timeout = INFINITE_LOCK_TIMEOUT): Promise<T> => {
-        const lockFolderPath = join(directory, 'activepieces-locks')
+        const lockFolderPath = join(directory, 'IOpeer-locks')
         const encodedKey = Buffer.from(key).toString('base64').replace(/[/+=]/g, '_')
         const lockPathFile = join(lockFolderPath, `${encodedKey}.lock`)
         let release

@@ -1,5 +1,5 @@
-import { CreateOtpRequestBody } from '@activepieces/ee-shared'
-import { ALL_PRINCIPAL_TYPES } from '@activepieces/shared'
+﻿import { CreateOtpRequestBody } from '@IOpeer/ee-shared'
+import { ALL_PRINCIPAL_TYPES } from '@IOpeer/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { StatusCodes } from 'http-status-codes'
 import { platformUtils } from '../../../platform/platform.utils'

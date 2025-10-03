@@ -1,5 +1,5 @@
-import { createCustomApiCallAction, HttpMethod } from '@activepieces/pieces-common';
-import { createPiece, PieceAuth } from '@activepieces/pieces-framework';
+﻿import { createCustomApiCallAction, HttpMethod } from '@IOpeer/pieces-common';
+import { createPiece, PieceAuth } from '@IOpeer/pieces-framework';
 import { createTaskAction } from './lib/actions/create-task';
 import { createTimeEntryAction } from './lib/actions/create-time-entry';
 import { findRunningTimerAction } from './lib/actions/find-running-timer';
@@ -40,7 +40,7 @@ export const clockify = createPiece({
 	displayName: 'Clockify',
 	auth: clockifyAuth,
 	minimumSupportedRelease: '0.36.1',
-	logoUrl: 'https://cdn.activepieces.com/pieces/clockify.png',
+	logoUrl: 'https://cdn.IOpeer.com/pieces/clockify.png',
 	authors: ['rimjhimyadav', 'kishanprmr'],
 	actions: [
 		createTaskAction,

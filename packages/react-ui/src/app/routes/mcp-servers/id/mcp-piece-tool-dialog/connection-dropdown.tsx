@@ -1,4 +1,4 @@
-import { t } from 'i18next';
+﻿import { t } from 'i18next';
 import React, { useState } from 'react';
 
 import { CreateOrEditConnectionDialog } from '@/app/connections/create-edit-connection-dialog';
@@ -6,8 +6,8 @@ import { SearchableSelect } from '@/components/custom/searchable-select';
 import { Label } from '@/components/ui/label';
 import { appConnectionsQueries } from '@/features/connections/lib/app-connections-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
-import { PieceMetadataModelSummary } from '@activepieces/pieces-framework';
-import { isNil } from '@activepieces/shared';
+import { PieceMetadataModelSummary } from '@IOpeer/pieces-framework';
+import { isNil } from '@IOpeer/shared';
 
 type ConnectionDropdownProps = {
   piece: PieceMetadataModelSummary;

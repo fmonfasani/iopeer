@@ -1,4 +1,4 @@
-import { AIProvider, AIUsageMetadata } from '@activepieces/common-ai'
+﻿import { AIProvider, AIUsageMetadata } from '@IOpeer/common-ai'
 import { FastifyRequest, RawServerBase, RequestGenericInterface } from 'fastify'
 
 export type Usage = {

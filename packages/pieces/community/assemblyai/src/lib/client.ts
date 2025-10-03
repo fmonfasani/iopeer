@@ -1,7 +1,7 @@
-import {
+﻿import {
   ActionContext,
   SecretTextProperty,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { AssemblyAI } from 'assemblyai';
 import packageJson from '../../package.json';
 

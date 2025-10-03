@@ -1,10 +1,10 @@
-import { googleDocsAuth } from '../../index';
-import { DedupeStrategy, Polling, pollingHelper } from '@activepieces/pieces-common';
+﻿import { googleDocsAuth } from '../../index';
+import { DedupeStrategy, Polling, pollingHelper } from '@IOpeer/pieces-common';
 import {
 	createTrigger,
 	PiecePropValueSchema,
 	TriggerStrategy,
-} from '@activepieces/pieces-framework';
+} from '@IOpeer/pieces-framework';
 import { folderIdProp } from '../common/props';
 import dayjs from 'dayjs';
 import { google, drive_v3 } from 'googleapis';

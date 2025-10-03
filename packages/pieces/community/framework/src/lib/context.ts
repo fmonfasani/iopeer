@@ -1,4 +1,4 @@
-import {
+﻿import {
   AppConnectionValue,
   ExecutionType,
   FlowRunId,
@@ -9,14 +9,14 @@ import {
   SeekPage,
   TriggerPayload,
   TriggerStrategy,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 import {
   InputPropertyMap,
   PiecePropValueSchema,
   StaticPropsValue,
 } from './property';
 import { PieceAuthProperty } from './property/authentication';
-import { DelayPauseMetadata, PauseMetadata, WebhookPauseMetadata } from '@activepieces/shared';
+import { DelayPauseMetadata, PauseMetadata, WebhookPauseMetadata } from '@IOpeer/shared';
 
 type BaseContext<
   PieceAuth extends PieceAuthProperty,

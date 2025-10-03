@@ -1,11 +1,11 @@
-import { PieceAuth, createPiece } from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+﻿import { PieceAuth, createPiece } from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { httpSendRequestAction } from './lib/actions/send-http-request-action';
 
 export const http = createPiece({
   displayName: 'HTTP',
   description: 'Sends HTTP requests and return responses',
-  logoUrl: 'https://cdn.activepieces.com/pieces/http.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/http.png',
   categories: [PieceCategory.CORE],
   auth: PieceAuth.None(),
   minimumSupportedRelease: '0.20.3',

@@ -1,6 +1,6 @@
-import { createAction } from '@activepieces/pieces-framework';
+﻿import { createAction } from '@IOpeer/pieces-framework';
 import { BASE_URL, communityMemberIdDropdown } from '../common';
-import { httpClient, HttpMethod } from '@activepieces/pieces-common';
+import { httpClient, HttpMethod } from '@IOpeer/pieces-common';
 import { circleAuth } from '../common/auth';
 import { CommunityMemberDetails } from '../common/types';
 

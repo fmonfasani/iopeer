@@ -1,4 +1,4 @@
-import { MentionNodeAttrs } from '@tiptap/extension-mention';
+﻿import { MentionNodeAttrs } from '@tiptap/extension-mention';
 import { JSONContent } from '@tiptap/react';
 
 import { StepMetadata } from '@/lib/types';
@@ -7,7 +7,7 @@ import {
   FlowTrigger,
   assertNotNullOrUndefined,
   isNil,
-} from '@activepieces/shared';
+} from '@IOpeer/shared';
 
 const removeQuotes = (text: string) => {
   if (

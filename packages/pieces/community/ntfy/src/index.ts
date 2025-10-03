@@ -1,10 +1,10 @@
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+﻿import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import {
   PieceAuth,
   Property,
   createPiece,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { sendNotification } from './lib/actions/send-notification';
 
 export const ntfyAuth = PieceAuth.CustomAuth({
@@ -36,7 +36,7 @@ export const ntfy = createPiece({
   displayName: 'ntfy',
   description: 'Notification management made easy',
 
-  logoUrl: 'https://cdn.activepieces.com/pieces/ntfy.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/ntfy.png',
   minimumSupportedRelease: '0.30.0',
   categories: [PieceCategory.COMMUNICATION],
   auth: ntfyAuth,

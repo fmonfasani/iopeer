@@ -1,10 +1,10 @@
-import { googleSheetsAuth } from '../../index';
-import { DropdownOption, PiecePropValueSchema, Property } from '@activepieces/pieces-framework';
+﻿import { googleSheetsAuth } from '../../index';
+import { DropdownOption, PiecePropValueSchema, Property } from '@IOpeer/pieces-framework';
 import { google, drive_v3 } from 'googleapis';
 import { OAuth2Client } from 'googleapis-common';
 import { columnToLabel, getHeaderRow, googleSheetsCommon } from './common';
-import { getAccessTokenOrThrow } from '@activepieces/pieces-common';
-import { isNil } from '@activepieces/shared';
+import { getAccessTokenOrThrow } from '@IOpeer/pieces-common';
+import { isNil } from '@IOpeer/shared';
 
 export const includeTeamDrivesProp = () =>
 	Property.Checkbox({

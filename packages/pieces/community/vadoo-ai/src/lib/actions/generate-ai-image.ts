@@ -1,12 +1,12 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
 import { vadooAiAuth } from '../../index';
 import {
   httpClient,
   HttpMethod,
   propsValidation,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { generateAiImageSchema } from '../schemas';
-import { isEmpty } from '@activepieces/shared';
+import { isEmpty } from '@IOpeer/shared';
 
 export const generateAiImage = createAction({
   auth: vadooAiAuth,

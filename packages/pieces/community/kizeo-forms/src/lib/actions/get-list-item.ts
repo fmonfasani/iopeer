@@ -1,5 +1,5 @@
-import { createAction, Property } from '@activepieces/pieces-framework';
-import { HttpMethod, httpClient } from '@activepieces/pieces-common';
+﻿import { createAction, Property } from '@IOpeer/pieces-framework';
+import { HttpMethod, httpClient } from '@IOpeer/pieces-common';
 import { endpoint, kizeoFormsCommon } from '../common';
 import { kizeoFormsAuth } from '../..';
 
@@ -23,7 +23,7 @@ export const getListItem = createAction({
       method: HttpMethod.GET,
       url:
         endpoint +
-        `public/v4/lists/${listId}/items/${itemId}?used-with-activepieces=`,
+        `public/v4/lists/${listId}/items/${itemId}?used-with-IOpeer=`,
       headers: {
         'Content-Type': 'application/json',
         Authorization: context.auth,

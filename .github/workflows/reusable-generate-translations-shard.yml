@@ -1,4 +1,4 @@
-name: Reusable - Generate Translations Shard
+﻿name: Reusable - Generate Translations Shard
 
 on:
   workflow_call:
@@ -36,7 +36,7 @@ jobs:
 
       - name: Configure git
         run: |
-          git config --local user.email "abdulyki+automatedcommits@activepieces.com"
+          git config --local user.email "abdulyki+automatedcommits@IOpeer.com"
           git config --local user.name "automated-commits-ap"
 
       - name: Prepare branch

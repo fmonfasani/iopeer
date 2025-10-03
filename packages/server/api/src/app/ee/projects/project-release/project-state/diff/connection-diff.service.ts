@@ -1,4 +1,4 @@
-import { ConnectionOperation, ConnectionOperationType, isNil, ProjectState } from '@activepieces/shared'
+﻿import { ConnectionOperation, ConnectionOperationType, isNil, ProjectState } from '@IOpeer/shared'
 
 export const connectionDiffService = {
     diff({ newState, currentState }: DiffParams): ConnectionOperation[] {

@@ -1,8 +1,8 @@
-import {
+﻿import {
   createPiece,
   PiecePropValueSchema,
-} from '@activepieces/pieces-framework';
-import { PieceCategory } from '@activepieces/shared';
+} from '@IOpeer/pieces-framework';
+import { PieceCategory } from '@IOpeer/shared';
 import { smartsuiteAuth } from './lib/auth';
 
 // Actions
@@ -16,14 +16,14 @@ import { getRecord } from './lib/actions/get-record';
 // Triggers
 import { newRecord } from './lib/triggers/new-record';
 import { updatedRecord } from './lib/triggers/updated-record';
-import { createCustomApiCallAction } from '@activepieces/pieces-common';
+import { createCustomApiCallAction } from '@IOpeer/pieces-common';
 import { SMARTSUITE_API_URL } from './lib/common/constants';
 
 export const smartsuite = createPiece({
   displayName: 'SmartSuite',
   description:
     'Collaborative work management platform combining databases with spreadsheets.',
-  logoUrl: 'https://cdn.activepieces.com/pieces/smartsuite.png',
+  logoUrl: 'https://cdn.IOpeer.com/pieces/smartsuite.png',
   categories: [PieceCategory.PRODUCTIVITY],
   auth: smartsuiteAuth,
   minimumSupportedRelease: '0.30.0',

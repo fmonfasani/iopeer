@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+﻿import { useQuery } from '@tanstack/react-query';
 import { ColumnDef } from '@tanstack/react-table';
 import { t } from 'i18next';
 import { Key, Plus, Trash } from 'lucide-react';
@@ -16,7 +16,7 @@ import { NewSigningKeyDialog } from '@/features/platform-admin/components/new-si
 import { signingKeyApi } from '@/features/platform-admin/lib/signing-key-api';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { formatUtils } from '@/lib/utils';
-import { SigningKey } from '@activepieces/ee-shared';
+import { SigningKey } from '@IOpeer/ee-shared';
 
 const SigningKeysPage = () => {
   const { data, isLoading, refetch } = useQuery({

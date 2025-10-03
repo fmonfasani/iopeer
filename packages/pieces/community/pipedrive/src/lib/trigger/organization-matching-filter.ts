@@ -1,6 +1,6 @@
-import { pipedriveAuth } from '../../index';
-import { HttpMethod } from '@activepieces/pieces-common';
-import { createTrigger, TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { pipedriveAuth } from '../../index';
+import { HttpMethod } from '@IOpeer/pieces-common';
+import { createTrigger, TriggerStrategy } from '@IOpeer/pieces-framework';
 import { filterIdProp } from '../common/props';
 import {
 	pipedriveApiCall,
@@ -9,7 +9,7 @@ import {
 	pipedriveTransformCustomFields,
 } from '../common';
 import { GetField } from '../common/types';
-import { isNil } from '@activepieces/shared';
+import { isNil } from '@IOpeer/shared';
 import { ORGANIZATION_OPTIONAL_FIELDS } from '../common/constants';
 
 interface PipedriveOrganizationV2 {
@@ -203,16 +203,16 @@ export const organizationMatchingFilterTrigger = createTrigger({
 		picture_id: null,
 		label_ids: [],
 		address: {
-			value: 'Mustamäe tee 3, Tallinn, Estonia',
+			value: 'MustamÃ¤e tee 3, Tallinn, Estonia',
 			street_number: '3',
-			route: 'Mustamäe tee',
+			route: 'MustamÃ¤e tee',
 			sublocality: 'Kristiine',
 			locality: 'Tallinn',
 			admin_area_level_1: 'Harju maakond',
 			admin_area_level_2: null,
 			country: 'Estonia',
 			postal_code: '10616',
-			formatted_address: 'Mustamäe tee 3, 10616 Tallinn, Estonia',
+			formatted_address: 'MustamÃ¤e tee 3, 10616 Tallinn, Estonia',
 		},
 		custom_fields: {
 			your_custom_field_key: 'your_custom_field_value',

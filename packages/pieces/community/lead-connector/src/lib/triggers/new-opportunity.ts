@@ -1,10 +1,10 @@
-import { OAuth2PropertyValue, Property, createTrigger } from '@activepieces/pieces-framework';
-import { TriggerStrategy } from '@activepieces/pieces-framework';
+﻿import { OAuth2PropertyValue, Property, createTrigger } from '@IOpeer/pieces-framework';
+import { TriggerStrategy } from '@IOpeer/pieces-framework';
 import {
   DedupeStrategy,
   Polling,
   pollingHelper,
-} from '@activepieces/pieces-common';
+} from '@IOpeer/pieces-common';
 import { leadConnectorAuth } from '../..';
 import { getOpportunities, getPipelines } from '../common';
 

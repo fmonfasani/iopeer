@@ -1,4 +1,4 @@
-import { ActivepiecesError, ErrorCode } from '@activepieces/shared'
+﻿import { IOpeerError, ErrorCode } from '@IOpeer/shared'
 import { redisConnections } from '../../database/redis'
 
 const MACHINE_SANDBOXES_KEY = 'machine:sandboxes'
@@ -39,7 +39,7 @@ export const machineRouting = {
         ) as string | null
 
         if (!selectedMachine) {
-            throw new ActivepiecesError({
+            throw new IOpeerError({
                 code: ErrorCode.MACHINE_NOT_AVAILABLE,
                 params: {
                     resourceType: 'machine',

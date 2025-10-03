@@ -1,4 +1,4 @@
-name: Closed Issue Message
+﻿name: Closed Issue Message
 on:
   issues:
     types: [closed]
@@ -9,13 +9,13 @@ jobs:
       issues: write # to comment on issues (aws-actions/closed-issue-message)
 
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'activepieces'
+    if: github.repository_owner == 'IOpeer'
     steps:
       - uses: aws-actions/closed-issue-message@v1
         with:
           # These inputs are both required
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           message: |
-            ### ⚠️COMMENT VISIBILITY WARNING⚠️
+            ### âš ï¸COMMENT VISIBILITY WARNINGâš ï¸
             Comments on closed issues are hard for our team to see.
-            If this issue is continuing with the latest stable version of Activepieces, please open a new issue that references this one.
+            If this issue is continuing with the latest stable version of IOpeer, please open a new issue that references this one.
