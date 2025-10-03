@@ -194,7 +194,7 @@ const OAuth2ConnectionSettingsForm = ({
   const [readyToConnect, setReadyToConnect] = useState(false);
   const redirectUrl =
     currentOAuth2Type === AppConnectionType.CLOUD_OAUTH2
-      ? 'https://secrets.activepieces.com/redirect'
+      ? 'https://secrets.iopeer.com/redirect'
       : thirdPartyUrl;
 
   const form = useFormContext<{

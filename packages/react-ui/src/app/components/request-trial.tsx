@@ -63,7 +63,7 @@ export const RequestTrial = ({
   const handleClick = () =>
     selfHosted
       ? window.open(
-          `https://www.activepieces.com/sales?${createQueryParams()}`,
+          `https://www.iopeer.com/sales?${createQueryParams()}`,
           '_blank',
           'noopener noreferrer',
         )

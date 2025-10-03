@@ -11,7 +11,7 @@ interface AgentProfileProps {
 }
 
 const AgentProfile = ({
-  imageUrl = 'https://cdn.activepieces.com/quicknew/agents/robots/robot_186.png',
+  imageUrl = 'https://cdn.iopeer.com/quicknew/agents/robots/robot_186.png',
   isEnabled = false,
   onClick,
   className,

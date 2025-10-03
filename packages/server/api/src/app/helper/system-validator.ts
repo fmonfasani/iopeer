@@ -205,7 +205,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
         catch (error: unknown) {
             throw new Error(JSON.stringify({
                 message: 'S3 validation failed. Check your configuration and credentials.',
-                docUrl: 'https://www.activepieces.com/docs/install/configuration/overview#configure-s3-optional',
+                docUrl: 'https://docs.iopeer.com/install/configuration/overview#configure-s3-optional',
             }))
         }
     }
@@ -221,7 +221,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
     if (!isNil(codeSandboxType)) {
         throw new Error(JSON.stringify({
             message: 'AP_CODE_SANDBOX_TYPE is deprecated, please use AP_EXECUTION_MODE instead',
-            docUrl: 'https://www.activepieces.com/docs/install/configuration/overview',
+            docUrl: 'https://docs.iopeer.com/install/configuration/overview',
         }))
     }
     const encryptionKey = await encryptUtils.getEncryptionKey()
@@ -229,7 +229,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
     if (!isValidHexKey) {
         throw new Error(JSON.stringify({
             message: 'AP_ENCRYPTION_KEY is missing or invalid. It must be a 32-character hexadecimal string (representing 16 bytes). You can generate one using the command: `openssl rand -hex 16`',
-            docUrl: 'https://www.activepieces.com/docs/install/configuration/environment-variables',
+            docUrl: 'https://docs.iopeer.com/install/configuration/environment-variables',
         }))
     }
     const isApp = system.isApp()
@@ -247,7 +247,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
     if (isNil(jwtSecret)) {
         throw new Error(JSON.stringify({
             message: 'AP_JWT_SECRET is undefined, please define it in the environment variables',
-            docUrl: 'https://www.activepieces.com/docs/install/configuration/environment-variables',
+            docUrl: 'https://docs.iopeer.com/install/configuration/environment-variables',
         }))
     }
 
@@ -257,7 +257,7 @@ export const validateEnvPropsOnStartup = async (log: FastifyBaseLogger): Promise
         if (![ExecutionMode.SANDBOXED, ExecutionMode.SANDBOX_CODE_ONLY].includes(executionMode) ) {
             throw new Error(JSON.stringify({
                 message: 'Execution mode UNSANDBOXED is no longer supported in this edition, check the documentation for recent changes',
-                docUrl: 'https://www.activepieces.com/docs/install/configuration/overview',
+                docUrl: 'https://docs.iopeer.com/install/configuration/overview',
             }))
         }
     }

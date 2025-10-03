@@ -102,7 +102,7 @@ const renderEmailBody = async ({ platform, templateData }: RenderEmailBodyArgs):
             }
         },
         footerContent() {
-            return edition === ApEdition.CLOUD ? `   Activepieces, Inc. 398 11th Street,
+            return edition === ApEdition.CLOUD ? `   IOPeer, Inc. 398 11th Street,
                     2nd floor, San Francisco, CA 94103` : `${platform?.name} Team.`
         },
     },
@@ -131,10 +131,10 @@ const getEmailSubject = (templateName: EmailTemplateData['name'], vars: Record<s
         '3-days-left-on-trial': 'Unlock More with 10 Automation Templates',
         '1-day-left-on-trial': 'Your Plus Trial Ends Today - Upgrade ',
         '7-days-in-trial': '7 Days in – 15 Automation Ideas to Inspire You 🚀',
-        'welcome-to-trial': 'Welcome to Activepieces + 4 Resources to Get Started ',
-        'quota-50': '[ACTION REQUIRED] 50% of your Activepieces tasks are consumed',
-        'quota-90': '[URGENT] 90% of your Activepieces tasks are consumed',
-        'quota-100': '[URGENT] 100% of your Activepieces tasks are consumed',
+        'welcome-to-trial': 'Welcome to IOPeer + 4 Resources to Get Started ',
+        'quota-50': '[ACTION REQUIRED] 50% of your IOPeer tasks are consumed',
+        'quota-90': '[URGENT] 90% of your IOPeer tasks are consumed',
+        'quota-100': '[URGENT] 100% of your IOPeer tasks are consumed',
         'verify-email': 'Verify your email address',
         'reset-password': 'Reset your password',
         'issue-created': `[ACTION REQUIRED] New issue in ${vars.flowName}`,
