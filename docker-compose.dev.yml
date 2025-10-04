@@ -1,23 +1,110 @@
 services:
-  db:
-    image: postgres:14.4
+  postgres:
+    image: postgres:14
     environment:
-      POSTGRES_DB: iopeer
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: A79Vm5D4p2VQHOp2gd5
-
+      POSTGRES_DB: ${AP_POSTGRES_DATABASE}
+      POSTGRES_USER: ${AP_POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${AP_POSTGRES_PASSWORD}
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
 
   redis:
-    image: redis:7.0.7
-    volumes:
-      - redis_data:/data
+    image: redis:7
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    image: node:20-alpine
+    working_dir: /app
+    # instala deps y levanta api
+    command: sh -c "npm install --legacy-peer-deps && npm run serve:backend"
+    environment:
+      - NPM_CONFIG_ENGINE_STRICT=false
+      - NPM_CONFIG_CACHE=/npm-cache
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - TZ=UTC
+      # Base de datos (útil si tu app lee estas claves)
+      - AP_POSTGRES_HOST=postgres
+      - AP_REDIS_HOST=redis
+    ports:
+      - "3001:3001"
+    env_file: .env
+    volumes:
+      - ./:/app:delegated
+      - backend_nm:/app/node_modules
+      - npm_cache:/npm-cache
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  engine:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install --legacy-peer-deps && npm run serve:engine"
+    environment:
+      - NPM_CONFIG_ENGINE_STRICT=false
+      - NPM_CONFIG_CACHE=/npm-cache
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - TZ=UTC
+      - AP_REDIS_HOST=redis
+      - AP_BACKEND_BASE_URL=http://backend:3001
+    env_file: .env
+    volumes:
+      - ./:/app:delegated
+      - engine_nm:/app/node_modules
+      - npm_cache:/npm-cache
+    depends_on:
+      redis:
+        condition: service_healthy
+      backend:
+        condition: service_started
+
+  frontend:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install --legacy-peer-deps && npm run serve:frontend"
+    environment:
+      - NPM_CONFIG_ENGINE_STRICT=false
+      - NPM_CONFIG_CACHE=/npm-cache
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - TZ=UTC
+      # Si el frontend necesita apuntar al backend dentro de la red docker:
+      - VITE_API_URL=http://backend:3001
+    # si 8080 está ocupado en host, cambiá a "8081:8080"
+    ports:
+      - "8080:8080"
+    env_file: .env
+    volumes:
+      - ./:/app:delegated
+      - frontend_nm:/app/node_modules
+      - npm_cache:/npm-cache
+    depends_on:
+      backend:
+        condition: service_started
 
 volumes:
-  postgres_data:
+  backend_nm:
+  engine_nm:
+  frontend_nm:
+  npm_cache:
+  pg_data:
   redis_data:

@@ -1,4 +1,4 @@
-FROM node:18.20.5-bullseye-slim AS base
+FROM node:20-bullseye-slim AS base
 
 # Use a cache mount for apt to speed up the process
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -40,6 +40,8 @@ RUN pnpm store add typescript@4.9.4
 
 ### STAGE 1: Build ###
 FROM base AS build
+ARG NPM_TOKEN
+RUN npm config set //npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 
 # Set up backend
 WORKDIR /usr/src/app
