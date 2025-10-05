@@ -1,5 +1,4 @@
 // prisma/schema.prisma
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,13 +6,11 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // Vamos a trabajar con los dos schemas
-  schemas  = ["public", "auth"]
+  // Solo trabajamos con el schema "public"
+  schemas  = ["public"]
 }
 
-/**
- * ========= Enums (PUBLIC) =========
- */
+// -------- Enums (public) --------
 enum RunStatus {
   PENDING
   RUNNING
@@ -24,29 +21,13 @@ enum RunStatus {
   @@schema("public")
 }
 
-/**
- * ========= Modelos AUTH =========
- */
-// Mapeado a supabase auth.users, solo para la relación (owner).
-model User {
-  id        String     @id @db.Uuid
-  email     String? // opcional
-  workflows Workflow[] // lado opuesto de Workflow.user
-
-  @@map("users")
-  @@schema("auth")
-}
-
-/**
- * ========= Modelos PUBLIC =========
- */
+// -------- Modelos (public) --------
 model Workflow {
   id   String @id @default(uuid()) @db.Uuid
   name String
 
-  // Relación opcional con auth.users
+  // Guardamos el UUID del user (sin FK real a auth.users)
   userId String? @db.Uuid
-  user   User?   @relation(fields: [userId], references: [id])
 
   runs Run[]
 
