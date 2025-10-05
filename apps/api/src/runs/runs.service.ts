@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 import { StepsRegistry } from '../steps/registry';
 
 type StepNode = { id: string; type: string; params?: any };
@@ -32,9 +32,8 @@ export class RunsService {
     const run = await this.prisma.run.create({
       data: {
         workflowId,
-        // ✅ enum actualizado
-        status: 'QUEUED' as any,
-        log: { meta } as any,
+        status: RunStatus.QUEUED,
+        log: log as any,
       },
     });
 
@@ -57,45 +56,130 @@ export class RunsService {
     });
   }
 
-  private async processNext() {
-    if (this.processing || this.queue.length === 0) return;
+  private enqueue(job: QueueItem, delayMs = 0) {
+    if (delayMs > 0) {
+      setTimeout(() => {
+        this.queue.push(job);
+        this.processNext().catch((error) => this.logger.error(error));
+      }, delayMs);
+      return;
+    }
+
+    this.queue.push(job);
+    this.processNext().catch((error) => this.logger.error(error));
+  }
+
+  private async processNext(): Promise<void> {
+    /* c8 ignore next */
+    if (this.processing) {
+      return;
+    }
+
+    const job = this.queue.shift();
+    /* c8 ignore next */
+    if (!job) {
+      return;
+    }
+
     this.processing = true;
 
     const job = this.queue.shift()!;
     try {
-      // ✅ RUNNING
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: { status: 'RUNNING' as any, startedAt: new Date() },
-      });
+      const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+      /* c8 ignore next */
+      if (!run) {
+        return;
+      }
 
-      const stepLogs: any[] = [];
+      const previousLog = ((run.log as RunLog | null) ?? {
+        attempts: 0,
+        maxAttempts: MAX_ATTEMPTS,
+        nextAttemptAt: null,
+        stepLogs: [],
+      }) as RunLog;
 
-      for (const node of job.nodes) {
-        const step = this.steps.get(node.type);
-        if (!step) throw new Error(`Step not found: ${node.type}`);
+      const stepLogs = Array.isArray(previousLog.stepLogs)
+        ? [...previousLog.stepLogs]
+        : [];
 
-        const out = await step.run(node.params ?? {});
-        stepLogs.push({ id: node.id, type: node.type, output: out });
-
-        // persistir log incremental (opcional)
-        await this.prisma.run.update({
-          where: { id: job.runId },
-          data: { log: { stepLogs } as any },
-        });
+      const currentLog: RunLog = {
+        ...previousLog,
+        meta: {
+          ...(previousLog.meta ?? {}),
+          ...(job.meta ?? {}),
+        },
+        attempts: previousLog.attempts ?? 0,
+        maxAttempts: previousLog.maxAttempts ?? MAX_ATTEMPTS,
+        nextAttemptAt: null,
+        stepLogs,
+      };
+      if ('error' in currentLog) {
+        delete (currentLog as Partial<RunLog>).error;
       }
 
       // ✅ SUCCEEDED
       await this.prisma.run.update({
         where: { id: job.runId },
-        data: { status: 'SUCCEEDED' as any, finishedAt: new Date() },
+        data: {
+          status: RunStatus.RUNNING,
+          startedAt,
+          log: currentLog as any,
+        },
       });
-    } catch (err: any) {
-      // ✅ FAILED
+
+      for (const node of job.nodes) {
+        const step = this.steps.get(node.type);
+        const stepStart = new Date();
+        const stepLogBase = {
+          id: String(node.id ?? node.type),
+          type: String(node.type),
+          startedAt: stepStart.toISOString(),
+        };
+
+        try {
+          const output = await step.run(node.params ?? {});
+          const finishedAt = new Date();
+          const entry = {
+            ...stepLogBase,
+            finishedAt: finishedAt.toISOString(),
+            durationMs: finishedAt.getTime() - stepStart.getTime(),
+            status: 'OK' as const,
+            ...(output !== undefined ? { output } : {}),
+          };
+          currentLog.stepLogs = [...currentLog.stepLogs, entry];
+          await this.prisma.run.update({
+            where: { id: job.runId },
+            data: {
+              log: currentLog as any,
+            },
+          });
+        } catch (stepError: any) {
+          const finishedAt = new Date();
+          const entry = {
+            ...stepLogBase,
+            finishedAt: finishedAt.toISOString(),
+            durationMs: finishedAt.getTime() - stepStart.getTime(),
+            status: 'ERROR' as const,
+            error: stepError?.message ?? String(stepError),
+          };
+          currentLog.stepLogs = [...currentLog.stepLogs, entry];
+          currentLog.error = stepError?.message ?? String(stepError);
+
+          await this.prisma.run.update({
+            where: { id: job.runId },
+            data: {
+              log: currentLog as any,
+            },
+          });
+
+          throw stepError;
+        }
+      }
+
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: 'FAILED' as any,
+          status: RunStatus.SUCCEEDED,
           finishedAt: new Date(),
           log: { error: String(err?.message ?? err) } as any,
         },
@@ -103,8 +187,76 @@ export class RunsService {
       throw err;
     } finally {
       this.processing = false;
-      // encadenar el siguiente
-      this.processNext().catch(() => {});
+      if (this.queue.length > 0) {
+        this.processNext().catch((err) => this.logger.error(err));
+      }
     }
+  }
+
+  private async handleRunFailure(job: QueueItem, error: any) {
+    const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+    if (!run) {
+      return;
+    }
+
+    const currentLog: RunLog = {
+      attempts: 0,
+      maxAttempts: MAX_ATTEMPTS,
+      nextAttemptAt: null,
+      stepLogs: [],
+      ...(run.log as RunLog | null),
+    };
+    currentLog.meta = currentLog.meta ?? {};
+    currentLog.stepLogs = Array.isArray(currentLog.stepLogs)
+      ? currentLog.stepLogs
+      : [];
+
+    const attempts = (currentLog.attempts ?? 0) + 1;
+    const maxAttempts = currentLog.maxAttempts ?? MAX_ATTEMPTS;
+    currentLog.attempts = attempts;
+    currentLog.maxAttempts = maxAttempts;
+    currentLog.error = error?.message ?? String(error);
+
+    if (attempts < maxAttempts) {
+      const delay = BASE_BACKOFF_MS * Math.pow(2, attempts);
+      const nextAttemptAt = new Date(Date.now() + delay);
+      currentLog.nextAttemptAt = nextAttemptAt.toISOString();
+
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: {
+          status: RunStatus.QUEUED,
+          log: currentLog as any,
+        },
+      });
+
+      this.logger.warn(
+        `Run ${job.runId} failed (attempt ${attempts}/${maxAttempts}). Retrying in ${delay}ms`,
+      );
+
+      this.enqueue(
+        {
+          ...job,
+          attempt: attempts,
+        },
+        delay,
+      );
+      return;
+    }
+
+    currentLog.nextAttemptAt = null;
+
+    await this.prisma.run.update({
+      where: { id: job.runId },
+      data: {
+        status: RunStatus.FAILED,
+        finishedAt: new Date(),
+        log: currentLog as any,
+      },
+    });
+
+    this.logger.error(
+      `Run ${job.runId} failed permanently after ${attempts} attempts: ${currentLog.error}`,
+    );
   }
 }

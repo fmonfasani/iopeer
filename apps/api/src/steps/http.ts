@@ -26,12 +26,15 @@ export class HttpStep {
       body: body != null ? JSON.stringify(body) : undefined,
     });
 
-    // Intentar JSON; si falla, devolver texto
-    let data: unknown;
+    let data: any;
     try {
-      data = await res.clone().json();
+      data = await res.json();
     } catch {
-      data = await res.text();
+      try {
+        data = await res.text();
+      } catch {
+        data = undefined;
+      }
     }
 
     if (expect?.status && res.status !== expect.status) {

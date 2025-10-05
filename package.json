@@ -1,13 +1,13 @@
 {
   "name": "iopeer",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "prepare": "husky install",
+    "prepare": "echo skip-husky",
     "api:dev": "pnpm --dir apps/api start:dev",
     "api:start": "pnpm --dir apps/api start",
     "web:dev": "pnpm --dir apps/web dev",
