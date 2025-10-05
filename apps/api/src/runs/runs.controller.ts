@@ -5,7 +5,10 @@ import {
   Get,
   Param,
   Post,
+  Req,
 } from '@nestjs/common';
+import type { Request } from 'express';
+
 import { RunsService } from './runs.service';
 
 type StepLegacy = { key: string; params?: any };
@@ -58,14 +61,20 @@ export class RunsController {
   }
 
   @Post('/runs')
-  async create(@Body() body: any) {
+  async create(@Body() body: any, @Req() req: Request) {
     try {
       const workflowId = body?.workflowId;
       if (!workflowId || typeof workflowId !== 'string') {
         throw new BadRequestException('workflowId (string) es requerido');
       }
       const nodes = toNodes(body);
-      return await this.runs.createRun(workflowId, nodes, body?.meta);
+      const id = await this.runs.enqueueRun({
+        workflowId,
+        nodes,
+        meta: body?.meta,
+        requestId: req.requestId,
+      });
+      return { id };
     } catch (e: any) {
       // Si Prisma rechaza el enum/valor, devolvemos 400 con detalle
       const msg = e?.message || 'Error al crear run';
@@ -85,6 +94,7 @@ export class RunsController {
     const nodes: NodeNew[] = [
       { id: 'n1', type: 'echo', params: { value: 'hola' } },
     ];
-    return this.runs.createRun('wf.test', nodes);
+    const id = await this.runs.enqueueRun({ workflowId: 'wf.test', nodes });
+    return { id };
   }
 }

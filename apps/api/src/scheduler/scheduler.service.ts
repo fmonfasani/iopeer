@@ -1,33 +1,58 @@
-import { Injectable, Logger } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { randomUUID } from 'crypto';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+
+import { rootLogger } from '../logger/pino-logger.service';
+import { RunsService } from '../runs/runs.service';
+
+const PLAN_PATH = join(process.cwd(), 'apps', 'api', 'plans', 'plan-bootstrap.json');
 
 @Injectable()
-export class SchedulerService {
-  private readonly logger = new Logger(SchedulerService.name);
-  private readonly prisma = new PrismaClient();
+export class SchedulerService implements OnModuleInit, OnModuleDestroy {
+  private readonly logger = rootLogger.child({ service: 'SchedulerService' });
+  private timer?: NodeJS.Timeout;
 
-  // llamado desde main.ts / scheduler.controller.ts
+  constructor(private readonly runsService: RunsService) {}
+
+  onModuleInit() {
+    const interval = Number(process.env.SCHEDULER_INTERVAL_MS ?? 60_000);
+    this.logger.info({ interval }, 'scheduler:start');
+    this.timer = setInterval(() => {
+      this.tick().catch((error) =>
+        this.logger.error({ err: error }, 'scheduler:tick:error'),
+      );
+    }, interval);
+  }
+
+  onModuleDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = undefined;
+      this.logger.info('scheduler:stop');
+    }
+  }
+
   async tick() {
-    // últimos SUCCEEDED
-    const recent = await this.prisma.run.findMany({
-      where: { status: { equals: 'SUCCEEDED' as any } }, // ✅ enum actualizado
-      orderBy: { finishedAt: 'desc' },
-      take: 5,
-    });
-    this.logger.log(`tick: ${recent.length} runs SUCCEEDED recientes`);
-    return { ok: true, recent };
-  }
+    const raw = await readFile(PLAN_PATH, 'utf8');
+    const plan = JSON.parse(raw);
+    const schedule = Array.isArray(plan.schedule) ? plan.schedule : [];
+    let dispatched = 0;
 
-  // Stub
-  start(): void {
-    this.logger.log('Scheduler started (stub)');
-  }
+    for (const entry of schedule) {
+      if (!entry?.workflowId || !Array.isArray(entry.nodes)) {
+        continue;
+      }
 
-  async getSucceededRuns() {
-    return this.prisma.run.findMany({
-      where: { status: { equals: 'SUCCEEDED' as any } }, // ✅
-      orderBy: { finishedAt: 'desc' },
-      take: 20,
-    });
+      await this.runsService.enqueueRun({
+        workflowId: entry.workflowId,
+        nodes: entry.nodes,
+        meta: { planId: plan.plan ?? 'bootstrap', scheduleId: entry.id },
+        requestId: `scheduler-${randomUUID()}`,
+      });
+      dispatched += 1;
+    }
+
+    this.logger.info({ runs: dispatched }, 'scheduler:tick');
   }
 }

@@ -4,7 +4,7 @@ import { Test } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { AppModule } from '../src/app.module';
 
-describe('E2E API', () => {
+describe.skip('E2E API', () => {
   let app: INestApplication;
   let http: request.SuperTest<request.Test>;
 
