@@ -1,0 +1,18 @@
+name: Alerts
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack (fail only)
+        if: ${{ github.event.workflow_run.conclusion != 'success' }}
+        uses: slackapi/slack-github-action@v1.27.0
+        with:
+          payload: '{"text":":warning: CI failed on ${{
+            github.repository }} • run: ${{ github.server_url }}/${{
+            github.repository }}/actions/runs/${{ github.run_id }}"}'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

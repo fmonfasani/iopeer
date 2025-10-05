@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Evitar que corra en CI
+[ -n "$CI" ] && exit 0
+
+# Si no hay archivos en staging, salimos
+if [ -z "$(git diff --name-only --cached)" ]; then
+  exit 0
+fi
+
+# Si hay cambios en áreas relevantes, log automático
+CHANGED="$(git diff --name-only --cached)"
+echo "$CHANGED" | grep -E '^(apps/(api|web)/|docs/|prisma/|packages/sdk/)' >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+  node scripts/log-progress.js --msg "pre-commit auto-log"
+  git add docs/progress-log.md
+fi
+
+# Lint-staged (si lo configuraste)
+pnpm -s -w lint-staged 2>/dev/null || true
