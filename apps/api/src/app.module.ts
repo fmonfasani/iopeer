@@ -9,13 +9,15 @@ import { HttpStep } from './steps/http';
 import { GateService } from './gates/gate.service';
 import { SchedulerService } from './scheduler/scheduler.service';
 import { HealthController } from './health/health.controller';
-import { SchedulerController } from './scheduler/scheduler.controller';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [],
-  controllers: [RunsController, HealthController, SchedulerController],
+  controllers: [AppController, RunsController, HealthController],
   providers: [
     PrismaClient,
+    AppService,
     RunsService,
     StepsRegistry,
     EchoStep,

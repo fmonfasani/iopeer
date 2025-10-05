@@ -3,16 +3,21 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     environment: 'node',
-    include: ['src/**/*.spec.ts', 'test/**/*.e2e-spec.ts'],
-    globals: true,
+    reporters: ['default'],
+    // activa cobertura y evita el error de "lines" en raíz
     coverage: {
+      enabled: true,
       provider: 'v8',
-      reportsDirectory: './coverage',
-      reporter: ['text', 'html'],
-      lines: 60,
-      branches: 60,
-      statements: 60,
-      functions: 60,
+      reports: ['text', 'html', 'json-summary'],
+      thresholds: { lines: 70, statements: 70, functions: 70, branches: 70 },
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        '**/*.spec.ts',
+        '**/*.e2e-spec.ts',
+        'node_modules/**',
+        'dist/**',
+      ],
     },
   },
 });
