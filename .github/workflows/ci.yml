@@ -1,24 +1,18 @@
 name: CI
-
 on:
   push:
-    branches: [ main, canary ]
+    branches: [main]
   pull_request:
 
 jobs:
-  api_tests:
+  api:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
-          run: pnpm install --frozen-lockfile
-
-
+        uses: pnpm/action-setup@v4   
+          
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -29,11 +23,8 @@ jobs:
         run: pnpm install --frozen-lockfile
         
 
-      - name: Prisma generate
-        working-directory: apps/api
-        run: pnpm prisma generate
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Build API
+        run: pnpm --filter ./apps/api build
 
       - name: Run tests (vitest)
         working-directory: apps/api

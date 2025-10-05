@@ -24,7 +24,7 @@ export class GateService {
   async checkDepsSucceeded(
     depResults: Record<string, string>,
   ): Promise<boolean> {
-    // depResults: { "L1-HEALTH": "SUCCEEDED", ... } — simplificado (lee de runs/log)
-    return Object.values(depResults).every((s) => s === 'SUCCEEDED');
+    // depResults: { "L1-HEALTH": "SUCCESS", ... } — simplificado (lee de runs/log)
+    return Object.values(depResults).every((s) => s === 'SUCCESS');
   }
 }

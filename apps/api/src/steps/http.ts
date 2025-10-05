@@ -4,14 +4,26 @@ import { Injectable } from '@nestjs/common';
 export class HttpStep {
   type = 'http';
 
-  async run(params: any) {
-    const { url, method = 'GET', headers, body, expect } = params || {};
+  async run(params: {
+    url: string;
+    method?: string;
+    headers?: Record<string, string>;
+    body?: any;
+    expect?: { status?: number };
+  }) {
+    const {
+      url,
+      method = 'GET',
+      headers,
+      body,
+      expect,
+    } = params || ({} as any);
     if (!url) throw new Error('http step requires url');
 
     const res = await fetch(url, {
       method,
       headers,
-      body: body ? JSON.stringify(body) : undefined,
+      body: body != null ? JSON.stringify(body) : undefined,
     });
 
     let data: any;
@@ -29,6 +41,6 @@ export class HttpStep {
       throw new Error(`http expect status ${expect.status}, got ${res.status}`);
     }
 
-    return { status: res.status, data };
+    return { status: res.status, ok: res.ok, data };
   }
 }

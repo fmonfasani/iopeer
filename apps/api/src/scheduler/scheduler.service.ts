@@ -11,12 +11,16 @@ export class SchedulerService {
   private planPath = this.resolvePlanPath();
   private plan: any;
 
-  constructor(
-    private runs: RunsService,
-    private gates: GateService,
-    private prisma: PrismaClient,
-  ) {
-    this.loadPlan();
+  // llamado desde main.ts / scheduler.controller.ts
+  async tick() {
+    // últimos SUCCEEDED
+    const recent = await this.prisma.run.findMany({
+      where: { status: { equals: 'SUCCEEDED' as any } }, // ✅ enum actualizado
+      orderBy: { finishedAt: 'desc' },
+      take: 5,
+    });
+    this.logger.log(`tick: ${recent.length} runs SUCCEEDED recientes`);
+    return { ok: true, recent };
   }
 
   async start() {
@@ -58,41 +62,5 @@ export class SchedulerService {
     const finished = await this.prisma.run.findMany({
       where: { status: { equals: RunStatus.SUCCEEDED } },
     });
-    for (const r of finished) {
-      const actionId = (r.log as any)?.meta?.actionId;
-      if (actionId) succeeded[actionId] = 'SUCCEEDED';
-    }
-
-    // 2) recorrer schedule en orden y elegir la primera pendiente con pre cumplidos
-    for (const action of this.plan.schedule) {
-      if (succeeded[action.id]) continue;
-
-      // gates mínimos
-      const pre = action.pre || [];
-      const needsEnv = pre
-        .filter((p: string) => p.startsWith('env:'))
-        .map((p: string) => p.replace('env:', '').toUpperCase());
-      const needsDb = pre.some((p: string) => p === 'db:reachable');
-      const deps = pre
-        .filter((p: string) => p.includes(':SUCCEEDED'))
-        .map((p: string) => p.split(':')[0]);
-
-      if (needsEnv.length && !(await this.gates.checkEnv(needsEnv))) continue;
-      if (needsDb && !(await this.gates.checkDbReachable())) continue;
-      const depsOk = await this.gates.checkDepsSucceeded(
-        Object.fromEntries(deps.map((d) => [d, succeeded[d] ?? ''])),
-      );
-      if (!depsOk) continue;
-
-      // 3) encolar run y salir (ascendente, uno por tick)
-      await this.runs.createRun(action.workflowId, action.nodes, {
-        actionId: action.id,
-        level: action.level,
-      });
-      this.logger.log(`Enqueued action ${action.id}`);
-      break;
-    }
-
-    return { ok: true };
   }
 }

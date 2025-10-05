@@ -3,7 +3,7 @@ import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 
 @Controller('metrics')
 export class MetricsController {
-  constructor(private readonly prisma: PrismaClient) {}
+  private prisma = new PrismaClient();
 
   @Get()
   async getMetrics() {
@@ -12,16 +12,6 @@ export class MetricsController {
       this.prisma.run.count({ where: { status: RunStatus.FAILED } }),
     ]);
 
-    const uptimeSec = Math.floor(process.uptime());
-    const errorRatePct = runsTotal > 0 ? (runsFailed / runsTotal) * 100 : 0;
-
-    return {
-      uptimeSec,
-      runsTotal,
-      runsFailed,
-      p95Ms: null, // TODO: capture latency percentiles once metrics pipeline is ready
-      p99Ms: null, // TODO: capture latency percentiles once metrics pipeline is ready
-      errorRatePct,
-    };
+    return { failed, running, succeeded, queued, cancelled };
   }
 }

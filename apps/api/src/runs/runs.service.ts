@@ -2,55 +2,33 @@ import { Injectable, Logger } from '@nestjs/common';
 import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 import { StepsRegistry } from '../steps/registry';
 
-const MAX_ATTEMPTS = 3;
-const BASE_BACKOFF_MS = 2_000;
-
+type StepNode = { id: string; type: string; params?: any };
 type QueueItem = {
   runId: string;
   workflowId: string;
-  nodes: any[];
-  meta?: Record<string, any>;
-  attempt: number;
+  nodes: StepNode[];
+  meta?: any;
 };
 
-type RunLog = {
-  meta?: Record<string, any>;
-  attempts: number;
-  maxAttempts: number;
-  nextAttemptAt: string | null;
-  stepLogs: Array<{
-    id: string;
-    type: string;
-    startedAt: string;
-    finishedAt?: string;
-    durationMs?: number;
-    status: 'OK' | 'ERROR';
-    output?: unknown;
-    error?: string;
-  }>;
-  error?: string;
-};
+const toDbStatus = (s: string) =>
+  s === 'QUEUED' ? 'PENDING' : s === 'SUCCEEDED' ? 'SUCCESS' : s; // RUNNING / FAILED / CANCELLED pasan tal cual
 
 @Injectable()
 export class RunsService {
   private readonly logger = new Logger(RunsService.name);
+  private readonly prisma = new PrismaClient();
+
+  // Cola simple en memoria
   private queue: QueueItem[] = [];
   private processing = false;
 
-  constructor(
-    private readonly prisma: PrismaClient,
-    private readonly steps: StepsRegistry,
-  ) {}
+  constructor(private readonly steps: StepsRegistry) {}
 
-  async createRun(workflowId: string, nodes: any[], meta?: any) {
-    const log: RunLog = {
-      meta: meta ? { ...meta } : {},
-      attempts: 0,
-      maxAttempts: MAX_ATTEMPTS,
-      nextAttemptAt: null,
-      stepLogs: [],
-    };
-
+  async createRun(
+    workflowId: string,
+    nodes: StepNode[],
+    meta?: Record<string, any>,
+  ) {
     const run = await this.prisma.run.create({
       data: {
         workflowId,
@@ -59,14 +37,9 @@ export class RunsService {
       },
     });
 
-    this.enqueue({
-      runId: run.id,
-      workflowId,
-      nodes,
-      meta,
-      attempt: 0,
-    });
-
+    this.queue.push({ runId: run.id, workflowId, nodes, meta });
+    // procesar en background
+    this.processNext().catch((e) => this.logger.error(e?.stack || e));
     return run;
   }
 
@@ -74,9 +47,11 @@ export class RunsService {
     return this.prisma.run.findUnique({ where: { id } });
   }
 
+  // requerido por RunsController
   async listRecentRuns(limit = 50) {
     return this.prisma.run.findMany({
-      orderBy: { startedAt: 'desc' },
+      // si no tenés createdAt, ordenamos por startedAt y luego id
+      orderBy: [{ startedAt: 'desc' }, { id: 'desc' }],
       take: limit,
     });
   }
@@ -108,6 +83,7 @@ export class RunsService {
 
     this.processing = true;
 
+    const job = this.queue.shift()!;
     try {
       const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
       /* c8 ignore next */
@@ -141,8 +117,7 @@ export class RunsService {
         delete (currentLog as Partial<RunLog>).error;
       }
 
-      const startedAt = run.startedAt ?? new Date();
-
+      // ✅ SUCCEEDED
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
@@ -206,11 +181,10 @@ export class RunsService {
         data: {
           status: RunStatus.SUCCEEDED,
           finishedAt: new Date(),
-          log: currentLog as any,
+          log: { error: String(err?.message ?? err) } as any,
         },
       });
-    } catch (error: any) {
-      await this.handleRunFailure(job, error);
+      throw err;
     } finally {
       this.processing = false;
       if (this.queue.length > 0) {

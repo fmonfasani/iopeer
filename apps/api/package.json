@@ -24,7 +24,9 @@
     "test": "vitest run --run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "scheduler:next": "curl -X POST http://localhost:3001/scheduler/next -H 'Content-Type: application/json' -d '{}'"
+    "scheduler:next": "curl -X POST http://localhost:3001/scheduler/next -H 'Content-Type: application/json' -d '{}'",
+    "start:dev": "nest start --watch",
+    "prisma": "prisma generate"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
