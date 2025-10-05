@@ -27,6 +27,7 @@ export class HttpStep {
     let attempt = 0;
     let lastError: unknown;
 
+<<<<<<< HEAD
     while (attempt < MAX_ATTEMPTS) {
       attempt += 1;
       const controller = new AbortController();
@@ -98,6 +99,17 @@ export class HttpStep {
       return JSON.parse(text);
     } catch {
       return text;
+=======
+    let data: any;
+    try {
+      data = await res.json();
+    } catch {
+      try {
+        data = await res.text();
+      } catch {
+        data = undefined;
+      }
+>>>>>>> main
     }
   }
 

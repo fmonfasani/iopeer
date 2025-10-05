@@ -1,7 +1,4 @@
-// =======================
 // prisma/schema.prisma
-// =======================
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,13 +6,11 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // Necesario si usás auth.users de Supabase:
-  schemas  = ["public", "auth"]
+  // Solo trabajamos con el schema "public"
+  schemas  = ["public"]
 }
 
-// -----------------------
-// Enums
-// -----------------------
+// -------- Enums (public) --------
 enum RunStatus {
   PENDING
   RUNNING
@@ -45,28 +40,29 @@ model User {
 // Modelos (public schema)
 // -----------------------
 model Workflow {
-  id        String  @id @db.Uuid @default(uuid())
-  name      String
+  id   String @id @default(uuid()) @db.Uuid
+  name String
 
-  // Relación opcional con auth.users
-  userId    String? @db.Uuid
-  user      User?   @relation(fields: [userId], references: [id])
+  // Guardamos el UUID del user (sin FK real a auth.users)
+  userId String? @db.Uuid
 
-  runs      Run[]
+  runs Run[]
 
   @@schema("public")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@schema("public")
 }
 
 model Run {
-  id         String     @id @db.Uuid @default(uuid())
+  id String @id @default(uuid()) @db.Uuid
 
-  workflowId String     @db.Uuid
-  workflow   Workflow   @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  workflowId String   @db.Uuid
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
 
-  status     RunStatus  @default(PENDING)
+  status     RunStatus @default(PENDING)
   startedAt  DateTime?
   finishedAt DateTime?
   durationMs Int?
@@ -74,8 +70,8 @@ model Run {
   spec       Json?
   log        Json?
 
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([workflowId])
   @@index([status, finishedAt])

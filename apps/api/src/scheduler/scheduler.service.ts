@@ -6,7 +6,13 @@ import { join } from 'path';
 import { rootLogger } from '../logger/pino-logger.service';
 import { RunsService } from '../runs/runs.service';
 
-const PLAN_PATH = join(process.cwd(), 'apps', 'api', 'plans', 'plan-bootstrap.json');
+const PLAN_PATH = join(
+  process.cwd(),
+  'apps',
+  'api',
+  'plans',
+  'plan-bootstrap.json',
+);
 
 @Injectable()
 export class SchedulerService implements OnModuleInit, OnModuleDestroy {
