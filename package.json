@@ -4,8 +4,12 @@
 <<<<<<< HEAD
   "packageManager": "pnpm@9.15.9",
 =======
+<<<<<<< HEAD
+  "packageManager": "pnpm@9.15.9",
+=======
   "packageManager": "pnpm@9.0.0",
 >>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
+>>>>>>> main
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",

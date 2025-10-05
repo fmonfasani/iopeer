@@ -11,15 +11,20 @@ export class HttpStep {
     const res = await fetch(url, {
       method,
       headers,
-      body: body ? JSON.stringify(body) : undefined,
+      body: body !== undefined ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
     });
+
+    const contentType = res.headers.get('content-type') || '';
+    const data = contentType.includes('application/json')
+      ? await res.json().catch(() => null)
+      : await res.text();
+      body: body ? JSON.stringify(body) : undefined,
 
     const data = await res.json().catch(() => ({}));
 
     if (expect?.status && res.status !== expect.status) {
       throw new Error(`http expect status ${expect.status}, got ${res.status}`);
     }
-
     return { status: res.status, data };
   }
 }
