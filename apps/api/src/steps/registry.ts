@@ -3,9 +3,16 @@ import { EchoStep } from './echo';
 import { DelayStep } from './delay';
 import { HttpStep } from './http';
 
+export interface StepContext {
+  requestId: string;
+  runId: string;
+  previousOutput: unknown;
+  step: { id: string; type: string; params?: Record<string, any> };
+}
+
 export interface Step {
   type: string;
-  run(params: any): Promise<any>;
+  run(params: any, context?: StepContext): Promise<any>;
 }
 
 @Injectable()

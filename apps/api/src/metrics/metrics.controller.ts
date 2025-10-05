@@ -3,7 +3,7 @@ import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 
 @Controller('metrics')
 export class MetricsController {
-  private prisma = new PrismaClient();
+  constructor(private readonly runs: RunsService) {}
 
   @Get()
   async getMetrics() {

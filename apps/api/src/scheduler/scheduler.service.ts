@@ -1,66 +1,64 @@
-import { Injectable, Logger } from '@nestjs/common';
-import * as fs from 'fs';
-import * as path from 'path';
+import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { randomUUID } from 'crypto';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+
+import { rootLogger } from '../logger/pino-logger.service';
 import { RunsService } from '../runs/runs.service';
-import { GateService } from '../gates/gate.service';
-import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
+
+const PLAN_PATH = join(
+  process.cwd(),
+  'apps',
+  'api',
+  'plans',
+  'plan-bootstrap.json',
+);
 
 @Injectable()
-export class SchedulerService {
-  private readonly logger = new Logger(SchedulerService.name);
-  private planPath = this.resolvePlanPath();
-  private plan: any;
+export class SchedulerService implements OnModuleInit, OnModuleDestroy {
+  private readonly logger = rootLogger.child({ service: 'SchedulerService' });
+  private timer?: NodeJS.Timeout;
 
-  // llamado desde main.ts / scheduler.controller.ts
+  constructor(private readonly runsService: RunsService) {}
+
+  onModuleInit() {
+    const interval = Number(process.env.SCHEDULER_INTERVAL_MS ?? 60_000);
+    this.logger.info({ interval }, 'scheduler:start');
+    this.timer = setInterval(() => {
+      this.tick().catch((error) =>
+        this.logger.error({ err: error }, 'scheduler:tick:error'),
+      );
+    }, interval);
+  }
+
+  onModuleDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = undefined;
+      this.logger.info('scheduler:stop');
+    }
+  }
+
   async tick() {
-    // últimos SUCCEEDED
-    const recent = await this.prisma.run.findMany({
-      where: { status: { equals: 'SUCCEEDED' as any } }, // ✅ enum actualizado
-      orderBy: { finishedAt: 'desc' },
-      take: 5,
-    });
-    this.logger.log(`tick: ${recent.length} runs SUCCEEDED recientes`);
-    return { ok: true, recent };
-  }
+    const raw = await readFile(PLAN_PATH, 'utf8');
+    const plan = JSON.parse(raw);
+    const schedule = Array.isArray(plan.schedule) ? plan.schedule : [];
+    let dispatched = 0;
 
-  async start() {
-    this.logger.log('Scheduler started');
-  }
-
-  async getSucceededRuns(limit = 10) {
-    return this.prisma.run.findMany({
-      where: { status: { equals: RunStatus.SUCCEEDED } },
-      orderBy: { finishedAt: 'desc' },
-      take: limit,
-    });
-  }
-
-  private resolvePlanPath() {
-    const candidates = [
-      path.join(process.cwd(), 'plans', 'plan-bootstrap.json'),
-      path.join(process.cwd(), 'apps/api/plans/plan-bootstrap.json'),
-      path.join(__dirname, '..', 'plans', 'plan-bootstrap.json'),
-    ];
-
-    for (const candidate of candidates) {
-      if (fs.existsSync(candidate)) {
-        return candidate;
+    for (const entry of schedule) {
+      if (!entry?.workflowId || !Array.isArray(entry.nodes)) {
+        continue;
       }
+
+      await this.runsService.enqueueRun({
+        workflowId: entry.workflowId,
+        nodes: entry.nodes,
+        meta: { planId: plan.plan ?? 'bootstrap', scheduleId: entry.id },
+        requestId: `scheduler-${randomUUID()}`,
+      });
+      dispatched += 1;
     }
 
-    return candidates[0];
-  }
-
-  private loadPlan() {
-    const raw = fs.readFileSync(this.planPath, 'utf8');
-    this.plan = JSON.parse(raw);
-  }
-
-  async tick() {
-    // 1) calcular qué acciones ya “SUCCEEDED” mirando logs (simple)
-    const succeeded: Record<string, string> = {};
-    const finished = await this.prisma.run.findMany({
-      where: { status: { equals: RunStatus.SUCCEEDED } },
-    });
+    this.logger.info({ runs: dispatched }, 'scheduler:tick');
   }
 }
