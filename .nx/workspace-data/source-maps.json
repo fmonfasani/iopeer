@@ -247,224 +247,6 @@
       "nx/target-defaults"
     ]
   },
-  "packages/ee/ui/embed-sdk": {
-    "root": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets": [
-      "packages/ee/ui/embed-sdk/.eslintrc.json",
-      "@nx/eslint/plugin"
-    ],
-    "name": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "projectType": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "tags": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "tags.npm:public": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "metadata.targetGroups": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "metadata.js": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "metadata.js.packageName": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "metadata.js.packageMain": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "metadata.js.isInPackageManagerWorkspaces": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "targets.nx-release-publish": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "targets.nx-release-publish.executor": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "targets.nx-release-publish.dependsOn": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "targets.nx-release-publish.options": [
-      "packages/ee/ui/embed-sdk/package.json",
-      "nx/core/package-json"
-    ],
-    "$schema": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "sourceRoot": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.executor": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.outputs": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.options": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.options.outputPath": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.options.main": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.options.tsConfig": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.build.options.assets": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.executor": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.outputs": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.configurations": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.target": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.compiler": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.outputFileName": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.outputPath": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.main": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.tsConfig": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.assets": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.webpackConfig": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.generatePackageJson": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.options.babelUpwardRootMode": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.configurations.production": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.configurations.production.optimization": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.configurations.production.extractLicenses": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.bundle.configurations.production.inspect": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint.executor": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint.outputs": [
-      "packages/ee/ui/embed-sdk/project.json",
-      "nx/core/project-json"
-    ],
-    "targets.lint.inputs": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.lint.cache": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.lint.parallelism": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.build.cache": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.build.dependsOn": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.build.inputs": [
-      "nx.json",
-      "nx/target-defaults"
-    ],
-    "targets.build.parallelism": [
-      "nx.json",
-      "nx/target-defaults"
-    ]
-  },
   "packages/engine": {
     "root": [
       "packages/engine/project.json",
@@ -58691,6 +58473,208 @@
       "nx/target-defaults"
     ],
     "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "packages/ee/ui/embed-sdk": {
+    "root": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "packages/ee/ui/embed-sdk/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "packages/ee/ui/embed-sdk/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.main": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.executor": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.outputs": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.configurations": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.target": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.compiler": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.outputFileName": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.outputPath": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.main": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.tsConfig": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.assets": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.webpackConfig": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.generatePackageJson": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.options.babelUpwardRootMode": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.configurations.production": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.configurations.production.optimization": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.configurations.production.extractLicenses": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.bundle.configurations.production.inspect": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "packages/ee/ui/embed-sdk/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
       "nx.json",
       "nx/target-defaults"
     ]
