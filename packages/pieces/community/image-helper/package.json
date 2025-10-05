@@ -1,7 +1,0 @@
-﻿{
-  "name": "@IOpeer/piece-image-helper",
-  "version": "0.1.7",
-  "dependencies": {
-    "jimp": "^0.22.12"
-  }
-}
