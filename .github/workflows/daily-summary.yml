@@ -1,0 +1,23 @@
+name: Daily Summary
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+      timezone: America/Argentina/Buenos_Aires
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build summary payload
+        id: payload
+        run: |
+          TEXT="Resumen diario IOpeer: builds, merges y runs fallidas pendiente de implementar."
+          echo "text=$TEXT" >> "$GITHUB_OUTPUT"
+
+      - name: Post to Slack (placeholder)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          payload="{ \"text\": \"${{ steps.payload.outputs.text }}\" }"
+          curl -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"

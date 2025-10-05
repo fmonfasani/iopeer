@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { RunsService } from '../runs/runs.service';
 import { GateService } from '../gates/gate.service';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
 @Injectable()
 export class SchedulerService {
@@ -34,7 +34,7 @@ export class SchedulerService {
     // 1) calcular qué acciones ya “SUCCEEDED” mirando logs (simple)
     const succeeded: Record<string, string> = {};
     const finished = await this.prisma.run.findMany({
-      where: { status: { equals: $Enums.RunStatus.SUCCESS } },
+      where: { status: { equals: Prisma.RunStatus.SUCCEEDED } },
     });
     for (const r of finished) {
       const actionId = (r.log as any)?.meta?.actionId;
