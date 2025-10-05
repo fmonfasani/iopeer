@@ -15,6 +15,11 @@ export class RunsController {
     return this.runs.createRun(body.workflowId, body.nodes, body.meta);
   }
 
+  @Get('runs')
+  list() {
+    return this.runs.listRecentRuns(50);
+  }
+
   @Get('runs/:id')
   get(@Param('id') id: string) {
     return this.runs.getRun(id);

@@ -10,10 +10,11 @@ import { GateService } from './gates/gate.service';
 import { SchedulerService } from './scheduler/scheduler.service';
 import { HealthController } from './health/health.controller';
 import { SchedulerController } from './scheduler/scheduler.controller';
+import { MetricsController } from './metrics/metrics.controller';
 
 @Module({
   imports: [],
-  controllers: [RunsController, HealthController, SchedulerController],
+  controllers: [RunsController, HealthController, SchedulerController, MetricsController],
   providers: [
     PrismaClient,
     RunsService,

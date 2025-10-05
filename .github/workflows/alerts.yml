@@ -1,18 +1,36 @@
 name: Alerts
+
 on:
   workflow_run:
-    workflows: ["CI"]
-    types: [completed]
+    workflows:
+      - Deploy
+    types:
+      - completed
+  schedule:
+    - cron: '0 * * * *'
+      timezone: America/Argentina/Buenos_Aires
+
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Slack (fail only)
-        if: ${{ github.event.workflow_run.conclusion != 'success' }}
-        uses: slackapi/slack-github-action@v1.27.0
-        with:
-          payload: '{"text":":warning: CI failed on ${{
-            github.repository }} • run: ${{ github.server_url }}/${{
-            github.repository }}/actions/runs/${{ github.run_id }}"}'
+      - name: Determine if alert is required
+        id: determine
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            if [ "${{ github.event.workflow_run.conclusion }}" != "success" ]; then
+              echo "send=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "send=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "send=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send Slack notification
+        if: steps.determine.outputs.send == 'true'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          payload='{ "text": ":rotating_light: Alert IOpeer • Evento: ${{ github.event_name }} • Workflow: ${{ github.event.workflow_run.name || 'scheduled-check' }}" }'
+          curl -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"
