@@ -1,18 +1,46 @@
 name: CI
+
 on:
-  push: { branches: ["main","develop"] }
+  push:
+    branches: [ main, canary ]
   pull_request:
+
 jobs:
-  build:
+  api_tests:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
-      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-        with: { version: 9 }
-      - run: pnpm install
-      - run: pnpm turbo run lint || true
-      - run: pnpm turbo run build
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Prisma generate
+        working-directory: apps/api
+        run: pnpm prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run tests (vitest)
+        working-directory: apps/api
+        run: pnpm test
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-coverage
+          path: apps/api/coverage

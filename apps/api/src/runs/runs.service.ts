@@ -1,34 +1,80 @@
-// apps/api/src/runs/runs.service.ts
+import { Injectable, Logger } from '@nestjs/common';
+import { PrismaClient, Prisma, $Enums } from '@prisma/client';
+import { StepsRegistry } from '../steps/registry';
+
+type QueueItem = {
+  runId: string;
+  workflowId: string;
+  nodes: any[];
+  meta?: any;
+};
+
 @Injectable()
 export class RunsService {
-  private queue: { runId: string }[] = [];
+  private readonly logger = new Logger(RunsService.name);
+  private queue: QueueItem[] = [];
   private processing = false;
-  constructor(private prisma: PrismaService, private steps: StepsRegistry) {}
 
-  async create(dto: { workflowId: string; payload?: any }) {
+  constructor(
+    private prisma: PrismaClient,
+    private steps: StepsRegistry,
+  ) {}
+
+  async createRun(workflowId: string, nodes: any[], meta?: any) {
     const run = await this.prisma.run.create({
-      data: { workflowId: dto.workflowId, status: 'QUEUED', log: {} },
+      data: {
+        workflowId,
+        status: $Enums.RunStatus.PENDING,
+        log: { meta } as any,
+      },
     });
-    this.queue.push({ runId: run.id });
-    this.processNext();
+    this.queue.push({ runId: run.id, workflowId, nodes, meta });
+    this.processNext().catch((e) => this.logger.error(e));
     return run;
+  }
+
+  async getRun(id: string) {
+    return this.prisma.run.findUnique({ where: { id } });
   }
 
   private async processNext() {
     if (this.processing || this.queue.length === 0) return;
     this.processing = true;
+
     const job = this.queue.shift()!;
     try {
-      await this.prisma.run.update({ where: { id: job.runId }, data: { status: 'RUNNING', startedAt: new Date() } });
-      // cargar workflow, ejecutar topológicamente nodos con this.steps.run(node)
-      // agregar logs por paso
-      await this.prisma.run.update({ where: { id: job.runId }, data: { status: 'SUCCEEDED', finishedAt: new Date() } });
-    } catch (e) {
-      // retry/backoff si corresponde
-      await this.prisma.run.update({ where: { id: job.runId }, data: { status: 'FAILED', finishedAt: new Date(), log: { error: String(e) } } });
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: { status: RunStatus.RUNNING, startedAt: new Date() },
+      });
+
+      const stepLogs: any[] = [];
+      for (const node of job.nodes) {
+        const step = this.steps.get(node.type);
+        const out = await step.run(node.params || {});
+        stepLogs.push({ id: node.id, type: node.type, output: out });
+        await this.prisma.run.update({
+          where: { id: job.runId },
+          data: { log: { stepLogs } as any },
+        });
+      }
+
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: { status: $Enums.RunStatus.SUCCESS, finishedAt: new Date() },
+      });
+    } catch (err: any) {
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: {
+          status: RunStatus.FAILED,
+          finishedAt: new Date(),
+          log: { error: String(err?.message ?? err) } as any,
+        },
+      });
     } finally {
       this.processing = false;
-      this.processNext();
+      this.processNext().catch(() => {});
     }
   }
 }
