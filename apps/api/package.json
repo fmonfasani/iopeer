@@ -20,13 +20,13 @@
     "log:progress": "node scripts/log-progress.js",
     "log:progress:msg": "node scripts/log-progress.js --msg",
     "prettier": "prettier",
-    "prepare": "husky install",
+    "prepare": "echo skip-husky",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "scheduler:next": "curl -X POST http://localhost:3001/scheduler/next -H 'Content-Type: application/json' -d '{}'"
-   },
-    "dependencies": {
+  },
+  "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
