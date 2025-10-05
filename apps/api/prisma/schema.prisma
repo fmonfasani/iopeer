@@ -57,23 +57,23 @@ model Workflow {
 }
 
 model Run {
-  id String @id @default(uuid()) @db.Uuid
+  id         String     @id @db.Uuid @default(uuid())
 
-  workflowId String   @db.Uuid
-  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  workflowId String     @db.Uuid
+  workflow   Workflow   @relation(fields: [workflowId], references: [id], onDelete: Cascade)
 
-  status     RunStatus @default(PENDING)
+  status     RunStatus  @default(PENDING)
   startedAt  DateTime?
   finishedAt DateTime?
-  durationMs Int?
-  errorMessage String?
-  spec       Json?
   log        Json?
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  //  nuevas
+  spec       Json?
+  meta       Json?
+
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 
   @@index([workflowId])
   @@index([status, finishedAt])
-  @@schema("public")
 }

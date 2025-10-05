@@ -8,7 +8,6 @@ export default defineConfig({
     reporters: ['default'],
     coverage: {
       enabled: true,
-<<<<<<< HEAD
       include: [
         'src/runs/**/*.ts',
         'src/health/**/*.ts',
@@ -27,21 +26,6 @@ export default defineConfig({
         '**/src/steps/echo.ts',
         '**/src/steps/delay.ts',
         '**/src/steps/registry.ts',
-=======
-      provider: 'v8',
-      reports: ['text', 'html', 'json-summary'],
-      thresholds: { lines: 70, statements: 70, functions: 70, branches: 70 },
-      all: true,
-      include: ['src/**/*.{ts,tsx}'],
-      exclude: [
-        '**/*.spec.ts',
-        '**/*.e2e-spec.ts',
-        'node_modules/**',
-        'dist/**',
-        'test/**',
-        'src/main.ts',
-        'src/middleware/**',
->>>>>>> main
       ],
     },
   },
