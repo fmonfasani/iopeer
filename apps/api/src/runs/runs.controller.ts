@@ -44,6 +44,8 @@ function toNodes(input: any): NodeNew[] {
   throw new BadRequestException('Debes enviar "nodes" o "steps" como array');
 }
 
+type RequestWithContext = Request & { requestId?: string };
+
 @Controller()
 export class RunsController {
   constructor(private readonly runs: RunsService) {}
@@ -61,7 +63,7 @@ export class RunsController {
   }
 
   @Post('/runs')
-  async create(@Body() body: any, @Req() req: Request) {
+  async create(@Body() body: any, @Req() req: RequestWithContext) {
     try {
       const workflowId = body?.workflowId;
       if (!workflowId || typeof workflowId !== 'string') {

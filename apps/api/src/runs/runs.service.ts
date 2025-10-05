@@ -1,13 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient, Run, RunStatus } from '@prisma/client';
+import { PrismaClient, Run, RunStatus, Prisma } from '@prisma/client';
 import { randomUUID } from 'crypto';
 
 import { rootLogger } from '../logger/pino-logger.service';
-import { StepsRegistry, Step, StepContext } from '../steps/registry';
+import { StepsRegistry, type Step, type StepContext } from '../steps/registry';
 
-type StepNode = { id: string; type: string; params?: Record<string, any> };
+export type StepNode = {
+  id: string;
+  type: string;
+  params?: Record<string, any>;
+};
 
-type EnqueueRunDto = {
+export type EnqueueRunDto = {
   workflowId: string;
   nodes: StepNode[];
   meta?: Record<string, any>;
@@ -22,14 +26,24 @@ type QueueItem = {
   meta?: Record<string, any>;
 };
 
-type RunStats = {
+export type RunStats = {
   runsTotal: number;
   runsSuccess: number;
   runsError: number;
   stepDurations: number[];
 };
 
-const STEP_DURATION_LIMIT = 1000;
+type StepLogEntry = {
+  id: string;
+  type: string;
+  status: 'SUCCESS' | 'ERROR';
+  durationMs: number;
+  output?: unknown;
+  error?: string;
+};
+
+const STEP_DURATION_LIMIT = 1_000;
+const ERROR_STATUS = 'ERROR' as RunStatus;
 
 @Injectable()
 export class RunsService {
@@ -56,15 +70,22 @@ export class RunsService {
       throw new Error('nodes must be a non-empty array');
     }
 
-    const spec = { workflowId: dto.workflowId, nodes: dto.nodes };
+    const specPayload = {
+      workflowId: dto.workflowId,
+      nodes: dto.nodes,
+    } as Prisma.InputJsonValue;
+
+    const initialLog = dto.meta
+      ? ({ meta: dto.meta } as Prisma.InputJsonValue)
+      : undefined;
 
     const run = await this.prisma.run.create({
       data: {
         workflowId: dto.workflowId,
         status: RunStatus.PENDING,
-        log: dto.meta ? ({ meta: dto.meta } as any) : undefined,
-        spec: spec as any,
-      },
+        log: initialLog,
+        spec: specPayload,
+      } as any,
     });
 
     const requestId = dto.requestId ?? randomUUID();
@@ -77,7 +98,6 @@ export class RunsService {
     });
 
     this.logger.info({ runId: run.id, requestId }, 'run:enqueue');
-
     void this.drainQueue();
 
     return run.id;
@@ -89,9 +109,29 @@ export class RunsService {
 
   async listRecentRuns(limit = 50) {
     return this.prisma.run.findMany({
-      orderBy: [{ createdAt: 'desc' }],
+      orderBy: [{ createdAt: 'desc' } as any],
       take: limit,
     });
+  }
+
+  async getStatusMetrics() {
+    const [total, pending, running, success, error, cancelled] = await Promise.all([
+      this.prisma.run.count(),
+      this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
+      this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
+      this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
+      this.prisma.run.count({ where: { status: ERROR_STATUS } }),
+      this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
+    ]);
+
+    return {
+      total,
+      failed: error,
+      running,
+      succeeded: success,
+      queued: pending,
+      cancelled,
+    };
   }
 
   getStats() {
@@ -114,11 +154,7 @@ export class RunsService {
     while (this.queue.length > 0) {
       const item = this.queue.shift()!;
       await this.executeRun(item).catch((error) => {
-        this.logger.error({
-          err: error,
-          runId: item.runId,
-          requestId: item.requestId,
-        });
+        this.logger.error({ err: error, runId: item.runId, requestId: item.requestId });
       });
     }
 
@@ -126,11 +162,11 @@ export class RunsService {
   }
 
   private async executeRun(item: QueueItem) {
-    const runLogger = this.logger.child({
+    const runLogger = rootLogger.child({
       runId: item.runId,
       requestId: item.requestId,
+      workflowId: item.workflowId,
     });
-    runLogger.info({ workflowId: item.workflowId }, 'run:start');
 
     const startedAt = new Date();
     await this.prisma.run.update({
@@ -138,16 +174,13 @@ export class RunsService {
       data: { status: RunStatus.RUNNING, startedAt },
     });
 
-    const stepLogs: Array<Record<string, any>> = [];
+    const stepLogs: StepLogEntry[] = [];
     let lastOutput: unknown;
 
     try {
       for (const stepNode of item.nodes) {
         const step: Step = this.stepsRegistry.get(stepNode.type);
-        const stepLogger = runLogger.child({
-          stepId: stepNode.id,
-          stepType: stepNode.type,
-        });
+        const stepLogger = runLogger.child({ stepId: stepNode.id, stepType: stepNode.type });
         stepLogger.info('step:start');
 
         const started = Date.now();
@@ -163,27 +196,25 @@ export class RunsService {
           const durationMs = Date.now() - started;
           lastOutput = output;
           this.recordStepDuration(durationMs);
-          const logEntry = {
+          stepLogs.push({
             id: stepNode.id,
             type: stepNode.type,
             status: 'SUCCESS',
             durationMs,
             output,
-          };
-          stepLogs.push(logEntry);
+          });
           stepLogger.info({ durationMs }, 'step:finish');
         } catch (error: any) {
           const durationMs = Date.now() - started;
           this.recordStepDuration(durationMs);
           const message = error?.message ?? String(error);
-          const logEntry = {
+          stepLogs.push({
             id: stepNode.id,
             type: stepNode.type,
             status: 'ERROR',
             durationMs,
             error: message,
-          };
-          stepLogs.push(logEntry);
+          });
           stepLogger.error({ durationMs, err: error }, 'step:error');
           throw error;
         }
@@ -191,39 +222,47 @@ export class RunsService {
 
       const finishedAt = new Date();
       const durationMs = finishedAt.getTime() - startedAt.getTime();
+      const logPayload = {
+        steps: stepLogs,
+        meta: item.meta,
+      } as Prisma.InputJsonValue;
+
       await this.prisma.run.update({
         where: { id: item.runId },
         data: {
           status: RunStatus.SUCCESS,
           finishedAt,
           durationMs,
-          log: { steps: stepLogs } as any,
-        },
+          log: logPayload,
+        } as any,
       });
 
       this.stats.runsTotal += 1;
       this.stats.runsSuccess += 1;
-
       runLogger.info({ durationMs }, 'run:success');
     } catch (error: any) {
       const finishedAt = new Date();
       const durationMs = finishedAt.getTime() - startedAt.getTime();
       const message = error?.message ?? String(error);
+      const logPayload = {
+        steps: stepLogs,
+        meta: item.meta,
+        error: message,
+      } as Prisma.InputJsonValue;
 
       await this.prisma.run.update({
         where: { id: item.runId },
         data: {
-          status: RunStatus.ERROR,
+          status: ERROR_STATUS,
           finishedAt,
           durationMs,
           errorMessage: message,
-          log: { steps: stepLogs } as any,
-        },
+          log: logPayload,
+        } as any,
       });
 
       this.stats.runsTotal += 1;
       this.stats.runsError += 1;
-
       runLogger.error({ durationMs, err: error }, 'run:error');
     }
   }
@@ -236,73 +275,6 @@ export class RunsService {
         this.stats.stepDurations.length - STEP_DURATION_LIMIT,
       );
     }
-  }
-
-  private async handleRunFailure(job: QueueItem, error: any) {
-    const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
-    if (!run) {
-      return;
-    }
-
-    const currentLog: RunLog = {
-      attempts: 0,
-      maxAttempts: MAX_ATTEMPTS,
-      nextAttemptAt: null,
-      stepLogs: [],
-      ...(run.log as RunLog | null),
-    };
-    currentLog.meta = currentLog.meta ?? {};
-    currentLog.stepLogs = Array.isArray(currentLog.stepLogs)
-      ? currentLog.stepLogs
-      : [];
-
-    const attempts = (currentLog.attempts ?? 0) + 1;
-    const maxAttempts = currentLog.maxAttempts ?? MAX_ATTEMPTS;
-    currentLog.attempts = attempts;
-    currentLog.maxAttempts = maxAttempts;
-    currentLog.error = error?.message ?? String(error);
-
-    if (attempts < maxAttempts) {
-      const delay = BASE_BACKOFF_MS * Math.pow(2, attempts);
-      const nextAttemptAt = new Date(Date.now() + delay);
-      currentLog.nextAttemptAt = nextAttemptAt.toISOString();
-
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: {
-          status: RunStatus.QUEUED,
-          log: currentLog as any,
-        },
-      });
-
-      this.logger.warn(
-        `Run ${job.runId} failed (attempt ${attempts}/${maxAttempts}). Retrying in ${delay}ms`,
-      );
-
-      this.enqueue(
-        {
-          ...job,
-          attempt: attempts,
-        },
-        delay,
-      );
-      return;
-    }
-
-    currentLog.nextAttemptAt = null;
-
-    await this.prisma.run.update({
-      where: { id: job.runId },
-      data: {
-        status: RunStatus.FAILED,
-        finishedAt: new Date(),
-        log: currentLog as any,
-      },
-    });
-
-    this.logger.error(
-      `Run ${job.runId} failed permanently after ${attempts} attempts: ${currentLog.error}`,
-    );
   }
 }
 
