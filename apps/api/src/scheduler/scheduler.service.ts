@@ -3,18 +3,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { RunsService } from '../runs/runs.service';
 import { GateService } from '../gates/gate.service';
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 
 @Injectable()
 export class SchedulerService {
   private readonly logger = new Logger(SchedulerService.name);
-  private planPath = path.join(
-    process.cwd(),
-    'apps',
-    'api',
-    'plans',
-    'plan-bootstrap.json',
-  );
+  private planPath = this.resolvePlanPath();
   private plan: any;
 
   constructor(
@@ -23,6 +17,34 @@ export class SchedulerService {
     private prisma: PrismaClient,
   ) {
     this.loadPlan();
+  }
+
+  async start() {
+    this.logger.log('Scheduler started');
+  }
+
+  async getSucceededRuns(limit = 10) {
+    return this.prisma.run.findMany({
+      where: { status: { equals: RunStatus.SUCCEEDED } },
+      orderBy: { finishedAt: 'desc' },
+      take: limit,
+    });
+  }
+
+  private resolvePlanPath() {
+    const candidates = [
+      path.join(process.cwd(), 'plans', 'plan-bootstrap.json'),
+      path.join(process.cwd(), 'apps/api/plans/plan-bootstrap.json'),
+      path.join(__dirname, '..', 'plans', 'plan-bootstrap.json'),
+    ];
+
+    for (const candidate of candidates) {
+      if (fs.existsSync(candidate)) {
+        return candidate;
+      }
+    }
+
+    return candidates[0];
   }
 
   private loadPlan() {
@@ -34,7 +56,7 @@ export class SchedulerService {
     // 1) calcular qué acciones ya “SUCCEEDED” mirando logs (simple)
     const succeeded: Record<string, string> = {};
     const finished = await this.prisma.run.findMany({
-      where: { status: { equals: Prisma.RunStatus.SUCCEEDED } },
+      where: { status: { equals: RunStatus.SUCCEEDED } },
     });
     for (const r of finished) {
       const actionId = (r.log as any)?.meta?.actionId;

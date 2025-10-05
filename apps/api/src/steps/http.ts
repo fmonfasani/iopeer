@@ -14,7 +14,16 @@ export class HttpStep {
       body: body ? JSON.stringify(body) : undefined,
     });
 
-    const data = await res.json().catch(() => ({}));
+    let data: any;
+    try {
+      data = await res.json();
+    } catch {
+      try {
+        data = await res.text();
+      } catch {
+        data = undefined;
+      }
+    }
 
     if (expect?.status && res.status !== expect.status) {
       throw new Error(`http expect status ${expect.status}, got ${res.status}`);

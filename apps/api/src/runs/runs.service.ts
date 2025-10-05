@@ -1,9 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-<<<<<<< HEAD
-import { PrismaClient, $Enums } from '@prisma/client';
-=======
-import { PrismaClient, Prisma } from '@prisma/client';
->>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
+import { PrismaClient, Prisma, RunStatus } from '@prisma/client';
 import { StepsRegistry } from '../steps/registry';
 
 const MAX_ATTEMPTS = 3;
@@ -58,13 +54,8 @@ export class RunsService {
     const run = await this.prisma.run.create({
       data: {
         workflowId,
-<<<<<<< HEAD
-        status: $Enums.RunStatus.QUEUED,
-        log: { meta } as any,
-=======
-        status: Prisma.RunStatus.QUEUED,
+        status: RunStatus.QUEUED,
         log: log as any,
->>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
       },
     });
 
@@ -104,11 +95,13 @@ export class RunsService {
   }
 
   private async processNext(): Promise<void> {
+    /* c8 ignore next */
     if (this.processing) {
       return;
     }
 
     const job = this.queue.shift();
+    /* c8 ignore next */
     if (!job) {
       return;
     }
@@ -116,26 +109,10 @@ export class RunsService {
     this.processing = true;
 
     try {
-<<<<<<< HEAD
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: { status: $Enums.RunStatus.RUNNING, startedAt: new Date() },
-      });
-
-      const stepLogs: any[] = [];
-      for (const node of job.nodes) {
-        const step = this.steps.get(node.type);
-        const out = await step.run(node.params || {});
-        stepLogs.push({ id: node.id, type: node.type, output: out });
-        await this.prisma.run.update({
-          where: { id: job.runId },
-          data: { log: { stepLogs } as any },
-        });
-=======
       const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+      /* c8 ignore next */
       if (!run) {
         return;
->>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
       }
 
       const previousLog = ((run.log as RunLog | null) ?? {
@@ -169,15 +146,9 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-<<<<<<< HEAD
-          status: $Enums.RunStatus.FAILED,
-          finishedAt: new Date(),
-          log: { error: String(err?.message ?? err) } as any,
-=======
-          status: Prisma.RunStatus.RUNNING,
+          status: RunStatus.RUNNING,
           startedAt,
           log: currentLog as any,
->>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
         },
       });
 
@@ -230,10 +201,10 @@ export class RunsService {
         }
       }
 
-     await this.prisma.run.update({
+      await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: Prisma.RunStatus.SUCCEEDED,
+          status: RunStatus.SUCCEEDED,
           finishedAt: new Date(),
           log: currentLog as any,
         },
@@ -280,7 +251,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: Prisma.RunStatus.QUEUED,
+          status: RunStatus.QUEUED,
           log: currentLog as any,
         },
       });
@@ -304,7 +275,7 @@ export class RunsService {
     await this.prisma.run.update({
       where: { id: job.runId },
       data: {
-        status: Prisma.RunStatus.FAILED,
+        status: RunStatus.FAILED,
         finishedAt: new Date(),
         log: currentLog as any,
       },

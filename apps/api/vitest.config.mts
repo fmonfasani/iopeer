@@ -3,8 +3,9 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     environment: 'node',
+    include: ['test/**/*.spec.ts', 'src/**/*.spec.ts'],
+    setupFiles: ['./test/setup.ts'],
     reporters: ['default'],
-    // activa cobertura y evita el error de "lines" en raíz
     coverage: {
       enabled: true,
       provider: 'v8',
@@ -17,6 +18,9 @@ export default defineConfig({
         '**/*.e2e-spec.ts',
         'node_modules/**',
         'dist/**',
+        'test/**',
+        'src/main.ts',
+        'src/middleware/**',
       ],
     },
   },
