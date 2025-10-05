@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import axios from 'axios';
 
 @Injectable()
 export class HttpStep {
@@ -7,16 +6,21 @@ export class HttpStep {
   async run(params: any) {
     const { url, method = 'GET', headers, body, expect } = params || {};
     if (!url) throw new Error('http step requires url');
-    const res = await axios.request({
-      url,
+
+    const res = await fetch(url, {
       method,
       headers,
-      data: body,
-      validateStatus: () => true,
+      body: body !== undefined ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
     });
+
+    const contentType = res.headers.get('content-type') || '';
+    const data = contentType.includes('application/json')
+      ? await res.json().catch(() => null)
+      : await res.text();
+
     if (expect?.status && res.status !== expect.status) {
       throw new Error(`http expect status ${expect.status}, got ${res.status}`);
     }
-    return { status: res.status, data: res.data };
+    return { status: res.status, data };
   }
 }

@@ -1,21 +1,19 @@
 name: CI
-
 on:
   push:
-    branches: [ main, canary ]
+    branches: [main]
   pull_request:
 
 jobs:
-  api_tests:
+  api:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v3
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -26,19 +24,13 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
-      - name: Prisma generate
-        working-directory: apps/api
-        run: pnpm prisma generate
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Build API
+        run: pnpm --filter ./apps/api build
 
-      - name: Run tests (vitest)
-        working-directory: apps/api
-        run: pnpm test
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Test API
+        run: pnpm --filter ./apps/api test
 
-      - name: Upload coverage
+      - name: Upload API coverage
         if: always()
         uses: actions/upload-artifact@v4
         with:

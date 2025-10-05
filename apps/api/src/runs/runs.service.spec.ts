@@ -8,7 +8,7 @@ class PrismaStub {
     update: vi.fn(async ({ where: { id }, data }: any) => ({ id, ...data })),
     findUnique: vi.fn(async ({ where: { id } }: any) => ({
       id,
-      status: 'SUCCEEDED',
+      status: 'SUCCESS',
       log: {},
     })),
   };
@@ -33,16 +33,16 @@ describe('RunsService', () => {
     service = new RunsService(prisma as any, steps as any);
   });
 
-  it('enqueue + processes nodes to SUCCEEDED', async () => {
+  it('enqueue + processes nodes to SUCCESS', async () => {
     const nodes = [{ id: 'n1', type: 'echo', params: { message: 'hi' } }];
     const run = await service.createRun('wf.test', nodes);
-    expect(run.status).toBe('QUEUED');
+    expect(run.status).toBe('PENDING');
 
     // espera un tick para processNext
     await new Promise((r) => setTimeout(r, 20));
 
     expect(prisma.run.update).toHaveBeenCalled();
     const lastUpdate = prisma.run.update.mock.calls.at(-1)?.[0];
-    expect(lastUpdate.data.status).toBe('SUCCEEDED');
+    expect(lastUpdate.data.status).toBe('SUCCESS');
   });
 });

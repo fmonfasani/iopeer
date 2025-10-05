@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { RunsService } from '../runs/runs.service';
 import { GateService } from '../gates/gate.service';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
 @Injectable()
 export class SchedulerService {
@@ -31,14 +31,14 @@ export class SchedulerService {
   }
 
   async tick() {
-    // 1) calcular qué acciones ya “SUCCEEDED” mirando logs (simple)
+    // 1) calcular qué acciones ya “SUCCESS” mirando logs (simple)
     const succeeded: Record<string, string> = {};
     const finished = await this.prisma.run.findMany({
-      where: { status: { equals: $Enums.RunStatus.SUCCESS } },
+      where: { status: { equals: Prisma.RunStatus.SUCCESS } },
     });
     for (const r of finished) {
       const actionId = (r.log as any)?.meta?.actionId;
-      if (actionId) succeeded[actionId] = 'SUCCEEDED';
+      if (actionId) succeeded[actionId] = 'SUCCESS';
     }
 
     // 2) recorrer schedule en orden y elegir la primera pendiente con pre cumplidos
@@ -52,7 +52,7 @@ export class SchedulerService {
         .map((p: string) => p.replace('env:', '').toUpperCase());
       const needsDb = pre.some((p: string) => p === 'db:reachable');
       const deps = pre
-        .filter((p: string) => p.includes(':SUCCEEDED'))
+        .filter((p: string) => p.includes(':SUCCESS'))
         .map((p: string) => p.split(':')[0]);
 
       if (needsEnv.length && !(await this.gates.checkEnv(needsEnv))) continue;

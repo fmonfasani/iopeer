@@ -21,7 +21,7 @@
     "log:progress:msg": "node scripts/log-progress.js --msg",
     "prettier": "prettier",
     "prepare": "echo skip-husky",
-    "test": "vitest run",
+    "test": "vitest run --run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "scheduler:next": "curl -X POST http://localhost:3001/scheduler/next -H 'Content-Type: application/json' -d '{}'"

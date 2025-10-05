@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { PrismaClient, Prisma, $Enums } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 import { StepsRegistry } from '../steps/registry';
 
 type QueueItem = {
@@ -24,7 +24,7 @@ export class RunsService {
     const run = await this.prisma.run.create({
       data: {
         workflowId,
-        status: $Enums.RunStatus.PENDING,
+        status: Prisma.RunStatus.PENDING,
         log: { meta } as any,
       },
     });
@@ -45,7 +45,7 @@ export class RunsService {
     try {
       await this.prisma.run.update({
         where: { id: job.runId },
-        data: { status: RunStatus.RUNNING, startedAt: new Date() },
+        data: { status: Prisma.RunStatus.RUNNING, startedAt: new Date() },
       });
 
       const stepLogs: any[] = [];
@@ -61,13 +61,13 @@ export class RunsService {
 
       await this.prisma.run.update({
         where: { id: job.runId },
-        data: { status: $Enums.RunStatus.SUCCESS, finishedAt: new Date() },
+        data: { status: Prisma.RunStatus.SUCCESS, finishedAt: new Date() },
       });
     } catch (err: any) {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: RunStatus.FAILED,
+          status: Prisma.RunStatus.FAILED,
           finishedAt: new Date(),
           log: { error: String(err?.message ?? err) } as any,
         },
