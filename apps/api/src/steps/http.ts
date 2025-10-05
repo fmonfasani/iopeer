@@ -4,27 +4,40 @@ import { Injectable } from '@nestjs/common';
 export class HttpStep {
   type = 'http';
 
-  async run(params: any) {
-    const { url, method = 'GET', headers, body, expect } = params || {};
+  async run(params: {
+    url: string;
+    method?: string;
+    headers?: Record<string, string>;
+    body?: any;
+    expect?: { status?: number };
+  }) {
+    const {
+      url,
+      method = 'GET',
+      headers,
+      body,
+      expect,
+    } = params || ({} as any);
     if (!url) throw new Error('http step requires url');
 
     const res = await fetch(url, {
       method,
       headers,
-      body: body !== undefined ? (typeof body === 'string' ? body : JSON.stringify(body)) : undefined,
+      body: body != null ? JSON.stringify(body) : undefined,
     });
 
-    const contentType = res.headers.get('content-type') || '';
-    const data = contentType.includes('application/json')
-      ? await res.json().catch(() => null)
-      : await res.text();
-      body: body ? JSON.stringify(body) : undefined,
-
-    const data = await res.json().catch(() => ({}));
+    // Intentar JSON; si falla, devolver texto
+    let data: unknown;
+    try {
+      data = await res.clone().json();
+    } catch {
+      data = await res.text();
+    }
 
     if (expect?.status && res.status !== expect.status) {
       throw new Error(`http expect status ${expect.status}, got ${res.status}`);
     }
-    return { status: res.status, data };
+
+    return { status: res.status, ok: res.ok, data };
   }
 }

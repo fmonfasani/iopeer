@@ -20,7 +20,8 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "lib": ["ES2021", "DOM"]
   },
   "exclude": [
     "node_modules",

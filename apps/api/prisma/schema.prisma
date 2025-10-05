@@ -1,65 +1,73 @@
+// =======================
 // prisma/schema.prisma
+// =======================
+
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  // Necesario si usás auth.users de Supabase:
+  schemas  = ["public", "auth"]
 }
 
+// -----------------------
+// Enums
+// -----------------------
+enum RunStatus {
+  PENDING
+  RUNNING
+  SUCCESS
+  FAILED
+  CANCELLED
+}
+
+// -----------------------
+// Modelos (auth schema)
+// -----------------------
+// Solo lo mínimo para poder relacionar Workflow -> User.
+// Si no usás user/owner, podés borrar este modelo y los campos userId/user.
 model User {
-  id         String   @id @default(cuid())
-  email      String   @unique
-  createdAt  DateTime @default(now())
-  agents     Agent[]
-  workflows  Workflow[]
-  connections Connection[]
+  id    String  @id @db.Uuid
+  email String? // opcional, no se usa en relaciones
+
+  @@map("users")
+  @@schema("auth")
 }
 
-model Agent {
-  id         String   @id @default(cuid())
-  name       String
-  createdAt  DateTime @default(now())
-  userId     String
-  user       User     @relation(fields: [userId], references: [id])
-}
-
-model Connection {
-  id         String   @id @default(cuid())
-  type       String              // e.g. "gmail", "slack", "http", "openai"
-  name       String
-  config     Json                // TODO: cifrar config con KMS o secret manager
-  createdAt  DateTime @default(now())
-  userId     String
-  user       User     @relation(fields: [userId], references: [id])
-}
-
+// -----------------------
+// Modelos (public schema)
+// -----------------------
 model Workflow {
-  id         String   @id @default(cuid())
-  name       String
-  definition Json                // DSL con nodos/aristas/props
-  isActive   Boolean  @default(false)
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
-  userId     String
-  user       User     @relation(fields: [userId], references: [id])
-  runs       Run[]
+  id        String  @id @db.Uuid @default(uuid())
+  name      String
+
+  // Relación opcional con auth.users
+  userId    String? @db.Uuid
+  user      User?   @relation(fields: [userId], references: [id])
+
+  runs      Run[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Run {
-  id         String   @id @default(cuid())
-  workflowId String
-  workflow   Workflow @relation(fields: [workflowId], references: [id])
-  status     RunStatus @default(QUEUED)
-  startedAt  DateTime  @default(now())
-  finishedAt DateTime?
-  log        Json?                 // eventos/errores/output
-}
+  id         String     @id @db.Uuid @default(uuid())
 
-enum RunStatus {
-  QUEUED
-  RUNNING
-  SUCCEEDED
-  FAILED
-  CANCELLED
+  workflowId String     @db.Uuid
+  workflow   Workflow   @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  status     RunStatus  @default(PENDING)
+  startedAt  DateTime?
+  finishedAt DateTime?
+  log        Json?
+
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  @@index([workflowId])
+  @@index([status, finishedAt])
 }

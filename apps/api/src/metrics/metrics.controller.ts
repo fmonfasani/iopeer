@@ -1,27 +1,20 @@
 import { Controller, Get } from '@nestjs/common';
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 @Controller('metrics')
 export class MetricsController {
-  constructor(private readonly prisma: PrismaClient) {}
+  private prisma = new PrismaClient();
 
   @Get()
-  async getMetrics() {
-    const [runsTotal, runsFailed] = await Promise.all([
-      this.prisma.run.count(),
-      this.prisma.run.count({ where: { status: Prisma.RunStatus.FAILED } }),
+  async get() {
+    const [failed, running, succeeded, queued, cancelled] = await Promise.all([
+      this.prisma.run.count({ where: { status: 'FAILED' as any } }),
+      this.prisma.run.count({ where: { status: 'RUNNING' as any } }),
+      this.prisma.run.count({ where: { status: 'SUCCEEDED' as any } }), // ✅
+      this.prisma.run.count({ where: { status: 'QUEUED' as any } }), // ✅
+      this.prisma.run.count({ where: { status: 'CANCELLED' as any } }),
     ]);
 
-    const uptimeSec = Math.floor(process.uptime());
-    const errorRatePct = runsTotal > 0 ? (runsFailed / runsTotal) * 100 : 0;
-
-    return {
-      uptimeSec,
-      runsTotal,
-      runsFailed,
-      p95Ms: null, // TODO: capture latency percentiles once metrics pipeline is ready
-      p99Ms: null, // TODO: capture latency percentiles once metrics pipeline is ready
-      errorRatePct,
-    };
+    return { failed, running, succeeded, queued, cancelled };
   }
 }
