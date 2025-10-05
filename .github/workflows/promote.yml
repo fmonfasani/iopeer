@@ -1,0 +1,24 @@
+name: Promote Canary
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Ambiente de destino"
+        required: false
+        default: production
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Promote canary
+        env:
+          PROMOTE_API_TOKEN: ${{ secrets.PROMOTE_API_TOKEN }}
+        run: |
+          TARGET="${{ github.event.inputs.target || 'production' }}"
+          echo "Promoting canary to ${TARGET} (placeholder)."
+          echo "Usar PROMOTE_API_TOKEN para llamar a la API real."

@@ -28,7 +28,7 @@ model Connection {
   id         String   @id @default(cuid())
   type       String              // e.g. "gmail", "slack", "http", "openai"
   name       String
-  config     Json                // tokens, creds encriptados (KMS)
+  config     Json                // TODO: cifrar config con KMS o secret manager
   createdAt  DateTime @default(now())
   userId     String
   user       User     @relation(fields: [userId], references: [id])
@@ -50,16 +50,16 @@ model Run {
   id         String   @id @default(cuid())
   workflowId String
   workflow   Workflow @relation(fields: [workflowId], references: [id])
-  status     RunStatus @default(PENDING)
+  status     RunStatus @default(QUEUED)
   startedAt  DateTime  @default(now())
   finishedAt DateTime?
   log        Json?                 // eventos/errores/output
 }
 
 enum RunStatus {
-  PENDING
+  QUEUED
   RUNNING
-  SUCCESS
+  SUCCEEDED
   FAILED
   CANCELLED
 }

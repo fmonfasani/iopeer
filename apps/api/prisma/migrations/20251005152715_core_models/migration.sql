@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "RunStatus" AS ENUM ('PENDING', 'RUNNING', 'SUCCESS', 'FAILED', 'CANCELLED');
+CREATE TYPE "RunStatus" AS ENUM ('QUEUED', 'RUNNING', 'SUCCEEDED', 'FAILED', 'CANCELLED');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -49,7 +49,7 @@ CREATE TABLE "Workflow" (
 CREATE TABLE "Run" (
     "id" TEXT NOT NULL,
     "workflowId" TEXT NOT NULL,
-    "status" "RunStatus" NOT NULL DEFAULT 'PENDING',
+    "status" "RunStatus" NOT NULL DEFAULT 'QUEUED',
     "startedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "finishedAt" TIMESTAMP(3),
     "log" JSONB,

@@ -1,0 +1,27 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Motivo del rollback"
+        required: false
+  workflow_call:
+    inputs:
+      reason:
+        required: false
+        type: string
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ejecutar rollback (placeholder)
+        env:
+          ROLLBACK_TOKEN: ${{ secrets.ROLLBACK_TOKEN }}
+        run: |
+          echo "Rollback solicitado. Motivo: ${{ inputs.reason || github.event.inputs.reason || 'no especificado' }}"
+          echo "TODO: reemplazar por llamada a script/API real usando ROLLBACK_TOKEN"
