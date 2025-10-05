@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient, Run, RunStatus, Prisma } from '@prisma/client';
+import { Prisma, Run, RunStatus } from '@prisma/client';
 import { randomUUID } from 'crypto';
 
 import { rootLogger } from '../logger/pino-logger.service';
 import { StepsRegistry, type Step, type StepContext } from '../steps/registry';
+import { PrismaService } from '../prisma/prisma.service';
 
 export type StepNode = {
   id: string;
@@ -58,7 +59,7 @@ export class RunsService {
   };
 
   constructor(
-    private readonly prisma: PrismaClient,
+    private readonly prisma: PrismaService,
     private readonly stepsRegistry: StepsRegistry,
   ) {}
 

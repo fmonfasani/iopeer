@@ -1,6 +1,5 @@
 /* c8 ignore file */
 import { Module } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -16,6 +15,7 @@ import { EchoStep } from './steps/echo';
 import { DelayStep } from './steps/delay';
 import { HttpStep } from './steps/http';
 import { PinoLoggerService } from './logger/pino-logger.service';
+import { PrismaService } from './prisma/prisma.service';
 
 @Module({
   imports: [],
@@ -27,7 +27,7 @@ import { PinoLoggerService } from './logger/pino-logger.service';
     MetricsController,
   ],
   providers: [
-    PrismaClient,
+    PrismaService,
     AppService,
     PinoLoggerService,
     RunsService,
