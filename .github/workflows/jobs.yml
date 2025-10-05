@@ -1,0 +1,134 @@
+name: Nightly Jobs (Tests + Slack Summary)
+
+on:
+  schedule:
+    # 07:00 (UTC-3) = 10:00 UTC
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  nightly_api_tests:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Prisma generate
+        working-directory: apps/api
+        run: pnpm prisma generate
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run tests with coverage
+        id: vitest
+        working-directory: apps/api
+        run: pnpm test:coverage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Install jq (for parsing coverage)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Parse coverage summary
+        id: coverage
+        working-directory: apps/api
+        run: |
+          FILE="coverage/coverage-summary.json"
+          if [ -f "$FILE" ]; then
+            LINES=$(jq -r '.total.lines.pct' "$FILE")
+            BRANCHES=$(jq -r '.total.branches.pct' "$FILE")
+            FUNCTIONS=$(jq -r '.total.functions.pct' "$FILE")
+            STATEMENTS=$(jq -r '.total.statements.pct' "$FILE")
+          else
+            LINES="0"
+            BRANCHES="0"
+            FUNCTIONS="0"
+            STATEMENTS="0"
+          fi
+          echo "lines=$LINES" >> $GITHUB_OUTPUT
+          echo "branches=$BRANCHES" >> $GITHUB_OUTPUT
+          echo "functions=$FUNCTIONS" >> $GITHUB_OUTPUT
+          echo "statements=$STATEMENTS" >> $GITHUB_OUTPUT
+
+      - name: Build Slack payload
+        id: slack
+        run: |
+          STATUS="${{ job.status }}"
+          if [ "$STATUS" = "success" ]; then
+            COLOR="#2eb886"
+            EMOJI="✅"
+            TITLE="Nightly Tests: PASSED"
+          else
+            COLOR="#e01e5a"
+            EMOJI="❌"
+            TITLE="Nightly Tests: FAILED"
+          fi
+
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BRANCH="${{ github.ref_name }}"
+          REPO="${{ github.repository }}"
+          LINES="${{ steps.coverage.outputs.lines }}"
+          BRANCHES="${{ steps.coverage.outputs.branches }}"
+          FUNCTIONS="${{ steps.coverage.outputs.functions }}"
+          STATEMENTS="${{ steps.coverage.outputs.statements }}"
+
+          cat > payload.json <<'JSON'
+          {
+            "attachments": [
+              {
+                "color": "COLOR",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": { "type": "mrkdwn", "text": "EMOJI *TITLE*\n*Repo:* REPO\n*Branch:* BRANCH\n*Run:* <RUN_URL|ver ejecución>" }
+                  },
+                  { "type": "divider" },
+                  {
+                    "type": "section",
+                    "fields": [
+                      { "type": "mrkdwn", "text": "*Lines*\nLINES%" },
+                      { "type": "mrkdwn", "text": "*Branches*\nBRANCHES%" },
+                      { "type": "mrkdwn", "text": "*Functions*\nFUNCTIONS%" },
+                      { "type": "mrkdwn", "text": "*Statements*\nSTATEMENTS%" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+          JSON
+
+          sed -i "s|COLOR|$COLOR|g; s|EMOJI|$EMOJI|g; s|TITLE|$TITLE|g; s|RUN_URL|$RUN_URL|g; s|BRANCH|$BRANCH|g; s|REPO|$REPO|g; s|LINES|$LINES|g; s|BRANCHES|$BRANCHES|g; s|FUNCTIONS|$FUNCTIONS|g; s|STATEMENTS|$STATEMENTS|g" payload.json
+
+          echo "Payload ready:"
+          cat payload.json
+
+      - name: Send Slack summary
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data @payload.json \
+            "${{ secrets.SLACK_WEBHOOK_URL }}"
+
+      - name: Upload coverage artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-api-coverage
+          path: apps/api/coverage
