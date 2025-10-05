@@ -1,13 +1,28 @@
 {
   "name": "iopeer",
   "private": true,
+<<<<<<< HEAD
   "packageManager": "pnpm@9.15.9",
+=======
+<<<<<<< HEAD
+  "packageManager": "pnpm@9.15.9",
+=======
+  "packageManager": "pnpm@9.0.0",
+>>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
+>>>>>>> main
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
+<<<<<<< HEAD
+    "prepare": "echo skip-husky",
+=======
     "prepare": "husky install",
+    "api:dev": "pnpm --dir apps/api start:dev",
+    "api:start": "pnpm --dir apps/api start",
+    "web:dev": "pnpm --dir apps/web dev",
+>>>>>>> 1d73cb6ce4f3b0ea7207c794fd1ab0dadebd4982
     "log:progress": "node scripts/log-progress.js",
     "log:progress:msg": "node scripts/log-progress.js --msg"
   },
