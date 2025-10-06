@@ -1,16 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaService, Prisma } from '@prisma/client';
 
 type StatusKey = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'ERROR' | 'CANCELLED';
 
 @Injectable()
 export class ReportService {
-  constructor(private readonly prisma: PrismaClient) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   private async countByStatus(status: StatusKey) {
     // Usamos string literal para evitar desajustes de enum entre versiones
     return this.prisma.run.count({ where: { status: status as any } });
   }
+
 
   async buildStatusReport() {
     const [pending, running, success, error, cancelled] = await Promise.all([

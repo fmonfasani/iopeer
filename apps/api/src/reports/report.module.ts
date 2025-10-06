@@ -3,16 +3,11 @@ import { ReportService } from './report.service';
 import { ReportScheduler } from './report.scheduler';
 import { SlackNotifier } from './slack-notifier';
 import { EmailNotifier } from './email-notifier';
-import { PrismaClient } from '@prisma/client';
+import { PrismaModule } from '../prisma/prisma.module';
 
 @Module({
-  providers: [
-    PrismaClient,       // usa el PrismaClient directo; si tenés PrismaService, podés inyectarlo en su lugar
-    ReportService,
-    ReportScheduler,
-    SlackNotifier,
-    EmailNotifier,
-  ],
+  imports: [PrismaModule],
+  providers: [ReportService, ReportScheduler, SlackNotifier, EmailNotifier],
   exports: [ReportService, ReportScheduler],
 })
 export class ReportModule {}
