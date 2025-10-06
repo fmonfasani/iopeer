@@ -3,6 +3,7 @@ import { Cron, CronExpression } from '@nestjs/schedule';
 import { ReportService } from './report.service';
 import { SlackNotifier } from './slack-notifier';
 import { EmailNotifier } from './email-notifier';
+import { BeautifierStrategy } from './beautifier/beautifier.strategy';
 
 @Injectable()
 export class ReportScheduler {
@@ -13,6 +14,7 @@ export class ReportScheduler {
     private readonly report: ReportService,
     private readonly slack: SlackNotifier,
     private readonly email: EmailNotifier,
+    private readonly beautifier: BeautifierStrategy,
   ) {}
 
   // Ejecuta según CRON (por defecto todos los días al mediodía)
@@ -42,4 +44,5 @@ export class ReportScheduler {
     ]);
     return { ok: true };
   }
+  
 }
