@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService, Prisma } from '@prisma/client';
+import { Workflow } from '@prisma/client';
+
+import { PrismaService } from '../prisma/prisma.service';
 
 type StatusKey = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'ERROR' | 'CANCELLED';
 
@@ -49,11 +51,15 @@ export class ReportService {
       take: 5,
     });
 
-    const workflowsMap = new Map(
-      (await this.prisma.workflow.findMany({
-        where: { id: { in: topWorkflows.map(t => t.workflowId) } },
-        select: { id: true, key: true, name: true },
-      })).map(w => [w.id, w]),
+    const topWorkflowDetails = await Promise.all(
+      topWorkflows.map(async t => {
+        const wf: Pick<Workflow, 'id' | 'key' | 'name'> | null = await this.prisma.workflow.findUnique({
+          where: { id: t.workflowId },
+          select: { id: true, key: true, name: true },
+        });
+        const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId;
+        return { label, count: t._count._all };
+      }),
     );
 
     const lines = [
@@ -69,11 +75,7 @@ export class ReportService {
       `  - ⚪ CANCELLED: ${cancelled}`,
       ``,
       `*🏁 Top workflows por cantidad de runs:*`,
-      ...topWorkflows.map((t, i) => {
-        const wf = workflowsMap.get(t.workflowId);
-        const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId;
-        return `  ${i + 1}. ${label}: ${t._count._all}`;
-      }),
+      ...topWorkflowDetails.map((t, i) => `  ${i + 1}. ${t.label}: ${t.count}`),
       ``,
       `*🕒 Últimos 10 runs:*`,
       ...latestRuns.map(r => {
@@ -103,15 +105,11 @@ export class ReportService {
         <li>ERROR: ${error}</li>
         <li>CANCELLED: ${cancelled}</li>
       </ul>
-      <h3>Top Workflows</h3>
-      <ol>
-        ${topWorkflows
-          .map(t => {
-            const wf = workflowsMap.get(t.workflowId);
-            const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId;
-            return `<li>${label}: ${t._count._all}</li>`;
-          })
-          .join('')}
+        <h3>Top Workflows</h3>
+        <ol>
+          ${topWorkflowDetails
+            .map(t => `<li>${t.label}: ${t.count}</li>`)
+            .join('')}
       </ol>
       <h3>Últimos 10 runs</h3>
       <ul>
