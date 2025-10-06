@@ -1,6 +1,10 @@
 import { INestApplication, Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 
+type PrismaBeforeExitEvent = Parameters<PrismaClient['$on']>[0] extends never
+  ? 'beforeExit'
+  : Extract<Parameters<PrismaClient['$on']>[0], 'beforeExit'>;
+
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
   async onModuleInit() {
@@ -12,7 +16,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
   }
 
   async enableShutdownHooks(app: INestApplication) {
-    process.on('beforeExit', async () => {
+    this.$on('beforeExit' as PrismaBeforeExitEvent, async () => {
       await app.close();
     });
   }

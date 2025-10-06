@@ -91,7 +91,7 @@ describe('RunsService', () => {
     await (runsService as any).processNext();
 
     const storedRun = mockPrisma.runStore.get(run.id);
-    expect(storedRun.status).toBe(RunStatus.FAILED);
+    expect(storedRun.status).toBe(RunStatus.ERROR);
     expect(storedRun.log.error).toContain('boom');
     expect(failingStep.run).toHaveBeenCalled();
   });
@@ -259,7 +259,7 @@ describe('RunsService', () => {
     );
 
     const stored = mockPrisma.runStore.get(run.id);
-    expect(stored.status).toBe(RunStatus.FAILED);
+    expect(stored.status).toBe(RunStatus.ERROR);
     expect(stored.log.error).toBe('catastrophic');
   });
 });

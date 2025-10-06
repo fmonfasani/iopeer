@@ -13,7 +13,7 @@ export class MetricsController {
       this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
       this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
       this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
-      this.prisma.run.count({ where: { status: RunStatus.FAILED } }),
+      this.prisma.run.count({ where: { status: RunStatus.ERROR } }),
       this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
     ]);
 

@@ -1,4 +1,5 @@
 // prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -22,33 +23,14 @@ enum RunStatus {
 }
 
 // -----------------------
-// Modelos (auth schema)
-// -----------------------
-// Solo lo mínimo para poder relacionar Workflow -> User.
-// Si no usás user/owner, podés borrar este modelo y los campos userId/user.
-model User {
-  id    String  @id @db.Uuid
-  email String? // opcional, no se usa en relaciones
-
-  workflows Workflow[]
-
-  @@map("users")
-  @@schema("auth")
-}
-
-// -----------------------
 // Modelos (public schema)
 // -----------------------
 model Workflow {
-  id   String @id @default(uuid()) @db.Uuid
-  name String
-
-  // Guardamos el UUID del user (sin FK real a auth.users)
-  userId String? @db.Uuid
-
-  runs Run[]
-
-  @@schema("public")
+  id        String @id @default(cuid())
+  key       String @unique
+  name      String
+  userId    String?
+  runs      Run[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -57,23 +39,22 @@ model Workflow {
 }
 
 model Run {
-  id         String     @id @db.Uuid @default(uuid())
-
-  workflowId String     @db.Uuid
-  workflow   Workflow   @relation(fields: [workflowId], references: [id], onDelete: Cascade)
-
-  status     RunStatus  @default(PENDING)
-  startedAt  DateTime?
-  finishedAt DateTime?
-  log        Json?
-
-  //  nuevas
-  spec       Json?
-  meta       Json?
-
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  id           String    @id @default(cuid())
+  workflowId   String
+  workflow     Workflow  @relation(fields: [workflowId], references: [key], onDelete: Cascade)
+  status       RunStatus @default(PENDING)
+  startedAt    DateTime?
+  finishedAt   DateTime?
+  durationMs   Int?
+  errorMessage String?
+  log          Json?
+  spec         Json?
+  meta         Json?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 
   @@index([workflowId])
   @@index([status, finishedAt])
+
+  @@schema("public")
 }
