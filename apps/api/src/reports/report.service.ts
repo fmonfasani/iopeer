@@ -1,10 +1,5 @@
 import { Injectable } from '@nestjs/common';
-<<<<<<< Updated upstream
 import { Workflow } from '@prisma/client';
-
-=======
-import { PrismaModule } from '../prisma/prisma.module';
->>>>>>> Stashed changes
 import { PrismaService } from '../prisma/prisma.service';
 
 type StatusKey = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'ERROR' | 'CANCELLED';
