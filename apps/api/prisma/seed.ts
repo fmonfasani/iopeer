@@ -1,62 +1,75 @@
-import { PrismaClient } from '@prisma/client';
-
+import { PrismaClient, RunStatus } from '@prisma/client';
 const prisma = new PrismaClient();
 
-const WORKFLOWS = [
-  {
-    id: '7f1f9e2e-2b66-4c2e-a1d4-8a7b7e9b3c01',
-    key: 'wf.health',
-    name: 'Health check',
-  },
-  {
-    id: '0a7f3c9b-6e15-4a2d-9d6a-2e1b4f3a9c02',
-    key: 'wf.prisma.migrate',
-    name: 'Prisma migrate',
-  },
-  {
-    id: 'e3b2c5d6-7a89-4b01-9c23-4d5e6f7a8b03',
-    key: 'wf.runner.basic',
-    name: 'Runner basic',
-  },
-  {
-    id: '12c4d6e8-90ab-4cde-b123-4567abcd8904',
-    key: 'wf.quality',
-    name: 'Quality checks',
-  },
-  {
-    id: '98ba7654-3210-4fed-ba98-76543210dc05',
-    key: 'wf.delivery',
-    name: 'Delivery pipeline',
-  },
-  {
-    id: 'wf.test',
-    key: 'wf.test',
-    name: 'Test workflow',
-  },
-];
-
 async function main() {
-  for (const workflow of WORKFLOWS) {
+  const workflows = [
+    {
+      key: 'wf.health',
+      name: 'Health Check',
+      description: 'Estado general del sistema',
+    },
+    {
+      key: 'wf.scheduler',
+      name: 'Scheduler Core',
+      description: 'Tareas programadas',
+    },
+    {
+      key: 'wf.metrics',
+      name: 'Daily Metrics',
+      description: 'Métricas diarias',
+    },
+  ];
+
+  for (const wf of workflows) {
     await prisma.workflow.upsert({
-      where: { key: workflow.key },
-      update: {
-        name: workflow.name,
-      },
+      where: { key: wf.key },
+      update: { name: wf.name, description: wf.description, isActive: true },
       create: {
-        id: workflow.id,
-        key: workflow.key,
-        name: workflow.name,
+        key: wf.key,
+        name: wf.name,
+        description: wf.description,
+        isActive: true,
       },
     });
   }
 
-  const workflows = await prisma.workflow.findMany({ orderBy: { key: 'asc' } });
-  console.log(`Seeded ${workflows.length} workflows`);
+  await prisma.user.upsert({
+    where: { email: 'demo@iopeer.local' },
+    update: { name: 'Demo User' },
+    create: { email: 'demo@iopeer.local', name: 'Demo User' },
+  });
+
+  const health = await prisma.workflow.findUnique({
+    where: { key: 'wf.health' },
+  });
+  if (health) {
+    const now = new Date();
+    await prisma.run.create({
+      data: {
+        workflowId: health.id,
+        status: RunStatus.SUCCESS,
+        startedAt: new Date(now.getTime() - 3000),
+        finishedAt: now,
+        meta: { init: true },
+      },
+    });
+    await prisma.run.create({
+      data: {
+        workflowId: health.id,
+        status: RunStatus.ERROR,
+        startedAt: new Date(now.getTime() - 5000),
+        finishedAt: new Date(now.getTime() - 4000),
+        error: 'Seeded error example',
+      },
+    });
+  }
+
+  console.log('✅ Seed ejecutado correctamente');
 }
 
 main()
-  .catch((error) => {
-    console.error('Seed failed', error);
+  .catch((e) => {
+    console.error('❌ Seed error:', e);
     process.exit(1);
   })
   .finally(async () => {

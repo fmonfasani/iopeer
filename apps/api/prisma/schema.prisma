@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// prisma/schema.prisma
-
-=======
->>>>>>> main
 generator client {
   provider = "prisma-client-js"
 }
@@ -20,150 +15,66 @@ enum RunStatus {
   CANCELLED
 }
 
-<<<<<<< HEAD
-// -----------------------
-// Modelos (public schema)
-// -----------------------
-model Workflow {
-  id        String @id @default(cuid())
-  key       String @unique
-  name      String
-  userId    String?
-  runs      Run[]
-=======
-enum GateState {
-  OPEN
-  CLOSED
-}
-
 model User {
-  id    String  @id @db.Uuid
-  email String?
-
-  workflows   Workflow[]
-  connections Connection[]
-
-  @@map("users")
-}
-
-model Connection {
-  id     String @id @default(uuid()) @db.Uuid
-  userId String @db.Uuid
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  type   String
-  name   String
-  config Json
->>>>>>> main
-
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  @@unique([userId, type, name])
-  @@index([userId])
-  @@map("connections")
 }
 
 model Workflow {
-  id     String @id @default(uuid()) @db.Uuid
-  userId String @db.Uuid
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  key         String  @unique
+  id          String   @id @default(uuid())
+  key         String   @unique
   name        String
   description String?
-  isActive    Boolean @default(false)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  tasks     Task[]
   runs      Run[]
-  schedules Schedule[]
-
-  @@index([userId, isActive])
-  @@map("workflows")
-}
-
-model Task {
-  id         String   @id @default(uuid()) @db.Uuid
-  workflowId String   @db.Uuid
-  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
-
-  key     String
-  name    String
-  type    String
-  config  Json
-  order   Int
-  isEntry Boolean @default(false)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  gatesFrom Gate[] @relation("FromTask")
-  gatesTo   Gate[] @relation("ToTask")
-
-  @@unique([workflowId, key])
-  @@index([workflowId, order])
-  @@map("tasks")
-}
-
-model Gate {
-  id String @id @default(uuid()) @db.Uuid
-
-  fromTaskId String @db.Uuid
-  fromTask   Task   @relation("FromTask", fields: [fromTaskId], references: [id], onDelete: Cascade)
-
-  toTaskId String @db.Uuid
-  toTask   Task   @relation("ToTask", fields: [toTaskId], references: [id], onDelete: Cascade)
-
-  condition String
-  state     GateState @default(CLOSED)
-
-  createdAt DateTime @default(now())
-
-  @@index([fromTaskId])
-  @@index([toTaskId])
-  @@map("gates")
-}
-
-model Schedule {
-  id         String   @id @default(uuid()) @db.Uuid
-  workflowId String   @db.Uuid
-  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
-
-  cron     String
-  timezone String  @default("UTC")
-  isActive Boolean @default(true)
-
-  lastRunAt DateTime?
-  nextRunAt DateTime?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@index([workflowId, isActive])
-  @@index([isActive, nextRunAt])
-  @@map("schedules")
+  schedules Schedule[] // lado opuesto de la relación
 }
 
 model Run {
-  id           String    @id @default(cuid())
-  workflowId   String
-  workflow     Workflow  @relation(fields: [workflowId], references: [key], onDelete: Cascade)
-  status       RunStatus @default(PENDING)
-  startedAt    DateTime?
-  finishedAt   DateTime?
-  durationMs   Int?
-  errorMessage String?
-  log          Json?
-  spec         Json?
-  meta         Json?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  id         String    @id @default(uuid())
+  workflowId String
+  status     RunStatus @default(PENDING)
+  startedAt  DateTime?
+  finishedAt DateTime?
+  error      String?
+  meta       Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  workflow Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
 
   @@index([workflowId])
   @@index([status, finishedAt])
+}
 
-  @@schema("public")
+model Schedule {
+  id         String    @id @default(uuid())
+  workflowId String
+  cron       String
+  isActive   Boolean   @default(true)
+  lastRunAt  DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  workflow Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@index([workflowId])
+}
+
+model Log {
+  id        String   @id @default(uuid())
+  level     String
+  message   String
+  context   String?
+  runId     String?
+  createdAt DateTime @default(now())
+
+  @@index([runId])
 }
