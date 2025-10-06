@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // prisma/schema.prisma
 
+=======
+>>>>>>> main
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,21 +10,17 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // Solo trabajamos con el schema "public"
-  schemas  = ["public"]
 }
 
-// -------- Enums (public) --------
 enum RunStatus {
   PENDING
   RUNNING
   SUCCESS
   ERROR
   CANCELLED
-
-  @@schema("public")
 }
 
+<<<<<<< HEAD
 // -----------------------
 // Modelos (public schema)
 // -----------------------
@@ -31,11 +30,121 @@ model Workflow {
   name      String
   userId    String?
   runs      Run[]
+=======
+enum GateState {
+  OPEN
+  CLOSED
+}
+
+model User {
+  id    String  @id @db.Uuid
+  email String?
+
+  workflows   Workflow[]
+  connections Connection[]
+
+  @@map("users")
+}
+
+model Connection {
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  type   String
+  name   String
+  config Json
+>>>>>>> main
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@schema("public")
+  @@unique([userId, type, name])
+  @@index([userId])
+  @@map("connections")
+}
+
+model Workflow {
+  id     String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  key         String  @unique
+  name        String
+  description String?
+  isActive    Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tasks     Task[]
+  runs      Run[]
+  schedules Schedule[]
+
+  @@index([userId, isActive])
+  @@map("workflows")
+}
+
+model Task {
+  id         String   @id @default(uuid()) @db.Uuid
+  workflowId String   @db.Uuid
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  key     String
+  name    String
+  type    String
+  config  Json
+  order   Int
+  isEntry Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  gatesFrom Gate[] @relation("FromTask")
+  gatesTo   Gate[] @relation("ToTask")
+
+  @@unique([workflowId, key])
+  @@index([workflowId, order])
+  @@map("tasks")
+}
+
+model Gate {
+  id String @id @default(uuid()) @db.Uuid
+
+  fromTaskId String @db.Uuid
+  fromTask   Task   @relation("FromTask", fields: [fromTaskId], references: [id], onDelete: Cascade)
+
+  toTaskId String @db.Uuid
+  toTask   Task   @relation("ToTask", fields: [toTaskId], references: [id], onDelete: Cascade)
+
+  condition String
+  state     GateState @default(CLOSED)
+
+  createdAt DateTime @default(now())
+
+  @@index([fromTaskId])
+  @@index([toTaskId])
+  @@map("gates")
+}
+
+model Schedule {
+  id         String   @id @default(uuid()) @db.Uuid
+  workflowId String   @db.Uuid
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  cron     String
+  timezone String  @default("UTC")
+  isActive Boolean @default(true)
+
+  lastRunAt DateTime?
+  nextRunAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([workflowId, isActive])
+  @@index([isActive, nextRunAt])
+  @@map("schedules")
 }
 
 model Run {

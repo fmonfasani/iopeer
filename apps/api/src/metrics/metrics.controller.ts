@@ -1,4 +1,3 @@
-// src/metrics/metrics.controller.ts
 import { Controller, Get } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { RunStatus } from '@prisma/client';
@@ -9,7 +8,7 @@ export class MetricsController {
 
   @Get()
   async get() {
-    const [pending, running, success, failed, cancelled] = await Promise.all([
+    const [pending, running, success, error, cancelled] = await Promise.all([
       this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
       this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
       this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
@@ -17,6 +16,6 @@ export class MetricsController {
       this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
     ]);
 
-    return { pending, running, success, failed, cancelled };
+    return { pending, running, success, error, cancelled };
   }
 }
