@@ -7,8 +7,20 @@ import { BeautifierStrategy } from './beautifier/beautifier.strategy';
 
 @Injectable()
 export class ReportScheduler {
+  private static resolveCronExpression(): string {
+    const value = process.env.REPORT_CRON;
+
+    if (typeof value === 'string' && value.trim().length > 0) {
+      return value;
+    }
+
+    return CronExpression.EVERY_DAY_AT_NOON;
+  }
+
+  private static readonly CRON_EXPRESSION = ReportScheduler.resolveCronExpression();
+
   private readonly logger = new Logger(ReportScheduler.name);
-  private readonly cronExp = process.env.REPORT_CRON ?? CronExpression.EVERY_DAY_AT_NOON;
+  private readonly cronExp = ReportScheduler.CRON_EXPRESSION;
 
   constructor(
     private readonly report: ReportService,
@@ -18,7 +30,7 @@ export class ReportScheduler {
   ) {}
 
   // Ejecuta según CRON (por defecto todos los días al mediodía)
-  @Cron(function (this: ReportScheduler) { return this.cronExp; } as any)
+  @Cron(ReportScheduler.CRON_EXPRESSION)
   async handleCron() {
     try {
       this.logger.log(`Generando reporte (CRON=${this.cronExp})...`);
