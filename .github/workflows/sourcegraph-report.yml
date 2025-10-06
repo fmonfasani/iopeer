@@ -1,0 +1,29 @@
+name: Sourcegraph Repo Report
+
+on:
+  schedule:
+    - cron: "0 12 * * *"    # 09:00 ARG aprox.
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm i -g pnpm
+      - run: pnpm install
+
+      - name: Run report
+        run: node scripts/sg-report.js
+        env:
+          SG_ENDPOINT: https://sourcegraph.com/.api/graphql
+          SG_TOKEN: ${{ secrets.SG_TOKEN }}             # opcional
+          SG_REPO: github.com/<owner>/<repo>
+          SG_DAYS_COMMITS: 7
+          SG_DAYS_DIFFS: 30
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
