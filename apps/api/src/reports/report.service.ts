@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Workflow } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 
 type StatusKey = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'ERROR' | 'CANCELLED';
@@ -44,31 +43,32 @@ export class ReportService {
 
     const topWorkflows = await this.prisma.run.groupBy({
       by: ['workflowId'],
-      _count: { _all: true },
-      orderBy: { _count: { _all: 'desc' } },
+      _count: { workflowId: true },
+      orderBy: { _count: { workflowId: 'desc' } },
       take: 5,
     });
 
-<<<<<<< Updated upstream
-    const topWorkflowDetails = await Promise.all(
-      topWorkflows.map(async t => {
-        const wf: Pick<Workflow, 'id' | 'key' | 'name'> | null = await this.prisma.workflow.findUnique({
-          where: { id: t.workflowId },
-          select: { id: true, key: true, name: true },
-        });
-        const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId;
-        return { label, count: t._count._all };
-      }),
-=======
-    const workflowsMap = new Map(
+    const workflowIds = topWorkflows
+      .map((t) => t.workflowId)
+      .filter((id): id is number => id != null);
+
+    type WorkflowSummary = { id: number; key: string | null; name: string | null };
+
+    const workflowsMap = new Map<number, WorkflowSummary>(
       (
         await this.prisma.workflow.findMany({
-          where: { id: { in: topWorkflows.map((t) => t.workflowId) } },
+          where: { id: { in: workflowIds } },
           select: { id: true, key: true, name: true },
         })
       ).map((w) => [w.id, w]),
->>>>>>> Stashed changes
     );
+
+    const topWorkflowDetails = topWorkflows.map((t) => {
+      const wf = t.workflowId != null ? workflowsMap.get(t.workflowId) : undefined;
+      const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId ?? 'workflow?';
+      const count = t._count?.workflowId ?? 0;
+      return { label, count };
+    });
 
     const lines = [
       `*📊 IOpeer — Status Report*`,
@@ -121,23 +121,11 @@ export class ReportService {
         <li>ERROR: ${error}</li>
         <li>CANCELLED: ${cancelled}</li>
       </ul>
-<<<<<<< Updated upstream
-        <h3>Top Workflows</h3>
-        <ol>
-          ${topWorkflowDetails
-            .map(t => `<li>${t.label}: ${t.count}</li>`)
-            .join('')}
-=======
       <h3>Top Workflows</h3>
       <ol>
-        ${topWorkflows
-          .map((t) => {
-            const wf = workflowsMap.get(t.workflowId);
-            const label = wf ? `${wf.key ?? wf.name ?? wf.id}` : t.workflowId;
-            return `<li>${label}: ${t._count._all}</li>`;
-          })
+        ${topWorkflowDetails
+          .map((t) => `<li>${t.label}: ${t.count}</li>`)
           .join('')}
->>>>>>> Stashed changes
       </ol>
       <h3>Últimos 10 runs</h3>
       <ul>
