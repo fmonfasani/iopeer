@@ -50,11 +50,11 @@ export class ReportService {
 
     const workflowIds = topWorkflows
       .map((t) => t.workflowId)
-      .filter((id): id is number => id != null);
+      .filter((id): id is string => id != null);
 
-    type WorkflowSummary = { id: number; key: string | null; name: string | null };
+    type WorkflowSummary = { id: string; key: string | null; name: string | null };
 
-    const workflowsMap = new Map<number, WorkflowSummary>(
+    const workflowsMap = new Map<string, WorkflowSummary>(
       (
         await this.prisma.workflow.findMany({
           where: { id: { in: workflowIds } },
