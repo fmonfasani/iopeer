@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+// prisma/schema.prisma
+
+=======
+>>>>>>> main
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,6 +20,17 @@ enum RunStatus {
   CANCELLED
 }
 
+<<<<<<< HEAD
+// -----------------------
+// Modelos (public schema)
+// -----------------------
+model Workflow {
+  id        String @id @default(cuid())
+  key       String @unique
+  name      String
+  userId    String?
+  runs      Run[]
+=======
 enum GateState {
   OPEN
   CLOSED
@@ -38,6 +54,7 @@ model Connection {
   type   String
   name   String
   config Json
+>>>>>>> main
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -131,21 +148,22 @@ model Schedule {
 }
 
 model Run {
-  id         String   @id @default(uuid()) @db.Uuid
-  workflowId String   @db.Uuid
-  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
-
-  status RunStatus @default(PENDING)
-
-  createdAt    DateTime  @default(now())
+  id           String    @id @default(cuid())
+  workflowId   String
+  workflow     Workflow  @relation(fields: [workflowId], references: [key], onDelete: Cascade)
+  status       RunStatus @default(PENDING)
   startedAt    DateTime?
   finishedAt   DateTime?
   durationMs   Int?
-  log          Json?
   errorMessage String?
+  log          Json?
+  spec         Json?
+  meta         Json?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 
-  @@index([workflowId, status])
+  @@index([workflowId])
   @@index([status, finishedAt])
-  @@index([createdAt])
-  @@map("runs")
+
+  @@schema("public")
 }

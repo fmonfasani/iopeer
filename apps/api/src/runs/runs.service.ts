@@ -44,7 +44,6 @@ type StepLogEntry = {
 };
 
 const STEP_DURATION_LIMIT = 1_000;
-const ERROR_STATUS = 'ERROR' as RunStatus;
 @Injectable()
 export class RunsService {
   private readonly logger = rootLogger.child({ service: 'RunsService' });
@@ -261,7 +260,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: item.runId },
         data: {
-          status: ERROR_STATUS,
+          status: RunStatus.ERROR,
           finishedAt,
           durationMs,
           errorMessage: message,
