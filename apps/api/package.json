@@ -17,6 +17,7 @@
     "test:e2e": "vitest run --run \"test/e2e/*.e2e-spec.ts\"",
     "prisma:generate": "prisma generate --schema=prisma/schema.prisma",
     "prisma:migrate": "prisma migrate dev --schema=prisma/schema.prisma -n core_models",
+    "prisma:seed": "ts-node --transpile-only prisma/seed.ts",
     "log:progress": "node scripts/log-progress.js",
     "log:progress:msg": "node scripts/log-progress.js --msg",
     "prettier": "prettier",

@@ -45,7 +45,6 @@ type StepLogEntry = {
 
 const STEP_DURATION_LIMIT = 1_000;
 const ERROR_STATUS = 'ERROR' as RunStatus;
-
 @Injectable()
 export class RunsService {
   private readonly logger = rootLogger.child({ service: 'RunsService' });
@@ -116,14 +115,15 @@ export class RunsService {
   }
 
   async getStatusMetrics() {
-    const [total, pending, running, success, error, cancelled] = await Promise.all([
-      this.prisma.run.count(),
-      this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
-      this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
-      this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
-      this.prisma.run.count({ where: { status: ERROR_STATUS } }),
-      this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
-    ]);
+    const [total, pending, running, success, error, cancelled] =
+      await Promise.all([
+        this.prisma.run.count(),
+        this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
+        this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
+        this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
+        this.prisma.run.count({ where: { status: RunStatus.ERROR } }),
+        this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
+      ]);
 
     return {
       total,
@@ -155,7 +155,11 @@ export class RunsService {
     while (this.queue.length > 0) {
       const item = this.queue.shift()!;
       await this.executeRun(item).catch((error) => {
-        this.logger.error({ err: error, runId: item.runId, requestId: item.requestId });
+        this.logger.error({
+          err: error,
+          runId: item.runId,
+          requestId: item.requestId,
+        });
       });
     }
 
@@ -181,7 +185,10 @@ export class RunsService {
     try {
       for (const stepNode of item.nodes) {
         const step: Step = this.stepsRegistry.get(stepNode.type);
-        const stepLogger = runLogger.child({ stepId: stepNode.id, stepType: stepNode.type });
+        const stepLogger = runLogger.child({
+          stepId: stepNode.id,
+          stepType: stepNode.type,
+        });
         stepLogger.info('step:start');
 
         const started = Date.now();

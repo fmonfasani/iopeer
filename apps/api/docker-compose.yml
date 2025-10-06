@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: iopeer
+      POSTGRES_PASSWORD: iopeer
+      POSTGRES_DB: iopeer
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data_iopeer:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U iopeer -d iopeer"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  db_data_iopeer:
