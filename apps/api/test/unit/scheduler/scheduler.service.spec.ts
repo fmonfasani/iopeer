@@ -55,13 +55,14 @@ describe('SchedulerService', () => {
   });
 
   it('tick enqueues workflow when gates succeed', async () => {
+    const workflow = { id: 'wf-existing', key: firstAction.workflowId, name: 'Bootstrap' };
     const mockPrisma = createMockPrismaClient([
       {
         id: 'run-1',
         status: RUN_STATUS.SUCCESS,
         log: { meta: { actionId: 'other-action' } },
       },
-    ]);
+    ], [workflow]);
     const runs = { createRun: vi.fn().mockResolvedValue(undefined) } as unknown as RunsService;
     const gates = {
       checkEnv: vi.fn().mockResolvedValue(true),
@@ -74,7 +75,7 @@ describe('SchedulerService', () => {
 
     expect(result).toEqual({ ok: true });
     expect(runs.createRun).toHaveBeenCalledWith(
-      firstAction.workflowId,
+      workflow.id,
       firstAction.nodes,
       {
         actionId: firstAction.id,
