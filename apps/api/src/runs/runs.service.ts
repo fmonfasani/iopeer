@@ -331,7 +331,7 @@ export class RunsService {
           data: { ...createData, log: log as any },
         } as any)) as RunWithLog;
         this.logColumnAvailable = true;
-        return this.hydrateRun(created);
+        return this.ensureHydratedRun(created);
       } catch (error) {
         if (this.shouldFallbackToMeta(error)) {
           this.logColumnAvailable = false;
@@ -351,7 +351,7 @@ export class RunsService {
     }
 
     const created = (await this.prisma.run.create({ data: fallbackData } as any)) as RunWithLog;
-    return this.hydrateRun(created);
+    return this.ensureHydratedRun(created);
   }
 
   private async updateRunRecord(
@@ -375,7 +375,7 @@ export class RunsService {
           data: { ...updateData, log: log as any },
         } as any)) as RunWithLog;
         this.logColumnAvailable = true;
-        return this.hydrateRun(updated);
+        return this.ensureHydratedRun(updated);
       } catch (error) {
         if (this.shouldFallbackToMeta(error)) {
           this.logColumnAvailable = false;
@@ -395,7 +395,16 @@ export class RunsService {
       where: { id: runId },
       data: fallbackData,
     } as any)) as RunWithLog;
-    return this.hydrateRun(updated);
+    return this.ensureHydratedRun(updated);
+  }
+
+  private ensureHydratedRun(run: RunWithLog | null): RunWithLog {
+    const hydrated = this.hydrateRun(run);
+    if (!hydrated) {
+      throw new Error('Failed to hydrate run');
+    }
+
+    return hydrated;
   }
 
   private hydrateRun(run: RunWithLog | null): RunWithLog | null {
