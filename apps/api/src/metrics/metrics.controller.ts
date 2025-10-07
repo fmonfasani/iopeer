@@ -20,7 +20,7 @@ export class MetricsController {
   private readonly startedAt = Date.now();
 
   constructor(
-    @Optional() private readonly runsMaybe?: RunsService | PrismaService,
+    @Optional() private readonly runsMaybe?: RunsService,
     @Optional() private readonly prismaMaybe?: PrismaService,
   ) {
     if (!this.runsMaybe && !this.prismaMaybe) {
