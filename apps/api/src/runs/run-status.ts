@@ -1,4 +1,12 @@
-type RunStatus = string;
+type PrismaClientModule = typeof import('@prisma/client');
+
+type PrismaRunStatus = PrismaClientModule extends { RunStatus: infer EnumObject }
+  ? EnumObject extends Record<string, infer EnumValue>
+    ? EnumValue
+    : never
+  : string;
+
+type RunStatus = PrismaRunStatus;
 
 type RunStatusRecord = Record<string, RunStatus>;
 
