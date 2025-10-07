@@ -10,8 +10,8 @@ import { readFile } from 'fs/promises';
 import * as path from 'path';
 
 import { PrismaService } from '../prisma/prisma.service';
-import type { GateService } from '../gates/gate.service';
-import type { RunWithLog, RunsService } from '../runs/runs.service';
+import { GateService } from '../gates/gate.service';
+import { RunsService, type RunWithLog } from '../runs/runs.service';
 import { RUN_STATUS } from '../runs/run-status';
 
 const DEFAULT_INTERVAL_MS = 60_000;
