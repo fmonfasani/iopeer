@@ -42,9 +42,12 @@ model Run {
   status     RunStatus @default(PENDING)
   startedAt  DateTime?
   finishedAt DateTime?
-  error      String?
-  meta       Json?
-  log        Json?
+  error        String?
+  errorMessage String?
+  durationMs   Int?
+  meta         Json?
+  log          Json?
+  spec         Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
