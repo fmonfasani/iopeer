@@ -1,5 +1,4 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Prisma, Run } from '@prisma/client';
 import { randomUUID } from 'crypto';
 
 import type { PrismaService } from '../prisma/prisma.service';
@@ -44,6 +43,21 @@ export type RunStats = {
   error_rate: number;
 };
 
+export type RunWithLog = {
+  id: string;
+  workflowId: string;
+  status: string;
+  startedAt: Date | null;
+  finishedAt: Date | null;
+  meta: Record<string, any> | null;
+  createdAt: Date;
+  updatedAt: Date;
+  log?: { meta?: Record<string, any> | null; [key: string]: any } | null;
+  error?: string | null;
+  errorMessage?: string | null;
+  durationMs?: number | null;
+};
+
 @Injectable()
 export class RunsService {
   private readonly logger = new Logger(RunsService.name);
@@ -74,13 +88,13 @@ export class RunsService {
       stepLogs: [] as StepLogEntry[],
     };
 
-    const run = await this.prisma.run.create({
+    const run = (await this.prisma.run.create({
       data: {
         workflowId,
         status: RUN_STATUS.PENDING,
-        log: runLog as unknown as Prisma.InputJsonValue,
+        log: runLog as any,
       } as any,
-    });
+    })) as RunWithLog;
 
     this.queue.push({
       runId: run.id,
@@ -92,7 +106,7 @@ export class RunsService {
     });
 
     void this.processNext();
-    return { ...run, log: runLog } as Run;
+    return { ...run, log: runLog } as RunWithLog;
   }
 
   async enqueueRun(dto: EnqueueRunDto) {
@@ -100,15 +114,15 @@ export class RunsService {
     return run.id;
   }
 
-  async getRun(id: string): Promise<Run | null> {
-    return this.prisma.run.findUnique({ where: { id } });
+  async getRun(id: string): Promise<RunWithLog | null> {
+    return (await this.prisma.run.findUnique({ where: { id } })) as RunWithLog | null;
   }
 
   async listRecentRuns(limit = 50) {
-    return this.prisma.run.findMany({
+    return (await this.prisma.run.findMany({
       orderBy: { createdAt: 'desc' },
       take: limit,
-    });
+    })) as RunWithLog[];
   }
 
   getStats(): RunStats {
@@ -135,7 +149,7 @@ export class RunsService {
     let startedAt = new Date();
 
     try {
-      const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+      const run = (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null;
       if (!run) {
         return;
       }
@@ -153,7 +167,7 @@ export class RunsService {
         data: {
           status: RUN_STATUS.RUNNING,
           startedAt,
-          log: log as unknown as Prisma.InputJsonValue,
+          log: log as any,
           errorMessage: null,
         },
       } as any);
@@ -214,7 +228,7 @@ export class RunsService {
           finishedAt,
           durationMs,
           errorMessage: null,
-          log: updatedLog as unknown as Prisma.InputJsonValue,
+          log: updatedLog as any,
         },
       } as any);
 
@@ -231,7 +245,7 @@ export class RunsService {
   }
 
   async handleRunFailure(job: QueueItem, cause: unknown, stepLogs: StepLogEntry[] = [], startedAt?: Date) {
-    const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+    const run = (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null;
     if (!run) {
       return;
     }
@@ -256,7 +270,7 @@ export class RunsService {
         where: { id: job.runId },
         data: {
           status: RUN_STATUS.PENDING,
-          log: log as unknown as Prisma.InputJsonValue,
+          log: log as any,
           errorMessage,
         },
       } as any);
@@ -277,7 +291,7 @@ export class RunsService {
           finishedAt,
           durationMs,
           errorMessage,
-          log: log as unknown as Prisma.InputJsonValue,
+          log: log as any,
         },
       } as any);
 
