@@ -5,6 +5,7 @@ import { SlackNotifier } from './slack-notifier';
 import { EmailNotifier } from './email-notifier';
 import { PrismaModule } from '../prisma/prisma.module';
 import { ReportController } from './report.controller';
+import { OpenAIReporterService } from './openai.reporter.service';
 
 // Beautifier
 import { BeautifierStrategy } from './beautifier/beautifier.strategy';
@@ -20,12 +21,13 @@ import { GroqBeautifier } from './beautifier/beautifier.groq.service';
     ReportScheduler,
     SlackNotifier,
     EmailNotifier,
+    OpenAIReporterService,
     // beautifiers
     BeautifierStrategy,
     OllamaBeautifier,
     HfBeautifier,
     GroqBeautifier,
   ],
-  exports: [ReportService, BeautifierStrategy],
+  exports: [ReportService, BeautifierStrategy, OpenAIReporterService],
 })
 export class ReportModule {}
