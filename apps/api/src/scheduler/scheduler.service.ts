@@ -6,6 +6,7 @@ import {
   Optional,
 } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 import { readFile } from 'fs/promises';
 import * as path from 'path';
 
@@ -41,6 +42,7 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
   private readonly runs: RunsLike;
   private readonly gates?: GateLike;
   private readonly prisma?: PrismaClient;
+  private errorMessageColumnAvailable: boolean | null = null;
 
   constructor(
     runsService: RunsService,
@@ -95,11 +97,26 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     if (!this.prisma) {
       return [];
     }
-    return (await this.prisma.run.findMany({
-      where: { status: { equals: RUN_STATUS.SUCCESS } },
-      orderBy: { finishedAt: 'desc' },
-      take: limit,
-    })) as RunWithLog[];
+
+    const query = this.buildSucceededRunsQuery(limit);
+
+    try {
+      const runs = (await this.prisma.run.findMany(query)) as RunWithLog[];
+      if (this.errorMessageColumnAvailable !== false) {
+        this.errorMessageColumnAvailable = true;
+      }
+      return runs.map((run) => this.ensureErrorMessage(run));
+    } catch (error) {
+      if (this.shouldHandleMissingErrorMessageColumn(error)) {
+        this.errorMessageColumnAvailable = false;
+        const fallbackRuns = (await this.prisma.run.findMany(
+          this.buildSucceededRunsQuery(limit),
+        )) as RunWithLog[];
+        return fallbackRuns.map((run) => this.ensureErrorMessage(run));
+      }
+
+      throw error;
+    }
   }
 
   private async tickSimple() {
@@ -217,5 +234,54 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     }
 
     this.plan = null;
+  }
+
+  private buildSucceededRunsQuery(limit: number) {
+    const baseQuery = {
+      where: { status: { equals: RUN_STATUS.SUCCESS } },
+      orderBy: { finishedAt: 'desc' as const },
+      take: limit,
+    };
+
+    if (this.errorMessageColumnAvailable === false) {
+      return {
+        ...baseQuery,
+        select: {
+          id: true,
+          workflowId: true,
+          status: true,
+          startedAt: true,
+          finishedAt: true,
+          meta: true,
+          createdAt: true,
+          updatedAt: true,
+          log: true,
+          error: true,
+          durationMs: true,
+        },
+      };
+    }
+
+    return baseQuery;
+  }
+
+  private ensureErrorMessage(run: RunWithLog): RunWithLog {
+    if (run.errorMessage !== undefined) {
+      return run;
+    }
+
+    return {
+      ...run,
+      errorMessage: run.error ?? null,
+    };
+  }
+
+  private shouldHandleMissingErrorMessageColumn(error: unknown) {
+    return (
+      error instanceof PrismaClientKnownRequestError &&
+      error.code === 'P2022' &&
+      typeof error.meta === 'object' &&
+      error.meta?.column === 'Run.errorMessage'
+    );
   }
 }
