@@ -88,7 +88,7 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
    *  - Lee el plan de bootstrap (si existe).
    *  - Loguea últimos runs SUCCESS (ajustado al enum correcto).
    */
-  async tick() {
+  async tick(): Promise<{ ok: true; planLoaded: boolean }> {
     // 1) Leer plan-bootstrap.json (si existe en alguna ubicación válida)
     let plan: any | null = null;
     try {
@@ -97,7 +97,7 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
       plan = JSON.parse(raw);
     } catch (e) {
       // Si no existe, logueamos y seguimos (no consideramos fatal).
-      this.logger.error('scheduler:tick:error', { err: e });
+      this.logger.warn?.('scheduler:plan:not_found', { err: e });
     }
 
     // 2) Consultar últimos runs con estado SUCCESS (no SUCCEEDED)
@@ -113,14 +113,15 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
         keys: Object.keys(plan ?? {}),
       });
     }
+
+    return { ok: true, planLoaded: Boolean(plan) };
   }
 
   /**
    * Expuesto para el SchedulerController /scheduler/next si lo usás:
    * fuerza un próximo tick ahora mismo.
    */
-  async next(): Promise<{ ok: true }> {
-    await this.tick();
-    return { ok: true };
+  async next(): Promise<{ ok: true; planLoaded: boolean }> {
+    return this.tick();
   }
 }
