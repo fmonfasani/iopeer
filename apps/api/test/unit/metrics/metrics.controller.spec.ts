@@ -5,7 +5,7 @@ import { createMockPrismaClient } from '../../factories';
 describe('MetricsController', () => {
   it('returns aggregated metrics', async () => {
     const mock = createMockPrismaClient();
-    const controller = new MetricsController(mock.client);
+    const controller = new MetricsController(undefined, mock.client);
 
     mock.client.run.count = vi
       .fn()
@@ -25,7 +25,7 @@ describe('MetricsController', () => {
 
   it('returns zero error rate when there are no runs', async () => {
     const mock = createMockPrismaClient();
-    const controller = new MetricsController(mock.client);
+    const controller = new MetricsController(undefined, mock.client);
 
     mock.client.run.count = vi.fn().mockResolvedValueOnce(0).mockResolvedValueOnce(0);
 
