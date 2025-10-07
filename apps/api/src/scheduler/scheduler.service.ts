@@ -9,6 +9,7 @@ import { PrismaClient } from '@prisma/client';
 import { readFile } from 'fs/promises';
 import * as path from 'path';
 
+import { PrismaService } from '../prisma/prisma.service';
 import type { GateService } from '../gates/gate.service';
 import type { RunWithLog, RunsService } from '../runs/runs.service';
 import { RUN_STATUS } from '../runs/run-status';
@@ -37,12 +38,18 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
   private readonly planPromise: Promise<void>;
   private plan: any = null;
   private timer?: NodeJS.Timeout;
+  private readonly runs: RunsLike;
+  private readonly gates?: GateLike;
+  private readonly prisma?: PrismaClient;
 
   constructor(
-    private readonly runs: RunsLike,
-    @Optional() private readonly gates?: GateLike,
-    @Optional() private readonly prisma?: PrismaClient,
+    runsService: RunsService,
+    @Optional() gateService?: GateService,
+    @Optional() prismaService?: PrismaService,
   ) {
+    this.runs = runsService;
+    this.gates = gateService;
+    this.prisma = prismaService;
     this.planPromise = this.loadPlan();
   }
 
