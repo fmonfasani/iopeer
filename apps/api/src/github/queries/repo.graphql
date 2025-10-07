@@ -1,0 +1,30 @@
+query($owner:String!, $name:String!) {
+  repository(owner:$owner, name:$name) {
+    name
+    description
+    createdAt
+    updatedAt
+    stargazerCount
+    forkCount
+    url
+    languages(first:10, orderBy:{field:SIZE, direction:DESC}) {
+      nodes { name }
+    }
+    issues(states:OPEN) { totalCount }
+    pullRequests(states:OPEN) { totalCount }
+    defaultBranchRef {
+      target {
+        ... on Commit {
+          history(first:5) {
+            edges {
+              node {
+                messageHeadline
+                committedDate
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
