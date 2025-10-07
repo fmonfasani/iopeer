@@ -68,6 +68,7 @@ export class RunsService {
   private readonly stepDurations: number[] = [];
   private readonly stats = { total: 0, success: 0, error: 0 };
   private logColumnAvailable: boolean | null = null;
+  private errorMessageColumnAvailable: boolean | null = null;
 
   constructor(
     private readonly prisma: PrismaService,
@@ -368,6 +369,18 @@ export class RunsService {
       updateData.meta = baseMeta;
     }
 
+    return this.performRunUpdate(runId, log, metaSource, updateData);
+  }
+
+  private async performRunUpdate(
+    runId: string,
+    log: Record<string, any>,
+    metaSource: Record<string, any> | null,
+    originalData: Record<string, any>,
+    retriedForErrorMessage = false,
+  ): Promise<RunWithLog> {
+    const updateData = this.applyErrorMessageCompatibility(originalData);
+
     if (this.logColumnAvailable !== false) {
       try {
         const updated = (await this.prisma.run.update({
@@ -375,8 +388,16 @@ export class RunsService {
           data: { ...updateData, log: log as any },
         } as any)) as RunWithLog;
         this.logColumnAvailable = true;
+        if ('errorMessage' in originalData && this.errorMessageColumnAvailable !== false) {
+          this.errorMessageColumnAvailable = true;
+        }
         return this.ensureHydratedRun(updated);
       } catch (error) {
+        if (this.shouldHandleMissingErrorMessageColumn(error) && !retriedForErrorMessage) {
+          this.errorMessageColumnAvailable = false;
+          return this.performRunUpdate(runId, log, metaSource, originalData, true);
+        }
+
         if (this.shouldFallbackToMeta(error)) {
           this.logColumnAvailable = false;
         } else {
@@ -385,17 +406,28 @@ export class RunsService {
       }
     }
 
-    const fallbackData: Record<string, any> = { ...data };
     const fallbackMeta = this.buildMeta(metaSource, log, true);
+    const fallbackData: Record<string, any> = this.applyErrorMessageCompatibility({ ...originalData });
     if (fallbackMeta !== undefined) {
       fallbackData.meta = fallbackMeta;
     }
 
-    const updated = (await this.prisma.run.update({
-      where: { id: runId },
-      data: fallbackData,
-    } as any)) as RunWithLog;
-    return this.ensureHydratedRun(updated);
+    try {
+      const updated = (await this.prisma.run.update({
+        where: { id: runId },
+        data: fallbackData,
+      } as any)) as RunWithLog;
+      if ('errorMessage' in originalData && this.errorMessageColumnAvailable !== false) {
+        this.errorMessageColumnAvailable = true;
+      }
+      return this.ensureHydratedRun(updated);
+    } catch (error) {
+      if (this.shouldHandleMissingErrorMessageColumn(error) && !retriedForErrorMessage) {
+        this.errorMessageColumnAvailable = false;
+        return this.performRunUpdate(runId, log, metaSource, originalData, true);
+      }
+      throw error;
+    }
   }
 
   private ensureHydratedRun(run: RunWithLog | null): RunWithLog {
@@ -436,6 +468,10 @@ export class RunsService {
       result.meta = null;
     }
 
+    if (result.errorMessage === undefined) {
+      result.errorMessage = result.error ?? null;
+    }
+
     return result;
   }
 
@@ -463,6 +499,31 @@ export class RunsService {
       typeof error.message === 'string' &&
       error.message.includes('Unknown argument `log`')
     );
+  }
+
+  private shouldHandleMissingErrorMessageColumn(error: unknown) {
+    return (
+      error instanceof PrismaClientValidationError &&
+      typeof error.message === 'string' &&
+      error.message.includes('Unknown argument `errorMessage`')
+    );
+  }
+
+  private applyErrorMessageCompatibility(data: Record<string, any>) {
+    if (!('errorMessage' in data)) {
+      return { ...data };
+    }
+
+    const result = { ...data };
+    if (this.errorMessageColumnAvailable === false) {
+      if (!('error' in result) || result.error == null) {
+        result.error = result.errorMessage ?? null;
+      }
+      delete result.errorMessage;
+      return result;
+    }
+
+    return result;
   }
 
   private normaliseLog(raw: any) {
