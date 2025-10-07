@@ -11,6 +11,16 @@ export class ReportController {
     private readonly slack: SlackNotifier,
   ) {}
 
+  @Post()
+  async generateStatusReport() {
+    return this.report.generateReport();
+  }
+
+  @Post('ai-summary')
+  async generateStatusReportWithAi() {
+    return this.report.generateReport({ provider: 'openai' });
+  }
+
   @Post('beautify')
   async sendBeautifiedReport() {
     const { text } = await this.report.buildStatusReport();

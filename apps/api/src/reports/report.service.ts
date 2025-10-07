@@ -1,18 +1,45 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger, Optional } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { OpenAIReporterService } from './openai.reporter.service';
 
 type StatusKey = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'ERROR' | 'CANCELLED';
 
+type StatusReportTotals = {
+  pending: number;
+  running: number;
+  success: number;
+  error: number;
+  cancelled: number;
+  totalRuns: number;
+};
+
+export type StatusReport = {
+  text: string;
+  html: string;
+  meta: {
+    totals: StatusReportTotals;
+    aiSummary?: {
+      provider: 'openai';
+      text: string;
+    };
+  };
+};
+
 @Injectable()
 export class ReportService {
-  constructor(private readonly prisma: PrismaService) {}
+  private readonly logger = new Logger(ReportService.name);
+
+  constructor(
+    private readonly prisma: PrismaService,
+    @Optional() private readonly openaiReporter?: OpenAIReporterService,
+  ) {}
 
   private async countByStatus(status: StatusKey) {
     // Usamos string literal para evitar desajustes de enum entre versiones
     return this.prisma.run.count({ where: { status: status as any } });
   }
 
-  async buildStatusReport() {
+  async buildStatusReport(): Promise<StatusReport> {
     const [pending, running, success, error, cancelled] = await Promise.all([
       this.countByStatus('PENDING'),
       this.countByStatus('RUNNING'),
@@ -158,5 +185,60 @@ export class ReportService {
         totals: { pending, running, success, error, cancelled, totalRuns },
       },
     };
+  }
+
+  async generateReport(options: { provider?: 'openai' } = {}): Promise<StatusReport> {
+    const report = await this.buildStatusReport();
+
+    if (options.provider !== 'openai') {
+      return report;
+    }
+
+    if (!this.openaiReporter?.isEnabled()) {
+      this.logger.warn(
+        'Se solicitó un reporte con IA pero OpenAI no está configurado correctamente (ver variables OPENAI_API_KEY y OPENAI_ASSISTANT_ID).',
+      );
+      return report;
+    }
+
+    try {
+      const aiSummary = await this.openaiReporter.generateSummary(report.text);
+      const htmlSummary = this.transformSummaryToHtml(aiSummary);
+
+      report.text += `\n\n### 🤖 Análisis IA\n${aiSummary}`;
+      report.html += htmlSummary;
+      report.meta.aiSummary = {
+        provider: 'openai',
+        text: aiSummary,
+      };
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      this.logger.warn(`No se pudo generar el resumen con OpenAI: ${message}`);
+    }
+
+    return report;
+  }
+
+  private transformSummaryToHtml(summary: string): string {
+    const paragraphs = summary
+      .split(/\n+/)
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0)
+      .map((line) => `<p>${this.escapeHtml(line)}</p>`);
+
+    if (paragraphs.length === 0) {
+      return '';
+    }
+
+    return `\n      <h3>🤖 Análisis IA</h3>\n      ${paragraphs.join('\n      ')}\n    `;
+  }
+
+  private escapeHtml(value: string): string {
+    return value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 }
