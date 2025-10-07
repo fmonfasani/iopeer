@@ -10,3 +10,4 @@ pnpm dev | build | lint | test
 1) Copy .env.example -> .env and fill values
 2) cd apps/api && pnpm prisma:generate && pnpm prisma:migrate
 3) pnpm dev
+# analyst_agent
