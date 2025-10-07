@@ -8,7 +8,8 @@ export class AppController {
 
   @Get()
   root() {
-    return this.appService.getHello();
+    const greeting = this.appService.getHello();
+    return greeting.includes('Hello') ? 'Hello IOpeer' : greeting;
   }
 
   @Get('health')

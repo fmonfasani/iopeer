@@ -1,16 +1,11 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { Prisma, Run, RunStatus } from '@prisma/client';
 import { randomUUID } from 'crypto';
 
-import { rootLogger } from '../logger/pino-logger.service';
-import { StepsRegistry, type Step, type StepContext } from '../steps/registry';
-import { PrismaService } from '../prisma/prisma.service';
+import type { PrismaService } from '../prisma/prisma.service';
+import { StepsRegistry, type StepContext } from '../steps/registry';
 
-export type StepNode = {
-  id: string;
-  type: string;
-  params?: Record<string, any>;
-};
+export type StepNode = { id?: string; type: string; params?: Record<string, any> };
 
 export type EnqueueRunDto = {
   workflowId: string;
@@ -19,86 +14,98 @@ export type EnqueueRunDto = {
   requestId?: string;
 };
 
+const MAX_ATTEMPTS_DEFAULT = 3;
+const RETRY_DELAY_MS = 150;
+
+const runStatusEnum = (RunStatus ?? {}) as Record<string, RunStatus>;
+const statusFor = (key: string, fallback: string) =>
+  (runStatusEnum && runStatusEnum[key]) ? runStatusEnum[key] : (fallback as unknown as RunStatus);
+
+const STATUS = {
+  QUEUED: statusFor('QUEUED', 'QUEUED'),
+  RUNNING: statusFor('RUNNING', 'RUNNING'),
+  SUCCEEDED: statusFor('SUCCEEDED', 'SUCCEEDED'),
+  FAILED: statusFor('ERROR', 'ERROR'),
+};
+
 type QueueItem = {
   runId: string;
   workflowId: string;
   nodes: StepNode[];
-  requestId: string;
   meta?: Record<string, any>;
-};
-
-export type RunStats = {
-  runsTotal: number;
-  runsSuccess: number;
-  runsError: number;
-  stepDurations: number[];
+  attempt: number;
+  requestId?: string;
 };
 
 type StepLogEntry = {
   id: string;
-  type: string;
-  status: 'SUCCESS' | 'ERROR';
-  durationMs: number;
+  status: 'OK' | 'ERROR';
   output?: unknown;
   error?: string;
+  durationMs: number;
 };
 
-const STEP_DURATION_LIMIT = 1_000;
+export type RunStats = {
+  runs_total: number;
+  runs_success: number;
+  runs_error: number;
+  step_duration_ms_p95: number;
+  error_rate: number;
+};
+
 @Injectable()
 export class RunsService {
-  private readonly logger = rootLogger.child({ service: 'RunsService' });
+  private readonly logger = new Logger(RunsService.name);
   private readonly queue: QueueItem[] = [];
   private processing = false;
-  private readonly stats: RunStats = {
-    runsTotal: 0,
-    runsSuccess: 0,
-    runsError: 0,
-    stepDurations: [],
-  };
+  private readonly stepDurations: number[] = [];
+  private readonly stats = { total: 0, success: 0, error: 0 };
 
   constructor(
     private readonly prisma: PrismaService,
-    private readonly stepsRegistry: StepsRegistry,
+    private readonly steps: StepsRegistry,
   ) {}
 
-  async enqueueRun(dto: EnqueueRunDto): Promise<string> {
-    if (!dto.workflowId) {
+  async createRun(
+    workflowId: string,
+    nodes: StepNode[],
+    meta?: Record<string, any>,
+    requestId?: string,
+  ) {
+    if (!workflowId) {
       throw new Error('workflowId is required');
     }
-    if (!Array.isArray(dto.nodes) || dto.nodes.length === 0) {
-      throw new Error('nodes must be a non-empty array');
-    }
 
-    const specPayload = {
-      workflowId: dto.workflowId,
-      nodes: dto.nodes,
-    } as Prisma.InputJsonValue;
-
-    const initialLog = dto.meta
-      ? ({ meta: dto.meta } as Prisma.InputJsonValue)
-      : undefined;
+    const runLog = {
+      meta: meta ?? undefined,
+      attempts: 0,
+      maxAttempts: MAX_ATTEMPTS_DEFAULT,
+      stepLogs: [] as StepLogEntry[],
+    };
 
     const run = await this.prisma.run.create({
       data: {
-        workflowId: dto.workflowId,
-        status: RunStatus.PENDING,
-        log: initialLog,
-        spec: specPayload,
+        workflowId,
+        status: STATUS.QUEUED,
+        log: runLog as unknown as Prisma.InputJsonValue,
       } as any,
     });
 
-    const requestId = dto.requestId ?? randomUUID();
     this.queue.push({
       runId: run.id,
-      workflowId: dto.workflowId,
-      nodes: dto.nodes,
-      requestId,
-      meta: dto.meta,
+      workflowId,
+      nodes,
+      meta,
+      attempt: 0,
+      requestId: requestId ?? randomUUID(),
     });
 
-    this.logger.info({ runId: run.id, requestId }, 'run:enqueue');
-    void this.drainQueue();
+    void this.processNext();
+    return { ...run, log: runLog } as Run;
+  }
 
+  async enqueueRun(dto: EnqueueRunDto) {
+    const run = await this.createRun(dto.workflowId, dto.nodes, dto.meta, dto.requestId);
     return run.id;
   }
 
@@ -108,186 +115,207 @@ export class RunsService {
 
   async listRecentRuns(limit = 50) {
     return this.prisma.run.findMany({
-      orderBy: [{ createdAt: 'desc' } as any],
+      orderBy: { createdAt: 'desc' },
       take: limit,
     });
   }
 
-  async getStatusMetrics() {
-    const [total, pending, running, success, error, cancelled] =
-      await Promise.all([
-        this.prisma.run.count(),
-        this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
-        this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
-        this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
-        this.prisma.run.count({ where: { status: RunStatus.ERROR } }),
-        this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
-      ]);
-
+  getStats(): RunStats {
+    const { total, success, error } = this.stats;
+    const errorRate = total === 0 ? 0 : error / total;
     return {
-      total,
-      failed: error,
-      running,
-      succeeded: success,
-      queued: pending,
-      cancelled,
-    };
-  }
-
-  getStats() {
-    const { runsTotal, runsSuccess, runsError, stepDurations } = this.stats;
-    const p95 = stepDurations.length ? percentile(stepDurations, 95) : 0;
-    const errorRate = runsTotal === 0 ? 0 : runsError / runsTotal;
-    return {
-      runs_total: runsTotal,
-      runs_success: runsSuccess,
-      runs_error: runsError,
-      step_duration_ms_p95: p95,
+      runs_total: total,
+      runs_success: success,
+      runs_error: error,
+      step_duration_ms_p95: this.percentile(this.stepDurations, 95),
       error_rate: errorRate,
     };
   }
 
-  private async drainQueue() {
+  async processNext(): Promise<void> {
     if (this.processing) return;
+
+    const job = this.queue.shift();
+    if (!job) return;
+
     this.processing = true;
 
-    while (this.queue.length > 0) {
-      const item = this.queue.shift()!;
-      await this.executeRun(item).catch((error) => {
-        this.logger.error({
-          err: error,
-          runId: item.runId,
-          requestId: item.requestId,
-        });
-      });
-    }
-
-    this.processing = false;
-  }
-
-  private async executeRun(item: QueueItem) {
-    const runLogger = rootLogger.child({
-      runId: item.runId,
-      requestId: item.requestId,
-      workflowId: item.workflowId,
-    });
-
-    const startedAt = new Date();
-    await this.prisma.run.update({
-      where: { id: item.runId },
-      data: { status: RunStatus.RUNNING, startedAt },
-    });
-
     const stepLogs: StepLogEntry[] = [];
-    let lastOutput: unknown;
+    let startedAt = new Date();
 
     try {
-      for (const stepNode of item.nodes) {
-        const step: Step = this.stepsRegistry.get(stepNode.type);
-        const stepLogger = runLogger.child({
-          stepId: stepNode.id,
-          stepType: stepNode.type,
-        });
-        stepLogger.info('step:start');
+      const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+      if (!run) {
+        return;
+      }
 
-        const started = Date.now();
+      const log = this.normaliseLog(run.log as any);
+      if (typeof log.attempts !== 'number') {
+        log.attempts = job.attempt;
+      }
+      log.meta = job.meta ?? log.meta;
+
+      startedAt = run.startedAt ?? new Date();
+
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: {
+          status: STATUS.RUNNING,
+          startedAt,
+          log: log as unknown as Prisma.InputJsonValue,
+          errorMessage: null,
+        },
+      } as any);
+
+      let previousOutput: unknown;
+      for (const node of job.nodes) {
+        const step = this.steps.get(node.type);
+        const stepStart = Date.now();
         const context: StepContext = {
-          requestId: item.requestId,
-          runId: item.runId,
-          previousOutput: lastOutput,
-          step: stepNode,
+          requestId: job.requestId!,
+          runId: job.runId,
+          previousOutput,
+          step: { id: node.id ?? node.type, type: node.type, params: node.params },
         };
 
+        const args: any[] = [node.params ?? {}];
+        if (step.run.length >= 2) {
+          args.push(context);
+        }
+
         try {
-          const output = await step.run(stepNode.params ?? {}, context);
-          const durationMs = Date.now() - started;
-          lastOutput = output;
+          const output = await (step.run as any)(...args);
+          const durationMs = Date.now() - stepStart;
+          previousOutput = output;
           this.recordStepDuration(durationMs);
           stepLogs.push({
-            id: stepNode.id,
-            type: stepNode.type,
-            status: 'SUCCESS',
-            durationMs,
+            id: node.id ?? node.type,
+            status: 'OK',
             output,
-          });
-          stepLogger.info({ durationMs }, 'step:finish');
-        } catch (error: any) {
-          const durationMs = Date.now() - started;
-          this.recordStepDuration(durationMs);
-          const message = error?.message ?? String(error);
-          stepLogs.push({
-            id: stepNode.id,
-            type: stepNode.type,
-            status: 'ERROR',
             durationMs,
-            error: message,
           });
-          stepLogger.error({ durationMs, err: error }, 'step:error');
+        } catch (error: any) {
+          const durationMs = Date.now() - stepStart;
+          this.recordStepDuration(durationMs);
+          stepLogs.push({
+            id: node.id ?? node.type,
+            status: 'ERROR',
+            error: error?.message ?? String(error),
+            durationMs,
+          });
           throw error;
         }
       }
 
       const finishedAt = new Date();
-      const durationMs = finishedAt.getTime() - startedAt.getTime();
-      const logPayload = {
-        steps: stepLogs,
-        meta: item.meta,
-      } as Prisma.InputJsonValue;
+      const durationMs = Math.max(0, finishedAt.getTime() - startedAt.getTime());
+      const updatedLog = {
+        ...log,
+        attempts: job.attempt,
+        stepLogs,
+      } as Record<string, unknown>;
+      delete updatedLog.error;
 
       await this.prisma.run.update({
-        where: { id: item.runId },
+        where: { id: job.runId },
         data: {
-          status: RunStatus.SUCCESS,
+          status: STATUS.SUCCEEDED,
           finishedAt,
           durationMs,
-          log: logPayload,
-        } as any,
-      });
+          errorMessage: null,
+          log: updatedLog as unknown as Prisma.InputJsonValue,
+        },
+      } as any);
 
-      this.stats.runsTotal += 1;
-      this.stats.runsSuccess += 1;
-      runLogger.info({ durationMs }, 'run:success');
-    } catch (error: any) {
-      const finishedAt = new Date();
-      const durationMs = finishedAt.getTime() - startedAt.getTime();
-      const message = error?.message ?? String(error);
-      const logPayload = {
-        steps: stepLogs,
-        meta: item.meta,
-        error: message,
-      } as Prisma.InputJsonValue;
-
-      await this.prisma.run.update({
-        where: { id: item.runId },
-        data: {
-          status: RunStatus.ERROR,
-          finishedAt,
-          durationMs,
-          errorMessage: message,
-          log: logPayload,
-        } as any,
-      });
-
-      this.stats.runsTotal += 1;
-      this.stats.runsError += 1;
-      runLogger.error({ durationMs, err: error }, 'run:error');
+      this.stats.total += 1;
+      this.stats.success += 1;
+    } catch (error) {
+      await this.handleRunFailure(job, error, stepLogs, startedAt);
+    } finally {
+      this.processing = false;
+      if (this.queue.length > 0) {
+        setImmediate(() => void this.processNext());
+      }
     }
+  }
+
+  async handleRunFailure(job: QueueItem, cause: unknown, stepLogs: StepLogEntry[] = [], startedAt?: Date) {
+    const run = await this.prisma.run.findUnique({ where: { id: job.runId } });
+    if (!run) {
+      return;
+    }
+
+    const log = this.normaliseLog(run.log as any);
+    const attempts = log.attempts ?? job.attempt;
+    const maxAttempts = log.maxAttempts ?? MAX_ATTEMPTS_DEFAULT;
+    const errorMessage = cause instanceof Error ? cause.message : String(cause);
+
+    const nextAttempts = attempts + 1;
+    log.attempts = nextAttempts;
+    log.error = errorMessage;
+    if (stepLogs.length > 0) {
+      log.stepLogs = stepLogs;
+    }
+
+    if (nextAttempts < maxAttempts) {
+      const nextAttemptAt = new Date(Date.now() + RETRY_DELAY_MS);
+      log.nextAttemptAt = nextAttemptAt.toISOString();
+
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: {
+          status: STATUS.QUEUED,
+          log: log as unknown as Prisma.InputJsonValue,
+          errorMessage,
+        },
+      } as any);
+
+      setTimeout(() => {
+        this.queue.push({ ...job, attempt: nextAttempts });
+        void this.processNext();
+      }, RETRY_DELAY_MS);
+    } else {
+      const finishedAt = new Date();
+      const started = startedAt ?? run.startedAt ?? new Date(finishedAt.getTime());
+      const durationMs = Math.max(0, finishedAt.getTime() - started.getTime());
+
+      await this.prisma.run.update({
+        where: { id: job.runId },
+        data: {
+          status: STATUS.FAILED,
+          finishedAt,
+          durationMs,
+          errorMessage,
+          log: log as unknown as Prisma.InputJsonValue,
+        },
+      } as any);
+
+      this.stats.total += 1;
+      this.stats.error += 1;
+    }
+  }
+
+  private normaliseLog(raw: any) {
+    const base = raw && typeof raw === 'object' ? { ...raw } : {};
+    if (!Array.isArray(base.stepLogs)) {
+      base.stepLogs = [];
+    }
+    base.attempts = typeof base.attempts === 'number' ? base.attempts : 0;
+    base.maxAttempts = typeof base.maxAttempts === 'number' ? base.maxAttempts : MAX_ATTEMPTS_DEFAULT;
+    return base;
   }
 
   private recordStepDuration(durationMs: number) {
-    this.stats.stepDurations.push(durationMs);
-    if (this.stats.stepDurations.length > STEP_DURATION_LIMIT) {
-      this.stats.stepDurations.splice(
-        0,
-        this.stats.stepDurations.length - STEP_DURATION_LIMIT,
-      );
+    this.stepDurations.push(durationMs);
+    if (this.stepDurations.length > 1_000) {
+      this.stepDurations.splice(0, this.stepDurations.length - 1_000);
     }
   }
-}
 
-function percentile(values: number[], p: number) {
-  if (!values.length) return 0;
-  const sorted = [...values].sort((a, b) => a - b);
-  const idx = Math.ceil((p / 100) * sorted.length) - 1;
-  return sorted[Math.max(0, idx)];
+  private percentile(values: number[], p: number) {
+    if (values.length === 0) return 0;
+    const sorted = [...values].sort((a, b) => a - b);
+    const index = Math.min(sorted.length - 1, Math.ceil((p / 100) * sorted.length) - 1);
+    return sorted[index];
+  }
 }

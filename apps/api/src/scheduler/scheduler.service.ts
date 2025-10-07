@@ -3,124 +3,167 @@ import {
   Logger,
   OnModuleDestroy,
   OnModuleInit,
+  Optional,
 } from '@nestjs/common';
 import { PrismaClient, RunStatus } from '@prisma/client';
-import { promises as fs, accessSync, constants } from 'fs';
+import { readFile } from 'fs/promises';
 import * as path from 'path';
 
-const PLAN_FILENAME = 'plan-bootstrap.json';
-const SCHEDULER_INTERVAL_MS = 60_000; // 60s
+import type { GateService } from '../gates/gate.service';
+import type { RunsService } from '../runs/runs.service';
 
-function existsSyncSafe(p: string): boolean {
-  try {
-    accessSync(p, constants.R_OK);
-    return true;
-  } catch {
-    return false;
-  }
-}
+const DEFAULT_INTERVAL_MS = 60_000;
 
-/**
- * Busca el plan en múltiples ubicaciones razonables, para que funcione
- * en dev y en build, y tanto si el cwd es el monorepo como apps/api.
- *
- * Estructuras soportadas:
- *  - apps/api/src/... (dev)
- *  - apps/api/dist/... (build)
- *  - Carpeta de planes en: apps/api/plans/*
- */
-function resolvePlanPath(): string {
-  const candidates = [
-    // Si corrés desde apps/api como cwd:
-    path.resolve(process.cwd(), 'plans', PLAN_FILENAME),
-    // Si corrés desde la raíz del monorepo:
-    path.resolve(process.cwd(), 'apps', 'api', 'plans', PLAN_FILENAME),
-    // Relativo al archivo compilado (dist/scheduler):
-    path.resolve(__dirname, '..', 'plans', PLAN_FILENAME),
-    // Por si el dist queda un nivel distinto:
-    path.resolve(__dirname, '..', '..', 'plans', PLAN_FILENAME),
+function resolvePlanCandidates() {
+  return [
+    path.resolve(process.cwd(), 'plans/plan-bootstrap.json'),
+    path.resolve(process.cwd(), 'apps/api/plans/plan-bootstrap.json'),
+    path.resolve(__dirname, '../plans/plan-bootstrap.json'),
   ];
-
-  const found = candidates.find(existsSyncSafe);
-  if (!found) {
-    throw new Error(
-      `No se encontró ${PLAN_FILENAME}. Probé:\n` + candidates.join('\n'),
-    );
-  }
-  return found;
 }
+
+type RunsLike = Partial<
+  Pick<RunsService, 'enqueueRun' | 'createRun'>
+>;
+
+type GateLike = Partial<
+  Pick<GateService, 'checkEnv' | 'checkDbReachable' | 'checkDepsSucceeded'>
+>;
 
 @Injectable()
 export class SchedulerService implements OnModuleInit, OnModuleDestroy {
-  private readonly logger = new Logger('SchedulerService');
-  private timer: NodeJS.Timeout | null = null;
+  private readonly logger = new Logger(SchedulerService.name);
+  private readonly planPromise: Promise<void>;
+  private plan: any = null;
+  private timer?: NodeJS.Timeout;
 
-  // Si ya tenés un PrismaService inyectable, podés reemplazar por él.
-  // Acá usamos PrismaClient directo para evitar dependencias.
-  private readonly prisma = new PrismaClient();
+  constructor(
+    private readonly runs: RunsLike,
+    @Optional() private readonly gates?: GateLike,
+    @Optional() private readonly prisma?: PrismaClient,
+  ) {
+    this.planPromise = this.loadPlan();
+  }
 
   async onModuleInit() {
-    this.logger.log(`scheduler:start`, { interval: SCHEDULER_INTERVAL_MS });
-    this.timer = setInterval(() => {
-      this.tick().catch((err) => {
-        this.logger.error('scheduler:tick:error', { err });
-      });
-    }, SCHEDULER_INTERVAL_MS);
-
-    // Podés ejecutar un primer tick al levantar
-    try {
-      await this.tick();
-    } catch (err) {
-      this.logger.error('scheduler:tick:error', { err });
-    }
+    void this.start();
   }
 
   async onModuleDestroy() {
+    this.stop();
+  }
+
+  async start(intervalMs = DEFAULT_INTERVAL_MS) {
+    if (this.timer) return;
+    this.logger.log('Scheduler started');
+    this.timer = setInterval(() => {
+      this.tick().catch((err) => this.logger.error('scheduler:tick:error', err));
+    }, intervalMs);
+    await this.planPromise;
+    await this.tick();
+  }
+
+  stop() {
     if (this.timer) {
       clearInterval(this.timer);
-      this.timer = null;
+      this.timer = undefined;
     }
-    await this.prisma.$disconnect();
   }
 
-  /**
-   * Tick del scheduler:
-   *  - Lee el plan de bootstrap (si existe).
-   *  - Loguea últimos runs SUCCESS (ajustado al enum correcto).
-   */
   async tick() {
-    // 1) Leer plan-bootstrap.json (si existe en alguna ubicación válida)
-    let plan: any | null = null;
-    try {
-      const planPath = resolvePlanPath();
-      const raw = await fs.readFile(planPath, 'utf8');
-      plan = JSON.parse(raw);
-    } catch (e) {
-      // Si no existe, logueamos y seguimos (no consideramos fatal).
-      this.logger.error('scheduler:tick:error', { err: e });
+    await this.planPromise;
+    if (!this.plan?.schedule) {
+      return { ok: true };
     }
 
-    // 2) Consultar últimos runs con estado SUCCESS (no SUCCEEDED)
-    const finished = await this.prisma.run.findMany({
-      where: { status: RunStatus.SUCCESS },
-      orderBy: { finishedAt: 'desc' },
-      take: 5,
-    });
+    if (this.gates && this.prisma && typeof this.runs.createRun === 'function') {
+      return this.tickWithGates();
+    }
 
-    this.logger.log(`tick: ${finished.length} runs SUCCESS recientes`);
-    if (plan) {
-      this.logger.debug?.(`plan: ${PLAN_FILENAME} cargado`, {
-        keys: Object.keys(plan ?? {}),
+    return this.tickSimple();
+  }
+
+  async getSucceededRuns(limit: number) {
+    if (!this.prisma) {
+      return [];
+    }
+    const status = (RunStatus as any).SUCCEEDED ?? RunStatus.SUCCESS ?? 'SUCCEEDED';
+    return this.prisma.run.findMany({
+      where: { status: { equals: status } },
+      orderBy: { finishedAt: 'desc' },
+      take: limit,
+    });
+  }
+
+  private async tickSimple() {
+    const enqueue = this.runs.enqueueRun;
+    if (typeof enqueue !== 'function') {
+      return { ok: true };
+    }
+
+    for (const action of this.plan.schedule) {
+      await enqueue.call(this.runs, {
+        workflowId: action.workflowId,
+        nodes: action.nodes,
+        meta: { actionId: action.id, level: action.level },
+        requestId: `scheduler-${Date.now()}`,
       });
     }
+
+    return { ok: true };
   }
 
-  /**
-   * Expuesto para el SchedulerController /scheduler/next si lo usás:
-   * fuerza un próximo tick ahora mismo.
-   */
-  async next(): Promise<{ ok: true }> {
-    await this.tick();
+  private async tickWithGates() {
+    const firstAction = this.plan.schedule[0];
+    if (!firstAction) {
+      return { ok: true };
+    }
+
+    const [envOk, dbOk] = await Promise.all([
+      this.gates!.checkEnv?.(firstAction.requiredEnv ?? []) ?? Promise.resolve(true),
+      this.gates!.checkDbReachable?.() ?? Promise.resolve(true),
+    ]);
+
+    if (!envOk || !dbOk) {
+      return { ok: false };
+    }
+
+    const succeeded = await this.getSucceededRuns(10);
+    const deps = succeeded.reduce<Record<string, string>>((acc, run: any) => {
+      const actionId = run?.log?.meta?.actionId;
+      if (actionId) {
+        acc[actionId] = 'SUCCEEDED';
+      }
+      return acc;
+    }, {});
+
+    const depsOk = await (this.gates!.checkDepsSucceeded?.(deps) ?? Promise.resolve(true));
+    if (!depsOk) {
+      return { ok: false };
+    }
+
+    await (this.runs.createRun as Function).call(
+      this.runs,
+      firstAction.workflowId,
+      firstAction.nodes,
+      { actionId: firstAction.id, level: firstAction.level },
+    );
+
     return { ok: true };
+  }
+
+  private async loadPlan() {
+    const candidates = resolvePlanCandidates();
+    for (const candidate of candidates) {
+      try {
+        const contents = await readFile(candidate, 'utf8');
+        this.plan = JSON.parse(contents);
+        return;
+      } catch {
+        // try next candidate
+      }
+    }
+
+    this.plan = null;
   }
 }

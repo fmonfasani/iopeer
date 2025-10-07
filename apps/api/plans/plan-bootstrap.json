@@ -1,1 +1,14 @@
-{"version":"1.0","levels":[],"schedule":[]}
+{
+  "version": "1.0",
+  "levels": ["bootstrap"],
+  "schedule": [
+    {
+      "id": "action-boot",
+      "workflowId": "wf-bootstrap",
+      "level": "bootstrap",
+      "nodes": [
+        { "id": "n1", "type": "echo", "params": { "message": "hello" } }
+      ]
+    }
+  ]
+}

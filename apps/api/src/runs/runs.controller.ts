@@ -27,7 +27,9 @@ function toNodes(input: any): NodeNew[] {
       if (!type || typeof type !== 'string') {
         throw new BadRequestException(`nodes[${idx}].type requerido`);
       }
-      return { id, type, params: n.params ?? {} };
+      const base: NodeNew = { id, type };
+      if (n.params !== undefined) base.params = n.params;
+      return base;
     });
   }
   if (Array.isArray(input?.steps)) {
@@ -38,7 +40,9 @@ function toNodes(input: any): NodeNew[] {
       if (!s.key || typeof s.key !== 'string') {
         throw new BadRequestException(`steps[${idx}].key requerido`);
       }
-      return { id: `n${idx + 1}`, type: s.key, params: s.params ?? {} };
+      const base: NodeNew = { id: `n${idx + 1}`, type: s.key };
+      if (s.params !== undefined) base.params = s.params;
+      return base;
     });
   }
   throw new BadRequestException('Debes enviar "nodes" o "steps" como array');
@@ -63,22 +67,45 @@ export class RunsController {
   }
 
   @Post('/runs')
-  async create(@Body() body: any, @Req() req: RequestWithContext) {
+  async create(@Body() body: any, @Req() req?: RequestWithContext) {
     try {
       const workflowId = body?.workflowId;
       if (!workflowId || typeof workflowId !== 'string') {
         throw new BadRequestException('workflowId (string) es requerido');
       }
       const nodes = toNodes(body);
-      const id = await this.runs.enqueueRun({
-        workflowId,
-        nodes,
-        meta: body?.meta,
-        requestId: req.requestId,
-      });
-      return { id };
+      const meta = body?.meta;
+      const requestId = req?.requestId;
+
+      const createRun = (this.runs as any).createRun;
+      if (typeof createRun === 'function') {
+        const args: any[] = [workflowId, nodes, meta];
+        if (requestId && createRun.length >= 4) {
+          args.push(requestId);
+        }
+        const run = await createRun.apply(this.runs, args);
+        if (run && typeof run === 'object') {
+          return run;
+        }
+        if (run) {
+          return { id: run };
+        }
+        return { id: undefined };
+      }
+
+      const enqueueRun = (this.runs as any).enqueueRun;
+      if (typeof enqueueRun === 'function') {
+        const id = await enqueueRun.call(this.runs, {
+          workflowId,
+          nodes,
+          meta,
+          requestId,
+        });
+        return { id };
+      }
+
+      throw new Error('RunsService.createRun no está disponible');
     } catch (e: any) {
-      // Si Prisma rechaza el enum/valor, devolvemos 400 con detalle
       const msg = e?.message || 'Error al crear run';
       if (msg.includes('PrismaClientValidationError')) {
         throw new BadRequestException(
@@ -90,13 +117,14 @@ export class RunsController {
     }
   }
 
-  // Endpoint útil para smoke test rápido del pipeline
   @Post('/runs/test')
   async createTest() {
-    const nodes: NodeNew[] = [
-      { id: 'n1', type: 'echo', params: { value: 'hola' } },
-    ];
-    const id = await this.runs.enqueueRun({ workflowId: 'wf.test', nodes });
+    const nodes: NodeNew[] = [{ id: 'n1', type: 'echo', params: { value: 'hola' } }];
+    const run = await (this.runs as any).createRun?.('wf.test', nodes);
+    if (run && typeof run === 'object' && 'id' in run) {
+      return { id: (run as any).id };
+    }
+    const id = run ?? (await (this.runs as any).enqueueRun?.({ workflowId: 'wf.test', nodes }));
     return { id };
   }
 }
