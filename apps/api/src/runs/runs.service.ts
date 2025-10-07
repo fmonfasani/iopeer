@@ -1,6 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 
+import { PrismaClientValidationError } from '@prisma/client/runtime/library';
+
 import { PrismaService } from '../prisma/prisma.service';
 import { StepsRegistry, type StepContext } from '../steps/registry';
 
@@ -65,6 +67,7 @@ export class RunsService {
   private processing = false;
   private readonly stepDurations: number[] = [];
   private readonly stats = { total: 0, success: 0, error: 0 };
+  private logColumnAvailable: boolean | null = null;
 
   constructor(
     private readonly prisma: PrismaService,
@@ -88,13 +91,7 @@ export class RunsService {
       stepLogs: [] as StepLogEntry[],
     };
 
-    const run = (await this.prisma.run.create({
-      data: {
-        workflowId,
-        status: RUN_STATUS.PENDING,
-        log: runLog as any,
-      } as any,
-    })) as RunWithLog;
+    const run = await this.createRunRecord(workflowId, runLog, meta);
 
     this.queue.push({
       runId: run.id,
@@ -106,7 +103,7 @@ export class RunsService {
     });
 
     void this.processNext();
-    return { ...run, log: runLog } as RunWithLog;
+    return { ...run, log: run.log ?? runLog } as RunWithLog;
   }
 
   async enqueueRun(dto: EnqueueRunDto) {
@@ -115,14 +112,16 @@ export class RunsService {
   }
 
   async getRun(id: string): Promise<RunWithLog | null> {
-    return (await this.prisma.run.findUnique({ where: { id } })) as RunWithLog | null;
+    const run = (await this.prisma.run.findUnique({ where: { id } })) as RunWithLog | null;
+    return this.hydrateRun(run);
   }
 
   async listRecentRuns(limit = 50) {
-    return (await this.prisma.run.findMany({
+    const runs = (await this.prisma.run.findMany({
       orderBy: { createdAt: 'desc' },
       take: limit,
     })) as RunWithLog[];
+    return runs.map((run) => this.hydrateRun(run)).filter((run): run is RunWithLog => Boolean(run));
   }
 
   getStats(): RunStats {
@@ -149,7 +148,9 @@ export class RunsService {
     let startedAt = new Date();
 
     try {
-      const run = (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null;
+      const run = this.hydrateRun(
+        (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null,
+      );
       if (!run) {
         return;
       }
@@ -162,15 +163,17 @@ export class RunsService {
 
       startedAt = run.startedAt ?? new Date();
 
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: {
+      await this.updateRunRecord(
+        job.runId,
+        run,
+        {
           status: RUN_STATUS.RUNNING,
           startedAt,
-          log: log as any,
           errorMessage: null,
         },
-      } as any);
+        log,
+        job.meta ?? run.meta ?? null,
+      );
 
       let previousOutput: unknown;
       for (const node of job.nodes) {
@@ -221,16 +224,18 @@ export class RunsService {
       } as Record<string, unknown>;
       delete updatedLog.error;
 
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: {
+      await this.updateRunRecord(
+        job.runId,
+        run,
+        {
           status: RUN_STATUS.SUCCESS,
           finishedAt,
           durationMs,
           errorMessage: null,
-          log: updatedLog as any,
         },
-      } as any);
+        updatedLog,
+        job.meta ?? run.meta ?? null,
+      );
 
       this.stats.total += 1;
       this.stats.success += 1;
@@ -245,7 +250,9 @@ export class RunsService {
   }
 
   async handleRunFailure(job: QueueItem, cause: unknown, stepLogs: StepLogEntry[] = [], startedAt?: Date) {
-    const run = (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null;
+    const run = this.hydrateRun(
+      (await this.prisma.run.findUnique({ where: { id: job.runId } })) as RunWithLog | null,
+    );
     if (!run) {
       return;
     }
@@ -266,14 +273,16 @@ export class RunsService {
       const nextAttemptAt = new Date(Date.now() + RETRY_DELAY_MS);
       log.nextAttemptAt = nextAttemptAt.toISOString();
 
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: {
+      await this.updateRunRecord(
+        job.runId,
+        run,
+        {
           status: RUN_STATUS.PENDING,
-          log: log as any,
           errorMessage,
         },
-      } as any);
+        log,
+        job.meta ?? run.meta ?? null,
+      );
 
       setTimeout(() => {
         this.queue.push({ ...job, attempt: nextAttempts });
@@ -284,20 +293,167 @@ export class RunsService {
       const started = startedAt ?? run.startedAt ?? new Date(finishedAt.getTime());
       const durationMs = Math.max(0, finishedAt.getTime() - started.getTime());
 
-      await this.prisma.run.update({
-        where: { id: job.runId },
-        data: {
+      await this.updateRunRecord(
+        job.runId,
+        run,
+        {
           status: RUN_STATUS.ERROR,
           finishedAt,
           durationMs,
           errorMessage,
-          log: log as any,
         },
-      } as any);
+        log,
+        job.meta ?? run.meta ?? null,
+      );
 
       this.stats.total += 1;
       this.stats.error += 1;
     }
+  }
+
+  private async createRunRecord(
+    workflowId: string,
+    log: Record<string, any>,
+    meta?: Record<string, any>,
+  ): Promise<RunWithLog> {
+    const baseMeta = this.buildMeta(meta, log, this.logColumnAvailable === false);
+    const createData: Record<string, any> = {
+      workflowId,
+      status: RUN_STATUS.PENDING,
+    };
+    if (baseMeta !== undefined) {
+      createData.meta = baseMeta;
+    }
+
+    if (this.logColumnAvailable !== false) {
+      try {
+        const created = (await this.prisma.run.create({
+          data: { ...createData, log: log as any },
+        } as any)) as RunWithLog;
+        this.logColumnAvailable = true;
+        return this.hydrateRun(created);
+      } catch (error) {
+        if (this.shouldFallbackToMeta(error)) {
+          this.logColumnAvailable = false;
+        } else {
+          throw error;
+        }
+      }
+    }
+
+    const fallbackData: Record<string, any> = {
+      workflowId,
+      status: RUN_STATUS.PENDING,
+    };
+    const fallbackMeta = this.buildMeta(meta, log, true);
+    if (fallbackMeta !== undefined) {
+      fallbackData.meta = fallbackMeta;
+    }
+
+    const created = (await this.prisma.run.create({ data: fallbackData } as any)) as RunWithLog;
+    return this.hydrateRun(created);
+  }
+
+  private async updateRunRecord(
+    runId: string,
+    run: RunWithLog,
+    data: Record<string, any>,
+    log: Record<string, any>,
+    metaOverride?: Record<string, any> | null,
+  ): Promise<RunWithLog> {
+    const metaSource = metaOverride ?? run.meta ?? null;
+    const baseMeta = this.buildMeta(metaSource, log, this.logColumnAvailable === false);
+    const updateData: Record<string, any> = { ...data };
+    if (baseMeta !== undefined) {
+      updateData.meta = baseMeta;
+    }
+
+    if (this.logColumnAvailable !== false) {
+      try {
+        const updated = (await this.prisma.run.update({
+          where: { id: runId },
+          data: { ...updateData, log: log as any },
+        } as any)) as RunWithLog;
+        this.logColumnAvailable = true;
+        return this.hydrateRun(updated);
+      } catch (error) {
+        if (this.shouldFallbackToMeta(error)) {
+          this.logColumnAvailable = false;
+        } else {
+          throw error;
+        }
+      }
+    }
+
+    const fallbackData: Record<string, any> = { ...data };
+    const fallbackMeta = this.buildMeta(metaSource, log, true);
+    if (fallbackMeta !== undefined) {
+      fallbackData.meta = fallbackMeta;
+    }
+
+    const updated = (await this.prisma.run.update({
+      where: { id: runId },
+      data: fallbackData,
+    } as any)) as RunWithLog;
+    return this.hydrateRun(updated);
+  }
+
+  private hydrateRun(run: RunWithLog | null): RunWithLog | null {
+    if (!run) {
+      return run;
+    }
+
+    const result: RunWithLog = { ...run };
+    const metaValue = run.meta;
+    if (metaValue && typeof metaValue === 'object') {
+      const metaCopy = { ...(metaValue as Record<string, any>) };
+      if ('__log' in metaCopy) {
+        const metaLog = metaCopy.__log;
+        if (result.log == null) {
+          result.log = metaLog ?? null;
+        }
+        delete metaCopy.__log;
+      }
+      result.meta = Object.keys(metaCopy).length > 0 ? metaCopy : null;
+    } else if (metaValue === null) {
+      result.meta = null;
+    }
+
+    if (result.log === undefined) {
+      result.log = null;
+    }
+
+    if (result.meta === undefined) {
+      result.meta = null;
+    }
+
+    return result;
+  }
+
+  private buildMeta(meta: Record<string, any> | null | undefined, log: any, includeLog: boolean) {
+    if (includeLog) {
+      const base = meta && typeof meta === 'object' ? { ...meta } : {};
+      base.__log = log;
+      return base;
+    }
+
+    if (meta === null) {
+      return null;
+    }
+
+    if (meta && typeof meta === 'object') {
+      return { ...meta };
+    }
+
+    return undefined;
+  }
+
+  private shouldFallbackToMeta(error: unknown) {
+    return (
+      error instanceof PrismaClientValidationError &&
+      typeof error.message === 'string' &&
+      error.message.includes('Unknown argument `log`')
+    );
   }
 
   private normaliseLog(raw: any) {
