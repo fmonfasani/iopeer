@@ -109,8 +109,9 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     }
 
     for (const action of this.plan.schedule) {
+      const workflowId = await this.ensureWorkflowId(action);
       await enqueue.call(this.runs, {
-        workflowId: action.workflowId,
+        workflowId,
         nodes: action.nodes,
         meta: { actionId: action.id, level: action.level },
         requestId: `scheduler-${Date.now()}`,
@@ -149,14 +150,58 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
       return { ok: false };
     }
 
+    const workflowId = await this.ensureWorkflowId(firstAction);
     await (this.runs.createRun as Function).call(
       this.runs,
-      firstAction.workflowId,
+      workflowId,
       firstAction.nodes,
       { actionId: firstAction.id, level: firstAction.level },
     );
 
     return { ok: true };
+  }
+
+  private async ensureWorkflowId(action: any): Promise<string> {
+    const identifier = action?.workflowId;
+    if (!identifier || !this.prisma) {
+      return identifier;
+    }
+
+    const byId = await this.prisma.workflow.findUnique({ where: { id: identifier } });
+    if (byId) {
+      return byId.id;
+    }
+
+    const byKey = await this.prisma.workflow.findUnique({ where: { key: identifier } });
+    if (byKey) {
+      return byKey.id;
+    }
+
+    const name = this.deriveWorkflowName(action?.workflowName ?? identifier);
+    const description =
+      action?.workflowDescription ?? 'Generado automáticamente por el scheduler bootstrap';
+
+    const created = await this.prisma.workflow.create({
+      data: {
+        key: identifier,
+        name,
+        description,
+        isActive: true,
+      },
+    });
+
+    this.logger.log(`Workflow ${identifier} creado automáticamente`);
+    return created.id;
+  }
+
+  private deriveWorkflowName(input: string): string {
+    const value = input?.trim();
+    if (!value) {
+      return 'Workflow generado';
+    }
+
+    const spaced = value.replace(/[-_.]+/g, ' ');
+    return spaced.replace(/\b\w/g, (char) => char.toUpperCase());
   }
 
   private async loadPlan() {

@@ -10,12 +10,15 @@ import { RUN_STATUS } from '../src/runs/run-status';
 export type MockedPrismaResult = {
   client: PrismaClient;
   runStore: Map<string, any>;
+  workflowStore: Map<string, any>;
 };
 
 export function createMockPrismaClient(
   initialRuns: Array<Partial<Prisma.Run>> = [],
+  initialWorkflows: Array<Partial<Prisma.Workflow>> = [],
 ): MockedPrismaResult {
   const runStore = new Map<string, any>();
+  const workflowStore = new Map<string, any>();
 
   initialRuns.forEach((run) => {
     const id = run.id ?? randomUUID();
@@ -27,6 +30,20 @@ export function createMockPrismaClient(
       finishedAt: run.finishedAt ?? null,
       log: run.log ?? null,
       ...run,
+    });
+  });
+
+  initialWorkflows.forEach((workflow) => {
+    const id = workflow.id ?? randomUUID();
+    const key = workflow.key ?? id;
+    workflowStore.set(id, {
+      id,
+      key,
+      name: workflow.name ?? key,
+      description: workflow.description ?? null,
+      isActive: workflow.isActive ?? true,
+      createdAt: workflow.createdAt ?? new Date(),
+      updatedAt: workflow.updatedAt ?? new Date(),
     });
   });
 
@@ -95,12 +112,69 @@ export function createMockPrismaClient(
     }),
   };
 
+  const workflowModel = {
+    findUnique: vi.fn(async ({ where }: { where: { id?: string; key?: string } }) => {
+      if (where.id) {
+        const match = workflowStore.get(where.id);
+        return match ? { ...match } : null;
+      }
+      if (where.key) {
+        const match = Array.from(workflowStore.values()).find((wf) => wf.key === where.key);
+        return match ? { ...match } : null;
+      }
+      return null;
+    }),
+    create: vi.fn(async ({ data }: { data: Prisma.WorkflowCreateInput }) => {
+      const id = (data as any).id ?? randomUUID();
+      const stored = {
+        id,
+        key: data.key,
+        name: data.name,
+        description: data.description ?? null,
+        isActive: data.isActive ?? true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      workflowStore.set(id, stored);
+      return { ...stored } as Prisma.Workflow;
+    }),
+    upsert: vi.fn(async ({
+      where,
+      create,
+      update,
+    }: {
+      where: { key: string };
+      create: Prisma.WorkflowCreateInput;
+      update: Prisma.WorkflowUpdateInput;
+    }) => {
+      const existing = Array.from(workflowStore.values()).find((wf) => wf.key === where.key);
+      if (existing) {
+        const updated = { ...existing, ...update, updatedAt: new Date() };
+        workflowStore.set(existing.id, updated);
+        return { ...updated } as Prisma.Workflow;
+      }
+      const id = (create as any).id ?? randomUUID();
+      const stored = {
+        id,
+        key: create.key,
+        name: create.name,
+        description: create.description ?? null,
+        isActive: create.isActive ?? true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      workflowStore.set(id, stored);
+      return { ...stored } as Prisma.Workflow;
+    }),
+  };
+
   const client = {
     run: runModel,
+    workflow: workflowModel,
     $queryRaw: vi.fn(async () => 1),
   } as unknown as PrismaClient;
 
-  return { client, runStore };
+  return { client, runStore, workflowStore };
 }
 
 export async function createTestingApp(overrides?: {
