@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 
-import type { PrismaService } from '../prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { StepsRegistry, type StepContext } from '../steps/registry';
 
 export type StepNode = { id?: string; type: string; params?: Record<string, any> };
