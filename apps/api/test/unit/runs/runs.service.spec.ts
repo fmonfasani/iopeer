@@ -1,7 +1,8 @@
-import { Prisma, RunStatus } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { describe, expect, it, vi } from 'vitest';
 import { RunsService } from '../../../src/runs/runs.service';
 import { StepsRegistry } from '../../../src/steps/registry';
+import { RUN_STATUS } from '../../../src/runs/run-status';
 import { createMockPrismaClient } from '../../factories';
 
 describe('RunsService', () => {
@@ -16,11 +17,11 @@ describe('RunsService', () => {
       expect.objectContaining({
         data: expect.objectContaining({
           workflowId: 'wf-1',
-          status: RunStatus.QUEUED,
+          status: RUN_STATUS.PENDING,
         }),
       }),
     );
-    expect(run.status).toBe(RunStatus.QUEUED);
+    expect(run.status).toBe(RUN_STATUS.PENDING);
   });
 
   it('createRun clones provided metadata into the log', async () => {
@@ -65,7 +66,7 @@ describe('RunsService', () => {
     expect(step.run).toHaveBeenCalledWith({ foo: 'bar' });
 
     const storedRun = mockPrisma.runStore.get(run.id);
-    expect(storedRun.status).toBe(RunStatus.SUCCEEDED);
+    expect(storedRun.status).toBe(RUN_STATUS.SUCCESS);
     expect(storedRun.log.stepLogs).toHaveLength(1);
     expect(storedRun.log.stepLogs[0]).toMatchObject({ status: 'OK', output: stepResult });
   });
@@ -91,7 +92,7 @@ describe('RunsService', () => {
     await (runsService as any).processNext();
 
     const storedRun = mockPrisma.runStore.get(run.id);
-    expect(storedRun.status).toBe(RunStatus.ERROR);
+    expect(storedRun.status).toBe(RUN_STATUS.ERROR);
     expect(storedRun.log.error).toContain('boom');
     expect(failingStep.run).toHaveBeenCalled();
   });
@@ -113,7 +114,7 @@ describe('RunsService', () => {
     await (runsService as any).processNext();
 
     const storedRun = mockPrisma.runStore.get(run.id);
-    expect(storedRun.status).toBe(RunStatus.QUEUED);
+    expect(storedRun.status).toBe(RUN_STATUS.PENDING);
     expect(storedRun.log.nextAttemptAt).toBeTruthy();
 
     await vi.runOnlyPendingTimersAsync();
@@ -177,7 +178,7 @@ describe('RunsService', () => {
     mockPrisma.runStore.set(runId, {
       id: runId,
       workflowId: 'wf',
-      status: RunStatus.QUEUED,
+      status: RUN_STATUS.PENDING,
       startedAt: null,
       finishedAt: null,
       log: { stepLogs: 'invalid' } as any,
@@ -203,8 +204,8 @@ describe('RunsService', () => {
 
   it('continues processing when more jobs remain in the queue', async () => {
     const mockPrisma = createMockPrismaClient([
-      { id: 'run-1', workflowId: 'wf', status: RunStatus.QUEUED, log: { stepLogs: [] } as any },
-      { id: 'run-2', workflowId: 'wf', status: RunStatus.QUEUED, log: { stepLogs: [] } as any },
+      { id: 'run-1', workflowId: 'wf', status: RUN_STATUS.PENDING, log: { stepLogs: [] } as any },
+      { id: 'run-2', workflowId: 'wf', status: RUN_STATUS.PENDING, log: { stepLogs: [] } as any },
     ]);
     const step = { run: vi.fn().mockResolvedValue(undefined) };
     const steps = { get: vi.fn().mockReturnValue(step) } as unknown as StepsRegistry;
@@ -249,7 +250,7 @@ describe('RunsService', () => {
     (runsService as any).queue.length = 0;
     mockPrisma.runStore.set(run.id, {
       ...mockPrisma.runStore.get(run.id),
-      status: RunStatus.RUNNING,
+      status: RUN_STATUS.RUNNING,
       log: { attempts: 2, maxAttempts: 3, stepLogs: [] },
     });
 
@@ -259,7 +260,7 @@ describe('RunsService', () => {
     );
 
     const stored = mockPrisma.runStore.get(run.id);
-    expect(stored.status).toBe(RunStatus.ERROR);
+    expect(stored.status).toBe(RUN_STATUS.ERROR);
     expect(stored.log.error).toBe('catastrophic');
   });
 });

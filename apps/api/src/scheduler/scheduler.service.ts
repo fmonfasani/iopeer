@@ -5,12 +5,13 @@ import {
   OnModuleInit,
   Optional,
 } from '@nestjs/common';
-import { PrismaClient, RunStatus } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import { readFile } from 'fs/promises';
 import * as path from 'path';
 
 import type { GateService } from '../gates/gate.service';
 import type { RunsService } from '../runs/runs.service';
+import { RUN_STATUS } from '../runs/run-status';
 
 const DEFAULT_INTERVAL_MS = 60_000;
 
@@ -87,9 +88,8 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     if (!this.prisma) {
       return [];
     }
-    const status = (RunStatus as any).SUCCEEDED ?? RunStatus.SUCCESS ?? 'SUCCEEDED';
     return this.prisma.run.findMany({
-      where: { status: { equals: status } },
+      where: { status: { equals: RUN_STATUS.SUCCESS } },
       orderBy: { finishedAt: 'desc' },
       take: limit,
     });
@@ -132,7 +132,7 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     const deps = succeeded.reduce<Record<string, string>>((acc, run: any) => {
       const actionId = run?.log?.meta?.actionId;
       if (actionId) {
-        acc[actionId] = 'SUCCEEDED';
+        acc[actionId] = RUN_STATUS.SUCCESS;
       }
       return acc;
     }, {});

@@ -1,8 +1,9 @@
-import { Prisma, RunStatus } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import { INestApplication } from '@nestjs/common';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { RunsService } from '../../src/runs/runs.service';
 import { createTestingApp } from '../factories';
+import { RUN_STATUS } from '../../src/runs/run-status';
 
 describe('AppModule E2E', () => {
   let app: INestApplication;
@@ -48,7 +49,7 @@ describe('AppModule E2E', () => {
     await new Promise((resolve) => setImmediate(resolve));
 
     const storedRun = runStore.get(runId);
-    expect(storedRun.status).toBe(RunStatus.SUCCEEDED);
+    expect(storedRun.status).toBe(RUN_STATUS.SUCCESS);
     expect(storedRun.log.stepLogs).toHaveLength(1);
   });
 });

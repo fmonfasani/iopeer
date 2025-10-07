@@ -1,10 +1,11 @@
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
-import { Prisma, PrismaClient, RunStatus } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { randomUUID } from 'crypto';
 import request from 'supertest';
 import { vi } from 'vitest';
 import { AppModule } from '../src/app.module';
+import { RUN_STATUS } from '../src/runs/run-status';
 
 export type MockedPrismaResult = {
   client: PrismaClient;
@@ -21,7 +22,7 @@ export function createMockPrismaClient(
     runStore.set(id, {
       id,
       workflowId: run.workflowId ?? 'wf',
-      status: run.status ?? RunStatus.QUEUED,
+      status: run.status ?? RUN_STATUS.PENDING,
       startedAt: run.startedAt ?? new Date(),
       finishedAt: run.finishedAt ?? null,
       log: run.log ?? null,
@@ -35,7 +36,7 @@ export function createMockPrismaClient(
       const stored = {
         id,
         workflowId: data.workflowId,
-        status: data.status ?? RunStatus.QUEUED,
+        status: data.status ?? RUN_STATUS.PENDING,
         startedAt: (data as any).startedAt ?? new Date(),
         finishedAt: (data as any).finishedAt ?? null,
         log: (data as any).log ?? null,

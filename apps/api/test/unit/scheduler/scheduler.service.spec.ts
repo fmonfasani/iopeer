@@ -1,11 +1,12 @@
 import { Logger } from '@nestjs/common';
-import { Prisma, RunStatus } from '@prisma/client';
+import { Prisma } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
 import { describe, expect, it, vi } from 'vitest';
 import { GateService } from '../../../src/gates/gate.service';
 import { RunsService } from '../../../src/runs/runs.service';
 import { SchedulerService } from '../../../src/scheduler/scheduler.service';
+import { RUN_STATUS } from '../../../src/runs/run-status';
 import { createMockPrismaClient } from '../../factories';
 
 describe('SchedulerService', () => {
@@ -47,7 +48,7 @@ describe('SchedulerService', () => {
 
     await service.getSucceededRuns(5);
     expect(mockPrisma.client.run.findMany).toHaveBeenCalledWith({
-      where: { status: { equals: RunStatus.SUCCEEDED } },
+      where: { status: { equals: RUN_STATUS.SUCCESS } },
       orderBy: { finishedAt: 'desc' },
       take: 5,
     });
@@ -57,7 +58,7 @@ describe('SchedulerService', () => {
     const mockPrisma = createMockPrismaClient([
       {
         id: 'run-1',
-        status: RunStatus.SUCCEEDED,
+        status: RUN_STATUS.SUCCESS,
         log: { meta: { actionId: 'other-action' } },
       },
     ]);
