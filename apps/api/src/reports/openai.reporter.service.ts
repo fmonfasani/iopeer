@@ -1,25 +1,24 @@
-import OpenAI from "openai";
 import { Injectable } from "@nestjs/common";
+import { OpenAIService } from "../services/openai.service";
+
+export interface ProjectReport {
+  title: string;
+  summary: string;
+  generatedAt: string;
+}
 
 @Injectable()
 export class OpenAIReporterService {
-  private client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  private readonly openai = new OpenAIService();
 
-  async generateReport() {
-    const run = await this.client.beta.threads.createAndRun({
-      assistant_id: process.env.OPENAI_ASSISTANT_ID,
-      thread: {
-        messages: [
-          { role: "user", content: "Genera un reporte actualizado del estado general del proyecto IOpeer." },
-        ],
-      },
-    });
+  async generateReport(): Promise<ProjectReport> {
+    const prompt = "Genera un reporte actualizado del estado general del proyecto IOpeer.";
+    const summary = await this.openai.chat(prompt);
 
-    const result = await this.client.beta.threads.runs.retrieve(
-      run.thread_id,
-      run.id
-    );
-
-    return result;
+    return {
+      title: "Reporte del estado del proyecto IOpeer",
+      summary,
+      generatedAt: new Date().toISOString(),
+    };
   }
 }

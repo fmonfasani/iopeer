@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import * as fs from 'fs';
-import fetch from 'node-fetch';
 
 @Injectable()
 export class GithubService {
@@ -18,6 +17,10 @@ export class GithubService {
       },
       body: JSON.stringify({ query, variables: { owner, name } }),
     });
+
+    if (!res.ok) {
+      throw new Error(`GitHub request failed with status ${res.status}`);
+    }
 
     const data = await res.json();
 

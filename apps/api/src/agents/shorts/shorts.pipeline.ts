@@ -1,8 +1,14 @@
-import { OpenAIService } from '../../services/openai.service';
+import { GeneratedScript, OpenAIService } from '../../services/openai.service';
 import { ElevenLabsService } from '../../services/elevenlabs.service';
 import { RunwayService } from '../../services/runway.service';
 import { NotionService } from '../../services/notion.service';
 import { Logger } from '@nestjs/common';
+
+export interface ShortsPipelineResult {
+  script: GeneratedScript;
+  voiceFile: string;
+  videoFile: string;
+}
 
 export class ShortsPipeline {
   private readonly logger = new Logger(ShortsPipeline.name);
@@ -12,17 +18,17 @@ export class ShortsPipeline {
   private video = new RunwayService();
   private notion = new NotionService();
 
-  async run(topic: string) {
-    this.logger.log('Ì∑† Generando guion...');
+  async run(topic: string): Promise<ShortsPipelineResult> {
+    this.logger.log(' Generando guion...');
     const script = await this.openai.generateScript(topic);
 
-    this.logger.log('ÌæôÔ∏è Generando voz...');
+    this.logger.log('Ô∏è Generando voz...');
     const voiceFile = await this.voice.generateVoice(script.text);
 
-    this.logger.log('Ìæ• Generando video...');
+    this.logger.log(' Generando video...');
     const videoFile = await this.video.generateVideo(script.title, voiceFile);
 
-    this.logger.log('Ì≥ä Subiendo registro a Notion...');
+    this.logger.log(' Subiendo registro a Notion...');
     await this.notion.uploadRecord(script.title, topic, videoFile);
 
     this.logger.log('‚úÖ Pipeline completado');
