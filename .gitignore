@@ -1,59 +1,55 @@
-dist
-node_modules
-**/.env.*
-**/.env
-.env.*
-.env
-!.env.example
 # ----------------------------------------------------------------------
 # 1. Dependencias y Monorepo
 # ----------------------------------------------------------------------
-# pnpm
-/node_modules
-/pnpm-lock.yaml
-/pnpm-store # No siempre usado, pero buena práctica si el store está en el repo
-
-# Artifactos de Build
-dist/
-build/
-.next/
-out/
-.turbo/  # Si usas Turborepo (altamente recomendado para monorepos)
-# ignora los node_modules en todas las apps y packages
+node_modules/
+pnpm-lock.yaml
+pnpm-store/
 apps/*/node_modules
 packages/*/node_modules
+.turbo/              # cache de Turborepo
+.next/
+out/
+dist/
+build/
 
 # ----------------------------------------------------------------------
 # 2. Entorno y Secrets
 # ----------------------------------------------------------------------
-# Variables de entorno
 .env
+.env.*
 .env.local
 .env.*.local
-
-# Archivos de Next.js (siempre ignorar)
-.next/
+**/.env
+**/.env.*
+!.env.example
+apps/*/.env
+apps/*/.env.*
+apps/*/dist/
+apps/*/build/
 
 # ----------------------------------------------------------------------
-# 3. Docker y Contenedores
+# 3. Logs y archivos temporales
 # ----------------------------------------------------------------------
-# Ignorar logs, archivos temporales de contenedores y binarios
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Docker Compose logs y archivos generados
-.docker
-!docker-compose.yml # Asegúrate de NO ignorar el archivo principal
+pnpm-debug.log*
 
 # ----------------------------------------------------------------------
-# 4. Artefactos de OS y Herramientas Comunes
+# 4. Docker y Contenedores
+# ----------------------------------------------------------------------
+.docker/
+docker-compose.override.yml
+!docker-compose.yml
+
+# ----------------------------------------------------------------------
+# 5. IDEs y Herramientas
 # ----------------------------------------------------------------------
 # macOS
 .DS_Store
 
-# VS Code
+# VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -61,16 +57,38 @@ yarn-error.log*
 !.vscode/extensions.json
 .history
 
-# TypeScript
-# Ignorar archivos de mapeo de fuente y artefactos de compilación
+# JetBrains / WebStorm
+.idea/
+*.iml
+
+# ----------------------------------------------------------------------
+# 6. TypeScript y Prisma
+# ----------------------------------------------------------------------
 *.tsbuildinfo
 tsconfig.tsbuildinfo
 
-# Prisma
-# Ignorar el cliente generado
-/packages/db/prisma/client/
-/generated/prisma
+# Prisma Client generado
+packages/db/prisma/client/
+generated/prisma/
+.prisma/
 
-!pnpm-lock.yaml
+# ----------------------------------------------------------------------
+# 7. Builds de Next.js y NestJS
+# ----------------------------------------------------------------------
+.next/
+out/
+dist/
+build/
+coverage/
 
-!pnpm-lock.yaml
+# ----------------------------------------------------------------------
+# 8. Sistema Operativo
+# ----------------------------------------------------------------------
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ----------------------------------------------------------------------
+# 9. Archivos de IOPeer
+# ----------------------------------------------------------------------
+# Módulos compilados, logs o salidas
