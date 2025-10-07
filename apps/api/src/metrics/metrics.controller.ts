@@ -1,4 +1,4 @@
-import { Controller, Get, Optional } from '@nestjs/common';
+import { Controller, Get, Logger, Optional } from '@nestjs/common';
 
 import type { PrismaService } from '../prisma/prisma.service';
 import type { RunsService } from '../runs/runs.service';
@@ -18,13 +18,14 @@ function isRunsLike(source: unknown): source is RunsLike {
 @Controller('metrics')
 export class MetricsController {
   private readonly startedAt = Date.now();
+  private readonly logger = new Logger(MetricsController.name);
 
   constructor(
     @Optional() private readonly runsMaybe?: RunsService,
     @Optional() private readonly prismaMaybe?: PrismaService,
   ) {
     if (!this.runsMaybe && !this.prismaMaybe) {
-      throw new Error('MetricsController requires RunsService or PrismaService');
+      this.logger.warn('MetricsController initialised without RunsService or PrismaService');
     }
   }
 
