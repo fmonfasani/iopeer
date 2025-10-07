@@ -1,21 +1,86 @@
-import { Controller, Get } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
+import { Controller, Get, Optional } from '@nestjs/common';
 import { RunStatus } from '@prisma/client';
+
+import type { PrismaService } from '../prisma/prisma.service';
+import type { RunsService } from '../runs/runs.service';
+
+type PrismaLike = Pick<PrismaService, 'run'>;
+type RunsLike = Pick<RunsService, 'getStats'>;
+
+function isPrismaLike(source: unknown): source is PrismaLike {
+  return Boolean(source && typeof (source as PrismaLike).run?.count === 'function');
+}
+
+function isRunsLike(source: unknown): source is RunsLike {
+  return Boolean(source && typeof (source as RunsLike).getStats === 'function');
+}
 
 @Controller('metrics')
 export class MetricsController {
-  constructor(private readonly prisma: PrismaService) {}
+  private readonly startedAt = Date.now();
+
+  constructor(
+    @Optional() private readonly runsMaybe?: RunsService | PrismaService,
+    @Optional() private readonly prismaMaybe?: PrismaService,
+  ) {
+    if (!this.runsMaybe && !this.prismaMaybe) {
+      throw new Error('MetricsController requires RunsService or PrismaService');
+    }
+  }
 
   @Get()
-  async get() {
-    const [pending, running, success, error, cancelled] = await Promise.all([
-      this.prisma.run.count({ where: { status: RunStatus.PENDING } }),
-      this.prisma.run.count({ where: { status: RunStatus.RUNNING } }),
-      this.prisma.run.count({ where: { status: RunStatus.SUCCESS } }),
-      this.prisma.run.count({ where: { status: RunStatus.ERROR } }),
-      this.prisma.run.count({ where: { status: RunStatus.CANCELLED } }),
+  get() {
+    const runs = this.resolveRunsService();
+    return runs?.getStats() ?? {
+      runs_total: 0,
+      runs_success: 0,
+      runs_error: 0,
+      step_duration_ms_p95: 0,
+      error_rate: 0,
+    };
+  }
+
+  async getMetrics() {
+    const prisma = this.resolvePrisma();
+    if (!prisma) {
+      const stats = this.resolveRunsService()?.getStats();
+      return {
+        runsTotal: stats?.runs_total ?? 0,
+        runsFailed: stats?.runs_error ?? 0,
+        errorRatePct:
+          stats && stats.runs_total ? Math.round((stats.runs_error / stats.runs_total) * 100) : 0,
+        uptimeSec: Math.floor((Date.now() - this.startedAt) / 1000),
+      };
+    }
+
+    const statusFailed = (RunStatus as any).ERROR ?? (RunStatus as any).FAILED ?? 'ERROR';
+
+    const [total, failed] = await Promise.all([
+      prisma.run.count(),
+      prisma.run.count({ where: { status: { equals: statusFailed } } }),
     ]);
 
-    return { pending, running, success, error, cancelled };
+    const succeeded = Math.max(0, total - failed);
+    const errorRatePct = total === 0 ? 0 : Math.round((failed / total) * 100);
+
+    return {
+      runsTotal: total,
+      runsFailed: failed,
+      runsSucceeded: succeeded,
+      errorRatePct,
+      uptimeSec: Math.floor((Date.now() - this.startedAt) / 1000),
+    };
+  }
+
+  private resolveRunsService(): RunsLike | undefined {
+    if (isRunsLike(this.runsMaybe)) return this.runsMaybe;
+    if (isRunsLike(this.prismaMaybe)) return this.prismaMaybe as unknown as RunsLike;
+    return undefined;
+  }
+
+  private resolvePrisma(): PrismaLike | undefined {
+    if (isPrismaLike(this.prismaMaybe)) return this.prismaMaybe;
+    if (isPrismaLike(this.runsMaybe)) return this.runsMaybe as unknown as PrismaLike;
+    return undefined;
   }
 }
