@@ -1,8 +1,11 @@
-import { RunStatus } from '@prisma/client';
+type RunStatus = string;
 
 type RunStatusRecord = Record<string, RunStatus>;
 
-const runStatusEnum = (RunStatus ?? {}) as RunStatusRecord;
+// Prisma puede exponer un enum `RunStatus` en tiempo de ejecución. Cuando no
+// está disponible (por ejemplo, si `prisma generate` todavía no se ejecutó),
+// degradamos la resolución a simples strings utilizando este mapa vacío.
+const runStatusEnum = {} as RunStatusRecord;
 
 const statusFor = (primary: string, ...aliases: string[]) => {
   if (runStatusEnum && primary in runStatusEnum) {

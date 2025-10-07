@@ -10,7 +10,7 @@ import { readFile } from 'fs/promises';
 import * as path from 'path';
 
 import type { GateService } from '../gates/gate.service';
-import type { RunsService } from '../runs/runs.service';
+import type { RunWithLog, RunsService } from '../runs/runs.service';
 import { RUN_STATUS } from '../runs/run-status';
 
 const DEFAULT_INTERVAL_MS = 60_000;
@@ -84,15 +84,15 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     return this.tickSimple();
   }
 
-  async getSucceededRuns(limit: number) {
+  async getSucceededRuns(limit: number): Promise<RunWithLog[]> {
     if (!this.prisma) {
       return [];
     }
-    return this.prisma.run.findMany({
+    return (await this.prisma.run.findMany({
       where: { status: { equals: RUN_STATUS.SUCCESS } },
       orderBy: { finishedAt: 'desc' },
       take: limit,
-    });
+    })) as RunWithLog[];
   }
 
   private async tickSimple() {
@@ -129,13 +129,13 @@ export class SchedulerService implements OnModuleInit, OnModuleDestroy {
     }
 
     const succeeded = await this.getSucceededRuns(10);
-    const deps = succeeded.reduce<Record<string, string>>((acc, run: any) => {
+    const deps: Record<string, string> = succeeded.reduce((acc, run) => {
       const actionId = run?.log?.meta?.actionId;
       if (actionId) {
         acc[actionId] = RUN_STATUS.SUCCESS;
       }
       return acc;
-    }, {});
+    }, {} as Record<string, string>);
 
     const depsOk = await (this.gates!.checkDepsSucceeded?.(deps) ?? Promise.resolve(true));
     if (!depsOk) {

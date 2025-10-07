@@ -1,4 +1,6 @@
-import { PrismaClient, RunStatus } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
+
+import { RUN_STATUS } from '../src/runs/run-status';
 const prisma = new PrismaClient();
 
 async function main() {
@@ -47,7 +49,7 @@ async function main() {
     await prisma.run.create({
       data: {
         workflowId: health.id,
-        status: RunStatus.SUCCESS,
+        status: RUN_STATUS.SUCCESS,
         startedAt: new Date(now.getTime() - 3000),
         finishedAt: now,
         meta: { init: true },
@@ -56,7 +58,7 @@ async function main() {
     await prisma.run.create({
       data: {
         workflowId: health.id,
-        status: RunStatus.ERROR,
+        status: RUN_STATUS.ERROR,
         startedAt: new Date(now.getTime() - 5000),
         finishedAt: new Date(now.getTime() - 4000),
         error: 'Seeded error example',
