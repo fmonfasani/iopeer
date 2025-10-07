@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { GateService } from '../../../src/gates/gate.service';
+import { RUN_STATUS } from '../../../src/runs/run-status';
 import { createMockPrismaClient } from '../../factories';
 
 describe('GateService', () => {
@@ -36,8 +37,8 @@ describe('GateService', () => {
     const { client } = createMockPrismaClient();
     const service = new GateService(client);
     await expect(
-      service.checkDepsSucceeded({ A: 'SUCCEEDED', B: 'SUCCEEDED' }),
+      service.checkDepsSucceeded({ A: RUN_STATUS.SUCCESS, B: RUN_STATUS.SUCCESS }),
     ).resolves.toBe(true);
-    await expect(service.checkDepsSucceeded({ A: 'PENDING' })).resolves.toBe(false);
+    await expect(service.checkDepsSucceeded({ A: RUN_STATUS.PENDING })).resolves.toBe(false);
   });
 });

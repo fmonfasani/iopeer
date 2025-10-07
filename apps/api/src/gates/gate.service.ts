@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { PrismaService } from '../prisma/prisma.service';
+import { SUCCESS_VALUES } from '../runs/run-status';
 
 @Injectable()
 export class GateService {
@@ -23,7 +24,8 @@ export class GateService {
   }
 
   async checkDepsSucceeded(depResults: Record<string, string>): Promise<boolean> {
-    const successValues = new Set(['SUCCESS', 'SUCCEEDED']);
-    return Object.values(depResults).every((status) => successValues.has(status));
+    return Object.values(depResults).every(
+      (status) => typeof status === 'string' && SUCCESS_VALUES.has(status),
+    );
   }
 }

@@ -6,7 +6,7 @@ describe('RunsController', () => {
   it('delegates to service methods', async () => {
     const createRun = vi.fn().mockResolvedValue({ id: 'run-1' });
     const listRecentRuns = vi.fn().mockResolvedValue([{ id: 'run-1' }]);
-    const getRun = vi.fn().mockResolvedValue({ id: 'run-1', status: 'QUEUED' });
+    const getRun = vi.fn().mockResolvedValue({ id: 'run-1', status: 'PENDING' });
 
     const runsService = {
       createRun,
@@ -26,6 +26,6 @@ describe('RunsController', () => {
 
     const fetched = await controller.get('run-1');
     expect(getRun).toHaveBeenCalledWith('run-1');
-    expect(fetched).toEqual({ id: 'run-1', status: 'QUEUED' });
+    expect(fetched).toEqual({ id: 'run-1', status: 'PENDING' });
   });
 });

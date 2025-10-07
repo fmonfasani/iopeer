@@ -1,8 +1,9 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { RunStatus } from '@prisma/client';
+import type { RunStatus } from '@prisma/client';
 
 import { RunsService } from '../src/runs/runs.service';
 import { createDefaultSteps, MockPrismaClient, silenceLogger, waitForRunStatus } from './utils';
+import { RUN_STATUS } from '../src/runs/run-status';
 
 const WORKFLOW_ID = '00000000-0000-0000-0000-000000000001';
 
@@ -36,10 +37,10 @@ describe('RunsService', () => {
       requestId: 'req-123',
     });
 
-    const run = await waitForRunStatus(service, runId, RunStatus.SUCCESS);
+    const run = await waitForRunStatus(service, runId, RUN_STATUS.SUCCESS as RunStatus);
 
     expect(run).not.toBeNull();
-    expect(run?.status).toBe(RunStatus.SUCCESS);
+    expect(run?.status).toBe(RUN_STATUS.SUCCESS);
     expect(run?.startedAt).toBeInstanceOf(Date);
     expect(run?.finishedAt).toBeInstanceOf(Date);
     const duration = run!.finishedAt!.getTime() - run!.startedAt!.getTime();
@@ -74,8 +75,8 @@ describe('RunsService', () => {
       requestId: 'req-err',
     });
 
-    const run = await waitForRunStatus(service, runId, RunStatus.ERROR);
-    expect(run?.status).toBe(RunStatus.ERROR);
+    const run = await waitForRunStatus(service, runId, RUN_STATUS.ERROR as RunStatus);
+    expect(run?.status).toBe(RUN_STATUS.ERROR);
     expect(run?.errorMessage).toContain('boom');
 
     const stats = service.getStats();

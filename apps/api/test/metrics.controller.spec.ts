@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { RunStatus } from '@prisma/client';
+import type { RunStatus } from '@prisma/client';
 
 import { MetricsController } from '../src/metrics/metrics.controller';
 import { RunsService } from '../src/runs/runs.service';
@@ -9,6 +9,7 @@ import {
   silenceLogger,
   waitForRunStatus,
 } from './utils';
+import { RUN_STATUS } from '../src/runs/run-status';
 
 describe('MetricsController', () => {
   beforeAll(() => {
@@ -53,9 +54,9 @@ describe('MetricsController', () => {
       requestId: 'r3',
     });
 
-    await waitForRunStatus(service, run1, RunStatus.SUCCESS);
-    await waitForRunStatus(service, run2, RunStatus.SUCCESS);
-    await waitForRunStatus(service, run3, RunStatus.ERROR);
+    await waitForRunStatus(service, run1, RUN_STATUS.SUCCESS as RunStatus);
+    await waitForRunStatus(service, run2, RUN_STATUS.SUCCESS as RunStatus);
+    await waitForRunStatus(service, run3, RUN_STATUS.ERROR as RunStatus);
 
     const metrics = controller.get();
 

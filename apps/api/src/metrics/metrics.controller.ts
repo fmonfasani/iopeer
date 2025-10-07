@@ -1,8 +1,8 @@
 import { Controller, Get, Optional } from '@nestjs/common';
-import { RunStatus } from '@prisma/client';
 
 import type { PrismaService } from '../prisma/prisma.service';
 import type { RunsService } from '../runs/runs.service';
+import { RUN_STATUS } from '../runs/run-status';
 
 type PrismaLike = Pick<PrismaService, 'run'>;
 type RunsLike = Pick<RunsService, 'getStats'>;
@@ -53,7 +53,7 @@ export class MetricsController {
       };
     }
 
-    const statusFailed = (RunStatus as any).ERROR ?? (RunStatus as any).FAILED ?? 'ERROR';
+    const statusFailed = RUN_STATUS.ERROR;
 
     const [total, failed] = await Promise.all([
       prisma.run.count(),

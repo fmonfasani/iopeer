@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Prisma, Run, RunStatus } from '@prisma/client';
+import { Prisma, Run } from '@prisma/client';
 import { randomUUID } from 'crypto';
 
 import type { PrismaService } from '../prisma/prisma.service';
@@ -17,16 +17,7 @@ export type EnqueueRunDto = {
 const MAX_ATTEMPTS_DEFAULT = 3;
 const RETRY_DELAY_MS = 150;
 
-const runStatusEnum = (RunStatus ?? {}) as Record<string, RunStatus>;
-const statusFor = (key: string, fallback: string) =>
-  (runStatusEnum && runStatusEnum[key]) ? runStatusEnum[key] : (fallback as unknown as RunStatus);
-
-const STATUS = {
-  QUEUED: statusFor('QUEUED', 'QUEUED'),
-  RUNNING: statusFor('RUNNING', 'RUNNING'),
-  SUCCEEDED: statusFor('SUCCEEDED', 'SUCCEEDED'),
-  FAILED: statusFor('ERROR', 'ERROR'),
-};
+import { RUN_STATUS } from './run-status';
 
 type QueueItem = {
   runId: string;
@@ -86,7 +77,7 @@ export class RunsService {
     const run = await this.prisma.run.create({
       data: {
         workflowId,
-        status: STATUS.QUEUED,
+        status: RUN_STATUS.PENDING,
         log: runLog as unknown as Prisma.InputJsonValue,
       } as any,
     });
@@ -160,7 +151,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: STATUS.RUNNING,
+          status: RUN_STATUS.RUNNING,
           startedAt,
           log: log as unknown as Prisma.InputJsonValue,
           errorMessage: null,
@@ -219,7 +210,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: STATUS.SUCCEEDED,
+          status: RUN_STATUS.SUCCESS,
           finishedAt,
           durationMs,
           errorMessage: null,
@@ -264,7 +255,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: STATUS.QUEUED,
+          status: RUN_STATUS.PENDING,
           log: log as unknown as Prisma.InputJsonValue,
           errorMessage,
         },
@@ -282,7 +273,7 @@ export class RunsService {
       await this.prisma.run.update({
         where: { id: job.runId },
         data: {
-          status: STATUS.FAILED,
+          status: RUN_STATUS.ERROR,
           finishedAt,
           durationMs,
           errorMessage,
