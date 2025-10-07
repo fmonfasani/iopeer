@@ -44,6 +44,7 @@ model Run {
   finishedAt DateTime?
   error      String?
   meta       Json?
+  log        Json?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
