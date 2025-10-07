@@ -8,9 +8,13 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prestart": "prisma generate --schema=prisma/schema.prisma",
     "start": "nest start",
+    "prestart:debug": "prisma generate --schema=prisma/schema.prisma",
     "start:debug": "nest start --debug --watch",
+    "prestart:prod": "prisma generate --schema=prisma/schema.prisma",
     "start:prod": "node dist/main",
+    "prestart:dev": "prisma generate --schema=prisma/schema.prisma",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest run --sequence",
