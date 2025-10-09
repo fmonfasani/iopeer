@@ -1,0 +1,22 @@
+# Reporte diario - 08/10/2025
+
+## Resumen general
+- El repositorio funciona como un monorepo PNPM con aplicaciones web y API, además de un paquete compartido de SDK en TypeScript. 【F:README.md†L1-L4】
+- La automatización se gestiona con Turborepo y scripts PNPM comunes para desarrollo, build, linting y pruebas; existen scripts dedicados para ejecutar cada app y registrar avances. 【F:package.json†L4-L33】
+- El onboarding requiere configurar variables de entorno y ejecutar las migraciones de Prisma antes de levantar el entorno de desarrollo. 【F:README.md†L9-L12】
+
+## Aplicación API (apps/api)
+- El servicio Scheduler administra la ejecución de planes y flujos de trabajo, leyendo un plan bootstrap, controlando dependencias mediante gates y apoyándose en Prisma para registrar runs. 【F:apps/api/src/scheduler/scheduler.service.ts†L1-L199】
+- El módulo de métricas ofrece estadísticas básicas (totales, errores, tasa de error y uptime) ya sea a partir del servicio de runs o directamente desde Prisma. 【F:apps/api/src/metrics/metrics.controller.ts†L1-L87】
+- Existe un endpoint de health check que valida conectividad a la base de datos cuando Prisma está disponible. 【F:apps/api/src/health/health.controller.ts†L1-L23】
+- El registro de steps incluye implementaciones para pasos de echo, delay y HTTP, exponiendo un mecanismo de resolución por tipo. 【F:apps/api/src/steps/registry.ts†L1-L38】
+
+## Aplicación Web (apps/web)
+- La página principal sigue siendo la plantilla por defecto de Next.js 14, con enlaces a documentación y despliegue, sin personalizaciones visibles. 【F:apps/web/src/app/page.tsx†L1-L95】
+- Se incluye un proveedor de Supabase lado cliente que crea el cliente con valores por defecto cuando las variables públicas no están definidas, indicando una integración pendiente de configurar. 【F:apps/web/src/app/supabase-provider.tsx†L1-L43】
+
+## Observaciones y próximos pasos sugeridos
+1. Completar la configuración de variables de entorno y credenciales para Supabase y la API, siguiendo las instrucciones de puesta en marcha.
+2. Revisar o definir el plan de scheduler bootstrap y las dependencias de gates para garantizar ejecuciones programadas fiables.
+3. Personalizar la interfaz web y conectar componentes reales del dominio, ya que actualmente se mantiene la plantilla base de Next.js.
+4. Documentar el estado de la base de datos Prisma y validar si existen migraciones pendientes de ejecutar.
