@@ -2,11 +2,15 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export class RunwayService {
+  private outputDir = 'outputs';
+
   async generateVideo(title: string, audioFile: string): Promise<string> {
-    // Simulaci√≥n: en producci√≥n usar la API de RunwayML
-    const filePath = path.join('outputs', \`video_\${Date.now()}.mp4\`);
-    fs.writeFileSync(filePath, '');
-    console.log(\`ÌæûÔ∏è Video generado para: \${title}\`);
+    await fs.promises.mkdir(this.outputDir, { recursive: true });
+    const filePath = path.join(this.outputDir, `video_${Date.now()}.mp4`);
+
+    await fs.promises.writeFile(filePath, `Simulated video for ${title} using audio ${audioFile}`);
+    console.log(`Ô∏è Video generado para: ${title}`);
+
     return filePath;
   }
 }

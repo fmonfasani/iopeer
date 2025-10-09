@@ -1,72 +1,49 @@
-import { Injectable, Logger } from '@nestjs/common';
-
-interface GithubRequestOptions extends RequestInit {
-  readonly expectJson?: boolean;
-}
+import { Injectable } from '@nestjs/common';
+import * as fs from 'fs';
 
 @Injectable()
 export class GithubService {
-  private readonly logger = new Logger(GithubService.name);
-  private readonly baseUrl = 'https://api.github.com';
+  private readonly API = 'https://api.github.com/graphql';
+  private readonly TOKEN = process.env.GITHUB_TOKEN;
 
-  private resolveUrl(path: string): string {
-    if (/^https?:/i.test(path)) {
-      return path;
+  async analyzeRepo(owner: string, name: string) {
+    const query = fs.readFileSync('src/github/queries/repo.graphql', 'utf8');
+
+    const res = await fetch(this.API, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${this.TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ query, variables: { owner, name } }),
+    });
+
+    if (!res.ok) {
+      throw new Error(`GitHub request failed with status ${res.status}`);
     }
 
-    return `${this.baseUrl}${path.startsWith('/') ? path : `/${path}`}`;
-  }
+    const data = await res.json();
 
-  private buildHeaders(init?: RequestInit): Headers {
-    const headers = new Headers(init?.headers ?? {});
-
-    if (!headers.has('Accept')) {
-      headers.set('Accept', 'application/vnd.github+json');
+    if (data.errors) {
+      throw new Error(JSON.stringify(data.errors, null, 2));
     }
 
-    if (!headers.has('User-Agent')) {
-      headers.set('User-Agent', 'iopeer-api');
-    }
+    const repo = data.data.repository;
 
-    const token = process.env.GITHUB_TOKEN ?? process.env.GITHUB_ACCESS_TOKEN;
-    if (token && !headers.has('Authorization')) {
-      headers.set('Authorization', `Bearer ${token}`);
-    }
-
-    return headers;
-  }
-
-  async request<T = unknown>(path: string, options: GithubRequestOptions = {}): Promise<T> {
-    const url = this.resolveUrl(path);
-    const { expectJson = true, ...init } = options;
-    const headers = this.buildHeaders(init);
-
-    const response = await fetch(url, { ...init, headers });
-
-    if (!response.ok) {
-      const body = await response.text();
-      this.logger.warn(`GitHub request failed (${response.status} ${response.statusText}) ${url}`);
-      throw new Error(`GitHub request failed (${response.status}): ${body || 'empty body'}`);
-    }
-
-    if (!expectJson) {
-      return undefined as T;
-    }
-
-    if (response.status === 204) {
-      return undefined as T;
-    }
-
-    const text = await response.text();
-    if (text.length === 0) {
-      return undefined as T;
-    }
-
-    try {
-      return JSON.parse(text) as T;
-    } catch (error) {
-      this.logger.warn(`Unable to parse GitHub response as JSON for ${url}`);
-      throw error;
-    }
+    return {
+      name: repo.name,
+      description: repo.description,
+      stars: repo.stargazerCount,
+      forks: repo.forkCount,
+      issues: repo.issues.totalCount,
+      pulls: repo.pullRequests.totalCount,
+      languages: repo.languages.nodes.map((l) => l.name),
+      commits: repo.defaultBranchRef?.target?.history?.edges.map((c) => ({
+        message: c.node.messageHeadline,
+        date: c.node.committedDate,
+      })),
+      updatedAt: repo.updatedAt,
+      url: repo.url,
+    };
   }
 }
